@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**********************************************************************************
    -- Copyright (C) 2014-2025 by John Goacher - All Rights Reserved
    - This Source Code Form is subject to the terms of the Mozilla Public
@@ -5,81 +6,81 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ***********************************************************************************/
 
-var g_logging = false;
-var g_credits = '';
-var g_resultsFilename;
-var g_handRecordsFilename;
-var g_hands;
+const g_logging = false;
+let g_credits = '';
+let g_resultsFilename;
+let g_handRecordsFilename;
+let g_hands;
 var g_scoring = 0; // Set to "IMP" for IMPs scoring.
-var g_lastBindex = 0;
-var g_currentDir;
-var g_currentPair;
-var g_inactiveCards;
-var g_playableCards;
-var g_currentPlayer;
-var g_currentTrickCards;
-var g_currentPlayIndex; //0..51 represents index to position within the 52 card sequence being played.
-var g_lastMatchedPlayIndex; //0..51
-var g_showPlay = 0; //S If showPlay!=0 show played cards for this hand
-var g_hiscore;
-var g_allBoards = 0; // Set non-zero while running an analysis on all boards in a set.
-var g_session = 0;
-var g_bgTrans = 0; // Unique transaction id allocated to background transaction (e.g single shot accuracy request)
-var g_edited = 0; // Set to 1 when a change has been made (or 2, if only the Dealer has been changed)
-var g_partialHand = 0; // Non-zero if playing a hand which started with fewer than 52 cards
-var g_partialHandTotalTricks; // Total number of tricks which can be made by declarer and defenders on a partial hand
-var g_session_contract;
-var g_showOriginalContract = false; // Set true when "Play: <contract>" button is pressed for a hand recorded in a lin file.
-var g_session_declarer;
-var g_defaultTravellerWidth;
-var g_lastAllTravellersPair = -1;
-var g_lastAllTravellersDir = 'NS';
-var g_mode = 0; // Set to 1 while in play mode
-var g_timeout = '';
-var g_sectionHeight; // Calculated height for a quadrant of the board display
+let g_lastBindex = 0;
+const g_currentDir = 0;
+let g_currentPair;
+let g_inactiveCards;
+let g_playableCards;
+let g_currentPlayer;
+let g_currentTrickCards;
+let g_currentPlayIndex; //0..51 represents index to position within the 52 card sequence being played.
+let g_lastMatchedPlayIndex; //0..51
+let g_showPlay = 0; //S If showPlay!=0 show played cards for this hand
+let g_hiscore;
+let g_allBoards = 0; // Set non-zero while running an analysis on all boards in a set.
+let g_session = 0;
+let g_bgTrans = 0; // Unique transaction id allocated to background transaction (e.g single shot accuracy request)
+let g_edited = 0; // Set to 1 when a change has been made (or 2, if only the Dealer has been changed)
+let g_partialHand = 0; // Non-zero if playing a hand which started with fewer than 52 cards
+let g_partialHandTotalTricks; // Total number of tricks which can be made by declarer and defenders on a partial hand
+let g_session_contract;
+let g_showOriginalContract = false; // Set true when "Play: <contract>" button is pressed for a hand recorded in a lin file.
+let g_session_declarer;
+let g_defaultTravellerWidth;
+const g_lastAllTravellersPair = -1;
+const g_lastAllTravellersDir = 'NS';
+let g_mode = 0; // Set to 1 while in play mode
+let g_timeout = '';
+let g_sectionHeight; // Calculated height for a quadrant of the board display
 // Following variable relate to hand entry.
-var g_boardNumberFontSize;
-var g_fontRatio = 1.0;
-var g_textBratio = 0.9; // Text font size as fraction of button height
-var g_handEntryMode = 0;
-var g_inputDir = 0; // 0,1,2,3 = N,E,S,W
-var g_inputBoard;
-var g_cardQuadrant;
-var g_stopPropagation = 0;
-var g_helpId = ''; // id of current help text on display
-var g_playButtonText = 'Play'; // Text to show on Play button (otherwise may show, for example, Play: 3H by S)
-var g_defaultContract = 0; // Set to 1 when there is a default contract for current board (contract and declarer but no
+let g_boardNumberFontSize;
+let g_fontRatio = 1.0;
+const g_textBratio = 0.9; // Text font size as fraction of button height
+let g_handEntryMode = 0;
+let g_inputDir = 0; // 0,1,2,3 = N,E,S,W
+let g_inputBoard;
+let g_cardQuadrant;
+let g_stopPropagation = 0;
+let g_helpId = ''; // id of current help text on display
+const g_playButtonText = 'Play'; // Text to show on Play button (otherwise may show, for example, Play: 3H by S)
+let g_defaultContract = 0; // Set to 1 when there is a default contract for current board (contract and declarer but no
 //  bidding information or cards played)
-var g_defaultContractIndex = -1; // If default contract is set, this is the index to the button in the makeable contracts table
+let g_defaultContractIndex = -1; // If default contract is set, this is the index to the button in the makeable contracts table
 // that relates to that declarer/suit combination.
-var g_timeoutID = ''; // ID of javascript timeout function related to request throttling.
-var g_travellers = null; // Non-null if traveller records are available
-var g_currentTraveller = null; // Traveller record corresponding to current board
-var g_currow = -1; // Index to current row being displayed (for travellers containing bidding/play data for each row
-var g_title = '&nbsp';
-var g_sessInfo = null; // Holds Session Info for the current event
-var g_rankInfo = null; // Holds ranking information for current event.
-var g_validPercentageFields = false; // Set to true if percentage fields in json ranking table are non-blank and no negative values
+let g_timeoutID = ''; // ID of javascript timeout function related to request throttling.
+let g_travellers = null; // Non-null if traveller records are available
+let g_currentTraveller = null; // Traveller record corresponding to current board
+let g_currow = -1; // Index to current row being displayed (for travellers containing bidding/play data for each row
+let g_title = '&nbsp';
+let g_sessInfo = null; // Holds Session Info for the current event
+let g_rankInfo = null; // Holds ranking information for current event.
+let g_validPercentageFields = false; // Set to true if percentage fields in json ranking table are non-blank and no negative values
 var g_scoring = 'MatchPoints'; // Scoring type - MatchPoints, IMP, VP
-var g_eventType = 'Pairs'; // Event Type - one of Pairs, Teams
-var g_maxImps = 0; // Maximum number of IMPs recorded on a single board, if using IMP scoring.
-var g_test = 0; // Set to 1 if called from test environment.
-var g_xml = ''; // Set to filename of xml file if present (or to 1 if xml supplied as a string)
-var g_xmlstr = ''; // Holds xml when supplied as a string parameter
-var g_handstr = ''; // Holds file content when supplied as a string parameter rather than a file url
-var g_handstrType = ''; // Can be "pbn", "dlm", or "lin" if file content supplied as string
-var g_debug = false;
-var g_ofs = 1; // Offset to columns beyond (optional) lead card column in Scorecard table
-var g_protocol = 'http:'; // called with http or https
-var g_loaded = false; // Is true if hands/travellers have been loaded already
-var g_fullInfo = false; // Set to true if makeable contract tables contain full information
-var g_backgroundFetchCompleted = false; // Set to true if background fetch of makeable contracts/opt contracts/opening leads has completed.
-var g_openingLeadsPresent = false; // Set to true when ddtricks for opening leads have been calculated and applied.
-var g_travellersHaveLeads = false; // Set to true if at least one lead card is found in a traveller.
-var g_file = ''; // contains url of 'pbn' or 'dlm' if filename reference was supplied in request
-var g_sessionMode = 'scorecard'; // assume last looked at scorecard in results analysis
-var g_playItAgain = true; // False if in Results Analysis screens
-var g_scoreToImps = [
+let g_eventType = 'Pairs'; // Event Type - one of Pairs, Teams
+let g_maxImps = 0; // Maximum number of IMPs recorded on a single board, if using IMP scoring.
+let g_test = 0; // Set to 1 if called from test environment.
+let g_xml = ''; // Set to filename of xml file if present (or to 1 if xml supplied as a string)
+let g_xmlstr = ''; // Holds xml when supplied as a string parameter
+let g_handstr = ''; // Holds file content when supplied as a string parameter rather than a file url
+let g_handstrType = ''; // Can be "pbn", "dlm", or "lin" if file content supplied as string
+let g_debug = false;
+let g_ofs = 1; // Offset to columns beyond (optional) lead card column in Scorecard table
+let g_protocol = 'http:'; // called with http or https
+let g_loaded = false; // Is true if hands/travellers have been loaded already
+let g_fullInfo = false; // Set to true if makeable contract tables contain full information
+let g_backgroundFetchCompleted = false; // Set to true if background fetch of makeable contracts/opt contracts/opening leads has completed.
+let g_openingLeadsPresent = false; // Set to true when ddtricks for opening leads have been calculated and applied.
+let g_travellersHaveLeads = false; // Set to true if at least one lead card is found in a traveller.
+let g_file = ''; // contains url of 'pbn' or 'dlm' if filename reference was supplied in request
+let g_sessionMode = 'scorecard'; // assume last looked at scorecard in results analysis
+let g_playItAgain = true; // False if in Results Analysis screens
+const g_scoreToImps = [
   [0, 10, 0],
   [20, 40, 1],
   [50, 80, 2],
@@ -106,41 +107,41 @@ var g_scoreToImps = [
   [3500, 3990, 23],
   [4000, 32767, 24]
 ];
-var g_checkContracts = new Array();
-var g_scorecardContext = new Array(); // Array of context objects for current scorecard, indexed by board number
-var g_uniquePairNumbers = ''; // Set to true or false for Teams events from within function checkForUniquePairNumbers
-var g_showAllControls = true;
-var g_isMobi = false; // True if a mobile device
-var g_namSize = 0;
-var g_bidFontSize = 0;
-var g_dealerFontSize = 0; // Size of dealer char on traveller
-var g_urqButtonHeight = 0; // Height of buttons in upper right quadrant of traveller
-var g_urqButtFontSize = 0; // Font size of buttons in upper right quadrant
-var g_scoreFontSize = 0; // Font size for score in lin file
-var g_vulBarLength = 0; // Height or width of vulnerability bar
+const g_checkContracts = new Array();
+let g_scorecardContext = new Array(); // Array of context objects for current scorecard, indexed by board number
+let g_uniquePairNumbers = ''; // Set to true or false for Teams events from within function checkForUniquePairNumbers
+let g_showAllControls = true;
+let g_isMobi = false; // True if a mobile device
+let g_namSize = 0;
+let g_bidFontSize = 0;
+let g_dealerFontSize = 0; // Size of dealer char on traveller
+let g_urqButtonHeight = 0; // Height of buttons in upper right quadrant of traveller
+let g_urqButtFontSize = 0; // Font size of buttons in upper right quadrant
+let g_scoreFontSize = 0; // Font size for score in lin file
+let g_vulBarLength = 0; // Height or width of vulnerability bar
 
-var g_worker; // Worker for Play It Again
-var g_mworkers = new Array(); // Workers for makeable contract calculation
-var g_nextmworker = 0;
-var g_workerInitCount = 0;
-var g_db = null; // Database handle for indexedDB
+let g_worker; // Worker for Play It Again
+let g_mworkers = new Array(); // Workers for makeable contract calculation
+let g_nextmworker = 0;
+let g_workerInitCount = 0;
+let g_db = null; // Database handle for indexedDB
 
-var g_bgObj = new Object();
-var g_completionCount = 0; // Count of background accuracy requests completed
-var g_completionTarget = 0; // Used for background player accuracy requests
+const g_bgObj = new Object();
+let g_completionCount = 0; // Count of background accuracy requests completed
+let g_completionTarget = 0; // Used for background player accuracy requests
 
-var g_mcSession = 1; // "Session" number for tagging single board makeable contract requests
+let g_mcSession = 1; // "Session" number for tagging single board makeable contract requests
 
-var g_trumps = ''; // Trump suit for current board being played
-var g_leader = ''; // Leader for current board being played
-var g_initial_data = '';
-var g_initial_options = '';
-var g_newFeatureNoticeShown = 0; // Set to 1 if has been shown already during this session
-var g_initialised = false; // Set true in buildpage1
-var g_playerAcc = new Array(); // Holds player accuracy counts for event, indexed by player name
-var g_accTrans = new Object(); // Holds list of acc transactions outstanding for each player
+let g_trumps = ''; // Trump suit for current board being played
+let g_leader = ''; // Leader for current board being played
+let g_initial_data = '';
+let g_initial_options = '';
+let g_newFeatureNoticeShown = 0; // Set to 1 if has been shown already during this session
+let g_initialised = false; // Set true in buildpage1
+let g_playerAcc = new Array(); // Holds player accuracy counts for event, indexed by player name
+const g_accTrans = new Object(); // Holds list of acc transactions outstanding for each player
 
-var cacheTimeout = 300000; // Limit in milliseconds on how long PBN and json are kept in Local Storage
+const cacheTimeout = 300000; // Limit in milliseconds on how long PBN and json are kept in Local Storage
 
 String.prototype.replaceAt = function (index, replacement) {
   return this.substring(0, index) + replacement + this.substring(index + replacement.length);
@@ -148,8 +149,8 @@ String.prototype.replaceAt = function (index, replacement) {
 
 function getPosition(element) {
   // Find location of an element (for display of popup messages at cursor location)
-  var xPosition = 0;
-  var yPosition = 0;
+  let xPosition = 0;
+  let yPosition = 0;
 
   while (element) {
     xPosition += element.offsetLeft - element.scrollLeft + element.clientLeft;
@@ -164,7 +165,7 @@ function getPosition(element) {
 }
 
 function displayErrorAbsPosition(message, x, y) {
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.top = y + 'px';
   popup.style.left = x + 'px';
   popup.innerHTML = message;
@@ -174,7 +175,7 @@ function displayErrorAbsPosition(message, x, y) {
 }
 
 function displayError(element, message) {
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.top = getPosition(element).y - 20 + 'px';
   popup.style.left = getPosition(element).x + 'px';
   popup.innerHTML = message;
@@ -184,15 +185,19 @@ function displayError(element, message) {
 }
 
 function setRequestTimeout(override = false) {
-  if ((g_timeoutID == '') & override)
-    // Only put timeout if requests are being made to remote server, or we are in a card play sequence
+  if (
+    (g_timeoutID == '') &
+    override
+  ) // Only put timeout if requests are being made to remote server, or we are in a card play sequence
+  {
     g_timeoutID = setTimeout(function () {
       g_timeoutID = '';
     }, 10000);
+  }
 }
 
 function showPopupStatic(element, content) {
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.top = getPosition(element).y - 20 + 'px';
   popup.style.left = getPosition(element).x + 'px';
   popup.innerHTML = content;
@@ -201,7 +206,7 @@ function showPopupStatic(element, content) {
 }
 
 function setupPlayMatchContractHelp() {
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">';
   help =
     help +
@@ -244,7 +249,7 @@ function setupPlayMatchContractHelp() {
 }
 
 function setupEditHelp() {
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">';
   help = help + 'Cards not yet assigned to any quadrant are shown in green. ';
   help = help + 'Click on a green card to assign it to the current quadrant.<BR><BR>';
@@ -252,12 +257,13 @@ function setupEditHelp() {
   help = help + 'Click on a checked card to de-assign it. ';
   help = help + "The 'Clear' button de-assigns all cards from all quadrants.<BR><BR>";
 
-  if ((g_test == 1) | (g_xml != ''))
+  if ((g_test == 1) | (g_xml != '')) {
     help = help + "Use the 'Change Vulnerability' button to change the board vulnerability. ";
-  else
+  } else {
     help =
       help +
       "Use the 'Change Vulnerability' and 'Change Dealer' buttons to change the board vulnerability and dealer. ";
+  }
 
   help =
     help +
@@ -287,7 +293,7 @@ function setupEditHelp() {
 }
 
 function setupPlayHelp() {
-  var help = '<div style="float:left;word-wrap:break-word;"><span style="font-size:16px;">';
+  let help = '<div style="float:left;word-wrap:break-word;"><span style="font-size:16px;">';
   help = help + 'Click on a green or yellow card to play the card.<BR><BR>';
   help =
     help +
@@ -310,7 +316,7 @@ function setupPlayHelp() {
 }
 
 function setupCommandHelp() {
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">';
   help =
     help +
@@ -351,10 +357,11 @@ function setupCommandHelp() {
       "The '<' and '>' buttons, if present, step backwards or forwards through the set of boards.<BR><BR>";
     help = help + "The 'Save' button saves the set of boards as a PBN file.<BR><BR>";
 
-    if (typeof g_hands.lin != 'undefined')
+    if (typeof g_hands.lin !== 'undefined') {
       help =
         help +
         "The 'Save As LIN' button saves the current board as a LIN format file, including player names, auction and play data.<BR><BR>";
+    }
   }
 
   help +=
@@ -373,7 +380,7 @@ function setupCommandHelp() {
 }
 
 function setupSettingsHelp() {
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">';
 
   help =
@@ -393,7 +400,7 @@ function setupSettingsHelp() {
 }
 
 function setupKRHelp() {
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">';
   help =
     'When the KR checkbox is ticked, the results of a Kaplan Rubens hand evaluation are displayed, followed by high card points in brackets.<BR><BR>';
@@ -417,30 +424,37 @@ function setupKRHelp() {
 }
 
 function redrawMCTable(large) {
-  var i, j, value;
-  var labels = 'NSEW';
-  var contracts;
+  let i, j, value;
+  const labels = 'NSEW';
+  let contracts;
 
-  if (large) contracts = document.getElementById('makeableContracts');
-  else contracts = document.getElementById('miniMakeableContracts');
+  if (large) {
+    contracts = document.getElementById('makeableContracts');
+  } else {
+    contracts = document.getElementById('miniMakeableContracts');
+  }
 
-  var rows = contracts.rows;
-  var buttonHeight = g_sectionHeight / 5;
-  var buttonTextHeight = (buttonHeight * 4.5) / 7 + 'px';
+  const rows = contracts.rows;
+  const buttonHeight = g_sectionHeight / 5;
+  let buttonTextHeight = (buttonHeight * 4.5) / 7 + 'px';
 
-  if (!large) buttonTextHeight = (buttonHeight * 4) / 12 + 'px';
+  if (!large) {
+    buttonTextHeight = (buttonHeight * 4) / 12 + 'px';
+  }
 
-  var symbolHeight = '12px';
+  let symbolHeight = '12px';
 
-  if (!large) symbolHeight = '8px';
+  if (!large) {
+    symbolHeight = '8px';
+  }
 
-  var cardSymbols = [
+  const cardSymbols = [
     '<img height=' + symbolHeight + ' src="pics/spade.gif">',
     '<img height=' + symbolHeight + ' src="pics/heart.gif">',
     '<img height=' + symbolHeight + ' src="pics/diamond.gif">',
     '<img height=' + symbolHeight + ' src="pics/club.gif">'
   ];
-  var cells = rows[0].cells;
+  const cells = rows[0].cells;
 
   cells[0].innerHTML = '';
   cells[5].innerHTML = '<span style="font-size:' + symbolHeight + ';">NT</span>';
@@ -449,15 +463,15 @@ function redrawMCTable(large) {
   cells[2].innerHTML = cardSymbols[2];
   cells[1].innerHTML = cardSymbols[3];
 
-  var cvector = g_hands.boards[g_lastBindex].DoubleDummyTricks;
+  const cvector = g_hands.boards[g_lastBindex].DoubleDummyTricks;
   contracts.setAttribute('data-contracts', cvector);
 
-  var showContracts = document.getElementById('mkrad1').checked;
+  const showContracts = document.getElementById('mkrad1').checked;
 
-  var suits = 'NSHDC';
-  var directions = 'NSEW';
-  var defSuit;
-  var defDeclarer;
+  const suits = 'NSHDC';
+  const directions = 'NSEW';
+  let defSuit;
+  let defDeclarer;
 
   if (g_defaultContract != 0) {
     defDeclarer = directions.indexOf(g_hands.boards[g_lastBindex].Declarer);
@@ -475,18 +489,25 @@ function redrawMCTable(large) {
         value = parseInt(cvector.charAt(j + 5 * i), 16);
 
         if (showContracts) {
-          if (value < 7) value = '-';
-          else value = value - 6;
+          if (value < 7) {
+            value = '-';
+          } else {
+            value = value - 6;
+          }
         }
-      } else if (!showContracts & (cvector.charAt(j + 5 * i) == '-')) value = '*';
-      else value = cvector.charAt(j + 5 * i);
+      } else if (!showContracts & (cvector.charAt(j + 5 * i) == '-')) {
+        value = '*';
+      } else {
+        value = cvector.charAt(j + 5 * i);
+      }
 
-      var bcolor = '';
+      let bcolor = '';
 
-      if ((g_defaultContract != 0) & (i == defDeclarer) & (j == defSuit))
+      if ((g_defaultContract != 0) & (i == defDeclarer) & (j == defSuit)) {
         bcolor = 'background-color:#FFFF00;';
+      }
 
-      if (large)
+      if (large) {
         rows[1 + i].cells[1 + 4 - j].innerHTML =
           '<BUTTON class=menuButton style="min-width:0px;width:42px;max-width:42px;max-height:' +
           buttonHeight +
@@ -498,9 +519,10 @@ function redrawMCTable(large) {
           ';">' +
           value +
           '</span></BUTTON>';
-      else
+      } else {
         rows[1 + i].cells[1 + 4 - j].innerHTML =
           '<span style="font-size:10px;' + bcolor + '">' + value + '</span>';
+      }
     }
   }
 }
@@ -525,7 +547,7 @@ function showSettings() {
 
 function showOptions(pthis) {
   // Respond to the HELP button
-  var popup = document.getElementById('optionsBox');
+  const popup = document.getElementById('optionsBox');
   popup.style.top = 20 + 'px';
   popup.style.left = 100 + 'px';
   document.getElementById('optionsClose').onclick = function () {
@@ -533,16 +555,16 @@ function showOptions(pthis) {
   };
 
   document.getElementById('optionsSave').onclick = function () {
-    var ns1 = document.getElementById('nsrad1').checked;
-    var ns2 = document.getElementById('nsrad2').checked;
-    var ns3 = document.getElementById('nsrad3').checked;
-    var ew1 = document.getElementById('ewrad1').checked;
-    var ew2 = document.getElementById('ewrad2').checked;
-    var ew3 = document.getElementById('ewrad3').checked;
-    var mk1 = document.getElementById('mkrad1').checked;
-    var mk2 = document.getElementById('mkrad2').checked;
+    const ns1 = document.getElementById('nsrad1').checked;
+    const ns2 = document.getElementById('nsrad2').checked;
+    const ns3 = document.getElementById('nsrad3').checked;
+    const ew1 = document.getElementById('ewrad1').checked;
+    const ew2 = document.getElementById('ewrad2').checked;
+    const ew3 = document.getElementById('ewrad3').checked;
+    const mk1 = document.getElementById('mkrad1').checked;
+    const mk2 = document.getElementById('mkrad2').checked;
 
-    var string =
+    const string =
       '{"options":{"ns":["' +
       ns1 +
       '","' +
@@ -562,7 +584,7 @@ function showOptions(pthis) {
       '"]}}';
     setCookie('BSOL_options', string, 20 * 365);
 
-    var sel = document.getElementById('honourCardSet');
+    const sel = document.getElementById('honourCardSet');
 
     if (sel != null) {
       if (localStorageSupported()) {
@@ -570,7 +592,9 @@ function showOptions(pthis) {
       }
     }
 
-    if (remoteState !== document.getElementById('mkuseremote').checked) startStopMainWorker();
+    if (remoteState !== document.getElementById('mkuseremote').checked) {
+      startStopMainWorker();
+    }
   };
 
   document.getElementById('nsrad1').onclick =
@@ -663,7 +687,7 @@ function showHelp(pthis, detailedHelp) {
   }
 
   g_helpId = detailedHelp;
-  var popup = document.getElementById(detailedHelp);
+  const popup = document.getElementById(detailedHelp);
   popup.style.top = 10 + 'px';
   popup.style.left = 150 + 'px';
   document.getElementById('hide_' + detailedHelp).onclick = function () {
@@ -674,8 +698,8 @@ function showHelp(pthis, detailedHelp) {
 }
 
 function largeSpinner() {
-  var spinner = document.getElementById('spinner');
-  var largeSpinner = document.getElementById('largeSpinner');
+  const spinner = document.getElementById('spinner');
+  const largeSpinner = document.getElementById('largeSpinner');
   $('#spinner').finish();
   spinner.style.display = 'none';
   $('#largeSpinner').finish();
@@ -684,7 +708,7 @@ function largeSpinner() {
 }
 
 function spinnerNoDelay(pthis) {
-  var spinner = document.getElementById('spinner');
+  const spinner = document.getElementById('spinner');
   spinner.style.top = getPosition(pthis).y - 20 + 'px';
   spinner.style.left = getPosition(pthis).x + 'px';
   $('#spinner').finish();
@@ -693,7 +717,7 @@ function spinnerNoDelay(pthis) {
 }
 
 function spinnerNoDelayAbs(pthis, px, py) {
-  var spinner = document.getElementById('spinner');
+  const spinner = document.getElementById('spinner');
   spinner.style.top = py;
   spinner.style.left = px;
   $('#spinner').finish();
@@ -702,7 +726,7 @@ function spinnerNoDelayAbs(pthis, px, py) {
 }
 
 function spinner(pthis) {
-  var spinner = document.getElementById('spinner');
+  const spinner = document.getElementById('spinner');
   spinner.style.top = getPosition(pthis).y - 20 + 'px';
   spinner.style.left = getPosition(pthis).x + 'px';
   $('#spinner').finish();
@@ -726,33 +750,36 @@ function makeHttpObject() {
 
 function createMiniHandString(hand, index) {
   // Create a string containing the hand for North, South, East, or West, to go into the mini hand diagram
-  var points = 0;
-  var incPoints;
-  var cardSymbols = [
+  let points = 0;
+  let incPoints;
+  const cardSymbols = [
     '<img height=10px src="pics/spade.gif">',
     '<img height=10px src="pics/heart.gif">',
     '<img height=10px src="pics/diamond.gif">',
     '<img height=10px src="pics/club.gif">'
   ];
-  var suitLetters = ['S', 'H', 'D', 'C'];
-  var cardLetters = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+  const suitLetters = ['S', 'H', 'D', 'C'];
+  const cardLetters = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
   hand = hand.Deal[index];
   hand = hand.split('.');
-  var cardindex;
+  let cardindex;
 
-  var text = '';
+  let text = '';
 
   for (i = 0; i < 4; i++) {
-    var tmpstr = hand[i];
+    const tmpstr = hand[i];
 
     text = text + cardSymbols[i] + '&nbsp;';
 
     for (j = 0; j < tmpstr.length; j++) {
-      var card = tmpstr.charAt(j);
+      const card = tmpstr.charAt(j);
       var cardstr;
 
-      if (card != 'T') cardstr = card;
-      else cardstr = '10';
+      if (card != 'T') {
+        cardstr = card;
+      } else {
+        cardstr = '10';
+      }
 
       if (card == 'A') {
         incPoints = 4;
@@ -774,29 +801,35 @@ function createMiniHandString(hand, index) {
         cardindex = Number(card) - 2;
       }
 
-      if ((g_handEntryMode == 0) | (g_playableCards[i][cardindex] == -1))
+      if ((g_handEntryMode == 0) | (g_playableCards[i][cardindex] == -1)) {
         points = points + incPoints;
+      }
 
       text = text + convertHonourCards(cardstr);
     }
 
-    if (i != 3) text = text.concat('<BR>');
+    if (i != 3) {
+      text = text.concat('<BR>');
+    }
 
     text = '<SPAN style="font-size:12px;font-weight:normal;">' + text + '</SPAN>';
   }
 
-  var record = new Object();
+  const record = new Object();
 
-  var textstr = text;
-  var ruler = document.getElementById('ruler');
+  const textstr = text;
+  const ruler = document.getElementById('ruler');
 
   ruler.style.display = 'inline';
   ruler.innerHTML = textstr;
-  var align = 'margin:auto;width:' + ruler.offsetWidth + 'px;';
+  let align = 'margin:auto;width:' + ruler.offsetWidth + 'px;';
   ruler.style.display = 'none';
 
-  if (index == 1) align = 'float:left';
-  else if (index == 3) align = 'float:right;';
+  if (index == 1) {
+    align = 'float:left';
+  } else if (index == 3) {
+    align = 'float:right;';
+  }
 
   record.text =
     '<DIV style="text-align:left;' +
@@ -810,13 +843,15 @@ function createMiniHandString(hand, index) {
 }
 
 function convertHonourCards(para) {
-  var str = para;
+  let str = para;
 
   try {
     // in case html doesn't contain honourCardSet field
-    var value = document.getElementById('honourCardSet').value;
+    const value = document.getElementById('honourCardSet').value;
 
-    if (value == 'JQKA') return str;
+    if (value == 'JQKA') {
+      return str;
+    }
 
     if (value == 'BDKA') {
       str = str.replace(/J/g, 'B');
@@ -839,8 +874,8 @@ function convertHonourCards(para) {
 }
 
 function roundSym(num, decPlaces) {
-  var multi = Math.pow(10, decPlaces);
-  var value = (Math.round(multi * Math.abs(num)) / multi).toFixed(decPlaces);
+  const multi = Math.pow(10, decPlaces);
+  let value = (Math.round(multi * Math.abs(num)) / multi).toFixed(decPlaces);
   if (num < 0) {
     value = -value;
   }
@@ -848,152 +883,219 @@ function roundSym(num, decPlaces) {
 }
 
 function higherHonourCount(suit, base) {
-  var honours = '';
+  let honours = '';
 
-  if (base == 'T') honours = 'JQKA';
-  else if (base == 'J') honours = 'QKA';
-  else if (base == 'Q') honours = 'KA';
-  else if (base == 'K') honours = 'A';
+  if (base == 'T') {
+    honours = 'JQKA';
+  } else if (base == 'J') {
+    honours = 'QKA';
+  } else if (base == 'Q') {
+    honours = 'KA';
+  } else if (base == 'K') {
+    honours = 'A';
+  }
 
-  var cnt = 0;
+  let cnt = 0;
 
-  for (var i = 0; i < honours.length; i++) {
-    if (suit.includes(honours[i])) cnt++;
+  for (let i = 0; i < honours.length; i++) {
+    if (suit.includes(honours[i])) {
+      cnt++;
+    }
   }
 
   return cnt;
 }
 
 function krCalc(suits) {
-  var totcards = 0;
+  let totcards = 0;
 
   for (var i = 0; i < 4; i++) {
     totcards += suits[i].length;
   }
 
-  if (totcards != 13) return '';
+  if (totcards != 13) {
+    return '';
+  }
 
   // Kaplan Rubens Evaluator
-  var total = 0;
+  let total = 0;
 
   for (var i = 0; i < 4; i++) {
     var suit = suits[i];
-    var krpoints = 0;
+    let krpoints = 0;
 
-    if (suit.includes('A')) krpoints += 4;
-    if (suit.includes('K')) krpoints += 3;
-    if (suit.includes('Q')) krpoints += 2;
-    if (suit.includes('J')) krpoints += 1;
-    if (suit.includes('T')) krpoints += 0.5;
+    if (suit.includes('A')) {
+      krpoints += 4;
+    }
+    if (suit.includes('K')) {
+      krpoints += 3;
+    }
+    if (suit.includes('Q')) {
+      krpoints += 2;
+    }
+    if (suit.includes('J')) {
+      krpoints += 1;
+    }
+    if (suit.includes('T')) {
+      krpoints += 0.5;
+    }
 
     if ((suit.length >= 2) & (suit.length <= 6)) {
-      if (suit.includes('T'))
-        if (suit.includes('J') | (higherHonourCount(suit, 'J') >= 2)) krpoints += 0.5; // Rule 6
+      if (suit.includes('T')) {
+        if (suit.includes('J') | (higherHonourCount(suit, 'J') >= 2)) {
+          krpoints += 0.5;
+        }
+      } // Rule 6
 
-      if (suit.includes('9'))
-        if (suit.includes('8') | suit.includes('T') | (higherHonourCount(suit, 'T') == 2))
-          krpoints += 0.5; //Rule 7
+      if (suit.includes('9')) {
+        if (suit.includes('8') | suit.includes('T') | (higherHonourCount(suit, 'T') == 2)) {
+          krpoints += 0.5;
+        }
+      } //Rule 7
     }
 
     if ((suit.length >= 4) & (suit.length <= 6)) {
-      if (suit.includes('9'))
-        if (!suit.includes('8') & !suit.includes('T') & (higherHonourCount(suit, 'T') == 3))
-          krpoints += 0.5; // Rule 8
+      if (suit.includes('9')) {
+        if (!suit.includes('8') & !suit.includes('T') & (higherHonourCount(suit, 'T') == 3)) {
+          krpoints += 0.5;
+        }
+      } // Rule 8
     }
 
-    if (suit.length >= 7) if (!suit.includes('Q') | !suit.includes('J')) krpoints += 1; // Rule 9
+    if (suit.length >= 7) {
+      if (!suit.includes('Q') | !suit.includes('J')) {
+        krpoints += 1;
+      }
+    } // Rule 9
 
-    if (suit.length >= 8) if (!suit.includes('Q')) krpoints += 1; // Rule 10
+    if (suit.length >= 8) {
+      if (!suit.includes('Q')) {
+        krpoints += 1;
+      }
+    } // Rule 10
 
-    if (suit.length >= 9) if (!suit.includes('Q') & !suit.includes('J')) krpoints += 1; // Rule 11
+    if (suit.length >= 9) {
+      if (!suit.includes('Q') & !suit.includes('J')) {
+        krpoints += 1;
+      }
+    } // Rule 11
 
     krpoints = (suit.length * krpoints) / 10.0; // Rule 12
 
     //		alert(krpoints);
 
-    if (suit.includes('A')) krpoints += 3; //Rule 13
+    if (suit.includes('A')) {
+      krpoints += 3;
+    } //Rule 13
 
-    if (suit.includes('K') & (suit.length >= 2)) krpoints += 2; // Rule 14
+    if (suit.includes('K') & (suit.length >= 2)) {
+      krpoints += 2;
+    } // Rule 14
 
-    if (suit.includes('K') & (suit.length == 1)) krpoints += 0.5; // Rule 15
+    if (suit.includes('K') & (suit.length == 1)) {
+      krpoints += 0.5;
+    } // Rule 15
 
     if ((suit.length >= 3) & suit.includes('Q')) {
-      if (suit.includes('A') | suit.includes('K')) krpoints += 1; // Rule 16
+      if (suit.includes('A') | suit.includes('K')) {
+        krpoints += 1;
+      } // Rule 16
 
-      if (!suit.includes('A') & !suit.includes('K')) krpoints += 0.75; // Rule 17
+      if (!suit.includes('A') & !suit.includes('K')) {
+        krpoints += 0.75;
+      } // Rule 17
     }
 
     if ((suit.length == 2) & suit.includes('Q')) {
-      if (suit.includes('A') | suit.includes('K'))
-        krpoints += 0.5; // Rule 18
-      else krpoints += 0.25; // Rule 19
+      if (suit.includes('A') | suit.includes('K')) {
+        krpoints += 0.5;
+      } // Rule 18
+      else {
+        krpoints += 0.25;
+      } // Rule 19
     }
 
     if (suit.includes('J')) {
       var cnt = higherHonourCount(suit, 'J');
 
-      if (cnt == 2)
-        krpoints += 0.5; // Rule 20
-      else if (cnt == 1) krpoints += 0.25; // Rule 21
+      if (cnt == 2) {
+        krpoints += 0.5;
+      } // Rule 20
+      else if (cnt == 1) {
+        krpoints += 0.25;
+      } // Rule 21
     }
 
     if (suit.includes('T')) {
       var cnt = higherHonourCount(suit, 'T');
 
-      if (cnt == 2) krpoints += 0.25; // Rule 22
+      if (cnt == 2) {
+        krpoints += 0.25;
+      } // Rule 22
 
-      if (suit.includes('9') & (cnt == 1)) krpoints += 0.25; // Rule 23
+      if (suit.includes('9') & (cnt == 1)) {
+        krpoints += 0.25;
+      } // Rule 23
     }
 
-    if (suit.length == 0)
-      krpoints += 3; // Rule 24
-    else if (suit.length == 1)
-      krpoints += 2; // Rule 25
-    else if (suit.length == 2) krpoints += 1; // Rule 26
+    if (suit.length == 0) {
+      krpoints += 3;
+    } // Rule 24
+    else if (suit.length == 1) {
+      krpoints += 2;
+    } // Rule 25
+    else if (suit.length == 2) {
+      krpoints += 1;
+    } // Rule 26
 
     total += krpoints;
   }
 
   total = total - 1;
 
-  var cnt3 = 0;
+  let cnt3 = 0;
 
   for (var i = 0; i < 4; i++) {
     var suit = suits[i];
 
-    if (suit.length == 3) cnt3++;
+    if (suit.length == 3) {
+      cnt3++;
+    }
   }
 
-  if (cnt3 == 3)
-    // shape is 4-3-3-3
+  if (cnt3 == 3) // shape is 4-3-3-3
+  {
     total += 0.5;
+  }
 
   return total;
 }
 
 function createHandString(hand, index) {
   // Create a string containing the hand for North, South, East, or West, to go into the table above the traveller
-  var points = 0;
-  var incPoints;
-  var cardSymbolSize = 0.8 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
-  if (!g_isMobi) cardSymbolSize = 0.6 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
+  let points = 0;
+  let incPoints;
+  let cardSymbolSize = 0.8 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
+  if (!g_isMobi) {
+    cardSymbolSize = 0.6 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
+  }
 
-  var cardSymbols = [
+  const cardSymbols = [
     '<img height=' + cardSymbolSize + ' src="pics/spade.gif">',
     '<img height=' + cardSymbolSize + ' src="pics/heart.gif">',
     '<img height=' + cardSymbolSize + ' src="pics/diamond.gif">',
     '<img height=' + cardSymbolSize + ' src="pics/club.gif">'
   ];
-  var suitLetters = ['S', 'H', 'D', 'C'];
-  var cardLetters = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+  const suitLetters = ['S', 'H', 'D', 'C'];
+  const cardLetters = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
   hand = hand.Deal[index];
   hand = hand.split('.');
-  var cardindex;
-  var buttHeight = g_sectionHeight / 4 + 'px';
-  var showSubscript = false;
-  var showColourCode = false;
-  var cardFontSize = (0.9 * g_textBratio * g_sectionHeight) / 4 + 'px';
-  var subFontSize = 0.45 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
+  let cardindex;
+  const buttHeight = g_sectionHeight / 4 + 'px';
+  let showSubscript = false;
+  const showColourCode = false;
+  const cardFontSize = (0.9 * g_textBratio * g_sectionHeight) / 4 + 'px';
+  const subFontSize = 0.45 * ((g_textBratio * g_sectionHeight) / 4) + 'px';
 
   if ((index == 0) | (index == 2)) // North/South Hand
   {
@@ -1004,12 +1106,12 @@ function createHandString(hand, index) {
     showColorCode = !document.getElementById('ewrad3').checked;
   }
 
-  var matchSuit = -1;
-  var matchCard = -1;
+  let matchSuit = -1;
+  let matchCard = -1;
 
   if (g_showPlay) {
-    if (typeof g_hands.boards[g_lastBindex].Played != 'undefined') {
-      var played = g_hands.boards[g_lastBindex].Played;
+    if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+      const played = g_hands.boards[g_lastBindex].Played;
 
       if (g_currentPlayIndex < played.length) {
         if (
@@ -1017,23 +1119,23 @@ function createHandString(hand, index) {
           g_currentPlayIndex - 1
         ) // still following the actual cards played in the match
         {
-          var playedInMatch = played[g_currentPlayIndex];
-          var suitChars = 'SHDC';
+          const playedInMatch = played[g_currentPlayIndex];
+          const suitChars = 'SHDC';
           matchSuit = Number(suitChars.indexOf(playedInMatch.toUpperCase().charAt(0)));
 
-          var cardChars = '23456789TJQKA';
+          const cardChars = '23456789TJQKA';
           matchCard = cardChars.indexOf(playedInMatch.toUpperCase().charAt(1));
         }
       }
     }
   }
 
-  var text = '';
+  let text = '';
 
-  var krpoints = 0; // Kaplan Reuben evaluator points for this holding
+  let krpoints = 0; // Kaplan Reuben evaluator points for this holding
 
   for (i = 0; i < 4; i++) {
-    var tmpstr = hand[i];
+    const tmpstr = hand[i];
 
     text =
       text +
@@ -1044,11 +1146,14 @@ function createHandString(hand, index) {
       '</BUTTON>';
 
     for (j = 0; j < tmpstr.length; j++) {
-      var card = tmpstr.charAt(j);
+      const card = tmpstr.charAt(j);
       var cardstr;
 
-      if (card != 'T') cardstr = card;
-      else cardstr = '10';
+      if (card != 'T') {
+        cardstr = card;
+      } else {
+        cardstr = '10';
+      }
 
       if (card == 'A') {
         incPoints = 4;
@@ -1072,10 +1177,11 @@ function createHandString(hand, index) {
 
       cardstr = convertHonourCards(cardstr);
 
-      if ((g_handEntryMode == 0) | (g_playableCards[i][cardindex] == -1))
+      if ((g_handEntryMode == 0) | (g_playableCards[i][cardindex] == -1)) {
         points = points + incPoints;
+      }
 
-      var score = g_playableCards[i][cardindex];
+      const score = g_playableCards[i][cardindex];
       var id = suitLetters[i] + cardLetters[cardindex] + i + '' + cardindex;
 
       if (score >= 0) {
@@ -1099,31 +1205,35 @@ function createHandString(hand, index) {
             cardstr +
             '</SPAN></button>';
         } else {
-          var sup = '';
+          let sup = '';
           var color = '#FFFFFF';
 
           if (showColorCode) {
             color = '#FFFF00';
 
-            if (score == g_hiscore) color = '#00FF00';
+            if (score == g_hiscore) {
+              color = '#00FF00';
+            }
           }
 
           if (g_showPlay != 0) {
-            if ((matchSuit == i) & (matchCard == cardindex))
+            if ((matchSuit == i) & (matchCard == cardindex)) {
               sup =
                 '<SPAN style="font-size:' +
                 cardFontSize +
                 ';font-style:italic;color:blue;">*</SPAN>';
+            }
           }
 
           var id = suitLetters[i] + cardLetters[cardindex] + i + '' + cardindex;
-          var subscript = '';
+          let subscript = '';
 
-          if (showSubscript)
+          if (showSubscript) {
             subscript =
               '<SPAN><SUB style="font-size:12px;font-style:italic;vertical-align:-5%;">' +
               score +
               '</SUB></SPAN>';
+          }
 
           text =
             text +
@@ -1144,7 +1254,7 @@ function createHandString(hand, index) {
             subscript +
             '</button>';
         }
-      } else if (g_currentTrickCards[i][cardindex] != 0)
+      } else if (g_currentTrickCards[i][cardindex] != 0) {
         text =
           text +
           '<BUTTON style="margin:0px;background-color:#6699FF;color:white;height:' +
@@ -1154,7 +1264,7 @@ function createHandString(hand, index) {
           ";font-weight:bold;padding:1px;vertical-align:text-top\" disabled><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
           cardstr +
           '</SPAN></BUTTON> ';
-      else if (g_inactiveCards[i][cardindex] != 0)
+      } else if (g_inactiveCards[i][cardindex] != 0) {
         text =
           text +
           '<BUTTON style="margin:0px;border:0px;background-color:#EEEEEE;color:#CCCCCC;font-size:' +
@@ -1164,7 +1274,7 @@ function createHandString(hand, index) {
           ";padding:1px;vertical-align:text-top\"><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
           cardstr +
           '</SPAN></BUTTON> ';
-      else if ((g_handEntryMode == 0) | (g_inputDir != index))
+      } else if ((g_handEntryMode == 0) | (g_inputDir != index)) {
         text =
           text +
           '<BUTTON class=blankButton style="height:' +
@@ -1174,7 +1284,7 @@ function createHandString(hand, index) {
           ";font-weight:bold;\"><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
           cardstr +
           '</SPAN></BUTTON> ';
-      else
+      } else {
         text =
           text +
           '<button id="button' +
@@ -1186,27 +1296,33 @@ function createHandString(hand, index) {
           ";font-weight:bold;padding:1px;vertical-align:text-top\"><SPAN style='display:block:text-align:center;line-height:1em;'>" +
           cardstr +
           '<SUB style="font-size:12px;font-style:italic;vertical-align:-5%;">&#10004;</SUB></SPAN></button>';
+      }
     }
 
-    if (i != 3) text = text.concat('<BR>');
+    if (i != 3) {
+      text = text.concat('<BR>');
+    }
   }
 
   krpoints = krCalc(hand);
 
-  var record = new Object();
+  const record = new Object();
 
-  var textstr = text;
-  var ruler = document.getElementById('ruler');
+  const textstr = text;
+  const ruler = document.getElementById('ruler');
 
   ruler.style.display = 'inline';
   ruler.innerHTML = textstr;
-  var align = 'margin:auto;width:' + ruler.offsetWidth + 'px;';
+  let align = 'margin:auto;width:' + ruler.offsetWidth + 'px;';
   ruler.style.display = 'none';
 
-  if (index == 1) align = 'float:left';
-  else if (index == 3) align = 'float:right;';
+  if (index == 1) {
+    align = 'float:left';
+  } else if (index == 3) {
+    align = 'float:right;';
+  }
 
-  var pts = document.getElementById('points');
+  const pts = document.getElementById('points');
 
   record.text =
     '<DIV style="text-align:left;' +
@@ -1215,19 +1331,23 @@ function createHandString(hand, index) {
     text +
     '</SPAN></DIV>';
 
-  var kr = false;
-  var krid = document.getElementById('krcalc');
+  let kr = false;
+  const krid = document.getElementById('krcalc');
 
   if (krid !== null) {
     kr = krid.checked;
   }
 
-  if (kr)
-    if (krpoints !== '')
+  if (kr) {
+    if (krpoints !== '') {
       // Show Kaplan-Rubens points as well
       record.points = roundSym(krpoints, 2) + ' (' + points + ')';
-    else record.points = '--(' + points + ')';
-  else record.points = points;
+    } else {
+      record.points = '--(' + points + ')';
+    }
+  } else {
+    record.points = points;
+  }
 
   return record;
 }
@@ -1235,23 +1355,29 @@ function createHandString(hand, index) {
 function substituteSuitSymbol(contract) {
   // Adjust the contract string depending on the number of tricks actually made, e.g. 11 tricks in 3NT becomes 3NT+2
   // Also inserts suit symbols in place of letters in the contract and specifies a monospaced font for displaying the contract.
-  var symbolHeight = Math.floor(g_sectionHeight / 8) + 'px';
-  var cardSymbols = [
+  const symbolHeight = Math.floor(g_sectionHeight / 8) + 'px';
+  const cardSymbols = [
     '<img height=' + symbolHeight + ' src="pics/spade.gif">',
     '<img height=' + symbolHeight + ' src="pics/heart.gif">',
     '<img height=' + symbolHeight + ' src="pics/diamond.gif">',
     '<img height=' + symbolHeight + ' src="pics/club.gif">'
   ];
-  var suit = contract.charAt(1);
+  let suit = contract.charAt(1);
 
-  if (suit == 'S') suit = 0;
-  else if (suit == 'H') suit = 1;
-  else if (suit == 'D') suit = 2;
-  else if (suit == 'C') suit = 3;
-  else suit = -1;
+  if (suit == 'S') {
+    suit = 0;
+  } else if (suit == 'H') {
+    suit = 1;
+  } else if (suit == 'D') {
+    suit = 2;
+  } else if (suit == 'C') {
+    suit = 3;
+  } else {
+    suit = -1;
+  }
 
   if (suit != -1) {
-    if (contract.length > 2)
+    if (contract.length > 2) {
       return (
         contract.charAt(0) +
         '<SPAN style="font-size:17px;">' +
@@ -1259,21 +1385,24 @@ function substituteSuitSymbol(contract) {
         '</SPAN>' +
         contract.substr(2)
       );
-    else
+    } else {
       return contract.charAt(0) + '<SPAN style="font-size:17px;">' + cardSymbols[suit] + '</SPAN>';
-  } else return contract;
+    }
+  } else {
+    return contract;
+  }
 }
 
 function doPopup(pelement, text) {
   // Display popup box containing specified text at location of this element
-  var y = getPosition(pelement).y - 20 + 'px';
-  var x = getPosition(pelement).x + 'px';
+  const y = getPosition(pelement).y - 20 + 'px';
+  const x = getPosition(pelement).x + 'px';
   doPopupAt(text, x, y);
 }
 
 function doPopupAt(text, px, py) {
   // Display popup box containing specified text at location of this element
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.top = py + 'px';
   popup.style.left = px + 'px';
   popup.innerHTML = text;
@@ -1283,28 +1412,32 @@ function doPopupAt(text, px, py) {
 }
 
 function setCharAt(str, index, chr) {
-  if (index > str.length - 1) return str;
+  if (index > str.length - 1) {
+    return str;
+  }
   return str.substr(0, index) + chr + str.substr(index + 1);
 }
 
 function convertParContract(str) {
-  if (str.length <= 2) return str;
+  if (str.length <= 2) {
+    return str;
+  }
 
-  var firstNum = Number(str.charAt(0));
-  var lastNum = Number(str.charAt(str.length - 2));
-  var diff = lastNum - firstNum;
+  const firstNum = Number(str.charAt(0));
+  const lastNum = Number(str.charAt(str.length - 2));
+  const diff = lastNum - firstNum;
   str = str.charAt(0) + str.charAt(str.length - 1) + '+' + diff;
   return str;
 }
 
 function convertParContractString(str) {
-  var result = '';
-  var idx = 0;
+  let result = '';
+  let idx = 0;
 
   while (idx < str.length) {
-    var ch = str.charAt(idx);
+    let ch = str.charAt(idx);
     if (!isNaN(parseInt(ch, 10))) {
-      var firstIdx = idx;
+      const firstIdx = idx;
 
       idx++;
 
@@ -1312,7 +1445,9 @@ function convertParContractString(str) {
         ch = str.charAt(idx);
         if (!isNaN(parseInt(ch, 10))) {
           idx++;
-        } else break;
+        } else {
+          break;
+        }
       }
 
       idx++;
@@ -1327,24 +1462,28 @@ function convertParContractString(str) {
 }
 
 function updateParResults(data, pindex) {
-  var nsc = convertParContractString(data.contractsNS);
-  var ewc = convertParContractString(data.contractsEW);
-  var nss = data.scoreNS;
-  var ews = data.scoreEW;
+  let nsc = convertParContractString(data.contractsNS);
+  let ewc = convertParContractString(data.contractsEW);
+  let nss = data.scoreNS;
+  let ews = data.scoreEW;
 
   nss = nss.substring(3);
   ews = ews.substring(3);
 
-  var index = nss.indexOf('-');
-  if (index == -1) nss = '+' + nss;
+  let index = nss.indexOf('-');
+  if (index == -1) {
+    nss = '+' + nss;
+  }
 
   index = ews.indexOf('-');
-  if (index == -1) ews = '+' + ews;
+  if (index == -1) {
+    ews = '+' + ews;
+  }
 
   nsc = nsc.substring(3).trim();
   ewc = ewc.substring(3).trim();
 
-  var optstring;
+  let optstring;
 
   if (nsc == ewc) {
     optstring = nsc + '; ' + nss;
@@ -1354,23 +1493,25 @@ function updateParResults(data, pindex) {
 
   g_hands.boards[pindex].OptimumScore = optstring;
 
-  if (pindex == g_lastBindex) updateUpperLeftQuadrant(pindex);
+  if (pindex == g_lastBindex) {
+    updateUpperLeftQuadrant(pindex);
+  }
 }
 
 function displayHands() {
-  var north = document.getElementById('northHand');
-  var handstr = createHandString(g_hands.boards[g_lastBindex], 0);
+  const north = document.getElementById('northHand');
+  let handstr = createHandString(g_hands.boards[g_lastBindex], 0);
   north.innerHTML = handstr.text;
 
-  var east = document.getElementById('eastHand');
+  const east = document.getElementById('eastHand');
   handstr = createHandString(g_hands.boards[g_lastBindex], 1);
   east.innerHTML = handstr.text;
 
-  var south = document.getElementById('southHand');
+  const south = document.getElementById('southHand');
   handstr = createHandString(g_hands.boards[g_lastBindex], 2);
   south.innerHTML = handstr.text;
 
-  var west = document.getElementById('westHand');
+  const west = document.getElementById('westHand');
   handstr = createHandString(g_hands.boards[g_lastBindex], 3);
   west.innerHTML = handstr.text;
 }
@@ -1378,21 +1519,26 @@ function displayHands() {
 function processPosition(hcards, para) {
   // Updates the card display while in 'play' mode from the json data received back from the web server after a card is played.
   // hcards is a javascript object built from the json string received from the server.
-  var savehcards = hcards;
+  const savehcards = hcards;
 
   if (hcards.errno < 0) {
     alert(savehcards);
     alert(hcards.errmsg);
   }
 
-  var finished = '';
+  let finished = '';
 
   if (hcards.errno == 0) {
     g_currentPlayer = hcards.player;
-    if (g_currentPlayer == 'north') g_currentPlayer = 0;
-    else if (g_currentPlayer == 'east') g_currentPlayer = 1;
-    else if (g_currentPlayer == 'south') g_currentPlayer = 2;
-    else if (g_currentPlayer == 'west') g_currentPlayer = 3;
+    if (g_currentPlayer == 'north') {
+      g_currentPlayer = 0;
+    } else if (g_currentPlayer == 'east') {
+      g_currentPlayer = 1;
+    } else if (g_currentPlayer == 'south') {
+      g_currentPlayer = 2;
+    } else if (g_currentPlayer == 'west') {
+      g_currentPlayer = 3;
+    }
   }
 
   for (i = 0; i < 4; i++) {
@@ -1408,10 +1554,11 @@ function processPosition(hcards, para) {
       g_currentPlayIndex = hcards.trick * 4 + hcards.trickCard;
 
       // Check if cards played match what is stored in the hand record up to this point
-      if (g_currentPlayIndex == 0) g_lastMatchedPlayIndex = -1;
-      else {
-        if (typeof g_hands.boards[g_lastBindex].Played != 'undefined') {
-          var played = g_hands.boards[g_lastBindex].Played;
+      if (g_currentPlayIndex == 0) {
+        g_lastMatchedPlayIndex = -1;
+      } else {
+        if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+          const played = g_hands.boards[g_lastBindex].Played;
 
           if (g_lastMatchedPlayIndex >= g_currentPlayIndex - 2) {
             g_lastMatchedPlayIndex = g_currentPlayIndex - 2;
@@ -1423,29 +1570,31 @@ function processPosition(hcards, para) {
           ) // see if card just played is still part of sequence played in match
           {
             if (g_currentPlayIndex - 1 <= played.length - 1) {
-              var lastSuit = hcards.lastSuit;
-              var lastCard = hcards.lastCard;
+              const lastSuit = hcards.lastSuit;
+              const lastCard = hcards.lastCard;
 
-              var playedInMatch = played[g_currentPlayIndex - 1];
-              var suitChars = 'SHDC';
-              var matchSuit = Number(suitChars.indexOf(playedInMatch.toUpperCase().charAt(0)));
+              const playedInMatch = played[g_currentPlayIndex - 1];
+              const suitChars = 'SHDC';
+              const matchSuit = Number(suitChars.indexOf(playedInMatch.toUpperCase().charAt(0)));
 
-              var cardChars = '23456789TJQKA';
-              var matchCard = cardChars.indexOf(playedInMatch.charAt(1));
+              const cardChars = '23456789TJQKA';
+              const matchCard = cardChars.indexOf(playedInMatch.charAt(1));
 
               if ((lastSuit == matchSuit) & (lastCard == matchCard)) {
                 g_lastMatchedPlayIndex++;
 
-                if (typeof g_hands.boards[g_lastBindex].Claimed != 'undefined') {
-                  if ((g_lastMatchedPlayIndex == played.length - 1) & (played.length < 52))
-                    if (g_hands.boards[g_lastBindex].Claimed != '')
+                if (typeof g_hands.boards[g_lastBindex].Claimed !== 'undefined') {
+                  if ((g_lastMatchedPlayIndex == played.length - 1) & (played.length < 52)) {
+                    if (g_hands.boards[g_lastBindex].Claimed != '') {
                       finished =
                         '<BR><SPAN style="color:red;font-weight:bold;font-size:16px;">' +
                         g_hands.boards[g_lastBindex].Claimed +
                         ' Tricks Claimed</SPAN>';
-                    else
+                    } else {
                       finished =
                         '<BR><SPAN style="color:red;font-weight:bold;font-size:16px;">No More Cards Played</SPAN>';
+                    }
+                  }
                 }
               }
             }
@@ -1454,19 +1603,19 @@ function processPosition(hcards, para) {
       }
     }
 
-    var currentTrick = hcards.currentTrick;
+    const currentTrick = hcards.currentTrick;
 
     for (i = 0; i < currentTrick.length; i++) {
       g_currentTrickCards[currentTrick[i][0]][currentTrick[i][1]] = 1;
     }
 
-    var remaining = hcards.remaining;
+    const remaining = hcards.remaining;
 
     for (i = 0; i < 4; i++) {
-      var playerCardsRemaining = remaining[i];
+      const playerCardsRemaining = remaining[i];
 
       for (j = 0; j < 4; j++) {
-        var suitRemaining = playerCardsRemaining[j];
+        const suitRemaining = playerCardsRemaining[j];
 
         for (k = 0; k < suitRemaining.length; k++) {
           g_inactiveCards[j][suitRemaining[k]] = 0;
@@ -1474,28 +1623,32 @@ function processPosition(hcards, para) {
       }
     }
 
-    var cards = hcards.cards;
+    const cards = hcards.cards;
 
     g_hiscore = 0;
 
     for (i = 0; i < cards.length; i++) {
-      var data = cards[i];
-      var score = data.score;
-      var suits = data.values;
+      const data = cards[i];
+      let score = data.score;
+      const suits = data.values;
       var currentTricks;
 
-      if ((g_currentPlayer == 0) | (g_currentPlayer == 2))
-        // North/South
+      if ((g_currentPlayer == 0) | (g_currentPlayer == 2)) // North/South
+      {
         currentTricks = hcards.tricksNS;
-      else currentTricks = hcards.tricksEW;
+      } else {
+        currentTricks = hcards.tricksEW;
+      }
 
       // Add current tricks to tricks remaining to give total that can be made on this hand given current position
       score = score + currentTricks;
 
-      if (score > g_hiscore) g_hiscore = score;
+      if (score > g_hiscore) {
+        g_hiscore = score;
+      }
 
       for (j = 0; j < 4; j++) {
-        var values = suits[j];
+        const values = suits[j];
 
         for (k = 0; k < values.length; k++) {
           g_playableCards[j][values[k]] = score;
@@ -1505,15 +1658,15 @@ function processPosition(hcards, para) {
 
     if ((hcards.trick == 0) & (hcards.trickCard == 0)) {
       if ((g_session_contract.charAt(0) == '-') | (g_session_contract.charAt(0) == '*')) {
-        var maxTricksDeclarer = g_partialHandTotalTricks - g_hiscore;
-        var minusTricks;
+        const maxTricksDeclarer = g_partialHandTotalTricks - g_hiscore;
+        let minusTricks;
 
         if (g_partialHand == 0) {
           if (maxTricksDeclarer < 7) {
             minusTricks = 7 - maxTricksDeclarer;
             g_session_contract = '1' + g_session_contract.substring(1) + '-' + minusTricks;
           } else {
-            var contractTricks = maxTricksDeclarer - 6;
+            const contractTricks = maxTricksDeclarer - 6;
             g_session_contract = contractTricks + g_session_contract.substring(1);
           }
         } else // For partial hands just show the suit, not the level of contract
@@ -1523,16 +1676,18 @@ function processPosition(hcards, para) {
       }
     }
 
-    if (hcards.tricksNS + hcards.tricksEW == g_partialHandTotalTricks)
+    if (hcards.tricksNS + hcards.tricksEW == g_partialHandTotalTricks) {
       finished = '<BR><SPAN style="color:red;font-weight:bold;font-size:16px;">Finished</SPAN>';
+    }
 
-    var original = '';
+    let original = '';
 
-    if ((g_showPlay != 0) & (g_showOriginalContract == false))
+    if ((g_showPlay != 0) & (g_showOriginalContract == false)) {
       original =
         '<BR><SPAN style="font-size:12px;font-weight:normal;">(originally played in ' +
         g_hands.boards[g_lastBindex].Contract +
         ')</SPAN>';
+    }
 
     document.getElementById('currentPosition').innerHTML =
       '<SPAN style="font-weight:bold;font-size:16px;">Contract: ' +
@@ -1553,11 +1708,11 @@ function processPosition(hcards, para) {
 }
 
 function calldds(str) {
-  var board = g_hands.boards[g_lastBindex];
-  var deal = board.Deal;
-  var dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
+  const board = g_hands.boards[g_lastBindex];
+  const deal = board.Deal;
+  const dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
 
-  var msg = new Object();
+  const msg = new Object();
   msg.request = str;
 
   if (str !== 'q') {
@@ -1569,11 +1724,14 @@ function calldds(str) {
   msg.requesttoken = g_session;
   msg.sockref = g_session;
 
-  var context = new Object();
+  const context = new Object();
   context.request = msg.request;
 
-  if (str !== 'q') context.para = 'ongoing';
-  else context.para = 'quit';
+  if (str !== 'q') {
+    context.para = 'ongoing';
+  } else {
+    context.para = 'quit';
+  }
 
   msg.context = context;
 
@@ -1584,22 +1742,28 @@ function buttclick(pthis) {
   // When a button is clicked on a playable card this function send the card played to the server which will
   // then update the current position and return a json string containing it.
 
-  var cards = '23456789TJQKA';
-  var suits = 'SHDC';
+  const cards = '23456789TJQKA';
+  const suits = 'SHDC';
 
-  var str = pthis.id.replace('button', '');
-  var suit = Number(str.charAt(2));
-  var cd;
+  let str = pthis.id.replace('button', '');
+  const suit = Number(str.charAt(2));
+  let cd;
 
-  if (str.length == 4) cd = Number(str.charAt(3));
-  else cd = Number(str.substr(3));
+  if (str.length == 4) {
+    cd = Number(str.charAt(3));
+  } else {
+    cd = Number(str.substr(3));
+  }
 
   if (g_handEntryMode == 0) {
     str = str.substr(0, 2);
 
-    if (requestPending())
-      return; // Don't allow while there is a request in progress.
-    else setRequestTimeout(true);
+    if (requestPending()) {
+      return;
+    } // Don't allow while there is a request in progress.
+    else {
+      setRequestTimeout(true);
+    }
 
     /*		for (var i=0;i<4;i++)
 		{
@@ -1617,7 +1781,7 @@ function buttclick(pthis) {
     spinner(pthis);
     callddd(str);
   } else {
-    var count;
+    let count;
 
     // Check number of cards already allocated to this quadrant.
     if ((count = countAllocated(g_inputDir)) < 13) {
@@ -1626,15 +1790,20 @@ function buttclick(pthis) {
       g_playableCards[suit][cd] = -1;
       g_cardQuadrant[suit][cd] = g_inputDir;
 
-      var nextdir = g_inputDir;
-      var i;
+      let nextdir = g_inputDir;
+      let i;
 
       if (count == 13) {
         for (i = 0; i < 4; i++) {
-          if (nextdir == 3) nextdir = 0;
-          else nextdir++;
+          if (nextdir == 3) {
+            nextdir = 0;
+          } else {
+            nextdir++;
+          }
 
-          if (countAllocated(nextdir) == 0) break; // Found an empty quadrant
+          if (countAllocated(nextdir) == 0) {
+            break;
+          } // Found an empty quadrant
         }
 
         if (countAllocated(nextdir) == 0) {
@@ -1667,7 +1836,7 @@ function buttclick(pthis) {
       }
       processHandEntry();
     } else {
-      var compass = ['North', 'East', 'South', 'West'];
+      const compass = ['North', 'East', 'South', 'West'];
       displayError(
         document.getElementById('boardNumber'),
         '<SPAN style="font-size:18px;background-color:#FFFFEE;padding:10px;border:1px;border-color:black;">13 Cards already allocated to ' +
@@ -1682,8 +1851,8 @@ function buttclick(pthis) {
 
 function quitHandEntryMode() {
   if (g_handEntryMode != 0) {
-    var i, j;
-    var quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
+    let i, j;
+    const quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
 
     deselectCurrentDir(g_currentDir);
     g_handEntryMode = 0;
@@ -1698,8 +1867,8 @@ function quitHandEntryMode() {
 
 function exitHandEntryMode() {
   if (g_handEntryMode != 0) {
-    var i, j;
-    var quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
+    let i, j;
+    const quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
 
     deselectCurrentDir(g_currentDir);
     g_handEntryMode = 0;
@@ -1721,9 +1890,11 @@ function exitHandEntryMode() {
     $('#mainTitle').show();
     document.getElementById('editHand').innerHTML = 'Edit';
 
-    var ptsctl = document.getElementById('ptsctl');
+    const ptsctl = document.getElementById('ptsctl');
 
-    if (ptsctl !== null) ptsctl.style.display = 'inline';
+    if (ptsctl !== null) {
+      ptsctl.style.display = 'inline';
+    }
 
     document.getElementById('currentPosition').innerHTML = g_credits;
     showCredits();
@@ -1731,26 +1902,33 @@ function exitHandEntryMode() {
 }
 
 function showCredits() {
-  if (typeof g_hands.boards[g_lastBindex].Played != 'undefined')
-    if (g_hands.boards[g_lastBindex].Played.length > 1) return; // Board contains play data, so show bidding and replay controls instead of credits
+  if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+    if (g_hands.boards[g_lastBindex].Played.length > 1) {
+      return;
+    }
+  } // Board contains play data, so show bidding and replay controls instead of credits
 
   // Check for empty string first because toUpperCase() fails on empty string.
-  if (typeof g_hands.lin == 'undefined') {
-    if (g_file === '') document.getElementById('currentPosition').innerHTML = g_credits;
-    else if (g_file !== 1) {
-      if (!g_file.toUpperCase().endsWith('LIN'))
+  if (typeof g_hands.lin === 'undefined') {
+    if (g_file === '') {
+      document.getElementById('currentPosition').innerHTML = g_credits;
+    } else if (g_file !== 1) {
+      if (!g_file.toUpperCase().endsWith('LIN')) {
         document.getElementById('currentPosition').innerHTML = g_credits;
+      }
     }
   }
 }
 
 function countAllocated(index) {
-  var i, j;
-  var count = 0;
+  let i, j;
+  let count = 0;
 
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 13; j++) {
-      if ((g_cardQuadrant[i][j] == index) & (g_playableCards[i][j] == -1)) count++;
+      if ((g_cardQuadrant[i][j] == index) & (g_playableCards[i][j] == -1)) {
+        count++;
+      }
     }
   }
 
@@ -1758,12 +1936,14 @@ function countAllocated(index) {
 }
 
 function countUnallocated() {
-  var i, j;
-  var count = 0;
+  let i, j;
+  let count = 0;
 
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 13; j++) {
-      if (g_playableCards[i][j] != -1) count++;
+      if (g_playableCards[i][j] != -1) {
+        count++;
+      }
     }
   }
 
@@ -1774,12 +1954,15 @@ function deselectCard(pthis) {
   // When a button is clicked on a playable card this function send the card played to the server which will
   // then update the current position and return a json string containing it.
   clearMakeableOnInputBoard();
-  var str = pthis.id.replace('button', '');
-  var suit = Number(str.charAt(2));
-  var cd;
+  const str = pthis.id.replace('button', '');
+  const suit = Number(str.charAt(2));
+  let cd;
 
-  if (str.length == 4) cd = Number(str.charAt(3));
-  else cd = Number(str.substr(3));
+  if (str.length == 4) {
+    cd = Number(str.charAt(3));
+  } else {
+    cd = Number(str.substr(3));
+  }
 
   g_playableCards[suit][cd] = 1;
   processHandEntry();
@@ -1794,13 +1977,15 @@ function hideSpinner() {
 
 function log(pstr) {
   if (g_logging) {
-    var requestStr = 'log.htm?' + pstr + '&uniqueTID=' + new Date().getTime();
+    const requestStr = 'log.htm?' + pstr + '&uniqueTID=' + new Date().getTime();
     doRequestHTMLasync(requestStr, doNothing, doNothing, { para: 'log' });
   }
 }
 
 function callddd(pstr) {
-  if (pstr != 'q') calldds(pstr);
+  if (pstr != 'q') {
+    calldds(pstr);
+  }
 }
 
 function dddquitfunc(data, statusText, jqXHR) {
@@ -1809,7 +1994,7 @@ function dddquitfunc(data, statusText, jqXHR) {
 
 function getTindexByName(boards, boardName) {
   // Find the index of the hand corresponding to a particular traveller in the boards array
-  var i;
+  let i;
 
   for (i = 0; i < boards.length; i++) {
     if (boards[i].board.split('.').join('') == boardName.split('.').join('')) {
@@ -1822,7 +2007,7 @@ function getTindexByName(boards, boardName) {
 
 function getTindex(boards, traveller) {
   // Find the index of the hand corresponding to a particular traveller in the boards array
-  var i;
+  let i;
 
   for (i = 0; i < boards.length; i++) {
     if (boards[i].board == traveller + 1) {
@@ -1867,71 +2052,83 @@ function terminateSession() {
 }
 
 function playLinContract(auto = false, dest = 0) {
-  var declarerChars = 'NESW';
-  var leaderChars = 'ESWN';
+  const declarerChars = 'NESW';
+  const leaderChars = 'ESWN';
 
-  var board = g_hands.boards[g_lastBindex];
+  const board = g_hands.boards[g_lastBindex];
 
-  var contract = board.Contract;
+  let contract = board.Contract;
 
-  if (!g_showOriginalContract) contract = contract.replace(/[xX\*]/g, '');
+  if (!g_showOriginalContract) {
+    contract = contract.replace(/[xX\*]/g, '');
+  }
 
-  var contractChar = contract.charAt(1);
+  const contractChar = contract.charAt(1);
 
-  if (!auto) g_showPlay = 1;
+  if (!auto) {
+    g_showPlay = 1;
+  }
 
   playContract(board.Declarer, contract.charAt(1), contract, auto, dest);
 }
 
 function showBidding() {
-  var vul = g_hands.boards[g_lastBindex].Vulnerable;
-  var red = '#FF0000';
-  var green = '#00FF00';
-  var dirs = 'WNES';
-  var i, row;
-  var headerDiv = document.createElement('div');
-  var headerTable = document.createElement('table');
+  const vul = g_hands.boards[g_lastBindex].Vulnerable;
+  const red = '#FF0000';
+  const green = '#00FF00';
+  const dirs = 'WNES';
+  let i, row;
+  const headerDiv = document.createElement('div');
+  const headerTable = document.createElement('table');
   headerTable.className = 'bidding';
   headerTable.id = 'biddingHeader';
   headerTable.style.borderBottom = '0px';
   headerDiv.appendChild(headerTable);
   headerTable.insertRow(-1);
-  var headerRow = headerTable.rows[0];
+  const headerRow = headerTable.rows[0];
 
   for (i = 0; i < 4; i++) {
     headerRow.insertCell(-1);
-    var cell = headerRow.cells[i];
+    const cell = headerRow.cells[i];
     cell.style.width = '50px';
     cell.innerHTML = dirs.charAt(i);
 
     var color;
-    if (vul == 'All') color = red;
-    else if (vul == 'None') color = green;
-    else if ((i == 0) | (i == 2)) {
-      if (vul == 'EW') color = red;
-      else color = green;
+    if (vul == 'All') {
+      color = red;
+    } else if (vul == 'None') {
+      color = green;
+    } else if ((i == 0) | (i == 2)) {
+      if (vul == 'EW') {
+        color = red;
+      } else {
+        color = green;
+      }
     } else {
-      if (vul == 'NS') color = red;
-      else color = green;
+      if (vul == 'NS') {
+        color = red;
+      } else {
+        color = green;
+      }
     }
 
     cell.style.backgroundColor = color;
     cell.style.fontSize = g_bidFontSize;
   }
 
-  var el = document.createElement('div');
-  var table = document.createElement('table');
+  const el = document.createElement('div');
+  const table = document.createElement('table');
   table.className = 'bidding';
   table.id = 'bidding';
   el.appendChild(table);
 
-  var bids = g_hands.boards[g_lastBindex].Bids;
-  var dealer = g_hands.boards[g_lastBindex].Dealer;
-  var dealerChars = 'WNES';
-  var dealerIndex = dealerChars.indexOf(dealer);
+  const bids = g_hands.boards[g_lastBindex].Bids;
+  const dealer = g_hands.boards[g_lastBindex].Dealer;
+  const dealerChars = 'WNES';
+  const dealerIndex = dealerChars.indexOf(dealer);
 
-  var j = 0;
-  var k;
+  let j = 0;
+  let k;
 
   i = 0;
 
@@ -1952,14 +2149,20 @@ function showBidding() {
 
     row.insertCell(-1);
 
-    var components = bids[j].split('|');
-    var bd = components[0].toUpperCase();
-    var suffix = '';
-    if (bd.indexOf('!') != -1) suffix = '!';
+    const components = bids[j].split('|');
+    let bd = components[0].toUpperCase();
+    let suffix = '';
+    if (bd.indexOf('!') != -1) {
+      suffix = '!';
+    }
 
-    if (bd.charAt(0) == 'P') bd = 'Pass' + suffix;
-    else if (bd.charAt(0) == 'D') bd = 'x' + suffix;
-    else if (bd.charAt(0) == 'R') bd = 'xx' + suffix;
+    if (bd.charAt(0) == 'P') {
+      bd = 'Pass' + suffix;
+    } else if (bd.charAt(0) == 'D') {
+      bd = 'x' + suffix;
+    } else if (bd.charAt(0) == 'R') {
+      bd = 'xx' + suffix;
+    }
 
     if (components.length > 1) {
       row.cells[i].style.backgroundColor = 'yellow';
@@ -1973,11 +2176,13 @@ function showBidding() {
     row.cells[i].style.fontSize = g_bidFontSize;
     i++;
 
-    if (i > 3) i = 0;
+    if (i > 3) {
+      i = 0;
+    }
     j++;
   }
 
-  var boxHeight = (3 * g_sectionHeight) / 5 + 'px';
+  const boxHeight = (3 * g_sectionHeight) / 5 + 'px';
 
   return (
     '<div style="margin-left:35px;float:left;padding: 0; border:1px solid black; width: 200px;">' +
@@ -1992,12 +2197,12 @@ function showBidding() {
 
 function lottPair(direction) {
   // Law of Total Tricks
-  var suitChars = 'SHDC';
-  var tricks;
-  var board = g_hands.boards[g_lastBindex];
+  const suitChars = 'SHDC';
+  let tricks;
+  const board = g_hands.boards[g_lastBindex];
 
-  if (typeof board.Deal != 'undefined') {
-    var h1, h2;
+  if (typeof board.Deal !== 'undefined') {
+    let h1, h2;
 
     if (direction == 1) {
       h1 = board.Deal[0].split('.');
@@ -2009,10 +2214,10 @@ function lottPair(direction) {
 
     var max = 0;
     var suit;
-    var i;
+    let i;
 
     for (i = 0; i < 4; i++) {
-      var slen = h1[i].length + h2[i].length;
+      const slen = h1[i].length + h2[i].length;
 
       if (slen > max) {
         max = slen;
@@ -2020,7 +2225,7 @@ function lottPair(direction) {
       }
     }
 
-    var t1, t2;
+    let t1, t2;
 
     if (direction == 1) {
       t1 = getMakeableTricksForContract(g_lastBindex, '1' + suitChars.charAt(suit), 'N');
@@ -2032,27 +2237,32 @@ function lottPair(direction) {
 
     if ((t1 != -1) | (t2 != -1)) {
       tricks = t1;
-      if (t2 > t1) tricks = t2;
+      if (t2 > t1) {
+        tricks = t2;
+      }
     } else {
       tricks = -1;
     }
   }
 
-  var result = new Object();
+  const result = new Object();
   result.tricks = tricks;
   result.trumpCount = max;
   result.suit = suit;
 
-  if (tricks != -1) return result;
-  else return null;
+  if (tricks != -1) {
+    return result;
+  } else {
+    return null;
+  }
 }
 
 function lott() {
-  var ns = lottPair(1);
-  var ew = lottPair(2);
+  const ns = lottPair(1);
+  const ew = lottPair(2);
 
   if ((ns != null) & (ew != null)) {
-    var str =
+    const str =
       ns.tricks +
       ew.tricks +
       '-' +
@@ -2060,15 +2270,17 @@ function lott() {
       ' = ' +
       (ns.tricks + ew.tricks - ns.trumpCount - ew.trumpCount);
     return str;
-  } else return 'N/A';
+  } else {
+    return 'N/A';
+  }
 }
 
 function updateUpperLeftQuadrant(boardIndex) {
-  var btable;
-  var optFontSize = g_sectionHeight / 7 + 'px';
-  var lottFontSize = g_sectionHeight / 9 + 'px';
+  let btable;
+  const optFontSize = g_sectionHeight / 7 + 'px';
+  const lottFontSize = g_sectionHeight / 9 + 'px';
 
-  var lottStr =
+  const lottStr =
     '<BR><DIV style="margin-top:5px;"><SPAN id=lott style="font-size:' +
     lottFontSize +
     ';font-weight:bold;">LoTT: ' +
@@ -2077,33 +2289,37 @@ function updateUpperLeftQuadrant(boardIndex) {
 
   btable = document.getElementById('board');
 
-  var ocell = btable.rows[0].cells[0];
+  const ocell = btable.rows[0].cells[0];
   ocell.innerHTML = '';
 
-  var names = '';
-  var namesFound = true;
+  let names = '';
+  let namesFound = true;
 
-  if (typeof g_hands.boards[boardIndex].PlayerNames != 'undefined') {
-    if (g_hands.boards[boardIndex].PlayerNames.length > 0)
+  if (typeof g_hands.boards[boardIndex].PlayerNames !== 'undefined') {
+    if (g_hands.boards[boardIndex].PlayerNames.length > 0) {
       names = g_hands.boards[boardIndex].PlayerNames;
-    else namesFound = false;
-  } else if (typeof g_hands.PlayerNames != 'undefined') {
+    } else {
+      namesFound = false;
+    }
+  } else if (typeof g_hands.PlayerNames !== 'undefined') {
     names = g_hands.PlayerNames;
   } else {
     namesFound = false;
   }
 
   if (namesFound) {
-    var k;
-    var namstr =
+    let k;
+    let namstr =
       '<DIV style="text-align:left;border:1px solid grey;padding:2px;margin-left:10px;margin-right:10px;">';
-    var boardName = g_hands.boards[boardIndex].board;
-    var namOffset = 0;
-    if ((boardName.indexOf('.Closed') != -1) & (names.length == 8)) namOffset = 4;
-    var northName = names[namOffset + 2];
-    var southName = names[namOffset];
-    var westName = names[namOffset + 1];
-    var eastName = names[namOffset + 3];
+    const boardName = g_hands.boards[boardIndex].board;
+    let namOffset = 0;
+    if ((boardName.indexOf('.Closed') != -1) & (names.length == 8)) {
+      namOffset = 4;
+    }
+    const northName = names[namOffset + 2];
+    const southName = names[namOffset];
+    const westName = names[namOffset + 1];
+    const eastName = names[namOffset + 3];
 
     namstr =
       namstr +
@@ -2124,8 +2340,8 @@ function updateUpperLeftQuadrant(boardIndex) {
     ocell.style.verticalAlign = 'middle';
   }
 
-  if (typeof g_hands.boards[boardIndex].OptimumScore != 'undefined') {
-    if (g_hands.boards[boardIndex].OptimumScore != '')
+  if (typeof g_hands.boards[boardIndex].OptimumScore !== 'undefined') {
+    if (g_hands.boards[boardIndex].OptimumScore != '') {
       ocell.innerHTML =
         ocell.innerHTML +
         '<SPAN id=optStr style="font-weight:bold;font-size:' +
@@ -2135,13 +2351,14 @@ function updateUpperLeftQuadrant(boardIndex) {
         g_hands.boards[boardIndex].OptimumScore +
         '</SPAN>' +
         lottStr;
+    }
   } else {
     ocell.innerHTML = ocell.innerHTML + lottStr;
   }
 }
 
 function clearCardData() {
-  var i, j;
+  let i, j;
 
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 13; j++) {
@@ -2153,55 +2370,65 @@ function clearCardData() {
 }
 
 function validContract(contract) {
-  var levels = '1234567';
-  var suits = 'CDHSN';
+  const levels = '1234567';
+  const suits = 'CDHSN';
 
-  if (contract == null) return false;
-  if (contract.length < 2) return false;
+  if (contract == null) {
+    return false;
+  }
+  if (contract.length < 2) {
+    return false;
+  }
 
-  if (levels.indexOf(contract.charAt(0)) == -1) return false;
-  if (suits.indexOf(contract.charAt(1)) == -1) return false;
+  if (levels.indexOf(contract.charAt(0)) == -1) {
+    return false;
+  }
+  if (suits.indexOf(contract.charAt(1)) == -1) {
+    return false;
+  }
 
   return true;
 }
 
 function findPlayedCardDir(bindex, card) {
-  var suits = 'SHDC';
-  var curBoard = g_hands.boards[bindex];
-  var deal = curBoard.Deal;
-  var i, suitIndex;
+  const suits = 'SHDC';
+  const curBoard = g_hands.boards[bindex];
+  const deal = curBoard.Deal;
+  let i, suitIndex;
 
-  var suit = card.toUpperCase().charAt(0);
-  var value = card.toUpperCase().charAt(1);
+  const suit = card.toUpperCase().charAt(0);
+  const value = card.toUpperCase().charAt(1);
 
   suitIndex = suits.indexOf(suit);
 
   for (i = 0; i < 4; i++) {
-    var holding = deal[i].split('.');
+    const holding = deal[i].split('.');
 
-    if (holding[suitIndex].indexOf(value) != -1) return i; //0,1,2,3 = N,E,S,W
+    if (holding[suitIndex].indexOf(value) != -1) {
+      return i;
+    } //0,1,2,3 = N,E,S,W
   }
 
   return -1;
 }
 
 function calculateTricks(bindex) {
-  var sequence = '23456789TJQKA';
-  var trumpSuit;
-  var i, j;
-  var nstricks = 0;
-  var ewtricks = 0;
-  var tricks;
-  var tricksuit, card;
-  var winnerDir = -1;
-  var contract = g_hands.boards[bindex].Contract;
+  const sequence = '23456789TJQKA';
+  let trumpSuit;
+  let i, j;
+  let nstricks = 0;
+  let ewtricks = 0;
+  let tricks;
+  let tricksuit, card;
+  const winnerDir = -1;
+  const contract = g_hands.boards[bindex].Contract;
 
   if (validContract(contract)) {
     // Get trump suit
     trumpsuit = contract.charAt(1).toUpperCase();
 
-    var curBoard = g_hands.boards[bindex];
-    var played = curBoard.Played;
+    const curBoard = g_hands.boards[bindex];
+    const played = curBoard.Played;
 
     if (curBoard.Claimed == '') {
       if (played.length == 52) {
@@ -2227,12 +2454,18 @@ function calculateTricks(bindex) {
             }
           }
 
-          if ((trickdir == 0) | (trickdir == 2)) nstricks++;
-          else ewtricks++;
+          if ((trickdir == 0) | (trickdir == 2)) {
+            nstricks++;
+          } else {
+            ewtricks++;
+          }
         }
 
-        if ((curBoard.Declarer == 'N') | (curBoard.Declarer == 'S')) tricks = nstricks;
-        else tricks = ewtricks;
+        if ((curBoard.Declarer == 'N') | (curBoard.Declarer == 'S')) {
+          tricks = nstricks;
+        } else {
+          tricks = ewtricks;
+        }
       } else {
         return '';
       }
@@ -2240,11 +2473,15 @@ function calculateTricks(bindex) {
       tricks = curBoard.Claimed;
     }
 
-    var target = Number(contract.charAt(0)) + 6;
+    const target = Number(contract.charAt(0)) + 6;
 
-    if (tricks == target) return '';
-    else if (tricks > target) return '+' + (tricks - target);
-    else return tricks - target;
+    if (tricks == target) {
+      return '';
+    } else if (tricks > target) {
+      return '+' + (tricks - target);
+    } else {
+      return tricks - target;
+    }
   }
 }
 
@@ -2255,12 +2492,18 @@ function initTravRow(dir) {
 
     if (g_currentTraveller.traveller_line.length > 1) {
       if (dir == 1) {
-        if (g_currow < g_currentTraveller.traveller_line.length - 1) g_currow++;
-        else g_currow = 0;
+        if (g_currow < g_currentTraveller.traveller_line.length - 1) {
+          g_currow++;
+        } else {
+          g_currow = 0;
+        }
       } else {
         if (g_currentTraveller.traveller_line.length > 1) {
-          if (g_currow > 0) g_currow--;
-          else g_currow = g_currentTraveller.traveller_line.length - 1;
+          if (g_currow > 0) {
+            g_currow--;
+          } else {
+            g_currow = g_currentTraveller.traveller_line.length - 1;
+          }
         }
       }
     }
@@ -2278,8 +2521,11 @@ function initPrevTravRow() {
 function prevTravRow() {
   if (g_currentTraveller != null) {
     if (g_currentTraveller.traveller_line.length > 1) {
-      if (g_currow > 0) g_currow--;
-      else g_currow = g_currentTraveller.traveller_line.length - 1;
+      if (g_currow > 0) {
+        g_currow--;
+      } else {
+        g_currow = g_currentTraveller.traveller_line.length - 1;
+      }
     }
   } else {
     getHands({ callback: initPrevTravRow });
@@ -2298,8 +2544,11 @@ function initNextTravRow() {
 function nextTravRow() {
   if (g_currentTraveller != null) {
     if (g_currentTraveller.traveller_line.length > 1) {
-      if (g_currow < g_currentTraveller.traveller_line.length - 1) g_currow++;
-      else g_currow = 0;
+      if (g_currow < g_currentTraveller.traveller_line.length - 1) {
+        g_currow++;
+      } else {
+        g_currow = 0;
+      }
     }
   } else {
     getHands({ callback: initNextTravRow });
@@ -2321,12 +2570,12 @@ function setFieldsFromTravellerLine(bindex, tline) {
 }
 
 function setHandRecordFromLin(bindex, tline) {
-  var curBoard;
-  var lin;
+  let curBoard;
+  let lin;
 
-  if (typeof tline.board != 'undefined') {
+  if (typeof tline.board !== 'undefined') {
     curBoard = g_hands.boards[bindex];
-    var board = tline.board;
+    const board = tline.board;
 
     curBoard.PlayerNames = board.PlayerNames;
     curBoard.Dealer = board.Dealer;
@@ -2339,7 +2588,9 @@ function setHandRecordFromLin(bindex, tline) {
     curBoard.Contract = board.Contract;
     curBoard.Declarer = board.Declarer;
 
-    if (board.Played.length > 0) curBoard.lead = board.Played[0];
+    if (board.Played.length > 0) {
+      curBoard.lead = board.Played[0];
+    }
 
     return curBoard;
   } else {
@@ -2364,12 +2615,12 @@ function exitCardPlay() {
 }
 
 function updatePointsDisplay() {
-  var npts, epts, spts, wpts;
+  let npts, epts, spts, wpts;
 
-  var tindex = g_lastBindex;
+  const tindex = g_lastBindex;
 
   if (!g_handEntryMode) {
-    var handstr = createHandString(g_hands.boards[tindex], 0);
+    let handstr = createHandString(g_hands.boards[tindex], 0);
     npts = handstr.points;
 
     handstr = createHandString(g_hands.boards[tindex], 1);
@@ -2384,7 +2635,7 @@ function updatePointsDisplay() {
     npts = epts = spts = wpts = '';
   }
 
-  var points = document.getElementById('points');
+  const points = document.getElementById('points');
   points.rows[0].cells[1].innerHTML = npts;
   points.rows[1].cells[0].innerHTML = wpts;
   points.rows[1].cells[2].innerHTML = epts;
@@ -2393,9 +2644,9 @@ function updatePointsDisplay() {
 
 function setupTraveller(index, active) {
   var i, j, k;
-  var table = document.getElementById('traveller');
-  var hcards;
-  var boardChanged = false;
+  const table = document.getElementById('traveller');
+  let hcards;
+  let boardChanged = false;
 
   //	alert("setupTrav1: " + JSON.stringify(g_hands.boards[g_lastBindex]));
   //	alert("setupTrav1: " + JSON.stringify(g_hands.boards[0]));
@@ -2404,7 +2655,9 @@ function setupTraveller(index, active) {
 
   g_mode = 0; // Cancel play mode if it is active
 
-  if (index != g_lastBindex) boardChanged = true;
+  if (index != g_lastBindex) {
+    boardChanged = true;
+  }
 
   g_lastBindex = index;
 
@@ -2431,24 +2684,30 @@ function setupTraveller(index, active) {
     hideMenuItems();
   }
 
-  var rowButtonsVisibility = 'visibility:hidden';
+  let rowButtonsVisibility = 'visibility:hidden';
 
-  if (showTravellerRowButtons()) rowButtonsVisibility = '';
+  if (showTravellerRowButtons()) {
+    rowButtonsVisibility = '';
+  }
 
-  var curBoard = g_hands.boards[g_lastBindex];
+  let curBoard = g_hands.boards[g_lastBindex];
 
   if (g_travellers !== null) {
-    var traveller = getTravellerForBoard(g_lastBindex);
+    const traveller = getTravellerForBoard(g_lastBindex);
     g_currentTraveller = traveller;
     //		alert("from current traveller: " + JSON.stringify(g_currentTraveller.traveller_line[g_currow]));
 
     if (traveller != null) {
-      if (g_currentTraveller.traveller_line.length > 1) rowButtonsVisibility = '';
+      if (g_currentTraveller.traveller_line.length > 1) {
+        rowButtonsVisibility = '';
+      }
 
-      if (boardChanged) g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction);
+      if (boardChanged) {
+        g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction);
+      }
 
       if (g_currow != -1) {
-        var tline = g_currentTraveller.traveller_line[g_currow];
+        const tline = g_currentTraveller.traveller_line[g_currow];
 
         //				alert("tline: " + JSON.stringify(tline));
 
@@ -2469,26 +2728,34 @@ function setupTraveller(index, active) {
   if (active == true) {
     g_defaultContract = 0; // Assume no default contract defined.
 
-    if ((typeof curBoard.Contract != 'undefined') & (typeof curBoard.Declarer != 'undefined')) {
-      if (typeof curBoard.Played != 'undefined') {
-        var pbutton = '';
-        var isLin = false;
+    if ((typeof curBoard.Contract !== 'undefined') & (typeof curBoard.Declarer !== 'undefined')) {
+      if (typeof curBoard.Played !== 'undefined') {
+        let pbutton = '';
+        let isLin = false;
 
         if ((g_file != '') & (g_file !== 1)) {
-          if (g_file.toUpperCase().endsWith('LIN')) isLin = true;
+          if (g_file.toUpperCase().endsWith('LIN')) {
+            isLin = true;
+          }
         }
 
-        if (curBoard.Played.length > 1) isLin = true;
+        if (curBoard.Played.length > 1) {
+          isLin = true;
+        }
 
-        if (typeof curBoard.Bids != 'undefined') if (curBoard.Bids.length > 0) isLin = true;
+        if (typeof curBoard.Bids !== 'undefined') {
+          if (curBoard.Bids.length > 0) {
+            isLin = true;
+          }
+        }
 
         if (isLin) {
           if (validContract(curBoard.Contract)) {
-            var tricksOffset = calculateTricks(g_lastBindex);
-            var score = curBoard.Score;
+            const tricksOffset = calculateTricks(g_lastBindex);
+            let score = curBoard.Score;
 
             if (score != '') {
-              var ewscore = score;
+              let ewscore = score;
 
               if (ewscore.indexOf('%') != -1) {
                 ewscore = ewscore.replace('%', '');
@@ -2505,7 +2772,7 @@ function setupTraveller(index, active) {
               score = ' NS: ' + score + '&nbsp;&nbsp;&nbsp;EW: ' + ewscore;
             }
 
-            var bckbutton =
+            const bckbutton =
               '<BUTTON id=prevrow class=menuButton style="min-width:20px;max-width:20px;width:20px;max-height:' +
               g_urqButtonHeight +
               ';' +
@@ -2513,7 +2780,7 @@ function setupTraveller(index, active) {
               '" onclick="prevTravRow();"><SPAN id=prevRowButtFontSize style="font-weight:bold;font-size:' +
               g_urqButtFontSize +
               ';display:block:text-align:center;line-height:1em;"><</SPAN></BUTTON>&nbsp;';
-            var fwdbutton =
+            const fwdbutton =
               '&nbsp;<BUTTON id=nextrow class=menuButton style="min-width:20px;max-width:20px;width:20px;max-height:' +
               g_urqButtonHeight +
               ';' +
@@ -2521,7 +2788,7 @@ function setupTraveller(index, active) {
               '" onclick="nextTravRow();"><SPAN id=nextRowButtFontSize style="font-weight:bold;font-size:' +
               g_urqButtFontSize +
               ';display:block:text-align:center;line-height:1em;">><SPAN></BUTTON>';
-            var accbutton =
+            const accbutton =
               '&nbsp;<BUTTON id=accbutton class=menuButton style="margin-left:2px;min-width:35px;max-width:35px;width:35px;max-height:' +
               g_urqButtonHeight +
               ';" onclick="log(\'button=acc\');playLinContract(true,1);"><SPAN id=accButtFontSize style="font-weight:bold;font-size:' +
@@ -2556,30 +2823,32 @@ function setupTraveller(index, active) {
               '</SPAN></div>';
           }
 
-          var bidding = '';
+          let bidding = '';
 
-          if (typeof curBoard.Bids != 'undefined') {
+          if (typeof curBoard.Bids !== 'undefined') {
             bidding = showBidding();
           }
 
           document.getElementById('currentPosition').innerHTML = bidding + pbutton;
 
-          if (document.getElementById('accbutton') != null)
-            if (document.getElementById('accbutton').style.display == 'none')
+          if (document.getElementById('accbutton') != null) {
+            if (document.getElementById('accbutton').style.display == 'none') {
               document.getElementById('prevrow').style.marginLeft = '35px';
+            }
+          }
 
-          if (typeof curBoard.Bids != 'undefined') {
-            var bids = g_hands.boards[g_lastBindex].Bids;
+          if (typeof curBoard.Bids !== 'undefined') {
+            const bids = g_hands.boards[g_lastBindex].Bids;
 
             for (var j = 0; j < bids.length; j++) {
-              var cell = document.getElementById('bidIdx' + j);
+              const cell = document.getElementById('bidIdx' + j);
 
               if (cell != null) {
                 cell.onmouseover = cell.onclick = function () {
                   showBidAlert(this);
                 };
                 cell.onmouseout = function () {
-                  var popup = document.getElementById('popup_box');
+                  const popup = document.getElementById('popup_box');
                   popup.innerHTML = '';
                   popup.style.display = 'none';
                   $('#popup_box').finish();
@@ -2600,12 +2869,12 @@ function setupTraveller(index, active) {
         }
       }
 
-      var declStr = 'NSEW';
-      var suitStr = 'CDHSN';
+      const declStr = 'NSEW';
+      const suitStr = 'CDHSN';
 
       if (validContract(curBoard.Contract)) {
-        var declIndex = declStr.indexOf(curBoard.Declarer);
-        var suitIndex = suitStr.indexOf(curBoard.Contract.charAt(1));
+        const declIndex = declStr.indexOf(curBoard.Declarer);
+        const suitIndex = suitStr.indexOf(curBoard.Contract.charAt(1));
 
         g_defaultContract = 1;
         g_defaultContractIndex = declIndex * 5 + suitIndex;
@@ -2621,7 +2890,9 @@ function setupTraveller(index, active) {
   document.getElementById('southHand').style.height = '';
   document.getElementById('makeableContracts').className = 'mc'; // Revert to smaller font for makeable contracts table
 
-  if (g_session != 0) callddd('q'); // Terminate any double dummy playing g_session that is in progress.
+  if (g_session != 0) {
+    callddd('q');
+  } // Terminate any double dummy playing g_session that is in progress.
   g_session = 0;
   g_lastBindex = index;
 
@@ -2631,47 +2902,51 @@ function setupTraveller(index, active) {
     table.deleteRow(-1);
   }
 
-  var npts, spts, wpts, epts;
-  var tindex = index;
+  let npts, spts, wpts, epts;
+  const tindex = index;
 
   if (tindex == -1) {
     hide('play');
     $('#board').hide();
-  } else if (tindex != -1) tindex;
+  } else if (tindex != -1) {
+    tindex;
+  }
   {
-    var north = document.getElementById('northHand');
-    var handstr = createHandString(g_hands.boards[tindex], 0);
+    const north = document.getElementById('northHand');
+    let handstr = createHandString(g_hands.boards[tindex], 0);
     north.innerHTML = handstr.text;
     north.style.backgroundColor = '#EEEEEE';
     npts = handstr.points;
 
-    var east = document.getElementById('eastHand');
+    const east = document.getElementById('eastHand');
     handstr = createHandString(g_hands.boards[tindex], 1);
     east.innerHTML = handstr.text;
     east.style.backgroundColor = '#EEEEEE';
     epts = handstr.points;
 
-    var south = document.getElementById('southHand');
+    const south = document.getElementById('southHand');
     handstr = createHandString(g_hands.boards[tindex], 2);
     south.innerHTML = handstr.text;
     south.style.backgroundColor = '#EEEEEE';
     spts = handstr.points;
 
-    var west = document.getElementById('westHand');
+    const west = document.getElementById('westHand');
     handstr = createHandString(g_hands.boards[tindex], 3);
     west.innerHTML = handstr.text;
     west.style.backgroundColor = '#EEEEEE';
     wpts = handstr.points;
 
-    if (g_handEntryMode) npts = epts = spts = wpts = '';
+    if (g_handEntryMode) {
+      npts = epts = spts = wpts = '';
+    }
 
-    var points = document.getElementById('points');
+    const points = document.getElementById('points');
     points.rows[0].cells[1].innerHTML = npts;
     points.rows[1].cells[0].innerHTML = wpts;
     points.rows[1].cells[2].innerHTML = epts;
     points.rows[2].cells[1].innerHTML = spts;
 
-    var dealer = new Array(4);
+    const dealer = new Array(4);
     dealer['N'] = 'North';
     dealer['S'] = 'South';
     dealer['W'] = 'West';
@@ -2684,8 +2959,8 @@ function setupTraveller(index, active) {
       makeBoardNameString(g_hands.boards[g_lastBindex].board) +
       '</SPAN>';
 
-    var vul = g_hands.boards[tindex].Vulnerable;
-    var boardDealer = dealer[g_hands.boards[tindex].Dealer];
+    const vul = g_hands.boards[tindex].Vulnerable;
+    const boardDealer = dealer[g_hands.boards[tindex].Dealer];
 
     document.getElementById('nvul').innerHTML = '';
     document.getElementById('wvul').innerHTML = '';
@@ -2715,13 +2990,15 @@ function setupTraveller(index, active) {
       if (document.getElementById('play').innerHTML == 'Stop') {
         exitCardPlay();
       } else {
-        if (requestPending()) return;
+        if (requestPending()) {
+          return;
+        }
 
         terminateSession();
 
         //					if (g_defaultContract==0)
         {
-          var pos = getPosition(this);
+          const pos = getPosition(this);
           doPopupAt(
             'Tap any of the entries (including blank entries)in the makeable<BR>contracts table at any time to start playing that contract.',
             pos.x - 100,
@@ -2742,8 +3019,11 @@ function setupTraveller(index, active) {
     document.getElementById('help').onclick = function () {
       hideAllPopups();
 
-      if (g_session == 0) showHelp(this, 'commandHelp');
-      else showHelp(this, 'playHelp');
+      if (g_session == 0) {
+        showHelp(this, 'commandHelp');
+      } else {
+        showHelp(this, 'playHelp');
+      }
     };
 
     document.getElementById('options').onclick = function () {
@@ -2752,9 +3032,12 @@ function setupTraveller(index, active) {
     };
 
     document.getElementById('backPlay').onclick = function () {
-      if (requestPending())
-        return; // Don't allow while there is a request in progress.
-      else setRequestTimeout(true);
+      if (requestPending()) {
+        return;
+      } // Don't allow while there is a request in progress.
+      else {
+        setRequestTimeout(true);
+      }
 
       hideAllPopups();
       spinner(this);
@@ -2772,7 +3055,7 @@ function setupTraveller(index, active) {
   }
 
   if (active) {
-    var board = g_hands.boards[g_lastBindex];
+    const board = g_hands.boards[g_lastBindex];
 
     /*		if ((typeof g_hands.Title)!="undefined")
 			g_title = g_hands.Title;*/
@@ -2781,7 +3064,7 @@ function setupTraveller(index, active) {
 
     $('#mainTitle').show();
 
-    if (typeof g_hands.display == 'undefined') {
+    if (typeof g_hands.display === 'undefined') {
       if (
         (g_hands.boards[g_lastBindex].DoubleDummyTricks == '********************') |
         (g_hands.boards[g_lastBindex].DoubleDummyTricks == '--------------------')
@@ -2796,27 +3079,36 @@ function setupTraveller(index, active) {
 }
 
 function setDealerChar(dir, vul) {
-  var dealerCharWhite =
+  const dealerCharWhite =
     '<SPAN id=dealerChar style="font-size:' + g_dealerFontSize + 'px;color:white;">&#9679</SPAN>';
-  var dealerCharBlue =
+  const dealerCharBlue =
     '<SPAN id=dealerChar style="font-size:' + g_dealerFontSize + 'px;color:#0088ff;">&#9679</SPAN>';
-  var dealerChar = dealerCharBlue;
+  let dealerChar = dealerCharBlue;
 
-  if (vul == 'All') dealerChar = dealerCharWhite;
-  else if ((vul == 'NS') & ((dir == 'North') | (dir == 'South'))) dealerChar = dealerCharWhite;
-  else if ((vul == 'EW') & ((dir == 'East') | (dir == 'West'))) dealerChar = dealerCharWhite;
+  if (vul == 'All') {
+    dealerChar = dealerCharWhite;
+  } else if ((vul == 'NS') & ((dir == 'North') | (dir == 'South'))) {
+    dealerChar = dealerCharWhite;
+  } else if ((vul == 'EW') & ((dir == 'East') | (dir == 'West'))) {
+    dealerChar = dealerCharWhite;
+  }
 
-  if (dir == 'North') document.getElementById('nvul').innerHTML = dealerChar;
-  else if (dir == 'East') document.getElementById('evul').innerHTML = dealerChar;
-  else if (dir == 'South') document.getElementById('svul').innerHTML = dealerChar;
-  else if (dir == 'West') document.getElementById('wvul').innerHTML = dealerChar;
+  if (dir == 'North') {
+    document.getElementById('nvul').innerHTML = dealerChar;
+  } else if (dir == 'East') {
+    document.getElementById('evul').innerHTML = dealerChar;
+  } else if (dir == 'South') {
+    document.getElementById('svul').innerHTML = dealerChar;
+  } else if (dir == 'West') {
+    document.getElementById('wvul').innerHTML = dealerChar;
+  }
 }
 
 function clear() {
   if (g_handEntryMode != 0) {
     clearMakeableOnInputBoard();
     hideAllPopups();
-    var bnum = g_hands.boards[g_lastBindex].board;
+    const bnum = g_hands.boards[g_lastBindex].board;
     g_hands.boards[g_lastBindex] = {
       Dealer: 'N',
       Vulnerable: 'None',
@@ -2830,7 +3122,9 @@ function clear() {
 
 function edit() {
   if (g_handEntryMode == 0) {
-    if (requestPending()) return;
+    if (requestPending()) {
+      return;
+    }
 
     log('button=edit');
     g_edited = 0;
@@ -2839,15 +3133,17 @@ function edit() {
       (g_hands.boards[g_lastBindex].board.toString().indexOf('.edited') == -1) &
       ((g_test == 1) | (g_xml != ''))
     ) {
-      var board = JSON.parse(JSON.stringify(g_hands.boards[g_lastBindex]));
-      var bname =
+      const board = JSON.parse(JSON.stringify(g_hands.boards[g_lastBindex]));
+      const bname =
         g_hands.boards[g_lastBindex].board.toString().replace('.Open', '').replace('.Closed', '') +
         '.edited';
 
       // Does edited version already exist ?
       var index = getTindexByName(g_hands.boards, bname);
 
-      if (index == -1) var index = g_hands.boards.length;
+      if (index == -1) {
+        var index = g_hands.boards.length;
+      }
 
       g_hands.boards[index] = board;
       g_hands.boards[index].board = bname;
@@ -2883,8 +3179,8 @@ function edit() {
     show('clearHand');
     show('help');
 
-    var table = document.getElementById('board');
-    var cell = table.rows[0].cells[2];
+    const table = document.getElementById('board');
+    const cell = table.rows[0].cells[2];
     cell.innerHTML =
       '<SPAN style="font-size:18px;color:red;">Tap on N,S,E,W quadrants<BR>to edit the cards<BR>for that player</SPAN';
 
@@ -2921,8 +3217,8 @@ function clearMakeableOnInputBoard() {
 }
 
 function setupHandEntryBoard() {
-  var i, j, k;
-  var quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
+  let i, j, k;
+  const quadrant = ['northHand', 'eastHand', 'southHand', 'westHand'];
   g_handEntryMode = 1;
   g_inputDir = 0;
   var cards = '';
@@ -2930,7 +3226,7 @@ function setupHandEntryBoard() {
   g_inputBoard = g_hands.boards[g_lastBindex];
   g_cardQuadrant = new Array(4);
 
-  var table = document.getElementById('board');
+  const table = document.getElementById('board');
   table.rows[0].cells[0].innerHTML =
     '<SPAN style="font-size:22px;font-weight:bold;">Board:<BR>' + g_inputBoard.board + '</SPAN>';
 
@@ -2958,10 +3254,10 @@ function setupHandEntryBoard() {
       j < 4;
       j++ // For each suit
     ) {
-      var suitCards = cards[j];
+      const suitCards = cards[j];
 
       for (k = 0; k < suitCards.length; k++) {
-        var index = getCardIndex(suitCards[k]);
+        const index = getCardIndex(suitCards[k]);
         g_cardQuadrant[j][index] = i;
         g_playableCards[j][index] = -1;
       }
@@ -2976,18 +3272,21 @@ function setupHandEntryBoard() {
 }
 
 function deselectCurrentDir(index) {
-  var cardIndex = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
-  var i, j;
-  var cards2 = '';
+  const cardIndex = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+  let i, j;
+  let cards2 = '';
 
   if (index != -1) {
     for (i = 0; i < 4; i++) {
       for (j = 12; j >= 0; j--) {
-        if ((g_playableCards[i][j] == -1) & (g_cardQuadrant[i][j] == g_inputDir))
+        if ((g_playableCards[i][j] == -1) & (g_cardQuadrant[i][j] == g_inputDir)) {
           cards2 = cards2 + cardIndex[j];
+        }
       }
 
-      if (i != 3) cards2 = cards2 + '.';
+      if (i != 3) {
+        cards2 = cards2 + '.';
+      }
     }
 
     g_inputBoard.Deal[g_inputDir] = cards2;
@@ -2997,18 +3296,21 @@ function deselectCurrentDir(index) {
 }
 
 function initHandEntry() {
-  var cardStr = '23456789TJQKA';
-  var currentCards = g_inputBoard.Deal[g_inputDir].split('.');
-  var cards = '';
-  var i, j;
+  const cardStr = '23456789TJQKA';
+  const currentCards = g_inputBoard.Deal[g_inputDir].split('.');
+  let cards = '';
+  let i, j;
 
   for (i = 0; i < 4; i++) {
     for (j = 12; j >= 0; j--) {
-      if ((g_playableCards[i][j] != -1) | (g_cardQuadrant[i][j] == g_inputDir))
+      if ((g_playableCards[i][j] != -1) | (g_cardQuadrant[i][j] == g_inputDir)) {
         cards = cards + cardStr[j];
+      }
     }
 
-    if (i < 3) cards = cards + '.';
+    if (i < 3) {
+      cards = cards + '.';
+    }
   }
 
   g_inputBoard.Deal[g_inputDir] = cards;
@@ -3024,15 +3326,17 @@ function setVulnerability(vul) {
 }
 
 function setDealer(dealer) {
-  if (g_edited == 0) g_edited = 2; // Indicate Dealer modified (doesn't affect makeable contracts)
+  if (g_edited == 0) {
+    g_edited = 2;
+  } // Indicate Dealer modified (doesn't affect makeable contracts)
 
   g_inputBoard.Dealer = dealer.charAt(0);
   displayDealer(dealer, g_inputBoard.Vulnerable);
 }
 
 function showDeleteConfirmation() {
-  var htmltext;
-  var boardNam = g_hands.boards[g_lastBindex].board;
+  let htmltext;
+  const boardNam = g_hands.boards[g_lastBindex].board;
 
   if (g_hands.boards.length == 1) {
     htmltext = '<SPAN style="font-weight:bold;">Can\'t delete only board</SPAN><BR><BR>';
@@ -3049,7 +3353,7 @@ function showDeleteConfirmation() {
       '<BUTTON onclick="document.getElementById(\'popup_box\').style.display=\'none\';" style="width:80px;font-size:14px;padding:1px;text-align:center">No</BUTTON>';
   }
 
-  var buttLoc = getPosition(document.getElementById('deleteBoard'));
+  const buttLoc = getPosition(document.getElementById('deleteBoard'));
   doPopupNoTimeout(
     document.getElementById('deleteBoard'),
     htmltext,
@@ -3060,9 +3364,9 @@ function showDeleteConfirmation() {
 
 function newBoard(boardnum) {
   // Currently not used....
-  var i;
-  var dealerPattern = 'NESW';
-  var vulnerabilityPattern = [
+  let i;
+  const dealerPattern = 'NESW';
+  const vulnerabilityPattern = [
     'None',
     'NS',
     'EW',
@@ -3080,12 +3384,14 @@ function newBoard(boardnum) {
     'NS',
     'EW'
   ];
-  var currentBoardName = g_hands.boards[g_lastBindex].board;
-  var board = new Object();
-  var curTindex = g_lastBindex;
-  var idx = 1;
+  const currentBoardName = g_hands.boards[g_lastBindex].board;
+  const board = new Object();
+  const curTindex = g_lastBindex;
+  let idx = 1;
 
-  if (!isNaN(boardnum)) idx = Number(boardnum);
+  if (!isNaN(boardnum)) {
+    idx = Number(boardnum);
+  }
 
   board.Dealer = dealerPattern.charAt((idx - 1) % 4);
   board.Vulnerable = vulnerabilityPattern[(idx - 1) % 16];
@@ -3100,27 +3406,35 @@ function newBoard(boardnum) {
   }
 
   // Insert the new board at the correct position within the numbered boards.
-  var bnum = Number(board.board);
+  const bnum = Number(board.board);
 
   for (i = 0; i < g_hands.boards.length; i++) {
-    var cbd = g_hands.boards[i];
+    const cbd = g_hands.boards[i];
 
     if (!isNaN(cbd.board)) {
       if (Number(cbd.board) > bnum) {
-        var tmp = new Array();
+        const tmp = new Array();
         var j;
 
-        for (j = 0; j < i; j++) tmp[j] = g_hands.boards[j];
+        for (j = 0; j < i; j++) {
+          tmp[j] = g_hands.boards[j];
+        }
 
         tmp[i] = board;
 
-        for (j = i; j < g_hands.boards.length; j++) tmp[j + 1] = g_hands.boards[j];
+        for (j = i; j < g_hands.boards.length; j++) {
+          tmp[j + 1] = g_hands.boards[j];
+        }
 
         g_hands.boards = new Array();
 
-        for (j = 0; j < tmp.length; j++) g_hands.boards[j] = tmp[j];
+        for (j = 0; j < tmp.length; j++) {
+          g_hands.boards[j] = tmp[j];
+        }
 
-        if (curTindex >= i) g_lastBindex++;
+        if (curTindex >= i) {
+          g_lastBindex++;
+        }
 
         return;
       }
@@ -3131,30 +3445,40 @@ function newBoard(boardnum) {
 }
 
 function deleteBoard() {
-  var i;
-  var tmp = new Array();
+  let i;
+  const tmp = new Array();
 
-  if (g_hands.boards.length == 1) return;
+  if (g_hands.boards.length == 1) {
+    return;
+  }
 
   clearMakeableOnInputBoard();
 
-  for (i = 0; i < g_lastBindex; i++) tmp[i] = g_hands.boards[i];
+  for (i = 0; i < g_lastBindex; i++) {
+    tmp[i] = g_hands.boards[i];
+  }
 
-  for (i = g_lastBindex + 1; i < g_hands.boards.length; i++) tmp[i - 1] = g_hands.boards[i];
+  for (i = g_lastBindex + 1; i < g_hands.boards.length; i++) {
+    tmp[i - 1] = g_hands.boards[i];
+  }
 
   g_hands.boards = new Array();
 
-  for (i = 0; i < tmp.length; i++) g_hands.boards[i] = tmp[i];
+  for (i = 0; i < tmp.length; i++) {
+    g_hands.boards[i] = tmp[i];
+  }
 
-  if (g_lastBindex > g_hands.boards.length - 1) g_lastBindex = 0;
+  if (g_lastBindex > g_hands.boards.length - 1) {
+    g_lastBindex = 0;
+  }
 
   quitHandEntryMode();
 }
 
 function showDealerKeypad() {
-  var htmltext = '<SPAN style="font-weight:bold;">Select Dealer...</SPAN><BR>';
-  var dlr = ['North', 'East', 'South', 'West'];
-  var i;
+  let htmltext = '<SPAN style="font-weight:bold;">Select Dealer...</SPAN><BR>';
+  const dlr = ['North', 'East', 'South', 'West'];
+  let i;
 
   for (i = 0; i < 4; i++) {
     htmltext =
@@ -3171,14 +3495,14 @@ function showDealerKeypad() {
     htmltext +
     "<BR><BUTTON onclick=\"$(\'#popup_box\').hide();document.getElementById('popup_box').style.display='none';\">Cancel</BUTTON>";
 
-  var buttLoc = getPosition(document.getElementById('setDealer'));
+  const buttLoc = getPosition(document.getElementById('setDealer'));
   doPopupNoTimeout(document.getElementById('setDealer'), htmltext, buttLoc.x - 20, buttLoc.y - 20);
 }
 
 function showVulnerabilityKeypad() {
-  var htmltext = '<SPAN style="font-weight:bold;">Select Vulnerability...</SPAN><BR>';
-  var vul = ['None', 'NS', 'EW', 'All'];
-  var i;
+  let htmltext = '<SPAN style="font-weight:bold;">Select Vulnerability...</SPAN><BR>';
+  const vul = ['None', 'NS', 'EW', 'All'];
+  let i;
 
   for (i = 0; i < 4; i++) {
     htmltext =
@@ -3195,20 +3519,24 @@ function showVulnerabilityKeypad() {
     htmltext +
     "<BR><BUTTON style=\"cursor:pointer;\" onclick=\"$(\'#popup_box\').hide();document.getElementById('popup_box').style.display='none';\">Cancel</BUTTON>";
 
-  var buttLoc = getPosition(document.getElementById('setVul'));
+  const buttLoc = getPosition(document.getElementById('setVul'));
   doPopupNoTimeout(document.getElementById('setVul'), htmltext, buttLoc.x - 20, buttLoc.y - 20);
 }
 
 function displayVulnerability(vul, dealer) {
-  var vcolor = '#FF0000';
-  var nvcolor = '#00FF00';
-  var nscolor, ewcolor;
+  const vcolor = '#FF0000';
+  const nvcolor = '#00FF00';
+  let nscolor, ewcolor;
 
   nscolor = ewcolor = nvcolor;
 
-  if (vul == 'All') nscolor = ewcolor = vcolor;
-  else if (vul == 'NS') nscolor = vcolor;
-  else if (vul == 'EW') ewcolor = vcolor;
+  if (vul == 'All') {
+    nscolor = ewcolor = vcolor;
+  } else if (vul == 'NS') {
+    nscolor = vcolor;
+  } else if (vul == 'EW') {
+    ewcolor = vcolor;
+  }
 
   document.getElementById('nvul').style.backgroundColor = nscolor;
   document.getElementById('wvul').style.backgroundColor = ewcolor;
@@ -3225,43 +3553,48 @@ function displayDealer(dealer, vul) {
   document.getElementById('evul').innerHTML = '';
   document.getElementById('svul').innerHTML = '';
 
-  if (dealer == 'N') setDealerChar('North', vul);
-  else if (dealer == 'W') setDealerChar('West', vul);
-  else if (dealer == 'E') setDealerChar('East', vul);
-  else if (dealer == 'S') setDealerChar('South', vul);
+  if (dealer == 'N') {
+    setDealerChar('North', vul);
+  } else if (dealer == 'W') {
+    setDealerChar('West', vul);
+  } else if (dealer == 'E') {
+    setDealerChar('East', vul);
+  } else if (dealer == 'S') {
+    setDealerChar('South', vul);
+  }
 }
 
 function processHandEntry() {
-  var north = document.getElementById('northHand');
-  var handstr = createHandString(g_inputBoard, 0);
+  const north = document.getElementById('northHand');
+  let handstr = createHandString(g_inputBoard, 0);
   north.innerHTML = handstr.text;
   north.style.backgroundColor = '#EEEEEE';
   npts = handstr.points;
-  var east = document.getElementById('eastHand');
+  const east = document.getElementById('eastHand');
   handstr = createHandString(g_inputBoard, 1);
   east.innerHTML = handstr.text;
   east.style.backgroundColor = '#EEEEEE';
   epts = handstr.points;
-  var south = document.getElementById('southHand');
+  const south = document.getElementById('southHand');
   handstr = createHandString(g_inputBoard, 2);
   south.innerHTML = handstr.text;
   south.style.backgroundColor = '#EEEEEE';
   spts = handstr.points;
 
-  var west = document.getElementById('westHand');
+  const west = document.getElementById('westHand');
   handstr = createHandString(g_inputBoard, 3);
   west.innerHTML = handstr.text;
   west.style.backgroundColor = '#EEEEEE';
   wpts = handstr.points;
 
-  var points = document.getElementById('points');
+  const points = document.getElementById('points');
 
   points.rows[0].cells[1].innerHTML = '';
   points.rows[1].cells[0].innerHTML = '';
   points.rows[1].cells[2].innerHTML = '';
   points.rows[2].cells[1].innerHTML = '';
 
-  var dealer = new Array(4);
+  const dealer = new Array(4);
   dealer['N'] = 'North';
   dealer['S'] = 'South';
   dealer['W'] = 'West';
@@ -3270,37 +3603,45 @@ function processHandEntry() {
   document.getElementById('boardNumber').innerHTML =
     '<SPAN style="font-size:48px;">' + makeBoardNameString(g_inputBoard.board) + '</SPAN>';
 
-  var vul = g_inputBoard.Vulnerable;
-  var boardDealer = dealer[g_inputBoard.Dealer];
+  const vul = g_inputBoard.Vulnerable;
+  const boardDealer = dealer[g_inputBoard.Dealer];
 
   document.getElementById('nvul').innerHTML = '';
   document.getElementById('wvul').innerHTML = '';
   document.getElementById('evul').innerHTML = '';
   document.getElementById('svul').innerHTML = '';
 
-  var dealerChar = '&#9679';
+  const dealerChar = '&#9679';
 
-  if (boardDealer == 'North') document.getElementById('nvul').innerHTML = dealerChar;
-  else if (boardDealer == 'West') document.getElementById('wvul').innerHTML = dealerChar;
-  else if (boardDealer == 'East') document.getElementById('evul').innerHTML = dealerChar;
-  else if (boardDealer == 'South') document.getElementById('svul').innerHTML = dealerChar;
+  if (boardDealer == 'North') {
+    document.getElementById('nvul').innerHTML = dealerChar;
+  } else if (boardDealer == 'West') {
+    document.getElementById('wvul').innerHTML = dealerChar;
+  } else if (boardDealer == 'East') {
+    document.getElementById('evul').innerHTML = dealerChar;
+  } else if (boardDealer == 'South') {
+    document.getElementById('svul').innerHTML = dealerChar;
+  }
 
   displayVulnerability(vul, boardDealer);
 
-  var contracts = document.getElementById('makeableContracts');
-  var rows = contracts.rows;
+  const contracts = document.getElementById('makeableContracts');
+  const rows = contracts.rows;
 
-  var cvector = g_inputBoard.DoubleDummyTricks;
+  const cvector = g_inputBoard.DoubleDummyTricks;
 
   redrawMCTable(true);
 
-  if ((g_test == 1) | (g_xml != ''))
-    // Show only Set Vulnerability if travellers are available - can't save the board so no point showing Dealer
+  if (
+    (g_test == 1) |
+    (g_xml != '')
+  ) // Show only Set Vulnerability if travellers are available - can't save the board so no point showing Dealer
+  {
     document.getElementById('boardNumber').innerHTML =
       '<BUTTON id=setVul class=doubleHeightMenuButton style="min-width:' +
       g_vulBarLength +
       'px;">Change<BR>Vul</BUTTON>';
-  else {
+  } else {
     document.getElementById('boardNumber').innerHTML =
       '<BUTTON id=setDealer class=doubleHeightMenuButton style="min-width:' +
       g_vulBarLength +
@@ -3342,17 +3683,20 @@ function processHandEntry() {
   document.getElementById('editHand').onclick = edit;
   document.getElementById('clearHand').onclick = clear;
 
-  var ptsctl = document.getElementById('ptsctl');
+  const ptsctl = document.getElementById('ptsctl');
 
-  if (ptsctl !== null) ptsctl.style.display = 'none';
+  if (ptsctl !== null) {
+    ptsctl.style.display = 'none';
+  }
 }
 
 function makeBoardNameString(boardName) {
   boardName = boardName.split('.');
-  var result = boardName[0];
+  let result = boardName[0];
 
-  if (boardName.length > 1)
+  if (boardName.length > 1) {
     result = result + '<BR><SPAN style="font-size:12px;">' + boardName[1] + '</SPAN>';
+  }
 
   return result;
 }
@@ -3361,7 +3705,9 @@ function hideMenuItems() {
   hide('prev');
   hide('showBoards');
   hide('gotoBoard');
-  if (document.getElementById('saveLIN') != null) hide('saveLIN');
+  if (document.getElementById('saveLIN') != null) {
+    hide('saveLIN');
+  }
   hide('saveBoards');
   hide('backPlay');
   hideForwardPlay();
@@ -3396,8 +3742,11 @@ function showMainMenuItems() {
   }
 
   if ((g_test != 1) & (g_xml == '')) {
-    if (typeof g_hands.lin !== 'undefined')
-      if (document.getElementById('saveLIN') != null) show('saveLIN');
+    if (typeof g_hands.lin !== 'undefined') {
+      if (document.getElementById('saveLIN') != null) {
+        show('saveLIN');
+      }
+    }
 
     document.getElementById('saveBoards').innerHTML = 'Save'; // **** Remove this assignment when html is no longer cached.
     show('saveBoards');
@@ -3411,20 +3760,25 @@ function showMainMenuItems() {
 }
 
 function checkPlayerNameForTline(name, names) {
-  var namePresent = false;
+  const namePresent = false;
 
-  for (var i = 0; i < 4; i++) {
-    if (names[i] == name) return true;
+  for (let i = 0; i < 4; i++) {
+    if (names[i] == name) {
+      return true;
+    }
   }
 
   return false;
 }
 
 function checkAccsProcessedForName(name) {
-  var keys = Object.keys(g_accTrans[name].transList);
+  const keys = Object.keys(g_accTrans[name].transList);
 
-  if (keys.length == 0) return true;
-  else return false;
+  if (keys.length == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function allAccsProcessed(name = null) {
@@ -3432,8 +3786,10 @@ function allAccsProcessed(name = null) {
     return checkAccsProcessedForName(name);
   } else // Check if finished for all names
   {
-    for (var key in g_accTrans) {
-      if (!checkAccsProcessedForName(key)) return false;
+    for (const key in g_accTrans) {
+      if (!checkAccsProcessedForName(key)) {
+        return false;
+      }
     }
   }
 
@@ -3441,26 +3797,31 @@ function allAccsProcessed(name = null) {
 }
 
 function accCalcPossibleForBoard(board) {
-  var possible = false;
+  const possible = false;
 
-  if (typeof board == 'undefined') return false;
+  if (typeof board === 'undefined') {
+    return false;
+  }
 
-  if ((typeof board.Played !== 'undefined') & (typeof board.PlayerNames !== 'undefined'))
-    if (board.Played.length > 1) return true;
+  if ((typeof board.Played !== 'undefined') & (typeof board.PlayerNames !== 'undefined')) {
+    if (board.Played.length > 1) {
+      return true;
+    }
+  }
 
   return false;
 }
 
 function accCalcPossible() {
-  var found = false;
+  let found = false;
 
-  for (var i = 0; i < g_hands.boards.length; i++) {
+  for (let i = 0; i < g_hands.boards.length; i++) {
     if (g_travellers !== null) {
-      var traveller = getTravellerForBoard(i);
+      const traveller = getTravellerForBoard(i);
 
-      var tlines = traveller.traveller_line;
+      const tlines = traveller.traveller_line;
 
-      for (var j = 0; j < tlines.length; j++) {
+      for (let j = 0; j < tlines.length; j++) {
         var board = tlines[j].board;
 
         if (accCalcPossibleForBoard(board)) {
@@ -3477,39 +3838,46 @@ function accCalcPossible() {
       }
     }
 
-    if (found) break;
+    if (found) {
+      break;
+    }
   }
 
   return found;
 }
 
 function processAccs(name = null) {
-  for (var key in g_accTrans) g_accTrans[key].transList = new Object();
+  for (const key in g_accTrans) {
+    g_accTrans[key].transList = new Object();
+  }
 
-  var requestCount = 0;
+  let requestCount = 0;
   showEmptyProgressBar('Calculating accuracy of play for all participants');
 
-  for (var i = 0; i < g_hands.boards.length; i++) {
+  for (let i = 0; i < g_hands.boards.length; i++) {
     if (g_travellers !== null) {
-      var traveller = getTravellerForBoard(i);
+      const traveller = getTravellerForBoard(i);
 
-      if (traveller == null) continue;
+      if (traveller == null) {
+        continue;
+      }
 
-      var tlines = traveller.traveller_line;
+      const tlines = traveller.traveller_line;
 
       if (typeof tlines !== 'undefined') {
-        for (var j = 0; j < tlines.length; j++) {
+        for (let j = 0; j < tlines.length; j++) {
           var accPresent = false;
 
           if (typeof tlines[j].board !== 'undefined') {
-            if (typeof tlines[j].board.acc == 'undefined') {
+            if (typeof tlines[j].board.acc === 'undefined') {
               tlines[j].board.acc = [-1, -1, -1, -1]; // Create array to hold results, -1 indicates player didn't play this board (e.g. was Dummy)
             } else {
-              for (var k = 0; k < 4; k++)
+              for (var k = 0; k < 4; k++) {
                 if (tlines[j].board.acc[k] !== -1) {
                   accPresent = true;
                   break;
                 }
+              }
             }
 
             if (!passed(tlines[j]) & !accPresent & accCalcPossibleForBoard(tlines[j].board)) {
@@ -3521,16 +3889,17 @@ function processAccs(name = null) {
       }
     } else {
       var accPresent = false;
-      var board = g_hands.boards[i];
+      const board = g_hands.boards[i];
 
-      if (typeof board.acc == 'undefined') {
+      if (typeof board.acc === 'undefined') {
         board.acc = [-1, -1, -1, -1]; // Create array to hold results, -1 indicates player didn't play this board (e.g. was Dummy)
       } else {
-        for (var k = 0; k < 4; k++)
+        for (var k = 0; k < 4; k++) {
           if (board.acc[k] !== -1) {
             accPresent = true;
             break;
           }
+        }
       }
 
       if ((board.Contract !== 'Passed') & !accPresent & accCalcPossibleForBoard(board)) {
@@ -3548,19 +3917,19 @@ function processAccs(name = null) {
 }
 
 function makeAccRequest(board, bdindex, tindex) {
-  var declCHARS = 'NSEW';
-  var playedCards = '';
-  var names;
+  const declCHARS = 'NSEW';
+  let playedCards = '';
+  let names;
 
   names = board.PlayerNames;
 
   var context = { names: names, declarer: board.Declarer, dest: 1 };
 
-  var deal = board.Deal;
-  var dealstr = deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
+  const deal = board.Deal;
+  const dealstr = deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
   // Check number of cards in each hand is the same and greater than zero. Allow for embedded dots in hand strings
-  var handlen = deal[0].length;
-  var k;
+  const handlen = deal[0].length;
+  let k;
 
   if (
     (deal[0].length == 3) &
@@ -3583,18 +3952,20 @@ function makeAccRequest(board, bdindex, tindex) {
     }
   }
 
-  if (typeof board.Played != 'undefined') {
-    var played = board.Played;
+  if (typeof board.Played !== 'undefined') {
+    const played = board.Played;
 
     if (played.length > 1) {
-      for (var i = 0; i < played.length; i++) playedCards = playedCards + played[i];
+      for (var i = 0; i < played.length; i++) {
+        playedCards = playedCards + played[i];
+      }
     }
   }
 
-  var leaderChars = 'ewsn'; // Declarer is one place to the right of leader
-  var leader = leaderChars.charAt(declCHARS.indexOf(board.Declarer));
+  const leaderChars = 'ewsn'; // Declarer is one place to the right of leader
+  const leader = leaderChars.charAt(declCHARS.indexOf(board.Declarer));
 
-  var msg = new Object();
+  const msg = new Object();
   msg.request = 'a';
   msg.cards = playedCards;
   msg.trumps = board.Contract.charAt(1);
@@ -3607,7 +3978,9 @@ function makeAccRequest(board, bdindex, tindex) {
   context.tid = g_bgTrans++;
   context.names = names;
 
-  for (var i = 0; i < 4; i++) g_accTrans[names[i]].transList[context.tid] = 1;
+  for (var i = 0; i < 4; i++) {
+    g_accTrans[names[i]].transList[context.tid] = 1;
+  }
 
   context.bdindex = bdindex;
   context.tindex = tindex;
@@ -3618,12 +3991,14 @@ function makeAccRequest(board, bdindex, tindex) {
   g_mworkers[g_nextmworker].postMessage(msg);
 
   g_nextmworker++;
-  if (g_nextmworker >= g_mworkers.length) g_nextmworker = 0;
+  if (g_nextmworker >= g_mworkers.length) {
+    g_nextmworker = 0;
+  }
   g_completionTarget++;
 }
 
 function makeAccKey(board) {
-  var key = new Object();
+  const key = new Object();
 
   key.names = board.PlayerNames;
   key.deal = board.Deal;
@@ -3634,15 +4009,19 @@ function makeAccKey(board) {
 }
 
 function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
-  if (requestPending()) return; // There is still a request outstanding.
+  if (requestPending()) {
+    return;
+  } // There is still a request outstanding.
 
-  var declCHARS = 'NSEW';
-  var playedCards = '';
-  var names;
+  const declCHARS = 'NSEW';
+  let playedCards = '';
+  let names;
 
   hideAllPopups();
 
-  if (g_session != 0) callddd('q'); // Terminate any ddd session that is currently in progress
+  if (g_session != 0) {
+    callddd('q');
+  } // Terminate any ddd session that is currently in progress
 
   terminateSession();
   exitHandEntryMode();
@@ -3650,9 +4029,9 @@ function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
   clearCardData();
   displayHands();
 
-  if (typeof g_hands.boards[g_lastBindex] != 'undefined')
+  if (typeof g_hands.boards[g_lastBindex] !== 'undefined') {
     names = g_hands.boards[g_lastBindex].PlayerNames;
-  else {
+  } else {
     names = new Array();
     names[0] = 'S';
     names[1] = 'W';
@@ -3662,11 +4041,11 @@ function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
 
   var context = { names: names, declarer: declarer, dest: dest };
 
-  var deal = g_hands.boards[g_lastBindex].Deal;
+  const deal = g_hands.boards[g_lastBindex].Deal;
   var dealstr = deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
   // Check number of cards in each hand is the same and greater than zero. Allow for embedded dots in hand strings
-  var handlen = deal[0].length;
-  var k;
+  const handlen = deal[0].length;
+  let k;
 
   if (
     (deal[0].length == 3) &
@@ -3689,24 +4068,29 @@ function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
     }
   }
 
-  if (typeof g_hands.boards[g_lastBindex].Played != 'undefined') {
-    var played = g_hands.boards[g_lastBindex].Played;
+  if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+    const played = g_hands.boards[g_lastBindex].Played;
 
     if (played.length > 1) {
-      for (var i = 0; i < played.length; i++) playedCards = playedCards + played[i];
+      for (let i = 0; i < played.length; i++) {
+        playedCards = playedCards + played[i];
+      }
     }
   }
 
-  var leaderChars = 'ewsn'; // Declarer is one place to the right of leader
-  var leader = leaderChars.charAt(declCHARS.indexOf(declarer));
+  const leaderChars = 'ewsn'; // Declarer is one place to the right of leader
+  const leader = leaderChars.charAt(declCHARS.indexOf(declarer));
 
   setRequestTimeout();
 
   if (!auto) {
     g_session_declarer = declarer;
 
-    if (g_showOriginalContract) g_session_contract = contract;
-    else g_session_contract = '*' + contract.substring(1);
+    if (g_showOriginalContract) {
+      g_session_contract = contract;
+    } else {
+      g_session_contract = '*' + contract.substring(1);
+    }
 
     if (handlen - 3 != 13) // Subtracting 3 is to allow for the dots between suits.
     {
@@ -3725,7 +4109,7 @@ function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
     show('help');
   }
 
-  var session = new Date().getTime();
+  const session = new Date().getTime();
 
   g_session = session;
 
@@ -3780,8 +4164,11 @@ function failSilently(jqXHR, textStatus, errorThrown) {
 }
 
 function constructFilename() {
-  if (typeof g_hands.evid == 'undefined') return g_hands.event + '_' + g_hands.club;
-  else return g_hands.evid;
+  if (typeof g_hands.evid === 'undefined') {
+    return g_hands.event + '_' + g_hands.club;
+  } else {
+    return g_hands.evid;
+  }
 }
 
 function getFullMakeableJson(context) {}
@@ -3806,9 +4193,13 @@ function calculateMakeableAllBoards() {
   showEmptyProgressBar('Analysing Boards in background');
   console.log('generating requests for ' + g_hands.boards.length + ' boards');
 
-  for (var i = 0; i < g_hands.boards.length; i++) g_hands.boards[i].tag = -1;
+  for (var i = 0; i < g_hands.boards.length; i++) {
+    g_hands.boards[i].tag = -1;
+  }
 
-  for (var i = 0; i < g_hands.boards.length; i++) calculateMakeableSingleBoard(i);
+  for (var i = 0; i < g_hands.boards.length; i++) {
+    calculateMakeableSingleBoard(i);
+  }
 }
 
 function finishBackgroundOperation() {
@@ -3816,8 +4207,11 @@ function finishBackgroundOperation() {
   document.getElementById('saveBoards').removeAttribute('disabled');
   document.getElementById('editHand').removeAttribute('disabled');
 
-  if (typeof g_hands.Title != 'undefined') g_title = g_hands.Title;
-  else g_title = '&nbsp;';
+  if (typeof g_hands.Title !== 'undefined') {
+    g_title = g_hands.Title;
+  } else {
+    g_title = '&nbsp;';
+  }
 
   document.getElementById('titleText').innerHTML = g_title;
 }
@@ -3833,18 +4227,20 @@ function completedAnalyseAllBoards() {
 }
 
 function cacheMakeable(pindex, data) {
-  var limit = 500;
-  var delMax = limit / 10;
+  const limit = 500;
+  const delMax = limit / 10;
 
-  if (g_db == null) return;
+  if (g_db == null) {
+    return;
+  }
 
   try {
-    var board = g_hands.boards[pindex];
-    var deal = board.Deal;
-    var dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
-    var vul = board.Vulnerable;
-    var key = makeDealKey(dealstr, vul, getRequestedLeads(pindex));
-    var ddata = new Object();
+    const board = g_hands.boards[pindex];
+    const deal = board.Deal;
+    const dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
+    const vul = board.Vulnerable;
+    const key = makeDealKey(dealstr, vul, getRequestedLeads(pindex));
+    const ddata = new Object();
     ddata.deal = key;
     ddata.time = Date.now();
     ddata.dd = JSON.parse(data);
@@ -3856,7 +4252,7 @@ function cacheMakeable(pindex, data) {
     const countRequest = myIndex.count();
     countRequest.onsuccess = function () {
       if (countRequest.result > 500) {
-        var delCount = countRequest.result - 100;
+        let delCount = countRequest.result - 100;
 
         // delete oldest 10 items
         const myIndex = objectStore.index('time');
@@ -3880,41 +4276,47 @@ function cacheMakeable(pindex, data) {
 }
 
 function calcMCTableIndex(suit, leadDirection) {
-  var suits = 'NSHDC';
-  var dir = 'EWSN';
+  const suits = 'NSHDC';
+  const dir = 'EWSN';
 
-  var index = 5 * dir.indexOf(leadDirection.toUpperCase()) + suits.indexOf(suit.toUpperCase());
+  const index = 5 * dir.indexOf(leadDirection.toUpperCase()) + suits.indexOf(suit.toUpperCase());
   return index;
 }
 
 function convertVulStr(vulstr) {
-  var vul = ['None', 'All', 'NS', 'EW'];
+  const vul = ['None', 'All', 'NS', 'EW'];
 
   vulstr = vulstr.toUpperCase();
 
-  for (var i = 0; i < vul.length; i++) {
-    if (vul[i].toUpperCase() == vulstr) return i;
+  for (let i = 0; i < vul.length; i++) {
+    if (vul[i].toUpperCase() == vulstr) {
+      return i;
+    }
   }
 
   return -1;
 }
 
 function makeableContractRequestsOutstanding() {
-  var mccount = 0;
+  let mccount = 0;
 
-  for (var j = 0; j < g_hands.boards.length; j++) {
-    if (g_hands.boards[j].tag != null) if (g_hands.boards[j].tag !== -1) mccount++;
+  for (let j = 0; j < g_hands.boards.length; j++) {
+    if (g_hands.boards[j].tag != null) {
+      if (g_hands.boards[j].tag !== -1) {
+        mccount++;
+      }
+    }
   }
 
   return mccount;
 }
 
 function dddLoadMakeable(data, statusText, jqXHR, bindex) {
-  var vul = ['None', 'All', 'NS', 'EW'];
-  var leader = 'nesw';
+  const vul = ['None', 'All', 'NS', 'EW'];
+  const leader = 'nesw';
   resetTimeout();
 
-  var tmp = data;
+  let tmp = data;
   tmp = JSON.parse(tmp);
 
   if (
@@ -3925,19 +4327,20 @@ function dddLoadMakeable(data, statusText, jqXHR, bindex) {
     tmp.vul = convertVulStr(this.vul);
   }
 
-  for (var i = 0; i < g_hands.boards.length; i++) {
-    var board = g_hands.boards[i];
-    var deal = board.Deal;
-    var dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
+  for (let i = 0; i < g_hands.boards.length; i++) {
+    const board = g_hands.boards[i];
+    const deal = board.Deal;
+    const dealstr = 'W:' + deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
 
-    var found = false;
+    let found = false;
 
     if (
       !tmp.sess.hasOwnProperty('pbn')
     ) // It's a cached value from old version that doesn't have the pbn field (when cached entries time out this clause will no longer be necessary)
     {
-      if (g_hands.boards[i].hasOwnProperty('tag') & (tmp.sess.sockref == g_hands.boards[i].tag))
+      if (g_hands.boards[i].hasOwnProperty('tag') & (tmp.sess.sockref == g_hands.boards[i].tag)) {
         found = true;
+      }
     } else if (
       g_hands.boards[i].hasOwnProperty('tag') &
       (tmp.sess.sockref == g_hands.boards[i].tag) &
@@ -3951,20 +4354,22 @@ function dddLoadMakeable(data, statusText, jqXHR, bindex) {
       board.DoubleDummyTricks = tmp.sess.ddtricks;
       updateParResults(tmp, i);
 
-      if (typeof tmp.openingLeads != 'undefined') {
+      if (typeof tmp.openingLeads !== 'undefined') {
         g_openingLeadsPresent = true;
         board.openingLeads = tmp.openingLeads;
       }
 
       cacheMakeable(i, data);
 
-      if (i == g_lastBindex) redrawMCTable(true);
+      if (i == g_lastBindex) {
+        redrawMCTable(true);
+      }
 
       if (g_allBoards == 1) {
         g_hands.boards[i].tag = -1;
 
         // Count requests outstanding
-        var mccount = makeableContractRequestsOutstanding();
+        const mccount = makeableContractRequestsOutstanding();
 
         document.getElementById('progress').style.width =
           ((800 * (g_hands.boards.length - mccount)) / g_hands.boards.length).toFixed(0) + 'px';
@@ -3974,15 +4379,20 @@ function dddLoadMakeable(data, statusText, jqXHR, bindex) {
           hideSpinner();
 
           if (!g_playItAgain) {
-            if (g_sessionMode == 'ranking') setupRanking(true);
-            else if (g_sessionMode == 'scorecard') setupScorecard(true);
-            else if (g_sessionMode == 'traveller') showComparison();
-            else if (g_sessionMode == 'check') checkAllContracts();
+            if (g_sessionMode == 'ranking') {
+              setupRanking(true);
+            } else if (g_sessionMode == 'scorecard') {
+              setupScorecard(true);
+            } else if (g_sessionMode == 'traveller') {
+              showComparison();
+            } else if (g_sessionMode == 'check') {
+              checkAllContracts();
+            }
           }
 
           if (g_openingLeadsPresent) {
-            var table = document.getElementById('scoring');
-            var rows = table.rows;
+            const table = document.getElementById('scoring');
+            const rows = table.rows;
             rows[1].cells[5 + g_ofs].innerHTML =
               "<select id='ETFMode' name='ETFMode' style='background-color:yellow;'><option value=0>DD Tricks(ETF)</option><option value=1>Adjusted ETF</option></select>";
             document.getElementById('rankingDD').innerHTML =
@@ -4024,15 +4434,19 @@ function resetTimeout() {
 
 function tricksConceded(data) {
   // Note: The direction index is 0,1,2,3 for N,S,E,W
-  var tricksConceded = data.tricksConceded;
-  var cardDirection = data.cardDirection;
+  const tricksConceded = data.tricksConceded;
+  const cardDirection = data.cardDirection;
 
-  var errCount = new Array();
+  const errCount = new Array();
 
-  for (var i = 0; i < 4; i++) errCount[i] = 0;
+  for (var i = 0; i < 4; i++) {
+    errCount[i] = 0;
+  }
 
   for (var i = 0; i < tricksConceded.length; i++) {
-    if (tricksConceded[i] != 0) errCount[cardDirection[i]]++;
+    if (tricksConceded[i] != 0) {
+      errCount[cardDirection[i]]++;
+    }
   }
 
   return errCount;
@@ -4045,35 +4459,44 @@ function returnAccCount(acc, direction) {
 
 function returnName(names, direction, firstNameOnly = true) {
   // Direction for names array starts with South rather than North
-  var namesDirection = (direction + 2) % 4;
+  const namesDirection = (direction + 2) % 4;
 
-  if (firstNameOnly)
-    return names[namesDirection].split(' ')[0]; // First name only
-  else return names[namesDirection];
+  if (firstNameOnly) {
+    return names[namesDirection].split(' ')[0];
+  } // First name only
+  else {
+    return names[namesDirection];
+  }
 }
 
 function updatePlayerAccCountsFromBoard(board, lindata) {
-  if (typeof board == 'undefined') return;
-  if (typeof board.acc == 'undefined') return;
+  if (typeof board === 'undefined') {
+    return;
+  }
+  if (typeof board.acc === 'undefined') {
+    return;
+  }
 
-  var acc = board.acc;
+  const acc = board.acc;
 
-  var names = board.PlayerNames;
-  var declarer = board.Declarer;
+  const names = board.PlayerNames;
+  const declarer = board.Declarer;
 
-  if (typeof declarer == 'undefined') return; // could happen if board is edited
+  if (typeof declarer === 'undefined') {
+    return;
+  } // could happen if board is edited
 
-  var direction = 'NESW';
-  var declIndex = direction.indexOf(declarer.toUpperCase());
-  var declName = returnName(names, declIndex, false);
-  var leadIndex = (declIndex + 1) % 4;
-  var leadName = returnName(names, leadIndex, false);
-  var leadPartnerIndex = (leadIndex + 2) % 4;
-  var leadPartnerName = returnName(names, leadPartnerIndex, false);
+  const direction = 'NESW';
+  const declIndex = direction.indexOf(declarer.toUpperCase());
+  const declName = returnName(names, declIndex, false);
+  const leadIndex = (declIndex + 1) % 4;
+  const leadName = returnName(names, leadIndex, false);
+  const leadPartnerIndex = (leadIndex + 2) % 4;
+  const leadPartnerName = returnName(names, leadPartnerIndex, false);
 
-  var declErrCount = returnAccCount(acc, declIndex);
-  var leadErrCount = returnAccCount(acc, leadIndex);
-  var partnerErrCount = returnAccCount(acc, leadPartnerIndex);
+  const declErrCount = returnAccCount(acc, declIndex);
+  const leadErrCount = returnAccCount(acc, leadIndex);
+  const partnerErrCount = returnAccCount(acc, leadPartnerIndex);
 
   updatePlayerAccCounts(declName, 'decl', declErrCount, board, lindata);
   updatePlayerAccCounts(leadName, 'lead', leadErrCount, board, lindata);
@@ -4081,10 +4504,10 @@ function updatePlayerAccCountsFromBoard(board, lindata) {
 }
 
 function confirmShowAcc() {
-  var htmltext =
+  let htmltext =
     '<SPAN style="font-size:16px;">Player Accuracy Matrix popup window blocked by browser.<BR>Click Proceed to show the window.</SPAN><BR><BR>';
-  var i;
-  var str = '';
+  let i;
+  const str = '';
 
   htmltext =
     htmltext +
@@ -4102,11 +4525,11 @@ function showPlayerAccMatrix() {
 
   for (var i = 0; i < g_hands.boards.length; i++) {
     if (g_travellers !== null) {
-      var traveller = getTravellerForBoard(i);
+      const traveller = getTravellerForBoard(i);
 
       if (traveller !== null) {
         for (var j = 0; j < traveller.traveller_line.length; j++) {
-          var tline = traveller.traveller_line[j];
+          const tline = traveller.traveller_line[j];
           updatePlayerAccCountsFromBoard(tline.board, tline.lindata);
         }
       }
@@ -4116,7 +4539,7 @@ function showPlayerAccMatrix() {
   }
 
   for (var i = 0; i < g_playerAcc.length; i++) {
-    var pobj = g_playerAcc[i];
+    const pobj = g_playerAcc[i];
 
     pobj.totalErrCount = pobj.declErrCount + pobj.leadErrCount + pobj.leadPartnerErrCount;
     pobj.totalCount = pobj.declCount + pobj.leadCount + pobj.leadPartnerCount;
@@ -4125,19 +4548,27 @@ function showPlayerAccMatrix() {
   }
 
   g_playerAcc.sort(function (a, b) {
-    if (a.ratio > b.ratio) return 1;
-    else if (a.ratio < b.ratio) return -1;
-    else return 0;
+    if (a.ratio > b.ratio) {
+      return 1;
+    } else if (a.ratio < b.ratio) {
+      return -1;
+    } else {
+      return 0;
+    }
   });
 
   var str = '';
 
-  if (typeof g_hands.club !== 'undefined') str += ' - ' + g_hands.club;
+  if (typeof g_hands.club !== 'undefined') {
+    str += ' - ' + g_hands.club;
+  }
 
-  if (typeof g_hands.event !== 'undefined') str += ' ' + g_hands.event;
+  if (typeof g_hands.event !== 'undefined') {
+    str += ' ' + g_hands.event;
+  }
 
   // Make html page
-  var html = '<head></head>';
+  let html = '<head></head>';
   html +=
     '<body><style type=\"text/css\">.myLink {cursor: pointer;font-weight: normal; color: #000099;}\na { font-weight: bold;}\na:link { color: blue; text-decoration:none }\na:visited { color: blue; text-decoration:none }\na:active { color: blue; text-decoration:none }\na:hover { color: red; text-decoration:none }</style>';
   html += '<h2>Player Accuracy Matrix' + str + '</h2>';
@@ -4179,14 +4610,16 @@ function showPlayerAccMatrix() {
   for (var i = 0; i < g_hands.boards.length; i++) {
     var str = '' + g_hands.boards[i].board;
 
-    if (str.length == 1) str = '&nbsp;' + str;
+    if (str.length == 1) {
+      str = '&nbsp;' + str;
+    }
     html +=
       '<td style="border-left:1px solid black;border-right:1px solid black;">' + str + '</td>';
   }
 
   html += '</tr>';
 
-  var totals = new Object();
+  const totals = new Object();
 
   for (var i = 0; i < g_hands.boards.length; i++) {
     totals[i] = 0;
@@ -4198,10 +4631,10 @@ function showPlayerAccMatrix() {
     html += '<td>' + g_playerAcc[i].name + '</td><td>' + g_playerAcc[i].ratio.toFixed(2) + '</td>';
 
     for (var j = 0; j < g_hands.boards.length; j++) {
-      var board = g_hands.boards[j];
-      var bdnum = board.board;
+      const board = g_hands.boards[j];
+      const bdnum = board.board;
 
-      var found = false;
+      let found = false;
 
       if (typeof g_playerAcc[i].boards[bdnum] !== 'undefined') {
         found = true;
@@ -4209,12 +4642,12 @@ function showPlayerAccMatrix() {
         // Sometimes a file will contain multiple instances of the same board, e.g. a lin file representing a BBO traveller.
         // Check that the player played this particular board instance (N.B. These files will not contain travellers)
         if (g_travellers == null) {
-          var names = g_hands.boards[j].PlayerNames;
+          const names = g_hands.boards[j].PlayerNames;
 
           if (typeof names !== 'undefined') {
             found = false;
 
-            for (var k = 0; k < names.length; k++) {
+            for (let k = 0; k < names.length; k++) {
               if (g_playerAcc[i].name == names[k]) {
                 found = true;
                 break;
@@ -4224,28 +4657,37 @@ function showPlayerAccMatrix() {
         }
 
         if (found) {
-          var lindata = g_playerAcc[i].boards[bdnum].lindata;
-          var errCount = g_playerAcc[i].boards[bdnum].errCount;
-          var bg = '#88ff88';
+          const lindata = g_playerAcc[i].boards[bdnum].lindata;
+          let errCount = g_playerAcc[i].boards[bdnum].errCount;
+          let bg = '#88ff88';
 
-          if (errCount == 1) bg = '#ffa500';
-          else if (errCount > 1) bg = '#ff0000';
+          if (errCount == 1) {
+            bg = '#ffa500';
+          } else if (errCount > 1) {
+            bg = '#ff0000';
+          }
 
           bg = 'background-color:' + bg + ';';
 
           errCount = Number(errCount);
-          if (errCount == 0) errCount = '';
+          if (errCount == 0) {
+            errCount = '';
+          }
 
-          if (!isNaN(errCount)) totals[j] += Number(errCount);
+          if (!isNaN(errCount)) {
+            totals[j] += Number(errCount);
+          }
 
-          var url = '';
+          let url = '';
 
-          if (g_travellers !== null) url = window.location.href + '?lin=' + lindata;
-          else
+          if (g_travellers !== null) {
+            url = window.location.href + '?lin=' + lindata;
+          } else {
             url =
               window.location.href +
               '?jsonlin=' +
               encodeURIComponent(JSON.stringify(g_hands.boards[j]));
+          }
 
           html +=
             '<td class=myLink style="border:1px solid grey;text-align:right;' +
@@ -4260,7 +4702,7 @@ function showPlayerAccMatrix() {
       }
 
       if (
-        (typeof g_playerAcc[i].boards[bdnum] == 'undefined') |
+        (typeof g_playerAcc[i].boards[bdnum] === 'undefined') |
         !found
       ) // If didn't play this board (or this instance of this board)
       {
@@ -4273,14 +4715,15 @@ function showPlayerAccMatrix() {
 
   html += "<tr style='background-color:#dddddd;'><td colspan=2>Totals Per Board</td>";
 
-  for (var i = 0; i < g_hands.boards.length; i++)
+  for (var i = 0; i < g_hands.boards.length; i++) {
     html += '<td style="text-align:right;border:1px solid grey;">' + totals[i] + '</td>';
+  }
 
   html += '</tr>';
 
   html += '</table><body>';
 
-  var myWindow = window.open('', '_blank');
+  const myWindow = window.open('', '_blank');
 
   if (myWindow == null) {
     confirmShowAcc();
@@ -4292,17 +4735,21 @@ function showPlayerAccMatrix() {
 }
 
 function getPlayerAcc(name) {
-  for (var i = 0; i < g_playerAcc.length; i++) {
-    if (name == g_playerAcc[i].name) return g_playerAcc[i].ratio.toFixed(2);
+  for (let i = 0; i < g_playerAcc.length; i++) {
+    if (name == g_playerAcc[i].name) {
+      return g_playerAcc[i].ratio.toFixed(2);
+    }
   }
 
   return '';
 }
 
 function updatePlayerAccCounts(name, role, count, board, lindata) {
-  if (count == -1) return; // Board was probably passed out, or has no play information
+  if (count == -1) {
+    return;
+  } // Board was probably passed out, or has no play information
 
-  var pobj = g_playerAcc.find((item) => item.name === name);
+  let pobj = g_playerAcc.find((item) => item.name === name);
 
   if (pobj == null) {
     pobj = new Object();
@@ -4329,7 +4776,7 @@ function updatePlayerAccCounts(name, role, count, board, lindata) {
     pobj.leadPartnerErrCount += count;
   }
 
-  var rec = new Object();
+  const rec = new Object();
   rec.errCount = count;
   rec.lindata = lindata;
   pobj.boards[board.board] = rec;
@@ -4337,12 +4784,12 @@ function updatePlayerAccCounts(name, role, count, board, lindata) {
 
 function storeAccInMemory(context, index, count) {
   var acc = null;
-  var bdindex = context.bdindex;
-  var board;
+  const bdindex = context.bdindex;
+  let board;
 
   if (context.tindex !== -1) {
-    var traveller = getTravellerForBoard(bdindex);
-    var tindex = context.tindex;
+    const traveller = getTravellerForBoard(bdindex);
+    const tindex = context.tindex;
     board = traveller.traveller_line[tindex].board;
     acc = board.acc;
   } else {
@@ -4350,17 +4797,19 @@ function storeAccInMemory(context, index, count) {
     var acc = board.acc;
   }
 
-  var plindex = (index + 2) % 4;
+  const plindex = (index + 2) % 4;
   acc[plindex] = count;
 
   return board;
 }
 
 function invoke_buildPage2() {
-  if (g_file != '')
-    // If a pbn or dlm filename was supplied.
+  if (g_file != '') // If a pbn or dlm filename was supplied.
+  {
     getHands({ callback: buildpage2 });
-  else buildpage2();
+  } else {
+    buildpage2();
+  }
 }
 
 function openIndexedDB() {
@@ -4397,7 +4846,9 @@ function getDDTricks(msg) {
     g_mworkers[g_nextmworker].postMessage(msg);
 
     g_nextmworker++;
-    if (g_nextmworker >= g_mworkers.length) g_nextmworker = 0;
+    if (g_nextmworker >= g_mworkers.length) {
+      g_nextmworker = 0;
+    }
   } else // Background workers not currently running
   {
     g_worker.postMessage(msg);
@@ -4405,17 +4856,18 @@ function getDDTricks(msg) {
 }
 
 function getIndexedDDTricks(msg) {
-  if (g_db == null) getDDTricks(msg);
-  else {
+  if (g_db == null) {
+    getDDTricks(msg);
+  } else {
     const transaction = g_db.transaction(['ddCache'], 'readwrite');
     const objectStore = transaction.objectStore('ddCache');
-    var req = objectStore.get(makeDealKey(msg.dealstr, msg.vulstr, msg.leadstr));
+    const req = objectStore.get(makeDealKey(msg.dealstr, msg.vulstr, msg.leadstr));
 
     req.onsuccess = function (event) {
       if (typeof event.target.result !== 'undefined') {
-        var dataObj = event.target.result;
+        const dataObj = event.target.result;
         dataObj.dd.sess.sockref = this.sockref;
-        var data = JSON.stringify(dataObj.dd);
+        const data = JSON.stringify(dataObj.dd);
         dddLoadMakeable(data, '', '', this.context.bindex);
       } else // get it remotely or calculate locally
       {
@@ -4439,10 +4891,12 @@ function generateBackgroundAccRequests() {
 
 function callGetIndexedAcc() {
   // Revert the current traveller back to g_hands.pair_number/g_hands.direction
-  var display = document.getElementById('scoreandtraveller').style.display;
+  const display = document.getElementById('scoreandtraveller').style.display;
   gotoNextTraveller();
   gotoPrevTraveller();
-  if (display == 'none') $('#scoreandtraveller').hide();
+  if (display == 'none') {
+    $('#scoreandtraveller').hide();
+  }
   getIndexedAcc();
 }
 
@@ -4466,21 +4920,24 @@ function getIndexedAcc() {
   {
     generateBackgroundAccRequests();
   } else {
-    var boards;
+    let boards;
     const transaction = g_db.transaction(['accCache'], 'readwrite');
     const objectStore = transaction.objectStore('accCache');
 
-    if (g_travellers !== null) boards = g_travellers.event.board;
-    else boards = g_hands.boards;
+    if (g_travellers !== null) {
+      boards = g_travellers.event.board;
+    } else {
+      boards = g_hands.boards;
+    }
 
-    for (var i = 0; i < boards.length; i++) {
-      var board = boards[i];
+    for (let i = 0; i < boards.length; i++) {
+      const board = boards[i];
 
       if (g_travellers !== null) {
-        var tlines = board.traveller_line;
+        const tlines = board.traveller_line;
 
-        for (var j = 0; j < tlines.length; j++) {
-          let tline = tlines[j];
+        for (let j = 0; j < tlines.length; j++) {
+          const tline = tlines[j];
 
           if (accCalcPossibleForBoard(tline.board)) {
             var req = objectStore.get(makeAccKey(tline.board));
@@ -4519,7 +4976,9 @@ function getIndexedAcc() {
 }
 
 function purgeOldEntries() {
-  if (g_db == null) return;
+  if (g_db == null) {
+    return;
+  }
 
   const transaction = g_db.transaction(['accCache'], 'readwrite');
   const objectStore = transaction.objectStore('accCache');
@@ -4528,7 +4987,7 @@ function purgeOldEntries() {
   const countRequest = myIndex.count();
   countRequest.onsuccess = function () {
     if (countRequest.result > 5000) {
-      var delCount = countRequest.result - 5000;
+      let delCount = countRequest.result - 5000;
 
       // delete oldest items
       const myIndex = objectStore.index('time');
@@ -4551,29 +5010,29 @@ function purgeOldEntries() {
 }
 
 function storeAcc(data, context) {
-  var tmp = data.sess;
+  const tmp = data.sess;
 
-  var errCount = tricksConceded(tmp);
-  var names = context.names;
-  var declarer = context.declarer;
+  const errCount = tricksConceded(tmp);
+  const names = context.names;
+  const declarer = context.declarer;
 
-  var direction = 'NESW';
-  var declIndex = direction.indexOf(declarer.toUpperCase());
-  var declName = returnName(names, declIndex, false);
-  var leadIndex = (declIndex + 1) % 4;
-  var leadName = returnName(names, leadIndex, false);
+  const direction = 'NESW';
+  const declIndex = direction.indexOf(declarer.toUpperCase());
+  const declName = returnName(names, declIndex, false);
+  const leadIndex = (declIndex + 1) % 4;
+  const leadName = returnName(names, leadIndex, false);
 
-  var leadErrCount = errCount[leadIndex];
+  const leadErrCount = errCount[leadIndex];
 
-  var leadPartnerIndex = (leadIndex + 2) % 4;
-  var leadPartnerName = returnName(names, leadPartnerIndex, false);
+  const leadPartnerIndex = (leadIndex + 2) % 4;
+  const leadPartnerName = returnName(names, leadPartnerIndex, false);
 
-  var partnerErrCount = errCount[leadPartnerIndex];
+  const partnerErrCount = errCount[leadPartnerIndex];
 
   // Update the board record (in g_hands.boards, or in traveller if there are any
   storeAccInMemory(context, declIndex, tmp.declErr);
   storeAccInMemory(context, leadIndex, leadErrCount);
-  var board = storeAccInMemory(context, leadPartnerIndex, partnerErrCount);
+  const board = storeAccInMemory(context, leadPartnerIndex, partnerErrCount);
 
   if (g_db !== null) {
     const transaction = g_db.transaction(['accCache'], 'readwrite');
@@ -4584,7 +5043,7 @@ function storeAcc(data, context) {
     data.acc = board.acc;
     data.time = Date.now();
 
-    var req = objectStore.put(data);
+    const req = objectStore.put(data);
   }
 
   g_completionCount++;
@@ -4598,22 +5057,22 @@ function returnAccValue(acc, index) {
 }
 
 function getCachedAcc(tline) {
-  var board = tline.board;
-  var declarer = board.Declarer;
-  var direction = 'NESW';
-  var names = board.PlayerNames;
+  const board = tline.board;
+  const declarer = board.Declarer;
+  const direction = 'NESW';
+  const names = board.PlayerNames;
 
-  var acc = tline.board.acc;
+  const acc = tline.board.acc;
 
-  var declIndex = direction.indexOf(declarer.toUpperCase());
-  var declName = returnName(names, declIndex);
-  var declErrCount = returnAccValue(acc, declIndex);
-  var leadIndex = (declIndex + 1) % 4;
-  var leadName = returnName(names, leadIndex);
-  var leadErrCount = returnAccValue(acc, leadIndex);
-  var leadPartnerIndex = (leadIndex + 2) % 4;
-  var leadPartnerName = returnName(names, leadPartnerIndex);
-  var partnerErrCount = returnAccValue(acc, leadPartnerIndex);
+  const declIndex = direction.indexOf(declarer.toUpperCase());
+  const declName = returnName(names, declIndex);
+  const declErrCount = returnAccValue(acc, declIndex);
+  const leadIndex = (declIndex + 1) % 4;
+  const leadName = returnName(names, leadIndex);
+  const leadErrCount = returnAccValue(acc, leadIndex);
+  const leadPartnerIndex = (leadIndex + 2) % 4;
+  const leadPartnerName = returnName(names, leadPartnerIndex);
+  const partnerErrCount = returnAccValue(acc, leadPartnerIndex);
 
   displayAcc(
     declName,
@@ -4637,20 +5096,22 @@ function displayAcc(
   elapsed,
   dest
 ) {
-  var defErrCount = Number(leadErrCount) + Number(partnerErrCount);
+  const defErrCount = Number(leadErrCount) + Number(partnerErrCount);
 
-  var acc = document.getElementById('accuracy');
-  var str =
+  const acc = document.getElementById('accuracy');
+  let str =
     '<DIV style="float:left;clear:both;"><DIV style="float:left;"><SPAN style="font-size:24px;">Accuracy of Play</SPAN></DIV><DIV style="float:left;clear:both;margin-top:10px;"><SPAN style="font-size:16px;color:black;">Number of card play deviations from optimal<BR>double dummy play:</SPAN></DIV>';
 
-  var str2 =
+  const str2 =
     '<DIV style="margin-top:10px;float:left;clear:both;"><SPAN style="font-size:18px;color:blue;">';
 
-  if ((declErrCount == 0) & (defErrCount == 0))
+  if ((declErrCount == 0) & (defErrCount == 0)) {
     str = str + str2 + 'Card play was optimal by declarer and defenders</SPAN></DIV>';
+  }
 
-  if (declErrCount > 0)
+  if (declErrCount > 0) {
     str = str + str2 + 'Declarer (' + declName + '): ' + declErrCount + '</SPAN></DIV>';
+  }
 
   if (defErrCount > 0) {
     str = str + str2 + 'Defenders: ' + defErrCount;
@@ -4681,9 +5142,10 @@ function displayAcc(
 	
 	str += " ,optimumCardRatio: " + optCount/(optCount+subOptCount);*/
 
-  if (dest == 0) acc.innerHTML = '<SPAN style="font-size:16px;color:blue;">' + str + '</SPAN>';
-  else {
-    var htmltext =
+  if (dest == 0) {
+    acc.innerHTML = '<SPAN style="font-size:16px;color:blue;">' + str + '</SPAN>';
+  } else {
+    let htmltext =
       'Accuracy of Play:<BR>Declarer Errors: ' +
       declErrCount +
       '<BR>' +
@@ -4705,38 +5167,39 @@ function displayAcc(
 }
 
 function load(data, statusText, jqXHR, ctx) {
-  var context = this;
+  let context = this;
   // Note: The direction index for Names is 2,3,0,1 for N,E,S,W, but for errCount is 0,1,2,3
   hideSpinner();
   resetTimeout();
-  var tmp = data;
+  let tmp = data;
 
   tmp = eval('(' + tmp + ')');
   tmp = tmp.sess;
 
-  if (load.arguments.length > 3)
-    // being performed locally, not on server
+  if (load.arguments.length > 3) // being performed locally, not on server
+  {
     context = ctx;
+  }
 
-  var errCount = tricksConceded(tmp);
+  const errCount = tricksConceded(tmp);
 
-  var names = context.names;
-  var declarer = context.declarer;
+  const names = context.names;
+  const declarer = context.declarer;
 
-  var direction = 'NESW';
-  var declIndex = direction.indexOf(declarer.toUpperCase());
-  var declName = returnName(names, declIndex);
-  var declErrCount = tmp.declErr;
-  var leadIndex = (declIndex + 1) % 4;
-  var leadName = returnName(names, leadIndex);
+  const direction = 'NESW';
+  const declIndex = direction.indexOf(declarer.toUpperCase());
+  const declName = returnName(names, declIndex);
+  const declErrCount = tmp.declErr;
+  const leadIndex = (declIndex + 1) % 4;
+  const leadName = returnName(names, leadIndex);
 
-  var leadErrCount = errCount[leadIndex];
+  const leadErrCount = errCount[leadIndex];
 
-  var leadPartnerIndex = (leadIndex + 2) % 4;
-  var leadPartnerName = returnName(names, leadPartnerIndex);
+  const leadPartnerIndex = (leadIndex + 2) % 4;
+  const leadPartnerName = returnName(names, leadPartnerIndex);
 
-  var partnerErrCount = errCount[leadPartnerIndex];
-  var elapsed = tmp.deltaElapsed;
+  const partnerErrCount = errCount[leadPartnerIndex];
+  const elapsed = tmp.deltaElapsed;
 
   displayAcc(
     declName,
@@ -4754,10 +5217,10 @@ function load2(data, statusText, jqXHR) {
   hideSpinner();
   resetTimeout();
 
-  var tmp = data;
+  let tmp = data;
   tmp = eval('(' + tmp + ')');
 
-  var htmltext =
+  let htmltext =
     'Accuracy of Play:<BR>Declarer Errors: ' +
     tmp.sess.declErr +
     '<BR>' +
@@ -4774,14 +5237,16 @@ function load2(data, statusText, jqXHR) {
 
 function dddloadfunc(data, statusText, jqXHR, context) {
   // Process the response from a ddd request
-  var ctx = this;
-  if (dddloadfunc.arguments.length > 3) ctx = context;
+  let ctx = this;
+  if (dddloadfunc.arguments.length > 3) {
+    ctx = context;
+  }
 
   hideSpinner();
   resetTimeout();
 
   if (g_mode == 1) {
-    var tmp = data;
+    let tmp = data;
     tmp = eval('(' + tmp + ')');
     //				alert(tmp.sess.deltaElapsed);
 
@@ -4811,18 +5276,25 @@ function dddloadfunc(data, statusText, jqXHR, context) {
       ctx.para == 'new'
     ) // If it's a new session store the session identifier as the current session
     {
-      if (tmp.requesttoken == g_session)
-        // response holds the correct request token, so update the session number to reflect the global session id allocated by the cgi
+      if (
+        tmp.requesttoken == g_session
+      ) // response holds the correct request token, so update the session number to reflect the global session id allocated by the cgi
+      {
         g_session = tmp.sess.sockref;
-      else return; // this session was cancelled before this response was received.
+      } else {
+        return;
+      } // this session was cancelled before this response was received.
     }
 
-    if (tmp.sess.sockref != g_session)
-      // Don't process this response, this session is no longer current.
+    if (
+      tmp.sess.sockref != g_session
+    ) // Don't process this response, this session is no longer current.
+    {
       return;
-    else {
-      if (tmp.sess.status == 0) processPosition(tmp.sess);
-      else // some kind of error detected by ddd
+    } else {
+      if (tmp.sess.status == 0) {
+        processPosition(tmp.sess);
+      } else // some kind of error detected by ddd
       {
         if (tmp.sess.status == 201) // No lock file, session never existed or timed out
         {
@@ -4843,9 +5315,10 @@ function dddloadfunc(data, statusText, jqXHR, context) {
             document.getElementById('boardNumber'),
             '<SPAN style="font-size:18px;background-color:#FFFFEE;padding:10px;border:1px;border-color:black;">Invalid card in recorded play sequence</SPAN>'
           );
-        } else if (tmp.sess.status != 202)
-          // Not a 'lock file' busy message
+        } else if (tmp.sess.status != 202) // Not a 'lock file' busy message
+        {
           alert('Error ' + tmp.sess.status + ',' + tmp.sess.errno + ' - ' + tmp.sess.errmsg);
+        }
       }
     }
   }
@@ -4853,8 +5326,8 @@ function dddloadfunc(data, statusText, jqXHR, context) {
 
 function playNextCard(pthis) {
   if (g_showPlay) {
-    if (typeof g_hands.boards[g_lastBindex].Played != 'undefined') {
-      var played = g_hands.boards[g_lastBindex].Played;
+    if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+      const played = g_hands.boards[g_lastBindex].Played;
 
       if (g_currentPlayIndex < played.length) {
         if (
@@ -4862,11 +5335,14 @@ function playNextCard(pthis) {
           g_currentPlayIndex - 1
         ) // still following the actual cards played in the match
         {
-          var playedInMatch = played[g_currentPlayIndex];
+          const playedInMatch = played[g_currentPlayIndex];
 
-          if (requestPending())
-            return; // Don't allow while there is a request in progress.
-          else setRequestTimeout(true);
+          if (requestPending()) {
+            return;
+          } // Don't allow while there is a request in progress.
+          else {
+            setRequestTimeout(true);
+          }
 
           spinner(pthis);
           callddd(playedInMatch.toUpperCase());
@@ -4909,7 +5385,9 @@ function showForwardPlay() {
   // Try/Catch in case using older version of ddummy.htm without this button
   try {
     // Only show this button if playing a contract from a BBO lin file
-    if (g_showPlay != 0) show('forwardPlay');
+    if (g_showPlay != 0) {
+      show('forwardPlay');
+    }
   } catch (err) {}
 }
 
@@ -4930,11 +5408,11 @@ function enterPlayMode() {
   document.getElementById('wvul').style.height = g_sectionHeight - 40 + 'px'; // Increase height of vulnerability bar to match new table height.
   document.getElementById('vul').style.width = g_sectionHeight + 'px'; // Increase width of table centre to match new table height.
 
-  var contracts = document.getElementById('makeableContracts');
-  var rows = contracts.rows;
+  const contracts = document.getElementById('makeableContracts');
+  const rows = contracts.rows;
 
-  var cvector = g_hands.boards[g_lastBindex].DoubleDummyTricks;
-  var value;
+  const cvector = g_hands.boards[g_lastBindex].DoubleDummyTricks;
+  let value;
 
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 5; j++) {
@@ -4942,23 +5420,27 @@ function enterPlayMode() {
 
       rows[1 + i].cells[1 + 4 - j].className = 'myLink';
       rows[1 + i].cells[1 + 4 - j].onclick = function () {
-        var declCHARS = 'NSEW';
-        var suitCHARS = 'CDHSN';
-        var suit = $(this).index() - 1;
-        var schars = 'cdhsn';
-        var suitChar = schars.charAt(suit);
-        var contract = '*' + suitCHARS.charAt(suit); // Put '*' in case it's number of tricks in makeable contracts table entry !
-        if (suit == 4) contract = contract + 'T'; // No Trumps
-        var declarer = $(this.parentNode).index() - 1;
+        const declCHARS = 'NSEW';
+        const suitCHARS = 'CDHSN';
+        const suit = $(this).index() - 1;
+        const schars = 'cdhsn';
+        const suitChar = schars.charAt(suit);
+        let contract = '*' + suitCHARS.charAt(suit); // Put '*' in case it's number of tricks in makeable contracts table entry !
+        if (suit == 4) {
+          contract = contract + 'T';
+        } // No Trumps
+        const declarer = $(this.parentNode).index() - 1;
 
-        var indx = 5 * ($(this.parentNode).index() - 1) + ($(this).index() - 1);
+        const indx = 5 * ($(this.parentNode).index() - 1) + ($(this).index() - 1);
 
         g_showOriginalContract = false;
 
         if ((g_defaultContract == 0) | (indx != g_defaultContractIndex)) {
           g_showPlay = 0;
           playContract(declCHARS.charAt(declarer), suitChar, contract);
-        } else playLinContract();
+        } else {
+          playLinContract();
+        }
       };
     }
   }
@@ -4970,8 +5452,8 @@ function stopPlay() {
   terminateSession(); // Terminate current playing session if there is one in progress.
   g_mode = 0; // Not in play mode any more
 
-  var contracts = document.getElementById('makeableContracts');
-  var rows = contracts.rows;
+  const contracts = document.getElementById('makeableContracts');
+  const rows = contracts.rows;
 
   for (i = 0; i < 4; i++) {
     for (j = 0; j < 5; j++) {
@@ -5000,8 +5482,9 @@ function selectQuadrant(index) {
 }
 
 function calculateMakeableSingleBoard(bindex) {
-  if (!requestPending())
+  if (!requestPending()) {
     calculateMakeableContracts(dddLoadMakeable, getRequestedLeads(bindex), bindex);
+  }
 }
 
 function requestPending() {
@@ -5014,9 +5497,11 @@ function requestPending() {
 }
 
 function checkBoardValid(bindex) {
-  if (typeof g_hands.boards[bindex].Deal == 'undefined') return false;
+  if (typeof g_hands.boards[bindex].Deal === 'undefined') {
+    return false;
+  }
 
-  var deal = g_hands.boards[bindex].Deal;
+  const deal = g_hands.boards[bindex].Deal;
 
   if (
     (deal[0].length != 16) |
@@ -5032,10 +5517,10 @@ function checkBoardValid(bindex) {
 }
 
 function makeDealKey(dealstr, vul, leadstr) {
-  var vulArray = ['None', 'All', 'NS', 'EW'];
-  var idx = 0;
+  const vulArray = ['None', 'All', 'NS', 'EW'];
+  let idx = 0;
 
-  for (var i = 0; i < 4; i++) {
+  for (let i = 0; i < 4; i++) {
     if (vulArray[i] == vul) {
       idx = i;
       break;
@@ -5046,21 +5531,23 @@ function makeDealKey(dealstr, vul, leadstr) {
 }
 
 function calculateMakeableContracts(pfunc, pleadstr, bindex) {
-  var i, j, k;
+  let i, j, k;
 
   requestStr = '';
   paraStr = '';
 
-  var validBoard = true;
+  let validBoard = true;
 
-  var started = 0;
-  var vul = '';
+  const started = 0;
+  let vul = '';
   var deal = '';
 
   for (k = bindex; k < g_hands.boards.length; k++) {
     validBoard = checkBoardValid(k);
 
-    if (validBoard) break;
+    if (validBoard) {
+      break;
+    }
   }
 
   bindex = k;
@@ -5069,18 +5556,22 @@ function calculateMakeableContracts(pfunc, pleadstr, bindex) {
     var deal = g_hands.boards[bindex].Deal;
     var dealstr = deal[3] + 'x' + deal[0] + 'x' + deal[1] + 'x' + deal[2];
     // Get the makeable contracts for the current board.
-    var suitCHARS = 'CDHSN';
-    var dealerChars = 'ewsn'; // Dealer is one place to the right of declarer
+    const suitCHARS = 'CDHSN';
+    const dealerChars = 'ewsn'; // Dealer is one place to the right of declarer
 
     vul = g_hands.boards[bindex].Vulnerable;
-    if (g_allBoards == 0) g_hands.boards[bindex].OptimumScore = '';
-    if (bindex == g_lastBindex) updateUpperLeftQuadrant(bindex);
+    if (g_allBoards == 0) {
+      g_hands.boards[bindex].OptimumScore = '';
+    }
+    if (bindex == g_lastBindex) {
+      updateUpperLeftQuadrant(bindex);
+    }
 
-    var contracts;
+    let contracts;
 
     contracts = document.getElementById('makeableContracts');
 
-    var rows = contracts.rows;
+    const rows = contracts.rows;
 
     if (g_allBoards == 0) {
       g_hands.boards[bindex].DoubleDummyTricks = '********************';
@@ -5090,12 +5581,12 @@ function calculateMakeableContracts(pfunc, pleadstr, bindex) {
     requestStr = 'W:' + dealstr.split('x').join(' ');
 
     // Clear makeable contracts table.
-    if (bindex == g_lastBindex)
+    if (bindex == g_lastBindex) {
       for (
         j = 0;
         j < 5;
         j++ // For each trump suit
-      )
+      ) {
         for (
           i = 0;
           i < 4;
@@ -5103,29 +5594,33 @@ function calculateMakeableContracts(pfunc, pleadstr, bindex) {
         ) {
           rows[1 + i].cells[1 + j].firstChild.childNodes[0].nodeValue = '*';
         }
+      }
+    }
   }
 
   if (validBoard) {
-    var tag = g_mcSession++;
+    const tag = g_mcSession++;
     g_hands.boards[bindex].tag = tag;
 
-    var leadstr = '';
+    let leadstr = '';
 
     if (pleadstr != '') {
-      if (g_allBoards == 0) largeSpinner();
+      if (g_allBoards == 0) {
+        largeSpinner();
+      }
       leadstr = '&leadstr=' + pleadstr;
     }
 
-    var notFound = true;
+    const notFound = true;
 
     dealstr = 'W:' + dealstr;
 
-    var context = new Object();
+    const context = new Object();
     context.para = 'makeable';
     context.bindex = bindex;
     context.request = 'm';
 
-    var msg = new Object();
+    const msg = new Object();
     msg.request = 'm';
     msg.dealstr = dealstr;
     msg.leadstr = pleadstr;
@@ -5139,16 +5634,18 @@ function calculateMakeableContracts(pfunc, pleadstr, bindex) {
   }
 
   if (!validBoard & (g_allBoards == 0)) {
-    var errormsg;
+    let errormsg;
 
     errormsg =
       '<DIV style="padding:10px;background-color:#FFFFEE;width:180px;border:solid black 1px;"><SPAN style="font-size:16px;">All hands must contain 13 cards before makeable contracts can be calculated.</SPAN></DIV>';
 
     displayErrorAbsPosition(errormsg, 300, 250);
   } else if (!validBoard & (g_allBoards != 0)) {
-    var mccount = makeableContractRequestsOutstanding(); // Count this board as analysed, so that end of sequence can still be detected
+    const mccount = makeableContractRequestsOutstanding(); // Count this board as analysed, so that end of sequence can still be detected
 
-    if (mccount == 0) completedAnalyseAllBoards();
+    if (mccount == 0) {
+      completedAnalyseAllBoards();
+    }
   }
 }
 
@@ -5163,31 +5660,37 @@ function gotoTraveller(name) {
 }
 
 function gotoPrevTraveller() {
-  var bindex = getNextOrPrevBindex(false);
+  const bindex = getNextOrPrevBindex(false);
   gotoTravellerByIndex(bindex);
 }
 
 function gotoNextTraveller() {
-  var bindex = getNextOrPrevBindex(true);
+  const bindex = getNextOrPrevBindex(true);
   gotoTravellerByIndex(bindex);
 }
 
 function getNextOrPrevBindex(forward) {
-  var tindex = g_lastBindex;
+  let tindex = g_lastBindex;
 
   if (forward) {
-    if (tindex < g_hands.boards.length - 1) tindex++;
-    else tindex = 0;
+    if (tindex < g_hands.boards.length - 1) {
+      tindex++;
+    } else {
+      tindex = 0;
+    }
   } else {
-    if (tindex > 0) tindex--;
-    else tindex = g_hands.boards.length - 1;
+    if (tindex > 0) {
+      tindex--;
+    } else {
+      tindex = g_hands.boards.length - 1;
+    }
   }
 
   return tindex;
 }
 
 function gotoTravellerByIndex(index) {
-  var saveHandEntryMode = g_handEntryMode;
+  const saveHandEntryMode = g_handEntryMode;
 
   terminateSession();
   setupTraveller(index, true);
@@ -5197,12 +5700,14 @@ function gotoTravellerByIndex(index) {
   $('#allBoards').hide();
   $('#popup_box').hide();
 
-  if (saveHandEntryMode != 0) edit();
+  if (saveHandEntryMode != 0) {
+    edit();
+  }
 }
 
 function doPopupNoTimeout(pelement, htmltext, posx, posy) {
   // Display popup box containing specified html at location of this element
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.top = Number(posy) + 'px';
   popup.style.left = Number(posx) + 'px';
   popup.style.padding = '10px';
@@ -5214,16 +5719,17 @@ function doPopupNoTimeout(pelement, htmltext, posx, posy) {
 }
 
 function showBoardKeypad() {
-  var boardThreshold = 36; // Show a scroll bar if more boards than this
-  var htmltext = '<SPAN style="font-weight:bold;">Go to Board Number...</SPAN><BR>';
-  var i;
+  const boardThreshold = 36; // Show a scroll bar if more boards than this
+  let htmltext = '<SPAN style="font-weight:bold;">Go to Board Number...</SPAN><BR>';
+  let i;
 
-  if (g_hands.boards.length > boardThreshold)
+  if (g_hands.boards.length > boardThreshold) {
     htmltext += '<div style="overflow:scroll;max-height:300px;">';
+  }
 
   for (i = 0; i < g_hands.boards.length; i++) {
-    if (typeof g_hands.boards[i].Deal != 'undefined') {
-      var board = g_hands.boards[i].board;
+    if (typeof g_hands.boards[i].Deal !== 'undefined') {
+      const board = g_hands.boards[i].board;
       htmltext =
         htmltext +
         "<BUTTON onclick=\"log('button=gotoBoard');gotoTravellerByIndex(" +
@@ -5233,10 +5739,14 @@ function showBoardKeypad() {
         '</BUTTON>';
     }
 
-    if (i % 10 == 9) htmltext = htmltext + '<BR>';
+    if (i % 10 == 9) {
+      htmltext = htmltext + '<BR>';
+    }
   }
 
-  if (g_hands.boards.length > boardThreshold) htmltext += '</div>';
+  if (g_hands.boards.length > boardThreshold) {
+    htmltext += '</div>';
+  }
 
   htmltext =
     htmltext +
@@ -5247,14 +5757,14 @@ function showBoardKeypad() {
 }
 
 function showNewBoardSelector() {
-  var htmltext =
+  let htmltext =
     '<SPAN style="font-weight:bold;">Choose A Number For New Board in range 1 to 99 (numbers in use are not shown)</SPAN><BR><BR>';
-  var i;
-  var buttonCount = 0;
+  let i;
+  let buttonCount = 0;
 
   for (i = 1; i < 100; i++) {
     var j;
-    var inUse = false;
+    let inUse = false;
 
     for (j = 0; j < g_hands.boards.length; j++) {
       if (g_hands.boards[j].board == i) {
@@ -5276,7 +5786,9 @@ function showNewBoardSelector() {
         '</BUTTON>';
     }
 
-    if (buttonCount % 12 == 11) htmltext = htmltext + '<BR>';
+    if (buttonCount % 12 == 11) {
+      htmltext = htmltext + '<BR>';
+    }
   }
 
   htmltext =
@@ -5289,14 +5801,16 @@ function showNewBoardSelector() {
 }
 
 function showTravellerKeypad() {
-  var htmltext = '<SPAN style="font-weight:bold;">Go to Board Number...</SPAN><BR>';
-  var i;
-  var str = '';
+  let htmltext = '<SPAN style="font-weight:bold;">Go to Board Number...</SPAN><BR>';
+  let i;
+  let str = '';
 
-  if (g_handEntryMode != 0) str = 'edit();';
+  if (g_handEntryMode != 0) {
+    str = 'edit();';
+  }
 
   for (i = 0; i < g_hands.boards.length; i++) {
-    var board = g_hands.boards[i].board.toString();
+    const board = g_hands.boards[i].board.toString();
     htmltext =
       htmltext +
       "<BUTTON onclick=\"$('#popup_box').hide();log('button=gototraveller');g_lastBindex = getTindexByName(g_hands.boards,'" +
@@ -5305,7 +5819,9 @@ function showTravellerKeypad() {
       makeBoardNameString(board) +
       '</BUTTON>';
 
-    if (i % 10 == 9) htmltext = htmltext + '<BR>';
+    if (i % 10 == 9) {
+      htmltext = htmltext + '<BR>';
+    }
   }
 
   htmltext =
@@ -5333,14 +5849,17 @@ function initSettings() {
         localStorage.setItem('mkauto1', document.getElementById('mkauto1').checked);
       };
 
-    var krck = document.getElementById('krcalc');
+    const krck = document.getElementById('krcalc');
 
     if (krck !== null) {
       res = localStorage.getItem('krcalc');
 
       if (res !== null) {
-        if (res == 'true') krck.checked = true;
-        else krck.checked = false;
+        if (res == 'true') {
+          krck.checked = true;
+        } else {
+          krck.checked = false;
+        }
       }
     }
   }
@@ -5350,7 +5869,7 @@ function setOptions(optionsStr) {
   //*** This function is only called at startup, from buildPage1
   try {
     if (optionsStr !== null) {
-      var options = eval('(' + optionsStr + ')');
+      const options = eval('(' + optionsStr + ')');
       document.getElementById('nsrad1').checked = options.options.ns[0] === 'true';
       document.getElementById('nsrad2').checked = options.options.ns[1] === 'true';
       document.getElementById('nsrad3').checked = options.options.ns[2] === 'true';
@@ -5361,12 +5880,14 @@ function setOptions(optionsStr) {
       document.getElementById('mkrad2').checked = options.options.mk[1] === 'true';
     }
 
-    var sel = document.getElementById('honourCardSet');
+    const sel = document.getElementById('honourCardSet');
 
     if (sel != null) {
       if (localStorageSupported()) {
-        var value = localStorage.getItem('honourCardSet');
-        if (value != null) sel.value = value;
+        const value = localStorage.getItem('honourCardSet');
+        if (value != null) {
+          sel.value = value;
+        }
       }
     }
   } catch (err) {
@@ -5375,14 +5896,14 @@ function setOptions(optionsStr) {
 }
 
 function getRowFromTraveller(pair, direction) {
-  var i;
-  var info = getSessionInfo();
-  var singleWinner = info.singleWinner;
+  let i;
+  const info = getSessionInfo();
+  const singleWinner = info.singleWinner;
 
-  var tlines = g_currentTraveller.traveller_line;
+  const tlines = g_currentTraveller.traveller_line;
 
   for (i = 0; i < tlines.length; i++) {
-    var line = tlines[i];
+    const line = tlines[i];
 
     if (
       (((direction == 1) | singleWinner) & (line.ns_pair_number == pair)) |
@@ -5397,14 +5918,14 @@ function getRowFromTraveller(pair, direction) {
 }
 
 function getInfoForSimilarContracts(lineIndex, direction) {
-  var i;
-  var traveller = g_currentTraveller.traveller_line;
-  var curLine = traveller[lineIndex];
-  var suit = curLine.contract.charAt(1);
-  var declarer = curLine.played_by;
-  var level = Number(curLine.contract.charAt(0));
+  let i;
+  const traveller = g_currentTraveller.traveller_line;
+  const curLine = traveller[lineIndex];
+  const suit = curLine.contract.charAt(1);
+  const declarer = curLine.played_by;
+  const level = Number(curLine.contract.charAt(0));
 
-  var result = new Object();
+  const result = new Object();
   result.totalPairs = traveller.length;
   result.totalThisSuitAndDeclarer = 0;
   result.moreTricks = 0;
@@ -5421,7 +5942,7 @@ function getInfoForSimilarContracts(lineIndex, direction) {
 
   for (i = 0; i < traveller.length; i++) {
     if (i != lineIndex) {
-      var t = traveller[i];
+      const t = traveller[i];
 
       if ((t.contract.charAt(1) == suit) & (declarer == t.played_by)) {
         result.totalThisSuitAndDeclarer++;
@@ -5429,11 +5950,11 @@ function getInfoForSimilarContracts(lineIndex, direction) {
     }
   }
 
-  var playedByPercent = Math.round(
+  const playedByPercent = Math.round(
     (100 * (result.totalThisSuitAndDeclarer + 1)) / result.totalPairs
   );
 
-  var str =
+  const str =
     'This suit/declarer combination was played at ' +
     result.totalThisSuitAndDeclarer +
     ' of ' +
@@ -5451,14 +5972,14 @@ function getInfoForSimilarContracts(lineIndex, direction) {
 }
 
 function getContractType(contract) {
-  var result = new Object();
+  const result = new Object();
   result.ctype = 0; // assume part score
   result.str = 'a part score';
-  var minor = 'CD';
-  var major = 'HS';
-  var nt = 'N';
-  var level = Number(contract.charAt(0));
-  var suit = contract.charAt(1);
+  const minor = 'CD';
+  const major = 'HS';
+  const nt = 'N';
+  const level = Number(contract.charAt(0));
+  const suit = contract.charAt(1);
 
   if (level == 7) {
     result.ctype = 3;
@@ -5487,36 +6008,52 @@ function getContractType(contract) {
 
 function calcScoreForMakeable(suit, tricks, vulnerable) {
   // N.B This calculates basic score for a non-doubled contract.
-  var suits = 'CDHSN';
-  var score = 0;
-  var minor = false;
-  var nt = false;
+  const suits = 'CDHSN';
+  let score = 0;
+  let minor = false;
+  let nt = false;
 
-  var level = Number(tricks) - 6;
+  const level = Number(tricks) - 6;
 
-  if (suits.indexOf(suit) == 4) nt = true;
-  else if (suits.indexOf(suit) < 2) minor = true;
+  if (suits.indexOf(suit) == 4) {
+    nt = true;
+  } else if (suits.indexOf(suit) < 2) {
+    minor = true;
+  }
 
   score = 50; // Basic score for making contract
 
-  if (nt) score = score + 10;
+  if (nt) {
+    score = score + 10;
+  }
 
-  var perTrick = 20;
+  let perTrick = 20;
 
-  if (!minor) perTrick = 30;
+  if (!minor) {
+    perTrick = 30;
+  }
 
   score = score + level * perTrick;
 
   if ((nt & (level >= 3)) | (!minor & (level >= 4)) | (minor & (level >= 5))) {
-    if (vulnerable) score = score + 450;
-    else score = score + 250;
+    if (vulnerable) {
+      score = score + 450;
+    } else {
+      score = score + 250;
+    }
 
     if (level == 6) {
-      if (vulnerable) score = score + 750;
-      else score = score + 500;
+      if (vulnerable) {
+        score = score + 750;
+      } else {
+        score = score + 500;
+      }
     } else if (level == 7) {
-      if (vulnerable) score = score + 1500;
-      else score = score + 1000;
+      if (vulnerable) {
+        score = score + 1500;
+      } else {
+        score = score + 1000;
+      }
     }
   }
 
@@ -5524,41 +6061,49 @@ function calcScoreForMakeable(suit, tricks, vulnerable) {
 }
 
 function getMakeableTricksForContract(index, contract, declarer) {
-  var trickChars = '0123456789ABCD';
-  var suits = 'NSHDC';
-  var decls = 'NSEW';
+  const trickChars = '0123456789ABCD';
+  const suits = 'NSHDC';
+  const decls = 'NSEW';
 
-  if (!validContract(contract)) return -1;
+  if (!validContract(contract)) {
+    return -1;
+  }
 
-  var suit = suits.indexOf(contract.charAt(1));
-  var decl = decls.indexOf(declarer);
+  const suit = suits.indexOf(contract.charAt(1));
+  const decl = decls.indexOf(declarer);
 
-  if (typeof g_hands.boards[index].DoubleDummyTricks == 'undefined') return -1;
+  if (typeof g_hands.boards[index].DoubleDummyTricks === 'undefined') {
+    return -1;
+  }
 
-  var cvector = g_hands.boards[index].DoubleDummyTricks;
+  const cvector = g_hands.boards[index].DoubleDummyTricks;
 
-  var value = trickChars.indexOf(cvector.charAt(5 * decl + suit).toUpperCase());
+  const value = trickChars.indexOf(cvector.charAt(5 * decl + suit).toUpperCase());
 
-  if ((value == '-') | (value == '*')) return -1;
+  if ((value == '-') | (value == '*')) {
+    return -1;
+  }
 
   return Number(value);
 }
 
 function getHighestScoringMakeableContractForDirection(bindex, direction, vulnerable) {
-  var suit = 'CDHSN';
-  var dir = 'NS';
-  var score;
-  var topscore = 0;
-  var result = new Object();
-  var contract = '';
-  var declarer = '';
-  var i, j;
-  var tricks;
-  var lastSuit = null,
+  const suit = 'CDHSN';
+  let dir = 'NS';
+  let score;
+  let topscore = 0;
+  const result = new Object();
+  let contract = '';
+  let declarer = '';
+  let i, j;
+  let tricks;
+  let lastSuit = null,
     lastDeclarer,
     lastTricks = null;
 
-  if (direction == 2) dir = 'EW';
+  if (direction == 2) {
+    dir = 'EW';
+  }
 
   for (i = 0; i < dir.length; i++) {
     for (j = 0; j < suit.length; j++) {
@@ -5583,7 +6128,9 @@ function getHighestScoringMakeableContractForDirection(bindex, direction, vulner
   {
     tricks = getMakeableTricksForContract(bindex, '1' + lastSuit, dir.charAt(1));
 
-    if (tricks == lastTricks) lastDeclarer = dir;
+    if (tricks == lastTricks) {
+      lastDeclarer = dir;
+    }
   }
 
   if (lastSuit != null) {
@@ -5596,25 +6143,28 @@ function getHighestScoringMakeableContractForDirection(bindex, direction, vulner
 }
 
 function drawBoxedBar(value, vmax, width, height, bcolor, leftBorder) {
-  var rbd = '';
-  var wth = width + 'px';
-  var hgt = height + 'px';
-  var dwth = 0;
+  const rbd = '';
+  const wth = width + 'px';
+  const hgt = height + 'px';
+  let dwth = 0;
 
-  if (vmax > 0) dwth = Math.round((width * value) / vmax);
-  else if (leftBorder) {
+  if (vmax > 0) {
+    dwth = Math.round((width * value) / vmax);
+  } else if (leftBorder) {
     dwth = 0;
   }
 
-  var baseWidth = dwth;
+  const baseWidth = dwth;
 
   dwth = dwth + 'px';
 
-  var lbd = 'none';
+  let lbd = 'none';
 
-  if (leftBorder) lbd = '1px solid grey';
+  if (leftBorder) {
+    lbd = '1px solid grey';
+  }
 
-  var str = '';
+  let str = '';
 
   //	if (Math.round(baseWidth)>0)
   {
@@ -5641,15 +6191,17 @@ function drawBoxedBar(value, vmax, width, height, bcolor, leftBorder) {
 }
 
 function drawBar(value, vmax, width, height, gradColor) {
-  var wth = width + 'px';
-  var hgt = height + 'px';
-  var dwth = Math.round((width * value) / vmax) + 'px';
+  const wth = width + 'px';
+  const hgt = height + 'px';
+  const dwth = Math.round((width * value) / vmax) + 'px';
 
-  var color = 'blue';
+  let color = 'blue';
 
-  if (gradColor) color = makeColor(value / vmax);
+  if (gradColor) {
+    color = makeColor(value / vmax);
+  }
 
-  var str =
+  let str =
     '<div style="border:1px solid black;min-height:' +
     hgt +
     ';height:' +
@@ -5680,26 +6232,29 @@ function drawBar(value, vmax, width, height, gradColor) {
 }
 
 function computeTravellerStatistics(pdirection) {
-  var i, j;
-  var result = new Array();
-  var info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  let i, j;
+  const result = new Array();
+  const info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
 
-  var traveller = g_currentTraveller.traveller_line;
+  const traveller = g_currentTraveller.traveller_line;
 
   for (i = 0; i < traveller.length; i++) {
-    var found = false;
-    var tline = traveller[i];
+    let found = false;
+    const tline = traveller[i];
 
     if (played(tline)) {
-      var contract = tline.contract;
+      let contract = tline.contract;
 
       if (!validContract(contract)) {
-        if (passed(tline)) contract = 'Passed';
-        else contract = 'N/A';
+        if (passed(tline)) {
+          contract = 'Passed';
+        } else {
+          contract = 'N/A';
+        }
       }
 
       for (j = 0; j < result.length; j++) {
-        var cobj = result[j];
+        const cobj = result[j];
 
         if ((cobj.contract == contract) & (cobj.played_by == tline.played_by)) {
           found = true;
@@ -5707,39 +6262,50 @@ function computeTravellerStatistics(pdirection) {
 
           var percent;
 
-          if (g_scoring != 'IMP')
+          if (g_scoring != 'IMP') {
             percent =
               (100 * Number(tline.ns_match_points)) /
               (Number(tline.ns_match_points) + Number(tline.ew_match_points));
-          else if (g_eventType != 'Teams') percent = Number(tline.ns_match_points);
-          else {
-            if (pdirection == 1) percent = Number(tline.crossImpsNS);
-            else percent = Number(tline.crossImpsEW);
+          } else if (g_eventType != 'Teams') {
+            percent = Number(tline.ns_match_points);
+          } else {
+            if (pdirection == 1) {
+              percent = Number(tline.crossImpsNS);
+            } else {
+              percent = Number(tline.crossImpsEW);
+            }
           }
 
-          if (percent < cobj.minPercent) cobj.minPercent = percent;
-          else if (percent > cobj.maxPercent) cobj.maxPercent = percent;
+          if (percent < cobj.minPercent) {
+            cobj.minPercent = percent;
+          } else if (percent > cobj.maxPercent) {
+            cobj.maxPercent = percent;
+          }
 
           break;
         }
       }
 
       if (!found) {
-        var newobj = new Object();
+        const newobj = new Object();
         newobj.contract = contract;
         newobj.played_by = tline.played_by;
         newobj.tcount = 1;
 
         var percent;
 
-        if (g_scoring != 'IMP')
+        if (g_scoring != 'IMP') {
           percent =
             (100 * Number(tline.ns_match_points)) /
             (Number(tline.ns_match_points) + Number(tline.ew_match_points));
-        else if (g_eventType != 'Teams') percent = Number(tline.ns_match_points);
-        else {
-          if (pdirection == 1) percent = Number(tline.crossImpsNS);
-          else percent = Number(tline.crossImpsEW);
+        } else if (g_eventType != 'Teams') {
+          percent = Number(tline.ns_match_points);
+        } else {
+          if (pdirection == 1) {
+            percent = Number(tline.crossImpsNS);
+          } else {
+            percent = Number(tline.crossImpsEW);
+          }
         }
 
         newobj.minPercent = percent;
@@ -5749,43 +6315,57 @@ function computeTravellerStatistics(pdirection) {
     }
   }
 
-  var str = '';
+  const str = '';
 
   result.sort(function (a, b) {
-    var suits = 'CDHSN';
-    var levelb = Number(b.contract.charAt(0));
-    var levela = Number(a.contract.charAt(0));
-    var suitb = suits.indexOf(b.contract.charAt(1));
-    var suita = suits.indexOf(a.contract.charAt(1));
+    const suits = 'CDHSN';
+    const levelb = Number(b.contract.charAt(0));
+    const levela = Number(a.contract.charAt(0));
+    const suitb = suits.indexOf(b.contract.charAt(1));
+    const suita = suits.indexOf(a.contract.charAt(1));
 
-    if (levelb > levela) return 1;
-    else if (levelb < levela) return -1;
-    else if (suitb > suita) return 1;
-    else if (suitb < suita) return -1;
-    else return 0;
+    if (levelb > levela) {
+      return 1;
+    } else if (levelb < levela) {
+      return -1;
+    } else if (suitb > suita) {
+      return 1;
+    } else if (suitb < suita) {
+      return -1;
+    } else {
+      return 0;
+    }
   });
 
-  var ctable = document.getElementById('contractTable');
-  var tlen = ctable.rows.length;
+  const ctable = document.getElementById('contractTable');
+  const tlen = ctable.rows.length;
 
   for (i = 0; i < tlen - 1; i++) {
     ctable.deleteRow(-1);
   }
 
   if (g_scoring != 'IMP') {
-    if (pdirection == 1) ctable.rows[0].cells[3].innerHTML = 'Min/Max NS Percentage';
-    else ctable.rows[0].cells[3].innerHTML = 'Min/Max EW Percentage';
+    if (pdirection == 1) {
+      ctable.rows[0].cells[3].innerHTML = 'Min/Max NS Percentage';
+    } else {
+      ctable.rows[0].cells[3].innerHTML = 'Min/Max EW Percentage';
+    }
   } else {
-    var tailEnd = 'Points';
+    let tailEnd = 'Points';
 
-    if (g_eventType == 'Teams') tailEnd = 'Cross Imps';
+    if (g_eventType == 'Teams') {
+      tailEnd = 'Cross Imps';
+    }
 
-    if (pdirection == 1) ctable.rows[0].cells[3].innerHTML = 'Min/Max NS ' + tailEnd;
-    else ctable.rows[0].cells[3].innerHTML = 'Min/Max EW ' + tailEnd;
+    if (pdirection == 1) {
+      ctable.rows[0].cells[3].innerHTML = 'Min/Max NS ' + tailEnd;
+    } else {
+      ctable.rows[0].cells[3].innerHTML = 'Min/Max EW ' + tailEnd;
+    }
   }
 
   for (i = 0; i < result.length; i++) {
-    var curobj = result[i];
+    const curobj = result[i];
     percentLo = curobj.minPercent;
     percentHi = curobj.maxPercent;
 
@@ -5795,7 +6375,7 @@ function computeTravellerStatistics(pdirection) {
     }
 
     if (pdirection == 2) {
-      var tmp = percentLo;
+      const tmp = percentLo;
 
       if (g_scoring != 'IMP') {
         percentLo = 100 - percentHi;
@@ -5807,13 +6387,13 @@ function computeTravellerStatistics(pdirection) {
     }
 
     ctable.insertRow(-1);
-    var crow = ctable.rows[ctable.rows.length - 1];
+    const crow = ctable.rows[ctable.rows.length - 1];
 
     for (j = 0; j < 6; j++) {
       crow.insertCell(-1);
     }
 
-    var cells = crow.cells;
+    const cells = crow.cells;
     cells[0].innerHTML = curobj.contract;
     cells[1].innerHTML = curobj.played_by;
     cells[2].innerHTML = curobj.tcount;
@@ -5821,11 +6401,17 @@ function computeTravellerStatistics(pdirection) {
     cells[3].innerHTML = drawBar(curobj.tcount, traveller.length, 150, 15, false);
 
     if (g_scoring != 'IMP') {
-      if (percentHi == percentLo) cells[4].innerHTML = percentLo + '%';
-      else cells[4].innerHTML = percentLo + '-' + percentHi + '%';
+      if (percentHi == percentLo) {
+        cells[4].innerHTML = percentLo + '%';
+      } else {
+        cells[4].innerHTML = percentLo + '-' + percentHi + '%';
+      }
     } else {
-      if (percentHi == percentLo) cells[4].innerHTML = percentLo;
-      else cells[4].innerHTML = percentLo + ' to ' + percentHi;
+      if (percentHi == percentLo) {
+        cells[4].innerHTML = percentLo;
+      } else {
+        cells[4].innerHTML = percentLo + ' to ' + percentHi;
+      }
     }
 
     // Draw the box showing minimum and maximum percentage, or IMPs
@@ -5895,10 +6481,10 @@ function computeTravellerStatistics(pdirection) {
 }
 
 function checkHigherScoringPairs(traveller, prow, direction) {
-  var i, j;
-  var result = new Object();
-  var dirs = 'NSEW';
-  var suits = 'CDHSN';
+  let i, j;
+  const result = new Object();
+  const dirs = 'NSEW';
+  const suits = 'CDHSN';
   result.playedSameSuit = 0;
   result.moreTricks = 0;
   result.moreTricksAtSameLevel = 0;
@@ -5920,79 +6506,101 @@ function checkHigherScoringPairs(traveller, prow, direction) {
   for (i = 0; i < 4; i++) {
     result.matrix[i] = new Array();
 
-    for (j = 0; j < 5; j++) result.matrix[i][j] = 0;
+    for (j = 0; j < 5; j++) {
+      result.matrix[i][j] = 0;
+    }
   }
 
-  var ew = 'EW';
-  var sign = 1;
+  const ew = 'EW';
+  let sign = 1;
 
-  if (direction == 2) sign = -1;
+  if (direction == 2) {
+    sign = -1;
+  }
 
-  var tline = traveller[prow];
-  var score = Number(tline.score);
-  var contract = tline.contract;
-  var suit = contract.charAt(1);
-  var level = Number(contract.charAt(0));
-  var tricks = Number(tline.tricks);
-  var ourctype = getContractType(contract).ctype;
+  const tline = traveller[prow];
+  const score = Number(tline.score);
+  const contract = tline.contract;
+  const suit = contract.charAt(1);
+  const level = Number(contract.charAt(0));
+  const tricks = Number(tline.tricks);
+  const ourctype = getContractType(contract).ctype;
 
   result.contractType = ourctype;
 
   for (i = 0; i < traveller.length; i++) {
-    var curLine = traveller[i];
+    const curLine = traveller[i];
 
     if ((i != prow) & (curLine.ns_pair_number != '')) {
       // was suit and direction the same ?
-      var curContract = curLine.contract;
-      var curSuit = curLine.contract.charAt(1);
-      var curLevel = Number(curLine.contract.charAt(0));
-      var curTricks = Number(curLine.tricks);
-      var curDirection = 1;
+      const curContract = curLine.contract;
+      const curSuit = curLine.contract.charAt(1);
+      const curLevel = Number(curLine.contract.charAt(0));
+      const curTricks = Number(curLine.tricks);
+      let curDirection = 1;
 
       result.matrix[dirs.indexOf(curLine.played_by)][suits.indexOf(curSuit)]++;
 
-      if (ew.indexOf(curLine.played_by) != -1) curDirection = 2;
+      if (ew.indexOf(curLine.played_by) != -1) {
+        curDirection = 2;
+      }
 
-      if ((direction == curDirection) & (suit == curSuit)) result.playedSameSuit++;
+      if ((direction == curDirection) & (suit == curSuit)) {
+        result.playedSameSuit++;
+      }
 
-      var diff = (Number(curLine.score) - score) * sign;
+      const diff = (Number(curLine.score) - score) * sign;
 
       if (diff > 0) // they did better, why ?
       {
         result.declarer++;
 
         if (direction == curDirection) {
-          if (suit != curSuit)
-            // their contract was in a different suit
+          if (suit != curSuit) // their contract was in a different suit
+          {
             result.otherSuit++;
-          else {
-            if (curTricks > tricks) result.moreTricks++;
+          } else {
+            if (curTricks > tricks) {
+              result.moreTricks++;
+            }
 
-            var cres = getContractType(curContract);
-            var ctype = cres.ctype;
+            const cres = getContractType(curContract);
+            const ctype = cres.ctype;
 
             if (ctype == ourctype) {
-              if (curTricks > tricks) result.moreTricksAtSameLevel++;
+              if (curTricks > tricks) {
+                result.moreTricksAtSameLevel++;
+              }
             } else if (ctype > ourctype) {
               if (ctype == 1) {
                 result.bidGame++;
 
-                if (curTricks >= curLevel + 6) result.bidAndMadeGame++;
+                if (curTricks >= curLevel + 6) {
+                  result.bidAndMadeGame++;
+                }
               } else if (ctype == 2) {
                 result.bidSmallSlam++;
 
-                if (curTricks >= curLevel + 6) result.bidAndMadeSmallSlam++;
+                if (curTricks >= curLevel + 6) {
+                  result.bidAndMadeSmallSlam++;
+                }
               } else {
                 result.bidGrandSlam++;
 
-                if (curTricks >= curLevel + 6) result.bidAndMadeGrandSlam++;
+                if (curTricks >= curLevel + 6) {
+                  result.bidAndMadeGrandSlam++;
+                }
               }
             } else if ((curContract.indexOf('x') != -1) | (curContract.indexOf('*') != -1)) {
               result.wereDoubled++;
 
-              if (curTricks >= curLevel + 6) result.madeDoubled++;
+              if (curTricks >= curLevel + 6) {
+                result.madeDoubled++;
+              }
             } else if (curTricks <= tricks) {
-              if (curLevel < level) result.bidLowerLevel++;
+              if (curLevel < level) {
+                result.bidLowerLevel++;
+              }
             }
           }
         } else {
@@ -6008,22 +6616,24 @@ function checkHigherScoringPairs(traveller, prow, direction) {
 }
 
 function makeColor(value) {
-  var r = 64 + Math.round((1 - value) * 192);
-  var g = 64 + Math.round(value * 192);
-  var diff = g - r;
+  let r = 64 + Math.round((1 - value) * 192);
+  let g = 64 + Math.round(value * 192);
+  let diff = g - r;
 
-  if (diff < 0) diff = -diff;
+  if (diff < 0) {
+    diff = -diff;
+  }
 
   r = Math.round(r + ((192 - diff) * r) / 192);
   g = Math.round(g + ((192 - diff) * g) / 192);
 
-  var color = 'rgb(' + r + ',' + g + ',0)';
+  const color = 'rgb(' + r + ',' + g + ',0)';
   return color;
 }
 
 function convertAdjustmentToCrossImps(tline, dir) {
-  var nssc1 = tline.score;
-  var ewsc1 = tline.score;
+  let nssc1 = tline.score;
+  let ewsc1 = tline.score;
 
   if (nssc1.toString().charAt(0) == 'A') {
     nssc1 = nssc1.toString().substring(1, 3);
@@ -6033,46 +6643,53 @@ function convertAdjustmentToCrossImps(tline, dir) {
     ewsc1 = ewsc1.ew_score.toString().replace('%', '');
   }
 
-  var pc = nssc1;
+  let pc = nssc1;
 
-  if (dir == 2) pc = ewsc1;
+  if (dir == 2) {
+    pc = ewsc1;
+  }
 
-  var percent = Number(pc);
+  let percent = Number(pc);
   percent = (percent - 50) / 10;
   return 2 * percent;
 }
 
 function isValidCrossImps(tline) {
-  var valid = true;
+  let valid = true;
 
-  if (typeof tline.ns_cross_imp_points !== 'undefined')
-    if (tline.ns_cross_imp_points === '') valid = false;
+  if (typeof tline.ns_cross_imp_points !== 'undefined') {
+    if (tline.ns_cross_imp_points === '') {
+      valid = false;
+    }
+  }
 
   return valid;
 }
 
 function calculateCrossImps() {
-  var boards = g_travellers.event.board;
-  var i;
+  const boards = g_travellers.event.board;
+  let i;
 
   var pairs = g_travellers.event.participants.pair;
 
-  for (i = 0; i < pairs.length; i++) pairs[i].crossImpsBoardsPlayed = 0;
+  for (i = 0; i < pairs.length; i++) {
+    pairs[i].crossImpsBoardsPlayed = 0;
+  }
 
   for (i = 0; i < boards.length; i++) {
-    var tlines = boards[i].traveller_line;
+    const tlines = boards[i].traveller_line;
     var j, k;
 
     for (j = 0; j < tlines.length; j++) {
-      var includeBoard = true;
+      let includeBoard = true;
 
       includeBoard = isValidCrossImps(tlines[j]);
 
       if (played(tlines[j])) // Otherwise this pair didn't play this board.
       {
-        var totalNS = 0;
-        var totalEW = 0;
-        var nplayed = 0;
+        let totalNS = 0;
+        let totalEW = 0;
+        let nplayed = 0;
 
         if (scoreContainsAdjustment(tlines[j])) {
           nplayed++;
@@ -6080,7 +6697,7 @@ function calculateCrossImps() {
           totalNS = convertAdjustmentToCrossImps(tlines[j], 1);
           totalEW = convertAdjustmentToCrossImps(tlines[j], 2);
         } else {
-          var score1 = tlines[j].score;
+          const score1 = tlines[j].score;
 
           for (k = 0; k < tlines.length; k++) {
             if (k != j) {
@@ -6090,7 +6707,7 @@ function calculateCrossImps() {
                   nplayed++;
 
                   if (includeBoard) {
-                    var score2 = tlines[k].score;
+                    const score2 = tlines[k].score;
                     totalNS = totalNS + convertScoreToImps(score1, score2);
                     totalEW = totalEW + convertScoreToImps(score2, score1);
                   }
@@ -6101,10 +6718,10 @@ function calculateCrossImps() {
         }
 
         if (nplayed > 0) {
-          var infoNS = getPlayerInfo(tlines[j].ns_pair_number, 1);
-          var infoEW = getPlayerInfo(tlines[j].ew_pair_number, 2);
-          var nsIndex = infoNS.pair_index;
-          var ewIndex = infoEW.pair_index;
+          const infoNS = getPlayerInfo(tlines[j].ns_pair_number, 1);
+          const infoEW = getPlayerInfo(tlines[j].ew_pair_number, 2);
+          const nsIndex = infoNS.pair_index;
+          const ewIndex = infoEW.pair_index;
 
           if (includeBoard) {
             tlines[j].crossImpsNS = (totalNS / nplayed).toFixed(2);
@@ -6114,18 +6731,18 @@ function calculateCrossImps() {
             tlines[j].crossImpsEW = '';
           }
 
-          if (typeof g_travellers.event.participants.pair[nsIndex].boardsPlayed == 'undefined') {
+          if (typeof g_travellers.event.participants.pair[nsIndex].boardsPlayed === 'undefined') {
             g_travellers.event.participants.pair[nsIndex].boardsPlayed = 0;
             g_travellers.event.participants.pair[nsIndex].totalCrossImps = 0;
           }
 
-          if (typeof g_travellers.event.participants.pair[ewIndex].boardsPlayed == 'undefined') {
+          if (typeof g_travellers.event.participants.pair[ewIndex].boardsPlayed === 'undefined') {
             g_travellers.event.participants.pair[ewIndex].boardsPlayed = 0;
             g_travellers.event.participants.pair[ewIndex].totalCrossImps = 0;
           }
 
-          var nsObj = g_travellers.event.participants.pair[nsIndex];
-          var ewObj = g_travellers.event.participants.pair[ewIndex];
+          const nsObj = g_travellers.event.participants.pair[nsIndex];
+          const ewObj = g_travellers.event.participants.pair[ewIndex];
 
           nsObj.boardsPlayed++;
           ewObj.boardsPlayed++;
@@ -6157,25 +6774,32 @@ function scoreContainsAdjustment(tline) {
     (tline.ns_score.toString().indexOf('%') != -1) |
     (tline.ew_score.toString().indexOf('%') != -1) |
     (tline.score.toString().indexOf('A') != -1)
-  )
+  ) {
     return true;
-  else return false;
+  } else {
+    return false;
+  }
 }
 
 function convertScoreToImps(score1, score2) {
-  var diff = Number(score1) - Number(score2);
+  const diff = Number(score1) - Number(score2);
 
-  var absdiff = diff;
-  if (absdiff < 0) absdiff = -diff;
+  let absdiff = diff;
+  if (absdiff < 0) {
+    absdiff = -diff;
+  }
 
-  var i;
+  let i;
 
   for (i = 0; i < g_scoreToImps.length; i++) {
-    var range = g_scoreToImps[i];
+    const range = g_scoreToImps[i];
 
     if ((absdiff >= Number(range[0])) & (absdiff <= Number(range[1]))) {
-      if (diff >= 0) return Number(range[2]);
-      else return -Number(range[2]);
+      if (diff >= 0) {
+        return Number(range[2]);
+      } else {
+        return -Number(range[2]);
+      }
     }
   }
 
@@ -6183,24 +6807,30 @@ function convertScoreToImps(score1, score2) {
 }
 
 function calculateMaxImps() {
-  if (typeof g_travellers != 'undefined') {
-    var travellers = g_travellers.event.board;
-    var maxImps = -32767;
-    var i, j;
+  if (typeof g_travellers !== 'undefined') {
+    const travellers = g_travellers.event.board;
+    let maxImps = -32767;
+    let i, j;
 
     for (i = 0; i < g_travellers.event.board.length; i++) {
-      var board = g_travellers.event.board[i];
+      const board = g_travellers.event.board[i];
 
       for (j = 0; j < board.traveller_line.length; j++) {
-        var tline = board.traveller_line[j];
-        var nspts = Number(tline.ns_match_points);
-        var ewpts = Number(tline.ew_match_points);
+        const tline = board.traveller_line[j];
+        const nspts = Number(tline.ns_match_points);
+        const ewpts = Number(tline.ew_match_points);
 
-        if ((nspts < 0) | (ewpts < 0)) g_scoring = 'IMP';
+        if ((nspts < 0) | (ewpts < 0)) {
+          g_scoring = 'IMP';
+        }
 
         if (g_eventType != 'Teams') {
-          if (nspts > maxImps) maxImps = nspts;
-          if (ewpts > maxImps) maxImps = ewpts;
+          if (nspts > maxImps) {
+            maxImps = nspts;
+          }
+          if (ewpts > maxImps) {
+            maxImps = ewpts;
+          }
         } else if (Math.abs(tline.crossImpsNS) > maxImps) {
           maxImps = Math.abs(tline.crossImpsNS);
         } else if (Math.abs(tline.crossImpsEW) > maxImps) {
@@ -6214,25 +6844,30 @@ function calculateMaxImps() {
 }
 
 function returnPoints(tline, sign) {
-  var nspts = Number(tline.ns_match_points);
-  var ewpts = Number(tline.ew_match_points);
+  let nspts = Number(tline.ns_match_points);
+  let ewpts = Number(tline.ew_match_points);
 
   if (g_eventType == 'Teams') {
     nspts = Number(tline.crossImpsNS);
     ewpts = Number(tline.crossImpsEW);
   }
 
-  if (sign == -1) return ewpts;
-  else return nspts;
+  if (sign == -1) {
+    return ewpts;
+  } else {
+    return nspts;
+  }
 }
 
 function calcPercentage(tline, sign) {
-  var nspts = Number(tline.ns_match_points);
-  var ewpts = Number(tline.ew_match_points);
+  const nspts = Number(tline.ns_match_points);
+  const ewpts = Number(tline.ew_match_points);
 
-  var percent = 100 * (nspts / (nspts + ewpts));
+  let percent = 100 * (nspts / (nspts + ewpts));
 
-  if (sign == -1) percent = 100 - percent;
+  if (sign == -1) {
+    percent = 100 - percent;
+  }
 
   percent = parseFloat(Math.round(percent * 100) / 100).toFixed(0);
   return Number(percent);
@@ -6240,14 +6875,16 @@ function calcPercentage(tline, sign) {
 
 function showBidAlert(pthis) {
   // Show the explanation of the bid
-  var id = Number(pthis.id.substring(6));
-  var bids = g_hands.boards[g_lastBindex].Bids;
-  var msg = bids[id];
+  const id = Number(pthis.id.substring(6));
+  const bids = g_hands.boards[g_lastBindex].Bids;
+  let msg = bids[id];
   msg = msg.split('|');
 
-  if (msg.length > 1) msg = msg[1];
+  if (msg.length > 1) {
+    msg = msg[1];
+  }
 
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.padding = '2px';
   popup.style.backgroundColor = 'yellow';
   popup.style.top = getPosition(pthis).y - 20 - $(this).scrollTop() + 'px';
@@ -6260,20 +6897,26 @@ function showBidAlert(pthis) {
 
 function showNames(pthis, dir) {
   // Show popup with player names
-  if (pthis.innerHTML == '') return;
-  var pair = pthis.innerHTML;
-  var info = getPlayerInfo(pair, dir);
-  var pairs;
-  var dirLabel = 'N/S';
+  if (pthis.innerHTML == '') {
+    return;
+  }
+  const pair = pthis.innerHTML;
+  const info = getPlayerInfo(pair, dir);
+  let pairs;
+  let dirLabel = 'N/S';
 
-  if (dir == 2) dirLabel = 'E/W';
+  if (dir == 2) {
+    dirLabel = 'E/W';
+  }
 
-  if (info.singleWinner) dirLabel = 'Pair';
+  if (info.singleWinner) {
+    dirLabel = 'Pair';
+  }
 
-  var text =
+  const text =
     '&nbsp;' + info.player1 + ' & ' + info.player2 + '  ' + dirLabel + ' ' + pair + '&nbsp;';
 
-  var popup = document.getElementById('popup_box');
+  const popup = document.getElementById('popup_box');
   popup.style.padding = '0px';
   popup.style.top = getPosition(pthis).y - 20 - $(this).scrollTop() + 'px';
   popup.style.left = getPosition(pthis).x + 'px';
@@ -6286,32 +6929,36 @@ function showNames(pthis, dir) {
 function leadCard(lead) {
   // lead card can be supplied as, for example, AS, or SA. This function returns the value of
   // the lead card field in the AS format.
-  var cards = '23456789TJQKA';
-  var suit = 'CHDS';
-  var pvalue = lead.toUpperCase();
+  const cards = '23456789TJQKA';
+  const suit = 'CHDS';
+  let pvalue = lead.toUpperCase();
   pvalue = pvalue.replace('10', 'T');
 
-  var validCard = true;
+  const validCard = true;
 
-  if (pvalue.length != 2) return lead;
-  else {
-    var cvalue = pvalue.charAt(0);
+  if (pvalue.length != 2) {
+    return lead;
+  } else {
+    let cvalue = pvalue.charAt(0);
 
     if (cards.indexOf(cvalue) == -1) // Try reversing it to see if it's the other way around.
     {
-      var c1 = pvalue.charAt(0);
-      var c2 = pvalue.charAt(1);
+      const c1 = pvalue.charAt(0);
+      const c2 = pvalue.charAt(1);
 
       cvalue = c2;
 
-      if (cards.indexOf(cvalue) == -1)
-        // Not this way either, just return the original
+      if (cards.indexOf(cvalue) == -1) // Not this way either, just return the original
+      {
         return pvalue.replace('T', '10');
+      }
 
       pvalue = c2 + c1;
     }
 
-    if (suit.indexOf(pvalue.charAt(1)) == -1) return pvalue.replace('T', '10');
+    if (suit.indexOf(pvalue.charAt(1)) == -1) {
+      return pvalue.replace('T', '10');
+    }
   }
 
   return pvalue.replace('T', '10');
@@ -6322,9 +6969,13 @@ function comparePairNumbers(a, b) {
   {
     a = Number(a);
     b = Number(b);
-    if (b < a) return 1;
-    else if (b == a) return 0;
-    else return -1;
+    if (b < a) {
+      return 1;
+    } else if (b == a) {
+      return 0;
+    } else {
+      return -1;
+    }
   }
 
   if (
@@ -6335,14 +6986,20 @@ function comparePairNumbers(a, b) {
     a = a.split('-');
     b = b.split('-');
 
-    if (a.length != b.length) return 0;
+    if (a.length != b.length) {
+      return 0;
+    }
 
-    var i;
+    let i;
 
     for (i = 0; i < a.length; i++) {
-      if (isNaN(a[i]) | isNaN(b[i])) return 0;
-      var result = comparePairNumbers(a[i], b[i]);
-      if (result != 0) return result;
+      if (isNaN(a[i]) | isNaN(b[i])) {
+        return 0;
+      }
+      const result = comparePairNumbers(a[i], b[i]);
+      if (result != 0) {
+        return result;
+      }
     }
 
     return 0;
@@ -6351,44 +7008,56 @@ function comparePairNumbers(a, b) {
   // The pair numbers contain a letter (is it a prefix or a suffix ?)
   if ((b.charAt(0) > '9') | (a.charAt(0) > '9')) // ACBL Score style (prefix letter)
   {
-    if (b.charAt(0) < a.charAt(0)) return 1;
-    else if (b.charAt(0) > a.charAt(0)) return -1;
+    if (b.charAt(0) < a.charAt(0)) {
+      return 1;
+    } else if (b.charAt(0) > a.charAt(0)) {
+      return -1;
+    }
 
     a = a.substring(1);
     b = b.substring(1);
 
-    if ((a.length > 0) & (b.length > 0)) return comparePairNumbers(a, b);
-    else return 0;
+    if ((a.length > 0) & (b.length > 0)) {
+      return comparePairNumbers(a, b);
+    } else {
+      return 0;
+    }
   } else // Scorebridge style with prefix letter last.
   {
-    if (b.substring(b.length - 1) < a.substring(a.length - 1)) return 1;
-    else if (b.substring(b.length - 1) > a.substring(a.length - 1)) return -1;
+    if (b.substring(b.length - 1) < a.substring(a.length - 1)) {
+      return 1;
+    } else if (b.substring(b.length - 1) > a.substring(a.length - 1)) {
+      return -1;
+    }
 
     a = a.substring(0, a.length - 1);
     b = b.substring(0, b.length - 1);
 
-    if ((a.length > 0) & (b.length > 0)) return comparePairNumbers(a, b);
-    else return 0;
+    if ((a.length > 0) & (b.length > 0)) {
+      return comparePairNumbers(a, b);
+    } else {
+      return 0;
+    }
   }
 }
 
 function getMakeableTricksForLead(pindex, tline) {
-  var ntricks = null;
+  let ntricks = null;
 
-  if (typeof g_hands.boards[pindex].DoubleDummyTricks != 'undefined') {
+  if (typeof g_hands.boards[pindex].DoubleDummyTricks !== 'undefined') {
     if (tline.lead != '') {
-      var idx = getLeadsIdx(tline.contract, tline.played_by);
+      const idx = getLeadsIdx(tline.contract, tline.played_by);
 
-      if (typeof g_hands.boards[pindex].openingLeads != 'undefined') {
-        var leads = g_hands.boards[pindex].openingLeads[idx];
+      if (typeof g_hands.boards[pindex].openingLeads !== 'undefined') {
+        const leads = g_hands.boards[pindex].openingLeads[idx];
 
-        var ltricks;
+        let ltricks;
 
         for (j = 0; j < leads.length; j++) {
-          var cl = leads[j];
+          const cl = leads[j];
 
           if (cl[0].replace('T', '10') == leadCard(tline.lead)) {
-            var score = Number(cl[1]);
+            const score = Number(cl[1]);
             ntricks = 13 - score;
             break;
           }
@@ -6401,21 +7070,21 @@ function getMakeableTricksForLead(pindex, tline) {
 }
 
 function drawMiniHand() {
-  if (checkBoardValid(g_lastBindex) & (typeof g_hands.boards[g_lastBindex].Deal != 'undefined')) {
-    var minitable = document.getElementById('minihand');
+  if (checkBoardValid(g_lastBindex) & (typeof g_hands.boards[g_lastBindex].Deal !== 'undefined')) {
+    const minitable = document.getElementById('minihand');
     minitable.rows[1].cells[1].innerHTML =
       '<span style="font-size:20px;">' + g_hands.boards[g_lastBindex].board + '</span>';
     minitable.rows[1].cells[1].style.textAlign = 'center';
 
-    var north = createMiniHandString(g_hands.boards[g_lastBindex], 0);
-    var east = createMiniHandString(g_hands.boards[g_lastBindex], 1);
-    var south = createMiniHandString(g_hands.boards[g_lastBindex], 2);
-    var west = createMiniHandString(g_hands.boards[g_lastBindex], 3);
+    const north = createMiniHandString(g_hands.boards[g_lastBindex], 0);
+    const east = createMiniHandString(g_hands.boards[g_lastBindex], 1);
+    const south = createMiniHandString(g_hands.boards[g_lastBindex], 2);
+    const west = createMiniHandString(g_hands.boards[g_lastBindex], 3);
 
-    var miniPoints = document.getElementById('miniPoints');
+    const miniPoints = document.getElementById('miniPoints');
 
     if (miniPoints != null) {
-      var ptsSpan = '<span style="font-size:10px;">';
+      const ptsSpan = '<span style="font-size:10px;">';
 
       miniPoints.rows[0].cells[1].innerHTML = ptsSpan + north.points + '</span>';
       miniPoints.rows[1].cells[0].innerHTML = ptsSpan + west.points + '</span>';
@@ -6445,12 +7114,14 @@ function drawMiniHand() {
 
 function sortTravellerLines(lines, pdirection) {
   lines.sort(function (a, b) {
-    var sign = 1;
+    let sign = 1;
 
-    if (pdirection == 2) sign = -1;
+    if (pdirection == 2) {
+      sign = -1;
+    }
 
     if ((a.contract != null) & (b.contract != null)) {
-      var suits = 'CDHSN';
+      const suits = 'CDHSN';
       var declarers = 'WESN';
       var levelb = Number(b.contract.charAt(0));
       var levela = Number(a.contract.charAt(0));
@@ -6458,8 +7129,8 @@ function sortTravellerLines(lines, pdirection) {
       var suita = suits.indexOf(a.contract.charAt(1));
     }
 
-    var mpta = returnPoints(a, sign);
-    var mptb = returnPoints(b, sign);
+    const mpta = returnPoints(a, sign);
+    const mptb = returnPoints(b, sign);
 
     if ((a.contract != null) & (b.contract != null)) {
       /*				if (sortBySuit)
@@ -6469,41 +7140,61 @@ function sortTravellerLines(lines, pdirection) {
 					else if (levelb>levela) return 1;
 					else if (levelb<levela) return -1;
 				}*/
-      if (levelb > levela) return 1;
-      else if (levelb < levela) return -1;
-      else if (suitb > suita) return 1;
-      else if (suitb < suita) return -1;
-      else if ((b.contract.indexOf('**') != -1) & (a.contract.indexOf('**') == -1)) return 1;
-      else if ((b.contract.indexOf('**') == -1) & (a.contract.indexOf('**') != -1)) return -1;
-      else if ((b.contract.indexOf('*') != -1) & (a.contract.indexOf('*') == -1)) return 1;
-      else if ((b.contract.indexOf('*') == -1) & (a.contract.indexOf('*') != -1)) return -1;
-      else if ((b.ns_pair_number == '') & (a.ns_pair_number != ''))
-        return 1; // checking for optimum contract row
-      else if ((b.ns_pair_number != '') & (a.ns_pair_number == ''))
-        return -1; // checking for optimum contract row
-      else if (declarers.indexOf(b.played_by) > declarers.indexOf(a.played_by)) return 1;
-      else if (declarers.indexOf(a.played_by) > declarers.indexOf(b.played_by)) return -1;
+      if (levelb > levela) {
+        return 1;
+      } else if (levelb < levela) {
+        return -1;
+      } else if (suitb > suita) {
+        return 1;
+      } else if (suitb < suita) {
+        return -1;
+      } else if ((b.contract.indexOf('**') != -1) & (a.contract.indexOf('**') == -1)) {
+        return 1;
+      } else if ((b.contract.indexOf('**') == -1) & (a.contract.indexOf('**') != -1)) {
+        return -1;
+      } else if ((b.contract.indexOf('*') != -1) & (a.contract.indexOf('*') == -1)) {
+        return 1;
+      } else if ((b.contract.indexOf('*') == -1) & (a.contract.indexOf('*') != -1)) {
+        return -1;
+      } else if ((b.ns_pair_number == '') & (a.ns_pair_number != '')) {
+        return 1;
+      } // checking for optimum contract row
+      else if ((b.ns_pair_number != '') & (a.ns_pair_number == '')) {
+        return -1;
+      } // checking for optimum contract row
+      else if (declarers.indexOf(b.played_by) > declarers.indexOf(a.played_by)) {
+        return 1;
+      } else if (declarers.indexOf(a.played_by) > declarers.indexOf(b.played_by)) {
+        return -1;
+      }
     }
 
-    if (mptb > mpta) return 1;
-    else if (mptb < mpta) return -1;
-    else return comparePairNumbers(a.ns_pair_number, b.ns_pair_number);
+    if (mptb > mpta) {
+      return 1;
+    } else if (mptb < mpta) {
+      return -1;
+    } else {
+      return comparePairNumbers(a.ns_pair_number, b.ns_pair_number);
+    }
   });
 }
 
 function displayTraveller(pdirection) {
-  var table = document.getElementById('travellerTable');
-  var rows = table.rows;
-  var nrows = rows.length;
-  var i;
-  var sign = 1;
-  var dirstr = 'NS';
+  const table = document.getElementById('travellerTable');
+  const rows = table.rows;
+  const nrows = rows.length;
+  let i;
+  let sign = 1;
+  let dirstr = 'NS';
 
   window.scroll(0, 0);
 
   if (g_scoring == 'IMP') {
-    if (g_eventType != 'Teams') rows[0].cells[5].innerHTML = 'Points';
-    else rows[0].cells[5].innerHTML = 'Cross Imps';
+    if (g_eventType != 'Teams') {
+      rows[0].cells[5].innerHTML = 'Points';
+    } else {
+      rows[0].cells[5].innerHTML = 'Cross Imps';
+    }
   }
 
   if (pdirection == 2) {
@@ -6515,38 +7206,40 @@ function displayTraveller(pdirection) {
     table.deleteRow(-1);
   }
 
-  var lines = g_currentTraveller.traveller_line;
+  const lines = g_currentTraveller.traveller_line;
 
-  var optimum = g_hands.boards[g_lastBindex].OptimumScore;
-  var optscore = '';
+  let optimum = g_hands.boards[g_lastBindex].OptimumScore;
+  let optscore = '';
   var optcontract = '';
 
-  if (typeof optimum != 'undefined') {
+  if (typeof optimum !== 'undefined') {
     optimum = optimum.split(';');
     optscore = optimum[1];
     optcontracts = optimum[0].split(',');
 
-    var k;
+    let k;
 
     for (k = 0; k < optcontracts.length; k++) {
       var optcontract = optcontracts[k];
       optcontract = optcontract.split(' ');
-      var contract = optcontract[1];
+      let contract = optcontract[1];
 
       if (contract.indexOf('+') != -1) // remove overtricks
       {
         contract = contract.substring(0, 2);
       }
 
-      if (contract.indexOf('N') != -1) contract = contract.replace('N', 'NT');
+      if (contract.indexOf('N') != -1) {
+        contract = contract.replace('N', 'NT');
+      }
 
       contract = contract.replace('x', '*');
 
-      var optdir = optcontract[0];
+      const optdir = optcontract[0];
 
-      var ctricks = getMakeableTricksForContract(g_lastBindex, contract, optdir.charAt(0));
+      const ctricks = getMakeableTricksForContract(g_lastBindex, contract, optdir.charAt(0));
 
-      var line = new Object();
+      const line = new Object();
       line.ns_pair_number = '';
       line.ew_pair_number = '';
       line.contract = contract;
@@ -6561,34 +7254,39 @@ function displayTraveller(pdirection) {
 
   sortTravellerLines(lines, pdirection);
 
-  var j = 0;
+  let j = 0;
 
-  for (j = 0; j < rows[0].cells.length; j++) rows[0].cells[j].style.padding = '4px';
+  for (j = 0; j < rows[0].cells.length; j++) {
+    rows[0].cells[j].style.padding = '4px';
+  }
 
-  var beige = '#ffffdd';
-  var backColor = beige;
+  const beige = '#ffffdd';
+  let backColor = beige;
 
-  var red = '#ff5555';
-  var green = '#55ff55';
+  const red = '#ff5555';
+  const green = '#55ff55';
 
-  var maxover = 3; // Maximum number of over/under tricks on this traveller (initially assume 3)
+  let maxover = 3; // Maximum number of over/under tricks on this traveller (initially assume 3)
 
-  var validBoard = checkBoardValid(g_lastBindex);
+  const validBoard = checkBoardValid(g_lastBindex);
 
   for (i = 0; i < lines.length; i++) {
     var tline = lines[i];
 
     var overtricks = 0;
 
-    if (validBoard & validContract(tline.contract))
+    if (validBoard & validContract(tline.contract)) {
       overtricks = Math.abs(tline.tricks - (6 + Number(tline.contract.charAt(0))));
+    }
 
-    if (validBoard & (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks != 'undefined')) {
+    if (validBoard & (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks !== 'undefined')) {
       if (validContract(tline.contract)) {
-        var ddovertricks = Math.abs(
+        const ddovertricks = Math.abs(
           tline.tricks - getMakeableTricksForContract(g_lastBindex, tline.contract, tline.played_by)
         );
-        if (ddovertricks > maxover) maxover = ddovertricks;
+        if (ddovertricks > maxover) {
+          maxover = ddovertricks;
+        }
       }
     }
   }
@@ -6598,18 +7296,20 @@ function displayTraveller(pdirection) {
 
     if (played(tline)) {
       table.insertRow(-1);
-      var row = rows[rows.length - 1];
+      const row = rows[rows.length - 1];
 
       var m;
 
-      for (m = 0; m < 14; m++) row.insertCell(-1);
+      for (m = 0; m < 14; m++) {
+        row.insertCell(-1);
+      }
 
       row.cells[0].innerHTML = tline.ns_pair_number;
       row.cells[0].onclick = row.cells[0].onmouseover = function () {
         showNames(this, 1);
       };
       row.cells[0].onmouseout = function () {
-        var popup = document.getElementById('popup_box');
+        const popup = document.getElementById('popup_box');
         popup.innerHTML = '';
         popup.style.display = 'none';
         $('#popup_box').finish();
@@ -6617,15 +7317,16 @@ function displayTraveller(pdirection) {
       row.cells[0].style.textAlign = 'right';
       row.cells[0].className = 'myLink';
 
-      if ((sign == 1) & (tline.ns_pair_number == g_hands.pair_number))
+      if ((sign == 1) & (tline.ns_pair_number == g_hands.pair_number)) {
         row.cells[0].style.backgroundColor = '#bbbbff';
+      }
 
       row.cells[1].innerHTML = tline.ew_pair_number;
       row.cells[1].onclick = row.cells[1].onmouseover = function () {
         showNames(this, 2);
       };
       row.cells[1].onmouseout = function () {
-        var popup = document.getElementById('popup_box');
+        const popup = document.getElementById('popup_box');
         popup.innerHTML = '';
         popup.style.display = 'none';
         $('#popup_box').finish();
@@ -6633,20 +7334,28 @@ function displayTraveller(pdirection) {
       row.cells[1].style.textAlign = 'right';
       row.cells[1].className = 'myLink';
 
-      if ((sign == -1) & (tline.ew_pair_number == g_hands.pair_number))
+      if ((sign == -1) & (tline.ew_pair_number == g_hands.pair_number)) {
         row.cells[1].style.backgroundColor = '#bbbbff';
+      }
 
       if (validContract(tline.contract)) {
         row.cells[2].innerHTML = tline.contract;
       } else {
-        if (passed(tline)) row.cells[2].innerHTML = 'Passed';
-        else row.cells[2].innerHTML = 'N/A';
+        if (passed(tline)) {
+          row.cells[2].innerHTML = 'Passed';
+        } else {
+          row.cells[2].innerHTML = 'N/A';
+        }
       }
 
       if (i != 0) {
-        if (row.cells[2].innerHTML != rows[i + 1].cells[2].innerHTML)
-          if (backColor == beige) backColor = '#eeeeee';
-          else backColor = beige;
+        if (row.cells[2].innerHTML != rows[i + 1].cells[2].innerHTML) {
+          if (backColor == beige) {
+            backColor = '#eeeeee';
+          } else {
+            backColor = beige;
+          }
+        }
       }
 
       if (validContract(tline.contract)) {
@@ -6657,16 +7366,19 @@ function displayTraveller(pdirection) {
 
         var overtricks = tline.tricks - (6 + Number(tline.contract.charAt(0)));
 
-        var overtstr = overtricks;
+        let overtstr = overtricks;
 
-        if (overtricks == 0) overtstr = '=';
-        else if (overtricks > 0) overtstr = '+' + overtricks;
+        if (overtricks == 0) {
+          overtstr = '=';
+        } else if (overtricks > 0) {
+          overtstr = '+' + overtricks;
+        }
 
         row.cells[6].innerHTML = overtstr;
         row.cells[6].style.textAlign = 'right';
 
-        var colorplus = green;
-        var colorminus = red;
+        let colorplus = green;
+        let colorminus = red;
 
         if ((sign == 1) & ((tline.played_by == 'W') | (tline.played_by == 'E'))) {
           colorplus = red;
@@ -6676,7 +7388,7 @@ function displayTraveller(pdirection) {
           colorminus = green;
         }
 
-        if (validBoard & (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks != 'undefined')) {
+        if (validBoard & (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks !== 'undefined')) {
           row.cells[7].innerHTML = getMakeableTricksForContract(
             g_lastBindex,
             tline.contract,
@@ -6684,23 +7396,23 @@ function displayTraveller(pdirection) {
           );
           row.cells[7].style.textAlign = 'right';
 
-          var relDDLead = '';
+          let relDDLead = '';
 
           if (tline.lead != '') {
-            if (typeof g_hands.boards[g_lastBindex].openingLeads != 'undefined') {
-              var idx = getLeadsIdx(tline.contract, tline.played_by);
-              var leads = g_hands.boards[g_lastBindex].openingLeads[idx];
+            if (typeof g_hands.boards[g_lastBindex].openingLeads !== 'undefined') {
+              const idx = getLeadsIdx(tline.contract, tline.played_by);
+              const leads = g_hands.boards[g_lastBindex].openingLeads[idx];
 
               var ltricks;
 
-              var validLeadCard = false;
+              let validLeadCard = false;
 
               for (j = 0; j < leads.length; j++) {
-                var cl = leads[j];
+                const cl = leads[j];
 
                 if (cl[0].replace('T', '10') == leadCard(tline.lead)) {
                   validLeadCard = true;
-                  var score = Number(cl[1]);
+                  const score = Number(cl[1]);
 
                   if (
                     13 - score !=
@@ -6714,27 +7426,37 @@ function displayTraveller(pdirection) {
                       ')';
                     row.cells[4].style.backgroundColor = colorplus;
                     relDDLead = tline.tricks - (13 - score);
-                    if (relDDLead == 0) relDDLead = '=';
-                    else if (relDDLead > 0) relDDLead = '+' + relDDLead;
+                    if (relDDLead == 0) {
+                      relDDLead = '=';
+                    } else if (relDDLead > 0) {
+                      relDDLead = '+' + relDDLead;
+                    }
                     break;
                   }
                 }
               }
 
-              if (!validLeadCard) row.cells[4].style.backgroundColor = '#888888';
+              if (!validLeadCard) {
+                row.cells[4].style.backgroundColor = '#888888';
+              }
             }
           }
 
-          var relDD =
+          const relDD =
             tline.tricks -
             getMakeableTricksForContract(g_lastBindex, tline.contract, tline.played_by);
 
-          var relDDStr = '' + relDD;
+          let relDDStr = '' + relDD;
 
-          if (relDD == 0) relDDStr = '=';
-          else if (relDD > 0) relDDStr = '+' + relDDStr;
+          if (relDD == 0) {
+            relDDStr = '=';
+          } else if (relDD > 0) {
+            relDDStr = '+' + relDDStr;
+          }
 
-          if (relDDLead != '') relDDStr = relDDLead + '(' + relDDStr + ')';
+          if (relDDLead != '') {
+            relDDStr = relDDLead + '(' + relDDStr + ')';
+          }
 
           row.cells[8].innerHTML = relDDStr;
           row.cells[8].style.textAlign = 'right';
@@ -6807,16 +7529,18 @@ function displayTraveller(pdirection) {
           }
         }
 
-        if (g_scoring != 'IMP') row.cells[11].innerHTML = percentNS + '%';
-        else if (g_eventType != 'Teams') row.cells[11].innerHTML = tline.ns_match_points;
-        else {
+        if (g_scoring != 'IMP') {
+          row.cells[11].innerHTML = percentNS + '%';
+        } else if (g_eventType != 'Teams') {
+          row.cells[11].innerHTML = tline.ns_match_points;
+        } else {
           row.cells[11].innerHTML = tline.crossImpsNS;
         }
 
         row.cells[11].style.textAlign = 'right';
 
-        var colorNS = green;
-        var colorEW = red;
+        let colorNS = green;
+        let colorEW = red;
 
         if (sign == -1) {
           colorNS = red;
@@ -6852,9 +7576,11 @@ function displayTraveller(pdirection) {
         row.cells[12].style.minWidth = '104px';
         row.cells[12].innerHTML = pbar + pbar2;
 
-        if (g_scoring != 'IMP') row.cells[13].innerHTML = percentEW + '%';
-        else if (g_eventType != 'Teams') row.cells[13].innerHTML = tline.ew_match_points;
-        else {
+        if (g_scoring != 'IMP') {
+          row.cells[13].innerHTML = percentEW + '%';
+        } else if (g_eventType != 'Teams') {
+          row.cells[13].innerHTML = tline.ew_match_points;
+        } else {
           row.cells[13].innerHTML = tline.crossImpsEW;
         }
 
@@ -6893,31 +7619,37 @@ function displayTraveller(pdirection) {
 }
 
 function compareScores(tlines, ourscore, pdirection) {
-  var res = new Object();
+  const res = new Object();
   res.adjusted = 0;
   res.lower = 0;
   res.higher = 0;
   res.same = 0;
-  var sign = 1;
-  var i;
+  let sign = 1;
+  let i;
 
   if (ourscore.toString().indexOf('A') != -1) {
     res.adjusted++;
     return res;
   }
 
-  if (pdirection == 2) sign = -1;
+  if (pdirection == 2) {
+    sign = -1;
+  }
 
   for (i = 0; i < tlines.length; i++) {
-    var tline = tlines[i];
+    const tline = tlines[i];
 
     if (played(tline)) {
-      var score = tline.score;
-      var diff = sign * (score - ourscore);
+      const score = tline.score;
+      const diff = sign * (score - ourscore);
 
-      if (diff > 0) res.higher++;
-      else if (diff < 0) res.lower++;
-      else res.same++;
+      if (diff > 0) {
+        res.higher++;
+      } else if (diff < 0) {
+        res.lower++;
+      } else {
+        res.same++;
+      }
     }
   }
 
@@ -6927,15 +7659,23 @@ function compareScores(tlines, ourscore, pdirection) {
 }
 
 function getPairObject(pair, direction, rankNS, rankEW) {
-  var sessInfo = getSessionInfo();
-  var i;
+  const sessInfo = getSessionInfo();
+  let i;
 
   if ((direction == 1) | sessInfo.singleWinner) {
-    for (i = 0; i < rankNS.length; i++) if (rankNS[i].pair == pair) return rankNS[i];
+    for (i = 0; i < rankNS.length; i++) {
+      if (rankNS[i].pair == pair) {
+        return rankNS[i];
+      }
+    }
   }
 
   if (direction == 2) {
-    for (i = 0; i < rankEW.length; i++) if (rankEW[i].pair == pair) return rankEW[i];
+    for (i = 0; i < rankEW.length; i++) {
+      if (rankEW[i].pair == pair) {
+        return rankEW[i];
+      }
+    }
   }
 
   return null;
@@ -6944,58 +7684,70 @@ function getPairObject(pair, direction, rankNS, rankEW) {
 function checkForUniquePairNumbers() {
   // N.B This function should only be called for Teams events
 
-  var pairs = g_travellers.event.participants.pair;
+  const pairs = g_travellers.event.participants.pair;
 
   if (g_uniquePairNumbers === '') {
     var singleWinner = true; // By default assume pair numbers are unique
 
     // Check whether pair numbers are unique
-    var checkKeys = new Array();
+    const checkKeys = new Array();
 
-    for (i = 0; i < pairs.length; i++)
+    for (i = 0; i < pairs.length; i++) {
       if (typeof checkKeys[pairs[i].pair_number] === 'undefined') {
         checkKeys[pairs[i].pair_number] = 1;
       } else {
         singleWinner = false;
         break;
       }
+    }
 
     // If pair numbers are unique across NS&EW make sure the directions in the pairs array are all recorded as "N"
     // (because the code relies on the fact that for single winner events all pair numbers are recorded as direction "N" in the json file)
-    if (singleWinner) for (i = 0; i < pairs[i].length; i++) pairs[i].direction = 'N';
+    if (singleWinner) {
+      for (i = 0; i < pairs[i].length; i++) {
+        pairs[i].direction = 'N';
+      }
+    }
 
     g_uniquePairNumbers = singleWinner;
-  } else singleWinner = g_uniquePairNumbers;
+  } else {
+    singleWinner = g_uniquePairNumbers;
+  }
 
   return singleWinner;
 }
 
 function getSessionInfo() {
-  if (g_sessInfo != null) return g_sessInfo;
+  if (g_sessInfo != null) {
+    return g_sessInfo;
+  }
 
   // Return number of NS pairs, number of EW pairs, and single winner indicator (in which case all pairs are designated NS)
-  var sessInfo = new Object();
-  var i;
-  var singleWinner = false;
+  const sessInfo = new Object();
+  let i;
+  let singleWinner = false;
 
-  var evtype = g_travellers.event.event_type;
+  const evtype = g_travellers.event.event_type;
 
-  if ((evtype.toUpperCase() == 'TEAMS') | (evtype.toUpperCase() == 'SWISS_TEAMS'))
+  if ((evtype.toUpperCase() == 'TEAMS') | (evtype.toUpperCase() == 'SWISS_TEAMS')) {
     g_eventType = 'Teams';
-  else g_eventType = 'Pairs';
+  } else {
+    g_eventType = 'Pairs';
+  }
 
-  var pairs = g_travellers.event.participants.pair;
+  const pairs = g_travellers.event.participants.pair;
 
   // For Teams, treat as a two winner event, because there are two pairs with the same number
-  if ((g_travellers.event.winner_type == 1) & (g_eventType != 'Teams')) singleWinner = true;
-  else if (g_eventType == 'Teams') {
+  if ((g_travellers.event.winner_type == 1) & (g_eventType != 'Teams')) {
+    singleWinner = true;
+  } else if (g_eventType == 'Teams') {
     // For teams we use same code as for 2 winner or single winner pairs events depending whether or not
     // the pair numbers are unique across NS and EW. In either case we produce a single cross imps ranking list
     // even if pairs always play in the same direction.
     singleWinner = checkForUniquePairNumbers();
   }
 
-  var percentPresent = false;
+  let percentPresent = false;
 
   for (i = 0; i < pairs.length; i++) {
     if (pairs[i].percentage != '') {
@@ -7004,19 +7756,25 @@ function getSessionInfo() {
         g_scoring = 'IMP';
         percentPresent = false;
         break;
-      } else percentPresent = true; // Carry on with the loop in case a negative "percentage" is encoutered.
+      } else {
+        percentPresent = true;
+      } // Carry on with the loop in case a negative "percentage" is encoutered.
     }
   }
 
   g_validPercentageFields = percentPresent;
 
-  if (g_validPercentageFields) g_scoring = 'MatchPoints';
-  else {
-    if (g_eventType != 'Teams')
-      // If Teams, defer until cross-imps have been calculated
+  if (g_validPercentageFields) {
+    g_scoring = 'MatchPoints';
+  } else {
+    if (g_eventType != 'Teams') // If Teams, defer until cross-imps have been calculated
+    {
       calculateMaxImps();
+    }
 
-    if (g_scoring != 'IMP') g_scoring = 'VP';
+    if (g_scoring != 'IMP') {
+      g_scoring = 'VP';
+    }
   }
 
   sessInfo.singleWinner = singleWinner;
@@ -7026,17 +7784,19 @@ function getSessionInfo() {
 }
 
 function addRankPositions(data) {
-  var i;
+  let i;
 
   for (i = 0; i < data.length; i++) {
     data[i].samePosition = '';
   }
 
-  var sameCount = 0;
-  var ximpsPos = 1;
+  let sameCount = 0;
+  let ximpsPos = 1;
 
   for (i = 0; i < data.length; i++) {
-    if (i == 0) data[i].crossImpsPosition = ximpsPos;
+    if (i == 0) {
+      data[i].crossImpsPosition = ximpsPos;
+    }
 
     if (i > 0) {
       if (g_eventType != 'Teams') {
@@ -7066,19 +7826,31 @@ function addRankPositions(data) {
 }
 
 function comparePositions(a, b) {
-  if (isNaN(a) & !isNaN(b)) return 1;
-  if (isNaN(b) & !isNaN(a)) return -1;
-  if (isNaN(a) & isNaN(b)) return 0;
+  if (isNaN(a) & !isNaN(b)) {
+    return 1;
+  }
+  if (isNaN(b) & !isNaN(a)) {
+    return -1;
+  }
+  if (isNaN(a) & isNaN(b)) {
+    return 0;
+  }
   a = Number(a);
   b = Number(b);
-  if (a > b) return 1;
-  else if (a < b) return -1;
-  else return 0;
+  if (a > b) {
+    return 1;
+  } else if (a < b) {
+    return -1;
+  } else {
+    return 0;
+  }
 }
 
 function sortRanking(orderByRank) {
   // This function sorts entries either by position in ranking, or by pair number order.
-  if (g_rankInfo == null) return;
+  if (g_rankInfo == null) {
+    return;
+  }
 
   if (orderByRank) // sort by position
   {
@@ -7092,21 +7864,33 @@ function sortRanking(orderByRank) {
       });
     } else {
       g_rankInfo.rankNS.sort(function (a, b) {
-        if (b.crossImpsPerBoard > a.crossImpsPerBoard) return 1;
-        else if (b.crossImpsPerBoard < a.crossImpsPerBoard) return -1;
-        else return 0;
+        if (b.crossImpsPerBoard > a.crossImpsPerBoard) {
+          return 1;
+        } else if (b.crossImpsPerBoard < a.crossImpsPerBoard) {
+          return -1;
+        } else {
+          return 0;
+        }
       });
 
       g_rankInfo.rankEW.sort(function (a, b) {
-        if (b.crossImpsPerBoard > a.crossImpsPerBoard) return 1;
-        else if (b.crossImpsPerBoard < a.crossImpsPerBoard) return -1;
-        else return 0;
+        if (b.crossImpsPerBoard > a.crossImpsPerBoard) {
+          return 1;
+        } else if (b.crossImpsPerBoard < a.crossImpsPerBoard) {
+          return -1;
+        } else {
+          return 0;
+        }
       });
 
       g_rankInfo.rankCombined.sort(function (a, b) {
-        if (b.crossImpsPerBoard > a.crossImpsPerBoard) return 1;
-        else if (b.crossImpsPerBoard < a.crossImpsPerBoard) return -1;
-        else return 0;
+        if (b.crossImpsPerBoard > a.crossImpsPerBoard) {
+          return 1;
+        } else if (b.crossImpsPerBoard < a.crossImpsPerBoard) {
+          return -1;
+        } else {
+          return 0;
+        }
       });
     }
   } else // sort by pair number
@@ -7126,29 +7910,31 @@ function sortRanking(orderByRank) {
 }
 
 function getRankingInfo() {
-  if (g_rankInfo != null) return g_rankInfo;
+  if (g_rankInfo != null) {
+    return g_rankInfo;
+  }
 
-  var sessInfo = getSessionInfo();
+  const sessInfo = getSessionInfo();
 
-  var pairs = g_travellers.event.participants.pair;
+  const pairs = g_travellers.event.participants.pair;
 
-  var rankNS = new Array();
-  var rankEW = new Array();
-  var rankCombined = new Array(); // Used for Teams event re-scored as Cross Imps
+  const rankNS = new Array();
+  const rankEW = new Array();
+  const rankCombined = new Array(); // Used for Teams event re-scored as Cross Imps
 
-  var i, j;
-  var maxPlayed = 0; // Max boards played by any pair.
+  let i, j;
+  let maxPlayed = 0; // Max boards played by any pair.
 
   for (i = 0; i < pairs.length; i++) {
-    var pair = pairs[i].pair_number;
+    const pair = pairs[i].pair_number;
 
     if ((pair != '') & (pair != null)) {
-      var data = new Object();
+      const data = new Object();
 
       data.plusMpts = 0;
       data.minusMpts = 0;
 
-      if (typeof pairs[i].totalCrossImps != 'undefined') {
+      if (typeof pairs[i].totalCrossImps !== 'undefined') {
         data.totalCrossImps = Number(pairs[i].totalCrossImps);
         data.crossImpsPerBoard = pairs[i].crossImpsPerBoard;
       }
@@ -7158,62 +7944,72 @@ function getRankingInfo() {
       data.pair = pairs[i].pair_number;
 
       try {
-        var cpos = Number((pairs[i].place + '').replace(/\=/g, '')); // Position in Ranking Table
+        const cpos = Number((pairs[i].place + '').replace(/\=/g, '')); // Position in Ranking Table
         data.position = cpos;
       } catch (e) {}
 
       data.percentage = pairs[i].percentage;
       data.total_score = pairs[i].total_score;
 
-      if (pairs[i].direction == 'N') data.direction = 1;
-      else data.direction = 2;
+      if (pairs[i].direction == 'N') {
+        data.direction = 1;
+      } else {
+        data.direction = 2;
+      }
 
       data.dd = new Object();
 
-      if ((pairs[i].direction == 'N') | sessInfo.singleWinner) rankNS[rankNS.length] = data;
-      else rankEW[rankEW.length] = data;
+      if ((pairs[i].direction == 'N') | sessInfo.singleWinner) {
+        rankNS[rankNS.length] = data;
+      } else {
+        rankEW[rankEW.length] = data;
+      }
     }
   }
 
   for (i = 0; i < g_travellers.event.board.length; i++) {
-    var tlines = g_travellers.event.board[i].traveller_line;
+    const tlines = g_travellers.event.board[i].traveller_line;
 
     for (j = 0; j < tlines.length; j++) {
-      var tline = tlines[j];
-      var pairNS = tline.ns_pair_number;
-      var pairEW = tline.ew_pair_number;
+      const tline = tlines[j];
+      const pairNS = tline.ns_pair_number;
+      const pairEW = tline.ew_pair_number;
 
       if (played(tline)) {
         // Note nsObj and ewObj will both be from rankNS array if singleWinner event
-        var nsObj = getPairObject(pairNS, 1, rankNS, rankEW);
-        var ewObj = getPairObject(pairEW, 2, rankNS, rankEW);
+        const nsObj = getPairObject(pairNS, 1, rankNS, rankEW);
+        const ewObj = getPairObject(pairEW, 2, rankNS, rankEW);
 
         if ((nsObj != null) & (ewObj != null)) {
           nsObj.plusMpts += Number(tline.ns_match_points);
           nsObj.minusMpts += Number(tline.ew_match_points);
           nsObj.boardsPlayed++;
 
-          if (nsObj.boardsPlayed > maxPlayed) maxPlayed = nsObj.boardsPlayed;
+          if (nsObj.boardsPlayed > maxPlayed) {
+            maxPlayed = nsObj.boardsPlayed;
+          }
 
           ewObj.plusMpts += Number(tline.ew_match_points);
           ewObj.minusMpts += Number(tline.ns_match_points);
           ewObj.boardsPlayed++;
-          if (ewObj.boardsPlayed > maxPlayed) maxPlayed = ewObj.boardsPlayed;
+          if (ewObj.boardsPlayed > maxPlayed) {
+            maxPlayed = ewObj.boardsPlayed;
+          }
         }
       }
     }
   }
 
-  var nsHigh = -65535;
-  var nsLow = 65535;
-  var ewHigh = -65535;
-  var ewLow = 65535;
+  let nsHigh = -65535;
+  let nsLow = 65535;
+  let ewHigh = -65535;
+  let ewLow = 65535;
 
   // Calculate percentages, and high/low points for all positions
   for (i = 0; i < rankNS.length; i++) {
-    if (g_scoring != 'IMP')
+    if (g_scoring != 'IMP') {
       rankNS[i].percent = (100 * rankNS[i].plusMpts) / (rankNS[i].plusMpts + rankNS[i].minusMpts);
-    else {
+    } else {
       rankNS[i].plusMpts = (maxPlayed * rankNS[i].plusMpts) / rankNS[i].boardsPlayed;
       rankNS[i].minusMpts = (maxPlayed * rankNS[i].minusMpts) / rankNS[i].boardsPlayed;
       rankNS[i].percent = (100 * rankNS[i].plusMpts) / g_maxImps;
@@ -7221,14 +8017,18 @@ function getRankingInfo() {
 
     rankNS[i].percent = Math.round(100 * rankNS[i].percent) / 100;
 
-    if (rankNS[i].plusMpts > nsHigh) nsHigh = rankNS[i].plusMpts;
-    if (rankNS[i].plusMpts < nsLow) nsLow = rankNS[i].plusMpts;
+    if (rankNS[i].plusMpts > nsHigh) {
+      nsHigh = rankNS[i].plusMpts;
+    }
+    if (rankNS[i].plusMpts < nsLow) {
+      nsLow = rankNS[i].plusMpts;
+    }
   }
 
   for (i = 0; i < rankEW.length; i++) {
-    if (g_scoring != 'IMP')
+    if (g_scoring != 'IMP') {
       rankEW[i].percent = (100 * rankEW[i].plusMpts) / (rankEW[i].plusMpts + rankEW[i].minusMpts);
-    else {
+    } else {
       rankEW[i].plusMpts = (maxPlayed * rankEW[i].plusMpts) / rankEW[i].boardsPlayed;
       rankEW[i].minusMpts = (maxPlayed * rankEW[i].minusMpts) / rankEW[i].boardsPlayed;
       rankEW[i].percent = (100 * rankEW[i].plusMpts) / g_maxImps;
@@ -7236,17 +8036,27 @@ function getRankingInfo() {
 
     rankEW[i].percent = Math.round(100 * rankEW[i].percent) / 100;
 
-    if (rankEW[i].plusMpts > ewHigh) ewHigh = rankEW[i].plusMpts;
-    if (rankEW[i].plusMpts < nsLow) ewLow = rankEW[i].plusMpts;
+    if (rankEW[i].plusMpts > ewHigh) {
+      ewHigh = rankEW[i].plusMpts;
+    }
+    if (rankEW[i].plusMpts < nsLow) {
+      ewLow = rankEW[i].plusMpts;
+    }
   }
 
-  var highMpts, lowMpts;
+  let highMpts, lowMpts;
 
-  if (ewHigh > nsHigh) highMpts = ewHigh;
-  else highMpts = nsHigh;
+  if (ewHigh > nsHigh) {
+    highMpts = ewHigh;
+  } else {
+    highMpts = nsHigh;
+  }
 
-  if (ewLow < nsLow) lowMpts = ewLow;
-  else lowMpts = nsLow;
+  if (ewLow < nsLow) {
+    lowMpts = ewLow;
+  } else {
+    lowMpts = nsLow;
+  }
 
   if (g_scoring == 'IMP') {
     for (i = 0; i < rankNS.length; i++) {
@@ -7261,22 +8071,24 @@ function getRankingInfo() {
   if (g_eventType == 'Teams') {
     // Generate conbined array, but only include entries where crossImpsPerBoard is defined.
     // Otherwise, it means the pair did not play any boards so should not be included.
-    var offset = 0;
+    let offset = 0;
 
-    for (i = 0; i < rankNS.length; i++)
-      if (typeof rankNS[i].crossImpsPerBoard != 'undefined') {
+    for (i = 0; i < rankNS.length; i++) {
+      if (typeof rankNS[i].crossImpsPerBoard !== 'undefined') {
         rankCombined[offset] = rankNS[i];
         offset++;
       }
+    }
 
-    for (i = 0; i < rankEW.length; i++)
-      if (typeof rankEW[i].crossImpsPerBoard != 'undefined') {
+    for (i = 0; i < rankEW.length; i++) {
+      if (typeof rankEW[i].crossImpsPerBoard !== 'undefined') {
         rankCombined[offset] = rankEW[i];
         offset++;
       }
+    }
   }
 
-  var rankInfo = new Object();
+  const rankInfo = new Object();
   rankInfo.sessInfo = sessInfo;
   rankInfo.rankNS = rankNS;
   rankInfo.rankEW = rankEW;
@@ -7302,18 +8114,18 @@ function getRankingInfo() {
 function getPlayerInfo(pair, direction) {
   // Gets player information for the current pair from the travellers record, using the information
   // passed to ddummy.htm in the pair_number and direction fields.
-  var info = new Object();
-  var pair_found = false;
-  var pairs = g_travellers.event.participants.pair;
-  var player1 = '';
-  var player2 = '';
-  var singleWinner = true;
+  const info = new Object();
+  let pair_found = false;
+  const pairs = g_travellers.event.participants.pair;
+  let player1 = '';
+  let player2 = '';
+  let singleWinner = true;
 
-  var i;
+  let i;
 
   // First check whether it;s a single winner movement (in which case pair numbers are unique but a particular
   // pair may sometimes be NS and sometimes EW
-  var sessInfo = getSessionInfo();
+  const sessInfo = getSessionInfo();
   singleWinner = sessInfo.singleWinner;
 
   for (i = 0; i < pairs.length; i++) {
@@ -7339,8 +8151,12 @@ function getPlayerInfo(pair, direction) {
   }
 
   if (pair_found) {
-    if (player1 == null) player1 = 'noname noname';
-    if (player2 == null) player2 = 'noname noname';
+    if (player1 == null) {
+      player1 = 'noname noname';
+    }
+    if (player2 == null) {
+      player2 = 'noname noname';
+    }
     info.player1 = player1;
     info.player2 = player2;
     info.pair_found = true;
@@ -7348,23 +8164,29 @@ function getPlayerInfo(pair, direction) {
     info.pair_index = i; // Index to entry for this pair in g_travellers.event.participants.pair;
     info.direction = direction; // Only relevant here if not single winner movement.
     info.singleWinner = singleWinner;
-  } else info.pair_found = false; // error
+  } else {
+    info.pair_found = false;
+  } // error
 
   return info;
 }
 
 function setBars(cells, value, cellindex, range, colorL, colorR, width) {
   // Graphical indication of percentages
-  var halfRange = range / 2;
-  var plus = (2 * width * (value - halfRange)) / range + 'px';
-  var minus = (2 * width * (halfRange - value)) / range + 'px';
+  const halfRange = range / 2;
+  let plus = (2 * width * (value - halfRange)) / range + 'px';
+  let minus = (2 * width * (halfRange - value)) / range + 'px';
 
-  if (plus < 0) plus = 0;
-  if (minus < 0) minus = 0;
+  if (plus < 0) {
+    plus = 0;
+  }
+  if (minus < 0) {
+    minus = 0;
+  }
 
-  var cellWidth = width + 'px';
+  const cellWidth = width + 'px';
 
-  var pbar =
+  const pbar =
     '<div style="margin:0px;border:none;position:relative;height:12px;width:100%;min-width:' +
     width +
     'px;max-width:100%;background-color:white;">';
@@ -7408,9 +8230,9 @@ function setBars(cells, value, cellindex, range, colorL, colorR, width) {
 
 function getBoardIndex(travindex) {
   // get board index, given index to a traveller.
-  var board = g_travellers.event.board[travindex].board_no;
+  const board = g_travellers.event.board[travindex].board_no;
 
-  var i;
+  let i;
 
   for (i = 0; i < g_hands.boards.length; i++) {
     if (g_hands.boards[i].board == board) {
@@ -7423,9 +8245,9 @@ function getBoardIndex(travindex) {
 
 function getTravIndex(boardindex) {
   // get traveller index, given index to a board.
-  var board = g_hands.boards[boardindex].board;
+  const board = g_hands.boards[boardindex].board;
 
-  var i;
+  let i;
 
   for (i = 0; i < g_travellers.event.board.length; i++) {
     if (g_travellers.event.board[i].board_no == board) {
@@ -7456,7 +8278,7 @@ function addSummarySection(
   etfBoards,
   etfTotal
 ) {
-  var srow = addSummaryRow(stable, 'Boards:');
+  let srow = addSummaryRow(stable, 'Boards:');
   srow.cells[1].innerHTML = playedInRole;
 
   if (g_scoring != 'IMP') {
@@ -7465,24 +8287,33 @@ function addSummarySection(
     if (playedInRole != 0) {
       srow.cells[1].innerHTML =
         parseFloat(Math.round((100 * sumOfPercent) / playedInRole) / 100).toFixed(0) + '%';
-    } else srow.cells[1].innerHTML = 'N/A';
+    } else {
+      srow.cells[1].innerHTML = 'N/A';
+    }
   } else {
-    if (g_eventType == 'Teams') srow = addSummaryRow(stable, 'Avg Cross Imps Per Board:');
-    else srow = addSummaryRow(stable, 'Average Per Board');
+    if (g_eventType == 'Teams') {
+      srow = addSummaryRow(stable, 'Avg Cross Imps Per Board:');
+    } else {
+      srow = addSummaryRow(stable, 'Average Per Board');
+    }
 
     if (playedInRole != 0) {
-      if (crossImpBoards != 0)
+      if (crossImpBoards != 0) {
         srow.cells[1].innerHTML = parseFloat(
           Math.round((100 * sumOfCrossImps) / crossImpBoards) / 100
         ).toFixed(2);
-      else srow.cells[1].innerHTML = '';
-    } else srow.cells[1].innerHTML = 'N/A';
+      } else {
+        srow.cells[1].innerHTML = '';
+      }
+    } else {
+      srow.cells[1].innerHTML = 'N/A';
+    }
   }
 
   srow = addSummaryRow(stable, '% of Boards with ETF >=0 :');
 
   if (etfBoards > 0) {
-    var etfPercent = Math.round((100 * etfAchieved) / etfBoards).toFixed(0);
+    const etfPercent = Math.round((100 * etfAchieved) / etfBoards).toFixed(0);
     srow.cells[1].innerHTML = etfPercent.toString() + '%';
   } else {
     srow.cells[1].innerHTML = 'No Data';
@@ -7491,7 +8322,7 @@ function addSummarySection(
   srow = addSummaryRow(stable, 'Avg ETF:');
 
   if (etfBoards > 0) {
-    var etfAvg = (Math.round((100 * etfTotal) / etfBoards) / 100).toFixed(2);
+    const etfAvg = (Math.round((100 * etfTotal) / etfBoards) / 100).toFixed(2);
     srow.cells[1].innerHTML = etfAvg;
   } else {
     srow.cells[1].innerHTML = 'No Data';
@@ -7499,15 +8330,15 @@ function addSummarySection(
 }
 
 function getPlayerAndRole(info, tline) {
-  var prole = new Object();
-  var found = false;
-  var tdirection = 1; // assume played North/South
-  var declarer_pair = false;
-  var first = false;
-  var opp_pair;
-  var optNE = document.getElementById('pdiroptNE').checked;
-  var optNW = document.getElementById('pdiroptNW').checked;
-  var optSE = document.getElementById('pdiroptSE').checked;
+  let prole = new Object();
+  let found = false;
+  let tdirection = 1; // assume played North/South
+  let declarer_pair = false;
+  let first = false;
+  let opp_pair;
+  const optNE = document.getElementById('pdiroptNE').checked;
+  const optNW = document.getElementById('pdiroptNW').checked;
+  const optSE = document.getElementById('pdiroptSE').checked;
 
   if ((info.pair_number == tline.ns_pair_number) & ((info.direction == 1) | info.singleWinner)) {
     found = true;
@@ -7551,8 +8382,9 @@ function getPlayerAndRole(info, tline) {
         (info.singleWinner & optNE & (tline.played_by == 'E')) |
         (info.singleWinner & optNW & (tline.played_by == 'W')) |
         (info.singleWinner & optSE & (tline.played_by == 'E'))
-      )
+      ) {
         first = true;
+      }
     } else if (
       (!info.singleWinner & (tline.played_by == 'N')) |
       (info.singleWinner & optNE & (tline.played_by == 'N')) |
@@ -7574,9 +8406,9 @@ function getPlayerAndRole(info, tline) {
 }
 
 function checkInitialDirection(pair) {
-  var i;
-  var pairs = g_travellers.event.participants.pair;
-  var found = false;
+  let i;
+  const pairs = g_travellers.event.participants.pair;
+  let found = false;
 
   for (i = 0; i < pairs.length; i++) {
     if (pairs[i].direction == 'E') // the data distinguishes between pairs who started NS and EW
@@ -7598,16 +8430,25 @@ function checkInitialDirection(pair) {
 }
 
 function played(tline) {
-  if ((tline.ns_score == 'Bye') | (tline.ew_score == 'Bye')) return false;
+  if ((tline.ns_score == 'Bye') | (tline.ew_score == 'Bye')) {
+    return false;
+  }
 
-  if (tline.contract != 'NP') return true;
-  else if (scoreContainsAdjustment(tline)) return true;
-  else return false;
+  if (tline.contract != 'NP') {
+    return true;
+  } else if (scoreContainsAdjustment(tline)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function passed(tline) {
-  if (tline.contract == 'Passed') return true;
-  else return false;
+  if (tline.contract == 'Passed') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function setButtonColor() {
@@ -7616,24 +8457,25 @@ function setButtonColor() {
   document.getElementById('atraveller').style.backgroundColor = '';
   document.getElementById('acheck').style.backgroundColor = '';
 
-  if (g_sessionMode == 'scorecard')
+  if (g_sessionMode == 'scorecard') {
     document.getElementById('ascorecard').style.backgroundColor = '#BBBB88';
-  else if (g_sessionMode == 'ranking')
+  } else if (g_sessionMode == 'ranking') {
     document.getElementById('aranking').style.backgroundColor = '#BBBB88';
-  else if (g_sessionMode == 'traveller')
+  } else if (g_sessionMode == 'traveller') {
     document.getElementById('atraveller').style.backgroundColor = '#BBBB88';
-  else if (g_sessionMode == 'check')
+  } else if (g_sessionMode == 'check') {
     document.getElementById('acheck').style.backgroundColor = '#BBBB88';
+  }
 }
 
 function mergeScorecardRows(table, nrows, col) {
   // Merge column cells in adjacent rows of scorecard when pair number and names are shared, and
   // apply alternate shading to groups of rows.
-  var pair = table.rows[1].cells[col].innerHTML;
-  var first = 0;
-  var last = 0;
-  var alt = 0;
-  var shaded = 1;
+  let pair = table.rows[1].cells[col].innerHTML;
+  let first = 0;
+  let last = 0;
+  const alt = 0;
+  let shaded = 1;
 
   while (first < nrows) {
     for (last = first; last <= nrows; last++) {
@@ -7653,11 +8495,16 @@ function mergeScorecardRows(table, nrows, col) {
         for (j = first + 1; j <= last; j++) {
           table.rows[1 + j].deleteCell(col);
 
-          if (shaded != 0) table.rows[1 + j].className = 'results_tr_grey';
+          if (shaded != 0) {
+            table.rows[1 + j].className = 'results_tr_grey';
+          }
         }
 
-        if (shaded == 0) shaded = 1;
-        else shaded = 0;
+        if (shaded == 0) {
+          shaded = 1;
+        } else {
+          shaded = 0;
+        }
 
         first = last + 1;
 
@@ -7672,55 +8519,60 @@ function mergeScorecardRows(table, nrows, col) {
 }
 
 function setLeadForScorecardRow(bnum, row, tline, declarer) {
-  var j;
-  var colorPlus = '#ffff00';
+  let j;
+  const colorPlus = '#ffff00';
 
   row.cells[4].innerHTML = leadCard(tline.lead);
 
   if (
-    g_openingLeadsPresent &
-    (typeof g_hands.boards[bnum].DoubleDummyTricks != null) &
-    (typeof g_hands.boards[bnum].openingLeads != 'undefined')
+    g_openingLeadsPresent &&
+    typeof g_hands.boards[bnum].DoubleDummyTricks !== 'undefined' &&
+    typeof g_hands.boards[bnum].openingLeads !== 'undefined'
   ) {
-    var relDDLead = '';
+    const relDDLead = '';
 
     if (tline.lead != '') {
-      var idx = getLeadsIdx(tline.contract, tline.played_by);
-      var leads = g_hands.boards[bnum].openingLeads[idx];
+      const idx = getLeadsIdx(tline.contract, tline.played_by);
+      const leads = g_hands.boards[bnum].openingLeads[idx];
 
-      var ltricks;
+      let ltricks;
 
-      var validLeadCard = false;
+      let validLeadCard = false;
 
       for (j = 0; j < leads.length; j++) {
-        var cl = leads[j];
+        const cl = leads[j];
 
         if (cl[0].replace('T', '10') == leadCard(tline.lead)) {
           validLeadCard = true;
-          var score = Number(cl[1]);
+          const score = Number(cl[1]);
 
           if (13 - score != getMakeableTricksForContract(bnum, tline.contract, tline.played_by)) {
-            if (declarer) row.cells[4].style.backgroundColor = '#00ff00';
-            else row.cells[4].style.backgroundColor = '#ff0000';
+            if (declarer) {
+              row.cells[4].style.backgroundColor = '#00ff00';
+            } else {
+              row.cells[4].style.backgroundColor = '#ff0000';
+            }
 
             break;
           }
         }
       }
 
-      if (!validLeadCard) row.cells[4].style.backgroundColor = '#888888';
+      if (!validLeadCard) {
+        row.cells[4].style.backgroundColor = '#888888';
+      }
     }
   }
 }
 
 function drawHighLowSame(res) {
-  var dhwidth = (100 * res.higher) / (res.higher + res.lower + res.same);
-  var dswidth = (100 * res.same) / (res.higher + res.lower + res.same);
-  var dlwidth = (100 * res.lower) / (res.higher + res.lower + res.same);
+  const dhwidth = (100 * res.higher) / (res.higher + res.lower + res.same);
+  const dswidth = (100 * res.same) / (res.higher + res.lower + res.same);
+  const dlwidth = (100 * res.lower) / (res.higher + res.lower + res.same);
 
-  var divstart =
+  const divstart =
     "<div style='clear:both;border:none;min-width:300px;width:300px;'><div style='clear:both;float:left;border:1px solid black;min-width:100px;width:100px;background-color:white;'><div style='clear:both;height:16px;background-color:grey;width:";
-  var divend = "px;'></div></div>";
+  const divend = "px;'></div></div>";
   var result =
     divstart +
     dhwidth +
@@ -7751,50 +8603,62 @@ function drawHighLowSame(res) {
 }
 
 function setupResultReasons(ctx, result) {
-  var suit = 'CDHSN';
-  var dir = 'NSEW';
-  var tlines = ctx.tlines;
-  var tline = tlines[ctx.row];
-  var board = ctx.board;
-  var contractStr = ['part score', 'game', 'small slam', 'grand slam'];
-  var i, j;
-  var count = 0;
-  var aveScores = new Array();
+  const suit = 'CDHSN';
+  const dir = 'NSEW';
+  const tlines = ctx.tlines;
+  const tline = tlines[ctx.row];
+  const board = ctx.board;
+  const contractStr = ['part score', 'game', 'small slam', 'grand slam'];
+  let i, j;
+  let count = 0;
+  const aveScores = new Array();
 
-  var acount = 0;
-  var adir = '';
-  var aObj;
-  var playerInfo = null;
-  var declName = '';
-  var ourVul = false;
-  var declDir = 1;
+  let acount = 0;
+  let adir = '';
+  let aObj;
+  let playerInfo = null;
+  let declName = '';
+  let ourVul = false;
+  let declDir = 1;
   var ourDir = -1;
-  var oppsDir = -1;
-  var oppsVul = false;
+  let oppsDir = -1;
+  let oppsVul = false;
 
-  var ourInfo = getPlayerInfo(g_hands.pair_number, g_hands.direction);
-  var role = getPlayerAndRole(ourInfo, tline);
+  const ourInfo = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  const role = getPlayerAndRole(ourInfo, tline);
   var ourDir = role.tdirection;
-  if (ourDir == 1) oppsDir = 2;
-  else oppsDir = 1;
+  if (ourDir == 1) {
+    oppsDir = 2;
+  } else {
+    oppsDir = 1;
+  }
 
   ourVul = false;
 
-  var ourShortNames = ourInfo.player1.split(' ')[0] + '/' + ourInfo.player2.split(' ')[0];
+  const ourShortNames = ourInfo.player1.split(' ')[0] + '/' + ourInfo.player2.split(' ')[0];
 
-  var oppsShortNames = '';
-  var oppsInfo = '';
+  let oppsShortNames = '';
+  let oppsInfo = '';
 
-  if (oppsDir == 1) oppsInfo = getPlayerInfo(tline.ns_pair_number, 1);
-  else oppsInfo = getPlayerInfo(tline.ew_pair_number, 2);
+  if (oppsDir == 1) {
+    oppsInfo = getPlayerInfo(tline.ns_pair_number, 1);
+  } else {
+    oppsInfo = getPlayerInfo(tline.ew_pair_number, 2);
+  }
 
   oppsShortNames = oppsInfo.player1.split(' ')[0] + '/' + oppsInfo.player2.split(' ')[0];
 
-  if (((ctx.Vulnerable == 'NS') | (ctx.Vulnerable == 'All')) & (ourDir == 1)) ourVul = true;
-  else if (((ctx.Vulnerable == 'EW') | (ctx.Vulnerable == 'All')) & (ourDir == 2)) ourVul = true;
+  if (((ctx.Vulnerable == 'NS') | (ctx.Vulnerable == 'All')) & (ourDir == 1)) {
+    ourVul = true;
+  } else if (((ctx.Vulnerable == 'EW') | (ctx.Vulnerable == 'All')) & (ourDir == 2)) {
+    ourVul = true;
+  }
 
-  if (((ctx.Vulnerable == 'NS') | (ctx.Vulnerable == 'All')) & (oppsDir == 1)) oppsVul = true;
-  else if (((ctx.Vulnerable == 'EW') | (ctx.Vulnerable == 'All')) & (oppsDir == 2)) oppsVul = true;
+  if (((ctx.Vulnerable == 'NS') | (ctx.Vulnerable == 'All')) & (oppsDir == 1)) {
+    oppsVul = true;
+  } else if (((ctx.Vulnerable == 'EW') | (ctx.Vulnerable == 'All')) & (oppsDir == 2)) {
+    oppsVul = true;
+  }
 
   if ((tline.played_by == 'N') | (tline.played_by == 'S')) {
     declDir = 1;
@@ -7804,13 +8668,16 @@ function setupResultReasons(ctx, result) {
     playerInfo = getPlayerInfo(tline.ew_pair_number, 2);
   }
 
-  if ((tline.played_by == 'N') | (tline.played_by == 'E')) declName = playerInfo.player1;
-  else declName = playerInfo.player2;
+  if ((tline.played_by == 'N') | (tline.played_by == 'E')) {
+    declName = playerInfo.player1;
+  } else {
+    declName = playerInfo.player2;
+  }
 
   document.getElementById('resultReasons').innerHTML = '';
 
   for (i = 0; i < tlines.length; i++) {
-    var ctline = tlines[i];
+    const ctline = tlines[i];
 
     if (played(ctline)) {
       if (adir == '') {
@@ -7823,31 +8690,35 @@ function setupResultReasons(ctx, result) {
         aObj.total = Number(ctline.tricks);
         adir = ctline.played_by;
 
-        if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1))
+        if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1)) {
           aObj.higherScoreCount++;
-        else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2))
+        } else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2)) {
           aObj.higherScoreCount++;
+        }
 
         if (
           (ctline.contract.charAt(1) == tline.contract.charAt(1)) &
           (Number(ctline.tricks) > Number(tline.tricks))
-        )
+        ) {
           aObj.moreTricks++;
+        }
       } else {
         if ((aObj.contract == ctline.contract) & (aObj.played_by == ctline.played_by)) {
           aObj.count++;
           aObj.total = aObj.total + Number(ctline.tricks);
 
-          if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1))
+          if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1)) {
             aObj.higherScoreCount++;
-          else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2))
+          } else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2)) {
             aObj.higherScoreCount++;
+          }
 
           if (
             (ctline.contract.charAt(1) == tline.contract.charAt(1)) &
             (Number(ctline.tricks) > Number(tline.tricks))
-          )
+          ) {
             aObj.moreTricks++;
+          }
         } else {
           adir = ctline.played_by;
           aObj.average = aObj.total / aObj.count;
@@ -7862,16 +8733,18 @@ function setupResultReasons(ctx, result) {
           aObj.played_by = ctline.played_by;
           aObj.total = Number(ctline.tricks);
 
-          if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1))
+          if ((Number(ctline.score) > Number(tline.score)) & (ctx.direction == 1)) {
             aObj.higherScoreCount++;
-          else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2))
+          } else if ((Number(ctline.score) < Number(tline.score)) & (ctx.direction == 2)) {
             aObj.higherScoreCount++;
+          }
 
           if (
             (ctline.contract.charAt(1) == tline.contract.charAt(1)) &
             (Number(ctline.tricks) > Number(tline.tricks))
-          )
+          ) {
             aObj.moreTricks++;
+          }
         }
       }
     }
@@ -7880,40 +8753,49 @@ function setupResultReasons(ctx, result) {
   aObj.average = aObj.total / aObj.count;
   aveScores[acount] = aObj;
 
-  for (i = 0; i < tlines.length; i++) if (played(tlines[i])) count++;
+  for (i = 0; i < tlines.length; i++) {
+    if (played(tlines[i])) {
+      count++;
+    }
+  }
 
-  var bidx = getTindexByName(g_hands.boards, '' + board);
+  const bidx = getTindexByName(g_hands.boards, '' + board);
 
-  var tricksOffset = 0;
-  var tricksTarget = tline.contract.charAt(0);
-  var offsetStr = '';
+  let tricksOffset = 0;
+  const tricksTarget = tline.contract.charAt(0);
+  let offsetStr = '';
 
   if (!isNaN(tricksTarget)) {
     tricksOffset = tline.tricks - (Number(tricksTarget) + 6);
 
-    if (tricksOffset > 0) offsetStr = '+' + tricksOffset;
-    else if (tricksOffset < 0) offsetStr = tricksOffset;
+    if (tricksOffset > 0) {
+      offsetStr = '+' + tricksOffset;
+    } else if (tricksOffset < 0) {
+      offsetStr = tricksOffset;
+    }
   }
 
   //	tricksOffset = calculateTricks(bidx);
-  var contractPlayer = '';
+  let contractPlayer = '';
 
-  if (tline.contract.toUpperCase().charAt(0) !== 'P')
+  if (tline.contract.toUpperCase().charAt(0) !== 'P') {
     contractPlayer = ' by ' + tline.played_by + ' (' + declName + ')';
+  }
 
-  var str2 =
+  let str2 =
     'Board ' + board + ', Contract ' + tline.contract + offsetStr + contractPlayer + '<BR><BR>';
 
   str2 = str2 + '<div id=accuracy style="float:left;"></div>';
 
   str2 += '<div style="float:left;clear:both;margin-top:10px;">';
 
-  var tmp = getHighestScoringMakeableContractForDirection(bidx, ourDir, ourVul);
+  let tmp = getHighestScoringMakeableContractForDirection(bidx, ourDir, ourVul);
 
-  if (tmp == null) str2 += 'No theoretical makeable contract by ' + ourShortNames + '<BR><BR>';
-  else if (tmp.contract.charAt(0) == '0')
+  if (tmp == null) {
     str2 += 'No theoretical makeable contract by ' + ourShortNames + '<BR><BR>';
-  else
+  } else if (tmp.contract.charAt(0) == '0') {
+    str2 += 'No theoretical makeable contract by ' + ourShortNames + '<BR><BR>';
+  } else {
     str2 +=
       'Highest scoring makeable contract by ' +
       ourShortNames +
@@ -7922,13 +8804,15 @@ function setupResultReasons(ctx, result) {
       ' by ' +
       tmp.declarer +
       '<BR><BR>';
+  }
 
   tmp = getHighestScoringMakeableContractForDirection(bidx, oppsDir, oppsVul);
 
-  if (tmp == null) str2 += 'No theoretical makeable contract by ' + oppsShortNames + '<BR><BR>';
-  else if (tmp.contract.charAt(0) == '0')
+  if (tmp == null) {
     str2 += 'No theoretical makeable contract by ' + oppsShortNames + '<BR><BR>';
-  else
+  } else if (tmp.contract.charAt(0) == '0') {
+    str2 += 'No theoretical makeable contract by ' + oppsShortNames + '<BR><BR>';
+  } else {
     str2 +=
       'Highest scoring makeable contract by ' +
       oppsShortNames +
@@ -7937,31 +8821,37 @@ function setupResultReasons(ctx, result) {
       ' by ' +
       tmp.declarer +
       '<BR><BR>';
+  }
 
-  var curbd = g_hands.boards[bidx];
+  const curbd = g_hands.boards[bidx];
 
-  if (typeof curbd.OptimumScore != 'undefined')
+  if (typeof curbd.OptimumScore !== 'undefined') {
     str2 += '[OptimumScore "' + curbd.OptimumScore + '"]<BR><BR>';
+  }
 
-  var ourscore = tline.score;
-  var res = compareScores(tlines, ourscore, ctx.direction);
+  const ourscore = tline.score;
+  const res = compareScores(tlines, ourscore, ctx.direction);
 
   str2 = str2 + '<BR>';
 
-  var str5 = "<table cols=5 class=ranking style='border:1px solid gray;border-spacing:0px;'>";
+  let str5 = "<table cols=5 class=ranking style='border:1px solid gray;border-spacing:0px;'>";
   str5 =
     str5 +
     "<tr style='border:1px solid grey;'><th>Contract</th><th>Decl</th><th>Ave Tks</th><th colspan=2>No Of Pairs</th><th colspan=2>Higher Scores</th></tr>";
 
   for (i = 0; i < aveScores.length; i++) {
     aObj = aveScores[i];
-    var hcount = aObj.higherScoreCount;
-    if (hcount == 0) hcount = '';
+    let hcount = aObj.higherScoreCount;
+    if (hcount == 0) {
+      hcount = '';
+    }
 
-    var moreTricks = aObj.moreTricks;
-    if (moreTricks == 0) moreTricks = '';
+    let moreTricks = aObj.moreTricks;
+    if (moreTricks == 0) {
+      moreTricks = '';
+    }
 
-    var bcolor = '';
+    let bcolor = '';
 
     if (tline.contract == aObj.contract) {
       bcolor = 'background-color:#cccccc;';
@@ -7994,11 +8884,11 @@ function setupResultReasons(ctx, result) {
     str2 +
     "<div style='width:30%;float:left;'><div id=popupHand style='width:100%;margin-left:10px;float:left;'></div><div id=popupMakeable style='float:right;clear:both;'></div></div>";
 
-  var str = '';
+  let str = '';
 
   str = str2 + "<div style='float:left;clear:both;'>" + str + '</div>';
 
-  var help =
+  let help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:520px;width:600px;"><span style="font-size:16px;">';
   help = help + str;
   help = help + '</span></DIV><BR>';
@@ -8006,7 +8896,7 @@ function setupResultReasons(ctx, result) {
 
   document.getElementById('resultReasons').innerHTML = help;
 
-  var saveBindex = g_lastBindex;
+  const saveBindex = g_lastBindex;
 
   g_lastBindex = getTindexByName(g_hands.boards, String(board));
 
@@ -8030,31 +8920,40 @@ function setupResultReasons(ctx, result) {
 }
 
 function showPlayAnalysis(bd) {
-  var ctx = g_scorecardContext[bd];
-  var data = checkHigherScoringPairs(ctx.tlines, ctx.row, ctx.direction);
+  const ctx = g_scorecardContext[bd];
+  const data = checkHigherScoringPairs(ctx.tlines, ctx.row, ctx.direction);
   setupResultReasons(ctx, data);
-  var index = getTindexByName(g_hands.boards, bd);
+  const index = getTindexByName(g_hands.boards, bd);
   setupTraveller(index, false);
 
-  if (typeof g_hands.boards[g_lastBindex].Played != 'undefined')
-    if (g_hands.boards[g_lastBindex].Played.length > 1) playLinContract(true, 1);
+  if (typeof g_hands.boards[g_lastBindex].Played !== 'undefined') {
+    if (g_hands.boards[g_lastBindex].Played.length > 1) {
+      playLinContract(true, 1);
+    }
+  }
 
   //	showHelp(this,"resultReasons");
 }
 
 function showNewFeaturesNotice() {
-  if (!g_newFeatureNoticeShown) g_newFeatureNoticeShown = 1;
+  if (!g_newFeatureNoticeShown) {
+    g_newFeatureNoticeShown = 1;
+  }
 
   try {
     if (localStorageSupported()) {
-      var alertShown = localStorage.getItem('newFeatureShown');
-      var shown;
+      const alertShown = localStorage.getItem('newFeatureShown');
+      let shown;
 
-      if (alertShown == null) shown = false;
-      else if (Number(alertShown) > 3) shown = true;
-      else shown = false;
+      if (alertShown == null) {
+        shown = false;
+      } else if (Number(alertShown) > 3) {
+        shown = true;
+      } else {
+        shown = false;
+      }
 
-      var txt =
+      let txt =
         '<ul><li>The High Card Points display at the bottom left of the board diagram now has the option to display the result of a Kaplan-Rubens hand evaluation. Click on the ? character in the points display box for further explanation.</li>';
       txt += '</ul>';
       txt +=
@@ -8062,7 +8961,7 @@ function showNewFeaturesNotice() {
 
       if (!shown) {
         localStorage.setItem('newFeatureShown', '4');
-        var str =
+        let str =
           '<div style="width:500px;"><SPAN style="font-size:24px;">New Features</SPAN><BR><SPAN style="font-size:15px;">' +
           txt +
           '</SPAN></div>';
@@ -8081,60 +8980,71 @@ function showNewFeaturesNotice() {
 
 function makeScoreClickFunction(tline) {
   return function () {
-    var row = this.parentNode;
-    var bd = row.cells[0].innerHTML;
+    const row = this.parentNode;
+    const bd = row.cells[0].innerHTML;
     log('button=acc2');
     getCachedAcc(tline);
   };
 }
 
 function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sortedBoards) {
-  var j, n;
-  var playedInRoleCombined = 0;
-  var sumOfPercentCombined = 0;
-  var sumOfCrossImpsCombined = 0;
-  var crossImpBoardsCombined = 0;
-  var etfTotalCombined = 0;
-  var etfBoardsCombined = 0;
-  var etfAchievedCombined = 0;
-  var oppDir;
-  var oppInfo;
-  var ctx = new Object();
+  let j, n;
+  let playedInRoleCombined = 0;
+  let sumOfPercentCombined = 0;
+  let sumOfCrossImpsCombined = 0;
+  let crossImpBoardsCombined = 0;
+  let etfTotalCombined = 0;
+  let etfBoardsCombined = 0;
+  let etfAchievedCombined = 0;
+  let oppDir;
+  let oppInfo;
+  let ctx = new Object();
 
   g_scorecardContext = new Array();
 
-  var rows = table.rows;
-  var srows = stable.rows;
-  while (rows.length > 2) table.deleteRow(-1);
+  const rows = table.rows;
+  const srows = stable.rows;
+  while (rows.length > 2) {
+    table.deleteRow(-1);
+  }
 
-  var upperLimit;
+  let upperLimit;
 
-  var mPlayer1 = info.player1.trim().split(' ');
-  if (mPlayer1.length > 1) mPlayer1 = mPlayer1[0] + ' ' + mPlayer1[1].charAt(0);
-  else mPlayer1 = mPlayer1[0];
+  let mPlayer1 = info.player1.trim().split(' ');
+  if (mPlayer1.length > 1) {
+    mPlayer1 = mPlayer1[0] + ' ' + mPlayer1[1].charAt(0);
+  } else {
+    mPlayer1 = mPlayer1[0];
+  }
 
-  var mPlayer2 = info.player2.trim().split(' ');
-  if (mPlayer2.length > 1) mPlayer2 = mPlayer2[0] + ' ' + mPlayer2[1].charAt(0);
-  else mPlayer2 = mPlayer2[0];
+  let mPlayer2 = info.player2.trim().split(' ');
+  if (mPlayer2.length > 1) {
+    mPlayer2 = mPlayer2[0] + ' ' + mPlayer2[1].charAt(0);
+  } else {
+    mPlayer2 = mPlayer2[0];
+  }
 
-  if (sortedBoards) upperLimit = 1;
-  else upperLimit = 5;
+  if (sortedBoards) {
+    upperLimit = 1;
+  } else {
+    upperLimit = 5;
+  }
 
   for (n = 0; n < upperLimit; n++) {
-    var lineCount = 0;
-    var playedInRole = 0;
-    var sumOfPercent = 0;
-    var sumOfCrossImps = 0;
-    var crossImpBoards = 0; // Note this number can be fewer than "playedInRole" (some may not count for cross imps in Teams events)
-    var etfTotal = 0;
-    var etfBoards = 0;
-    var etfAchieved = 0;
-    var lastOppPair = -1;
+    let lineCount = 0;
+    let playedInRole = 0;
+    let sumOfPercent = 0;
+    let sumOfCrossImps = 0;
+    let crossImpBoards = 0; // Note this number can be fewer than "playedInRole" (some may not count for cross imps in Teams events)
+    let etfTotal = 0;
+    let etfBoards = 0;
+    let etfAchieved = 0;
+    let lastOppPair = -1;
 
     for (j = 0; j < boards.length; j++) {
       ctx = new Object();
-      var board = boards[j];
-      var tlines = board.traveller_line;
+      const board = boards[j];
+      const tlines = board.traveller_line;
 
       sortTravellerLines(tlines, 1);
 
@@ -8145,7 +9055,7 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
       var opp_pair;
 
       for (i = 0; i < tlines.length; i++) {
-        var tline = tlines[i];
+        const tline = tlines[i];
 
         if (info.pair_found) {
           prole = getPlayerAndRole(info, tline);
@@ -8156,9 +9066,14 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
           opp_pair = prole.opp_pair;
 
           if (sessInfo.singleWinner) {
-            if (tdirection == 1) dirChars = ' (EW)';
-            else dirChars = ' (NS)'; // Playing direction of opponents
-          } else dirChars = '';
+            if (tdirection == 1) {
+              dirChars = ' (EW)';
+            } else {
+              dirChars = ' (NS)';
+            } // Playing direction of opponents
+          } else {
+            dirChars = '';
+          }
 
           if (found) {
             ctx.row = i;
@@ -8182,11 +9097,17 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
 
               var str;
 
-              if (n == 0) str = 'Declarer - ' + mPlayer1;
-              else if (n == 1) str = 'Declarer - ' + mPlayer2;
-              else if (n == 2) str = 'Defending - ' + mPlayer1 + ' on lead';
-              else if (n == 3) str = 'Defending - ' + mPlayer2 + ' on lead';
-              else str = 'Passed, or no contract available';
+              if (n == 0) {
+                str = 'Declarer - ' + mPlayer1;
+              } else if (n == 1) {
+                str = 'Declarer - ' + mPlayer2;
+              } else if (n == 2) {
+                str = 'Defending - ' + mPlayer1 + ' on lead';
+              } else if (n == 3) {
+                str = 'Defending - ' + mPlayer2 + ' on lead';
+              } else {
+                str = 'Passed, or no contract available';
+              }
 
               row.cells[0].innerHTML = '<span style="font-weight:600;">' + str + '</span>';
               srow.cells[0].innerHTML = '<span style="font-weight:bold;">' + str + '</span>';
@@ -8210,10 +9131,11 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                 table.insertRow(-1);
                 var row = table.rows[table.rows.length - 1];
 
-                if (sortedBoards)
+                if (sortedBoards) {
                   if (opp_pair != lastOppPair) {
                     row.style.borderTop = '1px solid #cccccc';
                   }
+                }
 
                 lastOppPair = opp_pair;
 
@@ -8234,67 +9156,79 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                 ctx.board = board.board_no;
                 g_scorecardContext[board.board_no] = ctx;
 
-                if (g_currentTraveller != null)
-                  if (board.board_no == g_currentTraveller.board_no)
+                if (g_currentTraveller != null) {
+                  if (board.board_no == g_currentTraveller.board_no) {
                     row.cells[0].style.backgroundColor = 'pink';
+                  }
+                }
 
-                if (g_hands.direction == 1) oppDir = 2;
-                else oppDir = 1;
+                if (g_hands.direction == 1) {
+                  oppDir = 2;
+                } else {
+                  oppDir = 1;
+                }
 
                 oppInfo = getPlayerInfo(opp_pair, oppDir);
 
-                var p1 = oppInfo.player1.trim().split(' ');
-                var p2 = oppInfo.player2.trim().split(' ');
+                const p1 = oppInfo.player1.trim().split(' ');
+                const p2 = oppInfo.player2.trim().split(' ');
 
-                if (sortedBoards)
+                if (sortedBoards) {
                   row.cells[1].innerHTML =
                     opp_pair + dirChars + '<BR>(' + p1[0] + ' & ' + p2[0] + ')';
-                else {
+                } else {
                   row.cells[1].innerHTML = opp_pair;
                   row.cells[1].className = 'myLink';
 
-                  if (tdirection == 2)
+                  if (tdirection == 2) {
                     row.cells[1].onclick = row.cells[1].onmouseover = function () {
                       showNames(this, 1);
                     };
-                  else
+                  } else {
                     row.cells[1].onclick = row.cells[1].onmouseover = function () {
                       showNames(this, 2);
                     };
+                  }
                 }
 
                 row.cells[1].style.borderRight = '1px solid black';
                 row.cells[1].style.textAlign = 'middle';
 
                 row.cells[1].onmouseout = function () {
-                  var popup = document.getElementById('popup_box');
+                  const popup = document.getElementById('popup_box');
                   popup.innerHTML = '';
                   popup.style.display = 'none';
                   $('#popup_box').finish();
                 };
 
                 if (validContract(tline.contract)) {
-                  var contractLevel = Number(tline.contract.charAt(0));
+                  const contractLevel = Number(tline.contract.charAt(0));
                   var overtricks = tline.tricks - (contractLevel + 6);
                 }
 
                 var value;
 
-                var nspts = Number(tline.ns_match_points);
-                var ewpts = Number(tline.ew_match_points);
+                const nspts = Number(tline.ns_match_points);
+                const ewpts = Number(tline.ew_match_points);
 
-                if (g_scoring != 'IMP') value = 100 * (nspts / (nspts + ewpts));
-                else {
-                  if (g_eventType != 'Teams') value = 50 * (1 + nspts / g_maxImps);
-                  else {
-                    if (tdirection == 1)
-                      // Played NS
+                if (g_scoring != 'IMP') {
+                  value = 100 * (nspts / (nspts + ewpts));
+                } else {
+                  if (g_eventType != 'Teams') {
+                    value = 50 * (1 + nspts / g_maxImps);
+                  } else {
+                    if (tdirection == 1) // Played NS
+                    {
                       value = 50 * (1 + Number(tline.crossImpsNS) / g_maxImps);
-                    else value = 50 * (1 + Number(tline.crossImpsEW) / g_maxImps);
+                    } else {
+                      value = 50 * (1 + Number(tline.crossImpsEW) / g_maxImps);
+                    }
                   }
                 }
 
-                if ((tdirection == 2) & (g_eventType != 'Teams')) value = 100 - value;
+                if ((tdirection == 2) & (g_eventType != 'Teams')) {
+                  value = 100 - value;
+                }
 
                 sumOfPercent = sumOfPercent + value;
 
@@ -8302,7 +9236,7 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                   value = parseFloat(Math.round(value * 100) / 100).toFixed(0);
                   row.cells[9 + g_ofs].innerHTML = value + '%';
                 } else {
-                  var showResultBars = true;
+                  const showResultBars = true;
 
                   if (g_eventType != 'Teams') {
                     if (tdirection == 1) {
@@ -8319,12 +9253,16 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                       row.cells[9 + g_ofs].innerHTML = tline.crossImpsNS;
                       sumOfCrossImps += Number(tline.crossImpsNS);
 
-                      if (tline.crossImpsNS !== '') crossImpBoards++;
+                      if (tline.crossImpsNS !== '') {
+                        crossImpBoards++;
+                      }
                     } else {
                       row.cells[9 + g_ofs].innerHTML = tline.crossImpsEW;
                       sumOfCrossImps += Number(tline.crossImpsEW);
 
-                      if (tline.crossImpsEW !== '') crossImpBoards++;
+                      if (tline.crossImpsEW !== '') {
+                        crossImpBoards++;
+                      }
                     }
                   }
                 }
@@ -8332,10 +9270,10 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                 row.cells[9 + g_ofs].style.textAlign = 'right';
 
                 try {
-                  if (typeof tline.board != 'undefined') {
+                  if (typeof tline.board !== 'undefined') {
                     row.cells[9 + g_ofs].onclick = function () {
-                      var row = this.parentNode;
-                      var bd = row.cells[0].innerHTML;
+                      const row = this.parentNode;
+                      const bd = row.cells[0].innerHTML;
                       log('button=acc2');
                       showPlayAnalysis(bd);
                     };
@@ -8345,7 +9283,7 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
 
                 row.cells[2].style.textAlign = 'right';
 
-                var width = (100 * value) / 100;
+                const width = (100 * value) / 100;
 
                 setBars(row.cells, 100 - width, 10 + g_ofs, 100, '#FF0000', '#00FF00', 50);
 
@@ -8358,10 +9296,15 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                   //************* change to deal with non-contract (e.g. Passed Out, or Not Played)
                   if (tline.tricks != '') {
                     var overtricks = tline.tricks - (6 + Number(tline.contract.charAt(0)));
-                    if (overtricks >= 0) overtricks = '+' + overtricks;
+                    if (overtricks >= 0) {
+                      overtricks = '+' + overtricks;
+                    }
 
-                    if (overtricks != 0) row.cells[5 + g_ofs].innerHTML = overtricks;
-                    else row.cells[5 + g_ofs].innerHTML = '=';
+                    if (overtricks != 0) {
+                      row.cells[5 + g_ofs].innerHTML = overtricks;
+                    } else {
+                      row.cells[5 + g_ofs].innerHTML = '=';
+                    }
 
                     row.cells[4 + g_ofs].style.textAlign = 'right';
 
@@ -8381,51 +9324,67 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                     //										row.cells[4].onclick = function(){var row=this.parentNode;var contract=row.cells[2].innerHTML;var declarer=row.cells[3].innerHTML;var idx = getLeadsIdx(contract,declarer);alert(JSON.stringify(g_hands.boards[getTindexByName(g_hands.boards,row.cells[0].innerHTML)].openingLeads[idx]))};
                   }
 
-                  var hindex = getBoardIndex(j);
+                  const hindex = getBoardIndex(j);
 
                   if (hindex != null) {
-                    if (typeof g_hands.boards[hindex].DoubleDummyTricks != 'undefined') {
-                      var ntricks2 = getMakeableTricksForContract(
+                    if (typeof g_hands.boards[hindex].DoubleDummyTricks !== 'undefined') {
+                      let ntricks2 = getMakeableTricksForContract(
                         hindex,
                         g_hands.boards[hindex].Contract,
                         g_hands.boards[hindex].Declarer
                       );
-                      var ETFMode = document.getElementById('ETFMode');
+                      const ETFMode = document.getElementById('ETFMode');
 
                       if (ETFMode != null) {
                         if (document.getElementById('ETFMode').selectedIndex == 1) {
-                          var ltricks = getMakeableTricksForLead(hindex, tline);
+                          const ltricks = getMakeableTricksForLead(hindex, tline);
 
-                          if (declarer_pair & (ltricks != null))
-                            if (ltricks != ntricks2) ntricks2 = ltricks;
+                          if (declarer_pair & (ltricks != null)) {
+                            if (ltricks != ntricks2) {
+                              ntricks2 = ltricks;
+                            }
+                          }
                         }
                       }
 
                       backColor = 'white';
 
                       if (ntricks2 >= 0) {
-                        var relDD = tline.tricks - ntricks2;
+                        let relDD = tline.tricks - ntricks2;
 
                         if (declarer_pair) {
-                          if (relDD > 0) backColor = '#00FF00';
-                          else if (relDD < 0) backColor = '#FF0000';
+                          if (relDD > 0) {
+                            backColor = '#00FF00';
+                          } else if (relDD < 0) {
+                            backColor = '#FF0000';
+                          }
                         } else {
                           relDD = -relDD;
-                          if (relDD > 0) backColor = '#FF0000';
-                          else if (relDD < 0) backColor = '#00FF00';
+                          if (relDD > 0) {
+                            backColor = '#FF0000';
+                          } else if (relDD < 0) {
+                            backColor = '#00FF00';
+                          }
                         }
 
-                        if (relDD == 0) backColor = '#88FF88'; // Light Green
+                        if (relDD == 0) {
+                          backColor = '#88FF88';
+                        } // Light Green
 
                         etfTotal += relDD;
                         etfBoards++; // Number of boards for which ETF available.
 
-                        if (relDD >= 0) etfAchieved++;
+                        if (relDD >= 0) {
+                          etfAchieved++;
+                        }
 
-                        var ddStr = relDD.toString();
+                        let ddStr = relDD.toString();
 
-                        if (relDD == 0) ddStr = '=';
-                        else if (relDD > 0) ddStr = '+' + relDD;
+                        if (relDD == 0) {
+                          ddStr = '=';
+                        } else if (relDD > 0) {
+                          ddStr = '+' + relDD;
+                        }
 
                         row.cells[6 + g_ofs].innerHTML = ddStr;
                         row.cells[6 + g_ofs].style.textAlign = 'right';
@@ -8471,8 +9430,11 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
                     }
                   }
                 } else {
-                  if (passed(tline)) row.cells[2].innerHTML = 'Passed';
-                  else row.cells[2].innerHTML = 'N/A';
+                  if (passed(tline)) {
+                    row.cells[2].innerHTML = 'Passed';
+                  } else {
+                    row.cells[2].innerHTML = 'N/A';
+                  }
 
                   row.cells[7 + g_ofs].style.backgroundColor = 'white';
                   row.cells[8 + g_ofs].style.backgroundColor = 'white';
@@ -8482,8 +9444,8 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
 
                 row.cells[8 + g_ofs].style.borderRight = '1px solid black';
 
-                var ourscore = tline.score;
-                var comment = '';
+                const ourscore = tline.score;
+                const comment = '';
               }
 
               break;
@@ -8501,7 +9463,7 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
     etfBoardsCombined += etfBoards;
     etfTotalCombined += etfTotal;
 
-    if (!sortedBoards)
+    if (!sortedBoards) {
       addSummarySection(
         stable,
         playedInRole,
@@ -8512,6 +9474,7 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
         etfBoards,
         etfTotal
       );
+    }
   }
 
   if (!sortedBoards) {
@@ -8538,7 +9501,9 @@ function setupScorecard2(table, stable, boards, info, sessInfo, etfRange, sorted
     );
   }
 
-  if (sortedBoards) mergeScorecardRows(table, table.rows.length - 2, 1);
+  if (sortedBoards) {
+    mergeScorecardRows(table, table.rows.length - 2, 1);
+  }
 
   table.insertRow(-1);
   row = table.rows[table.rows.length - 1];
@@ -8561,34 +9526,41 @@ function setupScorecard(keepScrollSetting) {
 
   setCurrentTraveller();
 
-  if (keepScrollSetting === undefined) window.scroll(0, 0);
+  if (keepScrollSetting === undefined) {
+    window.scroll(0, 0);
+  }
 
-  var j, n;
-  var sessInfo = getSessionInfo();
+  let j, n;
+  const sessInfo = getSessionInfo();
 
   // Make sure pair number is valid, so that something is displayed even if none was supplied.
   if (g_hands.pair_number == '') {
     g_hands.pair_number = g_travellers.event.participants.pair[0].pair_number;
 
-    if (g_travellers.event.participants.pair[0].direction == 'N') g_hands.direction = 1;
-    else g_hands.direction = 2;
+    if (g_travellers.event.participants.pair[0].direction == 'N') {
+      g_hands.direction = 1;
+    } else {
+      g_hands.direction = 2;
+    }
 
     changeCurrentPair(g_hands.pair_number, g_hands.direction);
     setDefaultContracts();
   }
 
-  var info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
-  var table = document.getElementById('scoring');
-  var rows = table.rows;
-  var stable = document.getElementById('scoring_summary');
-  var srows = stable.rows;
-  var winners = 2;
-  var dirStr = 'NS Pair ';
-  var optNE = document.getElementById('pdiroptNE').checked;
-  var optNW = document.getElementById('pdiroptNW').checked;
-  var optSE = document.getElementById('pdiroptSE').checked;
+  const info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  const table = document.getElementById('scoring');
+  const rows = table.rows;
+  const stable = document.getElementById('scoring_summary');
+  const srows = stable.rows;
+  let winners = 2;
+  let dirStr = 'NS Pair ';
+  let optNE = document.getElementById('pdiroptNE').checked;
+  const optNW = document.getElementById('pdiroptNW').checked;
+  const optSE = document.getElementById('pdiroptSE').checked;
 
-  if (g_hands.direction == 2) dirStr = 'EW Pair ';
+  if (g_hands.direction == 2) {
+    dirStr = 'EW Pair ';
+  }
 
   document.getElementById('first_player_name').innerHTML =
     '<span style="font-weight:600;">' + 'Set direction for ' + info.player1 + ':' + '</span>';
@@ -8598,7 +9570,7 @@ function setupScorecard(keepScrollSetting) {
     dirStr = 'Pair ';
     $('#player_direction').show();
 
-    var startDirection = checkInitialDirection(g_hands.pair_number);
+    const startDirection = checkInitialDirection(g_hands.pair_number);
 
     if (startDirection == null) {
       $('#optNEdiv').show();
@@ -8628,29 +9600,35 @@ function setupScorecard(keepScrollSetting) {
     $('#player_direction').hide();
   }
 
-  while (srows.length > 1) stable.deleteRow(-1);
+  while (srows.length > 1) {
+    stable.deleteRow(-1);
+  }
 
-  if (g_scoring == 'IMP') rows[1].cells[6 + g_ofs].innerHTML = 'Points';
-  if (g_eventType == 'Teams') rows[1].cells[6 + g_ofs].innerHTML = 'Cross Imps';
+  if (g_scoring == 'IMP') {
+    rows[1].cells[6 + g_ofs].innerHTML = 'Points';
+  }
+  if (g_eventType == 'Teams') {
+    rows[1].cells[6 + g_ofs].innerHTML = 'Cross Imps';
+  }
 
-  var boards = g_travellers.event.board;
+  const boards = g_travellers.event.board;
 
   document.getElementById('scPlayerNames2').innerHTML =
     info.player1 + ' & ' + info.player2 + ' - ' + dirStr + g_hands.pair_number;
 
-  var etfRange = 0;
+  let etfRange = 0;
 
   // Calculate range for ETF tricks (to determine bar chart range).
   for (j = 0; j < boards.length; j++) {
-    var board = boards[j];
-    var tlines = board.traveller_line;
+    const board = boards[j];
+    const tlines = board.traveller_line;
 
     var i, prole, found, tdirection, declarer_pair, first;
 
     var opp_pair;
 
     for (i = 0; i < tlines.length; i++) {
-      var tline = tlines[i];
+      const tline = tlines[i];
 
       if (info.pair_found) {
         prole = getPlayerAndRole(info, tline);
@@ -8659,21 +9637,27 @@ function setupScorecard(keepScrollSetting) {
         if (validContract(tline.contract)) {
           if (played(tline)) // Otherwise board was not actually played
           {
-            var overtricks = tline.tricks - (6 + Number(tline.contract.charAt(0)));
-            if (Math.abs(overtricks) > etfRange) etfRange = Math.abs(overtricks);
+            const overtricks = tline.tricks - (6 + Number(tline.contract.charAt(0)));
+            if (Math.abs(overtricks) > etfRange) {
+              etfRange = Math.abs(overtricks);
+            }
           }
         }
       }
     }
   }
 
-  if (etfRange < 4) etfRange = 4; // Make this the minimum range for graph. Usually, overtricks and undertricks will not be higher than this.
+  if (etfRange < 4) {
+    etfRange = 4;
+  } // Make this the minimum range for graph. Usually, overtricks and undertricks will not be higher than this.
 
   setupScorecard2(table, stable, boards, info, sessInfo, etfRange, false);
 
-  var optRoles = document.getElementById('sortMode').selectedIndex == 0;
+  const optRoles = document.getElementById('sortMode').selectedIndex == 0;
 
-  if (!optRoles) setupScorecard2(table, stable, boards, info, sessInfo, etfRange, true); // Display table sorted by board number
+  if (!optRoles) {
+    setupScorecard2(table, stable, boards, info, sessInfo, etfRange, true);
+  } // Display table sorted by board number
 
   $('#scores').show();
   hideRanking();
@@ -8682,15 +9666,16 @@ function setupScorecard(keepScrollSetting) {
 }
 
 function showRanking() {
-  var str = g_title;
+  let str = g_title;
 
-  var sessInfo = getSessionInfo();
+  const sessInfo = getSessionInfo();
 
   // If all pair numbers are recorded as NS pairs, then pair numbers are unique, so we can tell which direction they played
-  if ((g_eventType == 'Teams') & !sessInfo.singleWinner)
+  if ((g_eventType == 'Teams') & !sessInfo.singleWinner) {
     str =
       str +
       '<BR><SPAN style="font-size;12px;color:#ff4444;">Calculated cross imp ranking for individual pairs (assumes NS and EW pairs do not switch direction during the event)</SPAN>';
+  }
 
   document.getElementById('titleText').innerHTML = str;
   $('#ranking').show();
@@ -8716,27 +9701,38 @@ function setupRanking(keepScrollSetting) {
 
   setCurrentTraveller();
 
-  if (keepScrollSetting === undefined) window.scroll(0, 0);
+  if (keepScrollSetting === undefined) {
+    window.scroll(0, 0);
+  }
 
-  var sessInfo = getSessionInfo();
-  var table = document.getElementById('rankingNS');
-  var rows = table.rows;
-  var winners = 2;
+  const sessInfo = getSessionInfo();
+  const table = document.getElementById('rankingNS');
+  const rows = table.rows;
+  let winners = 2;
 
-  if (sessInfo.singleWinner) winners = 1;
+  if (sessInfo.singleWinner) {
+    winners = 1;
+  }
 
-  var rankInfo = getRankingInfo();
+  const rankInfo = getRankingInfo();
 
   ddComparisonAll();
 
-  if (table.rows[0].cells.length == 5) colcount = 6;
-  else colcount = 8;
+  if (table.rows[0].cells.length == 5) {
+    colcount = 6;
+  } else {
+    colcount = 8;
+  }
 
   table.rows[0].cells[2].innerHTML = 'Players'; // Change column heading that was in event.htm
 
-  if (g_eventType == 'Teams') table.rows[0].cells[1].innerHTML = 'Team';
+  if (g_eventType == 'Teams') {
+    table.rows[0].cells[1].innerHTML = 'Team';
+  }
 
-  while (rows.length > 1) table.deleteRow(-1);
+  while (rows.length > 1) {
+    table.deleteRow(-1);
+  }
 
   if (g_eventType == 'Teams') {
     if (rows[0].cells.length == 5) {
@@ -8762,7 +9758,7 @@ function setupRanking(keepScrollSetting) {
 
   setupRankingTable(table, 'NS', rankInfo, winners);
 
-  var rankingHeader = document.getElementById('rankingHeader');
+  const rankingHeader = document.getElementById('rankingHeader');
 
   if ((winners != '1') & (g_eventType != 'Teams')) {
     table.insertRow(-1);
@@ -8784,7 +9780,7 @@ function setupRanking(keepScrollSetting) {
 function changeCurrentPair(pair, direction) {
   getRankingInfo();
 
-  var data = getPairObject(
+  let data = getPairObject(
     g_hands.pair_number,
     g_hands.direction,
     g_rankInfo.rankNS,
@@ -8793,12 +9789,14 @@ function changeCurrentPair(pair, direction) {
 
   if (data != null) {
     // find which radio button is checked, out of the direction buttons
-    var button = document.getElementById('pdiroptNW');
-    if (button.checked) data.dirChoice = button;
-    else {
+    let button = document.getElementById('pdiroptNW');
+    if (button.checked) {
+      data.dirChoice = button;
+    } else {
       button = document.getElementById('pdiroptNE');
-      if (button.checked) data.dirChoice = button;
-      else {
+      if (button.checked) {
+        data.dirChoice = button;
+      } else {
         data.dirChoice = document.getElementById('pdiroptSE');
       }
     }
@@ -8817,8 +9815,11 @@ function changeCurrentPair(pair, direction) {
   // Possibly direction is incorrect, so reverse it. If caller consistently supplies wrong direction, but same pair number range is used
   // NS and EW, then this cannot be detected.
   if (data == null) {
-    if (g_hands.direction == 1) g_hands.direction = 2;
-    else g_hands.direction = 1;
+    if (g_hands.direction == 1) {
+      g_hands.direction = 2;
+    } else {
+      g_hands.direction = 1;
+    }
 
     data = getPairObject(
       g_hands.pair_number,
@@ -8830,10 +9831,12 @@ function changeCurrentPair(pair, direction) {
 
   if (g_currentTraveller != null) {
     g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction);
-    if (g_currow == -1) g_currow = 0;
+    if (g_currow == -1) {
+      g_currow = 0;
+    }
   }
 
-  if (typeof data.dirChoice != 'undefined') {
+  if (typeof data.dirChoice !== 'undefined') {
     data.dirChoice.checked = true;
   }
 }
@@ -8848,10 +9851,10 @@ function setClickFunctionForNames(cell, pair, direction) {
 }
 
 function setupRankingTable(table, dir, rankInfo, winners) {
-  var i, j;
-  var info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
-  var rangeMax = -32767;
-  var rangeMin = 32767;
+  let i, j;
+  const info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  let rangeMax = -32767;
+  let rangeMin = 32767;
 
   if (g_eventType != 'Teams') {
     if (dir == 'NS') {
@@ -8863,7 +9866,7 @@ function setupRankingTable(table, dir, rankInfo, winners) {
     pairs = rankInfo.rankCombined;
   }
 
-  var rows = table.rows;
+  const rows = table.rows;
 
   if ((g_scoring == 'IMP') | (g_scoring == 'VP')) // Change Percentage Column Header
   {
@@ -8872,21 +9875,28 @@ function setupRankingTable(table, dir, rankInfo, winners) {
     for (i = 0; i < g_travellers.event.participants.pair.length; i++) {
       var tvalue;
 
-      if (g_eventType != 'Teams') tvalue = g_travellers.event.participants.pair[i].total_score;
-      else tvalue = g_travellers.event.participants.pair[i].crossImpsPerBoard;
+      if (g_eventType != 'Teams') {
+        tvalue = g_travellers.event.participants.pair[i].total_score;
+      } else {
+        tvalue = g_travellers.event.participants.pair[i].crossImpsPerBoard;
+      }
 
       if (tvalue != '') {
         tvalue = Number(tvalue);
 
         if (!isNaN(tvalue)) {
-          if (tvalue < rangeMin) rangeMin = tvalue;
-          if (tvalue > rangeMax) rangeMax = tvalue;
+          if (tvalue < rangeMin) {
+            rangeMin = tvalue;
+          }
+          if (tvalue > rangeMax) {
+            rangeMax = tvalue;
+          }
         }
       }
     }
   }
 
-  var cellOffset = 0;
+  let cellOffset = 0;
 
   if (g_eventType == 'Teams') {
     rows[0].cells[3].innerHTML = 'Total XImps';
@@ -8894,13 +9904,15 @@ function setupRankingTable(table, dir, rankInfo, winners) {
     cellOffset = 2; // Allow for extra column which has been inserted.
   }
 
-  var shaded = 0;
+  let shaded = 0;
 
   for (i = 0; i < pairs.length; i++) {
-    if (pairs[i].boardsPlayed == 0) continue;
+    if (pairs[i].boardsPlayed == 0) {
+      continue;
+    }
 
     table.insertRow(-1);
-    var row = table.rows[table.rows.length - 1];
+    const row = table.rows[table.rows.length - 1];
 
     if (shaded != 0) {
       row.className = 'results_tr_grey';
@@ -8913,8 +9925,9 @@ function setupRankingTable(table, dir, rankInfo, winners) {
       row.insertCell(-1);
     }
 
-    if (g_eventType != 'Teams') row.cells[0].innerHTML = pairs[i].samePosition + pairs[i].position;
-    else {
+    if (g_eventType != 'Teams') {
+      row.cells[0].innerHTML = pairs[i].samePosition + pairs[i].position;
+    } else {
       row.cells[0].innerHTML = pairs[i].samePosition + pairs[i].crossImpsPosition;
     }
 
@@ -8922,9 +9935,11 @@ function setupRankingTable(table, dir, rankInfo, winners) {
 
     row.cells[1].innerHTML = pairs[i].pair;
 
-    var direction = 1;
+    let direction = 1;
 
-    if (dir == 'EW') direction = 2;
+    if (dir == 'EW') {
+      direction = 2;
+    }
 
     if (g_eventType != 'Teams') {
       if (
@@ -8939,11 +9954,12 @@ function setupRankingTable(table, dir, rankInfo, winners) {
         row.cells[2].style.backgroundColor = 'pink';
       }
     } else {
-      if ((pairs[i].pair == info.pair_number) & (pairs[i].direction == g_hands.direction))
+      if ((pairs[i].pair == info.pair_number) & (pairs[i].direction == g_hands.direction)) {
         row.cells[2].style.backgroundColor = 'pink';
+      }
     }
 
-    var pairInfo = getPlayerInfo(pairs[i].pair, pairs[i].direction);
+    const pairInfo = getPlayerInfo(pairs[i].pair, pairs[i].direction);
 
     setClickFunctionForNames(row.cells[2], pairs[i].pair, pairs[i].direction);
     row.cells[2].innerHTML = pairInfo.player1 + ' & ' + pairInfo.player2;
@@ -8951,8 +9967,11 @@ function setupRankingTable(table, dir, rankInfo, winners) {
     row.cells[2].className = 'myLink';
 
     if (g_eventType != 'Teams') {
-      if (g_validPercentageFields) row.cells[3 + cellOffset].innerHTML = pairs[i].percentage;
-      else row.cells[3 + cellOffset].innerHTML = Number(pairs[i].total_score).toFixed(2);
+      if (g_validPercentageFields) {
+        row.cells[3 + cellOffset].innerHTML = pairs[i].percentage;
+      } else {
+        row.cells[3 + cellOffset].innerHTML = Number(pairs[i].total_score).toFixed(2);
+      }
     } else {
       row.cells[3].innerHTML = Number(pairs[i].totalCrossImps).toFixed(2);
       row.cells[3].style.textAlign = 'right';
@@ -8992,13 +10011,17 @@ function setupRankingTable(table, dir, rankInfo, winners) {
     } else {
       var width;
 
-      if (g_eventType == 'Teams')
+      if (g_eventType == 'Teams') {
         width = ((100 * (pairs[i].crossImpsPerBoard - rangeMin)) / (rangeMax - rangeMin)).toFixed(
           0
         );
-      else width = (100 * (pairs[i].total_score - rangeMin).toFixed(0)) / (rangeMax - rangeMin);
+      } else {
+        width = (100 * (pairs[i].total_score - rangeMin).toFixed(0)) / (rangeMax - rangeMin);
+      }
 
-      if (width < 1) width = 1; // Fudge factor so that we always see a minimal bar (otherwise bar chart looks as though entry is missing)
+      if (width < 1) {
+        width = 1;
+      } // Fudge factor so that we always see a minimal bar (otherwise bar chart looks as though entry is missing)
 
       width = width + 'px';
       var pbar =
@@ -9021,11 +10044,11 @@ function setupRankingTable(table, dir, rankInfo, winners) {
       row.cells[4 + cellOffset].style.backgroundColor = 'white';
     }
 
-    var nboards = pairs[i].boardsPlayed;
+    const nboards = pairs[i].boardsPlayed;
     var pbar =
       '<div style="float:left;align:left;width:141px;min-width;141px;max-width:141px;height:16px;border:none;background-color:white;">';
 
-    var dd = pairs[i].dd;
+    const dd = pairs[i].dd;
 
     var backColor = '#00CC00'; // Green
     var width = (140 * dd.ddOverH) / nboards;
@@ -9106,26 +10129,28 @@ function setupRankingTable(table, dir, rankInfo, winners) {
 
 // Array Remove - By John Resig (MIT Licensed)
 Array.prototype.remove = function (from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
+  const rest = this.slice((to || from) + 1 || this.length);
   this.length = from < 0 ? this.length + from : from;
   return this.push.apply(this, rest);
 };
 
 function loadTraveller_2(data, statusText, jqXHR) {
-  if (data != '') dddLoadMakeable(data, statusText, jqXHR, this.bindex);
+  if (data != '') {
+    dddLoadMakeable(data, statusText, jqXHR, this.bindex);
+  }
 
-  var info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
-  var player1 = info.player1;
-  var player2 = info.player2;
+  const info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  const player1 = info.player1;
+  const player2 = info.player2;
 
   var pdirection = 1; // Assume played this board as NS (for singlewinner movement can switch direction
 
-  var pairs = g_travellers.event.participants.pair;
+  const pairs = g_travellers.event.participants.pair;
   var declarer_pair = false;
 
-  var tlines = g_currentTraveller.traveller_line;
+  const tlines = g_currentTraveller.traveller_line;
 
-  var i;
+  let i;
 
   var found = false;
 
@@ -9145,22 +10170,29 @@ function loadTraveller_2(data, statusText, jqXHR) {
 
         if (found) {
           if (declarer_pair) {
-            if (first) declarer_name = info.player1;
-            else declarer_name = info.player2;
+            if (first) {
+              declarer_name = info.player1;
+            } else {
+              declarer_name = info.player2;
+            }
           }
 
-          var subHeading = document.getElementById('compSubHeading');
-          var hstr = '';
+          const subHeading = document.getElementById('compSubHeading');
+          let hstr = '';
 
           hstr = 'Board ' + g_currentTraveller.board_no;
 
-          var dirstr = 'NS';
+          let dirstr = 'NS';
 
-          if (pdirection == 2) dirstr = 'EW';
+          if (pdirection == 2) {
+            dirstr = 'EW';
+          }
 
-          if (info.singleWinner)
+          if (info.singleWinner) {
             hstr = hstr + ', comparison for pair ' + g_hands.pair_number + ' playing ' + dirstr;
-          else hstr = hstr + ', comparison for ' + dirstr + ' pair ' + g_hands.pair_number;
+          } else {
+            hstr = hstr + ', comparison for ' + dirstr + ' pair ' + g_hands.pair_number;
+          }
 
           hstr = hstr + ' (' + player1 + ' and ' + player2 + ')';
 
@@ -9168,16 +10200,22 @@ function loadTraveller_2(data, statusText, jqXHR) {
 
           g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction);
 
-          if (g_currow == -1) continue; // Didn't play on this traveller
+          if (g_currow == -1) {
+            continue;
+          } // Didn't play on this traveller
 
           var tline = g_currentTraveller.traveller_line[g_currow];
 
           var str;
 
           if (!validContract(g_hands.boards[g_lastBindex].Contract)) {
-            if (tline.contract == 'Passed') str = 'Board was passed out.';
-            else if (tline.contract == 'NP') str = 'Board was not played.';
-            else str = 'Contract not available.';
+            if (tline.contract == 'Passed') {
+              str = 'Board was passed out.';
+            } else if (tline.contract == 'NP') {
+              str = 'Board was not played.';
+            } else {
+              str = 'Contract not available.';
+            }
           } else {
             str =
               'Contract was ' +
@@ -9186,8 +10224,9 @@ function loadTraveller_2(data, statusText, jqXHR) {
               g_hands.boards[g_lastBindex].Declarer +
               ' ';
 
-            if (declarer_pair) str = str + '(' + declarer_name + ')';
-            else {
+            if (declarer_pair) {
+              str = str + '(' + declarer_name + ')';
+            } else {
               str =
                 str +
                 '(defended by ' +
@@ -9197,26 +10236,31 @@ function loadTraveller_2(data, statusText, jqXHR) {
                 ')';
             }
 
-            var contractLevel = Number(g_hands.boards[g_lastBindex].Contract.charAt(0));
-            var overtricks = tline.tricks - (contractLevel + 6);
+            const contractLevel = Number(g_hands.boards[g_lastBindex].Contract.charAt(0));
+            const overtricks = tline.tricks - (contractLevel + 6);
 
             str = str + ' making ' + tline.tricks + ' tricks';
 
-            if (overtricks > 0) str = str + ' (' + overtricks + ' overtricks)';
-            else if (overtricks < 0) str = str + ' (' + -overtricks + ' off)';
+            if (overtricks > 0) {
+              str = str + ' (' + overtricks + ' overtricks)';
+            } else if (overtricks < 0) {
+              str = str + ' (' + -overtricks + ' off)';
+            }
           }
 
-          var nspts = Number(tline.ns_match_points);
-          var ewpts = Number(tline.ew_match_points);
+          const nspts = Number(tline.ns_match_points);
+          const ewpts = Number(tline.ew_match_points);
 
           if (g_scoring != 'IMP') {
-            var percent = 100 * (nspts / (nspts + ewpts));
+            let percent = 100 * (nspts / (nspts + ewpts));
 
-            if (pdirection == 2) percent = 100 - percent;
+            if (pdirection == 2) {
+              percent = 100 - percent;
+            }
 
             percent = parseFloat(Math.round(percent * 100) / 100).toFixed(0);
-            var pbar = document.getElementById('pbar');
-            var width = Math.round((percent * 150) / 100);
+            const pbar = document.getElementById('pbar');
+            let width = Math.round((percent * 150) / 100);
             width = width + 'px';
             pbar.style.width = width;
             pbar.style.minWidth = width;
@@ -9233,29 +10277,29 @@ function loadTraveller_2(data, statusText, jqXHR) {
 
           if (validContract(g_hands.boards[g_lastBindex].Contract)) {
             if (
-              (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks != 'undefined') &
+              (typeof g_hands.boards[g_lastBindex].DoubleDummyTricks !== 'undefined') &
               checkBoardValid(g_lastBindex)
             ) {
-              var ntricks2 = getMakeableTricksForContract(
+              const ntricks2 = getMakeableTricksForContract(
                 g_lastBindex,
                 g_hands.boards[g_lastBindex].Contract,
                 g_hands.boards[g_lastBindex].Declarer
               );
 
-              if (tline.tricks == ntricks2)
+              if (tline.tricks == ntricks2) {
                 str = str + ', the same number predicted by double dummy analysis.';
-              else if (tline.tricks < ntricks2) {
-                var shortfall = ntricks2 - tline.tricks;
+              } else if (tline.tricks < ntricks2) {
+                const shortfall = ntricks2 - tline.tricks;
                 str = str + ', ' + shortfall + ' fewer than predicted by double dummy analysis.';
               } else {
-                var excess = tline.tricks - ntricks2;
+                const excess = tline.tricks - ntricks2;
                 str = str + ', ' + excess + ' more than predicted by double dummy analysis.';
               }
             }
           }
 
-          var ourscore = tline.score;
-          var res = compareScores(
+          const ourscore = tline.score;
+          const res = compareScores(
             g_travellers.event.board[getTravIndex(g_lastBindex)].traveller_line,
             ourscore,
             pdirection
@@ -9263,15 +10307,21 @@ function loadTraveller_2(data, statusText, jqXHR) {
 
           if (res.adjusted > 0) // We received a percentage instead of score (don't say anything.
           {
-          } else if ((res.lower == 0) & (res.higher == 0))
+          } else if ((res.lower == 0) & (res.higher == 0)) {
             str = str + ' This was a completely flat board.';
-          else if (res.higher == 0) {
-            if (res.same == 0) str = str + ' This was an outright top score.';
-            else str = str + ' This was a joint top with ' + res.same + ' other pairs.';
+          } else if (res.higher == 0) {
+            if (res.same == 0) {
+              str = str + ' This was an outright top score.';
+            } else {
+              str = str + ' This was a joint top with ' + res.same + ' other pairs.';
+            }
           } else if (res.lower == 0) {
-            if (res.same == 0) str = str + ' This was an outright bottom score.';
-            else str = str + ' This was a joint bottom with ' + res.same + ' other pairs.';
-          } else
+            if (res.same == 0) {
+              str = str + ' This was an outright bottom score.';
+            } else {
+              str = str + ' This was a joint bottom with ' + res.same + ' other pairs.';
+            }
+          } else {
             str =
               str +
               ' There were ' +
@@ -9279,10 +10329,11 @@ function loadTraveller_2(data, statusText, jqXHR) {
               ' higher scoring and ' +
               res.lower +
               ' lower scoring pairs on this board.';
+          }
 
-          var ns = 'NS';
-          var ew = 'EW';
-          var str2 = '';
+          const ns = 'NS';
+          const ew = 'EW';
+          const str2 = '';
 
           // Temporarily disable this output.
           /*
@@ -9314,8 +10365,11 @@ function loadTraveller_2(data, statusText, jqXHR) {
     $('#ourPercentage').hide();
     $('#comparisonText').hide();
   } else {
-    if (g_scoring != 'IMP') $('#ourPercentage').show();
-    else $('#ourPercentage').hide();
+    if (g_scoring != 'IMP') {
+      $('#ourPercentage').show();
+    } else {
+      $('#ourPercentage').hide();
+    }
 
     $('#comparisonText').show();
   }
@@ -9333,13 +10387,13 @@ function loadTraveller_2(data, statusText, jqXHR) {
 }
 
 function getLeadsIdx(contract, declarer) {
-  var decl = 'WNES';
-  var suits = 'NCDHS';
+  const decl = 'WNES';
+  const suits = 'NCDHS';
   var idx;
 
-  var suit = contract.charAt(1);
-  var leaderIdx = decl.indexOf(declarer);
-  var suitIdx = suits.indexOf(suit);
+  const suit = contract.charAt(1);
+  const leaderIdx = decl.indexOf(declarer);
+  const suitIdx = suits.indexOf(suit);
   var idx = 4 * suitIdx + leaderIdx;
 
   return idx;
@@ -9348,18 +10402,20 @@ function getLeadsIdx(contract, declarer) {
 function getTlineForPair(boardIndex, info) {
   // Return traveller line containing data for this pair playing this board. Also returns direction in which
   // the pair were sitting when playing the board. Returns null if the pair didn't play this board.
-  var k;
-  var result = new Object();
+  let k;
+  const result = new Object();
 
-  var tindex = getTravIndex(boardIndex);
+  const tindex = getTravIndex(boardIndex);
 
-  if (tindex == null) return null;
+  if (tindex == null) {
+    return null;
+  }
 
-  var tlines = g_travellers.event.board[tindex].traveller_line;
+  const tlines = g_travellers.event.board[tindex].traveller_line;
 
   for (k = 0; k < tlines.length; k++) {
-    var tline = tlines[k];
-    var x = tline.ns_pair_number;
+    const tline = tlines[k];
+    const x = tline.ns_pair_number;
 
     if ((info.pair_number == tline.ns_pair_number) & ((info.direction == 1) | info.singleWinner)) {
       result.direction = 1;
@@ -9381,12 +10437,12 @@ function getTlineForPair(boardIndex, info) {
 function getDirectionForTline(tline, info) {}
 
 function ddComparisonAll() {
-  var i, j, k;
-  var rankInfo = getRankingInfo();
-  var singleWinner = rankInfo.sessInfo.singleWinner;
+  let i, j, k;
+  const rankInfo = getRankingInfo();
+  const singleWinner = rankInfo.sessInfo.singleWinner;
 
-  var ddNS = new Array();
-  var ddEW = new Array();
+  const ddNS = new Array();
+  const ddEW = new Array();
 
   for (i = 0; i < rankInfo.rankNS.length; i++) {
     var data = new Object();
@@ -9412,59 +10468,79 @@ function ddComparisonAll() {
   for (j = 0; j < g_hands.boards.length; j++) {
     for (i = 0; i < g_travellers.event.board.length; i++) {
       if (g_travellers.event.board[i].board_no == g_hands.boards[j].board) {
-        var tlines = g_travellers.event.board[i].traveller_line;
+        const tlines = g_travellers.event.board[i].traveller_line;
 
         for (k = 0; k < tlines.length; k++) {
-          var tline = tlines[k];
+          const tline = tlines[k];
 
-          var ddUnknown = true;
+          let ddUnknown = true;
 
           if (tline.tricks != '') {
-            var ddmakeable = getMakeableTricksForContract(j, tline.contract, tline.played_by);
+            const ddmakeable = getMakeableTricksForContract(j, tline.contract, tline.played_by);
 
             if (ddmakeable >= 0) {
               ddUnknown = false;
 
-              var declarerOverTricks = tline.tricks - ddmakeable;
-              var defenceOverTricks = -declarerOverTricks;
-              var relTricks = tline.tricks - ddmakeable;
+              let declarerOverTricks = tline.tricks - ddmakeable;
+              const defenceOverTricks = -declarerOverTricks;
+              const relTricks = tline.tricks - ddmakeable;
 
-              var ETFMode = document.getElementById('ETFMode');
+              const ETFMode = document.getElementById('ETFMode');
 
               if (ETFMode != null) {
                 if (ETFMode.selectedIndex == 1) {
-                  var ltricks = getMakeableTricksForLead(j, tline);
+                  const ltricks = getMakeableTricksForLead(j, tline);
 
-                  if (ltricks != null) declarerOverTricks = tline.tricks - ltricks;
+                  if (ltricks != null) {
+                    declarerOverTricks = tline.tricks - ltricks;
+                  }
                 }
               }
 
-              var nsDeclarer = true;
+              let nsDeclarer = true;
 
-              if ((tline.played_by == 'E') | (tline.played_by == 'W')) nsDeclarer = false;
+              if ((tline.played_by == 'E') | (tline.played_by == 'W')) {
+                nsDeclarer = false;
+              }
 
               var pair = tline.ns_pair_number;
-              var nsOverTricks = declarerOverTricks;
+              let nsOverTricks = declarerOverTricks;
 
-              if (!nsDeclarer) nsOverTricks = defenceOverTricks;
+              if (!nsDeclarer) {
+                nsOverTricks = defenceOverTricks;
+              }
 
-              if (nsOverTricks == 0) ddNS[pair].ddEqualsH++;
-              else if (nsOverTricks < 0) ddNS[pair].ddUnderH++;
-              else ddNS[pair].ddOverH++;
+              if (nsOverTricks == 0) {
+                ddNS[pair].ddEqualsH++;
+              } else if (nsOverTricks < 0) {
+                ddNS[pair].ddUnderH++;
+              } else {
+                ddNS[pair].ddOverH++;
+              }
 
               pair = tline.ew_pair_number;
-              var ewOverTricks = declarerOverTricks;
+              let ewOverTricks = declarerOverTricks;
 
-              if (nsDeclarer) ewOverTricks = defenceOverTricks;
+              if (nsDeclarer) {
+                ewOverTricks = defenceOverTricks;
+              }
 
               if (singleWinner) {
-                if (ewOverTricks == 0) ddNS[pair].ddEqualsH++;
-                else if (ewOverTricks > 0) ddNS[pair].ddOverH++;
-                else ddNS[pair].ddUnderH++;
+                if (ewOverTricks == 0) {
+                  ddNS[pair].ddEqualsH++;
+                } else if (ewOverTricks > 0) {
+                  ddNS[pair].ddOverH++;
+                } else {
+                  ddNS[pair].ddUnderH++;
+                }
               } else {
-                if (ewOverTricks == 0) ddEW[pair].ddEqualsH++;
-                else if (ewOverTricks > 0) ddEW[pair].ddOverH++;
-                else ddEW[pair].ddUnderH++;
+                if (ewOverTricks == 0) {
+                  ddEW[pair].ddEqualsH++;
+                } else if (ewOverTricks > 0) {
+                  ddEW[pair].ddOverH++;
+                } else {
+                  ddEW[pair].ddUnderH++;
+                }
               }
             }
           }
@@ -9475,16 +10551,23 @@ function ddComparisonAll() {
           {
             var pair = tline.ns_pair_number;
 
-            if (typeof ddNS[pair] != 'undefined')
-              // Pair is a valid pair because it's in the ranking table
+            if (
+              typeof ddNS[pair] !== 'undefined'
+            ) // Pair is a valid pair because it's in the ranking table
+            {
               ddNS[pair].ddUnknown++;
+            }
 
             pair = tline.ew_pair_number;
 
             if (!singleWinner) {
-              if (typeof ddEW[pair] != 'undefined') ddEW[pair].ddUnknown++;
+              if (typeof ddEW[pair] !== 'undefined') {
+                ddEW[pair].ddUnknown++;
+              }
             } else {
-              if (typeof ddNS[pair] != 'undefined') ddNS[pair].ddUnknown++;
+              if (typeof ddNS[pair] !== 'undefined') {
+                ddNS[pair].ddUnknown++;
+              }
             }
           }
         }
@@ -9504,14 +10587,13 @@ function ddComparisonAll() {
 }
 
 function getTravellerForBoard(bindex) {
-  var i;
-  var traveller = null;
+  let i;
+  const traveller = null;
 
   for (i = 0; i < g_travellers.event.board.length; i++) {
     if (g_travellers.event.board[i].board_no == g_hands.boards[bindex].board) {
       if (g_travellers.event.board[i].traveller_line.length != 0) {
         return g_travellers.event.board[i];
-        break;
       }
     }
   }
@@ -9525,35 +10607,42 @@ function setCurrentTraveller() {
 }
 
 function checkContract(bindex, trindex) {
-  var decl = 'NESW';
-  var suits = 'NSHDC';
-  var result = new Object();
+  const decl = 'NESW';
+  const suits = 'NSHDC';
+  const result = new Object();
   result.valid = true;
   result.leadDeclError = false;
   result.possibleWrongPolarity = false;
   result.shortSuit = false;
   result.possibleSuitDeclError = false;
 
-  if (!checkBoardValid(bindex))
-    // No Hand Record for this board
+  if (!checkBoardValid(bindex)) // No Hand Record for this board
+  {
     return result;
+  }
 
-  if (g_travellers == null) return result; // No travellers, only hands records for this event.
+  if (g_travellers == null) {
+    return result;
+  } // No travellers, only hands records for this event.
 
-  var traveller = getTravellerForBoard(bindex);
+  const traveller = getTravellerForBoard(bindex);
 
-  if (traveller == null) return result;
+  if (traveller == null) {
+    return result;
+  }
 
-  var line = traveller.traveller_line[trindex];
+  const line = traveller.traveller_line[trindex];
 
   if (validContract(line.contract)) {
-    var dcl = decl.indexOf(line.played_by);
+    const dcl = decl.indexOf(line.played_by);
     var partner = dcl + 2;
     partner = partner % 4;
-    var leader = dcl + 1;
-    if (leader > 3) leader = 0;
+    let leader = dcl + 1;
+    if (leader > 3) {
+      leader = 0;
+    }
 
-    var declSuit = suits.indexOf(line.contract.charAt(1));
+    const declSuit = suits.indexOf(line.contract.charAt(1));
     result.declSuit = declSuit;
 
     if (declSuit > 0) // i.e. Not a NoTrump contract, so check combined trump suit length
@@ -9561,12 +10650,14 @@ function checkContract(bindex, trindex) {
       var hand = g_hands.boards[bindex].Deal[dcl];
       hand = hand.split('.');
       var tks = hand[declSuit - 1].length;
-      var maxSuitLength = tks;
+      let maxSuitLength = tks;
 
       hand = g_hands.boards[bindex].Deal[partner];
       hand = hand.split('.');
 
-      if (hand[declSuit - 1].length > maxSuitLength) maxSuitLength = hand[declSuit - 1].length;
+      if (hand[declSuit - 1].length > maxSuitLength) {
+        maxSuitLength = hand[declSuit - 1].length;
+      }
 
       var tks = tks + hand[declSuit - 1].length;
 
@@ -9579,11 +10670,11 @@ function checkContract(bindex, trindex) {
 
     if (line.tricks >= 7) // They made a contract in this suit, is it likely ?
     {
-      var oppIndx1 = (dcl + 1) % 4;
-      var oppIndx2 = (dcl + 3) % 4;
+      const oppIndx1 = (dcl + 1) % 4;
+      const oppIndx2 = (dcl + 3) % 4;
 
-      var oppTks1 = getMakeableTricksForContract(bindex, line.contract, decl.charAt(oppIndx1));
-      var oppTks2 = getMakeableTricksForContract(bindex, line.contract, decl.charAt(oppIndx2));
+      const oppTks1 = getMakeableTricksForContract(bindex, line.contract, decl.charAt(oppIndx1));
+      const oppTks2 = getMakeableTricksForContract(bindex, line.contract, decl.charAt(oppIndx2));
 
       if ((oppTks1 >= 9) | (oppTks2 >= 9)) {
         result.valid = false;
@@ -9593,64 +10684,85 @@ function checkContract(bindex, trindex) {
 
     if (line.lead != '') // check lead card is consistent with declarer
     {
-      var curlead = leadCard(line.lead).replace('10', 'T');
+      const curlead = leadCard(line.lead).replace('10', 'T');
 
-      var suit = curlead.charAt(1);
-      var card = curlead.charAt(0);
+      const suit = curlead.charAt(1);
+      const card = curlead.charAt(0);
 
       hand = g_hands.boards[bindex].Deal[leader];
 
       hand = hand.split('.');
 
       if (hand[suits.indexOf(suit) - 1].indexOf(card) == -1) {
-        var reason = '';
+        const reason = '';
         var partner = leader + 2;
         partner = partner % 4;
         hand = g_hands.boards[bindex].Deal[partner];
 
         hand = hand.split('.');
 
-        if (hand[suits.indexOf(suit) - 1].indexOf(card) != -1) result.possibleWrongPolarity = true;
+        if (hand[suits.indexOf(suit) - 1].indexOf(card) != -1) {
+          result.possibleWrongPolarity = true;
+        }
 
         result.valid = false;
         result.leadDeclError = true;
         return result;
-      } else return result;
-    } else return result;
-  } else return result;
+      } else {
+        return result;
+      }
+    } else {
+      return result;
+    }
+  } else {
+    return result;
+  }
 }
 
 function getRequestedLeads(bindex) {
-  var i;
+  let i;
 
-  if (g_travellers == null) return ''; // No travellers, only hands records for this event.
+  if (g_travellers == null) {
+    return '';
+  } // No travellers, only hands records for this event.
 
-  var traveller = getTravellerForBoard(bindex);
+  const traveller = getTravellerForBoard(bindex);
 
-  if (traveller == null) return '';
+  if (traveller == null) {
+    return '';
+  }
 
-  var leadsRequired = new Array();
+  const leadsRequired = new Array();
 
-  for (i = 0; i < 20; i++) leadsRequired[i] = 0;
+  for (i = 0; i < 20; i++) {
+    leadsRequired[i] = 0;
+  }
 
-  var lines = traveller.traveller_line;
+  const lines = traveller.traveller_line;
 
   // Build up request string for required opening lead information for this traveller.
   for (i = 0; i < lines.length; i++) {
     if (validContract(lines[i].contract)) {
-      var idx = getLeadsIdx(lines[i].contract, lines[i].played_by);
+      const idx = getLeadsIdx(lines[i].contract, lines[i].played_by);
       leadsRequired[idx] = 1;
 
-      if (lines[i].lead != '') g_travellersHaveLeads = true;
+      if (lines[i].lead != '') {
+        g_travellersHaveLeads = true;
+      }
     }
   }
 
-  var leadstr = '';
+  let leadstr = '';
 
-  for (i = 0; i < 20; i++) leadstr = leadstr + leadsRequired[i];
+  for (i = 0; i < 20; i++) {
+    leadstr = leadstr + leadsRequired[i];
+  }
 
-  if (leadstr.indexOf('1') != -1) return leadstr;
-  else return '';
+  if (leadstr.indexOf('1') != -1) {
+    return leadstr;
+  } else {
+    return '';
+  }
 }
 
 function showComparison() {
@@ -9658,17 +10770,17 @@ function showComparison() {
   setButtonColor();
 
   // Display the information extracted from the traveller for the current board
-  var i;
+  let i;
 
   setCurrentTraveller();
 
   if (g_currentTraveller != null) {
     if (
-      (typeof g_hands.boards[g_lastBindex].openingLeads == 'undefined') &
+      (typeof g_hands.boards[g_lastBindex].openingLeads === 'undefined') &
       !g_backgroundFetchCompleted
     ) {
-      if (typeof g_hands.boards[g_lastBindex].Deal != 'undefined') {
-        var leadstr = getRequestedLeads(g_lastBindex);
+      if (typeof g_hands.boards[g_lastBindex].Deal !== 'undefined') {
+        const leadstr = getRequestedLeads(g_lastBindex);
 
         calculateMakeableContracts(loadTraveller_2, leadstr, g_lastBindex);
       } else // No Hand Data available
@@ -9696,7 +10808,7 @@ function showCurrentBoard() {
 
   g_playItAgain = true;
 
-  if (typeof g_hands.boards[g_lastBindex].Deal != 'undefined') {
+  if (typeof g_hands.boards[g_lastBindex].Deal !== 'undefined') {
     hideRanking();
     $('#scores').hide();
     $('#comparison').hide();
@@ -9707,7 +10819,9 @@ function showCurrentBoard() {
     g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction);
     setupTraveller(g_lastBindex, true);
     enterPlayMode();
-  } else displayErrorAbsPosition('No hand diagram available for this board', 300, 200);
+  } else {
+    displayErrorAbsPosition('No hand diagram available for this board', 300, 200);
+  }
 }
 
 function travellersNotFound(jqXHR, textStatus, errorThrown) {
@@ -9719,17 +10833,17 @@ function travellersNotFound(jqXHR, textStatus, errorThrown) {
 }
 
 function setDefaultContracts() {
-  var i, j, k;
+  let i, j, k;
 
-  var info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
+  const info = getPlayerInfo(g_hands.pair_number, g_hands.direction);
 
   // Create blank hand records for any travellers which do not have them.
   for (i = 0; i < g_travellers.event.board.length; i++) {
-    var bindex = getBoardIndex(i);
+    const bindex = getBoardIndex(i);
 
     if (bindex == null) // No board for this traveller
     {
-      var newindex = g_hands.boards.length;
+      const newindex = g_hands.boards.length;
       g_hands.boards[newindex] = new Object();
       g_hands.boards[newindex].board = '' + g_travellers.event.board[i].board_no;
     }
@@ -9737,32 +10851,36 @@ function setDefaultContracts() {
 
   // Fill in contract, lead card, declarer, and all leads from traveller in all hand records.
   for (j = 0; j < g_hands.boards.length; j++) {
-    var leadstr = getRequestedLeads(j);
+    const leadstr = getRequestedLeads(j);
 
-    if (leadstr != '') g_hands.boards[j].requestedLeads = leadstr; // used to determine which declarer/suit combinations to calculate optimum leads for
+    if (leadstr != '') {
+      g_hands.boards[j].requestedLeads = leadstr;
+    } // used to determine which declarer/suit combinations to calculate optimum leads for
 
-    var found = false;
+    let found = false;
 
     for (i = 0; i < g_travellers.event.board.length; i++) {
       if (g_travellers.event.board[i].board_no == g_hands.boards[j].board) {
-        var tlineData = getTlineForPair(j, info);
+        const tlineData = getTlineForPair(j, info);
 
         if (tlineData != null) {
-          var tline = tlineData.tline;
+          const tline = tlineData.tline;
 
           if (!setHandRecordFromLin(j, tline)) {
-            var tlDirection = tlineData.direction;
+            const tlDirection = tlineData.direction;
 
             g_hands.boards[j].Declarer = tline.played_by;
             g_hands.boards[j].Contract = tline.contract;
 
-            var played = new Array();
+            const played = new Array();
 
-            var lead = leadCard(tline.lead).replace('10', 'T');
+            let lead = leadCard(tline.lead).replace('10', 'T');
 
             if (lead.length == 2) {
               lead = lead.charAt(1) + lead.charAt(0);
-            } else lead = '  ';
+            } else {
+              lead = '  ';
+            }
 
             played[0] = lead;
             g_hands.boards[j].Played = played; // Opening Lead for current pair
@@ -9804,24 +10922,31 @@ function loadTraveller_1(data, statusText, jqXHR, context) {
   if (data != '') {
     if (g_travellers == null) {
       if (g_xml != '') {
-        if (g_debug) alert(data);
+        if (g_debug) {
+          alert(data);
+        }
 
         data = convertXML(data); // convert it to json
 
-        if (g_debug) alert(JSON.stringify(data));
+        if (g_debug) {
+          alert(JSON.stringify(data));
+        }
       }
 
       g_travellers = eval('(' + data + ')');
 
-      if (typeof g_travellers.event.participants.pair != 'undefined') {
+      if (typeof g_travellers.event.participants.pair !== 'undefined') {
         var i;
 
-        var pairs = g_travellers.event.participants.pair;
+        const pairs = g_travellers.event.participants.pair;
 
         // Standardise representation of direction.
         for (i = 0; i < pairs.length; i++) {
-          if (pairs[i].direction == 'NS') pairs[i].direction = 'N';
-          else if (pairs[i].direction == 'EW') pairs[i].direction = 'E';
+          if (pairs[i].direction == 'NS') {
+            pairs[i].direction = 'N';
+          } else if (pairs[i].direction == 'EW') {
+            pairs[i].direction = 'E';
+          }
         }
       }
 
@@ -9842,17 +10967,17 @@ function loadTraveller_1(data, statusText, jqXHR, context) {
     }
 
     for (var i = 0; i < g_travellers.event.board.length; i++) {
-      var tlines = g_travellers.event.board[i].traveller_line;
+      const tlines = g_travellers.event.board[i].traveller_line;
 
-      for (var j = 0; j < tlines.length; j++) {
-        if (typeof tlines[j].lindata != 'undefined') {
+      for (let j = 0; j < tlines.length; j++) {
+        if (typeof tlines[j].lindata !== 'undefined') {
           if (
-            typeof tlines[j].board == 'undefined'
+            typeof tlines[j].board === 'undefined'
           ) // If fetched from cache it may have been converted already
           {
             try {
-              var lind = decodeURIComponent(tlines[j].lindata.replace(/\\'/g, "'"));
-              var tmp = eval('(' + linToJson(lind) + ')');
+              const lind = decodeURIComponent(tlines[j].lindata.replace(/\\'/g, "'"));
+              const tmp = eval('(' + linToJson(lind) + ')');
               tlines[j].board = tmp.boards[0];
 
               /*							if ((typeof tmp.boards[0].PlayerNames)!=="undefined")
@@ -9888,26 +11013,30 @@ function loadTraveller_1(data, statusText, jqXHR, context) {
 }
 
 function needToAnalyse() {
-  var result = false;
+  const result = false;
 
-  for (var i = 0; i < g_hands.boards.length; i++) {
+  for (let i = 0; i < g_hands.boards.length; i++) {
     if (checkBoardValid(i)) {
       if (
-        (typeof g_hands.boards[i].DoubleDummyTricks == 'undefined') |
+        (typeof g_hands.boards[i].DoubleDummyTricks === 'undefined') |
         (g_hands.boards[g_lastBindex].DoubleDummyTricks == '********************') |
         (g_hands.boards[g_lastBindex].DoubleDummyTricks == '--------------------')
-      )
+      ) {
         return true;
+      }
 
       if (
-        (typeof g_hands.boards[i].OptimumScore == 'undefined') |
+        (typeof g_hands.boards[i].OptimumScore === 'undefined') |
         (g_hands.boards[i].OptimumScore == '')
-      )
+      ) {
         return true;
+      }
 
       if (g_travellers != null) {
         getRequestedLeads(i);
-        if (g_travellersHaveLeads) return true;
+        if (g_travellersHaveLeads) {
+          return true;
+        }
       }
     }
   }
@@ -9945,10 +11074,12 @@ function loadTraveller(data, statusText, jqXHR) {
 
 function getPBNSegment(data) {
   // Return information for one board from the PBN data and also remove these lines from the original array
-  var i;
+  let i;
 
   for (i = 0; i < data.length; i++) {
-    if (data[i].trim().length == 0) break;
+    if (data[i].trim().length == 0) {
+      break;
+    }
   }
 
   //Return rows up to and including i, and remove them from the data array,
@@ -9957,12 +11088,12 @@ function getPBNSegment(data) {
 
 function getLine(data, s, resetFlag) {
   // Used by pbnToJson function
-  var line;
-  var i;
+  let line;
+  let i;
 
   for (i = 0; i < data.length; i++) {
     line = data[i];
-    var pos = line.indexOf(s);
+    let pos = line.indexOf(s);
 
     if (pos != -1) {
       line = line.substring(s.length);
@@ -9970,7 +11101,9 @@ function getLine(data, s, resetFlag) {
       line = line.substring(pos + 1);
       pos = line.indexOf('"');
       line = line.substring(0, pos);
-      if (!resetFlag) data.splice(0, i + 1);
+      if (!resetFlag) {
+        data.splice(0, i + 1);
+      }
       return line;
     }
   }
@@ -9979,8 +11112,8 @@ function getLine(data, s, resetFlag) {
 }
 
 function downloadFile(text, fileType, fileName) {
-  var blob = new Blob([text], { type: fileType });
-  var a = document.createElement('a');
+  const blob = new Blob([text], { type: fileType });
+  const a = document.createElement('a');
   a.download = fileName;
   a.href = URL.createObjectURL(blob);
   a.click();
@@ -9988,20 +11121,20 @@ function downloadFile(text, fileType, fileName) {
 }
 
 function generatePBN(all) {
-  var str = '';
-  var nboards = g_hands.boards.length;
+  let str = '';
+  const nboards = g_hands.boards.length;
 
-  var suits = ['NT', ' S', ' H', ' D', ' C'];
-  var declarer = 'NSEW';
-  var i, j, k;
+  const suits = ['NT', ' S', ' H', ' D', ' C'];
+  const declarer = 'NSEW';
+  let i, j, k;
 
   str += '% PBN 2.1\r\n';
   str += '% EXPORT\r\n';
   str += '%Content-type: text/x-pbn; charset=ISO-8859-1\r\n';
   str += '%Creator: Bridge Solver Online\r\n';
 
-  var lo = 0;
-  var hi = nboards;
+  let lo = 0;
+  let hi = nboards;
 
   if (all == false) {
     lo = g_lastBindex;
@@ -10009,13 +11142,15 @@ function generatePBN(all) {
   }
 
   for (i = lo; i < hi; i++) {
-    if (typeof g_hands.boards[i].Deal == 'undefined') continue;
+    if (typeof g_hands.boards[i].Deal === 'undefined') {
+      continue;
+    }
 
     str += '[Event ""]\r\n';
     str += '[Site ""]\r\n';
     str += '[Date ""]\r\n';
 
-    var boardName = g_hands.boards[i].board;
+    const boardName = g_hands.boards[i].board;
 
     str += '[Board "' + boardName + '"]\r\n';
     str += '[West ""]\r\n';
@@ -10025,27 +11160,36 @@ function generatePBN(all) {
     str += '[Dealer "' + g_hands.boards[i].Dealer + '"]\r\n';
     str += '[Vulnerable "' + g_hands.boards[i].Vulnerable + '"]\r\n';
 
-    var board = g_hands.boards[i];
-    var deal = board.Deal;
+    const board = g_hands.boards[i];
+    const deal = board.Deal;
 
     str += '[Deal "' + g_hands.boards[i].Dealer.charAt(0) + ':';
 
-    var dealer = g_hands.boards[i].Dealer.charAt(0);
+    const dealer = g_hands.boards[i].Dealer.charAt(0);
 
-    var index = 0;
+    let index = 0;
 
-    if (dealer == 'N') index = 0;
-    else if (dealer == 'E') index = 1;
-    else if (dealer == 'S') index = 2;
-    else index = 3;
+    if (dealer == 'N') {
+      index = 0;
+    } else if (dealer == 'E') {
+      index = 1;
+    } else if (dealer == 'S') {
+      index = 2;
+    } else {
+      index = 3;
+    }
 
     for (j = 0; j < 4; j++) {
       str += deal[index];
 
-      if (j != 3) str += ' ';
+      if (j != 3) {
+        str += ' ';
+      }
 
       index++;
-      if (index == 4) index = 0;
+      if (index == 4) {
+        index = 0;
+      }
     }
 
     str += '"]\r\n';
@@ -10055,8 +11199,8 @@ function generatePBN(all) {
     str += '[Contract ""]\r\n';
     str += '[Result ""]\r\n';
 
-    if (typeof board.DoubleDummyTricks != 'undefined') {
-      var doubleDummyTricks = board.DoubleDummyTricks;
+    if (typeof board.DoubleDummyTricks !== 'undefined') {
+      const doubleDummyTricks = board.DoubleDummyTricks;
       str += '[DoubleDummyTricks "' + doubleDummyTricks + '"]\r\n';
 
       str += '[OptimumResultTable "Declarer;Denomination\\2R;Result\\2R"]\r\n';
@@ -10065,16 +11209,18 @@ function generatePBN(all) {
         for (k = 0; k < 5; k++) {
           str += declarer.charAt(j) + ' ' + suits[k] + ' ';
 
-          var tricksChar = doubleDummyTricks.charAt(5 * j + k);
+          const tricksChar = doubleDummyTricks.charAt(5 * j + k);
 
-          var tricks = 0;
-          var tricksStr = '';
+          let tricks = 0;
+          let tricksStr = '';
 
           if ((tricksChar != '*') & (tricksChar != '-')) {
             tricks = parseInt(tricksChar, 16);
 
             tricksStr = '' + tricks;
-            if (tricksStr.length < 2) tricksStr = ' ' + tricksStr;
+            if (tricksStr.length < 2) {
+              tricksStr = ' ' + tricksStr;
+            }
           } else {
             tricksStr = ' 0';
           }
@@ -10084,8 +11230,9 @@ function generatePBN(all) {
       }
     }
 
-    if (typeof board.OptimumScore != 'undefined')
+    if (typeof board.OptimumScore !== 'undefined') {
       str += '[OptimumScore "' + board.OptimumScore + '"]\r\n';
+    }
 
     str += '\r\n';
   }
@@ -10095,22 +11242,24 @@ function generatePBN(all) {
 }
 
 function stripComments(fileData) {
-  var outData = '';
-  var inbComment = false; // for comments preceded by a curly bracket
-  var insComment = false; // for comments preceded by a semicolon
-  var bJustEnded = false;
-  var escChar = true;
-  var i;
+  let outData = '';
+  let inbComment = false; // for comments preceded by a curly bracket
+  let insComment = false; // for comments preceded by a semicolon
+  let bJustEnded = false;
+  let escChar = true;
+  let i;
 
   for (i = 0; i < fileData.length; i++) {
-    var c = fileData.charAt(i);
+    const c = fileData.charAt(i);
 
     if (bJustEnded) {
       bJustEnded = false;
 
       if (c == '\n') {
         // Don't write new line terminator if removing comment has left an empty line.
-        if ((outData.length != 0) & (outData.charAt(outData.length - 1) != '\n')) outData += '\n';
+        if ((outData.length != 0) & (outData.charAt(outData.length - 1) != '\n')) {
+          outData += '\n';
+        }
 
         escChar = true;
         continue;
@@ -10122,7 +11271,9 @@ function stripComments(fileData) {
         insComment = false;
 
         // Don't write new line terminator if removing comment has left an empty line.
-        if ((outData.length != 0) & (outData.charAt(outData.length - 1) != '\n')) outData += '\n';
+        if ((outData.length != 0) & (outData.charAt(outData.length - 1) != '\n')) {
+          outData += '\n';
+        }
 
         escChar = true;
         continue;
@@ -10139,13 +11290,18 @@ function stripComments(fileData) {
     }
 
     if (!inbComment & !insComment) {
-      if ((c == ';') & escChar) insComment = true;
-      else if ((c == '{') & escChar) inbComment = true;
-      else {
+      if ((c == ';') & escChar) {
+        insComment = true;
+      } else if ((c == '{') & escChar) {
+        inbComment = true;
+      } else {
         outData += c;
 
-        if ((c == ' ') | (c == '\n')) escChar = true;
-        else escChar = false;
+        if ((c == ' ') | (c == '\n')) {
+          escChar = true;
+        } else {
+          escChar = false;
+        }
       }
     }
   }
@@ -10163,7 +11319,7 @@ function pbnToJson(fileData) {
 
   g_fullInfo = true; // Assume makeable contracts table contains full information
 
-  var defaultBoard = 1;
+  let defaultBoard = 1;
 
   // This routine only works for PBN files that conform to "Export Format"
   // First convert the different types of line endings to a single "\n"
@@ -10172,15 +11328,15 @@ function pbnToJson(fileData) {
   fileData = stripComments(fileData);
   fileData = fileData.split('\n');
 
-  var line = '';
-  var outStr = '{"boards":[';
+  const line = '';
+  let outStr = '{"boards":[';
 
-  var count = 0;
+  let count = 0;
 
-  var i, tmp;
+  let i, tmp;
 
   while (fileData.length > 0) {
-    var data = getPBNSegment(fileData);
+    const data = getPBNSegment(fileData);
 
     tmp = getLine(data, '[Board', true);
 
@@ -10188,70 +11344,87 @@ function pbnToJson(fileData) {
       tmp = '' + defaultBoard++;
     }
 
-    var dealer = getLine(data, '[Dealer', true);
-    var vulStr = getLine(data, '[Vulnerable', true);
-    var deal = getLine(data, '[Deal ', true); // Include space to distinguish from "Dealer" keyword.
+    const dealer = getLine(data, '[Dealer', true);
+    let vulStr = getLine(data, '[Vulnerable', true);
+    let deal = getLine(data, '[Deal ', true); // Include space to distinguish from "Dealer" keyword.
 
     if ((dealer !== null) & (vulStr !== null) & (deal !== null)) {
       if ((dealer != '') & (vulStr != '') & (deal != '')) {
-        if (count != 0) outStr = outStr + ',';
+        if (count != 0) {
+          outStr = outStr + ',';
+        }
 
         count++;
         outStr = outStr + '{"board":"' + tmp + '",';
         outStr = outStr + '"Dealer":"' + dealer + '",';
 
-        if ((vulStr == 'Love') | (vulStr == '-')) vulStr = 'None';
-        if (vulStr == 'Both') vulStr = 'All';
+        if ((vulStr == 'Love') | (vulStr == '-')) {
+          vulStr = 'None';
+        }
+        if (vulStr == 'Both') {
+          vulStr = 'All';
+        }
 
         outStr = outStr + '"Vulnerable":"' + vulStr + '",';
         outStr = outStr + '"Deal":[';
 
-        var first = deal.charAt(0);
+        const first = deal.charAt(0);
         deal = deal.substring(deal.indexOf(':') + 1).trim();
 
         var lang = identifyHonourCardSet(deal, lang);
         deal = convertToJQKA(deal, lang);
 
-        var index = 0;
+        let index = 0;
 
-        if (first == 'N') index = 0;
-        else if (first == 'S') index = 2;
-        else if (first == 'W') index = 3;
-        else if (first == 'E') index = 1;
+        if (first == 'N') {
+          index = 0;
+        } else if (first == 'S') {
+          index = 2;
+        } else if (first == 'W') {
+          index = 3;
+        } else if (first == 'E') {
+          index = 1;
+        }
 
-        var hands2 = deal.split(' ');
-        var hands = new Array(4);
+        const hands2 = deal.split(' ');
+        const hands = new Array(4);
 
         for (i = 0; i < 4; i++) {
-          if (hands2[i].trim() == '-') hands2[i] = '...'; // Empty hand
+          if (hands2[i].trim() == '-') {
+            hands2[i] = '...';
+          } // Empty hand
 
           hands[index] = hands2[i];
           index++;
 
-          if (index > 3) index = 0;
+          if (index > 3) {
+            index = 0;
+          }
         }
 
         for (i = 0; i < 4; i++) {
           outStr = outStr + '"' + hands[i] + '"';
 
-          if (i != 3) outStr = outStr + ',';
+          if (i != 3) {
+            outStr = outStr + ',';
+          }
         }
 
         outStr = outStr + '],';
 
-        var ddum = '********************';
+        let ddum = '********************';
 
-        var optScore = getLine(data.slice(0), '[OptimumScore', true);
+        const optScore = getLine(data.slice(0), '[OptimumScore', true);
 
         if (optScore !== null) {
           outStr = outStr + '"OptimumScore":"' + optScore + '",';
         }
 
-        var optPresent = getLine(data, '[OptimumResultTable', false);
+        const optPresent = getLine(data, '[OptimumResultTable', false);
 
         if (optPresent !== null) {
-          var trickCount = new Array(20);
-          var idx = new Array(20);
+          const trickCount = new Array(20);
+          const idx = new Array(20);
 
           for (i = 0; i < 20; i++) {
             trickCount[i] = 0;
@@ -10261,15 +11434,18 @@ function pbnToJson(fileData) {
           for (i = 0; i < 20; i++) {
             var ctr;
 
-            if (i < data.length) ctr = data[i];
-            else // end of file
+            if (i < data.length) {
+              ctr = data[i];
+            } else // end of file
             {
               break;
             }
 
             ctr = ctr.trim();
 
-            if (ctr.length == 0) continue; // Ignore blank lines
+            if (ctr.length == 0) {
+              continue;
+            } // Ignore blank lines
 
             if (
               ctr.charAt(0) == '['
@@ -10279,27 +11455,38 @@ function pbnToJson(fileData) {
             }
 
             ctr = ctr.trim();
-            var comp = ctr.split(/ +/);
+            const comp = ctr.split(/ +/);
 
-            var decl = comp[0].trim().toUpperCase().charAt(0);
+            const decl = comp[0].trim().toUpperCase().charAt(0);
 
-            if (decl == 'N') idx[i] = 0;
-            else if (decl == 'S') idx[i] = 5;
-            else if (decl == 'E') idx[i] = 10;
-            else if (decl == 'W') idx[i] = 15;
+            if (decl == 'N') {
+              idx[i] = 0;
+            } else if (decl == 'S') {
+              idx[i] = 5;
+            } else if (decl == 'E') {
+              idx[i] = 10;
+            } else if (decl == 'W') {
+              idx[i] = 15;
+            }
 
-            var cont = comp[1].trim().toUpperCase().charAt(0);
+            const cont = comp[1].trim().toUpperCase().charAt(0);
 
-            if (cont == 'N') idx[i] = idx[i] + 0;
-            else if (cont == 'S') idx[i] = idx[i] + 1;
-            else if (cont == 'H') idx[i] = idx[i] + 2;
-            else if (cont == 'D') idx[i] = idx[i] + 3;
-            else if (cont == 'C') idx[i] = idx[i] + 4;
+            if (cont == 'N') {
+              idx[i] = idx[i] + 0;
+            } else if (cont == 'S') {
+              idx[i] = idx[i] + 1;
+            } else if (cont == 'H') {
+              idx[i] = idx[i] + 2;
+            } else if (cont == 'D') {
+              idx[i] = idx[i] + 3;
+            } else if (cont == 'C') {
+              idx[i] = idx[i] + 4;
+            }
 
             trickCount[i] = parseInt(comp[2]);
           }
 
-          var fullInfo = false; // Set true if full information is present in the table (not just for makeable contracts);
+          let fullInfo = false; // Set true if full information is present in the table (not just for makeable contracts);
 
           for (i = 0; i < 20; i++) {
             if ((trickCount[i] > 1) & (trickCount[i] < 7)) {
@@ -10310,14 +11497,22 @@ function pbnToJson(fileData) {
             }
           }
 
-          if (!fullInfo) g_fullInfo = false;
+          if (!fullInfo) {
+            g_fullInfo = false;
+          }
 
           for (i = 0; i < 20; i++) {
-            if (!fullInfo) if (trickCount[i] < 7) trickCount[i] = -1;
+            if (!fullInfo) {
+              if (trickCount[i] < 7) {
+                trickCount[i] = -1;
+              }
+            }
 
-            if (trickCount[i] >= 0)
+            if (trickCount[i] >= 0) {
               ddum = setCharAt(ddum, idx[i], parseInt(trickCount[i]).toString(16).trim().charAt(0));
-            else ddum = setCharAt(ddum, idx[i], '-');
+            } else {
+              ddum = setCharAt(ddum, idx[i], '-');
+            }
           }
         } else {
           g_fullInfo = false;
@@ -10333,8 +11528,8 @@ function pbnToJson(fileData) {
 }
 
 function dlmToJson(data) {
-  var dealerPattern = 'NESW';
-  var vulnerabilityPattern = [
+  const dealerPattern = 'NESW';
+  const vulnerabilityPattern = [
     'None',
     'NS',
     'EW',
@@ -10352,9 +11547,9 @@ function dlmToJson(data) {
     'NS',
     'EW'
   ];
-  var cards = 'AKQJT98765432';
-  var hands = new Array();
-  var quadrant = new Array();
+  const cards = 'AKQJT98765432';
+  const hands = new Array();
+  const quadrant = new Array();
 
   // Make sure there is a defined "trim" function (needed for IE8 and earlier)
   if (typeof String.prototype.trim !== 'function') {
@@ -10369,21 +11564,25 @@ function dlmToJson(data) {
   data = data.split('\n');
 
   var line = '';
-  var outStr = '{"boards":[';
+  let outStr = '{"boards":[';
 
   var count = 0;
 
   var i, j, k, tmp;
-  var first = 1;
-  var last = 0;
+  let first = 1;
+  let last = 0;
 
   var j = 0;
 
   for (k = j; k < data.length; k++) {
     tmp = data[k];
 
-    if (tmp.length == 0) break;
-    if (!(tmp.indexOf('From board=') == 0)) continue;
+    if (tmp.length == 0) {
+      break;
+    }
+    if (!(tmp.indexOf('From board=') == 0)) {
+      continue;
+    }
     tmp = tmp.substring(11);
     first = Number(tmp);
     break;
@@ -10394,8 +11593,12 @@ function dlmToJson(data) {
   for (k = j; k < data.length; k++) {
     tmp = data[k];
 
-    if (tmp.length == 0) break;
-    if (!(tmp.indexOf('To board=') == 0)) continue;
+    if (tmp.length == 0) {
+      break;
+    }
+    if (!(tmp.indexOf('To board=') == 0)) {
+      continue;
+    }
     tmp = tmp.substring(9);
     last = Number(tmp);
     break;
@@ -10409,31 +11612,43 @@ function dlmToJson(data) {
   for (k = j; k < data.length; k++) {
     tmp = data[k];
 
-    if (tmp.length == 0) break;
-    if (!(tmp.indexOf('Board ') == 0)) continue;
+    if (tmp.length == 0) {
+      break;
+    }
+    if (!(tmp.indexOf('Board ') == 0)) {
+      continue;
+    }
 
     tmp = tmp.substring(6);
 
-    var num = tmp.substring(0, 2);
-    var encodedDeal = tmp.substring(3);
+    let num = tmp.substring(0, 2);
+    const encodedDeal = tmp.substring(3);
 
-    if (num.charAt(0) == '0') num = num.substring(1, 2);
+    if (num.charAt(0) == '0') {
+      num = num.substring(1, 2);
+    }
 
-    var boardNum = Number(num);
+    const boardNum = Number(num);
 
-    if (boardNum > last) break;
+    if (boardNum > last) {
+      break;
+    }
 
-    if (count != 0) outStr = outStr + ',';
+    if (count != 0) {
+      outStr = outStr + ',';
+    }
     count++;
 
     outStr = outStr + '{"board":"' + boardNum + '",';
     outStr = outStr + '"Dealer":"' + dealerPattern.charAt((boardNum - 1) % 4) + '",';
     outStr = outStr + '"Vulnerable":"' + vulnerabilityPattern[(boardNum - 1) % 16] + '",';
 
-    for (i = 0; i < 4; i++) hands[i] = '';
+    for (i = 0; i < 4; i++) {
+      hands[i] = '';
+    }
 
     for (i = 0; i < 26; i++) {
-      var x = encodedDeal.charCodeAt(i) - 97;
+      const x = encodedDeal.charCodeAt(i) - 97;
       quadrant[2 * i] = x >> 2;
       quadrant[2 * i + 1] = x & 3;
     }
@@ -10452,7 +11667,9 @@ function dlmToJson(data) {
 
     for (i = 0; i < 4; i++) {
       outStr = outStr + '"' + hands[i] + '"';
-      if (i != 3) outStr = outStr + ',';
+      if (i != 3) {
+        outStr = outStr + ',';
+      }
     }
 
     outStr = outStr + '],';
@@ -10466,25 +11683,29 @@ function dlmToJson(data) {
 }
 
 function convertHand(cards, hand) {
-  var str = '';
-  var suits = 'SHDC';
-  var values = '23456789TJQKA';
-  var suitIndex = 0;
-  var currentHand = new Array();
-  var i, j;
+  let str = '';
+  const suits = 'SHDC';
+  const values = '23456789TJQKA';
+  let suitIndex = 0;
+  const currentHand = new Array();
+  let i, j;
 
   for (i = 0; i < 4; i++) {
     currentHand[i] = new Array();
 
-    for (j = 0; j < 13; j++) currentHand[i][j] = 0;
+    for (j = 0; j < 13; j++) {
+      currentHand[i][j] = 0;
+    }
   }
 
   for (i = 0; i < hand.length; i++) {
-    var cchar = hand.charAt(i);
+    const cchar = hand.charAt(i);
 
     if ((cchar == 'S') | (cchar == 'H') | (cchar == 'D') | (cchar == 'C')) {
       suitIndex = suits.indexOf(cchar);
-      if (cchar != 'S') str = str + '.';
+      if (cchar != 'S') {
+        str = str + '.';
+      }
     } else {
       currentHand[suitIndex][values.indexOf(cchar)] = 1;
       cards[suitIndex][values.indexOf(cchar)] = 1;
@@ -10495,21 +11716,25 @@ function convertHand(cards, hand) {
 
   for (i = 0; i < 4; i++) {
     for (j = 12; j >= 0; j--) {
-      if (currentHand[i][j] != 0) str = str + values.charAt(j);
+      if (currentHand[i][j] != 0) {
+        str = str + values.charAt(j);
+      }
     }
 
-    if (i != 3) str = str + '.';
+    if (i != 3) {
+      str = str + '.';
+    }
   }
 
   return str;
 }
 
 function inferHand(cards) {
-  var suits = 'SHDC';
-  var values = '23456789TJQKA';
-  var suitIndex = 0;
-  var hand = '';
-  var i, j;
+  const suits = 'SHDC';
+  const values = '23456789TJQKA';
+  const suitIndex = 0;
+  let hand = '';
+  let i, j;
 
   for (i = 0; i < 4; i++) {
     hand = hand + suits.charAt(i);
@@ -10539,17 +11764,22 @@ function writeLinHand(
   pnames_g,
   score
 ) {
-  var outStr = '';
-  var direction = 'NESW';
+  let outStr = '';
+  const direction = 'NESW';
   var i;
-  var namOffset = 0;
-  var names = new Array();
+  let namOffset = 0;
+  let names = new Array();
 
-  if ((boardStr.indexOf('.Closed') != -1) & (pnames_g.length == 8)) namOffset = 4;
+  if ((boardStr.indexOf('.Closed') != -1) & (pnames_g.length == 8)) {
+    namOffset = 4;
+  }
 
-  if (pnames.length > 0) names = pnames;
-  else if (pnames_g.length > 0) {
-    for (var i = 0; i < 4; i++) names[i] = pnames_g[i + namOffset];
+  if (pnames.length > 0) {
+    names = pnames;
+  } else if (pnames_g.length > 0) {
+    for (var i = 0; i < 4; i++) {
+      names[i] = pnames_g[i + namOffset];
+    }
   }
 
   outStr = outStr + '{"board":"' + boardStr + '",';
@@ -10558,12 +11788,16 @@ function writeLinHand(
     outStr += '"PlayerNames":[';
 
     for (i = 0; i < names.length; i++) {
-      if (i != 0) outStr += ',';
-      var pname = names[i].trim();
-      if (pname.indexOf('~~') == 0) pname = pname + ' (Robot)';
+      if (i != 0) {
+        outStr += ',';
+      }
+      let pname = names[i].trim();
+      if (pname.indexOf('~~') == 0) {
+        pname = pname + ' (Robot)';
+      }
       outStr += '"' + pname + '"';
 
-      var entry = new Object();
+      const entry = new Object();
       entry.transList = new Object();
       g_accTrans[pname] = entry;
     }
@@ -10584,7 +11818,9 @@ function writeLinHand(
 
   for (i = 0; i < bids.length; i++) {
     outStr = outStr + '"' + bids[i] + '"';
-    if (i < bids.length - 1) outStr = outStr + ',';
+    if (i < bids.length - 1) {
+      outStr = outStr + ',';
+    }
   }
 
   outStr = outStr + '],';
@@ -10593,7 +11829,9 @@ function writeLinHand(
 
   for (i = 0; i < played.length; i++) {
     outStr = outStr + '"' + played[i] + '"';
-    if (i < played.length - 1) outStr = outStr + ',';
+    if (i < played.length - 1) {
+      outStr = outStr + ',';
+    }
   }
 
   outStr = outStr + '],';
@@ -10601,11 +11839,11 @@ function writeLinHand(
   outStr = outStr + '"Claimed":"' + claimed + '",';
   outStr = outStr + '"Score":"' + score + '",';
 
-  var contract = '';
-  var doubled = false;
-  var redoubled = false;
+  let contract = '';
+  let doubled = false;
+  let redoubled = false;
 
-  var relPosition = 0;
+  let relPosition = 0;
 
   for (i = bids.length - 1; i >= 0; i--) {
     var bd = bids[i];
@@ -10613,8 +11851,12 @@ function writeLinHand(
     bd = bd.toUpperCase();
 
     if (!doubled & !redoubled) {
-      if (bd.charAt(0) == 'D') doubled = true;
-      if (bd.charAt(0) == 'R') redoubled = true;
+      if (bd.charAt(0) == 'D') {
+        doubled = true;
+      }
+      if (bd.charAt(0) == 'R') {
+        redoubled = true;
+      }
     }
 
     if (!(bd.charAt(0) == 'P') & !(bd.charAt(0) == 'R') & !(bd.charAt(0) == 'D')) {
@@ -10622,8 +11864,12 @@ function writeLinHand(
 
       contract = bd[0];
 
-      if (doubled) contract = contract + 'x';
-      if (redoubled) contract = contract + 'xx';
+      if (doubled) {
+        contract = contract + 'x';
+      }
+      if (redoubled) {
+        contract = contract + 'xx';
+      }
 
       relPosition = i;
       break;
@@ -10631,7 +11877,7 @@ function writeLinHand(
   }
 
   if (!(contract == '')) {
-    var suitChar = contract.toUpperCase().charAt(1);
+    const suitChar = contract.toUpperCase().charAt(1);
 
     // Identify who was first to bid this suit
     for (
@@ -10641,19 +11887,23 @@ function writeLinHand(
     ) {
       var bd = bids[i].toUpperCase();
 
-      if (bd.length > 1) if (suitChar == bd.charAt(1)) relPosition = i;
+      if (bd.length > 1) {
+        if (suitChar == bd.charAt(1)) {
+          relPosition = i;
+        }
+      }
     }
   } else {
     contract = 'Passed';
   }
 
-  var position = direction.indexOf(dealer) + relPosition;
-  var declarer = '' + direction.charAt(position % 4);
+  const position = direction.indexOf(dealer) + relPosition;
+  const declarer = '' + direction.charAt(position % 4);
 
   outStr = outStr + '"Contract":"' + contract + '",';
   outStr = outStr + '"Declarer":"' + declarer + '",';
 
-  var doubleDummyTricks = '********************';
+  const doubleDummyTricks = '********************';
   outStr = outStr + '"DoubleDummyTricks":"' + doubleDummyTricks + '"}';
 
   return outStr;
@@ -10667,14 +11917,14 @@ function linToJson(str) {
     };
   }
 
-  var dealerSelect = ['S', 'W', 'N', 'E'];
-  var bids = new Array();
-  var played = new Array();
-  var playerNames = new Array();
-  var boardDealt = false;
-  var outStr = '';
-  var i, j;
-  var inHeader = true;
+  const dealerSelect = ['S', 'W', 'N', 'E'];
+  let bids = new Array();
+  let played = new Array();
+  let playerNames = new Array();
+  let boardDealt = false;
+  let outStr = '';
+  let i, j;
+  let inHeader = true;
 
   str = str.replace(/[\"\[\]]/g, ''); // Filter out characters which won't survive conversion of the final json string to a json object
 
@@ -10684,34 +11934,36 @@ function linToJson(str) {
   str = str.replace(/\n/g, '');
   str = str.replace(/\r/g, '');
 
-  var pairs = str.split('|');
+  const pairs = str.split('|');
 
-  var boardStr = '';
-  var board = -1;
-  var vul = '';
-  var dealer = '';
-  var deal = '';
-  var north = '';
-  var south = '';
-  var west = '';
-  var east = '';
-  var claimed = '';
-  var score = '';
-  var pnames = new Array();
-  var count = 0;
+  let boardStr = '';
+  const board = -1;
+  let vul = '';
+  let dealer = '';
+  let deal = '';
+  let north = '';
+  let south = '';
+  let west = '';
+  let east = '';
+  let claimed = '';
+  let score = '';
+  let pnames = new Array();
+  let count = 0;
 
   for (i = 0; i < pairs.length / 2; i++) {
-    var index = 2 * i;
+    const index = 2 * i;
 
-    var command = pairs[index];
-    var para = pairs[index + 1];
+    const command = pairs[index];
+    let para = pairs[index + 1];
 
     if (command == 'st') // Marks start of new board ?
     {
       inHeader = false;
 
       if (boardDealt) {
-        if (count != 0) outStr = outStr + ',';
+        if (count != 0) {
+          outStr = outStr + ',';
+        }
         count++;
 
         outStr += writeLinHand(
@@ -10744,7 +11996,9 @@ function linToJson(str) {
       inHeader = false;
 
       if (boardDealt) {
-        if (count != 0) outStr += ',';
+        if (count != 0) {
+          outStr += ',';
+        }
 
         count++;
 
@@ -10777,8 +12031,11 @@ function linToJson(str) {
       //						board = Integer.valueOf(boardStr);
       boardStr = para;
 
-      if (boardStr.charAt(0) == 'o') boardStr = boardStr.substring(1) + '.Open';
-      else if (boardStr.charAt(0) == 'c') boardStr = boardStr.substring(1) + '.Closed';
+      if (boardStr.charAt(0) == 'o') {
+        boardStr = boardStr.substring(1) + '.Open';
+      } else if (boardStr.charAt(0) == 'c') {
+        boardStr = boardStr.substring(1) + '.Closed';
+      }
     } else if (command == 'mb') {
       inHeader = false;
       bids[bids.length] = para;
@@ -10795,31 +12052,36 @@ function linToJson(str) {
       inHeader = false;
 
       if (para.indexOf(' ') != -1) {
-        var fields = para.split(' ');
+        const fields = para.split(' ');
         para = fields[1].trim();
 
         boardStr = para;
       } else {
-        if (para.toUpperCase().startsWith('BOARD')) boardStr = para.substr(5);
-        else boardStr = 'NA';
+        if (para.toUpperCase().startsWith('BOARD')) {
+          boardStr = para.substr(5);
+        } else {
+          boardStr = 'NA';
+        }
       }
     } else if (command == 'md') {
       inHeader = false;
       para = para.toUpperCase();
-      var dnum = Number(para.substring(0, 1));
+      const dnum = Number(para.substring(0, 1));
 
       if (!(para.substring(1, 2) == ',')) {
         boardDealt = true;
         dealer = dealerSelect[dnum - 1];
         deal = para.substring(1);
 
-        var hands = deal.split(',');
-        var cards = new Array();
+        const hands = deal.split(',');
+        const cards = new Array();
 
         for (j = 0; j < 4; j++) {
           cards[j] = new Array();
 
-          for (k = 0; k < 13; k++) cards[j][k] = 0;
+          for (k = 0; k < 13; k++) {
+            cards[j][k] = 0;
+          }
         }
 
         south = convertHand(cards, hands[0]);
@@ -10827,22 +12089,33 @@ function linToJson(str) {
         north = convertHand(cards, hands[2]);
 
         if (hands.length > 3) {
-          if (hands[3].trim().length != 0) east = convertHand(cards, hands[3]);
-          else east = inferHand(cards);
+          if (hands[3].trim().length != 0) {
+            east = convertHand(cards, hands[3]);
+          } else {
+            east = inferHand(cards);
+          }
         } else {
           east = inferHand(cards);
         }
       }
     } else if (command == 'pn') {
-      if (inHeader) playerNames = para.split(',');
-      else pnames = para.split(',');
+      if (inHeader) {
+        playerNames = para.split(',');
+      } else {
+        pnames = para.split(',');
+      }
     } else if (command == 'sv') {
       inHeader = false;
       para = para.toUpperCase();
-      if ((para == 'O') | (para == '0')) vul = 'None';
-      else if (para == 'N') vul = 'NS';
-      else if (para == 'E') vul = 'EW';
-      else if (para == 'B') vul = 'All';
+      if ((para == 'O') | (para == '0')) {
+        vul = 'None';
+      } else if (para == 'N') {
+        vul = 'NS';
+      } else if (para == 'E') {
+        vul = 'EW';
+      } else if (para == 'B') {
+        vul = 'All';
+      }
     } else if (command == 'mc') {
       inHeader = false;
       claimed = para;
@@ -10852,7 +12125,9 @@ function linToJson(str) {
   }
 
   if (boardDealt) {
-    if (count != 0) outStr += ',';
+    if (count != 0) {
+      outStr += ',';
+    }
     count++;
 
     outStr += writeLinHand(
@@ -10897,15 +12172,19 @@ function linToJson(str) {
 }
 
 function callAnalysisFunction(index) {
-  if (index == 0) setupRanking();
-  else if (index == 1) setupScorecard();
-  else if (index == 2) showComparison();
+  if (index == 0) {
+    setupRanking();
+  } else if (index == 1) {
+    setupScorecard();
+  } else if (index == 2) {
+    showComparison();
+  }
 }
 
 function handsNotFound(jqXHR, textStatus, errorThrown) {
   // Hands Not Found
-  var msg = 'Hand Record file could not be retrieved';
-  var errormsg =
+  const msg = 'Hand Record file could not be retrieved';
+  const errormsg =
     '<DIV style="padding:10px;background-color:#FFEEEE;width:200px;position:absolute;top:100px;left:100px;"><SPAN style="font-size:16px;">' +
     msg +
     '</SPAN></DIV>';
@@ -10935,55 +12214,70 @@ function loadHands(data, statusText, jqXHR, context) {
 }
 
 function loadHands_1(data, statusText, jqXHR, context) {
-  if (typeof String.prototype.endsWith != 'function') {
+  if (typeof String.prototype.endsWith !== 'function') {
     String.prototype.endsWith = function (str) {
       return this.substring(this.length - str.length, this.length) === str;
     };
   }
 
-  if (typeof context != 'undefined')
-    if (typeof context.callback != 'undefined') this.callback = context.callback;
+  if (typeof context !== 'undefined') {
+    if (typeof context.callback !== 'undefined') {
+      this.callback = context.callback;
+    }
+  }
 
-  var hands;
+  let hands;
 
   if (g_file !== 1) // If pbn data not supplied as string
   {
-    if ((g_file == '') | g_file.toUpperCase().endsWith('PBN')) hands = pbnToJson(data);
-    else if (g_file.toUpperCase().endsWith('DLM')) hands = dlmToJson(data);
-    else if (g_file.toUpperCase().endsWith('LIN'))
-      hands = linToJson(data); // if pbn string was not supplied as explicit parameter
-    else alert('Only PBN, DLM, and bridge base online LIN file types are supported');
+    if ((g_file == '') | g_file.toUpperCase().endsWith('PBN')) {
+      hands = pbnToJson(data);
+    } else if (g_file.toUpperCase().endsWith('DLM')) {
+      hands = dlmToJson(data);
+    } else if (g_file.toUpperCase().endsWith('LIN')) {
+      hands = linToJson(data);
+    } // if pbn string was not supplied as explicit parameter
+    else {
+      alert('Only PBN, DLM, and bridge base online LIN file types are supported');
+    }
   } else {
     hands = data;
   }
 
   hands = eval('(' + hands + ')');
 
-  var saved_boards = g_hands.boards;
+  let saved_boards = g_hands.boards;
 
-  var i;
-  var board = new Object();
+  let i;
+  let board = new Object();
 
-  if (typeof g_hands.boards !== 'undefined') board = g_hands.boards[g_lastBindex].board;
-  else saved_boards = new Object();
+  if (typeof g_hands.boards !== 'undefined') {
+    board = g_hands.boards[g_lastBindex].board;
+  } else {
+    saved_boards = new Object();
+  }
 
   g_hands.boards = hands.boards;
 
-  if (typeof hands.PlayerNames != 'undefined') g_hands.PlayerNames = hands.PlayerNames;
+  if (typeof hands.PlayerNames !== 'undefined') {
+    g_hands.PlayerNames = hands.PlayerNames;
+  }
 
   for (i = 0; i < saved_boards.length; i++) {
     board = saved_boards[i];
 
-    if (typeof board.board != 'undefined') {
+    if (typeof board.board !== 'undefined') {
       if (board.board.toString().indexOf('.edited') != -1) {
         g_hands.boards[g_hands.boards.length] = board;
       }
     }
   }
 
-  var index = 0;
+  let index = 0;
 
-  if (typeof board.board != 'undefined') index = getTindexByName(g_hands.boards, board.board);
+  if (typeof board.board !== 'undefined') {
+    index = getTindexByName(g_hands.boards, board.board);
+  }
 
   if (
     (g_file == '') |
@@ -11015,16 +12309,21 @@ function loadHands_1(data, statusText, jqXHR, context) {
 function getHands(context) {
   var data = '';
 
-  if (requestPending())
-    return; // Don't allow while there is a request in progress.
-  else setRequestTimeout();
+  if (requestPending()) {
+    return;
+  } // Don't allow while there is a request in progress.
+  else {
+    setRequestTimeout();
+  }
 
   // Get the hand records for this event
-  var turl = '';
+  let turl = '';
 
   if (g_file == '') // No pbn url or pbn string supplied.
   {
-    if (g_test == 1) turl = 'data/' + g_hands.club + '_' + g_hands.event + '.pbn';
+    if (g_test == 1) {
+      turl = 'data/' + g_hands.club + '_' + g_hands.event + '.pbn';
+    }
   } else if (
     g_file !== 1
   ) // filename supplied (1 would indicate pbn content supplied as a string parameter)
@@ -11047,36 +12346,48 @@ function getHands(context) {
     var data = '';
     g_loaded = true;
 
-    if (g_handstrType == 'pbn') data = pbnToJson(g_handstr);
-    else if (g_handstrType == 'lin') data = linToJson(g_handstr);
-    else if (g_handstrType == 'dlm') data = dlmToJson(g_handstr);
+    if (g_handstrType == 'pbn') {
+      data = pbnToJson(g_handstr);
+    } else if (g_handstrType == 'lin') {
+      data = linToJson(g_handstr);
+    } else if (g_handstrType == 'dlm') {
+      data = dlmToJson(g_handstr);
+    }
 
     loadHands_1(data, '', '', context);
-  } else loadTraveller_1('', '', '', context);
+  } else {
+    loadTraveller_1('', '', '', context);
+  }
 }
 
 function gotoSession() {
   g_playItAgain = false;
   log('button=session');
-  if (g_sessionMode == 'ranking') getHands({ callback: setupRanking });
-  else if (g_sessionMode == 'scorecard') getHands({ callback: setupScorecard });
-  else if (g_sessionMode == 'check') getHands({ callback: checkAllContracts });
-  else getHands({ callback: showComparison });
+  if (g_sessionMode == 'ranking') {
+    getHands({ callback: setupRanking });
+  } else if (g_sessionMode == 'scorecard') {
+    getHands({ callback: setupScorecard });
+  } else if (g_sessionMode == 'check') {
+    getHands({ callback: checkAllContracts });
+  } else {
+    getHands({ callback: showComparison });
+  }
 }
 
 function sessionHelp() {
-  var tag = g_sessionMode;
+  const tag = g_sessionMode;
 
   window.open('bsolhelp.htm#' + tag);
 }
 
 function getTraveller(context) {
   // Get the traveller data
-  var turl = '';
-  var data = '';
+  let turl = '';
+  const data = '';
 
-  if (g_test == 1) turl = 'data/' + g_hands.club + '_' + g_hands.event + '.json';
-  else if ((g_xml != '') & (g_xml !== 1)) {
+  if (g_test == 1) {
+    turl = 'data/' + g_hands.club + '_' + g_hands.event + '.json';
+  } else if ((g_xml != '') & (g_xml !== 1)) {
     turl = g_xml;
   }
 
@@ -11092,14 +12403,16 @@ function getTraveller(context) {
     } else {
       loadTraveller_1(g_xmlstr, '', '', context);
     }
-  } else loadTraveller_1('', '', '', context);
+  } else {
+    loadTraveller_1('', '', '', context);
+  }
 }
 
 function setDisplaySizing() {
-  var dim = '800#480';
+  let dim = '800#480';
   dim = dim.split('#');
 
-  var width, height;
+  let width, height;
 
   // Default settings - for windowed desktop systems.
   width = dim[0];
@@ -11107,28 +12420,31 @@ function setDisplaySizing() {
   height = (800 * height) / width - 17 - 25; // allow for table padding and buttons below
   g_sectionHeight = height / 3;
 
-  var ismobi = false;
+  let ismobi = false;
 
-  if (navigator.userAgent != 'undefined')
-    ismobi = /mobile/i.test(navigator.userAgent) && !/ipad|tablet/i.test(navigator.userAgent); // if true, it's a phone rather than PC or tablet
+  if (navigator.userAgent != 'undefined') {
+    ismobi = /mobile/i.test(navigator.userAgent) && !/ipad|tablet/i.test(navigator.userAgent);
+  } // if true, it's a phone rather than PC or tablet
 
   g_isMobi = ismobi;
 
-  var defaultHeight = 480 - 17 - 25;
+  const defaultHeight = 480 - 17 - 25;
 
   //	if ((ismobi=="Mobi")|(ismobi=="Android"))
   {
-    var screen_width = screen.availWidth;
-    var screen_height = screen.availHeight;
+    const screen_width = screen.availWidth;
+    const screen_height = screen.availHeight;
 
     if ((screen_width != 'undefined') & (screen_height != 'undefined')) {
       height = screen_height;
       width = screen_width;
 
       // Sanity check
-      var ratio = width / height;
+      const ratio = width / height;
 
-      if (ratio < 1.66) height = width / 1.66;
+      if (ratio < 1.66) {
+        height = width / 1.66;
+      }
 
       /*		if (ratio>1.666)	// If ratio is lower than 1.666 use default values for height and width
 			{
@@ -11139,8 +12455,9 @@ function setDisplaySizing() {
 				}
 			}*/
 
-      if (width > height)
-        height = (800 * height) / width - 17 - 80; // allow for table padding and buttons below
+      if (width > height) {
+        height = (800 * height) / width - 17 - 80;
+      } // allow for table padding and buttons below
       else // Use the defaults
       {
         height = defaultHeight;
@@ -11150,8 +12467,8 @@ function setDisplaySizing() {
     }
   }
 
-  var buttHeight = g_sectionHeight / 4 + 'px';
-  var vulBarHeight = (20 * height) / defaultHeight;
+  const buttHeight = g_sectionHeight / 4 + 'px';
+  const vulBarHeight = (20 * height) / defaultHeight;
   g_vulBarLength = g_sectionHeight - 2 * vulBarHeight;
 
   document.getElementById('northHand').style.height = g_sectionHeight + 'px';
@@ -11169,8 +12486,8 @@ function setDisplaySizing() {
     document.getElementById('vul').rows[i].cells[2].style.width = vulBarHeight + 'px';
   }
 
-  var table = document.getElementById('vul');
-  var rows = table.rows;
+  const table = document.getElementById('vul');
+  const rows = table.rows;
   rows[0].style.height = vulBarHeight + 'px';
   rows[0].cells[0].style.height = vulBarHeight + 'px';
   rows[2].style.height = vulBarHeight + 'px';
@@ -11183,7 +12500,7 @@ function setDisplaySizing() {
 
   document.getElementById('scrollDiv').style.height = height + 10 + 'px';
 
-  var nodes = document.getElementsByClassName('blankButton');
+  const nodes = document.getElementsByClassName('blankButton');
 
   var i;
 
@@ -11191,55 +12508,72 @@ function setDisplaySizing() {
     nodes[i].style.height = buttHeight;
   }
 
-  if (g_isMobi) g_namSize = g_sectionHeight / 9 + 'px';
-  else g_namSize = g_sectionHeight / 10 + 'px';
+  if (g_isMobi) {
+    g_namSize = g_sectionHeight / 9 + 'px';
+  } else {
+    g_namSize = g_sectionHeight / 10 + 'px';
+  }
 
-  var namstr = document.getElementById('namstr');
+  const namstr = document.getElementById('namstr');
 
-  if (namstr != null) namstr.style.fontSize = g_namSize;
+  if (namstr != null) {
+    namstr.style.fontSize = g_namSize;
+  }
 
-  var bidtable = document.getElementById('bidding');
-  var biddingHeader = document.getElementById('biddingHeader');
+  const bidtable = document.getElementById('bidding');
+  const biddingHeader = document.getElementById('biddingHeader');
 
-  if (g_isMobi) g_bidFontSize = g_sectionHeight / 8 + 'px';
-  else g_bidFontSize = g_sectionHeight / 10 + 'px';
+  if (g_isMobi) {
+    g_bidFontSize = g_sectionHeight / 8 + 'px';
+  } else {
+    g_bidFontSize = g_sectionHeight / 10 + 'px';
+  }
 
   if (bidtable != null) {
     for (var i = 0; i < bidtable.rows.length; i++) {
       var row = bidtable.rows[i];
 
-      for (var j = 0; j < row.cells.length; j++) row.cells[j].style.fontSize = g_bidFontSize;
+      for (let j = 0; j < row.cells.length; j++) {
+        row.cells[j].style.fontSize = g_bidFontSize;
+      }
     }
 
     var row = biddingHeader.rows[0];
 
-    for (var i = 0; i < row.cells.length; i++)
+    for (var i = 0; i < row.cells.length; i++) {
       row.cells[i].style.fontSize = g_sectionHeight / 8 + 'px';
+    }
 
     document.getElementById('biddingContent').style.height = (3 * g_sectionHeight) / 5 + 'px';
   }
 
-  var optFontSize = g_sectionHeight / 7 + 'px';
-  var lottFontSize = g_sectionHeight / 9 + 'px';
+  const optFontSize = g_sectionHeight / 7 + 'px';
+  const lottFontSize = g_sectionHeight / 9 + 'px';
 
-  var optimumStr = document.getElementById('optStr');
+  const optimumStr = document.getElementById('optStr');
 
-  if (optimumStr != null) optimumStr.style.fontSize = optFontSize;
+  if (optimumStr != null) {
+    optimumStr.style.fontSize = optFontSize;
+  }
 
-  var lottStr = document.getElementById('lott');
+  const lottStr = document.getElementById('lott');
 
-  if (lottStr != null) lottStr.style.fontSize = lottFontSize;
+  if (lottStr != null) {
+    lottStr.style.fontSize = lottFontSize;
+  }
 
   g_dealerFontSize = 16 * g_fontRatio;
 
-  var dealerEl = document.getElementById('dealerChar');
+  const dealerEl = document.getElementById('dealerChar');
 
-  if (dealerEl != null) dealerEl.style.fontSize = g_dealerFontSize + 'px';
+  if (dealerEl != null) {
+    dealerEl.style.fontSize = g_dealerFontSize + 'px';
+  }
 
   g_urqButtonHeight = g_sectionHeight / 5 + 'px';
   g_urqButtFontSize = (g_textBratio * 0.8 * g_sectionHeight) / 6 + 'px';
 
-  var linplay = document.getElementById('linPlay');
+  const linplay = document.getElementById('linPlay');
 
   if (linplay != null) {
     document.getElementById('prevrow').style.height = g_urqButtonHeight;
@@ -11256,58 +12590,69 @@ function setDisplaySizing() {
 
   g_scoreFontSize = g_sectionHeight / 8 + 'px';
 
-  var scorespan = document.getElementById('scoreSpan');
+  const scorespan = document.getElementById('scoreSpan');
 
-  if (scorespan != null) scorespan.style.fontSize = g_scoreFontSize;
+  if (scorespan != null) {
+    scorespan.style.fontSize = g_scoreFontSize;
+  }
 
-  var vul = document.getElementById('setVul');
+  const vul = document.getElementById('setVul');
 
-  if (vul != null) vul.style.minWidth = g_vulBarLength + 'px';
+  if (vul != null) {
+    vul.style.minWidth = g_vulBarLength + 'px';
+  }
 
-  var dlr = document.getElementById('setDealer');
+  const dlr = document.getElementById('setDealer');
 
-  if (dlr != null) dlr.style.minWidth = g_vulBarLength + 'px';
+  if (dlr != null) {
+    dlr.style.minWidth = g_vulBarLength + 'px';
+  }
 }
 
 function orientationChanged() {
   setDisplaySizing();
-  if (g_handEntryMode == 0)
+  if (g_handEntryMode == 0) {
     document.getElementById('boardNumber').innerHTML =
       '<SPAN style="font-size:' +
       g_boardNumberFontSize +
       ';font-weight:normal;">' +
       makeBoardNameString(g_hands.boards[g_lastBindex].board) +
       '</SPAN>';
+  }
   displayHands();
   redrawMCTable(true);
 }
 
 function showCheckTraveller() {
   drawMiniHand();
-  var cp = document.getElementById('minihand').cloneNode(true);
+  const cp = document.getElementById('minihand').cloneNode(true);
   cp.removeAttribute('id');
   $(cp).find('*').removeAttr('id');
 
   // Should delete old cloned node if present
   // Should remove all the ids from the loned node first
-  var cboard = document.getElementById('checkBoard');
-  while (cboard.firstChild) cboard.removeChild(cboard.firstChild);
+  const cboard = document.getElementById('checkBoard');
+  while (cboard.firstChild) {
+    cboard.removeChild(cboard.firstChild);
+  }
   cboard.appendChild(cp);
   $('#checkList').hide();
 
-  var tlines = getTravellerForBoard(g_lastBindex).traveller_line;
+  const tlines = getTravellerForBoard(g_lastBindex).traveller_line;
 
-  var table = document.getElementById('checkTraveller');
-  var rows = table.rows;
-  var i;
+  const table = document.getElementById('checkTraveller');
+  const rows = table.rows;
+  let i;
 
-  for (i = rows.length - 1; i > 0; i--) table.deleteRow(-1);
+  for (i = rows.length - 1; i > 0; i--) {
+    table.deleteRow(-1);
+  }
 
   for (i = 0; i < tlines.length; i++) {
-    var tline = tlines[i];
+    const tline = tlines[i];
 
     table.insertRow(-1);
-    var row = table.rows[table.rows.length - 1];
+    const row = table.rows[table.rows.length - 1];
 
     row.insertCell(-1);
     row.cells[0].innerHTML = tline.ns_pair_number;
@@ -11327,8 +12672,8 @@ function showCheckTraveller() {
 }
 
 function checkAllContracts() {
-  var suits = 'NSHDC';
-  var i, j;
+  const suits = 'NSHDC';
+  let i, j;
 
   g_sessionMode = 'check';
   setButtonColor();
@@ -11344,30 +12689,32 @@ function checkAllContracts() {
   $('#checkTravellerDiv').hide();
 
   var table = document.getElementById('checkList');
-  if (g_checkContracts.length > 0) return;
+  if (g_checkContracts.length > 0) {
+    return;
+  }
 
   for (i = 0; i < g_hands.boards.length; i++) {
-    var traveller = getTravellerForBoard(i);
+    const traveller = getTravellerForBoard(i);
 
-    var lines = traveller.traveller_line;
+    const lines = traveller.traveller_line;
 
     for (j = 0; j < lines.length; j++) {
-      var result = checkContract(i, j);
+      const result = checkContract(i, j);
 
       if (!result.valid) // Report if necessary
       {
-        var line = lines[j];
+        const line = lines[j];
 
         // Is there any other pair on the traveller in the same contract ?
-        var other = false;
+        let other = false;
         var k;
 
         for (k = 0; k < lines.length; k++) {
-          var oppLine = lines[k];
+          const oppLine = lines[k];
 
           if (k != j) {
             if (validContract(oppLine.contract)) {
-              var oppSuit = suits.indexOf(oppLine.contract.charAt(1));
+              const oppSuit = suits.indexOf(oppLine.contract.charAt(1));
 
               if ((oppSuit == result.declSuit) & (oppLine.played_by == line.played_by)) {
                 other = true;
@@ -11410,9 +12757,9 @@ function checkAllContracts() {
   for (i = 0; i < g_checkContracts.length; i++) {
     table.insertRow(-1);
 
-    var row = table.rows[table.rows.length - 1];
-    var data = g_checkContracts[i];
-    var tline = data.traveller.traveller_line[data.tindex];
+    const row = table.rows[table.rows.length - 1];
+    const data = g_checkContracts[i];
+    const tline = data.traveller.traveller_line[data.tindex];
 
     row.insertCell(-1);
     row.cells[0].innerHTML = g_hands.boards[data.bindex].board;
@@ -11436,11 +12783,15 @@ function checkAllContracts() {
     row.cells[6].innerHTML = tline.tricks;
     row.insertCell(-1);
 
-    var reason = '';
+    let reason = '';
 
-    if (data.leadDeclError) reason = 'Lead Card or Declarer is incorrect';
-    else if (data.shortSuit) reason = 'Check declarer suit (short length)';
-    else if (data.possibleSuitDeclError) reason = 'Either Suit or Declarer may be incorrect';
+    if (data.leadDeclError) {
+      reason = 'Lead Card or Declarer is incorrect';
+    } else if (data.shortSuit) {
+      reason = 'Check declarer suit (short length)';
+    } else if (data.possibleSuitDeclError) {
+      reason = 'Either Suit or Declarer may be incorrect';
+    }
 
     row.cells[7].innerHTML = reason;
   }
@@ -11453,24 +12804,27 @@ function reportBSOLNotSupported() {
 
 function listener(event, workerType) {
   if ((event.data !== 'initialised') & (event.data !== 'failed')) {
-    var request = event.data.context.request;
+    const request = event.data.context.request;
 
-    if (request == 'm') dddLoadMakeable(event.data.result, '', '', event.data.context.bindex);
-    else if (request == 'a') {
+    if (request == 'm') {
+      dddLoadMakeable(event.data.result, '', '', event.data.context.bindex);
+    } else if (request == 'a') {
       if (event.data.context.requestSubType == 'b') // Background acc request
       {
-        var result = JSON.parse(event.data.result);
+        const result = JSON.parse(event.data.result);
 
-        if (typeof result.sess.status != 'undefined')
+        if (typeof result.sess.status !== 'undefined') {
           console.log('error from background acc request, status code: ' + result.sess.status);
-        else storeAcc(result, event.data.context);
+        } else {
+          storeAcc(result, event.data.context);
+        }
 
-        var names = event.data.context.names;
-        var tid = event.data.context.tid;
+        const names = event.data.context.names;
+        const tid = event.data.context.tid;
 
-        var nameFound = false;
+        const nameFound = false;
 
-        for (var i = 0; i < 4; i++) {
+        for (let i = 0; i < 4; i++) {
           delete g_accTrans[names[i]].transList[tid];
         }
 
@@ -11479,15 +12833,18 @@ function listener(event, workerType) {
           log('button=showPlayerAccMatrix');
           showPlayerAccMatrix();
         }
-      } else load(event.data.result, null, null, event.data.context);
+      } else {
+        load(event.data.result, null, null, event.data.context);
+      }
     } else if (request == 'b') {
       dddLoadMakeable(event.data.result, '', '', event.data.context.bindex);
     } else {
       if (event.data.context.para == 'benchmark') {
-        var res = JSON.parse(event.data.result);
+        const res = JSON.parse(event.data.result);
 
-        if (localStorageSupported())
+        if (localStorageSupported()) {
           localStorage.setItem('benchmark', String(res.sess.deltaElapsed));
+        }
 
         console.log('benchmark time was ' + res.sess.deltaElapsed + ' seconds');
 
@@ -11509,14 +12866,17 @@ function listener(event, workerType) {
     if (workerType == 'main') {
       if (!g_initialised) // buildPage1 hasn't run yet
       {
-        if (localStorageSupported()) var tmp = localStorage.getItem('benchmark');
-        else tmp = null;
+        if (localStorageSupported()) {
+          var tmp = localStorage.getItem('benchmark');
+        } else {
+          tmp = null;
+        }
 
         if (tmp == null) {
           // generate benchmarking request
-          var dealstr = 'W:.AKQT954.KJ64.72xAKJ8.82.A8.KJT64x97652.76.Q92.AQ8xQT43.J3.T753.953';
+          const dealstr = 'W:.AKQT954.KJ64.72xAKJ8.82.A8.KJT64x97652.76.Q92.AQ8xQT43.J3.T753.953';
 
-          var msg = new Object();
+          const msg = new Object();
           msg.request = 'g';
           msg.pbn = dealstr;
           msg.trumps = 'H';
@@ -11524,7 +12884,7 @@ function listener(event, workerType) {
           msg.requesttoken = 1;
           msg.sockref = 1;
 
-          var context = new Object();
+          const context = new Object();
           context.request = msg.request;
           context.para = 'benchmark';
           msg.context = context;
@@ -11566,8 +12926,11 @@ function listenerBackground(event) {
 }
 
 function workerSupported() {
-  if (typeof Worker !== 'undefined') return true;
-  else return false;
+  if (typeof Worker !== 'undefined') {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function webAssemblySupported() {
@@ -11576,8 +12939,9 @@ function webAssemblySupported() {
       const module = new WebAssembly.Module(
         Uint8Array.of(0x0, 0x61, 0x73, 0x6d, 0x01, 0x00, 0x00, 0x00)
       );
-      if (module instanceof WebAssembly.Module)
+      if (module instanceof WebAssembly.Module) {
         return new WebAssembly.Instance(module) instanceof WebAssembly.Instance;
+      }
     }
   } catch (e) {}
 
@@ -11585,14 +12949,16 @@ function webAssemblySupported() {
 }
 
 function createBackgroundWorkers() {
-  var nworkers = 4; // Make this the maximum number of concurrent worker threads for makeable contracts
+  let nworkers = 4; // Make this the maximum number of concurrent worker threads for makeable contracts
 
-  if (navigator.hardwareConcurrency < nworkers) nworkers = navigator.hardwareConcurrency;
+  if (navigator.hardwareConcurrency < nworkers) {
+    nworkers = navigator.hardwareConcurrency;
+  }
 
   console.log('ncores: ' + nworkers);
 
-  for (var i = 0; i < nworkers; i++) {
-    var worker = new Worker('calldds.js');
+  for (let i = 0; i < nworkers; i++) {
+    const worker = new Worker('calldds.js');
     worker.addEventListener('message', listenerBackground);
     g_mworkers.push(worker);
   }
@@ -11603,7 +12969,7 @@ function createBackgroundWorkers() {
 function stopBackgroundWorkers() {
   console.log('stopping background worker threads');
 
-  for (var i = 0; i < g_mworkers.length; i++) {
+  for (let i = 0; i < g_mworkers.length; i++) {
     g_mworkers[i].terminate();
   }
 
@@ -11616,7 +12982,9 @@ function stopBackgroundWorkers() {
 
 function createMainWorker() {
   if (g_worker == null) {
-    if ((g_hands != null) & (g_session !== 0)) exitCardPlay(); // g_hands may not have been initialised yet when createMainWorker is called at startup
+    if ((g_hands != null) & (g_session !== 0)) {
+      exitCardPlay();
+    } // g_hands may not have been initialised yet when createMainWorker is called at startup
     console.log('creating main worker thread');
     g_worker = new Worker('calldds.js');
     g_worker.addEventListener('message', listenerMain);
@@ -11655,7 +13023,7 @@ function buildPage1(data, options) {
   //	if (webAssemblySupported()&workerSupported())	// Create background workers, even if "play it again" will user remote server
   //		createBackgroundWorkers();
 
-  var defaultOptions = getCookie('BSOL_options');
+  const defaultOptions = getCookie('BSOL_options');
 
   g_protocol = location.protocol || 'http:';
 
@@ -11680,22 +13048,28 @@ function buildPage1(data, options) {
   document.getElementById('miniSouth').style.whiteSpace = 'nowrap';
   document.getElementById('miniWest').style.whiteSpace = 'nowrap';
 
-  var referrer = document.referrer;
+  const referrer = document.referrer;
 
-  var idx = document.referrer.indexOf('testpbntojson');
+  const idx = document.referrer.indexOf('testpbntojson');
 
-  var sctable = document.getElementById('scoring');
+  const sctable = document.getElementById('scoring');
 
-  if (sctable.rows[1].cells.length < 8) g_ofs = 0;
+  if (sctable.rows[1].cells.length < 8) {
+    g_ofs = 0;
+  }
 
-  var table = document.getElementById('rankingNS');
+  const table = document.getElementById('rankingNS');
   table.rows[0].cells[4].id = 'rankingDD';
 
-  if (idx != -1) g_test = 1;
+  if (idx != -1) {
+    g_test = 1;
+  }
 
-  if (typeof data.file != 'undefined') g_file = data.file;
+  if (typeof data.file !== 'undefined') {
+    g_file = data.file;
+  }
 
-  if (typeof data.handstr != 'undefined') {
+  if (typeof data.handstr !== 'undefined') {
     g_file = 1; // Indicate pbn has been supplied as a literal string
     g_handstr = data.handstr;
     g_handstrType = data.handstrType;
@@ -11703,21 +13077,30 @@ function buildPage1(data, options) {
     delete data.handstrType;
   }
 
-  if (typeof data.xml != 'undefined') g_xml = data.xml; // url of file containing travellers etc. has been providedg
+  if (typeof data.xml !== 'undefined') {
+    g_xml = data.xml;
+  } // url of file containing travellers etc. has been providedg
 
-  if (typeof data.xmlstr != 'undefined') // Indicate json has been supplied as a literal string
+  if (typeof data.xmlstr !== 'undefined') // Indicate json has been supplied as a literal string
   {
     g_xml = 1;
     g_xmlstr = data.xmlstr;
     delete data.xmlstr; // Delete field because it makes ajax requests containing g_hands very large
   }
 
-  if (typeof data.debug != 'undefined') if (data.debug == 'true') g_debug = true;
+  if (typeof data.debug !== 'undefined') {
+    if (data.debug == 'true') {
+      g_debug = true;
+    }
+  }
 
   initSettings();
 
-  if (defaultOptions === undefined) setOptions(options);
-  else setOptions(defaultOptions);
+  if (defaultOptions === undefined) {
+    setOptions(options);
+  } else {
+    setOptions(defaultOptions);
+  }
 
   g_credits =
     '<SPAN style="font-size:12px;"><a href="http://www.bridgesolver.co.uk" target="_blank">Bridge Solver Online</a>:<BR><SPAN style="font-weight:bold">John Goacher</SPAN></SPAN><BR><BR><SPAN style="font-size:12px;">Double Dummy Solver Module:<BR><SPAN style="font-weight:bold">Bo Haglund</SPAN></SPAN>';
@@ -11771,11 +13154,12 @@ function buildPage1(data, options) {
   document.getElementById('newBoard').onclick = showNewBoardSelector;
   document.getElementById('deleteBoard').onclick = showDeleteConfirmation;
 
-  if (document.getElementById('saveLIN') != null)
+  if (document.getElementById('saveLIN') != null) {
     document.getElementById('saveLIN').onclick = function () {
       hideAllPopups();
       downloadFile(g_hands.lin, 'text/lin', 'board.lin');
     };
+  }
   document.getElementById('saveBoards').onclick = function () {
     hideAllPopups();
     getHands({ callback: generatePBN });
@@ -11840,7 +13224,7 @@ function buildPage1(data, options) {
     setupRanking();
   };
 
-  var cell = document.getElementById('scPlayerNames');
+  const cell = document.getElementById('scPlayerNames');
 
   cell.innerHTML =
     "<div style='float:left;'><select id='sortMode' name='sortMode' style='background-color:yellow;'><option value=0>Sort By Role</option><option value=1>Sort by Board</option></select></div><div style='float:left;vertical-align:middle;margin-left:10px;'><span id='scPlayerNames2' style='color:white;'></span></div>";
@@ -11849,15 +13233,18 @@ function buildPage1(data, options) {
     setupScorecard(true);
   };
 
-  var krckbox = document.getElementById('krcalc');
+  const krckbox = document.getElementById('krcalc');
 
   if (krckbox !== null) {
     krckbox.onchange = function () {
-      var krck = document.getElementById('krcalc');
+      const krck = document.getElementById('krcalc');
 
       if (localStorageSupported()) {
-        if (krck.checked) localStorage.setItem('krcalc', 'true');
-        else localStorage.setItem('krcalc', 'false');
+        if (krck.checked) {
+          localStorage.setItem('krcalc', 'true');
+        } else {
+          localStorage.setItem('krcalc', 'false');
+        }
       }
 
       updatePointsDisplay();
@@ -11890,26 +13277,37 @@ function buildPage1(data, options) {
   //	g_hands.boards = pbnToJson(g_handstr);
 
   if (typeof g_hands.lin !== 'undefined') {
-    var linstr = linToJson(g_hands.lin);
-    var linhands = eval('(' + linstr + ')');
+    const linstr = linToJson(g_hands.lin);
+    const linhands = eval('(' + linstr + ')');
     g_hands.boards = linhands.boards;
   }
 
   // Set defaults in case pair number and direction not provided.
-  if (typeof g_hands.pair_number == 'undefined') g_hands.pair_number = '';
-  if (typeof g_hands.direction == 'undefined') g_hands.direction = 1;
-  if (g_hands.direction == '') g_hands.direction = 1;
-  if (g_hands.direction == 'NS') g_hands.direction = 1;
-  else if (g_hands.direction == 'EW') g_hands.direction = 2;
+  if (typeof g_hands.pair_number === 'undefined') {
+    g_hands.pair_number = '';
+  }
+  if (typeof g_hands.direction === 'undefined') {
+    g_hands.direction = 1;
+  }
+  if (g_hands.direction == '') {
+    g_hands.direction = 1;
+  }
+  if (g_hands.direction == 'NS') {
+    g_hands.direction = 1;
+  } else if (g_hands.direction == 'EW') {
+    g_hands.direction = 2;
+  }
 
-  if ((g_hands.pair_number == '') & (typeof g_hands.lin !== 'undefined')) g_showAllControls = false;
+  if ((g_hands.pair_number == '') & (typeof g_hands.lin !== 'undefined')) {
+    g_showAllControls = false;
+  }
 
   openIndexedDB(); // Will call getHands or buildPage2 from onsuccess callback
 }
 
 function buildpage2() {
-  var rank1button = document.getElementById('rank1');
-  var rank2button = document.getElementById('rank2');
+  const rank1button = document.getElementById('rank1');
+  const rank2button = document.getElementById('rank2');
 
   //	g_lastBindex = 0;
   hide('next');
@@ -11918,19 +13316,21 @@ function buildpage2() {
   $('#allBoards').hide();
   $('#scoreandtraveller').hide();
 
-  var prev = document.getElementById('prev');
+  const prev = document.getElementById('prev');
   prev.onclick = function () {
     log('button=prevBoard');
     getHands({ callback: gotoPrevTraveller });
   };
 
-  var next = document.getElementById('next');
+  const next = document.getElementById('next');
   next.onclick = function () {
     log('button=nextBoard');
     getHands({ callback: gotoNextTraveller });
   };
 
-  if (typeof g_hands.Title != 'undefined') g_title = g_hands.Title;
+  if (typeof g_hands.Title !== 'undefined') {
+    g_title = g_hands.Title;
+  }
 
   document.getElementById('titleText').innerHTML = g_title;
 
@@ -11940,20 +13340,22 @@ function buildpage2() {
   setupSettingsHelp();
   setupPlayMatchContractHelp();
   showMainMenuItems();
-  if (g_file == '') setupTraveller(g_lastBindex, true);
+  if (g_file == '') {
+    setupTraveller(g_lastBindex, true);
+  }
   enterPlayMode(); // Large version of traveller with clickable contracts
 
   g_playItAgain = true;
 
-  var emptyHand = false;
+  let emptyHand = false;
 
-  if (typeof g_hands.display == 'undefined') {
+  if (typeof g_hands.display === 'undefined') {
     $('#mainTitle').show();
 
     if (g_hands.boards.length == 1) {
       g_lastBindex = 0;
-      var board = g_hands.boards[g_lastBindex];
-      var count = 0;
+      const board = g_hands.boards[g_lastBindex];
+      let count = 0;
 
       for (i = 0; i < 4; i++) {
         count = count + board.Deal[i].length;
@@ -11965,20 +13367,26 @@ function buildpage2() {
       {
         emptyHand = true;
 
-        if (g_xml == '')
-          edit(); // Go into edit mode if no travellers
-        else g_hands.display = 'allpairs';
+        if (g_xml == '') {
+          edit();
+        } // Go into edit mode if no travellers
+        else {
+          g_hands.display = 'allpairs';
+        }
       }
     }
 
-    if (!emptyHand) $('#scoreandtraveller').show();
+    if (!emptyHand) {
+      $('#scoreandtraveller').show();
+    }
 
-    if (typeof g_hands.forceAnalyse != 'undefined') // Call "analyse" automatically.
+    if (typeof g_hands.forceAnalyse !== 'undefined') // Call "analyse" automatically.
     {
       calculateMakeableSingleBoard(g_lastBindex);
     } else {
-      if ((g_hands.boards.length == 1) & (g_file == ''))
-        calculateMakeableSingleBoard(g_lastBindex); // Calculate them anyway if not defined
+      if ((g_hands.boards.length == 1) & (g_file == '')) {
+        calculateMakeableSingleBoard(g_lastBindex);
+      } // Calculate them anyway if not defined
       else {
         if (document.getElementById('mkauto1').checked) {
           g_bgObj.fn = 'analyseAll';
@@ -11991,10 +13399,10 @@ function buildpage2() {
 
   hideSpinner();
 
-  if (typeof g_hands.display != 'undefined') {
+  if (typeof g_hands.display !== 'undefined') {
     g_playItAgain = false;
 
-    var display = g_hands.display;
+    const display = g_hands.display;
     log('button=analysis');
 
     if (display == 'allpairs') {
@@ -12022,14 +13430,14 @@ function buildpage2() {
 function doNothing() {}
 
 function setCookie(c_name, value, exdays) {
-  var exdate = new Date();
+  const exdate = new Date();
   exdate.setDate(exdate.getDate() + exdays);
-  var c_value = escape(value) + (exdays == null ? '' : '; expires=' + exdate.toUTCString());
+  const c_value = escape(value) + (exdays == null ? '' : '; expires=' + exdate.toUTCString());
   document.cookie = c_name + '=' + c_value;
 }
 
 function getCookie(c_name) {
-  var i,
+  let i,
     x,
     y,
     ARRcookies = document.cookie.split(';');
@@ -12051,23 +13459,9 @@ function hide(button) {
   $('#' + button).hide();
 }
 
-function makeHttpObject() {
-  try {
-    return new XMLHttpRequest();
-  } catch (error) {}
-  try {
-    return new ActiveXObject('Msxml2.XMLHTTP');
-  } catch (error) {}
-  try {
-    return new ActiveXObject('Microsoft.XMLHTTP');
-  } catch (error) {}
-
-  throw new Error('Could not create HTTP request object.');
-}
-
 function doRequestHTML(fileref) {
-  var response;
-  var request = makeHttpObject();
+  let response;
+  const request = makeHttpObject();
   request.open('GET', fileref, false);
   request.send(null);
   response = request.responseText;
@@ -12092,13 +13486,19 @@ function errorFunc(jqXHR, textStatus, errorThrown) {
   hideSpinner();
   resetTimeout();
 
-  var errormsg;
+  let errormsg;
 
   if (textStatus == 'error') {
-    if (errorThrown == '') errormsg = 'Could not contact web server';
-    else errormsg = 'Error response From web server: ' + errorThrown;
-  } else if (textStatus == 'timeout') errormsg = 'No response from web server, please try again';
-  else errormsg = 'Unknown Error';
+    if (errorThrown == '') {
+      errormsg = 'Could not contact web server';
+    } else {
+      errormsg = 'Error response From web server: ' + errorThrown;
+    }
+  } else if (textStatus == 'timeout') {
+    errormsg = 'No response from web server, please try again';
+  } else {
+    errormsg = 'Unknown Error';
+  }
 
   errormsg =
     '<DIV style="padding:10px;background-color:#FFEEEE;width:200px;"><SPAN style="font-size:16px;">' +
@@ -12111,8 +13511,8 @@ function errorFunc(jqXHR, textStatus, errorThrown) {
 function doit(para) {
   para = para.replace(/\\"/g, '"');
   para = para.replace(/\\r\\n/g, '\r\n');
-  var data = pbnToJson(para);
-  var hands = eval('(' + data + ')');
+  const data = pbnToJson(para);
+  const hands = eval('(' + data + ')');
   g_hands = new Object();
   g_hands.boards = new Array();
   g_hands.boards[0] = new Object();
@@ -12126,11 +13526,13 @@ function doit(para) {
 
 function loadSubPage(fileref) {
   g_session = 0;
-  var response = doRequestHTML(fileref);
-  var target = document.getElementById('work_frame');
+  const response = doRequestHTML(fileref);
+  const target = document.getElementById('work_frame');
   target.innerHTML = response;
 
   try {
-    if (fileref == 'contactus.htm') setupMailLinks();
+    if (fileref == 'contactus.htm') {
+      setupMailLinks();
+    }
   } catch (err) {}
 }

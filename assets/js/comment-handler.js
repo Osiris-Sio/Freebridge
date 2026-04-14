@@ -1,23 +1,18 @@
+/* global g_hands, g_lastBindex */
+
 // Variables globales pour la gestion des commentaires textuels
 window.currentTextCommentIndex = 0;
 window.currentTextComments = [];
 
 // Affiche les commentaires d'enchères dans la div de droite
-// Dans comment-handler.js
 window.displayAuctionComments = function (auctionComments) {
-  console.log('Trying to display auction comments');
-  console.log('Type of auctionComments:', typeof auctionComments);
-  console.log('auctionComments:', auctionComments);
-
   // Si auctionComments est undefined ou null, on sort
   if (!auctionComments) {
-    console.log('No auction comments to display');
     return;
   }
 
   const leftDiv = document.querySelector('.comment-right');
   if (!leftDiv) {
-    console.error('Could not find .comment-right div');
     return;
   }
 
@@ -30,29 +25,15 @@ window.displayAuctionComments = function (auctionComments) {
       p.textContent = comment;
       leftDiv.appendChild(p);
     });
-  } else {
-    console.error('auctionComments is not an array:', auctionComments);
   }
 };
 
 // Affiche les commentaires et le contrat pour le board actuel
 window.afficherCommentairesEtContrat = function () {
-  console.log('afficherCommentairesEtContrat called');
   const board = g_hands.boards[g_lastBindex];
 
-  console.log('Current board:', board);
-  console.log('g_lastBindex:', g_lastBindex);
-
   if (!board) {
-    console.error('No board found');
     return;
-  }
-
-  // Vérifier si AlertComments existe
-  if (board.AlertComments) {
-    console.log('AlertComments found:', board.AlertComments);
-  } else {
-    console.log('No AlertComments in board');
   }
 
   // Affiche les commentaires d'enchères
@@ -79,8 +60,9 @@ window.afficherProchainCommentaireTextuel = function () {
   if (
     !window.currentTextComments ||
     window.currentTextCommentIndex >= window.currentTextComments.length
-  )
+  ) {
     return;
+  }
 
   // Créer et afficher le nouveau commentaire
   const p = document.createElement('p');

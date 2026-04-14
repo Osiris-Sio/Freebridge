@@ -4,24 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier --write .",
-    "lint": "eslint assets/js"
-  },
-  "author": "Louis AMEDRO",
-  "license": "ISC",
-  "type": "commonjs",
-  "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint assets/js",
     "lint:fix": "eslint --fix assets/js"
   },
+  "author": "Louis AMEDRO",
+  "license": "ISC",
+  "type": "module",
   "devDependencies": {
-    "@eslint/js": "10.0.1",
+    "@eslint/js": "^10.0.1",
     "@prettier/plugin-php": "0.25.0",
-    "eslint": "10.2.0",
-    "eslint-config-prettier": "10.1.8",
+    "eslint": "^10.2.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-html": "^8.1.4",
+    "eslint-plugin-prettier": "^5.5.5",
+    "globals": "^17.5.0",
     "prettier": "3.8.2",
     "typescript-eslint": "8.58.2"
   }
