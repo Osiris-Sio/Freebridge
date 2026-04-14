@@ -1,0 +1,17 @@
+La règle des surcoupes :
+
+On additionne le total des cartes du Déclarant et du Mort dans la couleur à couper avec le numéro du tour de coupe 
+
+Selon le résultat obtenu, le risuqe est plus ou moins important  :
+
+Total 10 : surcoupe probable
+
+Total 9 : léger risque de surcoupe
+
+Total 8 : surcoupe rarissime
+
+Ainsi avec As-Roi 6ème en face d'un singleton, la ligne correcte consiste à donner un coup à blanc 
+
+Car 6 + 1 + 2 = 9  inférieur à 6 + 1 + 3 = 10
+
+La règle des surcoupes sera utilisée quand on ne pourra donner suffisamment de toursde débarras avant les coupes, par exemple quand les atouts servent de communications.  

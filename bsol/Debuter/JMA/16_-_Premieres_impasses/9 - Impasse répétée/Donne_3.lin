@@ -1,0 +1,45 @@
+mn|Scolaire 1ère Année - Séance 5.2 - Donne 1|qx|o1,BOARD 1|rh||ah|Board 1|nt||bt||ht|h|at|
+Donneur : Nord - Personne vulnérable
+                    Nord
+                P: R D 8
+                C: V 7 3
+                K: V 7 6 4
+                T: A 8 5
+    Ouest                         Est
+P: A 10 4                     P: V 5
+C: 10 9 8 6                   C: D 4 2
+K: A 5 2                      K: R 9 8
+T: V 9 4                      T: D 10 7 3 2
+                     Sud
+                P: 9 7 6 3 2
+                C: A R 5
+                K: D 10 3
+                T: R 6
+Entame 10@H - Quel est votre plan de jeu ?
+Est ne mettant la D@H que si Nord met le V@H, Sud prend de l'As@H et joue immédiatement vers R/D@S du mort (Expasse à l'As@S en Ouest).
+Resté maître, il rentre en main au R@C pour retenter l'expasse vers le mort.
+Sud ne concédera ainsi que l'As@S à l'atout, et 2 levées @D et 1 à @H
+Score 3@S = : 140 pour NS|pg||
+nt||st||md|3S97632HAK5DQT3CK6,SAT4HT986DA52CJ94,SKQ8HJ73DJ764CA85|sv|e|
+sa|0|mb|p|mb|p|mb|1S|mb|p|mb|3S|mb|p|mb|p|mb|p|
+nt|Sud ouvre de 1@S avec ses 5 @S et ses 12 H et Nord avec ses 11 H soutient à 3@S.
+Sud, minimum passe|pg||
+pc|HT|nt|Entame 10@H - Quel est votre plan de jeu ?|pg||
+nt|Est ne mettant la D@H que si Nord met le V@H, Sud prend de l'As@H et joue immédiatement vers R/D@S du mort (Expasse à l'As@S en Ouest).
+Resté maître, il rentre en main au R@C pour retenter l'expasse vers le mort.
+Sud ne concédera ainsi que l'As@S à l'atout, et 2 levées @D et 1 à @H|
+pc|H3|pc|H2|pc|HA|pg||
+pc|S2|pc|S4|pc|SK|pc|S5|pg||
+pc|C5|pc|C2|pc|CK|pc|C4|pg||
+pc|S3|pc|SA|pc|S8|pc|SJ|pg||
+pc|H9|pc|H7|pc|H4|pc|HK|pg||
+pc|S6|pc|ST|pc|SQ|pc|C3|pg||
+pc|D4|pc|D8|pc|DT|pc|DA|pg||
+pc|H6|pc|HJ|pc|HQ|pc|H5|pg||
+pc|C7|pc|C6|pc|C9|pc|CA|pg||
+pc|D6|pc|DK|pc|D3|pc|D2|pg||
+pc|CQ|pc|S7|pc|CJ|pc|C8|pg||
+pc|DQ|pc|D5|pc|D7|pc|D9|pg||
+pc|S9|pc|H8|pc|DJ|pc|CT|pg||
+nt||st||md|3S97632HAK5DQT3CK6,SAT4HT986DA52CJ94,SKQ8HJ73DJ764CA85|sv|e|
+nt|Score 3@S = : 140 pour NS|

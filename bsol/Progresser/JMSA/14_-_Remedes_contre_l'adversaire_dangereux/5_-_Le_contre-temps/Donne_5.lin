@@ -1,0 +1,20 @@
+mn|Pas à pas - Jeu à Sans-Atout - Exercice Z
+|sk|sn|md|2SKQTHJT9D54CAQ987,SA9874HQ63DA2CK32,SJ32HAKDKJT986CJT|sv|e|
+sa|0|mb|1S|mb|2D|mb|p|mb|2N|mb|p|mb|3N|mb|p|mb|p|mb|p|nt||pg||
+pc|S7|nt|Entame 7@S - Quel est votre plan de jeu ?|pg||
+nt|Sud compte 2 levées @S, 2 @H et 1@C , il doit trouver 4 levées supplémentaires. L'ouverture d'Ouest permet de localiser l'essentiel des points chez lui (As@S, A@D et R@C et une Dame @H ou @D). L'affranchissement des @C ne rapportera donc que 3 levées et nécessitera donc de rendre la main ensuite à @D, Ouest réalisant ainsi 5 levées (R@C, As@D et 3 @S).De même l'affranchissement des @D risque d' être difficile si la D@D est en Est et que l'impasse échoue. Mais il existe une solution avec la réalisation d'une levée à @D avec le Roi et le switch sur l'impasse @C, qui permet de gagner un temps et une levée en passant à @D.|
+pc|S2|pc|S6|pc|SK|pg||
+pc|D5|pc|D2|pc|DK|pc|D3|
+at|Si Ouest plonge de l'As@D, Sud pourra ffranchir 4 levées @D en concédant la D@D en Est, quyi n'aura plus de @S pour communiquer avec Est.|pg||
+pc|CJ|pc|C4|pc|C7|pc|C2|pg||
+pc|CT|pc|C5|pc|CA|pc|C3|pg||
+pc|C8|pc|CK|pc|D6|pc|C6|pg||
+pc|SA|pc|S3|pc|S5|pc|ST|pg||
+pc|S4|pc|SJ|pc|H2|pc|SQ|pg||
+pc|CQ|pc|S8|pc|D8|pc|H4|pg||
+pc|C9|pc|H3|pc|D9|pc|H5|pg||
+pc|H9|pc|H6|pc|HK|pc|H7|pg||
+pc|HA|pc|H8|pc|HT|pc|HQ|pg||
+pc|DT|pc|D7|pc|D4|pc|DA|pg||
+pc|S9|pc|DJ|pc|DQ|pc|HJ|pg||
+nt|Score 3SA = : 400 pour NS|pg||

@@ -1,0 +1,50 @@
+mn|Cadets 2ème année - Séance 5 - Donne 4|pn|Sud,Ouest,Nord,Est|qx|o20,BOARD 20|rh||ah|Board 20|nt||bt||ht|h|
+at| Donneur : Sud - Tous vulnérables
+                    Nord
+                P: D 7
+                C: A 9
+                K: R 8 7 4 2
+                T: 9 7 5 2
+    Ouest                         Est
+P:10 6 5 2                    P: 8 3
+C: D V10 4 2                  C: R 8 6 5 3
+K:                            K:10 9 5 3
+T: A D10 6                    T: 8 3
+                     Sud
+                P: A R V 9 4
+                C: 7
+                K: A D V 6
+                T: R V 4
+Entame D@H
+Le Déclarant compte 5 levées @S, 1 @H et 5 @D, soit 11 levées sures.
+Il ne doit pas tenter de faire une levée @C, mais simplement une 6ème levée d'atout en prenant de l'As@H et en coupant immédiatement un @D.
+Il encaisse maintenant A, D & V@D, rentre au mort avec la D@S, et capture le dernier atout avant de réaliser ses @S.
+Il ne concéde finalement que l'As@C. Score 6@D = : 1370 pour NS|pg||
+nt||st||md|1SAKJ94H7DAQJ6CKJ4,ST652HQJT42DCAQT6,SQ7HA9DK8742C9752|sv|b|
+sa|0|mb|1S|mb|p|mb|1N|mb|p|mb|3D|mb|p|mb|4D|mb|p|mb|4N|mb|p|mb|5D|mb|p|mb|6D|mb|p|mb|p|mb|p|
+nt|3@D : bicolore à saut forcing de manche 20 HL et plus
+4@D : espoir de chelem
+4SA : Blackwood simple - 5@D : 1 As|pg||
+pc|HQ|nt|Entame D@H - Quel est votre plan de jeu ?|pg||
+nt|Le Déclarant compte 5 levées @S, 1 @H et 5 @D, soit 11 levées sures.
+Il ne doit pas tenter de faire une levée @C, mais simplement une 6ème levée d'atout en prenant de l'As@H et en coupant immédiatement un @D.| 
+pc|HA|pc|H3|pc|H7|pg||
+pc|H9|pc|H5|pc|D6|pc|H2|pg||
+nt|Il encaisse maintenant A, D & V@D|
+pc|DA|pc|C6|pc|D2|pc|D3|pg||
+pc|DQ|pc|H4|pc|D4|pc|D5|pg||
+pc|DJ|pc|CT|pc|D7|pc|D9|pg||
+at|, rentre au mort avec la D@S,|
+pc|S4|pc|S2|pc|SQ|pc|S3|pg||
+at| et capture le dernier atout|
+pc|DK|pc|DT|pc|C4|pc|HT|pg||
+at| avant de réaliser ses @S|
+pc|S7|pc|S8|pc|SA|pc|S5|pg||
+pc|SK|pc|S6|pc|C2|pc|C3|pg||
+pc|SJ|pc|ST|pc|C5|pc|H6|pg||
+pc|S9|pc|HJ|pc|C7|pc|H8|pg||
+nt|Il ne concéde finalement que l'As@C|
+pc|CJ|pc|CQ|pc|C9|pc|C8|pg||
+pc|CA|pc|D8|pc|HK|pc|CK|pg||
+nt||st||md|1SAKJ94H7DAQJ6CKJ4,ST652HQJT42DCAQT6,SQ7HA9DK8742C9752|sv|b|
+nt|Score 6@D = : 1370 pour NS|

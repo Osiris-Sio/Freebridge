@@ -1,0 +1,22 @@
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 4.3.
+|sk|sn|md|2SA96H5DAKJT74CAQ5,ST854HAKQT3D6CKJ4,SKJH7642DQ983C732|sv|0|
+sa|0|mb|1H|mb|p|mb|p|mb|2D|mb|p|mb|3D|mb|3H|mb|5D|mb|p|mb|p|mb|p|
+at|Ouest a ouvert de 1@H et vous jouez finalement 5@D en Sud.|pg||
+nt|Ouest encaisse l'As@H, |
+pc|HA|pc|H2|pc|H8|pc|H5|pg||
+at| et rejoue le R@H coupé en Sud. Comment procédez-vous pour assurer votre contrat ?|
+pc|HK|pc|H4|pc|H9|pc|D4|pg||
+nt| Le roi de trèfle est probablement en Ouest, il faut éviter de perdre 2 trèfles et l'impasse à la D@S est risqué. Sud élimine donc les @S et remet en main Ouest en l'obligeant à rejouer @C...|
+pc|D7|pc|D6|pc|DQ|pc|D5|pg||
+pc|H6|pc|HJ|pc|DT|pc|H3|pg||
+pc|S6|pc|S5|pc|SK|pc|S7|pg||
+pc|SJ|pc|S2|pc|SA|pc|S4|pg||
+pc|DJ|pc|HT|pc|D3|pc|D2|pg||
+pc|S9|pc|ST|pc|D9|pc|S3|pg||
+nt| Maintenant la main est rendue à Ouest à coeur. |
+pc|H7|pc|C6|pc|C5|pc|HQ|pg||
+pc|C4|pc|C2|pc|C8|pc|CQ|pg||
+pc|CA|pc|CK|pc|C7|pc|CT|pg||
+pc|DA|pc|S8|pc|DQ|pc|C9|pg||
+pc|DK|pc|CJ|pc|C3|pc|SQ|pg||
+nt|Evaluation : 2 si vous avez trouvé la bonne suite pour gagner : un jeu d'élimination placement de main. Zéro sinon.|pg|

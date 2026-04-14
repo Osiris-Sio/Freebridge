@@ -1,0 +1,22 @@
+nt|Plan de Jeu à Sans-Atout - Exercice 4
+|sk|sn|md|2SAT2HKJ95DJ43C982,S86H842DKQTCQT743,S7543HQTDA972CAK5|sv|b|
+sa|0|mb|p|mb|1D|mb|p|mb|1H|mb|p|mb|1S|mb|p|mb|1N|mb|p|mb|p|mb|p|
+at||pg||
+pc|C4|nt|Entame 4@C - Quel est votre plan de Jeu ?|pg||
+nt|Sud doit prendre au 1er tour en application de la règle des 7 (7-6-1 2ème arrêt = 0) et parce qu'il craint une autre entame @S.
+Il compte 4 levées immédiates (3 As et 1 Roi) et les @H vont procurer les 3 levées manquantes en délogeant l'As@H.
+Mais Sud ne doit pas oublier de surprendre au 2ème tour de @H si la défense laisse passer 2 fois @H, car il ne dispose que d'une remontée dans sa main (L'As@S) pour venir réaliser la 3ème levée d'honneur @H.| 
+pc|CA|pc|C6|pc|C2|pg||
+pc|HQ|pc|H3|pc|H5|pc|H2|pg||
+pc|HT|pc|H6|pc|HJ|pc|H4|pg||
+pc|HK|pc|H8|pc|S3|pc|HA|pg||
+pc|CJ|pc|C8|pc|CQ|pc|C5|pg||
+pc|C3|pc|CK|pc|D5|pc|C9|pg||
+pc|D2|pc|D8|pc|DJ|pc|DK|pg||
+pc|CT|pc|D7|pc|S9|pc|D3|pg||
+pc|S8|pc|S4|pc|SJ|pc|SA|pg||
+pc|H9|pc|S6|pc|S5|pc|H7|pg||
+pc|D4|pc|DT|pc|DA|pc|D6|pg||
+pc|D9|pc|SQ|pc|S2|pc|DQ|pg||
+pc|C7|pc|S7|pc|SK|pc|ST|pg||
+nt|Résultat : 1SA =|

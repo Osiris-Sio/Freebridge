@@ -1,0 +1,48 @@
+mn|Cadets 2ème Année - Séance 24 - Donne 4|pn|,,,|qx|o4,BOARD 4|rh||ah|Board 4|nt||bt||ht|h|
+at|Donneur : Sud - Tous vulnérables
+                    Nord
+                P: 7 3
+                C: R 10 8 4
+                K: A 7 6 5 2
+                T: 9 4
+    Ouest                         Est
+P: A D 10 8 4                 P: V 9 6 2
+C: 7 5                        C: 6 2
+K: V 8                        K: D 9 3
+T: D V 10 7                   T: R 6 3 2
+                     Sud
+                P: R 5
+                C: A D V 9 3
+                K: R 10 4
+                T: A 8 5
+Entame D@C
+Le déclarant doit tout mettre en oeuvre pour ne pas donner la main à Est, car un retour @S le condamnerait à perdre 2 levées dans cette couleur, plus 1 à @D et 1 à @C.
+Il laisse donc passer l'entame, prend le 2ème tour de @C, tire As et R@H, puis joue du mort vers le 10@D. Il affranchit ainsi la couleur si elle est répartie 3/2 sans donner la main à Est.
+Ouest doit tirer l'As@S sous peine de ne plus le faire et de donner une surlevée.
+Score 4@H = 620 pour NS
+A noter qu'une défense à 4@S aurait couté 800  à EO, soit plus que la manche vulnérable.
+|pg||
+nt||st||md|1SK5HAQJ93DKT4CA85,SAQT84H75DJ8CQJT7,S73HKT84DA7652C94|sv|b|
+sa|0|mb|1H|mb|1S|mb|3H|mb|3S|mb|4H|mb|p|mb|p|mb|p|
+nt|3@H : 11-12 HLD, comme dans le silence adverse
+3@S : compétitif, en conformité avec la loi des atouts
+4@H : Si l'adversaire enchèrit à @S, Sud contrera avec cette main régulière et forte en points|pg||
+pc|CQ|nt|Entame D@C - Quel est votre plan de jeu ?|pg||
+nt|Le déclarant doit tout mettre en oeuvre pour ne pas donner la main à Est, car un retour @S le condamnerait à perdre 2 levées dans cette couleur, plus 1 à @D et 1 à @C.
+Il laisse donc passer l'entame, prend le 2ème tour de @C, Tire As et R@H, puis joue du mort vers le 10@D. Il affranchit ainsi la couleur si elle est répartie 3/2 sans donner la main à Est.
+Ouest doit tirer l'As@S sous peine de ne plus le faire et de donner une surlevée.|
+pc|C4|pc|C6|pc|C5|pg||
+pc|CJ|pc|C9|pc|C2|pc|CA|pg||
+pc|HA|pc|H5|pc|H4|pc|H2|pg||
+pc|H3|pc|H7|pc|HK|pc|H6|pg||
+pc|D2|pc|D3|pc|DT|pc|DJ|pg||
+pc|SA|pc|S3|pc|S2|pc|S5|pg||
+pc|S4|pc|S7|pc|SJ|pc|SK|pg||
+pc|DK|pc|D8|pc|D5|pc|D9|pg||
+pc|D4|pc|S8|pc|DA|pc|DQ|pg||
+pc|D7|pc|S6|pc|C8|pc|C7|pg||
+pc|D6|pc|S9|pc|HQ|pc|ST|pg||
+pc|H9|pc|SQ|pc|H8|pc|CK|pg||
+pc|HJ|pc|CT|pc|HT|pc|C3|pg||
+nt|Score 4@H = 620 pour NS
+A noter qu'une défense à 4@S aurait couté 800  à EO, soit plus que la manche vulnérable.|

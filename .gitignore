@@ -1,0 +1,29 @@
+# --- Médias et Fichiers Lourds ---
+*.mp4
+*.mov
+*.avi
+*.wmv
+*.flv
+*.mkv
+*.exe
+
+# --- Fichiers de Configuration Sensibles ---
+create_db.php
+setup_user.php
+
+# --- Fichiers de l'IDE & du Système ---
+.vscode/
+.idea/
+*.swp
+*.log
+Thumbs.db
+desktop.ini
+
+# --- Fichiers Temporaires PHP ---
+session/
+temp/
+tmp/
+vendor/
+
+# --- Divers ---
+.DS_Store

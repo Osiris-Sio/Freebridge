@@ -1,0 +1,48 @@
+/* Styles pour le panneau de contrôle de défilement */
+#scrollControlPanel {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(240, 240, 240);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 10px;
+    z-index: 1000;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#scrollControlPanel button {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: #f8f8f8;
+}
+
+#scrollControlPanel button:hover {
+    background-color: #e8e8e8;
+}
+
+#scrollControlPanel .speed-control {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#scrollControlPanel .speed-control label {
+    margin-right: 5px;
+}
+
+/* Style spécifique pour le bouton Avancer par levée */
+#nextTrickBtn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#nextTrickBtn:hover {
+    background-color: #45a049;
+}

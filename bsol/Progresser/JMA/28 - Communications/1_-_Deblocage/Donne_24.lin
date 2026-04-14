@@ -1,0 +1,26 @@
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 4.1
+|st||md|3SAQJT5HJT765D4CQ8,S6H832DJT92CAJ964,SK83HAKQDQ875CT52|sv|b|
+sa|0|mb|1D|mb|p|mb|1S|mb|p|mb|1N|mb|p|mb|2C|an| Alert.|mb|p|mb|2S|mb|p|mb|4S|mb|p|mb|p|mb|p|
+at|2@C : Roudi. Vous jouez 4@S|pg||
+nt|Ouest entame du V@D qui reste maître, |
+pc|DJ|pc|D5|pc|D6|pc|D4|pg||
+at| suivi du 10@D pour la D@D du Mort et le R@D d'Est, coupé en Sud. Quel est votre plan de jeu ?|
+pc|DT|pc|DQ|pc|DK|pc|S5|pg||
+nt|Vous tirez 2 tours d'atout, |
+pc|SJ|pc|S6|pc|S3|pc|S7|pg||
+pc|SQ|pc|C4|at|  Ouest défausse au 2 ème tour. Et maintenant ?|
+pc|SK|pc|S2|pg||
+nt|Vous sembliez avoir 10 levées de tête. Mais le mauvais partage des atouts créée un blocage.Si vous otez les atouts , il vous manquera une rentrée en main pour encaisser les coeurs maîtres de votre main après avoir débloqué les honneurs du mort.|
+pc|HA|pc|H9|pc|H6|pc|H2|pg||
+pc|HK|pc|H4|pc|H5|pc|H3|pg||
+nt|A l'inverse, si vous commencez par 3 tours de @H, vous risquez fort d'être coupé. Il faut donc maintenant jouer atout.|
+pc|S8|pc|S9|pc|SA|pc|C6|pg||
+pc|ST|pc|C9|pc|HQ|nt|C'est la solution ! Défaussez la dame de coeur sur le dernier atout. Ainsi, vous restez en main.|
+pc|S4|pg||
+pc|HJ|pc|H8|pc|C2|pc|C3|pg||
+pc|H7|pc|D2|pc|C5|pc|D3|pg||
+pc|HT|pc|CJ|pc|D7|pc|DA|pg||
+pc|C8|pc|CA|pc|CT|pc|C7|pg||
+pc|D9|pc|D8|pc|CK|pc|CQ|pg||
+nt|Vous auriez chuté quand même si Est qui posséde  4 atouts avait été singleton à coeur.|
+Evaluation : 2 si vous avez trouvé la bonne suite pour gagner en jouant 2 fois coeur puis 2 fois pique pour défausser la dame de coeur. Zéro sinon.|pg|

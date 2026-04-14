@@ -1,0 +1,53 @@
+mn|Cadets 2ème Année - Séance 9 - Donne 1|pn|,,,|qx|o1,BOARD 1|rh||ah|Board 1|nt||bt||ht|h|
+at| Donneur : Sud  - Personne vulnérable
+                    Nord
+                P: V 9 3 2
+                C: A 3 2
+                K: V 4
+                T: R 6 4 3
+    Ouest                         Est
+P: 8 7 5 4                    P: A 10 6
+C: D 10 6                     C: 8 7 5
+K: R 8 5 3                    K: A 10 9 7 6 2
+T:10 9                        T: 5
+                     Sud
+                P: R D
+                C: R V 9 4
+                K: D
+                T: A D V 8 7 2
+Entame 5@D (en pair-impair dans la couleur non nommée) pour l'As de son partenaire qui rejoue 10@D.
+Sud dispose de 6 levées d'atout, 2 @H et 2@S. Il peut trouver une 11ème levée avec l'impasse à la D@H ou à @S.
+Il coupe donc le retour @D et retire les atouts en 2 tours.
+il affranchit les @S en délogeant l'As @S et tente une 1ère impasse @H avec le 9@H sur le retour @H, hélas sans succès.
+Il débloque alors la D@S et remonte au Mort par l'atout.
+Sur le V@S, le 10@S tombe, promouvant le 9@S et rendant inutile l'impasse à la D@H
+Score : 5@C = : 400 pour NS|pg||
+nt||st||md|1SKQHKJ94DQCAQJ872,S8754HQT6DK853CT9,SJ932HA32DJ4CK643|sv|0|
+sa|0|mb|1C|mb|p|mb|1S|mb|p|mb|2H|mb|p|mb|3C|mb|p|mb|3S|mb|p|mb|5C|mb|p|mb|p|mb|p|
+nt|2@H : Bicolore cher 18+ HL
+3@C : Soutien forcing
+3@S : résidu à @S, courte à @D
+5@C sans d'arrêt @D dans la courte de l'ouvreur.|pg||
+pc|D5|pc|D4|pc|DA|pc|DQ|
+nt|Entame 5@D (en pair-impair dans la couleur non nommée) pour l'As de son partenaire qui rejoue 10@D.
+- Quel est votre plan de jeu ?|pg||
+nt|Sud dispose de 6 levées d'atout, 2 @H et 2@S. Il peut trouver une 11ème levée avec l'impasse à la D@H ou à @S.
+Il coupe donc le retour @D et retire les atouts en 2 tours.|
+pc|DT|pc|C2|pc|D3|pc|DJ|pg||
+pc|CA|pc|C9|pc|C3|pc|C5|pg||
+pc|CQ|pc|CT|pc|C6|pc|D2|pg||
+nt|il affranchit les @S en délogeant l'As @S| 
+pc|SK|pc|S8|pc|S2|pc|SA|pg||
+at| et tente une 1ère impasse @H avec le 9@H sur le retour @H, hélas sans succès.| 
+pc|H5|pc|H9|pc|HT|pc|HA|pg||
+nt|Il débloque alors la D@S et remonte au Mort par l'atout|
+pc|S3|pc|S6|pc|SQ|pc|S4|pg||
+pc|C7|pc|S5|pc|CK|pc|D6|pg||
+nt|Sur le V@S, le 10@S tombe, promouvant le 9@S et rendant inutile l'impasse à la D@H|  
+pc|SJ|pc|ST|pc|H4|pc|S7|pg||
+pc|S9|pc|H7|pc|HJ|pc|D8|pg||
+pc|H2|pc|H8|pc|HK|pc|H6|pg||
+pc|CJ|pc|HQ|pc|C4|pc|D7|pg||
+pc|C8|pc|DK|pc|H3|pc|D9|pg||
+nt||st||md|1SKQHKJ94DQCAQJ872,S8754HQT6DK853CT9,SJ932HA32DJ4CK643|sv|0|
+nt|Score : 5@C = : 400 pour NS|

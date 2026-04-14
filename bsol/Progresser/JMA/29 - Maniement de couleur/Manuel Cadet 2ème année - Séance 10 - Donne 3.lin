@@ -1,0 +1,46 @@
+mn|Cadets 2ème Année - Séance 10 - Donne 3 |pn|,,,|qx|o3,BOARD 3|rh||ah|Board 3|nt||bt||ht|h|
+at|Donneur : Sud - Est-Ouest vulnérable
+                    Nord
+                P: D 10 5 4
+                C: A 8 5 3
+                K: A 7
+                T: R 9 4
+    Ouest                         Est
+P: R V 9 8                    P: 7
+C:10 4 2                      C: R D 9 6
+K: R D V 6                    K: 9 8 5 4 2
+T:10 6                        T: 7 5 2
+                     Sud
+                P: A 6 3 2
+                C: V 7
+                K:10 3
+                T: A D V 8 3
+Entame R@D
+Avec 5 levées @C et 2 As rouges, le déclarant doit mettre toutes les chances de son coté pour réaliser 3 levées d'atout et ne laisser à l'adversaire qu'une levée @S,  1 à @H et 1 à @D.
+Il prend l'entame et joue As@S et @S vers le mort. Si la couleur est répartie 3/2, il peut jouer la D@S ou le 10@S à égalité de chance.
+Mais si Ouest détient 4 atouts, la bonne carte est le 10.
+Sud peut rentrer en main pour jouer vers la D@S et ne concéder ainsi qu'une levée d'atout.
+Score : 4@S = : 420 pour NS|pg||
+nt||st||md|1SA632HJ7DT3CAQJ83,SKJ98HT42DKQJ6CT6,SQT54HA853DA7CK94|sv|e|
+sa|0|mb|1C|mb|p|mb|1H|mb|p|mb|1S|mb|p|mb|4S|mb|p|mb|p|mb|p|
+nt|4@S : 13 - 15 HLD|pg||
+pc|DK|nt|Entame R@D - Quel est votre plan de jeu ?|pg||
+nt|Avec 5 levées @C et 2 As rouges, le déclarant doit mettre toutes les chances de son coté pour réaliser 3 levées d'atout et ne laisser à l'adversaire qu'une levée @S,  1 à @H et 1 à @D.
+Il prend l'entame et joue As@S et @S vers le mort. Si la couleur est répartie 3/2, il peut jouer la D@S ou le 10@S à égalité de chance.
+Mais si Ouest détient 4 atouts, la bonne carte est le 10.| 
+pc|DA|pc|D2|pc|D3|pg||
+pc|S4|pc|S7|pc|SA|pc|S8|pg||
+pc|S2|pc|S9|pc|ST|pc|C2|pg||
+nt|Sud peut rentrer en main pour jouer vers la D@S et ne concéder ainsi qu'une levée d'atout.|
+pc|C4|pc|C5|pc|CJ|pc|C6|pg||
+pc|S3|pc|SK|pc|S5|pc|D4|pg||
+pc|DQ|pc|D7|pc|D5|pc|DT|pg||
+pc|H2|pc|HA|pc|H6|pc|H7|pg||
+pc|SQ|pc|C7|pc|S6|pc|SJ|pg||
+pc|CK|pc|H9|pc|C3|pc|CT|pg||
+pc|C9|pc|D8|pc|CA|pc|H4|pg||
+pc|CQ|pc|D6|pc|H3|pc|D9|pg||
+pc|C8|pc|HT|pc|H5|pc|HQ|pg||
+pc|HJ|pc|DJ|pc|H8|pc|HK|pg||
+nt||st||md|1SA632HJ7DT3CAQJ83,SKJ98HT42DKQJ6CT6,SQT54HA853DA7CK94|sv|e|
+nt|Score : 4@S = : 420 pour NS|

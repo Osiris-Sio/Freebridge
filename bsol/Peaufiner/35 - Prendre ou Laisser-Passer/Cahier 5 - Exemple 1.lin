@@ -1,0 +1,41 @@
+mn|Trezel - Cahier 5 - Exemple 1|qx|o1,BOARD 1|rh||ah|Board 1|nt||bt||ht|h|at|
+Prendre ou laisser-Passer
+Donneur : Sud  - Tous vumlnérables 
+                 Nord
+                P: 9 3
+                C: R D 8 7
+                K: 7 3 2
+                T: R 10 5 2
+    Ouest                         Est
+P: D V 10 7                    P: R 6 5 2
+C: 6                          C: 5 3 2
+K: A V 10 4                   K: D 9 8 6
+T: D 9 8 7                    T: 6 4
+                     Sud
+                P: A 8 4
+                C: A V 10 9 4
+                K: R 5
+                T: A V 3
+Entame D@S - Sud perdra Une levée @S, pas de levée @H et il peut perdre une levée @C si l'impasse à la D@C échoue et 2 levées @D si Est prend la  main et joue dans la fourchette @D d'Ouest. Pour éviter ces 4 levées perdues, Sud doit faire l'impasse à la D@C sur Est afin que celui-ci ne prenne pas la main. Si l'impasse réussit il ne perdra plus de @C et gagnera son contrat. Mais si l'impasse echoue, il doit éviter qu'Ouest puisse rendre la main à Est pour un retour @D qui serait préjudiciable pour le contrat.
+Il doit donc laisser-passer la D@S afin de couper la cpommunication avec Est. Après avoir pris le 2ème @S, et fait tomber les atouts, il tente l'impasse @C qui rate, mais Ouest ne pourra pas rendre la main à Est, et Sud pourra défausser un @D sur le 4ème @C du mort. Score 4@H = : 620 pour NS|pg||
+nt||st||md|1SA84HAJT94DK5CAJ3,SQJT7H6DAJT4CQ987,S93HKQ87D732CKT52|sv|b|
+sa|0|mb|1H|mb|p|mb|2H|mb|p|mb|4H|mb|p|mb|p|mb|p|nt||pg||
+pc|SQ|nt|Entame D@S - Quel est votre plan de jeu ?|pg||
+nt|Sud perdra Une levée @S, pas de levée @H et il peut perdre une levée @C si l'impasse à la D@C échoue et 2 levées @D si Est prend la  main et joue dans la fourchette @D d'Ouest. Pour éviter ces 4 levées perdues, Sud doit faire l'impasse à la D@C sur Est afin que celui-ci ne prenne pas la main. Si l'impasse réussit il ne perdra plus de @C et gagnera son contrat.
+Mais si l'impasse echoue, il doit éviter qu'Ouest puisse rendre la main à Est pour un retour @D qui serait préjudiciable pour le contrat. Il doit donc laisser-passer la D@S afin de couper la cpommunication avec Est.
+Après avoir pris le 2ème @S, et fait tomber les atouts, il tente l'impasse @C qui rate, mais Ouest ne pourra pas rendre la main à Est, et Sud pourra défausser un @D sur le 4ème @C du mort.|   
+pc|S3|pc|S2|pc|S4|pg||
+pc|SJ|pc|S9|pc|S5|pc|SA|pg||
+pc|HA|pc|H6|pc|H7|pc|H2|pg||
+pc|HJ|pc|D4|pc|H8|pc|H3|pg||
+pc|H4|pc|S7|pc|HQ|pc|H5|pg||
+pc|C2|pc|C4|pc|CJ|pc|CQ|pg||
+pc|ST|pc|HK|pc|S6|pc|S8|pg||
+pc|C5|pc|C6|pc|CA|pc|C7|pg||
+pc|C3|pc|C8|pc|CK|pc|D6|pg||
+pc|CT|pc|D8|pc|D5|pc|C9|pg||
+pc|D2|pc|D9|pc|DK|pc|DA|pg||
+pc|DJ|pc|D7|pc|DQ|pc|HT|pg||
+pc|H9|pc|DT|pc|D3|pc|SK|pg||
+nt||st||md|1SA84HAJT94DK5CAJ3,SQJT7H6DAJT4CQ987,S93HKQ87D732CKT52|sv|b|
+nt|Score 4@H = : 620 pour NS|

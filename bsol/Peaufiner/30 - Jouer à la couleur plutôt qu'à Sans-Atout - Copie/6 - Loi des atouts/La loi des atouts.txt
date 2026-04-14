@@ -1,0 +1,6 @@
+La Loi des atouts
+En situation compétitive, avec une main irrègulière, on enchérit en fonction du nombre d'atouts détenus dans son camp et non de la force en points :
+- avec 8 atouts au palier de 2
+- avec 9 atouts au palier de 3
+- avec 10 atouts au palier de 4
+La loi des atouts est une loi statistique, qui ne garantit pas toujours de gagner autant de levées que l'on possède d'atout.

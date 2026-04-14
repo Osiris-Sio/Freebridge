@@ -1,0 +1,50 @@
+mn|Cadets 2ème année - Séance 25 - Donne 4|pn|,,,|qx|o4,BOARD 4|rh||ah|Board 4|nt||bt||ht|h|
+at|Donneur : Nord - Tous vulnérables
+                    Nord
+                P: 8 4
+                C: A 8 5 3
+                K: A D V 5
+                T: D V 5
+    Ouest                         Est
+P: R V 5 2                    P: A D 10 7 3
+C:                            C: V 10 7 6
+K: 9 7 6 4 2                  K: R 10
+T: 10 8 7 4                    T: 9 2
+                     Sud
+                P: 9 6
+                C: R D 9 4 2
+                K: 8 3
+                T: A R 6 3
+Entame 5@S - Est prend de l'As et rejoue @S pour le R@S de son partenaire.
+Retour @D pour la D@D du mort et le R@D d'Est., qui en rejoue.
+Le déclarant constate que son seul problème consiste à ne pas perdre d'atout.
+Aucun problème si la couleur est répartie 2/2 ou 3/1. 
+Si Ouest posséde les 4 atouts restants, il ne peut gagner, mais s'ils sont en Est, il doit tirer l'As@H.
+Lorsque Ouest défausse, il peut capturer V-10-7 grace à sa fourchette R-D-9.
+Score 4@H = : 620 pour NS|pg||
+nt||st||md|3S96HKQ942D83CAK63,SKJ52HD97642CT874,S84HA853DAQJ5CQJ5|sv|b|
+sa|0|mb|1D|mb|1S|mb|2H|mb|3S|mb|4H|mb|p|mb|p|mb|p|
+nt|2@H : au moins 5 cartes à @H, au moins 11 HL
+3@S : barrage promettant 4 atouts
+Est-Ouest ne doivent pas déclarer 4@S àvulnérabilité égale|pg||
+pc|S5|nt|Entame 5@S - Est prend de l'As et rejoue @S pour le R@S de son partenaire.
+Retour @D pour la D@D du mort et le R@D d'Est., qui en rejoue. Quel est votre plan de jeu ?|pg||
+pc|S4|pc|SA|pc|S6|pg||
+pc|ST|pc|S9|pc|SJ|pc|S8|pg||
+pc|D2|pc|DQ|pc|DK|pc|D3|pg||
+pc|DT|pc|D8|pc|D4|pc|DJ|
+nt|Le déclarant constate que son seul problème consiste à ne pas perdre d'atout.
+Aucun problème si la couleur est répartie 2/2 ou 3/1. 
+Si Ouest posséde les 4 atouts restants,il ne peut gagner, mais s'ils sont en Est, il doit tirer l'As@H.
+Lorsque Ouest défausse, il peut capturer V-10-7 grace à sa fourchette R-D-9.|pg||
+pc|HA|pc|H7|pc|H2|pc|D6|pg||
+pc|H3|pc|HT|pc|HQ|pc|C4|pg||
+pc|C3|pc|C7|pc|CQ|pc|C2|pg||
+pc|H5|pc|H6|pc|H9|pc|C8|pg||
+pc|HK|pc|S2|pc|H8|pc|HJ|pg||
+pc|CA|pc|CT|pc|C5|pc|C9|pg||
+pc|CK|pc|SK|pc|CJ|pc|S3|pg||
+pc|H4|pc|D7|pc|D5|pc|S7|pg||
+pc|C6|pc|D9|pc|DA|pc|SQ|pg||
+nt||st||md|3S96HKQ942D83CAK63,SKJ52HD97642CT874,S84HA853DAQJ5CQJ5|sv|b|
+nt|Score 4@H = : 620 pour NS|

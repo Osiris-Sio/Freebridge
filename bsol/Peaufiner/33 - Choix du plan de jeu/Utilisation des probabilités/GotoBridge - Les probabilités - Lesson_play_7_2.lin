@@ -1,0 +1,19 @@
+nt|GotoBridge - les probabilités (exercice n°2)|
+md|1SAKQ87642H9D86C75,ST5HKJ82DJ754CT98,SJHA7654DAK2CAQ43|sv|n|
+sa|0|mb|4S|mb|p|mb|4N|mb|p|mb|5S|mb|p|mb|7S|mb|p|mb|p|mb|p|pg||
+pc|CT|nt|L'adversaire, un fin joueur qui sait que l'As de Trèfle est au mort, vous place tout de suite au pied du mur.
+Comment allez-vous gagner cette donne ?|pg||
+nt|Vous avez une autre chance de gain si vous ne voulez pas faire l'impasse à Trèfle :
+affranchir le cinquième Cœur par la coupe en espérant un partage 4-3 de la couleur. 
+La probabilité de réussite de cette ligne de jeu étant de 62% (soit mieux que 50%), vous devez l'adopter sans état d'âme.|
+pc|CA|pc|C6|pc|C5|pg||
+pc|HA|pc|H3|pc|H9|pc|H8|pg||
+pc|H4|pc|HT|pc|S4|pc|H2|pg||
+pc|S2|pc|S5|pc|SJ|pc|S3|pg||
+pc|H5|pc|HQ|pc|SQ|pc|HJ|pg||
+pc|SK|pc|ST|pc|C3|pc|S9|pg||
+pc|D6|pc|D5|pc|DA|pc|D3|pg||
+pc|H6|pc|D9|pc|S7|pc|HK|pg||
+mc|13|pg||
+md|1SAKQ87642H9D86C75,ST5HKJ82DJ754CT98,SJHA7654DAK2CAQ43|sv|n|
+nt|Score 7@S = : 1510  pour NS|

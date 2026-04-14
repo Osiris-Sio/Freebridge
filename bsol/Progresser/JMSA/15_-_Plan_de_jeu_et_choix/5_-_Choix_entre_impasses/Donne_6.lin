@@ -1,0 +1,22 @@
+nt|Pas à pas - Jeu à Sans-Atout - Exercice T
+|sk|sn|md|4SAQJHAK4DKJ52CKT9,S974H9876DQT87C43,S532HQJTDA964CAQ8|sv|n|
+sa|0|mb|p|mb|2N|mb|p|mb|6N|mb|p|mb|p|mb|p|
+at||pg||
+pc|H9|nt|Entame 9@H - Quel est votre plan de jeu ?|pg||
+nt|Sud compte 9 levées immédiates (1@S, 3@H, 2@D et 3@C) et pourra réaliser 2 levées supplémentaires à @D avec l'impasse à la D@D et 2 levées à @S avec l'impasse répétée au R@S.
+Il doit commencer par @S, car si elle échoue, il devra absolument réaliser 2 @D supplémentaires avec la D@D seche, 2ème ou 3ème en Est.
+Aprés la réussite de l'impasse réitérée à @S, Sud peut se contenter d'une levée supplémentaire à @D en jouant la récurité : x@D vers As/9@D du mort.|  
+pc|HT|pc|H2|pc|H4|pg||
+pc|S2|pc|S6|pc|SJ|pc|S4|pg||
+pc|C9|pc|C3|pc|CA|pc|C2|pg||
+pc|S3|pc|S8|pc|SQ|pc|S7|pg||
+pc|D2|pc|D8|pc|D9|pc|D3|pg||
+pc|DA|pc|H3|pc|D5|pc|D7|pg||
+pc|D6|pc|H5|pc|DK|pc|DT|pg||
+pc|CK|pc|C4|pc|C8|pc|C5|pg||
+pc|HA|pc|H6|pc|HJ|pc|C6|pg||
+pc|HK|pc|H8|pc|HQ|pc|C7|pg||
+pc|CT|pc|H7|pc|CQ|pc|CJ|pg||
+pc|S5|pc|ST|pc|SA|pc|S9|pg||
+pc|DJ|pc|DQ|pc|D4|pc|SK|pg||
+nt|Score 6SA = : 1440 pour NS|

@@ -1,0 +1,42 @@
+mn|CADETS 1èRE ANNéE - SéANCE 2|pn|Joueur,Joueur,Joueur,Joueur|qx|o3,BOARD 3|rh||ah|Board 3|nt||bt||ht|h|
+at| Donneur : Sud - EO Vulnérable 
+                    Nord
+                P: A R 7 3
+                C: 9 4
+                K: R 7 5 2
+                T: A D 3
+    Ouest                         Est
+P: 9 6                        P: V10 8 2
+C: A D V 6 2                  C:10 8
+K: D V 10                     K: A 8 4
+T: R 5 2                      T: 9 7 6 4
+                     Sud
+                P: D 5 4
+                C: R 7 5 3
+                K: 9 6 3
+                T: V 10 8
+Entame D@D
+Le déclarant réalise 3@S, 3@C et 1 levée de longueur à @D (ou à @S)
+Résultat : 1@S = : 80 pour NS|pg||
+nt||st||md|1SQ54HK753D963CJT8,S96HAQJ62DQJTCK52,SAK73H94DK752CAQ3|sv|e|
+sa|0|mb|p|mb|1H|mb|d|mb|p|mb|1S|mb|p|mb|p|mb|p|
+nt|En réponse au contre, Sud ne peut passer, car Ouest gagnerait facilement le contrat de 1@H, Ni déclarer 1SA avec moins de 8H.
+Sud annonce donc 1@S, la couleur 3ème la plus économique (et ne promet donc que de 0 à 7H).
+Avec 17 HLD, Nord n'a pas d'espoir de manche à @S, même si son partenaire a 7H. Il passe donc sur 1@S.
+Déclarer 2@S promettrait 19H.|pg||
+pc|DQ|nt|Entame D@D - Quel est votre plan de jeu ?|pc|D7|pc|D4|pc|D3|pg||
+nt|Le déclarant réalise 3@S, 3@C et 1 levée de longueur à @D (ou à @S)|  
+pc|DJ|pc|D2|pc|D8|pc|D6|pg||
+pc|DT|pc|D5|pc|DA|pc|D9|pg||
+pc|HT|pc|H3|pc|H2|pc|H4|pg||
+pc|H8|pc|H5|pc|HJ|pc|H9|pg||
+pc|S9|pc|S3|pc|S2|pc|SQ|pg||
+pc|CJ|pc|C2|pc|C3|pc|C4|pg||
+pc|C8|pc|C5|pc|CQ|pc|C6|pg||
+pc|SA|pc|S8|pc|S4|pc|S6|pg||
+pc|SK|pc|ST|pc|S5|pc|H6|pg||
+pc|DK|pc|SJ|pc|H7|pc|CK|pg||
+pc|C7|pc|CT|pc|HQ|pc|CA|pg||
+pc|S7|pc|C9|pc|HK|pc|HA|pg||
+nt||st||md|1SQ54HK753D963CJT8,S96HAQJ62DQJTCK52,SAK73H94DK752CAQ3|sv|e|
+nt|Résultat : 1@S = : 80 pour NS|
