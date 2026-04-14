@@ -28,7 +28,7 @@
 
 
 <?php
-include 'pdo.php';
+include 'includes/pdo.php';
 session_start();
 $_SESSION['user_id'] =1;
 $date = date('d/m/Y');

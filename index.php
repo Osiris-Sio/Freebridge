@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
 <style>
 /* Slideshow container */
@@ -69,19 +69,19 @@ include 'header.php';
       <div class="slideshow-container">
 
       <div class="mySlides fade">
-        <img src="Images/slider1.jpg" style="width:100%">
+        <img src="assets/img/slider1.jpg" style="width:100%">
       </div>
 
       <div class="mySlides fade">
-        <img src="Images/slider2.jpg" style="width:100%">
+        <img src="assets/img/slider2.jpg" style="width:100%">
       </div>
 
       <div class="mySlides fade">
-        <img src="Images/slider3.jpg" style="width:100%">
+        <img src="assets/img/slider3.jpg" style="width:100%">
       </div>
 
       <div class="mySlides fade">
-        <img src="Images/slider4.jpg" style="width:100%">
+        <img src="assets/img/slider4.jpg" style="width:100%">
       </div>
 
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -92,10 +92,10 @@ include 'header.php';
         <div style="display: flex; flex-direction: column;width: 100%; background-color: white">
 		
           		<!--	
-            <img id="separation" src="Images/separation.jpg" style="order: 2;">
+            <img id="separation" src="assets/img/separation.jpg" style="order: 2;">
             <div id="focus" style="order: 3;display: flex; flex-direction: row;">
                 <div style="order:1; margin-right: auto; width: 40%">
-                    <img class="lvlfocus" src="Images/focus.jpg">
+                    <img class="lvlfocus" src="assets/img/focus.jpg">
                 </div>
                 <div style="order:2; width: 50% ">
                     <h3 style="font-family: 'Gotham Bold'">TELECHARGEMENT DU LOGICIEL DE LECTURE DES DONNES</h3>
@@ -138,5 +138,5 @@ function showSlides() {
 }
 </script>
 <?php
-include 'footer1.php';
+include 'includes/footer1.php';
 ?>

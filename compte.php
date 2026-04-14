@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
 <main class="mdl-layout__content">
     <div class="page-content">
@@ -89,5 +89,5 @@ $date = date('d/m/Y');
 
 $_SESSION['page'] = $_SERVER['PHP_SELF'];
 
-include 'footer1.php';
+include 'includes/footer1.php';
 ?>
