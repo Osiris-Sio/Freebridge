@@ -1,0 +1,8 @@
+{
+  "singleQuote": true,
+  "trailingComma": "none",
+  "phpVersion": "7.4",
+  "printWidth": 100,
+  "tabWidth": 2,
+  "plugins": ["@prettier/plugin-php"]
+}

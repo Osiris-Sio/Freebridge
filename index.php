@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.php';
-?>
+include 'includes/header.php'; ?>
 <style>
 /* Slideshow container */
 .slideshow-container {
@@ -137,6 +136,5 @@ function showSlides() {
   setTimeout(showSlides, 5000);
 }
 </script>
-<?php
-include 'includes/footer1.php';
+<?php include 'includes/footer1.php';
 ?>

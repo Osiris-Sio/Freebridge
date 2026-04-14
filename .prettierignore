@@ -1,0 +1,8 @@
+node_modules
+assets/fonts
+assets/img
+assets/video
+assets/docs
+bsol
+*.lin
+*.wasm

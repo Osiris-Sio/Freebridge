@@ -1,18 +1,16 @@
 <?php
-$serveur = "localhost";
+$serveur = 'localhost';
 $base = 'sitefreebridge';
 $utilisateur = 'sitefreebridge';
 $motDePasse = 'Ryhm847!';
 
 try {
   $dns = "mysql:host=$serveur;dbname=$base";
-  $conn = new PDO( $dns, $utilisateur, $motDePasse );
-}
-catch ( Exception $e ) {
-  echo "Connexion MySQL impossible : ", $e->getMessage();
+  $conn = new PDO($dns, $utilisateur, $motDePasse);
+} catch (Exception $e) {
+  echo 'Connexion MySQL impossible : ', $e->getMessage();
   die();
 }
-
 
 /*$serveur = "localhost";
 $base = 'id8770898_freebridge';
@@ -41,4 +39,5 @@ catch ( Exception $e ) {
     echo "Connexion MySQL impossible : ", $e->getMessage();
     die();
 }*/
+
 ?>
