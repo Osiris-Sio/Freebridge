@@ -18,6 +18,8 @@ setup_user.php
 *.log
 Thumbs.db
 desktop.ini
+.env
+node_modules/
 
 # --- Fichiers Temporaires PHP ---
 session/

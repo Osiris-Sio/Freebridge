@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.php'
-?>
+include 'includes/header.php'; ?>
 <main class="mdl-layout__content">
     <div class="page-content">
         <section style="margin: 5% 5%; width: 90%; border: 1px solid #003d00; border-radius: 20px; padding-top: 1%; background-color:white">
@@ -29,16 +28,16 @@ include 'includes/header.php'
 
 
 			 <div class="level" style="display: flex; flex-direction: row; order: 1">
-         <?php if($_SESSION['user_rang'] == "debutant"){ ?>
+         <?php if ($_SESSION['user_rang'] == 'debutant') { ?>
            <a href="bsol/Debuter/debutant.php"><img style="width:90%" src="assets/img/slider1.jpg"></a>
-         <?php } else if($_SESSION['user_rang'] == "progresser"){ ?>
+         <?php } elseif ($_SESSION['user_rang'] == 'progresser') { ?>
            <a href="bsol/Debuter/debutant.php"><img style="width:90%" src="assets/img/slider1.jpg"></a>
            <a href="bsol/Progresser/progresser.php"><img style="width:90%" src="assets/img/slider2.jpg"></a>
-         <?php } else if($_SESSION['user_rang'] == "peaufiner"){ ?>
+         <?php } elseif ($_SESSION['user_rang'] == 'peaufiner') { ?>
            <a href="bsol/Debuter/debutant.php"><img style="width:90%" src="assets/img/slider1.jpg"></a>
            <a href="bsol/Confirmer/confirmerProgresser/progresser.php"><img style="width:90%" src="assets/img/slider2.jpg"></a>
            <a href="bsol/Confirmer/confirmerPeaufiner/peaufiner.php"><img style="width:90%" src="assets/img/slider3.jpg"></a>
-         <?php } else if($_SESSION['user_rang'] == "confirmer"){ ?>
+         <?php } elseif ($_SESSION['user_rang'] == 'confirmer') { ?>
            <a href="bsol/Debuter/debutant.php"><img style="width:90%" src="assets/img/slider1.jpg"></a>
            <a href="bsol/Progresser/progresser.php"><img style="width:90%" src="assets/img/slider2.jpg"></a>
            <a href="bsol/Peaufiner/peaufiner.php"><img style="width:90%" src="assets/img/slider3.jpg"></a>

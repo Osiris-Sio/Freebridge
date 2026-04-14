@@ -2,7 +2,7 @@
 .scroll-mode #eastHand {
   display: block !important;
   opacity: 1 !important;
-  pointer-events: auto !important; 
+  pointer-events: auto !important;
   visibility: visible !important;
 }
 

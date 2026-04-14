@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.php';
-?>
+include 'includes/header.php'; ?>
 <style>
     .mdl-checkbox__ripple-container .mdl-ripple {
         background: rgb(0, 100, 0) !important;
@@ -59,9 +58,7 @@ include 'includes/header.php';
         </section>
     </div>
 </main>
-<?php
-include 'includes/footer.php';
-?>
+<?php include 'includes/footer.php'; ?>
 
 
 

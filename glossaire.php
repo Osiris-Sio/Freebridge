@@ -1,6 +1,5 @@
 <?php
-include 'includes/header.php'
-?>
+include 'includes/header.php'; ?>
 <main class="mdl-layout__content">
     <div class="page-content">
         <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding-top: 1%; background-color: white">
@@ -13,6 +12,5 @@ include 'includes/header.php'
         </section>
     </div>
 </main>
-<?php
-include 'includes/footer.php';
+<?php include 'includes/footer.php';
 ?>
