@@ -1,0 +1,48 @@
+mn|Cadets 1ère année - Séance 10 - Donne 2|pn|Joueur,Joueur,Joueur,Joueur|qx|o2,BOARD 2|rh||ah|Board 2|nt||bt||ht|h|
+at|Donneur : Est Personne Vulnérable
+                    Nord
+                P:10 7 6 2
+                C: V 7
+                K: 9 7 6 4 3
+                T: 7 2
+    Ouest                         Est
+P: A 9 5                      P: 4 3
+C:10 9 8 6 4                  C: R D 2
+K: V 8                        K:10 5 2
+T: R10 8                      T: V 9 6 4 3
+                     Sud
+                P: R D V 8
+                C: A 5 3
+                K: A R D
+                T: A D 5
+Entame 10@H : Le déclarant appelle le V@H couvert de la D@H et de l'As@H
+Sud doit se réserver le 10@H du mort pour encaisser les @D de longueur du mort à la fin du retrait des atouts adverses
+Il présente le R@S, suivi de la D@S. Si Ouest prend de l'As@S et insiste à @H, il coupe et avant de donner le 3ème tour d'atout, encaisse ARD de @D.
+Ouest coupe mais les @D du mort sont accéssibles grace au 10 @S
+Score 4@S = : 420 pour NS |pg||
+nt||st||md|4SKQJ8HA53DAKQCAQ5,SA95HT9864DJ8CKT8,ST762HJ7D97643C72|sv|n|
+sa|0|mb|p|mb|2D|mb|p|mb|2H|mb|p|mb|2N|mb|p|mb|3C|mb|p|mb|3S|mb|p|mb|4S|mb|p|mb|p|mb|p|
+nt|Sud ouvre de 2@D forcing de manche et redemande à 2SA avec 25 H réguliers
+Nord fait un 3@C Stayman avec 4 cartes à @S et sur la réponse de Sud montrant 4 cartes à @S, conclut à 4@S }|pg||nt||pg||
+pc|HT|
+nt|Entame 10@H : Le déclarant appelle le V@H couvert de la D@H et de l'As@H
+Quel est votre plan de jeu ?|
+pc|HJ|pc|HQ|pc|HA|pg||
+nt|Sud doit se réserver le 10@H du mort pour encaisser les @D de longueur du mort à la fin du retrait des atouts adverses
+Il présente le R@S, suivi de la D@S éventuellement.|
+pc|SK|pc|SA|pc|S2|pc|S3|pg||
+nt|Si Ouest prend de l'As@S et insiste à @H, il coupe|
+pc|H9|pc|H7|pc|H2|pc|H3|pg||
+pc|H4|pc|S6|pc|HK|pc|H5|pg||
+at| et avant de donner le 3ème tour d'atout, encaisse ARD de @D.|
+pc|S7|pc|S4|pc|SQ|pc|S5|pg||
+pc|DA|pc|D8|pc|D3|pc|D2|pg||
+pc|DK|pc|DJ|pc|D4|pc|D5|pg||
+nt|Ouest coupe mais les @D du mort sont accéssibles grace au 10 @S|
+pc|DQ|pc|S9|pc|D6|pc|DT|pg||
+pc|H8|pc|ST|pc|C3|pc|C5|pg||
+pc|D9|pc|C4|pc|CQ|pc|C8|pg||
+pc|D7|pc|C6|pc|S8|pc|H6|pg||
+pc|SJ|pc|CT|pc|C7|pc|C9|pg||
+pc|CA|pc|CK|pc|C2|pc|CJ|pg||
+nt|Score 4@S = : 420 pour NS|

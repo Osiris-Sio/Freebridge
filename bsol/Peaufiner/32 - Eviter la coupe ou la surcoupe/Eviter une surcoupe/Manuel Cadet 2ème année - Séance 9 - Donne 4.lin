@@ -1,0 +1,50 @@
+mn|Cadets 2ème Année - Séance 9 - Donne 4|pn|,,,|qx|o4,BOARD 4|rh||ah|Board 4|nt||bt||ht|h|
+at|Donneur : Nord - Tous vulnérables
+                    Nord
+                P: R 9 7
+                C: A R 6 5
+                K: A R 8 4 3
+                T: 2
+    Ouest                         Est
+P: 4 2                        P: V 5 3
+C: V10 8                      C: D 7 3 2
+K: V 9                        K: D10 6 5
+T: R V 9 7 6 4                T: D 8
+                     Sud
+                P: A D 10 8 6
+                C: 9 4
+                K: 7 2
+                T: A 10 5 3
+Entame V@H
+Le déclarant compte 5 levées certaines, en dehors de l'atout.
+Pour l'emporter, il doit donc réaliser 7 levées d'atout.
+Il prend l'entame, pûis encaisse ses levées maîtresses et coupe un @C du 7@S.
+Il rentre en main par la coupe maîtresse d'un @H, coupe un 2ème @C du R@S rentre en main par une nouvelle coupe maîtresse d'un @H.
+Enfin, il coupe son dernier @C du 9@S.  ESt peut surcouper, mais Sud n'a plus que des atouts maîtres.
+Score : 6@S = : 1430 pour NS|pg||
+nt||st||md|3SAQT86H94D72CAT53,S42HJT8DJ9CKJ9764,SK97HAK65DAK843C2|sv|b|
+sa|0|mb|1D|mb|p|mb|1S|mb|p|mb|2H|mb|p|mb|2S|mb|p|mb|4S|mb|p|mb|4N|mb|p|mb|5H|mb|p|mb|6S|mb|p|mb|p|mb|p|
+nt|2@H : Bicolore cher 18+HL
+4SA : Blackwood simple, les contrôles rouges étant selon toute vraisemblance détenus par Nord.
+5@H : 2 As|pg||
+pc|HJ|nt|Entame V@H - Quel est votre plan de jeu ?|pg||
+nt|Le déclarant compte 5 levées certaines, en dehors de l'atout.
+Pour l'emporter, il doit donc réaliser 7 levées d'atout.
+Il prend l'entame, pûis encaisse ses levées maîtresses et coupe un @C du 7@S.|
+pc|HA|pc|H2|pc|H4|pg||
+pc|DA|pc|D6|pc|D2|pc|D9|pg||
+pc|DK|pc|D5|pc|D7|pc|DJ|pg||
+pc|HK|pc|H3|pc|H9|pc|H8|pg||
+pc|C2|pc|C8|pc|CA|pc|C4|pg||
+pc|C3|pc|C6|pc|S7|pc|CQ|pg||
+nt|Il rentre en main par la coupe maîtresse d'un @H, coupe un 2ème @C du R@S rentre en main par une nouvelle coupe maîtresse d'un @H.|
+pc|H5|pc|H7|pc|S6|pc|HT|pg||
+pc|C5|pc|C7|pc|SK|pc|DT|pg||
+pc|D3|pc|DQ|pc|S8|pc|C9|pg||
+nt/Enfin, il coupe son dernier @C du 9@S.  ESt peut surcouper, mais Sud n'a plus que des atouts maîtres.|
+pc|CT|pc|CJ|pc|S9|pc|SJ|pg||
+pc|S5|pc|SQ|pc|S2|pc|H6|pg||
+pc|ST|pc|S4|pc|D4|pc|S3|pg||
+pc|SA|pc|CK|pc|D8|pc|HQ|pg||
+nt||st||md|3SAQT86H94D72CAT53,S42HJT8DJ9CKJ9764,SK97HAK65DAK843C2|sv|b|
+nt|Score : 6@S = : 1430 pour NS|

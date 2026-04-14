@@ -1,0 +1,50 @@
+mn|Cadets 2ème Année - Séance 20 - Donne 2|pn|,,,|qx|o2,BOARD 2|rh||ah|Board 2|nt||bt||ht|h|
+at|Donneur : Est - Nord-Sud vulnérable
+                    Nord
+                P: A 8
+                C: R 7 4
+                K: D 7 4 2
+                T: A V 5 3
+    Ouest                         Est
+P: V 9 5 2                    P: R D 7 4
+C: V 8                        C: 10 6 3
+K: V 9 8 5                    K: A 10
+T: 10 6 2                    T: R D 8 7
+                     Sud
+                P:10 6 3
+                C: A D 9 5 2
+                K: R 6 3
+                T: 9 4
+Entame 2@C 
+Le déclarant compte 1 levée @S, 5 à @H (avec répartition 3/2 de la couleur), 1 à @D facilement affranchissable et 1 à @C.
+La 9ème levée proviendra d'une coupe à @S du mort.
+Le déclarant prend donc l'entame, Puis tire As@S et en rejoue.
+Est en main encaisse un honneur @C et rejoue atout pour l'As du déclarant qui coupe son dernier @S et encaisse un @H
+Sud joue alors @D vers son R@D qui tient, retire le dernier atout de la défense, puis joue x@D. Par bonheur, l'As@D est second en Ouest et Sud réalise donc une surlevée.
+Score 3@H + 1 : 170 pour NS|pg||
+nt||st||md|4ST63HAQ952DK63C94,SJ952HJ8DJ985CT62,SA8HK74DQ742CAJ53|sv|n|
+sa|0|mb|1C|mb|1H|mb|p|mb|2C|mb|p|mb|2H|mb|p|mb|3H|mb|p|mb|p|mb|p|
+nt|2@C : cue-bid pour vérifier la force de l'intervention avec plus de 11 HLD
+2@H : dénie la valeur de l'ouverture
+3@H : ultime effort avec 15 HLD|pg||
+pc|C2|nt|Entame 2@C - Quel est votre plan de jeu ?|pg||
+nt|Le déclarant compte 1 levée @S, 5 à @H (avec répartition 3/2 de la couleur), 1 à @D facilement affranchissable et 1 à @C.
+La 9ème levée proviendra d'une coupe à @S du mort.
+Le déclarant prend donc l'entame, Puis tire As@S et en rejoue.
+Est en main encaisse un honneur @C et rejoue atout pour l'As du déclarant qui coupe son dernier @S et encaisse un @H|
+pc|C3|pc|CQ|pc|C4|pg||
+pc|SK|pc|S3|pc|S2|pc|SA|pg||
+pc|S8|pc|SQ|pc|S6|pc|S5|pg||
+pc|H3|pc|H5|pc|H8|pc|HK|pg||
+pc|H4|pc|H6|pc|HA|pc|HJ|pg||
+pc|ST|pc|SJ|pc|H7|pc|S4|pg||
+nt|Sud joue alors @D vers son R@D qui tient, retire le dernier atout de la défense, puis joue x@D. Par bonheur, l'As@D est second en Ouest et Sud réalise donc une surlevée.| 
+pc|D2|pc|DT|pc|DK|pc|D5|pg||
+pc|HQ|pc|S9|pc|D4|pc|HT|pg||
+pc|D3|pc|D8|pc|D7|pc|DA|pg||
+pc|S7|pc|H2|pc|C6|pc|C5|pg||
+pc|D6|pc|D9|pc|DQ|pc|C7|pg||
+pc|CA|pc|C8|pc|C9|pc|CT|pg||
+pc|CJ|pc|CK|pc|H9|pc|DJ|pg||
+nt||st||md|4ST63HAQ952DK63C94,SJ952HJ8DJ985CT62,SA8HK74DQ742CAJ53|sv|n|
+nt|Score 3@H + 1 : 170 pour NS|

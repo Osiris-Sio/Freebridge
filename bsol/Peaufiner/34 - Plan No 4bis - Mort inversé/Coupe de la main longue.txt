@@ -1,0 +1,5 @@
+Les coupes de la main longue
+
+Elles sont en général, improductives et dangereuses. Mais on peut les utiliser occasionnellement.
+
+Il faut alors vérifier, qu'on obtient bien le nombre de gagnantes correspondant au nombre de levées du contrat.

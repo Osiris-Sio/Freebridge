@@ -1,0 +1,48 @@
+mn|Cadets 2ème Année - Séance 24 - Donne 1|pn|,,,|qx|o1,BOARD 1|rh||ah|Board 1|nt||bt||ht|h|at|
+                    Nord
+                P: A 10 6 3
+                C: 10 8 3
+                K: 9 6
+                T: A R D 7
+    Ouest                         Est
+P: D 7 4                      P: V
+C: D 9 7 4                    C: A R V 6 2
+K:10 7 5 4 2                  K: R 8
+T: 5                          T: V 10 6 3 2
+                     Sud
+                P: R 9 8 5 2
+                C: 5
+                K: A D V 3
+                T: 9 8 4
+Entame 5@C 
+Le déclarant prend l'entame au mort et joue un petit atout pour le V@S, le R@S et le 4 d'Ouest.
+Il rejoue @S et doit placer le 10 du mort par application du principe de moindre choix (DV secs 2 fois moins probable que le V sec en Est)
+Lorsque Est défausse, Sud fait tomber le dernier atout et tente avec succés l'impasse au R@D.
+Il remonte au mort à @C et refait l'impasse au R@D et coupe un x@D. Il ne concéde donc qu'une levée à la défense.
+Score 4@S + 2 : 480 pour NS|pg||
+nt||st||md|3SK9852H5DAQJ3C984,SQ74HQ974DT7542C5,SAT63HT83D96CAKQ7|sv|n|
+sa|0|mb|1C|mb|1H|mb|1S|mb|3H|mb|3S|mb|4H|mb|4S|mb|p|mb|p|mb|p|
+nt|1@S : au moins 4 cartes
+3@H : barrage, avec un fit 9ème
+3@S : fit forcé de l'ouvreur, montrant l'équivalent d'un soutien simple
+4@H : au nom de la distribution 5/5|pg||
+pc|C5|nt|Entame 5@C - Quel est votre plan de jeu ?|pg||
+nt|Le déclarant prend l'entame au mort et joue un petit atout pour le V@S, le R@S et le 4 d'Ouest.
+Il rejoue @S et doit placer le 10 du mort par application du principe de moindre choix (DV secs 2 fois moins probable que le V sec en Est)
+Lorsque Est défausse, Sud fait tomber le dernier atout et tente avec succés l'impasse au R@D.
+Il remonte au mort à @C et refait l'impasse au R@D et coupe un x@D. Il ne concéde donc qu'une levée à la défense.|  
+pc|CA|pc|C2|pc|C4|pg||
+pc|S3|pc|SJ|pc|SK|pc|S4|pg||
+pc|S2|pc|S7|pc|ST|pc|H2|pg||
+pc|D6|pc|D8|pc|DJ|pc|D2|pg||
+pc|S5|pc|SQ|pc|SA|pc|H6|pg||
+pc|D9|pc|DK|pc|DA|pc|D4|pg||
+pc|D3|pc|D5|pc|S6|pc|C3|pg||
+pc|CK|pc|C6|pc|C8|pc|H4|pg||
+pc|CQ|pc|CT|pc|C9|pc|D7|pg||
+pc|H3|pc|HJ|pc|H5|pc|H7|pg||
+pc|HK|pc|S8|pc|H9|pc|H8|pg||
+pc|S9|pc|DT|pc|HT|pc|CJ|pg||
+pc|DQ|pc|HQ|pc|C7|pc|HA|pg||
+nt||st||md|3SK9852H5DAQJ3C984,SQ74HQ974DT7542C5,SAT63HT83D96CAKQ7|sv|n|
+nt|Score 4@S + 2 : 480 pour NS| 

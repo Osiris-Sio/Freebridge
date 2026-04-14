@@ -1,0 +1,57 @@
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 3.4. 
+Commencez par cliquer sur la case S en sud.
+Ne prêtez pas attention aux cartes qui s'affichent pour l'instant en Sud. 
+Jouez.
+|sk|nw|md|
+
+                    Nord
+                P: D10 9
+                C: V 7 4
+                K: D 8 6 3
+                T: 8 7 2
+    Ouest                         Est
+P: 8 7 4                      P: 6 2
+C: R D 9 8 5                  C: A 6 3 2
+K: V 9 2                      K: R 7 5
+T: 6 3                        T: R 9 5 4
+                     Sud
+                P: A R V 5 3
+                C:10
+                K: A10 4
+                T: A D V10
+}|pg||nt||st||md|1SAKJ53HTDAT4CAQJT,S874HKQ985DJ92C63,SQT9HJ74DQ863C872|sv|0|
+sa|0|mb|1S|mb|p|mb|2S|mb|p|mb|4S|mb|p|mb|p|mb|p|nt|Voilà les jeux de Sud et Nord.
+Ne focalisez pas sur les annonces.|
+at|Le contrat est de 4 piques par Sud.|
+at| Ouest entame du roi de coeur. Sud laisse passer.|
+at| Ouest rejoue la dame de coeur.|
+at| A votre avis, quelle est la meilleure ligne de jeu ?|
+at| A vous. Réfléchissez et faites votre plan de jeu.|
+pc|HK|pc|H4|pc|H6|pc|HT|pg||
+nt| Les trèfles vous suffisent pour faire votre contrat si le roi de trèfle est bien placé.
+ Mais il peut être 4 ème.
+ Vous avez donc besoin de 3 rentrées au mort.
+ Il faut garder alors impérativement D 10 et 9 de piques 
+ comme rentrées au mort.
+ Vous coupez donc d'un gros pique.|
+pc|HQ|pc|HJ|pc|H2|pc|SA|pg||
+nt| 1 ère remontée au mort.|
+pc|S3|pc|S4|pc|S9|pc|S6|pg||
+nt| 1 ère impasse au roi de trèfle.|
+pc|C2|pc|C5|pc|CT|pc|C6|pg||
+nt| 2 ème remontée au mort.|
+pc|S5|pc|S7|pc|ST|pc|S2|pg||
+nt| 2 ème impasse au roi de trèfle.|
+pc|C7|pc|C4|pc|CJ|pc|C3|pg||
+nt| 3 ème remontée au mort.|
+pc|SJ|pc|S8|pc|SQ|pc|H3|pg||
+nt| 3 ème impasse au roi de trèfle.|
+pc|C8|pc|CK|pc|CA|pc|H5|pg||
+nt| |
+pc|CQ|pc|H8|pc|H7|pc|C9|pg||
+pc|D4|pc|D9|pc|DQ|pc|DK|pg||
+pc|D5|pc|DA|pc|D2|pc|D3|pg||
+pc|DT|pc|DJ|pc|D6|pc|D7|pg||
+pc|H9|pc|D8|pc|HA|pc|SK|pg||
+nt|   Evaluation : 2 si vous avez trouvé la bonne suite qui est de faire 3 fois l'impasse à trèfles, et pour ce faire, garder et utiliser 3 rentrées au mort. Zéro sinon.
+|pg|

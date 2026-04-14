@@ -1,0 +1,24 @@
+nt|D'après Cronier et Poizat.
+|sk|sn|md|1SKQ52HQT3DA6CAT52,ST63HA954DKJ852CJ,SA74HKJ6DQ7C98643|sv|e|
+sa|0|mb|1N|mb|p|mb|3N|mb|p|mb|p|mb|p|
+at|Le contrat est de 3SA|pg||
+pc|D5|nt|Sur l'entame du 5 de carreau, Quel est votre plan de jeu ?|pg||
+nt|vous passez la dame du mort qui tient. Comment continuez-vous ?|
+pc|DQ|pc|D9|pc|D6|pg||
+nt|Si les piques sont répartis 3-3, vous avez 7 levées : 4 piques, 2 carreaux, un trèfle.
+Il suffit alors de continuer coeurs pour affranchir 2 levées.|pg||
+pc|S4|pc|S8|pc|SQ|pc|S3|pg||
+pc|S2|pc|ST|pc|SA|pc|S9|pg||
+pc|S7|nt|Si les piques ne sont pas 3-3, il manque une levée. Vous ne pouvez rendre la main qu'une fois seulement alors il faudra jouer les trèfles et les espèrer 2-2.|pg||
+pc|SJ|pc|SK|pc|S6|pg||
+pc|S5|pc|CJ|pc|C3|pc|D3|pg||
+pc|H3|nt|Pour l'affranchissement de 2 levées à coeurs|pg||
+pc|H9|pc|HJ|pc|H2|pg||
+pc|H6|pc|H7|pc|HT|pc|HA|pg||
+pc|DK|pc|D7|pc|D4|pc|DA|pg||
+pc|HQ|pc|H4|pc|HK|pc|H8|pg||
+pc|C4|pc|CQ|pc|CA|pc|H5|pg||
+pc|C2|pc|D2|pc|C6|pc|C7|pg||
+pc|CK|pc|C5|pc|D8|pc|C9|pg||
+pc|DT|pc|CT|pc|DJ|pc|C8|pg||
+nt|Evaluation : bie si vous avez trouvé la bonne suite compte tenu de la contrainte de ne rendre la main qu'une fois malgré que la répartition 3-3 se produit avec une probabilité de 35.53 % et la répartition 2-2 à hauteur de 40.7 %. Zéro sinon.|pg|

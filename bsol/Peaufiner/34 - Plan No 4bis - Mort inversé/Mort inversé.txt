@@ -1,0 +1,9 @@
+Plan Nr 4 : Mort inversé
+
+Dans quelques cas, lorsqu'il existe dans la main longue de nombreuses coupes
+et lorsque il y a dans la main courte des atouts maîtres et des rentrées suffisantes
+Les coupes de la main longue peuvent provoquer des levéesq supplémentaires.
+Il faut au moins couper N fois tel que :
+Longueur des atouts de la main courte (LMC)> Longueur des atouts de la main longue (LML)  - N,
+ce qui amènera LMC - (MLM - 3) levées supplémentaires 
+  

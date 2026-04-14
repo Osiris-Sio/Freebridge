@@ -1,0 +1,21 @@
+nt|Cahier 14 - Exemple 34
+|sk|sn|md|1SAT7543HJDAJT9C42,SJH6432DK642CQJT9,SQ86HAKT5DQ85CAK5|sv|b|
+sa|0|mb|1S|mb|p|mb|2C|mb|p|mb|2D|mb|p|mb|2H|mb|p|mb|2S|mb|p|mb|3S|mb|p|mb|4D|mb|p|mb|4H|mb|p|mb|4S|mb|p|mb|4N|mb|p|mb|5H|mb|p|mb|6S|mb|p|mb|p|mb|p|
+at||pg||
+pc|CQ|nt|Entame D@C. Quel est votre plan de jeu ?|pg||
+nt|Sud a une perdante @D si l'impasse au R@D échoue, et une perdante @S. Sud doit donc tenter l'impasse @D de suite.| 
+pc|CK|pc|C3|pc|C2|pg||
+pc|DQ|pc|D3|pc|D9|pc|DK|pg||
+at| Après l'echec de cette impasse, Sud ne doit plus perdre de @S. La seule position gagnante est Le V@S sec en Ouest et Sud doit partir de la D@S du Mort et refaire l'impasse au 9@S, si Est couvre du R@S.| 
+pc|CJ|pc|CA|pc|C6|pc|C4|pg||
+pc|SQ|pc|SK|pc|SA|pc|SJ|pg||
+pc|HJ|pc|H2|pc|HA|pc|H7|pg||
+pc|S6|pc|S2|pc|S7|pc|D2|pg||
+pc|ST|pc|H3|pc|S8|pc|S9|pg||
+pc|DA|pc|D4|pc|D5|pc|D7|pg||
+pc|DJ|pc|D6|pc|D8|pc|H9|pg||
+pc|S5|pc|H4|pc|H5|pc|C8|pg||
+pc|S4|pc|H6|pc|C5|pc|H8|pg||
+pc|S3|pc|CT|pc|HT|pc|C7|pg||
+pc|DT|pc|C9|pc|HK|pc|HQ|pg||
+nt|Résultat 6@S =|pg||

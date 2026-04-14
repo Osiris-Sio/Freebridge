@@ -1,0 +1,48 @@
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 3.3. 
+Commencez par cliquer sur la case S en sud.
+Ne prêtez pas attention aux cartes qui s'affichent pour l'instant en Sud. 
+Jouez.
+|sk|nw|md|   
+                 Nord
+                P: 6 4 3
+                C: 8
+                K: A R 6 2
+                T: R D10 8 7
+    Ouest                         Est
+P: R V 8 7                    P:10 9 5
+C: V 9 4 3 2                  C: R D10 7
+K:10 7 5                      K: D 9 8 4
+T: 3                          T: 4 2
+                     Sud
+                P: A D 2
+                C: A 6 5
+                K: V 3
+                T: A V 9 6 5
+}|pg||nt||st||md|1SAQ2HA65DJ3CAJ965,SKJ87HJ9432DT75C3,S643H8DAK62CKQT87|sv|0|
+sa|0|mb|1N|mb|p|mb|2S|mb|p|mb|3C|mb|p|mb|3N|mb|p|mb|5C|mb|p|mb|
+6C|mb|p|mb|p|mb|p|nt|Voilà le jeu de Sud.
+Ne focalisez pas sur les annonces.|
+at|Le contrat est de 6 trèfles par Sud.|
+at|Ouest entame du valet de coeur. Sud prend de l'as.|
+at|Faut-il faire un jeu d'élimination ou pas ?|
+at| A vous. Réfléchissez et faites votre plan de jeu.|
+pc|HJ|pc|H8|pc|H7|pc|HA|pg||
+nt|Vous jouez un premier tour d'atout.|
+at|En fait, le jeu d'élimination en coupant les coeurs et les carreaux avant de jouer pique ne marche pas, car vous n'avez pas le 9 de pique en main et il suffirait à Est d'intercaler une carte au-dessus de la vôtre pour que vous restiez en main.| 
+pc|C9|pc|C3|pc|C7|pc|C4|pg||
+nt|Vous faites tomber le dernier atout.|
+pc|C5|pc|S7|pc|C8|pc|C2|pg||
+nt|Il vous faut espèrer la dame de carreau en EST. Donc, vous jouez un petit carreau vers le valet.Dans l'affirmative, vous défaussez vos piques perdants sur as et roi de carreau.
+Sinon, un seul pique sera défaussé et il faudra tenter alors l'impasse pique.|
+pc|D2|pc|DQ|pc|D3|pc|D5|pg||
+pc|S5|pc|SA|pc|S8|pc|S3|pg||
+pc|DJ|pc|D7|pc|D6|pc|D4|pg||
+pc|H5|pc|H2|pc|CT|pc|HT|pg||
+pc|DK|pc|D8|pc|S2|pc|DT|pg||
+pc|DA|pc|D9|pc|SQ|pc|SJ|pg||
+pc|S4|pc|S9|pc|C6|pc|SK|pg||
+pc|H6|pc|H3|pc|CQ|pc|HQ|pg||
+pc|S6|pc|ST|pc|CJ|pc|H9|pg||
+pc|CA|pc|H4|pc|CK|pc|HK|pg||
+nt|   Evaluation : 2 si vous avez trouvé la bonne suite : qui est de battre 2 fois atout, de jouer petit carreau vers le valet, il reste alors 2 carreaux maîtres au mort sur lesquels vous défaussez les piques perdants. Zéro sinon.
+|pg|

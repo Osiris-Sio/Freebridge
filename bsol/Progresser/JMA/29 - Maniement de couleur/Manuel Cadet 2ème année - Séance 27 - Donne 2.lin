@@ -1,0 +1,47 @@
+mn|Cadets 2ème Année - Séance 27 - Donne 2|pn|,,,|qx|o2,BOARD 2|rh||ah|Board 2|nt||bt||ht|h|
+at|Donneur Sud - Nord-Sud vulnérable
+                    Nord
+                P: R D10 4
+                C: A V 5
+                K: R V 6
+                T: R 8 2
+    Ouest                         Est
+P: V 8 5 2                    P: A 9 6 3
+C:10 9 8 3                    C: D 7 2
+K: 7 3                        K:10 4
+T: D 9 4                      T: V10 6 5
+                     Sud
+                P: 7
+                C: R 6 4
+                K: A D 9 8 5 2
+                T: A 7 3
+Entame 10@H. Le déclarant essaie le V@H, mais il est couvert par la D@H, prise du R@H
+Sud se compte 2 levées @H, 6 à @D, et 2 à @C. Il doit donc réaliser 2 levées @S pour l'emporter.
+La meilleure chance après avoir retirer les atouts,est d'attaquer x@S vers le 10 du mort en espérant le V@S en Ouest.ce qui est ici le cas.
+A noter que Ouest ne devrait pas plonger de l'As@S s'il l'avait, car il donnerait le contrat.
+Score 6@D = 1370 pour NS|pg||
+nt||st||md|1S7HK64DAQ9852CA73,SJ852HT983D73CQ94,SKQT4HAJ5DKJ6CK82|sv|n|
+sa|0|mb|1D|mb|p|mb|1S|mb|p|mb|2D|mb|p|mb|2H|mb|p|mb|2N|mb|p|mb|3D|mb|p|mb|3H|mb|p|mb|3S|mb|p|mb|4C|mb|p|mb|4N|mb|p|mb|5S|mb|p|mb|6D|mb|p|mb|p|mb|p|
+nt|2@H : 3ème couleur forcing
+3@D : fit forcing de manche
+3@H, 3@S : forces et @4C : contrôle avec une main inadaptée aux Sans-atout
+4SA : Blackwood 5 clefs - 5@S : 2 clefs avec la Dame d'atout|pg||
+pc|HT|nt|Entame 10@H. Le déclarant essaie le V@H, mais il est couvert par la D@H, prise du R@H - Quel est votre plan de jeu ?|pg||
+nt|Sud se compte 2 levées @H, 6 à @D, et 2 à @C. Il doit donc réaliser 2 levées @S pour l'emporter.
+La meilleure chance après avoir retirer les atouts,est d'attaquer x@S vers le 10 du mort en espérant le V@S en Ouest.ce qui est ici le cas.
+A noter que Ouest ne devrait pas plonger de l'As@S s'il l'avait, car il donnerait le contrat.|
+pc|HJ|pc|HQ|pc|HK|pg||
+pc|D2|pc|D3|pc|DK|pc|D4|pg||
+pc|D6|pc|DT|pc|DA|pc|D7|pg||
+pc|S7|pc|S5|pc|ST|pc|SA|pg||
+pc|H7|pc|H4|pc|H3|pc|HA|pg||
+pc|SK|pc|S3|pc|H6|pc|S2|pg||
+pc|SQ|pc|S6|pc|C3|pc|S8|pg||
+pc|C2|pc|C6|pc|CA|pc|C4|pg||
+pc|C7|pc|C9|pc|CK|pc|C5|pg||
+pc|S4|pc|S9|pc|D8|pc|SJ|pg||
+pc|D9|pc|H8|pc|DJ|pc|H2|pg||
+pc|H5|pc|CT|pc|DQ|pc|H9|pg||
+pc|D5|pc|CQ|pc|C8|pc|CJ|pg||
+nt||st||md|1S7HK64DAQ9852CA73,SJ852HT983D73CQ94,SKQT4HAJ5DKJ6CK82|sv|n|
+nt|Score 6@D = 1370 pour NS|

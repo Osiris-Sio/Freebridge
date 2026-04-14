@@ -1,0 +1,49 @@
+mn|Cadets 2ème Année - Séance 14 - Donne 1|pn|,,,|qx|o1,BOARD 1|rh||ah|Board 1|nt||bt||ht|h|
+at|Donneur : Nord - Personne vulnérable
+                    Nord
+                P: D 4 2
+                C: 7 6 2
+                K: A R V 7
+                T: R 6 3
+    Ouest                         Est
+P: V 9 8 3                    P: 5
+C: D 9 8 3                    C: V 10
+K: 3                          K:10 9 8 6 5 2
+T: D V 10 4                   T: A 9 8 7
+                     Sud
+                P: A R 10 7 6
+                C: A R 5 4
+                K: D 4
+                T: 5 2
+Entame D@C (avec une levée naturelle à l'atout, Ouest n'a aucun intérêt à entamer de son singleton) 
+La défense réalise les 2 premiers @C et Sud coupe le 3ème tour  @C.
+Sud semble pouvoir compter en outre sur 4 levées @S, 2 à @H et 4 à @D.
+Il doit cependant prendre garde à pouvoir accéder au mort, si le V@S est 4ème.
+Il commence donc par encaisser As & R@S, et se rendant compte du partage 4/1 défavorable passe alors aux @D.Lorsque Ouest coupera, il restera la D@S au mort pour retirer le dernier atout d'Ouest et encaisser les @D.
+Score : 4@S = : 420 pour NS|pg||
+nt||st||md|3SAKT76HAK54DQ4C52,SJ983HQ983D3CQJT4,SQ42H762DAKJ7CK63|sv|0|
+sa|0|mb|1D|mb|p|mb|1S|mb|p|mb|1N|mb|p|mb|2C|mb|p|mb|2H|mb|p|mb|3H|mb|p|mb|3S|mb|p|mb|4S|mb|p|mb|p|mb|p|
+nt|2@C : Roudi 3 réponses
+2@H : 3 cartes à @S ,main minimum
+3@H : enchère naturelle et forcing de manche
+4@S : le chelem est très lointain sans fit @H|pg||
+pc|CQ|nt|Entame D@C (avec une levée naturelle à l'atout, Ouest n'a aucun intérêt à entamer de son singleton) 
+La défense réalise les 2 premiers @C - Quel est votre plan de jeu?|pg||
+pc|C3|pc|C9|pc|C2|pg||
+pc|CJ|pc|C6|pc|C7|pc|C5|pg||
+nt|Sud coupe le 3ème tour  @C et semble pouvoir compter en outre sur 4 levées @S, 2 à @H et 4 à @D.
+Il doit cependant prendre garde à pouvoir accéder au mort, si le V@S est 4ème.
+Il commence donc par encaisser As & R@S, et se rendant compte du partage 4/1 défavorable passe alors aux @D.Lorsque Ouest coupera, il restera la D@S au mort pour retirer le dernier atout d'Ouest et encaisser les @D.|
+pc|C4|pc|CK|pc|CA|pc|S6|pg||
+pc|SA|pc|S3|pc|S2|pc|S5|pg||
+pc|SK|pc|S8|pc|S4|pc|D2|pg||
+pc|DQ|pc|D3|pc|D7|pc|D5|pg||
+pc|D4|pc|S9|pc|DJ|pc|D6|pg||
+pc|H8|pc|H2|pc|HT|pc|HA|pg||
+pc|S7|pc|SJ|pc|SQ|pc|D8|pg||
+pc|DA|pc|D9|pc|H4|pc|CT|pg||
+pc|DK|pc|DT|pc|H5|pc|H3|pg||
+pc|H6|pc|HJ|pc|HK|pc|H9|pg||
+pc|ST|pc|HQ|pc|H7|pc|C8|pg||
+nt||st||md|3SAKT76HAK54DQ4C52,SJ983HQ983D3CQJT4,SQ42H762DAKJ7CK63|sv|0|
+nt|Score : 4@S = : 420 pour NS|

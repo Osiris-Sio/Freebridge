@@ -1,0 +1,21 @@
+nt|D'après J. Rombaut
+|sk|sn|md|1SAQHAT54DAJ752C75,SKT865HJ3DQCT9864,S73HK62D8643CAKQ3|sv|n|
+sa|0|mb|1N|mb|p|mb|3N|mb|p|mb|p|mb|p|
+at|3SA : avec 10H sans majeure 4ème|pg||
+pc|S6|pc|S3|pc|SJ|nt|Entame 6@S pour le V@S d'Est. Quel est votre plan de jeu ?|pg||
+nt|Par rapport à la donne précédente, cette fois, le Valet de Carreau a été rajouté. Il permet, si rien n'est apparu après avoir tiré l'As de Cœur et joué Cœur pour le Roi, de prendre encore une chance supplémentaire. Vous jouez l'As de Carreau et, si un honneur est apparu en Ouest, vous remontez au mort et jouez petit vers le Valet ce qui permet de gagner si Ouest possède le Roi ou la Dame sèche.
+Calculons : il y a dehors à Carreau RD109 donc autant de chances de trouver un honneur sec qu'une carte plus anodine. La probabilité de trouver cet honneur sec est donc égale à la moitié du partage 3-1 avec trois cartes en Est. Donc : partage 3-1 : 50% . - Est détient les trois cartes : 25%. - Ouest détient un honneur sec : 12,5%. Si l'on additionne cela aux 40% du partage 2-2, on arrive à un total de 52,5% soit un peu plus qu'en jouant sur les Cœurs.|
+pc|SQ|pg||
+pc|DA|pc|DQ|pc|D3|pc|D9|pg||
+pc|C5|pc|C4|pc|CA|pc|C2|pg||
+pc|D4|pc|DK|pc|D2|pc|C6|pg||
+pc|S2|pc|SA|pc|S5|pc|S7|pg||
+pc|DJ|pc|H3|pc|D8|pc|DT|pg||
+pc|D7|pc|S8|pc|D6|pc|H7|pg||
+pc|D5|pc|ST|pc|H2|pc|S4|pg||
+pc|C7|pc|C8|pc|CK|pc|CJ|pg||
+pc|CQ|pc|S9|pc|H4|pc|C9|pg||
+pc|HK|pc|H8|pc|H5|pc|HJ|pg||
+pc|H6|pc|H9|pc|HA|pc|SK|pg||
+pc|HT|pc|CT|pc|C3|pc|HQ|pg||
+nt|Résultat 3SA = : 400 pour NS|pg||

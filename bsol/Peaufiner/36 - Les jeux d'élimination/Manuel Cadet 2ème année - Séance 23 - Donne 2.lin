@@ -1,0 +1,45 @@
+mn|Cadets 2ème Année - Séance 23 - Donne 2|pn|,,,|qx|o2,BOARD 2|rh||ah|Board 2|nt||bt||ht|h|
+at|Donneur : Sud - Nord-Sud vulnérable
+                    Nord
+                P: A 10 8 6
+                C: V 7 4
+                K: A R D
+                T: 8 7 2
+    Ouest                         Est
+P: 5                          P: 9 7 3
+C: A R D 2                    C:10 8 5 3
+K: V 10 9 8                   K: 7 5 2
+T: R V 6 4                    T:10 5 3
+                     Sud
+                P: R D V 4 2
+                C: 9 6
+                K: 6 4 3
+                T: A D 9
+Entame As@H - Ouest continue par R@H et D@H 
+Le déclarant coupe le 3ème tour @H, retire les atouts en 3 tours, puis encaisse As, Roi et Dame @D avant d'appeler un petit @C du mort.
+Ayant éliminé toutes les couleurs annexes, le déclarant doit se contenter de couvrir la carte fournie par Est, le 9@C si est fournit petit.
+Ouest remis en main, doit jouer @C dans la fourchette du déclarant ou coupe et défausse. 
+Score 4@S = : 620 pour NS|pg||
+nt||st||md|1SKQJ42H96D643CAQ9,S5HAKQ2DJT98CKJ64,SAT86HJ74DAKQC872|sv|n|
+sa|0|mb|1S|mb|d|mb|2N|mb|p|mb|3S|mb|p|mb|4S|mb|p|mb|p|mb|p|
+nt|2SA : convention Truscott, 4 atouts, 11 HLD et plus
+3@S : main minimum|pg||
+pc|HA|nt|Entame As@H - Ouest continue par R@H et D@H - Quel est votre plan de jeu?|pg||
+pc|H7|pc|H3|pc|H6|pg||
+pc|HK|pc|H4|pc|H5|pc|H9|pg||
+nt|Le déclarant coupe le 3ème tour @H, retire les atouts en 3 tours, puis encaisse As, Roi et Dame @D avant d'appeler un petit @C du mort.
+Ayant éliminé toutes les couleurs annexes, le déclarant doit se contenter de couvrir la carte fournie par Est, le 9@C si est fournit petit.
+Ouest remis en main, doit jouer @C dans la fourchette du déclarant ou coupe et défausse.|
+pc|HQ|pc|HJ|pc|H8|pc|S2|pg||
+pc|SK|pc|S5|pc|S6|pc|S3|pg||
+pc|SQ|pc|D8|pc|S8|pc|S7|pg||
+pc|S4|pc|C4|pc|SA|pc|S9|pg||
+pc|DA|pc|D2|pc|D3|pc|D9|pg||
+pc|DK|pc|D5|pc|D4|pc|DT|pg||
+pc|DQ|pc|D7|pc|D6|pc|DJ|pg||
+pc|C2|pc|C3|pc|C9|pc|CJ|pg||
+pc|H2|pc|ST|pc|HT|pc|CQ|pg||
+pc|C7|pc|C5|pc|CA|pc|C6|pg||
+pc|SJ|pc|CK|pc|C8|pc|CT|pg||
+nt||st||md|1SKQJ42H96D643CAQ9,S5HAKQ2DJT98CKJ64,SAT86HJ74DAKQC872|sv|n|
+nt|Score 4@S = : 620 pour NS|

@@ -1,0 +1,20 @@
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 4.6.
+|sk|sn|md|1SK4H762DAK7CQT984,S973HJT984DJ82CA5,SAQ85HKQ3D643CKJ2|sv|0|
+sa|0|mb|1C|mb|p|mb|1S|mb|p|mb|1N|mb|p|mb|3N|mb|p|mb|p|mb|p|
+pc|HJ|nt|Vous jouez 3SA. Entame V@H. Quel est votre plan de jeu ?|pg||
+nt| Vous comptez vos levées sûres : 3@S + 1@H+ 2@C = 6, il faut trouver 3 levées. Il semble que seuls les trèfles puissent les fournir. Le seul danger qui vous menace est de perdre 4 coeurs et l'as de trèfle si les coeurs sont répartis 5-2. Or Ouest a passé sur l'ouverture d'un trèfle, il ne peut avoir à la fois as-valet-10 cinquième à trèfle avec l'as de trèfle. Soit il a l'as de coeur, soit l'as de trèfle. Il faut laisser passer et jouer un petit coeur du mort à la première levée afin de couper les communications de l'adversaire.|pg||
+pc|H3|pc|H5|pc|H2|pg||
+pc|HT|pc|HQ|pc|HA|pc|H6|pg||
+pc|DT|pc|DA|pc|D2|pc|D3|pg||
+pc|C4|pc|CA|pc|C2|pc|C7|pg||
+pc|DJ|pc|D4|pc|D5|pc|DK|pg||
+pc|C8|pc|C5|pc|CK|pc|C3|pg||
+pc|CJ|pc|C6|pc|CQ|pc|S7|pg||
+pc|CT|pc|D8|pc|D6|pc|D9|pg||
+pc|C9|pc|H4|pc|S5|pc|S2|pg||
+pc|H7|pc|H8|pc|HK|pc|S6|pg||
+pc|S8|pc|ST|pc|SK|pc|S3|pg||
+pc|S4|pc|S9|pc|SQ|pc|SJ|pg||
+pc|SA|pc|DQ|pc|D7|pc|H9|pg||
+nt|   Evaluation : 2 si vous avez trouvé la bonne suite pour gagner : Mettre un petit coeur du mort, si Ouest détenait as-valet-10 cinquièmes , vous perdiez une levée, mais vous auriez gagné tout de même votre contrat. Zéro sinon.|pg|
+

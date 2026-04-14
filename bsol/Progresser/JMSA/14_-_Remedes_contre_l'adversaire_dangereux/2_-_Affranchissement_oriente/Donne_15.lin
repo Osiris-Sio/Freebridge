@@ -1,0 +1,29 @@
+
+nt|D'après Cronier et Poizat. Tests de jeu de la carte : jeu avec le mort test 3.7. 
+|sk|sn|md|
+1SK93HK6DQ82CAK764,SJ86HJ983DAJ943CT,SA742HA54DK6C9832|sv|o|
+sa|0|mb|1N|mb|p|mb|2C|mb|p|mb|2D|mb|p|mb|3N|mb|p|mb|p|mb|p|
+at|Vous jouez 3 SA.|pg||nt||pg||
+pc|D4|nt|Entame 4@D, le roi du mort fait la levée, Est fournit le 5@D et c'est à vous... Faîtes votre plan de jeu.|pg||
+pc|DK|pc|D5|pc|D2|pg||
+pc|C2|nt|Vous avez compté 7 levées immediates.
+Seuls les trèfles peuvent vous fournir les 2 levées manquantes.
+Mais il faut éviter que la Q@D soit prise en impasse.
+Si Est possède DV10@C, il n' y a rien à faire.
+Il faut donc se prémunir contre un honneur sec en Est.
+Mettre le 6@C si E met le 5@C.
+Si Est fournit un honneur, et qu'un autre honneur s'écrase en Ouest, remontez au mort et laisser courir le 9@C.|
+pc|C5|pc|C6|pc|CT|pg||
+pc|H8|pc|HA|pc|H7|pc|H6|pg||
+pc|C3|pc|CJ|pc|CA|pc|HJ|pg||
+pc|CK|pc|S6|pc|C8|pc|CQ|pg||
+pc|C4|pc|H3|pc|C9|pc|D7|pg||
+pc|S2|pc|ST|pc|SK|pc|S8|pg||
+pc|C7|pc|D3|pc|D6|pc|H2|pg||
+pc|S3|pc|SJ|pc|SA|pc|S5|pg||
+pc|H4|pc|HT|pc|HK|pc|H9|pg||
+pc|S9|pc|D9|pc|S4|pc|SQ|pg||
+pc|HQ|pc|D8|pc|DJ|pc|H5|pg||
+pc|DT|pc|DQ|pc|DA|pc|S7|pg||
+nt|   Evaluation : 2 si vous avez trouvé la bonne suite pour gagner en craignant un partage des trèfles 3-1, mais en espèrant un honneur (D ou V ou 10) à @C en Ouest. Zéro sinon.
+|pg|

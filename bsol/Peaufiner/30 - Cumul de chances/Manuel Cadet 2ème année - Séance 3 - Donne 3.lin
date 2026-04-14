@@ -1,0 +1,48 @@
+mn|CADETS 2ème année - Séance 3 - Donne 3|pn|Sud,Ouest,Nord,Est|qx|o3,BOARD 3|rh||ah|Board 3|nt||bt||ht|h|
+at| Donneur : Sud - Est-Ouest Vulnérable
+                    Nord
+                P: V 2
+                C: A 8 7 4
+                K: A R 6
+                T: 9 7 4 3
+    Ouest                         Est
+P: R 9 4 3                    P:10 8 7 6 5
+C: 6 2                        C: V
+K: V 9 8                      K: D 10 2
+T: R D V 5                    T: 10 8 6 2
+                     Sud
+                P: A D
+                C: R D 10 9 5 3
+                K: 7 5 4 3
+                T: A
+Entame R@C. Sud compte 6 levées d'atout, 2 à @D, 1 à @C et 1 à @S, soit 10 levées certaine.
+Les levées supplémentaires peuvent provenir de la coupe du 4ème @D au mort et de l'impasse @S.
+Le déclarant doit retirer les atouts, puis commencer par tester la répartition des @D en tirant 3 fois @D.
+Lr residu @D étant 3/3, le 4ème @D devient maître et permettra la défausse d' 1@S du mort.
+Commencer par l'impasse @S aurait condamné le déclarant en cas d'echec, même avec les @D bien répartis. 
+Score : 6@H = : 980 pour NS|pg||
+nt||st||md|1SAQHKQT953D7543CA,SK943H62DJ98CKQJ5,SJ2HA874DAK6C9743|sv|e|
+sa|0|mb|1H|mb|p|mb|3N|mb|p|mb|4C|mb|p|mb|4D|mb|p|mb|4N|mb|p|mb|5H|mb|p|mb|6H|mb|p|mb|p|mb|p|
+nt|3SA : Fit de 4 atouts dans un jeu régulier 13-15 HLD.
+4@C et 4@D : contrôles. 4SA : Blackwood simple, avec tous les contrôles - 5@H : 2 As|pg||
+pc|CK|nt|Entame R@C - Quel est votre plan de jeu ?|pg||
+nt|Sud compte 6 levées d'atout, 2 à @D, 1 à @C et 1 à @S, soit 10 levées certaine.
+Les levées supplémentaires peuvent provenir de la coupe du 4ème @D au mort et de l'impasse @S.
+Le déclarant doit retirer les atouts, puis commencer par tester la répartition des @D en tirant 3 fois @D.
+Lr residu @D étant 3/3, le 4ème @D devient maître et permettra la défausse d' 1@S du mort.
+Commencer par l'impasse @S aurait condamné le déclarant en cas d'echec, même avec les @D bien répartis.| 
+pc|C3|pc|C8|pc|CA|pg||
+pc|HK|pc|H2|pc|H4|pc|HJ|pg||
+pc|HQ|pc|H6|pc|H7|pc|S5|pg||
+pc|D3|pc|D8|pc|DA|pc|D2|pg||
+pc|DK|pc|DT|pc|D4|pc|D9|pg||
+pc|D6|pc|DQ|pc|D5|pc|DJ|pg||
+pc|S6|pc|SA|pc|S3|pc|S2|pg||
+pc|D7|pc|S4|pc|SJ|pc|S7|pg||
+pc|SQ|pc|SK|pc|H8|pc|S8|pg||
+pc|C9|pc|CT|pc|H9|pc|C5|pg||
+pc|H5|pc|S9|pc|HA|pc|ST|pg||
+pc|C7|pc|C2|pc|HT|pc|CJ|pg||
+pc|H3|pc|CQ|pc|C4|pc|C6|pg||
+nt||st||md|1SAQHKQT953D7543CA,SK943H62DJ98CKQJ5,SJ2HA874DAK6C9743|sv|e|
+nt|Score : 6@H = : 980 pour NS|
