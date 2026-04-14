@@ -1,0 +1,73 @@
+/* Style pour le logo dans le header */
+.header-logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none !important;
+}
+
+.header-logo-image {
+    width: 20rem;
+    display: flex;
+    align-items: center;
+}
+
+.header-logo-image svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Style pour les logos dans le footer */
+.footer-global {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--pico-muted-border-color);
+}
+
+.footer-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 15px;
+}
+
+.footer-logo-item {
+    height: 35px;
+    width: auto;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.footer-logo-item:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Adaptation spécifique pour Osiris Corporation (Double visuels) */
+
+/* Comportement par défaut (Masque les versions inadaptées) */
+.logo-osiris-dark, .logo-osiris-light {
+    display: none;
+}
+
+/* Mode Sombre : On affiche uniquement la version blanche */
+[data-theme="dark"] .logo-osiris-dark {
+    display: inline-block;
+}
+
+/* Mode Clair : On affiche uniquement la version noire */
+[data-theme="light"] .logo-osiris-light {
+    display: inline-block;
+}
+
+/* Transition et Opacité douce */
+.footer-logo-item {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.footer-logo-item:hover {
+    opacity: 1;
+}

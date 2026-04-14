@@ -1,128 +1,99 @@
-<!doctype html>
-<html lang="fr">
-
-<head>
-    <title>Freebridge</title>
-    <link href="assets/fonts/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-    <link href="assets/css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-    <script>
-        window.addEventListener("load", function() {
-            window.cookieconsent.initialise({
-                "palette": {
-                    "popup": {
-                        "background": "#006400"
-                    },
-                    "button": {
-                        "background": "#8b0000"
-                    },
-                    "link": "#8b0000",
-
-
-                },
-                "theme": "classic",
-                "position": "bottom-left",
-                "type": "opt-in",
-                "content": {
-                    "message": "Ce cite utilise des cookies pour garantir la meilleure exp&eacute;rience sur notre site",
-                    "dismiss": "Fermer",
-                    "deny": "Refuser",
-                    "allow": "Accepter",
-                    "link": "En savoir plus",
-                    "href": "mentionlegale.php"
-                }
-            })
-        });
-    </script>
-    <meta charset="UTF-8">
-    <style>
-        .cc-btn {
-            background-color: #8B0000;
-        }
-
-        .mdl-layout__container {
-            position: relative !important;
-        }
-
-        .material-icons {
-            border: 1px solid black;
-            color: black;
-            background-color: white;
-        }
-    </style>
-</head>
-
-<body>
-    <?php
-    include __DIR__ . '/pdo.php';
+<?php
+if (session_status() === PHP_SESSION_NONE) {
     session_start();
-    ?>
+}
+?>
+<!doctype html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <title>Freebridge - Bridge Solver</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    
+    <link rel="stylesheet" href="css/pico.css">
+    <link rel="stylesheet" href="css/logo.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <div style="height: 27px; background-color: darkgreen; color: white; font-size: 25px; text-align: center">
-        <a style="color: white; font-family: 'Gotham '" href="tel:+33637640638"><i class="fas fa-phone-volume" style="margin-right: 5%;"> 06 37 64 06 38</i></a><a style="color: white;font-family: 'Gotham'" href="mailto:bernard.glorie.62@orange.fr">bernard.glorie62@orange.fr</a>
-    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="js/theme.js"></script>
+    <script src="js/nav.js"></script>
+    <script>
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
 
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="background-color: transparent !important;">
-        <header class="mdl-layout__header" style="background-color: transparent !important; border: none">
-            <div class="mdl-layout__header-row">
-                <!-- Title -->
-                <!--
-			<span class="mdl-layout-title" id="logospan" style="width: 24%"><img onclick="document.location.href='index.php'" id="logo" src="Images/logo.jpg"></span>
-            -->
+    <header>
+        <nav class="container">
+            <ul>
+                <li>
+                    <a href="index.php" class="header-logo-container">
+                        <div class="header-logo-image">
+                            <img src="assets/img/logo.jpg" alt="Logo Freebridge">
+                        </div>
+                    </a>
+                </li>
+            </ul>
 
-                <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <!-- Bouton Hamburger mobile -->
+            <ul>
+                <li>
+                    <button id="hamburger-toggle" class="hamburger" aria-label="Menu Principal" type="button">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
 
-                    <a class="mdl-navigation__link colorgreen" href="quisommesnous.php">Qui sommes nous ?</a>
-                    <a class="mdl-navigation__link colorgreen" href="cours.php">Test</a>
-
-                    <!--
-                On verifier si la variable de session rang existe :
-                si elle n'existe pas on affiche connexion et inscription (pas connecté)
-                sinon on affiche deconnexion (connecté)
-                -->
-                    <?php if (!isset($_SESSION['user_nom'])) { ?>
-                        <a class="mdl-navigation__link colorgreen" href="login.php"><button style="background-color: transparent; border: 1px solid darkgreen; font-size: 25px; border-radius:10px " class="colorgreen">Connexion</button> </a>
-                        <!-- <a class="mdl-navigation__link colorgreen" href="register.php">Créer un compte</a> -->
-                    <?php } else { ?>
-                        <a class="mdl-navigation__link colorgreen" href="avdj.php">A vous de jouer</a>
-                        <a class="mdl-navigation__link colorgreen" href="deconnexion.php"><button style="background-color: transparent; border: 1px solid darkgreen; font-size: 20px; border-radius:10px " class="colorgreen">Déconnexion</button> </a>
-                        <a class="mdl-navigation__link colorgreen" href="compte.php">Mon compte</a>
-                    <?php } ?>
-                </nav>
-            </div>
-
-            <!--
-    </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Freebridge</span>
-        <nav class="mdl-navigation" style="color: darkgreen !important;">
-            
-			<a class="mdl-navigation__link" href="quisommesnous.php">Qui sommes nous ?</a>
-            <a class="mdl-navigation__link" href="cours.php">Test</a>
-				
-           
-            On verifier si la variable de session rang existe :
-            si elle n'existe pas on affiche connexion et inscription (pas connecté)
-            sinon on affiche deconnexion (connecté)
-            <?php if (!isset($_SESSION['user_nom'])) { ?>
-                <a class="mdl-navigation__link" href="login.php">Connexion</a>
-                <a class="mdl-navigation__link" href="register.php">Créer un compte</a>
-            <?php } else { ?>
-				<a class="mdl-navigation__link" href="avdj.php">A vous de jouer</a>
-				<a class="mdl-navigation__link" href="deconnexion.php">Déconnexion</a>
-                <a class="mdl-navigation__link" href="compte.php">Mon compte</a>
-            <?php } ?>
+            <!-- Menu de navigation -->
+            <ul id="nav-menu" class="nav-menu-mobile">
+                <li><a href="index.php">Accueil</a></li>
+                <li><a href="quisommesnous.php" class="nav-link-secondary">Qui sommes-nous ?</a></li>
+                
+                <?php if (isset($_SESSION['user_nom'])) { ?>
+                    <li><a href="cours.php" class="nav-link-secondary">Test</a></li>
+                    <li><a href="avdj.php" class="nav-link-secondary">À vous de jouer</a></li>
+                    <li><a href="compte.php" title="Mon Compte" class="nav-link-secondary"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['user_nom']); ?></a></li>
+                    <li><a href="deconnexion.php" role="button" class="outline contrast btn-header">Déconnexion</a></li>
+                <?php } else { ?>
+                    <li><a href="login.php" role="button" class="btn-header">Connexion</a></li>
+                <?php } ?>
+            </ul>
         </nav>
--->
+    </header>
 
+    <div id="nav-overlay" class="nav-overlay"></div>
 
+    <!-- Système de notifications -->
+    <div id="toast-container">
+        <?php if (isset($_SESSION['flash_error'])) { ?>
+            <article class="toast toast-error">
+                <header>
+                    <strong>Erreur</strong>
+                    <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                </header>
+                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_error']); ?></div>
+            </article>
+            <?php unset($_SESSION['flash_error']); ?>
+        <?php } ?>
 
+        <?php if (isset($_SESSION['flash_success'])) { ?>
+            <article class="toast toast-success">
+                <header>
+                    <strong>Succès</strong>
+                    <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
+                </header>
+                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_success']); ?></div>
+            </article>
+            <?php unset($_SESSION['flash_success']); ?>
+        <?php } ?>
     </div>
 
-    </main>
+    <main class="container">
