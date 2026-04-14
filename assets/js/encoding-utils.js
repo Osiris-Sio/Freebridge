@@ -1,6 +1,8 @@
 // Utilitaire pour gérer l'encodage des fichiers .lin
-function detectAndFixEncoding(str) {
-  if (!str) return str;
+window.detectAndFixEncoding = function (str) {
+  if (!str) {
+    return str;
+  }
 
   // Table de correspondance pour les caractères spéciaux
   const charMap = {
@@ -22,7 +24,7 @@ function detectAndFixEncoding(str) {
     'â€"': '–',
     'â€': '"',
     'Â°': '°',
-    '�': '' // Supprime les caractères non reconnus
+    '': '' // Supprime les caractères non reconnus
   };
 
   try {
@@ -33,20 +35,19 @@ function detectAndFixEncoding(str) {
     });
 
     // Si la chaîne contient encore des caractères problématiques, essayer une autre méthode
-    if (result.includes('�')) {
+    if (result.includes('')) {
       try {
         // Tentative avec TextDecoder
         const bytes = new Uint8Array(str.split('').map((c) => c.charCodeAt(0)));
         const decoder = new TextDecoder('iso-8859-1');
         result = decoder.decode(bytes);
-      } catch (e) {
-        console.warn('Erreur avec TextDecoder:', e);
+      } catch {
+        // Ignoré
       }
     }
 
     return result;
-  } catch (e) {
-    console.warn("Erreur lors de la correction de l'encodage:", e);
+  } catch {
     return str;
   }
-}
+};
