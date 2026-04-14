@@ -34,5 +34,6 @@
         <a  class="link" href="mentionlegale.php">Mentions Légales</a> / <a class="link" href="confidentialite.php">Politique de confidentialité</a> / <a class="link" href="formulaire.php">Contactez-nous</a>
     </div>
 </div>
+
 </body>
 </html>

@@ -1,0 +1,80 @@
+/* Style minimaliste pour la page d'accueil ValOracle */
+
+body {
+    background: transparent !important;
+}
+
+html {
+    background-color: var(--pico-background-color);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background 0.3s ease;
+}
+
+/* Mode Sombre : Voile noir à 85% */
+[data-theme="dark"], html:not([data-theme="light"]) {
+    background-image:
+        linear-gradient(rgba(15, 25, 35, 0.85), rgba(15, 25, 35, 0.85)),
+        url('../img/background-home.png');
+}
+
+/* Mode Clair : Voile blanc à 92% pour un effet "fondu" */
+[data-theme="light"] {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+        url('../img/background-home.png');
+}
+
+
+/* --- HERO SECTION : Centrage complet --- */
+.hero-section {
+    text-align: center;
+    padding: 6rem 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: var(--pico-primary);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* --- TEAM SECTION : Centrage de la grille --- */
+.team-section {
+    text-align: center;
+    margin-top: 3rem;
+    background: var(--pico-card-background-color);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+}
+
+.team-section .grid div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.team-section .grid div span {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-section footer {
+    opacity: 0.7;
+}
+
+/* --- STYLE GÉNÉRIQUE CARTES --- */
+article {
+    border-top: 5px solid var(--pico-primary);
+}
