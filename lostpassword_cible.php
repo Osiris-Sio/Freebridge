@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 echo $_POST['login'];
 $sql = "SELECT COUNT(*) FROM user WHERE user_mail ='".$_POST['login']."'";
 $result = $conn->prepare($sql);
@@ -51,5 +51,5 @@ if ($number_of_rows<=0) {
   document.location.href="login.php"
 }, 3000)</script>';
 }
-include 'footer.php';
+include 'includes/footer.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
 <style>
     .mdl-checkbox__ripple-container .mdl-ripple {
@@ -60,7 +60,7 @@ include 'header.php';
     </div>
 </main>
 <?php
-include 'footer.php';
+include 'includes/footer.php';
 ?>
 
 

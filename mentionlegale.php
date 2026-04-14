@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 ?>
 <main class="mdl-layout__content">
     <div class="page-content">
@@ -72,5 +72,5 @@ include 'header.php';
     </div>
 </main>
 <?php
-include 'footer1.php';
+include 'includes/footer1.php';
 ?>

@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 $login = strtolower($_POST['login']);
 $mdp = sha1($_POST['password']);
 $sql = "SELECT COUNT(*) FROM user WHERE user_mail ='".$login."' AND user_password ='".$mdp."'";
@@ -29,5 +29,5 @@ if ($number_of_rows>0) {
   document.location.href="login.php"
 }, 3000)</script>';
 }
-include 'footer.php';
+include 'includes/footer.php';
 ?>

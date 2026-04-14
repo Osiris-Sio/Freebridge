@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +11,7 @@
 <META http-equiv="Cache-Control" content="no-cache">
 <META http-equiv="Pragma" content="no-cache">
 <META name="viewport" content="width=800, target-densitydpi=device-dpi, user-scalable=yes" />
-<link rel="stylesheet" href="ddummy.css?ver=5" type="text/css">
+<link rel="stylesheet" href="assets/css/ddummy.css?ver=5" type="text/css">
 <title>Bridge Solver Online</title>
 <style type="text/css">
 .clickable{
@@ -20,10 +22,10 @@
 	text-decoration: underline;
 }
 </style>
-<script src="jquery-1.10.2.js"></script>
-<script src="ddummy6.js?ver=15"></script>
-<script src="json2.js"></script>
-<script src="convertXML.js"></script>
+<script src="assets/js/jquery-1.10.2.js"></script>
+<script src="assets/js/ddummy6.js?ver=11"></script>
+<script src="assets/js/json2.js"></script>
+<script src="assets/js/convertXML.js"></script>
 </head>
 <script language="JavaScript">
   function getParaName(parameters,i)
@@ -57,43 +59,6 @@
 	return l;
   }
   
-	function identifyHonourCardSet(str)
-	{
-		var lang = "english";
-		
-		if (str.indexOf("R")!=-1)
-			lang = "french";
-		else if (str.indexOf("H")!=-1)
-			lang = "dutch";
-		else if (str.indexOf("D")!=-1) // german or french, but french has already bene eliminated above
-			lang = "german";
-			
-		return lang;
-	}
-	
-	function convertToJQKA(str,lang)
-	{
-		if (lang=="french")
-		{
-			str = str.replace(/V/g,"J");
-			str = str.replace(/D/g,"Q");
-			str = str.replace(/R/g,"K");
-		}
-		else if (lang=="german")
-		{
-			str = str.replace(/B/g,"J");
-			str = str.replace(/D/g,"Q");
-		}
-		else if (lang=="dutch")
-		{
-			str = str.replace(/B/g,"J");
-			str = str.replace(/V/g,"Q");
-			str = str.replace(/H/g,"K");
-		}
-			
-		return str;
-	}
-
   function extractParas()
   {
     var validDealers = "NSEW";
@@ -362,16 +327,7 @@
 		b.boards[0] = board;
 		
 		if (((typeof b.file)=="undefined")&((typeof b.lin)=="undefined"))
-		{
-			var dealstr = deal[0] + deal[1] + deal[2] + deal[3];
-			var lang = identifyHonourCardSet(dealstr);
-			deal[0] = convertToJQKA(deal[0],lang);
-			deal[1] = convertToJQKA(deal[1],lang);
-			deal[2] = convertToJQKA(deal[2],lang);
-			deal[3] = convertToJQKA(deal[3],lang);
-			
 			if (validateBoard(board)==0) return "";
-		}
 		
 		if (!((typeof board.Declarer)!=undefined)&((typeof board.Contract!=undefined)))
 		{
@@ -621,11 +577,7 @@
 									<TD id=eastHand Width=33%>&#9824; J 10<BR><Font color=Red>&#9829;</Font> Q J 4<BR><Font color=Red>&#9830;</Font> A 10 9 8 2<BR>&#9827; Q 6 5<BR></TD>
 								</TR>
 								<TR>
-									<TD Width=33% style="align:top;"><div id=ptsctl style="float:left;height:20%;">
-		  								<label id=krLabel style="cursor:pointer;vertical-align:middle;"><input id="krcalc" type="checkbox" name="krcalc" style="cursor:pointer;vertical-align:bottom;">KR</label>
-										<input id=krhelp style="max-height:10px;max-width:10px;cursor:pointer;vertical-align:middle;" readonly value=? />
-										</div>
-										<div style="clear:both;height:80%;"><TABLE id=points class=pointsTable width=100%><TR><TD width=33%></TD><TD width=33% valign=bottom align=center></TD><TD width=33%></TD></TR><TR><TD align="right" valign="middle"></TD><TD></TD><TD align="left" valign="middle"></TD></TR><TR><TD></TD><TD valign="top" align=center></TD><TD></TD></TR></TABLE></div></TD>
+									<TD Width=33%><TABLE id=points class=pointsTable width=100%><TR><TD width=33%></TD><TD width=33% valign=bottom align=center></TD><TD width=33%></TD></TR><TR><TD align="right" valign="middle"></TD><TD></TD><TD align="left" valign="middle"></TD></TR><TR><TD></TD><TD valign="top" align=center></TD><TD></TD></TR></TABLE></TD>
 									<TD id=southHand Width=33%>&#9824; Q 9 6 3<BR><Font color=Red>&#9829;</Font> A 8 5<BR><Font color=Red>&#9830;</Font> 5 4 3<BR>&#9827; K 3 2<BR></TD>
 									<TD Width=33% style="align:center;valign:middle;">
 										<div id=mctable style="width:100%;">
@@ -707,10 +659,10 @@
 <div id="popup_box" style="position: fixed; z-index:1; left: 300px; top: 200px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
 </div>
 <div id=spinner style="position:absolute;display:none;">
-	<img src="spinner.gif">
+	<img src="assets/img/spinner.gif">
 </div>
 <div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;height;80px;display:none;">
-	<img src="largeSpin.gif">
+	<img src="assets/img/largeSpin.gif">
 </div>
 <div id="commandHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 </div>
@@ -723,8 +675,6 @@
 <div id="resultReasons" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 </div>
 <div id="settingsHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
-</div>
-<div id="krHelpText" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
 </div>
 <div id="settings" style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	<table>
@@ -780,15 +730,6 @@
 	      <label id="mklab2" for="mkrad2" style="cursor:pointer;">Show number of tricks</label>
 	      <br></p>
 	     </td>
-		 <td>
-			<label>Honour Card Display:</label>
-		 	<select id=honourCardSet width=4>
-				<option value="JQKA">JQKA</option>
-				<option value="BDKA">BDKA</option>
-				<option value="VDRA">VDRA</option>
-				<option value="BVHA">BVHA</option>
-			</select>
-		</td>
 	  </tr>
 	</table>
 	<table width="500" border="0">
@@ -913,3 +854,4 @@
 </div>
 </body>
 </html>
+

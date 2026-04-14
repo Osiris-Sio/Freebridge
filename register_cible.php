@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'includes/header.php';
 $nom=$_POST['nom'];
 $prenom=$_POST['prenom'];
 $mail=$_POST['login'];
@@ -40,4 +40,4 @@ if ($number_of_rows==0) {
 
 }
 
-include 'footer.php';
+include 'includes/footer.php';
