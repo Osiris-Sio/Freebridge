@@ -1,8 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
+  session_start();
+} ?>
 <!doctype html>
 <html lang="fr" data-theme="light">
 <head>
@@ -35,7 +34,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 <li>
                     <a href="index.php" class="header-logo-container">
                         <div class="header-logo-image">
-                            <img src="assets/img/logo.jpg" alt="Logo Freebridge">
+                            <img src="assets/img/logo.png" alt="Logo Freebridge">
                         </div>
                     </a>
                 </li>
@@ -60,11 +59,16 @@ if (session_status() === PHP_SESSION_NONE) {
                 <?php if (isset($_SESSION['user_nom'])) { ?>
                     <li><a href="cours.php" class="nav-link-secondary">Test</a></li>
                     <li><a href="avdj.php" class="nav-link-secondary">À vous de jouer</a></li>
-                    <li><a href="compte.php" title="Mon Compte" class="nav-link-secondary"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['user_nom']); ?></a></li>
+                    <li><a href="compte.php" title="Mon Compte" class="nav-link-secondary"><i class="fas fa-user-circle"></i> <?= htmlspecialchars(
+                      $_SESSION['user_nom'],
+                    ) ?></a></li>
                     <li><a href="deconnexion.php" role="button" class="outline contrast btn-header">Déconnexion</a></li>
                 <?php } else { ?>
                     <li><a href="login.php" role="button" class="btn-header">Connexion</a></li>
                 <?php } ?>
+                <li class="nav-theme-item">
+                    <a href="#" id="theme-toggle" class="secondary theme-toggle-btn" aria-label="Changer de thème" title="Changer de thème"></a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -79,7 +83,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <strong>Erreur</strong>
                     <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
                 </header>
-                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_error']); ?></div>
+                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_error']) ?></div>
             </article>
             <?php unset($_SESSION['flash_error']); ?>
         <?php } ?>
@@ -90,7 +94,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <strong>Succès</strong>
                     <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
                 </header>
-                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_success']); ?></div>
+                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_success']) ?></div>
             </article>
             <?php unset($_SESSION['flash_success']); ?>
         <?php } ?>
