@@ -1,43 +1,50 @@
 <?php
-$serveur = 'localhost';
-$base = 'sitefreebridge';
-$utilisateur = 'sitefreebridge';
-$motDePasse = '***REMOVED***';
+/**
+ * Configuration PDO avec chargement des variables d'environnement
+ */
 
-try {
-  $dns = "mysql:host=$serveur;dbname=$base";
-  $conn = new PDO($dns, $utilisateur, $motDePasse);
-} catch (Exception $e) {
-  echo 'Connexion MySQL impossible : ', $e->getMessage();
-  die();
+function loadEnv($path) {
+    if (!file_exists($path)) return false;
+    $lines = file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        $line = trim($line);
+        if (empty($line) || strpos($line, '#') === 0) continue;
+        if (strpos($line, '=') !== false) {
+            list($name, $value) = explode('=', $line, 2);
+            $name = trim($name);
+            $value = trim(trim($value), '"\'');
+            putenv("$name=$value");
+            $_ENV[$name] = $value;
+            $_SERVER[$name] = $value;
+        }
+    }
+    return true;
 }
 
-/*$serveur = "localhost";
-$base = 'id8770898_freebridge';
-$utilisateur = 'id8770898_defachellesma';
-$motDePasse = '***REMOVED***';
-
-try {
-  $dns = "mysql:host=$serveur;dbname=$base";
-  $conn = new PDO( $dns, $utilisateur, $motDePasse );
-}
-catch ( Exception $e ) {
-  echo "Connexion MySQL impossible : ", $e->getMessage();
-  die();
+// Chemin du fichier .env à la racine
+$envPath = dirname(__DIR__) . '/.env';
+if (!loadEnv($envPath)) {
+    error_log("Fichier .env introuvable au chemin : " . $envPath);
 }
 
-$serveur = "localhost";
-$base = 'freebridge';
-$utilisateur = 'root';
-$motDePasse = 'root';
+// Récupération des données du .env
+$serveur = getenv('DB_HOST') ?: 'localhost';
+$base = getenv('DB_NAME');
+$utilisateur = getenv('DB_USER');
+$motDePasse = getenv('DB_PASS');
 
 try {
     $dns = "mysql:host=$serveur;dbname=$base";
-    $conn = new PDO( $dns, $utilisateur, $motDePasse );
+    $conn = new PDO($dns, $utilisateur, $motDePasse);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->exec("set names utf8");
+} catch (Exception $e) {
+    error_log("Erreur de connexion MySQL : " . $e->getMessage());
+    
+    // On ajoute le message dans votre système de Toasts
+    if (!isset($_SESSION['messages']['errors'])) {
+        $_SESSION['messages']['errors'] = [];
+    }
+    $_SESSION['messages']['errors'][] = "Une erreur est survenue lors de la connexion à la base de données. L'accès peut être restreint.";
 }
-catch ( Exception $e ) {
-    echo "Connexion MySQL impossible : ", $e->getMessage();
-    die();
-}*/
-
 ?>
