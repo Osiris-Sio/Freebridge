@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
-<?php
-include 'header.php';
-?>
+<?php include 'includes/header.php'; ?>
 <main class="mdl-layout__content">
     <div class="page-content">
         <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding-top: 1%; background-color: white">
@@ -10,7 +8,9 @@ include 'header.php';
 
  
 <h3 style="text-decoration: underline">Mon Compte</h3>
-<p style="text-align: left; margin-left: 1%">Bonjour, <?php echo $_SESSION['user_prenom']. " ". $_SESSION['user_nom'] ?></p>
+<p style="text-align: left; margin-left: 1%">Bonjour, <?php echo $_SESSION['user_prenom'] .
+  ' ' .
+  $_SESSION['user_nom']; ?></p>
 <pre>Les abonnements sont mensuels et dépendent du niveau 
 Il est possible de se désabonner à tout instant, ce qui supprime les prélévements.
 C'est cette procédure qu'il faut utiliser pour passer en catégorie supérieure.</pre>
@@ -75,19 +75,36 @@ C'est cette procédure qu'il faut utiliser pour passer en catégorie supérieure
 
 <?php
 $date = date('d/m/Y');
-  if($_SESSION['prix']==2) {
-    $sql = "UPDATE user SET user_rang='progresser', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
-    $conn->query($sql);
-  } else if ($_SESSION['prix']==3) {
-    $sql = "UPDATE user SET user_rang='peaufiner', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
-    $conn->query($sql);
-  } else if ($_SESSION['prix']==4) {
-    $sql = "UPDATE user SET user_rang='confirmer', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
-    $conn->query($sql);
-  }
-  $_SESSION['page'] = "";
+if ($_SESSION['prix'] == 2) {
+  $sql =
+    "UPDATE user SET user_rang='progresser', user_date='" .
+    $date .
+    "' WHERE user_id=" .
+    $_SESSION['user_id'] .
+    '';
+  $conn->query($sql);
+} elseif ($_SESSION['prix'] == 3) {
+  $sql =
+    "UPDATE user SET user_rang='peaufiner', user_date='" .
+    $date .
+    "' WHERE user_id=" .
+    $_SESSION['user_id'] .
+    '';
+  $conn->query($sql);
+} elseif ($_SESSION['prix'] == 4) {
+  $sql =
+    "UPDATE user SET user_rang='confirmer', user_date='" .
+    $date .
+    "' WHERE user_id=" .
+    $_SESSION['user_id'] .
+    '';
+  $conn->query($sql);
+}
+$_SESSION['page'] = '';
 
 $_SESSION['page'] = $_SERVER['PHP_SELF'];
 
-include 'footer1.php';
+include 'includes/footer1.php';
+
+
 ?>

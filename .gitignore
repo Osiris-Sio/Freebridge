@@ -10,6 +10,10 @@
 # --- Fichiers de Configuration Sensibles ---
 create_db.php
 setup_user.php
+secrets.txt
+.env
+test_db_connection.php
+bdd.sql
 
 # --- Fichiers de l'IDE & du Système ---
 .vscode/
@@ -18,6 +22,8 @@ setup_user.php
 *.log
 Thumbs.db
 desktop.ini
+.env
+node_modules/
 
 # --- Fichiers Temporaires PHP ---
 session/

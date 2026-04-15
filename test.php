@@ -28,26 +28,42 @@
 
 
 <?php
-include 'pdo.php';
+include 'includes/pdo.php';
 session_start();
-$_SESSION['user_id'] =1;
+$_SESSION['user_id'] = 1;
 $date = date('d/m/Y');
-if($_SESSION['page'] == "/test.php") {
-  echo $_SESSION['prix']=rand(2,4);
-  if($_SESSION['prix']==2) {
-    $sql = "UPDATE user SET user_rang='progresser', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
+if ($_SESSION['page'] == '/test.php') {
+  echo $_SESSION['prix'] = rand(2, 4);
+  if ($_SESSION['prix'] == 2) {
+    $sql =
+      "UPDATE user SET user_rang='progresser', user_date='" .
+      $date .
+      "' WHERE user_id=" .
+      $_SESSION['user_id'] .
+      '';
     $conn->query($sql);
-  } else if ($_SESSION['prix']==3) {
-    $sql = "UPDATE user SET user_rang='peaufiner', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
+  } elseif ($_SESSION['prix'] == 3) {
+    $sql =
+      "UPDATE user SET user_rang='peaufiner', user_date='" .
+      $date .
+      "' WHERE user_id=" .
+      $_SESSION['user_id'] .
+      '';
     $conn->query($sql);
-  } else if ($_SESSION['prix']==4) {
-    $sql = "UPDATE user SET user_rang='confirmer', user_date='".$date."' WHERE user_id=".$_SESSION['user_id']."";
+  } elseif ($_SESSION['prix'] == 4) {
+    $sql =
+      "UPDATE user SET user_rang='confirmer', user_date='" .
+      $date .
+      "' WHERE user_id=" .
+      $_SESSION['user_id'] .
+      '';
     $conn->query($sql);
   }
-  $_SESSION['page'] = "";
-
+  $_SESSION['page'] = '';
 } else {
   echo "j'ajoute pas dans la bdd";
 }
 $_SESSION['page'] = $_SERVER['PHP_SELF'];
+
+
 ?>
