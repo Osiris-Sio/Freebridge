@@ -6,7 +6,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <html lang="fr" data-theme="light">
 <head>
     <meta charset="utf-8">
-    <title>Freebridge - Bridge Solver</title>
+    <title>Freebridge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/ico" href="favicon.ico">
     
@@ -21,6 +21,9 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="js/theme.js"></script>
     <script src="js/nav.js"></script>
+    <script src="js/toast.js"></script>
+    <script src="js/password-toggle.js"></script>
+    <script src="js/charts.js"></script>
     <script>
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);

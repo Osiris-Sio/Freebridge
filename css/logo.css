@@ -21,7 +21,7 @@
   text-align: center;
   margin-top: 60px;
   padding-top: 20px;
-  border-top: 1px solid var(--pico-muted-border-color);
+  border-top: 3px solid var(--pico-primary-hover-background);
 }
 
 .footer-logos {
@@ -44,24 +44,6 @@
 .footer-logo-item:hover {
   opacity: 1;
   transform: scale(1.05);
-}
-
-/* Adaptation spécifique pour Osiris Corporation (Double visuels) */
-
-/* Comportement par défaut (Masque les versions inadaptées) */
-.logo-osiris-dark,
-.logo-osiris-light {
-  display: none;
-}
-
-/* Mode Sombre : On affiche uniquement la version blanche */
-[data-theme='dark'] .logo-osiris-dark {
-  display: inline-block;
-}
-
-/* Mode Clair : On affiche uniquement la version noire */
-[data-theme='light'] .logo-osiris-light {
-  display: inline-block;
 }
 
 /* Transition et Opacité douce */

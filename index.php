@@ -136,5 +136,5 @@ function showSlides() {
   setTimeout(showSlides, 5000);
 }
 </script>
-<?php include 'includes/footer1.php';
+<?php include 'includes/footer.php';
 ?>
