@@ -6,7 +6,10 @@
  */
 
 // Messages de succès (Confirmations)
-if (isset($_SESSION['messages']['confirm']) && is_array($_SESSION['messages']['confirm'])) {
+if (
+  isset($_SESSION['messages']['confirm']) &&
+  is_array($_SESSION['messages']['confirm'])
+) {
   foreach ($_SESSION['messages']['confirm'] as $message) { ?>
         <article role="alert" class="toast toast-success">
             <header>
@@ -20,7 +23,10 @@ if (isset($_SESSION['messages']['confirm']) && is_array($_SESSION['messages']['c
 }
 
 // Messages d'erreur
-if (isset($_SESSION['messages']['errors']) && is_array($_SESSION['messages']['errors'])) {
+if (
+  isset($_SESSION['messages']['errors']) &&
+  is_array($_SESSION['messages']['errors'])
+) {
   foreach ($_SESSION['messages']['errors'] as $error) { ?>
         <article role="alert" class="toast toast-error">
             <header>

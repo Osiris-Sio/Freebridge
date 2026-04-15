@@ -12,7 +12,8 @@ include 'includes/header.php'; ?>
                 <p><strong>Introduction</strong><br />
                     Devant le d&eacute;veloppement des nouveaux outils de communication, il est n&eacute;cessaire de porter une attention particuli&egrave;re &agrave; la protection de la vie priv&eacute;e.
                     C'est pourquoi, nous nous engageons &agrave; respecter la confidentialit&eacute; des renseignements personnels que nous collectons.
-                </p><hr/>
+                </p>
+                <hr />
                 <h2>Collecte des renseignements personnels</h2>
                 <p>
                     Nous collectons les renseignements suivants :
@@ -28,7 +29,8 @@ include 'includes/header.php'; ?>
                     l'interactivit&eacute; &eacute;tablie entre vous et notre site Web.
                     Nous utilisons &eacute;galement, comme indiqu&eacute; dans la section suivante, des fichiers t&eacute;moins et/ou journaux
                     pour r&eacute;unir des informations vous concernant.
-                </p><hr/>
+                </p>
+                <hr />
                 <h2>Formulaires&nbsp; et interactivit&eacute;:</h2>
                 <p>
                     Vos renseignements personnels sont collect&eacute;s par le biais de formulaire, &agrave; savoir :
@@ -52,7 +54,7 @@ include 'includes/header.php'; ?>
                 <ul>
                     <li>Correspondance</li>
                 </ul>
-                <hr/>
+                <hr />
                 <h2>S&eacute;curit&eacute;</h2>
                 <p>
 

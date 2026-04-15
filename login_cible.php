@@ -3,12 +3,21 @@ include 'includes/header.php';
 $login = strtolower($_POST['login']);
 $mdp = sha1($_POST['password']);
 $sql =
-  "SELECT COUNT(*) FROM user WHERE user_mail ='" . $login . "' AND user_password ='" . $mdp . "'";
+  "SELECT COUNT(*) FROM user WHERE user_mail ='" .
+  $login .
+  "' AND user_password ='" .
+  $mdp .
+  "'";
 $result = $conn->prepare($sql);
 $result->execute();
 $number_of_rows = $result->fetchColumn();
 if ($number_of_rows > 0) {
-  $sql = "SELECT * FROM user WHERE user_mail ='" . $login . "' AND user_password ='" . $mdp . "'";
+  $sql =
+    "SELECT * FROM user WHERE user_mail ='" .
+    $login .
+    "' AND user_password ='" .
+    $mdp .
+    "'";
   $result = $conn->query($sql);
   while ($rows = $result->fetch()) {
     $loginbdd = $rows['user_mail'];
@@ -31,4 +40,3 @@ if ($number_of_rows > 0) {
 }, 3000)</script>';
 }
 include 'includes/footer.php';
-?>

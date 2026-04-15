@@ -42,7 +42,7 @@ include 'includes/header.php'; ?>
                         <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
                             <input required type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
                             <span class="mdl-checkbox__label">En cochant cette case vous acceptez que Freebridge enregistrer les informations saisis ci-dessous
-							</span>
+                            </span>
                         </label>
                     </div>
                     <div id="divregisterbtn">
@@ -59,6 +59,3 @@ include 'includes/header.php'; ?>
     </div>
 </main>
 <?php include 'includes/footer.php'; ?>
-
-
-

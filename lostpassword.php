@@ -16,7 +16,7 @@ include 'includes/header.php'; ?>
                         Envoyer un nouveau mot de passe
                     </button>
                     <br>
-                    <button style="margin-top: 2%; margin-bottom: 2%;background-color: #003D00;%" type="button" onclick="document.location.href='login.php'" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                    <button style="margin-top: 2%; margin-bottom: 2%;background-color: #003D00" type="button" onclick="document.location.href='login.php'" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
                         Retour
                     </button>
                 </form>

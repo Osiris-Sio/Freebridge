@@ -20,7 +20,7 @@ include 'includes/header.php'; ?>
                         </div>
                     </div>
                     <button style="margin-top: 2%; margin-bottom: 2%;background-color: darkgreen; margin-right: 2%" type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-						Connexion
+                        Connexion
                     </button>
                     <a href="lostpassword.php" id="linkregister">Mot de passe oublié ?</a>
                 </form>
@@ -30,4 +30,3 @@ include 'includes/header.php'; ?>
         </section>
     </div>
 </main>
-

@@ -88,7 +88,9 @@ require_once dirname(__FILE__) . '/pdo.php';
                     <strong>Erreur</strong>
                     <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
                 </header>
-                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_error']) ?></div>
+                <div class="toast-content"><?= htmlspecialchars(
+                  $_SESSION['flash_error'],
+                ) ?></div>
             </article>
             <?php unset($_SESSION['flash_error']); ?>
         <?php } ?>
@@ -99,7 +101,9 @@ require_once dirname(__FILE__) . '/pdo.php';
                     <strong>Succès</strong>
                     <span class="closebtn" onclick="this.parentElement.parentElement.remove()">&times;</span>
                 </header>
-                <div class="toast-content"><?= htmlspecialchars($_SESSION['flash_success']) ?></div>
+                <div class="toast-content"><?= htmlspecialchars(
+                  $_SESSION['flash_success'],
+                ) ?></div>
             </article>
             <?php unset($_SESSION['flash_success']); ?>
         <?php } ?>

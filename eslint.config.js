@@ -1,8 +1,8 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import html from 'eslint-plugin-html';
-import prettierConfig from 'eslint-config-prettier';
-import prettierPlugin from 'eslint-plugin-prettier';
+import js from '@eslint/js'
+import globals from 'globals'
+import html from 'eslint-plugin-html'
+import prettierConfig from 'eslint-config-prettier'
+import prettierPlugin from 'eslint-plugin-prettier'
 
 export default [
   // Configuration de base pour tous les fichiers JS
@@ -13,11 +13,11 @@ export default [
       sourceType: 'module',
       globals: {
         ...globals.browser,
-        ...globals.node
-      }
+        ...globals.node,
+      },
     },
     plugins: {
-      prettier: prettierPlugin
+      prettier: prettierPlugin,
     },
     rules: {
       ...js.configs.recommended.rules,
@@ -30,23 +30,23 @@ export default [
       eqeqeq: ['error', 'always'], // Force l'utilisation de === et !==
       curly: ['error', 'all'], // Force les accolades pour les blocs if/else
       'no-var': 'error', // Interdit 'var' (utilise 'let' ou 'const')
-      'prefer-const': 'error' // Force 'const' si la variable n'est pas réassignée
-    }
+      'prefer-const': 'error', // Force 'const' si la variable n'est pas réassignée
+    },
   },
 
   // Support du JS dans les fichiers HTML
   {
     files: ['**/*.html'],
     plugins: {
-      html
+      html,
     },
     settings: {
-      'html/html-extensions': ['.html']
-    }
+      'html/html-extensions': ['.html'],
+    },
   },
 
   // Ignorer certains dossiers
   {
-    ignores: ['node_modules/', 'dist/', 'vendor/']
-  }
-];
+    ignores: ['node_modules/', 'dist/', 'vendor/'],
+  },
+]

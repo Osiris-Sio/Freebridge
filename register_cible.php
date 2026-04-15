@@ -26,28 +26,28 @@ if ($number_of_rows == 0) {
   );
   $sql->execute();
   ?>
-	<main class="mdl-layout__content">
-    		<div class="page-content">
-        		<section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
-            			<div class="page-content colorgreen" style="color: black; text-align: center">
-                			Votre compte à bien été créé. Vous allez être redirigé vers la page de connexion
-                                </div>
-        		</section>
-    		</div>
-	</main>
-	<?php echo '<script>setTimeout(function() { document.location.href="login.php"}, 3000)</script>';
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
+        <div class="page-content colorgreen" style="color: black; text-align: center">
+          Votre compte à bien été créé. Vous allez être redirigé vers la page de connexion
+        </div>
+      </section>
+    </div>
+  </main>
+<?php echo '<script>setTimeout(function() { document.location.href="login.php"}, 3000)</script>';
 } else {
    ?>
-	<main class="mdl-layout__content">
-    		<div class="page-content">
-        		<section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
-            			<div class="page-content colorgreen" style="color: black; text-align: center">
-                			Un compte existe d&eacute;j&agrave; avec cet adresse mail
-                                </div>
-        		</section>
-    		</div>
-	</main>
-	<?php echo '<script>setTimeout(function() { document.location.href="register.php"}, 3000)</script>';
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
+        <div class="page-content colorgreen" style="color: black; text-align: center">
+          Un compte existe d&eacute;j&agrave; avec cet adresse mail
+        </div>
+      </section>
+    </div>
+  </main>
+<?php echo '<script>setTimeout(function() { document.location.href="register.php"}, 3000)</script>';
 }
 
 include 'includes/footer.php';

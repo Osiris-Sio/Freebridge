@@ -7,7 +7,10 @@
     <meta http-equiv="Expires" content="0" />
     <meta http-equiv="Cache-Control" content="no-cache" />
     <meta http-equiv="Pragma" content="no-cache" />
-    <meta name="viewport" content="width=800, target-densitydpi=device-dpi, user-scalable=yes" />
+    <meta
+      name="viewport"
+      content="width=800, target-densitydpi=device-dpi, user-scalable=yes"
+    />
     <link rel="stylesheet" href="assets/css/ddummy.css?ver=5" type="text/css" />
     <title>Bridge Solver Online</title>
     <style type="text/css">
@@ -26,435 +29,456 @@
   </head>
   <script language="JavaScript">
     function getParaName(parameters, i) {
-      var temp = parameters[i].split('=');
+      var temp = parameters[i].split('=')
 
-      var pname = unescape(temp[0]);
+      var pname = unescape(temp[0])
 
-      return pname;
+      return pname
     }
 
     function getPara(parameters, i) {
-      var temp = parameters[i].split('=');
+      var temp = parameters[i].split('=')
 
-      var pname = unescape(temp[0]);
-      var l = unescape(temp[1]);
+      var pname = unescape(temp[0])
+      var l = unescape(temp[1])
 
       if (l.length >= 2) {
         if (l.charAt(0) == '"') {
-          l = l.substr(1, l.length);
+          l = l.substr(1, l.length)
         }
         if (l.charAt(l.length - 1) == '"') {
-          l = l.substr(0, l.length - 1);
+          l = l.substr(0, l.length - 1)
         }
       }
 
-      return l;
+      return l
     }
 
     function extractParas() {
-      var validDealers = 'NSEW';
-      var i;
-      var p = location.search;
+      var validDealers = 'NSEW'
+      var i
+      var p = location.search
 
-      if (p.length == 0) return false; // No parameters
+      if (p.length == 0) return false // No parameters
 
-      p = location.search.substring(1).split('&');
+      p = location.search.substring(1).split('&')
 
-      var b = new Object();
-      b.boards = new Array();
+      var b = new Object()
+      b.boards = new Array()
 
-      var board = new Object();
-      var deal = new Array();
-      var ddPresent = false;
-      var pname;
-      var pvalue;
-      var jsonlin = '';
+      var board = new Object()
+      var deal = new Array()
+      var ddPresent = false
+      var pname
+      var pvalue
+      var jsonlin = ''
 
       for (i = 0; i < p.length; i++) {
-        pname = getParaName(p, i).toLowerCase();
-        pvalue = getPara(p, i);
+        pname = getParaName(p, i).toLowerCase()
+        pvalue = getPara(p, i)
 
         if (pname == 'board') {
           if (pvalue.length > 15) {
-            alert('Board parameter value is too long (maximum 15 characters)');
-            return '';
+            alert('Board parameter value is too long (maximum 15 characters)')
+            return ''
           }
 
-          board.board = pvalue;
+          board.board = pvalue
         } else if (pname == 'dealer') {
-          pvalue = pvalue.toUpperCase();
+          pvalue = pvalue.toUpperCase()
 
           if (pvalue.length != 1)
-            alert('Invalid value for Dealer parameter (must be single character)');
+            alert(
+              'Invalid value for Dealer parameter (must be single character)',
+            )
           else {
-            var index = validDealers.indexOf(pvalue);
+            var index = validDealers.indexOf(pvalue)
 
             if (index == -1) {
-              alert('Invalid value for Dealer Parameter - must be one of N,S,E,W');
-              return '';
+              alert(
+                'Invalid value for Dealer Parameter - must be one of N,S,E,W',
+              )
+              return ''
             }
           }
 
-          board.Dealer = pvalue;
+          board.Dealer = pvalue
         } else if (pname == 'vul') {
-          pvalue = pvalue.toUpperCase();
+          pvalue = pvalue.toUpperCase()
 
-          if ((pvalue != 'NS') & (pvalue != 'EW') & (pvalue != 'ALL') & (pvalue != 'NONE')) {
-            alert('Invalid vulnerability - must be one of NS,EW,All, or None');
-            return '';
+          if (
+            (pvalue != 'NS') &
+            (pvalue != 'EW') &
+            (pvalue != 'ALL') &
+            (pvalue != 'NONE')
+          ) {
+            alert('Invalid vulnerability - must be one of NS,EW,All, or None')
+            return ''
           }
 
-          if (pvalue == 'ALL') pvalue = 'All';
-          if (pvalue == 'BOTH') pvalue = 'All';
-          if (pvalue == 'NONE') pvalue = 'None';
+          if (pvalue == 'ALL') pvalue = 'All'
+          if (pvalue == 'BOTH') pvalue = 'All'
+          if (pvalue == 'NONE') pvalue = 'None'
 
-          board.Vulnerable = pvalue;
-        } else if (pname == 'north') deal[0] = pvalue.toUpperCase();
-        else if (pname == 'east') deal[1] = pvalue.toUpperCase();
-        else if (pname == 'south') deal[2] = pvalue.toUpperCase();
-        else if (pname == 'west') deal[3] = pvalue.toUpperCase();
+          board.Vulnerable = pvalue
+        } else if (pname == 'north') deal[0] = pvalue.toUpperCase()
+        else if (pname == 'east') deal[1] = pvalue.toUpperCase()
+        else if (pname == 'south') deal[2] = pvalue.toUpperCase()
+        else if (pname == 'west') deal[3] = pvalue.toUpperCase()
         else if (pname == 'contract') {
-          var contract = pvalue.toUpperCase();
-          pvalue = pvalue.replace(/X/g, 'x');
-          pvalue = pvalue.replace(/\*/g, 'x');
+          var contract = pvalue.toUpperCase()
+          pvalue = pvalue.replace(/X/g, 'x')
+          pvalue = pvalue.replace(/\*/g, 'x')
 
-          if (validateContract(pvalue)) board.Contract = pvalue;
+          if (validateContract(pvalue)) board.Contract = pvalue
         } else if (pname == 'declarer') {
-          pvalue = pvalue.toUpperCase();
+          pvalue = pvalue.toUpperCase()
 
           if (pvalue.length == 1)
-            if (validDealers.indexOf(pvalue) != -1) board.Declarer = pvalue.toUpperCase();
+            if (validDealers.indexOf(pvalue) != -1)
+              board.Declarer = pvalue.toUpperCase()
         } else if (pname == 'title') {
-          b.Title = pvalue;
+          b.Title = pvalue
         } else if (
           pname == 'analyse'
         ) // calculate makeable contracts and par contract/score automatically
         {
-          if (pvalue.toUpperCase() == 'TRUE') b.forceAnalyse = 1;
+          if (pvalue.toUpperCase() == 'TRUE') b.forceAnalyse = 1
         } else if (pname == 'dd') {
-          pvalue = pvalue.toLowerCase();
+          pvalue = pvalue.toLowerCase()
 
           if (pvalue.length != 20) {
-            alert('Double Dummy Tricks parameter must be 20 characters long');
-            return '';
+            alert('Double Dummy Tricks parameter must be 20 characters long')
+            return ''
           }
 
-          var substr = pvalue.replace(/[^1234567890abcd\-\*]/g, '');
+          var substr = pvalue.replace(/[^1234567890abcd\-\*]/g, '')
 
           if (substr.length != pvalue.length) {
             alert(
-              'Double Dummy parameter value may only contain the characters 0 to 9, a to d, A to D, -, and *'
-            );
-            return '';
+              'Double Dummy parameter value may only contain the characters 0 to 9, a to d, A to D, -, and *',
+            )
+            return ''
           }
 
-          var fullInfo = 0; // Set to 1 if full information is present in the dd string (not just for makeable contracts);
-          var j;
+          var fullInfo = 0 // Set to 1 if full information is present in the dd string (not just for makeable contracts);
+          var j
 
           for (j = 0; j < 20; j++) {
             if ((pvalue.charAt(j) > '1') & (pvalue.charAt(j) < '7')) {
               // 0 1nd 1 are often used to indicate number of tricks for a particular contract is not present, but any value
               // in range 2 to 7 inclusive suggests that full information is present.
-              fullInfo = 1;
-              break;
+              fullInfo = 1
+              break
             }
           }
 
-          var pvalue2 = '';
+          var pvalue2 = ''
 
           for (j = 0; j < 20; j++) {
             if (fullInfo == 0) {
-              if (pvalue.charAt(j) < '7') pvalue2 = pvalue2.concat('-');
-              else pvalue2 = pvalue2.concat(pvalue.charAt(j));
-            } else pvalue2 = pvalue2.concat(pvalue.charAt(j));
+              if (pvalue.charAt(j) < '7') pvalue2 = pvalue2.concat('-')
+              else pvalue2 = pvalue2.concat(pvalue.charAt(j))
+            } else pvalue2 = pvalue2.concat(pvalue.charAt(j))
           }
 
-          board.DoubleDummyTricks = pvalue2;
+          board.DoubleDummyTricks = pvalue2
 
-          ddPresent = true;
+          ddPresent = true
         } else if (pname == 'optimumscore') {
-          board.OptimumScore = pvalue;
+          board.OptimumScore = pvalue
         } else if (pname == 'leadcard') {
-          pvalue = pvalue.toUpperCase();
+          pvalue = pvalue.toUpperCase()
 
-          var validCard = true;
+          var validCard = true
 
-          if (pvalue.length != 2) validCard = false;
+          if (pvalue.length != 2) validCard = false
           else {
-            var cvalue = pvalue.charAt(0);
-            var cards = '23456789TJQKA';
+            var cvalue = pvalue.charAt(0)
+            var cards = '23456789TJQKA'
 
-            if (cards.indexOf(cvalue) == -1) validCard = false;
+            if (cards.indexOf(cvalue) == -1) validCard = false
             else {
-              var suit = 'CHDS';
+              var suit = 'CHDS'
 
-              if (suit.indexOf(pvalue.charAt(1)) == -1) validCard = false;
+              if (suit.indexOf(pvalue.charAt(1)) == -1) validCard = false
             }
           }
 
           if (validCard) {
-            pvalue = pvalue.toUpperCase();
-            var pvalue2 = '';
-            pvalue2 = pvalue.charAt(1).concat(pvalue.charAt(0));
-            var played = new Array();
-            played[0] = pvalue2;
-            board.Played = played;
-            board.Bids = new Array();
+            pvalue = pvalue.toUpperCase()
+            var pvalue2 = ''
+            pvalue2 = pvalue.charAt(1).concat(pvalue.charAt(0))
+            var played = new Array()
+            played[0] = pvalue2
+            board.Played = played
+            board.Bids = new Array()
           }
         } else if (pname == 'lin') {
-          b.lin = pvalue;
+          b.lin = pvalue
         } else if ((pname == 'eventid') | (pname == 'event')) {
-          b.event = pvalue;
+          b.event = pvalue
         } else if (pname == 'club') {
-          b.club = pvalue;
+          b.club = pvalue
         } else if (pname == 'pair_number') {
-          b.pair_number = pvalue;
+          b.pair_number = pvalue
         } else if (pname == 'direction') {
-          b.direction = pvalue;
+          b.direction = pvalue
         } else if (pname == 'compare') {
-          b.compare = 1;
+          b.compare = 1
         } else if (pname == 'file') {
-          b.file = pvalue;
+          b.file = pvalue
         } else if (pname == 'xml') {
-          b.xml = pvalue;
+          b.xml = pvalue
         } else if (pname == 'sessid') {
-          b.sessid = pvalue;
+          b.sessid = pvalue
         } else if (pname == 'msec') {
-          b.msec = pvalue; // Section Number for Multiple Section Events
+          b.msec = pvalue // Section Number for Multiple Section Events
         } else if (pname == 'display') {
-          pvalue = pvalue.toLowerCase();
+          pvalue = pvalue.toLowerCase()
 
-          if ((pvalue != 'allpairs') & (pvalue != 'personal') & (pvalue != 'board'))
+          if (
+            (pvalue != 'allpairs') &
+            (pvalue != 'personal') &
+            (pvalue != 'board')
+          )
             alert(
-              'value of "display" parameter, when present, must be "allpairs", "personal", or "board"'
-            );
-          else b.display = pvalue;
+              'value of "display" parameter, when present, must be "allpairs", "personal", or "board"',
+            )
+          else b.display = pvalue
         } else if (pname == 'analysis') {
           // Request is from BridgeWebs. This means that "Results Analysis" button will be displayed. If any 3rd party
           // site sets this parameter the button will be displayed but won't display any data.
-          b.analysis = pvalue.toLowerCase();
+          b.analysis = pvalue.toLowerCase()
         } else if (pname == 'debug') {
           if (pvalue == 'true')
             // any other setting is interpreted as "false"
-            b.debug = pvalue;
+            b.debug = pvalue
         } else if (pname == 'jsonlin') {
-          jsonlin = pvalue;
+          jsonlin = pvalue
         }
       }
 
       if (jsonlin == '') {
-        if (!ddPresent) board.DoubleDummyTricks = '********************';
+        if (!ddPresent) board.DoubleDummyTricks = '********************'
 
-        board.Deal = deal;
-        b.boards[0] = board;
+        board.Deal = deal
+        b.boards[0] = board
 
         if ((typeof b.file == 'undefined') & (typeof b.lin == 'undefined'))
-          if (validateBoard(board) == 0) return '';
+          if (validateBoard(board) == 0) return ''
 
-        if (!(typeof board.Declarer != undefined) & (typeof board.Contract != undefined)) {
+        if (
+          !(typeof board.Declarer != undefined) &
+          (typeof board.Contract != undefined)
+        ) {
           // Delete all these if either declarer or contract is not defined.
-          delete board.Declarer;
-          delete board.Contract;
-          delete board.Played;
-          delete board.Bids;
+          delete board.Declarer
+          delete board.Contract
+          delete board.Played
+          delete board.Bids
         }
       } else {
-        board = JSON.parse(jsonlin);
-        b.boards[0] = board;
+        board = JSON.parse(jsonlin)
+        b.boards[0] = board
 
-        if (validateBoard(board) == 0) return '';
+        if (validateBoard(board) == 0) return ''
       }
 
-      return b;
+      return b
     }
 
     function validateContract(pvalue) {
-      var suits = 'NSHDC';
+      var suits = 'NSHDC'
 
-      if (pvalue.length > 5) return false;
+      if (pvalue.length > 5) return false
 
-      var level = pvalue.charAt(0);
+      var level = pvalue.charAt(0)
 
-      if ((level < '1') | (level > '7')) return false;
-      if (suits.indexOf(pvalue.charAt(1)) == -1) return false;
+      if ((level < '1') | (level > '7')) return false
+      if (suits.indexOf(pvalue.charAt(1)) == -1) return false
 
-      return true;
+      return true
     }
 
     function checkDeal(board, polarity) {
-      var p = ['North', 'East', 'South', 'West'];
-      var dir = p[polarity];
-      var str = board.Deal[polarity].replace(/[23456789TAJQK]/g, '');
+      var p = ['North', 'East', 'South', 'West']
+      var dir = p[polarity]
+      var str = board.Deal[polarity].replace(/[23456789TAJQK]/g, '')
       //		if (str.length!=board.Deal[polarity].length-13) {alert(dir + " Hand does not contain exactly 13 cards");return 0;};
-      var str2 = str.replace(/\./g, '');
+      var str2 = str.replace(/\./g, '')
       if (str2.length != str.length - 3) {
-        alert(dir + ' Hand does not contain exactly 3 suit separators');
-        return 0;
+        alert(dir + ' Hand does not contain exactly 3 suit separators')
+        return 0
       }
       if (str2.length != 0) {
-        alert(dir + ' Hand contains invalid characters');
-        return 0;
+        alert(dir + ' Hand contains invalid characters')
+        return 0
       }
-      return 1;
+      return 1
     }
 
     function checkForDuplicates(board) {
-      var cvalues = '23456789TJQKA';
-      var i, j, k, cardIndex;
-      var cards = new Array(4);
+      var cvalues = '23456789TJQKA'
+      var i, j, k, cardIndex
+      var cards = new Array(4)
 
-      for (i = 0; i < cards.length; i++) cards[i] = new Array(13);
+      for (i = 0; i < cards.length; i++) cards[i] = new Array(13)
 
-      for (i = 0; i < 4; i++) for (j = 0; j < 13; j++) cards[i][j] = 0;
+      for (i = 0; i < 4; i++) for (j = 0; j < 13; j++) cards[i][j] = 0
 
       for (
         i = 0;
         i < 4;
         i++ // For each polarity N,E,S,W
       ) {
-        var hand = board.Deal[i];
-        hand = hand.split('.');
+        var hand = board.Deal[i]
+        hand = hand.split('.')
 
         for (j = 0; j < 4; j++) {
           for (k = 0; k < hand[j].length; k++) {
-            cardIndex = cvalues.indexOf(hand[j][k]);
+            cardIndex = cvalues.indexOf(hand[j][k])
 
             if (cards[j][cardIndex] != 0) {
-              alert('Invalid Deal - duplicate card detected');
-              return 0;
-            } else cards[j][cardIndex]++;
+              alert('Invalid Deal - duplicate card detected')
+              return 0
+            } else cards[j][cardIndex]++
           }
         }
       }
 
-      return 1;
+      return 1
     }
 
     function validateBoard(board) {
       // First, check that all mandatory parameters are present
       if (typeof board.board == 'undefined') {
-        alert('Board Number not specified');
-        return 0;
+        alert('Board Number not specified')
+        return 0
       }
       if (typeof board.Dealer == 'undefined') {
-        alert('Dealer not specified');
-        return 0;
+        alert('Dealer not specified')
+        return 0
       }
       if (typeof board.Vulnerable == 'undefined') {
-        alert('Vulnerability not specified');
-        return 0;
+        alert('Vulnerability not specified')
+        return 0
       }
       if (typeof board.Deal[0] == 'undefined') {
-        alert('North hand not specified');
-        return 0;
+        alert('North hand not specified')
+        return 0
       }
       if (typeof board.Deal[1] == 'undefined') {
-        alert('East hand not specified');
-        return 0;
+        alert('East hand not specified')
+        return 0
       }
       if (typeof board.Deal[2] == 'undefined') {
-        alert('South hand not specified');
-        return 0;
+        alert('South hand not specified')
+        return 0
       }
       if (typeof board.Deal[3] == 'undefined') {
-        alert('West hand not specified');
-        return 0;
+        alert('West hand not specified')
+        return 0
       }
 
-      if (checkDeal(board, 0) == 0) return 0;
-      if (checkDeal(board, 1) == 0) return 0;
-      if (checkDeal(board, 2) == 0) return 0;
-      if (checkDeal(board, 3) == 0) return 0;
+      if (checkDeal(board, 0) == 0) return 0
+      if (checkDeal(board, 1) == 0) return 0
+      if (checkDeal(board, 2) == 0) return 0
+      if (checkDeal(board, 3) == 0) return 0
 
-      if (checkForDuplicates(board) == 0) return 0;
+      if (checkForDuplicates(board) == 0) return 0
 
-      return 1;
+      return 1
     }
 
     function createEmptyBoard() {
-      var result = new Object();
-      var board = new Object();
-      board.board = '1';
-      board.Vulnerable = 'None';
-      board.Dealer = 'N';
-      board.Deal = ['...', '...', '...', '...'];
-      board.DoubleDummyTricks = '********************';
-      result.boards = new Array();
-      result.boards.push(board);
+      var result = new Object()
+      var board = new Object()
+      board.board = '1'
+      board.Vulnerable = 'None'
+      board.Dealer = 'N'
+      board.Deal = ['...', '...', '...', '...']
+      board.DoubleDummyTricks = '********************'
+      result.boards = new Array()
+      result.boards.push(board)
 
-      document.getElementById('form1').style.display = 'none';
+      document.getElementById('form1').style.display = 'none'
       buildPage(
         result,
-        "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}"
-      );
+        "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}",
+      )
     }
 
     function readText(file) {
-      var reader = new FileReader();
+      var reader = new FileReader()
       reader.onload = function (e) {
-        var result = new Object();
-        result.handstr = e.target.result;
+        var result = new Object()
+        result.handstr = e.target.result
 
-        var filename = file.name.toUpperCase();
+        var filename = file.name.toUpperCase()
 
-        if (filename.endsWith('.PBN')) result.handstrType = 'pbn';
-        else if (filename.endsWith('.LIN')) result.handstrType = 'lin';
-        else result.handstrType = 'dlm';
+        if (filename.endsWith('.PBN')) result.handstrType = 'pbn'
+        else if (filename.endsWith('.LIN')) result.handstrType = 'lin'
+        else result.handstrType = 'dlm'
 
-        result.board = 1;
+        result.board = 1
 
         if (result != '') {
-          document.getElementById('form1').style.display = 'none';
+          document.getElementById('form1').style.display = 'none'
           buildPage(
             result,
-            "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}"
-          );
+            "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}",
+          )
         }
-      }; //end onload()
+      } //end onload()
 
-      reader.readAsText(file);
+      reader.readAsText(file)
     }
 
     function handleLoadFileSelect(evt) {
-      var files = evt.target.files;
+      var files = evt.target.files
 
       if (files.length > 0) {
-        var infile = files[0];
+        var infile = files[0]
 
         if (
           infile.name.toUpperCase().endsWith('.PBN') |
           infile.name.toUpperCase().endsWith('.LIN') |
           infile.name.toUpperCase().endsWith('.DLM')
         ) {
-          readText(infile);
-          evt.target.value = null;
+          readText(infile)
+          evt.target.value = null
         } else {
-          alert('Not a PBN, LIN, or DLM file');
+          alert('Not a PBN, LIN, or DLM file')
         }
       }
     }
 
     function processRequest() {
-      var result = extractParas();
+      var result = extractParas()
 
       if (result === false) {
-        document.getElementById('form1').style.display = 'block';
-        var loadfilectl = document.getElementById('loadFile');
-        loadfilectl.addEventListener('change', handleLoadFileSelect, false);
-        return;
+        document.getElementById('form1').style.display = 'block'
+        var loadfilectl = document.getElementById('loadFile')
+        loadfilectl.addEventListener('change', handleLoadFileSelect, false)
+        return
       }
 
       if (result != '')
         buildPage(
           result,
-          "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}"
-        );
+          "{'options':{'ns':['true','false','false'],'ew':['true','false','false'],'mk':['true','false'],'auto':'true'}}",
+        )
 
-      window.focus();
+      window.focus()
     }
   </script>
-  <body id="bdy" style="background-color: white; width: 800px" onLoad="processRequest();">
-    <span id="ruler"> </span>
+  <body
+    id="bdy"
+    style="background-color: white; width: 800px"
+    onLoad="processRequest();"
+  >
+    <span id="ruler"></span>
     <div
       class="container"
       id="form1"
@@ -468,8 +492,11 @@
         display: none;
       "
     >
-      <span style="font-size: 20px; font-weight: bold; color: #3366ff">Bridge Solver Online</span
-      ><br /><br />
+      <span style="font-size: 20px; font-weight: bold; color: #3366ff">
+        Bridge Solver Online
+      </span>
+      <br />
+      <br />
       <form method="post" action="" enctype="multipart/form-data" id="myform">
         <div>
           <input
@@ -479,9 +506,22 @@
             onclick="document.getElementById('loadFile').click()"
           />
           Open a PBN, DLM, or LIN file
-          <input type="file" id="loadFile" name="loadfiles[]" style="display: none" /><br /><br />
-          Or<br /><br />
-          <input type="button" value="Input Hand" onclick="createEmptyBoard()" />
+          <input
+            type="file"
+            id="loadFile"
+            name="loadfiles[]"
+            style="display: none"
+          />
+          <br />
+          <br />
+          Or
+          <br />
+          <br />
+          <input
+            type="button"
+            value="Input Hand"
+            onclick="createEmptyBoard()"
+          />
         </div>
       </form>
     </div>
@@ -499,11 +539,23 @@
         "
       >
         <button class="menuButton" id="aboard">Play It Again</button>
-        <button class="sessionMenuButton" id="aranking" style="margin-left: 10px; min-width: 95px">
+        <button
+          class="sessionMenuButton"
+          id="aranking"
+          style="margin-left: 10px; min-width: 95px"
+        >
           All Pairs
         </button>
-        <button class="sessionMenuButton" id="ascorecard" style="min-width: 95px">Personal</button>
-        <button class="sessionMenuButton" id="aacc" style="min-width: 95px">Accuracy</button>
+        <button
+          class="sessionMenuButton"
+          id="ascorecard"
+          style="min-width: 95px"
+        >
+          Personal
+        </button>
+        <button class="sessionMenuButton" id="aacc" style="min-width: 95px">
+          Accuracy
+        </button>
         <button
           class="sessionMenuButton"
           id="atraveller"
@@ -511,12 +563,28 @@
         >
           Board
         </button>
-        <button class="sessionMenuButton" id="aprev" style="min-width: 20px; margin-left: 10px">
+        <button
+          class="sessionMenuButton"
+          id="aprev"
+          style="min-width: 20px; margin-left: 10px"
+        >
           <
         </button>
-        <button class="sessionMenuButton" id="agotoboard" style="min-width: 95px">Go To..</button>
-        <button class="sessionMenuButton" id="anext" style="min-width: 20px">></button>
-        <button class="sessionMenuButton" id="acheck" style="margin-left: 10px; min-width: 95px">
+        <button
+          class="sessionMenuButton"
+          id="agotoboard"
+          style="min-width: 95px"
+        >
+          Go To..
+        </button>
+        <button class="sessionMenuButton" id="anext" style="min-width: 20px">
+          >
+        </button>
+        <button
+          class="sessionMenuButton"
+          id="acheck"
+          style="margin-left: 10px; min-width: 95px"
+        >
           Check
         </button>
         <button
@@ -565,29 +633,58 @@
                         <tr>
                           <td width="33%">&nbsp;</td>
                           <td id="northHand" width="33%">
-                            &#9824; K 4 2<br /><font color="Red">&#9829;</font> K 3 2<br /><font
-                              color="Red"
-                              >&#9830;</font
-                            >
-                            K J 7<br />&#9827; 10 9 8 4<br />
+                            &#9824; K 4 2
+                            <br />
+                            <font color="Red">&#9829;</font>
+                            K 3 2
+                            <br />
+                            <font color="Red">&#9830;</font>
+                            K J 7
+                            <br />
+                            &#9827; 10 9 8 4
+                            <br />
                           </td>
-                          <td id="currentPosition" width="33%" align="center" valign="middle">
+                          <td
+                            id="currentPosition"
+                            width="33%"
+                            align="center"
+                            valign="middle"
+                          >
                             &nbsp;
                           </td>
                         </tr>
                         <tr>
                           <td id="westHand" width="33%" align="center">
-                            &#9824; A 8 7 5<br /><font color="Red">&#9829;</font> 10 9 7 6<br /><font
-                              color="Red"
-                              >&#9830;</font
-                            >
-                            Q 6<br />&#9827; A J 7<br />
+                            &#9824; A 8 7 5
+                            <br />
+                            <font color="Red">&#9829;</font>
+                            10 9 7 6
+                            <br />
+                            <font color="Red">&#9830;</font>
+                            Q 6
+                            <br />
+                            &#9827; A J 7
+                            <br />
                           </td>
-                          <td width="33%" height="100%" valign="middle" align="center">
-                            <table id="vul" class="vul" style="width: 120px; height: 120px">
+                          <td
+                            width="33%"
+                            height="100%"
+                            valign="middle"
+                            align="center"
+                          >
+                            <table
+                              id="vul"
+                              class="vul"
+                              style="width: 120px; height: 120px"
+                            >
                               <tr height="20px">
                                 <td width="20px"></td>
-                                <td id="nvul" align="center" valign="top" height="20px"></td>
+                                <td
+                                  id="nvul"
+                                  align="center"
+                                  valign="top"
+                                  height="20px"
+                                ></td>
                                 <td width="20px"></td>
                               </tr>
                               <tr height="100%">
@@ -603,21 +700,38 @@
                                   valign="middle"
                                   style="font-size: 24px"
                                 ></td>
-                                <td width="20px" id="evul" align="center" valign="middle"></td>
+                                <td
+                                  width="20px"
+                                  id="evul"
+                                  align="center"
+                                  valign="middle"
+                                ></td>
                               </tr>
                               <tr height="20px">
                                 <td height="20px"></td>
-                                <td id="svul" align="center" valign="bottom" height="10px">O</td>
+                                <td
+                                  id="svul"
+                                  align="center"
+                                  valign="bottom"
+                                  height="10px"
+                                >
+                                  O
+                                </td>
                                 <td></td>
                               </tr>
                             </table>
                           </td>
                           <td id="eastHand" width="33%">
-                            &#9824; J 10<br /><font color="Red">&#9829;</font> Q J 4<br /><font
-                              color="Red"
-                              >&#9830;</font
-                            >
-                            A 10 9 8 2<br />&#9827; Q 6 5<br />
+                            &#9824; J 10
+                            <br />
+                            <font color="Red">&#9829;</font>
+                            Q J 4
+                            <br />
+                            <font color="Red">&#9830;</font>
+                            A 10 9 8 2
+                            <br />
+                            &#9827; Q 6 5
+                            <br />
                           </td>
                         </tr>
                         <tr>
@@ -625,7 +739,11 @@
                             <table id="points" class="pointsTable" width="100%">
                               <tr>
                                 <td width="33%"></td>
-                                <td width="33%" valign="bottom" align="center"></td>
+                                <td
+                                  width="33%"
+                                  valign="bottom"
+                                  align="center"
+                                ></td>
                                 <td width="33%"></td>
                               </tr>
                               <tr>
@@ -641,11 +759,16 @@
                             </table>
                           </td>
                           <td id="southHand" width="33%">
-                            &#9824; Q 9 6 3<br /><font color="Red">&#9829;</font> A 8 5<br /><font
-                              color="Red"
-                              >&#9830;</font
-                            >
-                            5 4 3<br />&#9827; K 3 2<br />
+                            &#9824; Q 9 6 3
+                            <br />
+                            <font color="Red">&#9829;</font>
+                            A 8 5
+                            <br />
+                            <font color="Red">&#9830;</font>
+                            5 4 3
+                            <br />
+                            &#9827; K 3 2
+                            <br />
                           </td>
                           <td width="33%" style="align: center; valign: middle">
                             <div id="mctable" style="width: 100%">
@@ -659,8 +782,12 @@
                                 <tr>
                                   <td></td>
                                   <td>&#9827;</td>
-                                  <td><font color="Red">&#9830;</font></td>
-                                  <td><font color="Red">&#9829;</font></td>
+                                  <td>
+                                    <font color="Red">&#9830;</font>
+                                  </td>
+                                  <td>
+                                    <font color="Red">&#9829;</font>
+                                  </td>
                                   <td>&#9824;</td>
                                   <td>
                                     NT
@@ -719,7 +846,9 @@
                 >
                   <tr style="padding: 0px">
                     <td align="LEFT">
-                      <button id="bsession" class="sessionMenuButton">Results Analysis</button>
+                      <button id="bsession" class="sessionMenuButton">
+                        Results Analysis
+                      </button>
                       <button
                         class="btn-circle"
                         id="bsessionHelp"
@@ -730,7 +859,11 @@
                       </button>
                     </td>
                     <td align="center">
-                      <button id="prev" class="menuButton" style="min-width: 25px; width: 25px">
+                      <button
+                        id="prev"
+                        class="menuButton"
+                        style="min-width: 25px; width: 25px"
+                      >
                         <
                       </button>
                       <button
@@ -758,32 +891,66 @@
                       <button
                         id="deleteBoard"
                         class="menuButton"
-                        style="padding-right: 6px; padding-left: 6px; margin-right: 20px"
+                        style="
+                          padding-right: 6px;
+                          padding-left: 6px;
+                          margin-right: 20px;
+                        "
                       >
                         Delete
                       </button>
-                      <button id="saveLIN" class="menuButton">Save As LIN</button>
-                      <button id="saveBoards" class="menuButton">Save...</button>
+                      <button id="saveLIN" class="menuButton">
+                        Save As LIN
+                      </button>
+                      <button id="saveBoards" class="menuButton">
+                        Save...
+                      </button>
                       <button id="editHand" class="menuButton">Edit</button>
                       <button id="clearHand" class="menuButton">Clear</button>
                       <button id="backPlay" class="menuButton"><</button>
                       <button id="play" class="menuButton">Play</button>
-                      <button id="forwardPlay" class="menuButton" style="display: none">></button>
+                      <button
+                        id="forwardPlay"
+                        class="menuButton"
+                        style="display: none"
+                      >
+                        >
+                      </button>
                       <button id="options" class="menuButton">Options</button>
-                      <button class="menuButton" id="help" style="margin-right: 5px">Help</button>
+                      <button
+                        class="menuButton"
+                        id="help"
+                        style="margin-right: 5px"
+                      >
+                        Help
+                      </button>
                     </td>
 
                     <td align="RIGHT">
-                      <button id="branking" class="menuButton" style="min-width: 90px">
+                      <button
+                        id="branking"
+                        class="menuButton"
+                        style="min-width: 90px"
+                      >
                         Ranking
                       </button>
-                      <button class="menuButton" id="bscorecard" style="width: 95px">
+                      <button
+                        class="menuButton"
+                        id="bscorecard"
+                        style="width: 95px"
+                      >
                         Scorecard
                       </button>
-                      <button class="menuButton" id="btraveller" style="width: 95px">
+                      <button
+                        class="menuButton"
+                        id="btraveller"
+                        style="width: 95px"
+                      >
                         Traveller
                       </button>
-                      <button id="computeMakeable" class="menuButton">Analyse</button>
+                      <button id="computeMakeable" class="menuButton">
+                        Analyse
+                      </button>
                       <button id="tools" class="menuButton">More..</button>
                     </td>
                   </tr>
@@ -794,7 +961,16 @@
         </td>
       </tr>
     </table>
-    <div id="allBoards" style="float: left; padding: 0px; border: 0px; width: 800px; display: none">
+    <div
+      id="allBoards"
+      style="
+        float: left;
+        padding: 0px;
+        border: 0px;
+        width: 800px;
+        display: none;
+      "
+    >
       <div
         id="scrollDiv"
         style="
@@ -806,12 +982,17 @@
           overflow-y: auto;
         "
       >
-        <table id="travellers" style="border: 0px; border-collapse: collapse" align="center">
+        <table
+          id="travellers"
+          style="border: 0px; border-collapse: collapse"
+          align="center"
+        >
           <tr>
             <td style="align: center">
-              <span style="font-size: 16px"
-                >Scroll through boards and tap on a board number to make it the active board</span
-              >
+              <span style="font-size: 16px">
+                Scroll through boards and tap on a board number to make it the
+                active board
+              </span>
             </td>
           </tr>
         </table>
@@ -820,14 +1001,19 @@
         <table
           cellpadding="2px"
           cellspacing="0"
-          style="border-top: 2px solid black; border-collapse: collapse; width: 800px"
+          style="
+            border-top: 2px solid black;
+            border-collapse: collapse;
+            width: 800px;
+          "
           align="center"
         >
           <tr style="height: 20px">
             <td style="align: center">
-              <span style="font-size: 12px"
-                >Scroll through boards and tap on a board number to make it the active board</span
-              >
+              <span style="font-size: 12px">
+                Scroll through boards and tap on a board number to make it the
+                active board
+              </span>
             </td>
             <td style="align: right; vertical-align: middle">
               <div
@@ -842,11 +1028,18 @@
               >
                 <div
                   id="progress"
-                  style="background-color: #00ff00; float: left; height: 20px; width: 0px"
+                  style="
+                    background-color: #00ff00;
+                    float: left;
+                    height: 20px;
+                    width: 0px;
+                  "
                 ></div>
               </div>
               <div style="float: right">
-                <button id="analyseAll" class="menuButton" style="width: 100px">Analyse All</button>
+                <button id="analyseAll" class="menuButton" style="width: 100px">
+                  Analyse All
+                </button>
               </div>
             </td>
           </tr>
@@ -873,17 +1066,32 @@
       <table
         cellpadding="2px"
         cellspacing="0"
-        style="border-top: 2px solid black; border-collapse: collapse; width: 420px; align: center"
+        style="
+          border-top: 2px solid black;
+          border-collapse: collapse;
+          width: 420px;
+          align: center;
+        "
       >
         <tr style="height: 20px">
           <td style="align: center">
             <div
               id="progressBarBox"
-              style="border: 1px solid black; width: 400px; height: 20px; float: left"
+              style="
+                border: 1px solid black;
+                width: 400px;
+                height: 20px;
+                float: left;
+              "
             >
               <div
                 id="progressBar"
-                style="background-color: #00ff00; float: left; height: 20px; width: 0px"
+                style="
+                  background-color: #00ff00;
+                  float: left;
+                  height: 20px;
+                  width: 0px;
+                "
               ></div>
             </div>
             <div style="float: right"></div>
@@ -1051,7 +1259,9 @@
     >
       <table>
         <tr>
-          <th><span style="font-weight: bold; font-size: 16px">Settings:</span></th>
+          <th>
+            <span style="font-weight: bold; font-size: 16px">Settings:</span>
+          </th>
         </tr>
         <tr>
           <td style="border: 0px; padding: 10px">
@@ -1063,15 +1273,17 @@
               checked
               style="cursor: pointer"
             />
-            <label id="mkautolab1" for="mkauto1" style="cursor: pointer"
-              >Auto-Analyse Entire Board Set</label
-            >
+            <label id="mkautolab1" for="mkauto1" style="cursor: pointer">
+              Auto-Analyse Entire Board Set
+            </label>
           </td>
         </tr>
         <tr>
           <td>
-            <button id="settingsHide">Close</button
-            ><button id="showSettingsHelp" style="margin-left: 20px">Help</button>
+            <button id="settingsHide">Close</button>
+            <button id="showSettingsHelp" style="margin-left: 20px">
+              Help
+            </button>
           </td>
         </tr>
       </table>
@@ -1093,7 +1305,10 @@
         background-color: #ffffee;
       "
     >
-      <table class="options" style="width: 500px; border-collapse: border-spacing">
+      <table
+        class="options"
+        style="width: 500px; border-collapse: border-spacing"
+      >
         <tr style="cell-spacing: 100px">
           <td style="border: 0px; padding: 10px">
             &nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
@@ -1107,15 +1322,31 @@
                 checked
                 style="cursor: pointer"
               />
-              <label id="nslab1" for="nsrad1" style="cursor: pointer">Subscripts and Colours</label>
+              <label id="nslab1" for="nsrad1" style="cursor: pointer">
+                Subscripts and Colours
+              </label>
               <br />
-              <input id="nsrad2" type="radio" name="NSOptions" value="2" style="cursor: pointer" />
-              <label id="nslab2" for="nsrad2" style="cursor: pointer">Colours Only</label>
+              <input
+                id="nsrad2"
+                type="radio"
+                name="NSOptions"
+                value="2"
+                style="cursor: pointer"
+              />
+              <label id="nslab2" for="nsrad2" style="cursor: pointer">
+                Colours Only
+              </label>
               <br />
-              <input id="nsrad3" type="radio" name="NSOptions" value="3" style="cursor: pointer" />
-              <label id="nslab3" for="nsrad3" style="cursor: pointer"
-                >No Subscripts or Colours</label
-              >
+              <input
+                id="nsrad3"
+                type="radio"
+                name="NSOptions"
+                value="3"
+                style="cursor: pointer"
+              />
+              <label id="nslab3" for="nsrad3" style="cursor: pointer">
+                No Subscripts or Colours
+              </label>
               <br />
             </p>
           </td>
@@ -1131,22 +1362,39 @@
                 checked
                 style="cursor: pointer"
               />
-              <label id="ewlab1" for="ewrad1" style="cursor: pointer">Subscripts and Colours</label>
+              <label id="ewlab1" for="ewrad1" style="cursor: pointer">
+                Subscripts and Colours
+              </label>
               <br />
-              <input id="ewrad2" type="radio" name="EWOptions" value="2" style="cursor: pointer" />
-              <label id="ewlab2" for="ewrad2" style="cursor: pointer">Colours Only</label>
+              <input
+                id="ewrad2"
+                type="radio"
+                name="EWOptions"
+                value="2"
+                style="cursor: pointer"
+              />
+              <label id="ewlab2" for="ewrad2" style="cursor: pointer">
+                Colours Only
+              </label>
               <br />
-              <input id="ewrad3" type="radio" name="EWOptions" value="3" style="cursor: pointer" />
-              <label id="ewlab3" for="ewrad3" style="cursor: pointer"
-                >No Subscripts or Colours</label
-              >
+              <input
+                id="ewrad3"
+                type="radio"
+                name="EWOptions"
+                value="3"
+                style="cursor: pointer"
+              />
+              <label id="ewlab3" for="ewrad3" style="cursor: pointer">
+                No Subscripts or Colours
+              </label>
               <br />
             </p>
           </td>
         </tr>
         <tr>
           <td>
-            <br />&nbsp;&nbsp;Makeable Contracts Table:
+            <br />
+            &nbsp;&nbsp;Makeable Contracts Table:
             <p>
               <br />
               <input
@@ -1157,12 +1405,20 @@
                 checked
                 style="cursor: pointer"
               />
-              <label id="mklab1" for="mkrad1" style="cursor: pointer"
-                >Show makeable contracts</label
-              >
+              <label id="mklab1" for="mkrad1" style="cursor: pointer">
+                Show makeable contracts
+              </label>
               <br />
-              <input id="mkrad2" type="radio" name="mkOptions" value="2" style="cursor: pointer" />
-              <label id="mklab2" for="mkrad2" style="cursor: pointer">Show number of tricks</label>
+              <input
+                id="mkrad2"
+                type="radio"
+                name="mkOptions"
+                value="2"
+                style="cursor: pointer"
+              />
+              <label id="mklab2" for="mkrad2" style="cursor: pointer">
+                Show number of tricks
+              </label>
               <br />
             </p>
           </td>
@@ -1171,8 +1427,14 @@
       <table width="500" border="0">
         <tr>
           <td align="center">
-            <br /><button id="optionsClose" style="width: 80px; cursor: pointer">Close</button
-            >&nbsp;&nbsp;<button id="optionsSave" style="width: 120px">Save As Default</button>
+            <br />
+            <button id="optionsClose" style="width: 80px; cursor: pointer">
+              Close
+            </button>
+            &nbsp;&nbsp;
+            <button id="optionsSave" style="width: 120px">
+              Save As Default
+            </button>
           </td>
         </tr>
       </table>
@@ -1196,31 +1458,49 @@
     >
       <h2>Select a Function:</h2>
       <button id="analyseAllBoards" style="width: 230px; text-align: left">
-        <span style="font-weight: bold">Analyse All Boards</span></button
-      ><br />
-      <button id="showPlayerAcc" style="margin-top: 5px; width: 230px; text-align: left">
+        <span style="font-weight: bold">Analyse All Boards</span>
+      </button>
+      <br />
+      <button
+        id="showPlayerAcc"
+        style="margin-top: 5px; width: 230px; text-align: left"
+      >
         <span style="font-weight: bold">Show Player Accuracy Matrix</span>
       </button>
-      <button id="showSettings" style="margin-top: 5px; width: 230px; text-align: left">
+      <button
+        id="showSettings"
+        style="margin-top: 5px; width: 230px; text-align: left"
+      >
         <span style="font-weight: bold">Settings...</span>
       </button>
-      <button id="showReleaseHistory" style="margin-top: 5px; width: 230px; text-align: left">
+      <button
+        id="showReleaseHistory"
+        style="margin-top: 5px; width: 230px; text-align: left"
+      >
         <span style="font-weight: bold">Release Notes...</span>
       </button>
-      <br /><br />
-      <button onclick="document.getElementById('toolsSubMenu').style.display = 'none'">
+      <br />
+      <br />
+      <button
+        onclick="document.getElementById('toolsSubMenu').style.display = 'none'"
+      >
         <span style="font-weight: bold">Close</span>
       </button>
     </div>
     <div id="rcheckdiv" style="float: left; clear: both; display: none">
-      <input type="checkbox" id="rankcheck" value="checkbox" /><label
-        for="rankcheck"
-        style="font-size: 12px"
-        >Sort tables by pair number</label
-      >
+      <input type="checkbox" id="rankcheck" value="checkbox" />
+      <label for="rankcheck" style="font-size: 12px">
+        Sort tables by pair number
+      </label>
     </div>
     <div id="ranking" style="float: left; clear: both; display: none">
-      <table id="rankingNS" width="450" class="ranking" cellpadding="2" style="font-weight: normal">
+      <table
+        id="rankingNS"
+        width="450"
+        class="ranking"
+        cellpadding="2"
+        style="font-weight: normal"
+      >
         <thead align="Center">
           <tr>
             <th>Pos</th>
@@ -1256,45 +1536,54 @@
       </div>
       <div style="margin-left: 10px; float: left">
         <div id="player_direction" style="float: left; display: none">
-          <span id="first_player_name" style="font-size: 12px">Set direction for </span>
+          <span id="first_player_name" style="font-size: 12px">
+            Set direction for
+          </span>
 
           <div id="optNEdiv" style="float: left; margin-right: 5px">
-            <label
-              ><input
+            <label>
+              <input
                 id="pdiroptNE"
                 type="radio"
                 name="pdirgroup"
                 value="radio"
                 checked
                 onclick="setupScorecard()"
-              />N&amp;E</label
-            >
+              />
+              N&amp;E
+            </label>
           </div>
           <div id="optNWdiv" style="float: left; margin-right: 5px">
-            <label
-              ><input
+            <label>
+              <input
                 id="pdiroptNW"
                 type="radio"
                 name="pdirgroup"
                 value="radio"
                 onclick="setupScorecard()"
-              />N&amp;W</label
-            >
+              />
+              N&amp;W
+            </label>
           </div>
           <div id="optSEdiv" style="float: left; margin-right: 5px">
-            <label
-              ><input
+            <label>
+              <input
                 id="pdiroptSE"
                 type="radio"
                 name="pdirgroup"
                 value="radio"
                 onclick="setupScorecard()"
-              />S&amp;E</label
-            >
+              />
+              S&amp;E
+            </label>
           </div>
         </div>
         <div style="float: left; clear: both">
-          <table id="scoring_summary" class="ranking" style="font-weight: normal">
+          <table
+            id="scoring_summary"
+            class="ranking"
+            style="font-weight: normal"
+          >
             <tr>
               <th colspan="2">Summary</th>
             </tr>
@@ -1302,9 +1591,18 @@
         </div>
       </div>
     </div>
-    <div id="checkListDiv" style="padding-left: 10px; width: 98%; display: none">
+    <div
+      id="checkListDiv"
+      style="padding-left: 10px; width: 98%; display: none"
+    >
       <div style="float: left">
-        <table id="checkList" class="ranking" width="65%" style="border-spacing: 0px" cols="14">
+        <table
+          id="checkList"
+          class="ranking"
+          width="65%"
+          style="border-spacing: 0px"
+          cols="14"
+        >
           <tr>
             <th>Bd</th>
             <th>NS</th>
@@ -1342,7 +1640,10 @@
     <div id="comparison" style="padding-left: 10px; width: 98%; display: none">
       <div id="compSubHeading" style="float: left; clear: both"></div>
       <br />
-      <div id="percentValue" style="margin-left: 10px; clear: both; float: left"></div>
+      <div
+        id="percentValue"
+        style="margin-left: 10px; clear: both; float: left"
+      ></div>
       <div
         id="ourPercentage"
         style="
@@ -1357,22 +1658,28 @@
           max-width: 150px;
         "
       >
-        <div id="pbar" style="height: 100%; min-height: 100%; border: none"></div>
+        <div
+          id="pbar"
+          style="height: 100%; min-height: 100%; border: none"
+        ></div>
       </div>
       <br />
       <div id="comparisonText" style="float: left; clear: both"></div>
       <br />
       <div style="float: left; display: none">
-        <input type="checkbox" id="cfcheck" value="checkbox" checked /><label
-          for="cfcheck"
-          style="font-size: 12px"
-          >Show contract frequency table</label
-        >
+        <input type="checkbox" id="cfcheck" value="checkbox" checked />
+        <label for="cfcheck" style="font-size: 12px">
+          Show contract frequency table
+        </label>
       </div>
       <table id="travandhand" rows="1" cols="2" width="100%">
         <tr>
           <td colspan="2">
-            <table id="contractTable" style="width: 100%; min-width: 100%" cols="6">
+            <table
+              id="contractTable"
+              style="width: 100%; min-width: 100%"
+              cols="6"
+            >
               <tr>
                 <td>Contract</td>
                 <td>Declarer</td>
