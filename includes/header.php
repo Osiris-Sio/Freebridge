@@ -6,20 +6,22 @@ require_once dirname(__FILE__) . '/pdo.php';
 ?>
 <!doctype html>
 <html lang="fr" data-theme="light">
+
 <head>
     <meta charset="utf-8">
     <title>Freebridge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/ico" href="favicon.ico">
-    
+
     <link rel="stylesheet" href="css/pico.css">
     <link rel="stylesheet" href="css/logo.css">
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    
-    
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="js/theme.js"></script>
     <script src="js/nav.js"></script>
@@ -31,6 +33,7 @@ require_once dirname(__FILE__) . '/pdo.php';
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
 </head>
+
 <body>
 
     <header>
@@ -50,7 +53,7 @@ require_once dirname(__FILE__) . '/pdo.php';
                 <li>
                     <button id="hamburger-toggle" class="hamburger" aria-label="Menu Principal" type="button">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
                 </li>
@@ -60,7 +63,7 @@ require_once dirname(__FILE__) . '/pdo.php';
             <ul id="nav-menu" class="nav-menu-mobile">
                 <li><a href="index.php">Accueil</a></li>
                 <li><a href="quisommesnous.php" class="nav-link-secondary">Qui sommes-nous ?</a></li>
-                
+
                 <?php if (isset($_SESSION['user_nom'])) { ?>
                     <li><a href="cours.php" class="nav-link-secondary">Test</a></li>
                     <li><a href="avdj.php" class="nav-link-secondary">À vous de jouer</a></li>

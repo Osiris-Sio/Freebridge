@@ -1,80 +1,90 @@
-<?php
-include 'includes/header.php'; ?>
-<main class="mdl-layout__content">
-    <div class="page-content">
-        <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
-            <div class="page-content colorgreen" style="color: black; text-align: justify">
-                Le G&eacute;n&eacute;rateur de politique de confidentialit&eacute;est un questionnaire. La politique qui vous est pr&eacute;sent&eacute;e ici tient compte des r&eacute;ponses que vous avez fournies. <u>Cette politique n'est qu'un mod&egrave;le</u>. En effet, le G&eacute;n&eacute;rateur de politique de confidentialit&eacute; <u>n'a pas pour fonction de certifier</u> vos engagements en mati&egrave;re de protection des renseignements personnels. <br />
-                Par cons&eacute;quent, ni le recours au G&eacute;n&eacute;rateur de politique de confidentialit&eacute;, ni la politique qui est ici pr&eacute;sent&eacute;e <u>ne constituent un avis juridique</u>. En aucun cas, ces outils ne sauraient remplacer une expertise sp&eacute;cifique dans des cas particuliers. Les personnes qui sont confront&eacute;es avec un probl&egrave;me sp&eacute;cifique d'application de la loi sont invit&eacute;es &agrave; consulter un avocat ou un notaire.
-                <hr>
+<?php include 'includes/header.php'; ?>
 
-                <h1>Politique mod&egrave;le de confidentialit&eacute;.</h1>
-                <p><strong>Introduction</strong><br />
-                    Devant le d&eacute;veloppement des nouveaux outils de communication, il est n&eacute;cessaire de porter une attention particuli&egrave;re &agrave; la protection de la vie priv&eacute;e.
-                    C'est pourquoi, nous nous engageons &agrave; respecter la confidentialit&eacute; des renseignements personnels que nous collectons.
-                </p>
-                <hr />
-                <h2>Collecte des renseignements personnels</h2>
-                <p>
-                    Nous collectons les renseignements suivants :
-                </p>
-                <ul>
-                    <li>Nom</li>
-                    <li>Pr&eacute;nom</li>
-                    <li>Adresse &eacute;lectronique</li>
-                </ul>
+<section>
 
-                <p>
-                    Les renseignements personnels que nous collectons sont recueillis au travers de formulaires et gr&acirc;ce &agrave;
-                    l'interactivit&eacute; &eacute;tablie entre vous et notre site Web.
-                    Nous utilisons &eacute;galement, comme indiqu&eacute; dans la section suivante, des fichiers t&eacute;moins et/ou journaux
-                    pour r&eacute;unir des informations vous concernant.
-                </p>
-                <hr />
-                <h2>Formulaires&nbsp; et interactivit&eacute;:</h2>
-                <p>
-                    Vos renseignements personnels sont collect&eacute;s par le biais de formulaire, &agrave; savoir :
-                </p>
-                <ul>
-                    <li>Formulaire d'inscription au site Web</li>
-                </ul>
-                <p>
-                    Nous utilisons les renseignements ainsi collect&eacute;s pour les finalit&eacute;s suivantes :
-                </p>
-                <ul>
-                </ul>
-                <p>
-                    Vos renseignements sont &eacute;galement collect&eacute;s par le biais de l'interactivit&eacute; pouvant s'&eacute;tablir entre vous et notre site Web et ce, de la fa&ccedil;on suivante:
-                </p>
-                <ul>
-                </ul>
-                <p>
-                    Nous utilisons les renseignements ainsi collect&eacute;s pour les finalit&eacute;s suivantes :<br />
-                </p>
-                <ul>
-                    <li>Correspondance</li>
-                </ul>
-                <hr />
-                <h2>S&eacute;curit&eacute;</h2>
-                <p>
+    <h1>Politique de confidentialité</h1>
 
-                    Les renseignements personnels que nous collectons sont conserv&eacute;s
-                    dans un environnement s&eacute;curis&eacute;. Les personnes travaillant pour nous sont tenues de respecter la confidentialit&eacute; de vos informations.<br />
-                    Pour assurer la s&eacute;curit&eacute; de vos renseignements personnels, nous avons recours aux mesures suivantes :
-                </p>
-                <ul>
-                    <li>Protocole SSL (Secure Sockets Layer)</li>
-                    <li>Identifiant / mot de passe</li>
-                </ul>
+    <p>
+        Le Générateur de politique de confidentialitéest un questionnaire. La politique qui vous est présentée ici tient compte des réponses que vous avez fournies. <u>Cette politique n'est qu'un modèle</u>. En effet, le Générateur de politique de confidentialité <u>n'a pas pour fonction de certifier</u> vos engagements en matière de protection des renseignements personnels.
+    </p>
+    <p>
+        Par conséquent, ni le recours au Générateur de politique de confidentialité, ni la politique qui est ici présentée <u>ne constituent un avis juridique</u>. En aucun cas, ces outils ne sauraient remplacer une expertise spécifique dans des cas particuliers. Les personnes qui sont confrontées avec un problème spécifique d'application de la loi sont invitées à consulter un avocat ou un notaire.
+    </p>
 
-                <p>
-                    Nous nous engageons &agrave; maintenir un haut degr&eacute; de confidentialit&eacute; en int&eacute;grant les derni&egrave;res innovations technologiques permettant d'assurer
-                    la confidentialit&eacute; de vos transactions. Toutefois, comme aucun m&eacute;canisme n'offre une s&eacute;curit&eacute; maximale, une part de risque est toujours pr&eacute;sente
-                    lorsque l'on utilise Internet pour transmettre des renseignements personnels.
-                </p>
-            </div>
-        </section>
+    <hr>
+
+    <h3>Politique modèle de confidentialité :</h3>
+    <p>
+
+        Devant le développement des nouveaux outils de communication, il est nécessaire de porter une attention particulière à la protection de la vie privée.
+        C'est pourquoi, nous nous engageons à respecter la confidentialité des renseignements personnels que nous collectons.
+    </p>
+
+    <hr>
+
+    <h3>Collecte des renseignements personnels :</h3>
+    <p>
+        Nous collectons les renseignements suivants :
+    </p>
+    <ul>
+        <li>Nom</li>
+        <li>Prénom</li>
+        <li>Adresse &eacute;lectronique</li>
+    </ul>
+
+    <p>
+        Les renseignements personnels que nous collectons sont recueillis au travers de formulaires et gr&acirc;ce &agrave;
+        l'interactivit&eacute; &eacute;tablie entre vous et notre site Web.
+        Nous utilisons &eacute;galement, comme indiqu&eacute; dans la section suivante, des fichiers t&eacute;moins et/ou journaux
+        pour r&eacute;unir des informations vous concernant.
+    </p>
+
+    <hr>
+
+    <h3>Formulaires et interactivité :</h3>
+    <p>
+        Vos renseignements personnels sont collectés par le biais de formulaire, à savoir :
+    </p>
+    <ul>
+        <li>Formulaire d'inscription au site Web</li>
+    </ul>
+    <p>
+        Nous utilisons les renseignements ainsi collectés pour les finalités suivantes :
+    </p>
+    <ul>
+    </ul>
+    <p>
+        Vos renseignements sont également collectés par le biais de l'interactivité pouvant s'établir entre vous et notre site Web et ce, de la façon suivante:
+    </p>
+    <ul>
+    </ul>
+    <p>
+        Nous utilisons les renseignements ainsi collectés pour les finalités suivantes :<br />
+    </p>
+    <ul>
+        <li>Correspondance</li>
+    </ul>
+
+    <hr>
+    <h3>Sécurité :</h3>
+    <p>
+
+        Les renseignements personnels que nous collectons sont conservés
+        dans un environnement sécurisé. Les personnes travaillant pour nous sont tenues de respecter la confidentialité de vos informations.<br />
+        Pour assurer la sécurité de vos renseignements personnels, nous avons recours aux mesures suivantes :
+    </p>
+    <ul>
+        <li>Protocole SSL (Secure Sockets Layer)</li>
+        <li>Identifiant / mot de passe</li>
+    </ul>
+
+    <p>
+        Nous nous engageons à maintenir un haut degré de confidentialité en intégrant les dernières innovations technologiques permettant d'assurer
+        la confidentialité de vos transactions. Toutefois, comme aucun mécanisme n'offre une sécurité maximale, une part de risque est toujours présente
+        lorsque l'on utilise Internet pour transmettre des renseignements personnels.
+    </p>
     </div>
-</main>
+</section>
+
 <?php include 'includes/footer.php';
 ?>

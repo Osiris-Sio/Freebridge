@@ -1,7 +1,7 @@
 <?php include 'includes/header.php'; ?>
 
 <section>
-    <h2>Qui sommes-nous ?</h2>
+    <h1>Qui sommes-nous ?</h1>
     <div>
         <p>
             Initiateur scolaire, Moniteur, Maître-assistant agréé par la FFB, nous nous sommes investis dans l'enseignement du bridge depuis une dizaine d'années et nous avons développé une méthode originale de saisie et de lecture des donnes.
@@ -23,7 +23,7 @@
 
     <hr>
 
-    <h3>Exemple de Vidéo de solution</h3>
+    <h2>Exemple de vidéo de solution</h2>
     <div style="text-align: center;">
         <video controls src="assets/videos/Video1.mp4" style="max-width: 100%; border-radius: 8px;"></video>
     </div>
