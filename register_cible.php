@@ -1,53 +1,51 @@
 <?php
 include 'includes/header.php';
-$nom = $_POST['nom'];
-$prenom = $_POST['prenom'];
-$mail = $_POST['login'];
-$date = date('d/m/Y');
-$password = sha1($_POST['password']);
-$sql = "SELECT COUNT(*) FROM user WHERE user_mail ='" . $mail . "'";
-$result = $conn->prepare($sql);
-$result->execute();
-$number_of_rows = $result->fetchColumn();
-if ($number_of_rows == 0) {
 
-  $sql = $conn->prepare(
-    "INSERT INTO user(user_nom,user_prenom,user_rang,user_mail,user_password, user_date) VALUES ('" .
-      $nom .
-      "','" .
-      $prenom .
-      "','debutant','" .
-      $mail .
-      "','" .
-      $password .
-      "','" .
-      $date .
-      "')",
-  );
-  $sql->execute();
-  ?>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-      <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
-        <div class="page-content colorgreen" style="color: black; text-align: center">
-          Votre compte à bien été créé. Vous allez être redirigé vers la page de connexion
-        </div>
-      </section>
-    </div>
-  </main>
-<?php echo '<script>setTimeout(function() { document.location.href="login.php"}, 3000)</script>';
-} else {
-   ?>
-  <main class="mdl-layout__content">
-    <div class="page-content">
-      <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding: 1%; background-color: white">
-        <div class="page-content colorgreen" style="color: black; text-align: center">
-          Un compte existe d&eacute;j&agrave; avec cet adresse mail
-        </div>
-      </section>
-    </div>
-  </main>
-<?php echo '<script>setTimeout(function() { document.location.href="register.php"}, 3000)</script>';
+$nom = $_POST['nom'] ?? '';
+$prenom = $_POST['prenom'] ?? '';
+$mail = $_POST['login'] ?? '';
+$password = isset($_POST['password']) ? sha1($_POST['password']) : '';
+$date = date('d/m/Y');
+
+if (empty($mail) || empty($password)) {
+  $_SESSION['messages']['errors'][] =
+    'Veuillez remplir tous les champs obligatoires.';
+  header('Location: register.php');
+  exit();
 }
 
-include 'includes/footer.php';
+// Vérifier si l'utilisateur existe déjà
+$sql = 'SELECT COUNT(*) FROM user WHERE user_mail = :mail';
+$stmt = $conn->prepare($sql);
+$stmt->execute([':mail' => $mail]);
+$exists = $stmt->fetchColumn();
+
+if ($exists == 0) {
+  // Création du compte
+  $sql = "INSERT INTO user(user_nom, user_prenom, user_rang, user_mail, user_password, user_date) 
+            VALUES (:nom, :prenom, 'debutant', :mail, :password, :date)";
+  $stmt = $conn->prepare($sql);
+  $success = $stmt->execute([
+    ':nom' => $nom,
+    ':prenom' => $prenom,
+    ':mail' => $mail,
+    ':password' => $password,
+    ':date' => $date,
+  ]);
+
+  if ($success) {
+    $_SESSION['messages']['confirm'][] =
+      'Votre compte a bien été créé ! Vous pouvez maintenant vous connecter.';
+    header('Location: login.php');
+  } else {
+    $_SESSION['messages']['errors'][] =
+      'Une erreur est survenue lors de la création de votre compte.';
+    header('Location: register.php');
+  }
+} else {
+  $_SESSION['messages']['errors'][] =
+    'Un compte existe déjà avec cette adresse mail.';
+  header('Location: register.php');
+}
+exit();
+?>

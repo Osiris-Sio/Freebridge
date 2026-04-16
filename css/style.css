@@ -3,3 +3,7 @@ h2 {
   text-align: center;
   margin-bottom: 30px;
 }
+
+form label {
+  margin-top: 20px;
+}

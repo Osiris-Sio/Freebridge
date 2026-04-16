@@ -1,127 +1,139 @@
-<!DOCTYPE html>
-
-<?php include 'includes/header.php'; ?>
-<main class="mdl-layout__content">
-  <div class="page-content">
-    <section style="margin: 5% 20%; width: 60%; border: 1px solid #003d00; border-radius: 20px; padding-top: 1%; background-color: white">
-      <div class="page-content colorgreen" style="color: black; text-align: center">
-
-
-        <h3 style="text-decoration: underline">Mon Compte</h3>
-        <p style="text-align: left; margin-left: 1%">Bonjour, <?php echo $_SESSION[
-          'user_prenom'
-        ] .
-          ' ' .
-          $_SESSION['user_nom']; ?></p>
-        <pre>Les abonnements sont mensuels et dépendent du niveau 
-Il est possible de se désabonner à tout instant, ce qui supprime les prélévements.
-C'est cette procédure qu'il faut utiliser pour passer en catégorie supérieure.</pre>
-
-        <table style="width: 90%; margin: 0 5%">
-
-
-
-          <tr>
-            <td>
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="9GZ56P2N9RZ2J">
-                <table>
-                  <tr>
-                    <td><input type="hidden" name="on0" value="Progresser">Progresser</td>
-                  </tr>
-                  <tr>
-                    <td><select name="os0">
-                        <option value="Accès">Accès : €2,00 EUR - mensuel</option>
-                      </select> </td>
-                  </tr>
-                </table>
-                <input type="hidden" name="currency_code" value="EUR">
-                <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-              </form>
-
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="6Q8V6VZ6UD8FJ">
-                <table>
-                  <tr>
-                    <td><input type="hidden" name="on0" value="Peaufiner">Peaufiner</td>
-                  </tr>
-                  <tr>
-                    <td><select name="os0">
-                        <option value="Accès">Accès : €3,00 EUR - mensuel</option>
-                      </select> </td>
-                  </tr>
-                </table>
-                <input type="hidden" name="currency_code" value="EUR">
-                <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-              </form>
-
-              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="T4ST5LJNNKNJY">
-                <table>
-                  <tr>
-                    <td><input type="hidden" name="on0" value="Confirmer">Confirmer</td>
-                  </tr>
-                  <tr>
-                    <td><select name="os0">
-                        <option value="Accès">Accès : €4,00 EUR - mensuel</option>
-                      </select> </td>
-                  </tr>
-                </table>
-                <input type="hidden" name="currency_code" value="EUR">
-                <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-              </form>
-
-            </td>
-
-            <A HREF="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=YGV5Y2X5ZPJRE">
-              <IMG SRC="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_unsubscribe_LG.gif" BORDER="0">
-            </A>
-
-          </tr>
-        </table>
-      </div>
-    </section>
-  </div>
-</main>
-
 <?php
-$date = date('d/m/Y');
-if ($_SESSION['prix'] == 2) {
-  $sql =
-    "UPDATE user SET user_rang='progresser', user_date='" .
-    $date .
-    "' WHERE user_id=" .
-    $_SESSION['user_id'] .
-    '';
-  $conn->query($sql);
-} elseif ($_SESSION['prix'] == 3) {
-  $sql =
-    "UPDATE user SET user_rang='peaufiner', user_date='" .
-    $date .
-    "' WHERE user_id=" .
-    $_SESSION['user_id'] .
-    '';
-  $conn->query($sql);
-} elseif ($_SESSION['prix'] == 4) {
-  $sql =
-    "UPDATE user SET user_rang='confirmer', user_date='" .
-    $date .
-    "' WHERE user_id=" .
-    $_SESSION['user_id'] .
-    '';
-  $conn->query($sql);
+include 'includes/header.php';
+
+// Redirection si non connecté
+if (!isset($_SESSION['user_id'])) {
+  header('Location: login.php');
+  exit();
 }
-$_SESSION['page'] = '';
 
-$_SESSION['page'] = $_SERVER['PHP_SELF'];
+// Logique de mise à jour du rang (héritée de l'ancienne version)
+if (isset($_SESSION['prix'])) {
+  $date = date('d/m/Y');
+  $new_rang = '';
 
-include 'includes/footer1.php';
+  if ($_SESSION['prix'] == 2) {
+    $new_rang = 'progresser';
+  } elseif ($_SESSION['prix'] == 3) {
+    $new_rang = 'peaufiner';
+  } elseif ($_SESSION['prix'] == 4) {
+    $new_rang = 'confirmer';
+  }
 
-
+  if (!empty($new_rang)) {
+    $sql =
+      'UPDATE user SET user_rang = :rang, user_date = :date WHERE user_id = :id';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([
+      ':rang' => $new_rang,
+      ':date' => $date,
+      ':id' => $_SESSION['user_id'],
+    ]);
+  }
+}
 ?>
+
+<section>
+  <header>
+    <h1>Mon Compte</h1>
+    <p>Heureux de vous revoir, <strong><?php echo htmlspecialchars(
+      $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
+    ); ?></strong> !</p>
+  </header>
+
+  <div class="grid">
+    <!-- Infos Abonnement -->
+    <article>
+      <header>
+        <strong>Gestion des abonnements</strong>
+      </header>
+      <p>Les abonnements sont mensuels et dépendent du niveau choisi.</p>
+      <p><small>Il est possible de se désabonner à tout instant. Pour passer à une catégorie supérieure, désabonnez-vous puis choisissez le nouveau niveau.</small></p>
+
+      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=<?php echo getenv(
+        'PAYPAL_UNSUBSCRIBE_ALIAS',
+      ); ?>" class="outline contrast" style="display: block; text-align: center;">
+        <img src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_unsubscribe_LG.gif" alt="Se désabonner">
+        <br>Gérer mon désabonnement
+      </a>
+    </article>
+
+    <!-- État Actuel -->
+    <article>
+      <header>
+        <strong>Statut actuel</strong>
+      </header>
+      <div>
+        <p>Votre rang : <br>
+          <kbd><?php echo strtoupper(
+            $_SESSION['user_rang'] ?? 'INACTIF',
+          ); ?></kbd>
+        </p>
+        <p>Inscrit depuis le : <?php echo $_SESSION['user_date'] ??
+          'Inconnue'; ?></p>
+      </div>
+    </article>
+  </div>
+
+  <hr>
+
+  <h2>Choisir un niveau d'accès</h2>
+
+  <div class="grid">
+    <!-- Niveau Progresser -->
+    <article>
+      <header>
+        <h3>Progresser</h3>
+        <p><mark>2,00€ / mois</mark></p>
+      </header>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="<?php echo getenv(
+          'PAYPAL_BUTTON_ID_PROGRESSER',
+        ); ?>">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="on0" value="Progresser">
+        <input type="hidden" name="os0" value="Accès">
+        <button type="submit" class="primary">S'abonner</button>
+      </form>
+    </article>
+
+    <!-- Niveau Peaufiner -->
+    <article>
+      <header>
+        <h3>Peaufiner</h3>
+        <p><mark>3,00€ / mois</mark></p>
+      </header>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="<?php echo getenv(
+          'PAYPAL_BUTTON_ID_PEAUFINER',
+        ); ?>">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="on0" value="Peaufiner">
+        <input type="hidden" name="os0" value="Accès">
+        <button type="submit" class="primary">S'abonner</button>
+      </form>
+    </article>
+
+    <!-- Niveau Confirmer -->
+    <article>
+      <header>
+        <h3>Confirmer</h3>
+        <p><mark>4,00€ / mois</mark></p>
+      </header>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="<?php echo getenv(
+          'PAYPAL_BUTTON_ID_CONFIRMER',
+        ); ?>">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="on0" value="Confirmer">
+        <input type="hidden" name="os0" value="Accès">
+        <button type="submit" class="primary">S'abonner</button>
+      </form>
+    </article>
+  </div>
+</section>
+
+<?php include 'includes/footer.php'; ?>

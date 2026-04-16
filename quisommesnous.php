@@ -1,6 +1,6 @@
 <?php include 'includes/header.php'; ?>
 
-<section>
+<article>
     <h1>Qui sommes-nous ?</h1>
     <div>
         <p>
@@ -20,13 +20,15 @@
         </p>
         <p>Pour nous contacter par mail : <a href="mailto:bernard.glorie.62@orange.fr">bernard.glorie.62@orange.fr</a></p>
     </div>
+</article>
 
-    <hr>
+<hr>
+<article>
 
     <h2>Exemple de vidéo de solution</h2>
     <div style="text-align: center;">
         <video controls src="assets/videos/Video1.mp4" style="max-width: 100%; border-radius: 8px;"></video>
     </div>
-</section>
+</article>
 
 <?php include 'includes/footer.php'; ?>

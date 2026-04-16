@@ -1509,7 +1509,7 @@ hr {
   border: 0;
   border-top: 1px solid var(--pico-primary-background);
   color: inherit;
-  margin: 50px 0;
+  margin: 40px 0;
 }
 
 [hidden],
