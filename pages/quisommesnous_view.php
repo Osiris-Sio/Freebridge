@@ -24,7 +24,6 @@
 
 <hr>
 <article>
-
     <h2>Exemple de vidéo de solution</h2>
     <div style="text-align: center;">
         <video controls src="assets/videos/Video1.mp4" style="max-width: 100%; border-radius: 8px;"></video>

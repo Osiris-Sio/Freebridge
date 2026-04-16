@@ -3,14 +3,15 @@
 <article>
     <h1>Connexion</h1>
 
-    <form action="login_cible.php" method="post">
-
+    <form action="login" method="post">
         <label for="login">Adresse mail :</label>
-        <input required type="email" name="login" placeholder="votre@email.com">
+        <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?php echo htmlspecialchars($login_value ?? ''); ?>">
 
         <label for="password">Mot de passe :</label>
-        <input required type="password" name="password" placeholder="Mot de passe">
-        <a href="lostpassword.php" id="linkregister">Mot de passe oublié ?</a>
+        <input required type="password" name="password" id="password" placeholder="Mot de passe">
+        
+        <a href="lostpassword" id="linkregister">Mot de passe oublié ?</a>
+        
         <label>
             <input type="checkbox" class="password-toggle">
             Afficher le mot de passe
@@ -21,10 +22,10 @@
         <button type="submit">
             Connexion
         </button>
-
     </form>
+    
     <footer>
-        <p>Nouveau sur Freebridge ? <a href="register.php">Créez votre compte ici</a>.</p>
+        <p>Nouveau sur Freebridge ? <a href="register">Créez votre compte ici</a>.</p>
     </footer>
 </article>
 

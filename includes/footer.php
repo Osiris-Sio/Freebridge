@@ -3,12 +3,12 @@
 <!-- Pied de page -->
 <footer class="container footer-global">
     <div class="footer-logos">
-        <a href="index.php" title="Freebridge">
+        <a href="home" title="Freebridge">
             <img src="assets/img/logo.png" alt="Logo Freebridge" class="footer-logo-item">
         </a>
     </div>
     <p><small>© 2026 Freebridge<br>
-            <a href="mentionlegale.php">Mentions Légales</a> | <a href="confidentialite.php">Politique de confidentialité</a> | <a href="formulaire.php">Contactez-nous</a>
+            <a href="mentionslegales">Mentions Légales</a> | <a href="confidentialite">Politique de confidentialité</a> | <a href="formulaire">Contactez-nous</a>
         </small></p>
 </footer>
 </body>
