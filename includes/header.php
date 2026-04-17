@@ -60,15 +60,13 @@ if (session_status() === PHP_SESSION_NONE) {
             <!-- Menu de navigation -->
             <ul id="nav-menu" class="nav-menu-mobile">
                 <li><a href="home">Accueil</a></li>
-                <li><a href="quisommesnous" class="nav-link-secondary">Qui sommes-nous ?</a></li>
 
                 <?php if (isset($_SESSION['user_nom'])) { ?>
-                    <li><a href="cours" class="nav-link-secondary">Test</a></li>
-                    <li><a href="avdj" class="nav-link-secondary">À vous de jouer</a></li>
-                    <li><a href="compte" title="Mon Compte" class="nav-link-secondary"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom']) ?></a></li>
-                    <li><a href="deconnexion" role="button" class="outline contrast btn-header">Déconnexion</a></li>
+                    <li><a href="avdj">À vous de jouer</a></li>
+                    <li><a href="compte" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom']) ?></a></li>
+                    <li><a href="deconnexion" role="button">Déconnexion</a></li>
                 <?php } else { ?>
-                    <li><a href="login" role="button" class="btn-header">Connexion</a></li>
+                    <li><a href="login" role="button">Connexion</a></li>
                 <?php } ?>
                 <li class="nav-theme-item">
                     <a href="#" id="theme-toggle" class="secondary theme-toggle-btn" aria-label="Changer de thème" title="Changer de thème"></a>

@@ -1,8 +1,10 @@
 <?php include 'includes/header.php'; ?>
 
-<h1>Mentions légales</h1>
 
 <article>
+    <header>
+        <h1>Mentions légales</h1>
+    </header>
     <p>Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : <a href="http://www.freebridge.fr" target="_blank">www.freebridge.fr</a> les informations suivantes :</p>
 </article>
 

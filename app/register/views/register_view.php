@@ -1,8 +1,9 @@
 <?php include 'includes/header.php'; ?>
 
 <article>
-    <h1>Inscription</h1>
-
+    <header>
+        <h1>Inscription</h1>
+    </header>
     <form action="register" method="post">
         <label for="nom">Nom :</label>
         <input required type="text" name="nom" id="nom" placeholder="Exemple : Martin" value="<?php echo htmlspecialchars($form_data['nom'] ?? ''); ?>">
@@ -31,9 +32,14 @@
 
         <br>
 
-        <button type="submit">
-            Créer mon compte
-        </button>
+        <div class="grid-two-columns">
+            <button type="button" onclick="history.back()">
+                ← Retour
+            </button>
+            <button type="submit">
+                Créer mon compte
+            </button>
+        </div>
     </form>
 </article>
 

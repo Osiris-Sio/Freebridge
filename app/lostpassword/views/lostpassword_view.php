@@ -1,7 +1,9 @@
 <?php include 'includes/header.php'; ?>
 
 <article>
-    <h1>Récupération du mot de passe</h1>
+    <header>
+        <h1>Récupération du mot de passe</h1>
+    </header>
 
     <form action="lostpassword" method="post">
         <p style="color: red;">Attention : NE FONCTIONNE PAS !!!</p>
@@ -10,10 +12,17 @@
 
         <br>
 
-        <button type="submit">
-            Envoyer un nouveau mot de passe
-        </button>
+
+        <div class="grid-two-columns">
+            <button type="button" onclick="history.back()">
+                ← Retour
+            </button>
+            <button type="submit">
+                Envoyer
+            </button>
+        </div>
     </form>
+
 </article>
 
 <?php include 'includes/footer.php'; ?>

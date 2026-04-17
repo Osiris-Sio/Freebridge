@@ -90,7 +90,6 @@ $routes = [
 ];
 
 $static_pages = [
-    'quisommesnous'   => 'pages/quisommesnous_view.php',
     'confidentialite' => 'pages/confidentialite_view.php',
     'mentionslegales' => 'pages/mentionslegales_view.php',
     'glossaire'       => 'pages/glossaire_view.php',

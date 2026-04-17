@@ -1,11 +1,11 @@
 <?php include 'includes/header.php'; ?>
 
 <article>
-    <header style="text-align: center;">
-        <h1>À VOUS DE JOUER !</h1>
+    <header>
+        <h1>À vous de jouer !</h1>
     </header>
 
-    <div class="grid" style="align-items: center; justify-items: center;">
+    <div class="grid grid-avdj">
         <?php if ($_SESSION['user_rang'] == 'debutant') : ?>
             <article>
                 <a href="bsol/Debuter/debutant.php">
