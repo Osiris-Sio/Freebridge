@@ -1,32 +1,38 @@
-<!DOCTYPE html>
-<html> 
+<?php
+include '../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
-<head>
-<title>Peaufiner avec Judith</title>
-<meta charset="UTF-8">
-<title style="font-size:300%;"></title>
-</head>
+<button type="button" onclick="window.location.href='avdj'">
+    ← Retour
+</button>
 
-<body> 
-<h1>Peaufiner avec Judith</h1>
-<pre>
-<img src="03_Slider_Peaufiner.jpg" width="30%">
-    <a href="../../avdj.php">Retour à l'écran "A vous de jouer" </a> 
+<article>
+    <header>
+        <h1>Peaufiner avec Judith</h1>
+    </header>
 
+    <div>
+        <img src="assets/img/slider3.jpg" alt="Niveau Peaufiner">
+    </div>
 
-<p>
+    <details class="level-folder">
+        <summary>Zone de test - Judith</summary>
+        <div class="lesson-list">
+            <a href="bsol/Peaufiner/JMSA1.lin" class="lesson-item" download>
+                <i class="fas fa-file-download"></i> JMSA1 (Lecture)
+            </a>
+            <a href="bsol/Peaufiner/JMA1.lin" class="lesson-item" download>
+                <i class="fas fa-file-download"></i> JMA1 (Lecture)
+            </a>
+            <a href="bsol/Peaufiner/DSA1.lin" class="lesson-item" download>
+                <i class="fas fa-file-download"></i> DSA1 (Lecture)
+            </a>
+            <a href="bsol/Peaufiner/DA1.lin" class="lesson-item" download>
+                <i class="fas fa-file-download"></i> DA1 (Lecture)
+            </a>
+        </div>
+    </details>
+</article>
 
-
-
-Zone de test
-
-JMSA1          <a href="JMSA1.lin" download="JMSA1.lin">Lecture</a>
-JMA1          <a href="JMA1.lin" download="JMA1.lin">Lecture</a>
-DSA1         <a href="DSA1.lin" download="DSA1.lin">Lecture</a>
-DA1          <a href="DA1.lin" download="DA1.lin">Lecture</a>
-
-</p>
-</pre>
-
-</body>
-</html>
+<?php include '../../includes/footer.php'; ?>

@@ -1,32 +1,32 @@
+<?php
+include '../../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
+<button type="button" onclick="window.location.href='bsol/Debuter/debutant.php'">
+    ← Retour au niveau débutant
+</button>
 
-<!DOCTYPE html>
-<html> 
+<article>
+    <header>
+        <h1>Jouer à l'atout</h1>
+    </header>
 
-<head>
-<title>Jeu avec le Mort à l'atout</title>
-<meta charset="UTF-8">
-<title style="font-size:300%;"></title>
-</head>
+    <div class="course-header">
+        <a href="https://docs.google.com/presentation/d/1BfSjO0YF9yI6YI5w-x0mSj9YQ8sJ1z-L6z-L6z-L6z/edit#slide=id.p" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
+    </div>
 
-<body> 
-Jeu avec le Mort à l'atout
+    <details class="level-folder">
+        <summary>11 - Jouer à l'atout (4 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=juAeKXwt" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 2</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=TWNaRfDL" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 3</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MnfV5WNr" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 4</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eBtinxcX" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div></div>
+        </div>
+    </details>
+</article>
 
-<p> <a href="../debutant.php">Retour</a>
-
-<pre>
-<h1 target="_blank">Jouer à l'atout</h1>
-
-<h2><a href="https://docs.google.com/presentation/d/1YKxb0nchXSJlnFL_PtDAs7eOKLJjNwvSsqDjbtZc7GY/edit?slide=id.p1#slide=id.p1">Cours Jouer à l'atout en majeure
-
-<a href="https://docs.google.com/presentation/d/1a6Yr-1b54LbV9HRZeQ7u0mrwmi4oGHBtjknPboTj9D4/edit?slide=id.p1#slide=id.p1">Cours Jouer à l'atout en mineure</h2>
-
-Donne 1 <a href="https://bridge-training.com/player?dds=juAeKXwt" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=TWNaRfDL" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=MnfV5WNr" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=eBtinxcX" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-
-</pre>
-
-</body>
-</html>
+<?php include '../../../includes/footer.php'; ?>

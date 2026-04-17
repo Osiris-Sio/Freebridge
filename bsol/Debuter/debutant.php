@@ -1,71 +1,115 @@
+<?php
+include '../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
+<button type="button" onclick="window.location.href='avdj'">
+    ← Retour
+</button>
 
-<!DOCTYPE html>
+<article>
+    <header>
 
-<html lang="fr">
-	<head>
-		<meta charset="UTF-8">
-		<title>Accueil</title>
-		<meta name="generator" content="Serif WebPlus X7 (15,0,4,38)">
-		<meta name="viewport" content="width=960">
-		<!--Page Head-->
-		<!--Maître A Head-->
-		<link rel="stylesheet" type="text/css" href="wpscripts/wpstyles.css">
-		<style type="text/css">
-			/*Page StyleSheet*/
-			/*Maître A StyleSheet*/
-			.C-1 { line-height:32.00px;font-family:"Verdana", sans-serif;font-style:normal;font-weight:normal;color:#000000;background-color:transparent;text-decoration:none;font-variant:normal;font-size:26.7px;vertical-align:0; }
-			.C-2 { line-height:18.00px;font-family:"Verdana", sans-serif;font-style:normal;font-weight:normal;color:#000000;background-color:transparent;text-decoration:none;font-variant:normal;font-size:16.0px;vertical-align:0; }
-		</style>
-		
-		<title>Débuter avec Lancelot
-		</title>
-		<title style="font-size:300%;"></title>
-	</head>
+        <h1>Niveau débutant</h1>
+    </header>
 
-	<body __AddCode="PageInBodyTag" __AddCode="Maître A In Body Tag" style="height:1000px;background:#ffffff;/*Page Body Style*//*Maître A Body Style*/">
-	<div id="divMain" __AddCode="Spread DIV Tag" __AddCode="Maître A DIV Tag" style="background:transparent;margin-left:auto;margin-right:auto;position:relative;width:960px;height:1000px;/*Spread DIV Style*//*Maître A DIV Style*/">
+    <div>
+        <img src="assets/img/slider1.jpg" alt="Débuter avec Lancelot">
+    </div>
 
+    <!-- JEU A SANS-ATOUT -->
+    <details class="level-folder">
+        <summary>Jeu à Sans-Atout</summary>
+        <div class="lesson-list">
+            <a href="https://docs.google.com/presentation/d/1hqoOSCKKrf-6sv0sOgFS-1t5soidBGe0fIg240ivKlk/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : Les cartes maîtresses du Déclarant
+            </a>
+            <a href="bsol/Debuter/JMSA/realiser.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 1 - Réaliser ses levées
+            </a>
+            <a href="bsol/Debuter/JMSA/honneurs.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 2 - L'affranchissement des honneurs
+            </a>
+            <a href="bsol/Debuter/JMSA/longueurs.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 3 - Les levées de longueur
+            </a>
+            <a href="bsol/Debuter/JMSA/communications.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 4 - Les couleurs bloquées
+            </a>
+            <a href="bsol/Debuter/JMSA/impasses.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 5 - Les premières impasses
+            </a>
+        </div>
+    </details>
 
-<div>
-	<img style="width:20%" src="debuter.jpg">
-     <a href="../../avdj.php">Retour à l'écran "A vous de jouer" </a>  
+    <!-- JEU A L'ATOUT -->
+    <details class="level-folder">
+        <summary>Jeu à l'Atout</summary>
+        <div class="lesson-list">
+            <a href="bsol/Debuter/JMA/controle.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 10 - Le pouvoir de contrôle et de coupe
+            </a>
+            <a href="bsol/Debuter/JMA/atout.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 11 - Jouer à l'atout
+            </a>
+            <a href="bsol/Debuter/JMA/immediates.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 12 - Réalisation des levées quasi-immédiates
+            </a>
+            <a href="bsol/Debuter/JMA/coupes.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 13 - Coupe(s) immédiate(s) de la main courte
+            </a>
+            <a href="bsol/Debuter/JMA/battre.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 14 - Battre atout et coupe(s) de la main courte
+            </a>
+            <a href="bsol/Debuter/JMA/defausse.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 15 - La défausse des perdantes
+            </a>
+            <a href="bsol/Debuter/JMA/impasses.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 16 - Les premières impasses
+            </a>
+        </div>
+    </details>
 
-</div>
-<div>
-<pre>
-<h1> JEU A SANS-ATOUT </h1> 
- <a href="https://docs.google.com/presentation/d/1hqoOSCKKrf-6sv0sOgFS-1t5soidBGe0fIg240ivKlk/edit?slide=id.p1#slide=id.p1">Cours :  Les cartes maîtresses du Déclarant (Cours)
-<a href="JMSA/realiser.php">1 - Réaliser ses levées (cours et donnes)
-<a href="JMSA/honneurs.php">2 - L'affranchissement des honneurs (cours et donnes))
-<a href="JMSA/longueurs.php">3 - Les levées de longueur (cours et donnes)
-<a href="JMSA/communications.php">4 - Les couleurs bloquées (cours et donnes)
-<a href="JMSA/impasses.php">5 - Les premières impasses (cours et donnes)
+    <!-- DEFENSE A SANS-ATOUT -->
+    <details class="level-folder">
+        <summary>Défense à Sans-Atout</summary>
+        <div class="lesson-list">
+            <a href="https://docs.google.com/presentation/d/13HchITDEMj3fB8Su-xTVViYsS1mEK_3G7bENKNv2ASo/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : Débuter à la carte
+            </a>
+            <a href="https://docs.google.com/presentation/d/11FEGEkSTUCQhzGrtBpCFHHTKFzlNhQVm5KUyvREcw6Q/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : L'entame à Sans-Atout
+            </a>
+            <a href="bsol/Debuter/DSA/prendre.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 1 - Prendre ses levées en flanc
+            </a>
+            <a href="bsol/Debuter/DSA/honneurs.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 2 - Affranchissement de levées d'honneurs
+            </a>
+            <a href="bsol/Debuter/DSA/longueur.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 3 - Affranchissement de levées de longueur
+            </a>
+        </div>
+    </details>
 
-<h1> JEU A L'ATOUT</h1>
-<a href="JMA/controle.php">10 - Le pouvoir de contrôle et de coupe de l'atout (Cours et Donnes)
-<a href="JMA/atout.php">11 - Jouer à l'atout (cours et donnes)
-<a href="JMA/immediates.php">12 - Réalisation des levees quasi-immédiates (cours et donnes)
-<a href="JMA/coupes.php">13 - Coupe(s) immédiate(s) de la main courte (cours et donnnes)</a>
-<a href="JMA/battre.php">14 - Battre atout et coupe(s) de la main courte (cours et donnnes)</a>
-<a href="JMA/defausse.php">15 - La défausse des perdantes (cours et donnnes)</a>
-<a href="JMA/impasses.php">16 - Les premières impasses  (cours et donnnes)</a>
+    <!-- DEFENSE A L'ATOUT -->
+    <details class="level-folder">
+        <summary>Défense à l'Atout</summary>
+        <div class="lesson-list">
+            <a href="https://docs.google.com/presentation/d/1sI5fc-yBQyTfOm-hsSXYKWldBLVF4enHhiwo54k7zDE/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : L'entame à l'atout
+            </a>
+            <a href="bsol/Debuter/DA/realiser.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 31 - Réaliser ses levées en urgence
+            </a>
+            <a href="bsol/Debuter/DA/battre.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 32 - Battre atout (main courte)
+            </a>
+            <a href="bsol/Debuter/DA/couper.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 33 - Coupes en défense
+            </a>
+        </div>
+    </details>
+</article>
 
-<h1> DEFENSE A SANS-ATOUT </h1>
-<a href="https://docs.google.com/presentation/d/13HchITDEMj3fB8Su-xTVViYsS1mEK_3G7bENKNv2ASo/edit?slide=id.p1#slide=id.p1">Débuter à la carte (Cours)
-<a href="https://docs.google.com/presentation/d/11FEGEkSTUCQhzGrtBpCFHHTKFzlNhQVm5KUyvREcw6Q/edit?slide=id.p1#slide=id.p1">L'entame à Sans-Atout (Cours)
-<a href="DSA/prendre.php">1 - Prendre ses levées en flanc (Cours et Donnes)
-<a href="DSA/honneurs.php">2 - Affranchissement de levées d'honneurs en défense (Cours et Donnes)
-<a href="DSA/longueur.php">3 - Affranchissement de levées de longueur en défense (Cours et Donnes)
-
-<h1>DEFENSE A L'ATOUT</h1>
-<a href="https://docs.google.com/presentation/d/1sI5fc-yBQyTfOm-hsSXYKWldBLVF4enHhiwo54k7zDE/edit?slide=id.p1#slide=id.p1">L'entame à l'atout (cours)
-<a href="DA/realiser.php">31 - Réaliser ses levées en urgence</a> 
-<a href="DA/battre.php">32 - Battre atout pour empècher la coupe de la main courte</a>
-<a href="DA/couper.php">33 - Coupes en défense</a>
-</pre>
-</div>
-
-
-</body>
-</html>
+<?php include '../../includes/footer.php'; ?>

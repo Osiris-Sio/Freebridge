@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html> 
+<?php
+include '../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
-<head>
-<title>Confirmer avec David</title>
-<meta charset="UTF-8">
-<title style="font-size:300%;"></title>
-</head>
+<button type="button" onclick="window.location.href='avdj'">
+    ← Retour
+</button>
 
-<body> 
-<h1>Confirmer avec David</h1>
-<pre>
-<img src="slider4.jpg" width="30%">
-    <a href="../../avdj.php">Retour à l'écran "A vous de jouer" </a>     
+<article>
+    <header>
+        <h1>Confirmer avec David</h1>
+    </header>
 
-</pre>
+    <div>
+        <img src="assets/img/slider4.jpg" alt="Niveau Confirmer">
+    </div>
 
-</body>
-</html>
+    <details class="level-folder">
+        <summary>Zone de test - David</summary>
+        <div class="lesson-list">
+            <p><small>Bientôt disponible...</small></p>
+        </div>
+    </details>
+</article>
+
+<?php include '../../includes/footer.php'; ?>

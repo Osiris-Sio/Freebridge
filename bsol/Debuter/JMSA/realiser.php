@@ -1,94 +1,406 @@
+<?php
+include '../../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
+<button type="button" onclick="window.location.href='bsol/Debuter/debutant.php'">
+    ← Retour au niveau débutant
+</button>
 
-<!DOCTYPE html>
-<html> 
+<article>
+    <header>
+        <h1>Réaliser ses levées</h1>
+    </header>
 
+    <div class="course-header">
+        <a href="https://docs.google.com/presentation/d/1hqoOSCKKrf-6sv0sOgFS-1t5soidBGe0fIg240ivKlk/edit?slide=id.p1#slide=id.p1" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
+    </div>
 
+    <!-- SECTION 1 -->
+    <details class="level-folder">
+        <summary>1 - Compte des levées maîtresses (16 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=UkgQ6hz9" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=kW6H2bEm" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=FtKWh4v7" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=u9PKmU6L" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=mDwKR9iW" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=xAEk2jnR" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=ecw3MXS9" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=EGCgVXa5" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=iExVufXs" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=mSitsPa4" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=aF6LARm3" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=6qv29WGf" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=npt8qVkg" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=fqvVtRdG" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=XNPyjizu" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
 
-<head>
-<title>Jeu avec le Mort à Sans-Atout</title>
-<meta charset="UTF-8">
-<title style="font-size:300%;"></title>
-</head>
+    <!-- SECTION 2 -->
+    <details class="level-folder">
+        <summary>2 - Jouer les honneurs du côté court (8 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=jc54n8Da" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=8kHfbquY" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=qgN9U2rY" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=adQTMuwz" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=eCFT8P9S" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=dHGFhnC6" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=NygfSs4F" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
 
-<body> 
-Jeu avec le Mort à Sans-Atout</
+    <!-- SECTION 3 -->
+    <details class="level-folder">
+        <summary>3 - Maniement de 2 couleurs asymétriques (7 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=jszC7Xd2" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=vGuywUA8" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=7QVakq4L" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=RwF9C8HE" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=d29X6PGr" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=wc9MDk5U" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
 
-<p> <a href="../debutant.php">Retour</a>
+    <!-- SECTION 4 -->
+    <details class="level-folder">
+        <summary>4 - Eviter les blocages (8 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=TeGCnkpY" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=aujtpqHg" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=q8ecwtVR" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=j4ZRyKSP" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=GKqfAC2w" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=zMapvZ87" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=cUY7ftsv" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
 
-<pre>
-<h1> - Réaliser ses levées </h1>
-<a href="https://docs.google.com/presentation/d/18EMJ9bHTaktGg5y9f_39NhnSOMNo_7SxOeBQ0mKwrpg/edit?slide=id.p1#slide=id.p1">Cours Realiser ses levées
+    <!-- SECTION 5 -->
+    <details class="level-folder">
+        <summary>5 - Conserver les bonnes cartes (13 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=3ekyHQ6z" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=BW3XbLmf" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=THbFN9Ea" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=kesDzxa3" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=6nPDQLFt" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=dyQEncvN" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=JjDBbdMg" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=SKVALDcR" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=f5pWra4Q" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=6vaumPwU" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=KiMuQBJY" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=yB54dHPw" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=sTX3r5Zy" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
 
-<h2> 1 - Commpte des levées maîtresses 16 donnes </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=UkgQ6hz9" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_2.lin" target="_blank">Solution avec B ridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=kW6H2bEm" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=FtKWh4v7" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=u9PKmU6L" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=mDwKR9iW" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_6.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=xAEk2jnR" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_7.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=ecw3MXS9" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_8.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=ecw3MXS9" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_9.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=EGCgVXa5" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_10.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=iExVufXs" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_11.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=mSitsPa4" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_12.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=aF6LARm3" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_13.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=6qv29WGf" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_14.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=npt8qVkg" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_15.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=fqvVtRdG" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_16.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=XNPyjizu" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/1_-_Compte_des_levees_maitresses/Donne_17.lin" target="_blank">Solution avec  Bridge Solver</a>
+    <!-- SECTION 6 -->
+    <details class="level-folder">
+        <summary>6 - Compte des levées quasi-immédiates (5 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=R2fvB7MZ" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_leves_quasi-immediates/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=Q87DjfYt" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_leves_quasi-immediates/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=n3pXZKk9" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_leves_quasi-immediates/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=Rs4tgFWS" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_leves_quasi-immediates/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions">
+                    <a href="https://bridge-training.com/player?dds=vCR7rPD9" target="_blank" role="button" class="outline">Jouer</a>
+                    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_leves_quasi-immediates/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                </div>
+            </div>
+        </div>
+    </details>
+</article>
 
-<h2> 2 - Jouer les honneurs du cote court 8 Donnes </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=jc54n8Da" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=8kHfbquY" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=qgN9U2rY" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=adQTMuwz" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=CFT8P9S" target="_blank">Jouer avec Bridge Training   <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_6.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=dHGFhnC6" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_7.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=NygfSs4F" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/2_-_Jouer_les_honneurs_du_cote_court/Donne_8.lin" target="_blank">Solution avec  Bridge Solver</a>
-
-<h2> 3 - Maniement de 2 couleurs asymétriques (7) </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=jszC7Xd2" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=vGuywUA8" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=7QVakq4L" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=RwF9C8HE" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=d29X6PGr" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_6.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=wc9MDk5U" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/3_-_Maniement_de_2_couleurs_asymetriques/Donne_7.lin" target="_blank">Solution avec  Bridge Solver</a><a href="https://dds.bridgewebs.com/bsol_standalone/ddummy.htm" target="_blank">Solution avec  Bridge Solver
-
-<h2> 4 - Eviter les blocages (8) </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=TeGCnkpY" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=aujtpqHg" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=q8ecwtVR" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=j4ZRyKSP" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=GKqfAC2w" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_6.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=zMapvZ87" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/4_-_Eviter_les_blocages/Donne_7.lin" target="_blank">Solution avec  Bridge Solver</a>
-
-<h2> 5 - Conserver les bonnes cartes (13) </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=3ekyHQ6z" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=BW3XbLmf" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=THbFN9Ea" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=kesDzxa3" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=6nPDQLFt" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=dyQEncvN" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_6.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=JjDBbdMg" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_7.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=SKVALDcR" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_8.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=f5pWra4Q" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_9.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=6vaumPwU" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_10.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=KiMuQBJY" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_11.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=yB54dHPw" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_12.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=sTX3r5Zy" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/5_-_Conserver_les_bonnes_cartes/Donne_13.lin" target="_blank">Solution avec  Bridge Solver</a>
-
-<h2> 6 - Compte des levée quasi-immédiates (5)</h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=R2fvB7MZ" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_levees_quasi-immediates/Donne_1.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=Q87DjfYt" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_levees_quasi-immediates/Donne_2.lin" target="_blank">Solution avec  Bridge Solver</a><a href="https://dds.bridgewebs.com/bsol_standalone/ddummy.htm" target="_blank">Solution avec  Bridge Solver
-Donne 3 <a href="https://bridge-training.com/player?dds=n3pXZKk9" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_levees_quasi-immediates/Donne_3.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=Rs4tgFWS" target="_blank">Jouer avec Bridge Training  <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_levees_quasi-immediates/Donne_4.lin" target="_blank">Solution avec  Bridge Solver</a>
-Donne 5 <a href="https://bridge-training.com/player?ddsvCR7rPD9" target="_blank">Jouer avec Bridge Training   <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/JMSA/1_-_Realiser_ses_levees/6_-_Compte_des_levees_quasi-immediates/Donne_5.lin" target="_blank">Solution avec  Bridge Solver</a>
-</pre>
-
-</body>
-</html>
+<?php include '../../../includes/footer.php'; ?>

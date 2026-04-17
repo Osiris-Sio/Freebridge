@@ -34,13 +34,13 @@
                 </a>
             </article>
             <article>
-                <a href="bsol/Confirmer/confirmerProgresser/progresser.php">
+                <a href="bsol/Progresser/progresser.php">
                     <img src="assets/img/slider2.jpg" alt="Progresser">
                     <footer>Niveau Progresser</footer>
                 </a>
             </article>
             <article>
-                <a href="bsol/Confirmer/confirmerPeaufiner/peaufiner.php">
+                <a href="bsol/Peaufiner/peaufiner.php">
                     <img src="assets/img/slider3.jpg" alt="Peaufiner">
                     <footer>Niveau Peaufiner</footer>
                 </a>

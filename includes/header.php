@@ -26,6 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/toast.js"></script>
     <script src="js/password-toggle.js"></script>
     <script src="js/charts.js"></script>
+    <script src="js/level-pages.js" defer></script>
     <script>
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
