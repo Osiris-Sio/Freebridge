@@ -91,7 +91,7 @@ if (strpos($path, 'bsol/') === 0) {
 $path = str_replace('.php', '', $path);
 
 // --- Liste des pages PRIVÉES ---
-$private_pages = ['compte', 'avdj', 'cours', 'correction', 'rubrique'];
+$private_pages = ['account', 'avdj', 'cours', 'correction', 'rubrique'];
 
 if (in_array($path, $private_pages) && !isset($_SESSION['user_id'])) {
   $_SESSION['messages']['errors'][] =
@@ -105,10 +105,10 @@ $routes = [
   'home' => 'app/home/controllers/home_controller.php',
   'login' => 'app/login/controllers/login_controller.php',
   'register' => 'app/register/controllers/register_controller.php',
-  'compte' => 'app/compte/controllers/compte_controller.php',
+  'account' => 'app/account/controllers/account_controller.php',
   'lostpassword' => 'app/lostpassword/controllers/lostpassword_controller.php',
   'contact' => 'app/contact/controllers/contact_controller.php',
-  'deconnexion' => 'app/deconnexion/controllers/deconnexion_controller.php',
+  'logout' => 'app/logout/controllers/logout_controller.php',
 ];
 
 $static_pages = [
