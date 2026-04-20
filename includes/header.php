@@ -1,8 +1,7 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-?>
+  session_start();
+} ?>
 <!doctype html>
 <html lang="fr" data-theme="light">
 
@@ -64,7 +63,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <?php if (isset($_SESSION['user_nom'])) { ?>
                     <li><a href="avdj">À vous de jouer</a></li>
-                    <li><a href="compte" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars($_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom']) ?></a></li>
+                    <li><a href="compte" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars(
+                      $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
+                    ) ?></a></li>
                     <li><a href="deconnexion" role="button">Déconnexion</a></li>
                 <?php } else { ?>
                     <li><a href="login" role="button">Connexion</a></li>

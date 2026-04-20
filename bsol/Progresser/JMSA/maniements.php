@@ -1,277 +1,790 @@
-<!DOCTYPE html>
-<html> 
+<?php
+include '../../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
-<head>
-<title>Jeu avec le Mort à Sans-Atout</title>
-<meta charset="UTF-8">
-<title style="font-size:300%:"></title>
-</head>
+<button type="button" onclick="window.location.href='bsol/Progresser/progresser.php'">
+    ← Retour au niveau progresser
+</button>
 
-<body> 
-Jeu avec le Mort à Sans-Atout</>
-<p> <a href="../progresser.php">Retour</a>
+<article>
+    <header>
+        <h1>13 - Les maniements de couleurs (235 donnes)</h1>
+    </header>
 
-<pre>
-<h1> - Les maniements de couleurs (235 donnes) </h1>
+    <details class="level-folder">
+        <summary>0 - Manque l'As (18 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WKzLYfp4" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2srK7dxG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KcJH3ExN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=taLCkmpB" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NpTkC485" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZNGnLha9" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=hDivGLRA" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=iF9qHMyS" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WZ6YuPtq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4RWXiKLq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=RKcJFM3d" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JNqEy8Qg" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LFX9ZJt7" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bzcnFfDY" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=UhK6s38Z" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=XGfzLyxk" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B8pUM2kz" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=radm9LEi" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 0 - Manque l'As (18 donnes) </h2> 
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=WKzLYfp4">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=2srK7dxG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=KcJH3ExN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=taLCkmpB">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=NpTkC485">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=ZNGnLha9">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=hDivGLRA">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=iF9qHMyS">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=WZ6YuPtq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=4RWXiKLq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=RKcJFM3d">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=JNqEy8Qg">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=LFX9ZJt7">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=bzcnFfDY">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=UhK6s38Z">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=XGfzLyxk">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=B8pUM2kz">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=radm9LEi">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/0_-_Manque_l'as/Donne_18.lin">Solution</a>
+    <details class="level-folder">
+        <summary>1 - Manque le Roi (18 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=c8TukXxd" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=FQb8UTgx" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=FaVn5MJN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=f6NwKVyx" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LT4xh9ME" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=szw5XyJ9" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=893Cmj5Z" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6fKPEXzv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gBtNkVAf" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DLHGxWky" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ASqRmVhT" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9JtRUuZn" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=zJF7uhqD" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bMgJie4S" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NqhTxRPX" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SYVihJNs" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PdqMA7Vk" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xLfS28Hk" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 1 - Manque le Roi (18 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=c8TukXxd">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=FQb8UTgx">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=FaVn5MJN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=f6NwKVyx">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=LT4xh9ME">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=szw5XyJ9">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=893Cmj5Z">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=6fKPEXzv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=gBtNkVAf">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=DLHGxWky">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=ASqRmVhT">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=9JtRUuZn">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=zJF7uhqD">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=bMgJie4S">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=NqhTxRPX">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=SYVihJNs">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=PdqMA7Vk">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=xLfS28Hk">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/1_-_Manque_le_roi/Donne_18.lin">Solution</a>
+    <details class="level-folder">
+        <summary>2 - Manque la Dame (25 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JtNr2uxQ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=yx4N9zHB" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PKGzApgX" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kZDuzJX7" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HXPvri7U" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=8m2XyrCi" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rNRVCm5a" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4pRKtZCH" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WaUe94cL" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4Ej8Md2Z" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZiUvDVXN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZiUvDVXN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=A5StMWDK" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DcTSHumV" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=psSe5Abt" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=BWCqhJG3" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=BeLMNTrn" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MUAQF526" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qPdDim4E" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ncpDJMam" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MJtqx5HB" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ayuPUwtq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=z9rAkYcG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ydn9kw7x" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ye4cKtB5" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_25.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 2 - Manque la Dame (25 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=JtNr2uxQ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=yx4N9zHB">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=PKGzApgX">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=kZDuzJX7">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridg4.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=HXPvri7U">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=8m2XyrCi">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=rNRVCm5a">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=4pRKtZCH">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridg4.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=WaUe94cL">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=4Ej8Md2Z">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=ZiUvDVXN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=ZiUvDVXN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridg4.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=A5StMWDK">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=DcTSHumV">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=psSe5Abt">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=BWCqhJG3">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridg4.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=BeLMNTrn">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=MUAQF526">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player/index.php?dds=qPdDim4E">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player/index.php?dds=ncpDJMam">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge          0																								.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player/index.php?dds=MJtqx5HB">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player/index.php?dds=ayuPUwtq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player/index.php?dds=z9rAkYcG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player/index.php?dds=ydn9kw7x">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_24.lin">Solution</a>
-Donne 25 <a href="https://bridge-training.com/player/index.php?dds=ye4cKtB5">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/2_-_Manque_la_dame/Donne_25.lin">Solution</a>
+    <details class="level-folder">
+        <summary>3 - Manque le Valet (28 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=vwrjgns3" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Qx98kzyE" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KfZFpLrY" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=A7HSYBVu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2ufmPcSN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xc5tABQK" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=TFwZN7yv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rRPjNyJ6" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=TzrPNu8p" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NPACeEKX" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=V5HrLthm" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MwXY5pmh" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kZHbXv4j" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qZfYByi9" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEHngTZs" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xcW3vyuw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZnSXePkj" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7pgD49UK" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2NHRKuAj" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YUs4pjgm" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xdtXSTQV" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=q6Jfshmj" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xTpnyiPG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=hpZqKbnm" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=yJk9cxew" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_25.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 26</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=zUaLwEc3" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_26.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 27</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=UKABkybM" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_27.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 28</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YsCGyFgK" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_28.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 3 - Manque le Valet (27 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=vwrjgns3">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=Qx98kzyE">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=KfZFpLrY">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=A7HSYBVu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=2ufmPcSN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=xc5tABQK">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=TFwZN7yv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=rRPjNyJ6">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_9.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=TzrPNu8p">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=NPACeEKX">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=V5HrLthm">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=MwXY5pmh">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=kZHbXv4j">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=qZfYByi9">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=DEHngTZs">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=xcW3vyuw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=ZnSXePkj">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=7pgD49UK">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player/index.php?dds=2NHRKuAj">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player/index.php?dds=YUs4pjgm">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player/index.php?dds=xdtXSTQV">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player/index.php?dds=q6Jfshmj">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player/index.php?dds=xTpnyiPG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player/index.php?dds=hpZqKbnm">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_24.lin">Solution</a>
-Donne 25 <a href="https://bridge-training.com/player/index.php?dds=yJk9cxew">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_25.lin">Solution</a>
-Donne 26 <a href="https://bridge-training.com/player/index.php?dds=zUaLwEc3">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_26.lin">Solution</a>
-Donne 27 <a href="https://bridge-training.com/player/index.php?dds=UKABkybM">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_27.lin">Solution</a>
-Donne 28 <a href="https://bridge-training.com/player/index.php?dds=YsCGyFgK">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/3_-_Manque_le_valet/Donne_28.lin">Solution</a>
+    <details class="level-folder">
+        <summary>4 - Manque l'As et le Roi (1 donne)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=nGSg8pWJ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/4_-_Manque_l'as_et_le_roi/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 4 - Manque l'As et le Roi (1 donne) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=nGSg8pWJ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/4_-_Manque_l'as_et_le_roi/Donne_1.lin">Solution</a>
+    <details class="level-folder">
+        <summary>5 - Manque l'As et la Dame (5 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=q2c4tDGw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=vt8fQ6hi" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=F5HjAnKd" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xVU6Dkbg" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gvUH8pnW" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 5 - Manque l'As et la Dame (5 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=q2c4tDGw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=vt8fQ6hi">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=F5HjAnKd">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=xVU6Dkbg">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=gvUH8pnW">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/5_-_Manque_l'as_et_la_dame/Donne_5.lin">Solution</a>
+    <details class="level-folder">
+        <summary>6 - Manque l'As et le Valet (5 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LwVpB2EG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WsmA5LFN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=FmcCk98b" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DZVxXAaQ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7xmCwPJH" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 6 - Manque l'As et le Valet (5 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=LwVpB2EG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=WsmA5LFN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=FmcCk98b">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=DZVxXAaQ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=7xmCwPJH">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/6_-_Manque_l'as_et_le_valet/Donne_5.lin">Solution</a>
+    <details class="level-folder">
+        <summary>7 - Manque l'As et le 10 (9 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ynGBazxw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qBgFNAYa" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qBgFNAYa" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qBgFNAYa" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=26yjzQeL" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6Rpy8GBW" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ynGBazxw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_19/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9iC5bK3g" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6piBGb9U" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 7 - Manque l'As et le 10 (9 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=ynGBazxw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=qBgFNAYa">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=qBgFNAYa">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=qBgFNAYa">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=26yjzQeL">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=6Rpy8GBW">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=ynGBazxw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_19/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=9iC5bK3g">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=6piBGb9U">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/7_-_Manque_l'as_et_le_10/Donne_9.lin">Solution</a>
+    <details class="level-folder">
+        <summary>8 - Manque le Roi et la Dame (6 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=79dpAPEc" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=D8ABUq5F" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5f8e2FuM" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SMs9p6Gb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=UGVmbh8P" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZPcKkW5L" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 8 - Manque le Roi et la Dame (6 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=79dpAPEc">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=D8ABUq5F">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=5f8e2FuM">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=SMs9p6Gb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=UGVmbh8P">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=ZPcKkW5L">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/8_-_Manque_le_roi_et_la_dame/Donne_6.lin">Solution</a>
+    <details class="level-folder">
+        <summary>9 - Manque le Roi et le Valet (24 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=afNnitZA" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=sVphrxHB" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2ZJqH3rR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZhmuVPnq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MAL3B8Qd" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=sUAxnYai" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LACJZEdw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9rXWTfbL" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bMhC2AY5" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=R59qYaPv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dgaeJV72" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KCck3Mbw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YRLXHjV3" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YRLXHjV3" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=XmLGtdhb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=W4RU2QL6" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dfbW8Ept" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xLfS28Hk" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=U6AuDiZq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=aSfipsGz" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=tgKMvqN8" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uZ34gbeS" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=F5HjAnKd" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=d9KSHaLv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 9 - Manque le Roi et le Valet (24 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=afNnitZA">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=sVphrxHB">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=2ZJqH3rR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=ZhmuVPnq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=MAL3B8Qd">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=sUAxnYai">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=LACJZEdw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=9rXWTfbL">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=bMhC2AY5">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=R59qYaPv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=dgaeJV72">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=KCck3Mbw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=YRLXHjV3">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=YRLXHjV3">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=XmLGtdhb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=W4RU2QL6">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=dfbW8Ept">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=xLfS28Hk">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player/index.php?dds=U6AuDiZq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player/index.php?dds=aSfipsGz">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player/index.php?dds=tgKMvqN8">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player/index.php?dds=uZ34gbeS">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player/index.php?dds=F5HjAnKd">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player/index.php?dds=d9KSHaLv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_24.lin">Solution</a>
+    <details class="level-folder">
+        <summary>10 - Manque la Dame et le Valet (24 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=htYeyCrU" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=z5FVEH6Z" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rBmzdLkZ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eJCRcVSK" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=t6WQkbUe" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uS27cyYN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dYCsnkeR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CULdmN2x" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=a6u8Jigz" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qM7x2SpR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Vdsy89BP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=QLkXm75W" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uUn75qbs" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HXGPehUF" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=teMJQahx" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Rgj8yQLH" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9NKXD4uZ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=a6u8Jigz" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=EcjnKxHh" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=t8EGkf3x" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6FVhZMyn" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=REu5CPbZ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2hFv4t73" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=L693yfTH" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 10 - Manque la Dame et le Valet (31 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=htYeyCrU">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=z5FVEH6Z">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=rBmzdLkZ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=eJCRcVSK">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=t6WQkbUe">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=uS27cyYN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=dYCsnkeR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=CULdmN2x">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=a6u8Jigz">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=qM7x2SpR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=Vdsy89BP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=QLkXm75W">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=uUn75qbs">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=HXGPehUF">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=teMJQahx">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=Rgj8yQLH">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=9NKXD4uZ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=a6u8Jigz">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player/index.php?dds=EcjnKxHh">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player/index.php?dds=t8EGkf3x">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player/index.php?dds=6FVhZMyn">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player/index.php?dds=REu5CPbZ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player/index.php?dds=2hFv4t73">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player/index.php?dds=L693yfTH">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/10_-_Manque_la_dame_et_le_valet/Donne_24.lin">Solution</a>
+    <details class="level-folder">
+        <summary>11 - Manque l'As, la Dame et le Valet (1 donne)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qFWReQDi" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/12_-_Manque_l'as,_la_dame_et_le_valet/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 11 - Manque l'As, la Dame et le Valet (1 donne) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=qFWReQDi">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/12_-_Manque_l'as,_la_dame_et_le_valet/Donne_1.lin">Solution</a>
+    <details class="level-folder">
+        <summary>12 - Manque Le Roi, la Dame et le 10 (4 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dGvi7xLE" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=jCrYaXtQ" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=c3kNZw4b" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=vfr5AVDx" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<<h2> 12 - Manque Le Roi, la Dame et le 10 (1 donne) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=dGvi7xLE">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=jCrYaXtQ">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=c3kNZw4b">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=vfr5AVDx">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/13_-_Manque_le_roi,_la_dame_et_le_10/Donne_4.lin">Solution</a>
+    <details class="level-folder">
+        <summary>13 - Manque Le Roi, la Valet et le 10 (6 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5K4zcPar" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DZRVcAvk" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=C4iXPjU7" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=vEfbNYci" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7pVjdgTS" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=x2KdN7SA" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<<h2> 13 - Manque Le Roi, la Valet et le 10 (6 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=5K4zcPar">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=DZRVcAvk">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=C4iXPjU7">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=vEfbNYci">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=7pVjdgTS">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=x2KdN7SA">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/14_-_Manque_le_roi,_le_valet_et_le_10/Donne_6.lin">Solution</a>
+    <details class="level-folder">
+        <summary>14 - Manque Le Roi et le 10 ou le 9 (16 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=aEN3DfGv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Djypb8s2" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=AZXb9qiN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bGY25mzT" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bGY25mzT" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=L58Q6NPt" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=An8hCFfN" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9DGKgSMR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=k5ueJd3Q" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=zmkZWHCG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=VgMTRzFp" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9FfmGzTA" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=3YXRGaHd" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=D4MQfYqR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eAdPR4Jc" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=D4e6SaFy" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 14 - Manque Le Roi et le 10 ou le 9 (16 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=aEN3DfGv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=Djypb8s2">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=AZXb9qiN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=bGY25mzT">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=bGY25mzT">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=L58Q6NPt">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=An8hCFfN">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=9DGKgSMR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=k5ueJd3Q">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=zmkZWHCG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=VgMTRzFp">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=9FfmGzTA">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=3YXRGaHd">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=D4MQfYqR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=eAdPR4Jc">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=D4e6SaFy">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/15_-_Manque_le_roi_et_le_10_ou_le_9/Donne_16.lin">Solution</a>
+    <details class="level-folder">
+        <summary>15 - Manque la Dame et le 10 (ou le 9) (19 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dSTVrYRE" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=btXPpzKC" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NzqHDuQY" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=9edzcia5" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4AKx8SnM" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=GJpQdC6B" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ptQ3Cdjc" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=2VeGWvic" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eaQTuVfM" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KjScxm3G" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=s4mdWUnw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HnRYEvMW" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SA4aX786" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MAh4BQWz" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=npGtBk56" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Vq9MxQLi" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=3FgdLUyX" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=QySPLetR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=nJGcFyKt" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h2> 15 - Manque la Dame et le 10 (ou le 9)(21 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=dSTVrYRE">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=btXPpzKC">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=NzqHDuQY">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=9edzcia5">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=4AKx8SnM">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=GJpQdC6B">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=ptQ3Cdjc">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=2VeGWvic">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=eaQTuVfM">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=KjScxm3G">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=s4mdWUnw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=HnRYEvMW">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=SA4aX786">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=MAh4BQWz">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=npGtBk56">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player/index.php?dds=Vq9MxQLi">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player/index.php?dds=3FgdLUyX">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player/index.php?dds=QySPLetR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player/index.php?dds=nJGcFyKt">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/16_-_Manque_la_dame_et_le_10_(ou_le_9)/Donne_19.lin">Solution</a>
+    <details class="level-folder">
+        <summary>16 - Manque Valet-10 (15 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=8rV4529W" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HutybAnf" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xY6fQ3vq" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xcW3vyuw" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=GxhDEwau" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=zSRkYTBC" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=C8TKRzwh" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=f3AxtzLW" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Lk7cXtBe" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Q3LwArs2" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xz4CnZkr" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5zeWKaMv" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HGWmKCeg" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eKs5HW9T" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=fgQM37PR" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
+</article>
 
-<h2> 16 - Manque Valet-10 (16 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player/index.php?dds=8rV4529W">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player/index.php?dds=HutybAnf">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player/index.php?dds=xY6fQ3vq">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player/index.php?dds=xcW3vyuw">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player/index.php?dds=GxhDEwau">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player/index.php?dds=zSRkYTBC">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player/index.php?dds=C8TKRzwh">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player/index.php?dds=f3AxtzLW">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player/index.php?dds=Lk7cXtBe">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player/index.php?dds=Q3LwArs2">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player/index.php?dds=xz4CnZkr">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player/index.php?dds=5zeWKaMv">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player/index.php?dds=HGWmKCeg">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player/index.php?dds=eKs5HW9T">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player/index.php?dds=fgQM37PR">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/13_-_Les_maniements_de_couleur/17_-_Manque_valet-10/Donne_15.lin">Solution</a>
-
-</pre>
-</body>
-</html>
+<?php include '../../../includes/footer.php'; ?>

@@ -6,14 +6,14 @@
     </header>
 
     <div class="grid grid-avdj">
-        <?php if ($_SESSION['user_rang'] == 'debutant') : ?>
+        <?php if ($_SESSION['user_rang'] == 'debutant'): ?>
             <article>
                 <a href="bsol/Debuter/debutant.php">
                     <img src="assets/img/slider1.jpg" alt="Débutant">
                     <footer>Niveau Débutant</footer>
                 </a>
             </article>
-        <?php elseif ($_SESSION['user_rang'] == 'progresser') : ?>
+        <?php elseif ($_SESSION['user_rang'] == 'progresser'): ?>
             <article>
                 <a href="bsol/Debuter/debutant.php">
                     <img src="assets/img/slider1.jpg" alt="Débutant">
@@ -26,7 +26,7 @@
                     <footer>Niveau Progresser</footer>
                 </a>
             </article>
-        <?php elseif ($_SESSION['user_rang'] == 'peaufiner') : ?>
+        <?php elseif ($_SESSION['user_rang'] == 'peaufiner'): ?>
             <article>
                 <a href="bsol/Debuter/debutant.php">
                     <img src="assets/img/slider1.jpg" alt="Débutant">
@@ -45,7 +45,7 @@
                     <footer>Niveau Peaufiner</footer>
                 </a>
             </article>
-        <?php elseif ($_SESSION['user_rang'] == 'confirmer') : ?>
+        <?php elseif ($_SESSION['user_rang'] == 'confirmer'): ?>
             <article>
                 <a href="bsol/Debuter/debutant.php">
                     <img src="assets/img/slider1.jpg" alt="Débutant">

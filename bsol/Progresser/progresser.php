@@ -16,7 +16,7 @@ include '../../includes/header.php';
         <img src="assets/img/slider2.jpg" alt="Niveau Progresser">
     </div>
 
-    <!-- JEU A SANS-ATOUT -->
+    <!-- JEU A SANS-ATOUT (JMSA) -->
     <details class="level-folder">
         <summary>Jeu à Sans-Atout</summary>
         <div class="lesson-list">
@@ -47,24 +47,36 @@ include '../../includes/header.php';
         </div>
     </details>
 
-    <!-- JEU A L'ATOUT -->
+    <!-- JEU A L'ATOUT (JMA) -->
     <details class="level-folder">
         <summary>Jeu à l'Atout</summary>
         <div class="lesson-list">
             <a href="bsol/Progresser/JMA/courte.php" class="lesson-item">
-                <i class="fas fa-play-circle"></i> 1 - Coupe de la main courte
+                <i class="fas fa-play-circle"></i> 20 - Coupe de la main courte
             </a>
             <a href="bsol/Progresser/JMA/faire_tomber.php" class="lesson-item">
-                <i class="fas fa-play-circle"></i> 2 - Faire tomber les atouts adverses
+                <i class="fas fa-play-circle"></i> 21 - Faire tomber les atouts adverses
             </a>
-            <a href="bsol/Progresser/JMA/differer.php" class="lesson-item">
-                <i class="fas fa-play-circle"></i> 3 - Différer la d'atout
+            <a href="bsol/Progresser/JMA/Differer.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 22 - Différer le retrait des atouts
             </a>
             <a href="bsol/Progresser/JMA/double_coupe.php" class="lesson-item">
-                <i class="fas fa-play-circle"></i> 4 - La double coupe
+                <i class="fas fa-play-circle"></i> 23 - La double coupe
             </a>
             <a href="bsol/Progresser/JMA/affranchissement.php" class="lesson-item">
-                <i class="fas fa-play-circle"></i> 5 - Affranchir une couleur du Mort
+                <i class="fas fa-play-circle"></i> 24 - Affranchir une couleur du Mort
+            </a>
+            <a href="bsol/Progresser/JMA/secondaire.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 25 - Affranchissement d'une couleur secondaire
+            </a>
+            <a href="bsol/Progresser/JMA/defausse.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 26 - La défausse des perdantes
+            </a>
+            <a href="bsol/Progresser/JMA/base.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 27 - Choix de la main de base
+            </a>
+            <a href="bsol/Progresser/JMA/comnunications.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 28 - Les communications à l'atout
             </a>
         </div>
     </details>

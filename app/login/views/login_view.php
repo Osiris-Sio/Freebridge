@@ -7,7 +7,9 @@
 
     <form action="login" method="post">
         <label for="login">Adresse mail :</label>
-        <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?php echo htmlspecialchars($login_value ?? ''); ?>">
+        <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?php echo htmlspecialchars(
+          $login_value ?? '',
+        ); ?>">
 
         <label for="password">Mot de passe :</label>
         <input required type="password" name="password" id="password" placeholder="Mot de passe">

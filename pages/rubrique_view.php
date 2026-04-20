@@ -1,4 +1,4 @@
-<?php include 'includes/header.php'; 
+<?php include 'includes/header.php';
 $niveau = $_GET['lvl'] ?? 1;
 ?>
 

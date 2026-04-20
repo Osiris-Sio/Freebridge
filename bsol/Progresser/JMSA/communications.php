@@ -1,273 +1,702 @@
-<!DOCTYPE html>
-<html> 
+<?php
+include '../../../includes/header.php';
+?>
+<link rel="stylesheet" href="css/level-pages.css">
 
-<head>
-<title>Jeu avec le Mort à Sans-Atout</title>
-<meta charset="UTF-8">
-<title style="font-size:300%:"></title>
-</head>
+<button type="button" onclick="window.location.href='bsol/Progresser/progresser.php'">
+    ← Retour au niveau progresser
+</button>
 
-<body> 
-Jeu avec le Mort à Sans-Atout</>
+<article>
+    <header>
+        <h1>12 - Les problèmes de communications</h1>
+    </header>
 
-<p> <a href="../progresser.php">Retour</a>
+    <details class="level-folder">
+        <summary>1 - Déblocage (49 donnes)</summary>
+        <div class="lesson-list">
+            <h3>1.1 - Bien utiliser ses honneurs</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<pre>
-<h1> 12 - Les problèmes de communications (209 donnes) </h1>
+            <h3>1.2 - Ordre des déblocages</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h2> 1 - Déblocage (49 Donnes) </h2> 
-<h3> 1.1 - Bien utiliser ses honneurs </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.1_-_Bien_utiliser_ses_honneurs/Donne_5.lin">Solution</a>
+            <h3>1.3 - Déblocage et affranchissement</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.2 - Ordre des déblocages </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.2_-_Ordre_des_deblocages/Donne_5.lin">Solution</a>
+            <h3>1.4 - Surprendre dans la couleur pour l'affranchir</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.3 - Deblocage et affranchissement </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.3_-_Deblocage_et_affranchissement/Donne_12.lin">Solution</a>
+            <h3>1.5 - Déblocage de la couleur longue et surprendre dans la couleur plus courte</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.5_-_Deblocage_et_surprendre_dans_la_couleur_plus_courte/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.5_-_Deblocage_et_surprendre_dans_la_couleur_plus_courte/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.4 - Surprendre dans la couleur pour l'affranchir </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.4_-_Surprendre_dans_la_couleur_pour_l'affranchir/Donne_10.lin">Solution</a>
+            <h3>1.6 - Laisser passer et déblocage</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3>  1.5 - Déblocage de la couleur longue et surprendre dans la couleur plus courte </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.5_-_Deblocage_et_surprendre_dans_la_couleur_plus_courte/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.5_-_Deblocage_et_surprendre_dans_la_couleur_plus_courte/Donne_2.lin">Solution</a>
+            <h3>1.7 - Déblocage et coup à blanc</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.7_-_Deblocage_et_coup_a_blanc/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.6 - Laisser passer et deblocage </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.6_-_Laisser-passer_et_deblocage/Donne_8.lin">Solution</a>
+            <h3>1.8 - Déblocage interne dans une couleur</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.7 - Déblocage et coup à blanc </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.7_-_Deblocage_et_coup_a_blanc/Donne_1.lin">Solution</a>
+            <h3>1.9 - Surprendre pour créer une remontée au Mort</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.9_-_Surprendre_pour creer_une_remontee_au_mort/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.8 - Déblocage interne dans une couleur </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.8_-_Deblocage_interne_dans_une_couleur/Donne_3.lin">Solution</a>
+            <h3>1.10 - Déblocage sur un laisser-passer</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.10_-_Deblocage_sur_un_laisser-passer/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.10_-_Deblocage_sur_un_laisser-passer/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h3> 1.9 - Surprendre pour créer une remontée au Mort </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.9_-_Surprendre_pour creer_une_remontee_au_mort/Donne_1.lin">Solution</a>
+    <details class="level-folder">
+        <summary>2 - Le coup à blanc (42 donnes)</summary>
+        <div class="lesson-list">
+            <h3>2.1 - Le coup à blanc simple</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_25.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 26</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_26.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 27</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_27.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 28</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_28.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 29</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_29.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 30</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_30.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 31</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_31.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 32</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_32.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 33</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_33.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 1.10 - Déblocage sur un laisser-passer </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.10_-_Deblocage_sur_un_laisser-passer/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/1_-_Deblocage/1.10_-_Deblocage_sur_un_laisser-passer/Donne_2.lin">Solution</a>
+            <h3>2.2 - Coup à blanc et impasse</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h2> 2 - Le coup à blanc (42 donnes)  </h2>
-<h3> 2.1 - Le coup à blanc simple </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_24.lin">Solution</a>
-Donne 25 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_25.lin">Solution</a>
-Donne 26 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_26.lin">Solution</a>
-Donne 27 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_27.lin">Solution</a>
-Donne 28 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_28.lin">Solution</a>
-Donne 29 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_29.lin">Solution</a>
-Donne 30 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_30.lin">Solution</a>
-Donne 31 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_31.lin">Solution</a>
-Donne 32 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_32.lin">Solution</a>
-Donne 33 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.1_-_Le_coup_a_blanc_simple/Donne_33.lin">Solution</a>
+            <h3>2.3 - Double coup à blanc</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.3_-_Double_coup_a_blanc/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PtvpLCEu" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.3_-_Double_coup_a_blanc/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h3> 2.2 - Coup à blanc et impasse (7 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.2_-_Coup_a_blanc_et_impasse/Donne_7.lin">Solution</a>
+    <details class="level-folder">
+        <summary>3 - Préservation de communications (118 donnes)</summary>
+        <div class="lesson-list">
+            <h3>3.1 - Préserver sa communication et déblocage (19 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 2.3 - Double coup à blanc (2 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.3_-_Double_coup_a_blanc/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=PtvpLCEu">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/2_-_Le_coup_a_blanc/2.3_-_Double_coup_a_blanc/Donne_2.lin">Solution</a>
+            <h3>3.2 - Préserver une communication et affranchir une couleur (33 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_22.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_23.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_24.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_25.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 26</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_26.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 27</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_27.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 28</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_28.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 29</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_29.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 30</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_30.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 31</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_31.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 32</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_32.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 33</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_33.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h2> 3 - Préservation de communications (118 donnes) </h2>
-<h3> 3.1 - Preserver sa communication et deblocage (19 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_4.lin">Solution</a>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_1.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.1_-_Preserver_sa_communication_et_deblocage/Donne_19.lin">Solution</a>
+            <h3>3.3 - Surprendre pour créer une communication supplémentaire (20 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 3.2 - Préserver une communication et affranchir une couleur (33 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_24.lin">Solution</a>
-Donne 25 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_25.lin">Solution</a>
-Donne 26 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_26.lin">Solution</a>
-Donne 27 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_27.lin">Solution</a>
-Donne 28 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_28.lin">Solution</a>
-Donne 29 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_29.lin">Solution</a>
-Donne 30 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_30.lin">Solution</a>
-Donne 31 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_31.lin">Solution</a>
-Donne 32 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_32.lin">Solution</a>
-Donne 33 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.2_-_Preserver_une_communication_et_affranchir_une_couleur/Donne_33.lin">Solution</a>
+            <h3>3.4 - Débloquer pour créer une communication supplémentaire (3 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 3.3 - Surprendre pour creer une communication supplementaire (20 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.3_-_Surprendre_pour_creer_une_communication_supplementaire/Donne_20.lin">Solution</a>
+            <h3>3.5 - Création d'une communication supplémentaire dans une couleur 4-4 (18 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
 
-<h3> 3.4 - Débloquer pour créer une communication supplémentaire (3 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.4_-_Debloquer_pour_creer_une_communication_supplementaire/Donne_3.lin">Solution</a>
+            <h3>3.6 - Faire une impasse inutile pour créer une communication supplémentaire (4 donnes)</h3>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LniY6eJG" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
 
-<h3> 3.5 - Creation d'une communication supplementaire dans une couleur 4-4 (18 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.5_-_Creation_d'une_communication_supplementaire_dans_une_couleur_4-4/Donne_18.lin">Solution</a>
+    <details class="level-folder">
+        <summary>4 - Impasses et communications (21 donnes)</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_1.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_2.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_3.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_4.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_5.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_6.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_7.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_8.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_9.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_10.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_11.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_12.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_13.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_14.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_15.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_16.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_17.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_18.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_19.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_20.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=B5UaEKrP" target="_blank" role="button" class="outline">Jouer</a><a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_21.lin" target="_blank" role="button" class="secondary outline">Solution</a></div>
+            </div>
+        </div>
+    </details>
+</article>
 
-<h3> 3.6 - Faire une impasse inutile pour creer une communication supplementaire (4 donnes) </h3>
-Donne 1 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=LniY6eJG">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/3_-_Preservation_de_communications/3.6_-_Faire_une_impasse_inutile_pour_creer_une_communication_supplementaire/Donne_4.lin">Solution</a>
-
-<h2> 4 - Impasses et communications (21 donnes) </h2>
-Donne 1 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_18.lin">Solution</a>
-Donne 19 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player?dds=B5UaEKrP">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/12_-_Les_problemes_de_communication/4_-_Impasses_et_communications/Donne_21.lin">Solution</a>
-
-</pre>
-</body>
-</html>
+<?php include '../../../includes/footer.php'; ?>
