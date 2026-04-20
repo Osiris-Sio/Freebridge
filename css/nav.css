@@ -105,6 +105,44 @@ details.dropdown ul li a {
   white-space: nowrap;
 }
 
+/* 
+ * BOUTON RETOUR EN HAUT
+ */
+#scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: var(--pico-primary-background);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+  cursor: pointer;
+}
+
+#scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#scroll-top-btn:hover {
+  background-color: var(--pico-primary-hover-background);
+  transform: translateY(-5px);
+  color: white;
+}
+
+#scroll-top-btn i {
+  font-size: 1.2rem;
+}
+
 @media (max-width: 1280px) {
   .hamburger {
     display: block;

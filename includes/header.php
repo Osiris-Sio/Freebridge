@@ -26,6 +26,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/password-toggle.js"></script>
     <script src="js/charts.js"></script>
     <script src="js/level-pages.js" defer></script>
+    <script src="js/scroll-to-top.js" defer></script>
     <script>
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -78,5 +79,10 @@ if (session_status() === PHP_SESSION_NONE) {
     </header>
 
     <div id="nav-overlay" class="nav-overlay"></div>
+
+    <!-- Bouton Retour en haut de page -->
+    <a href="#" id="scroll-top-btn" title="Retour en haut de page" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <main class="container">
