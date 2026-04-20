@@ -107,7 +107,7 @@ $routes = [
   'register' => 'app/register/controllers/register_controller.php',
   'compte' => 'app/compte/controllers/compte_controller.php',
   'lostpassword' => 'app/lostpassword/controllers/lostpassword_controller.php',
-  'formulaire' => 'app/formulaire/controllers/formulaire_controller.php',
+  'contact' => 'app/contact/controllers/contact_controller.php',
   'deconnexion' => 'app/deconnexion/controllers/deconnexion_controller.php',
 ];
 

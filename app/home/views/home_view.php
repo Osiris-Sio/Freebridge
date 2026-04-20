@@ -25,7 +25,7 @@
         <p>
             L'accès aux niveaux supérieurs sera mis en place dans le courant de l'année et nécessite un abonnement mensuel ou annuel d'un montant réduit pour un accès à des diaporamas plus techniques et à un nombre de donnes plus important.
         </p>
-        <p>Pour nous contacter par mail : <a href="mailto:bernard.glorie.62@orange.fr">bernard.glorie.62@orange.fr</a></p>
+        <p>Pour nous contacter par mail : <a href="contact">Formulaire de contact</a>
     </div>
 
 

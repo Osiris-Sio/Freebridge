@@ -20,7 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $date = date('d/m/Y');
 
   // Stockage temporaire en session pour persistance après redirection
-  $_SESSION['inputs']['register'] = ['nom' => $nom, 'prenom' => $prenom, 'login' => $mail];
+  $_SESSION['inputs']['register'] = [
+    'nom' => $nom,
+    'prenom' => $prenom,
+    'login' => $mail,
+  ];
 
   try {
     // Si la connexion a échoué (déjà géré dans pdo.php), on ne fait rien
@@ -31,13 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Vérification des champs
     if (empty($nom) || empty($prenom) || empty($mail) || empty($password)) {
-      $_SESSION['messages']['errors'][] = 'Veuillez remplir tous les champs obligatoires.';
+      $_SESSION['messages']['errors'][] =
+        'Veuillez remplir tous les champs obligatoires.';
     } elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
       $_SESSION['messages']['errors'][] = "L'adresse mail n'est pas valide.";
     } elseif ($password !== $password_confirm) {
-      $_SESSION['messages']['errors'][] = 'Les mots de passe ne correspondent pas.';
+      $_SESSION['messages']['errors'][] =
+        'Les mots de passe ne correspondent pas.';
     } elseif (strlen($password) < 6) {
-      $_SESSION['messages']['errors'][] = 'Le mot de passe doit contenir au moins 6 caractères.';
+      $_SESSION['messages']['errors'][] =
+        'Le mot de passe doit contenir au moins 6 caractères.';
     } else {
       // Vérifier si l'utilisateur existe déjà
       $sql = 'SELECT COUNT(*) FROM user WHERE user_mail = :mail';
@@ -60,14 +67,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($success) {
           unset($_SESSION['inputs']['register']);
-          $_SESSION['messages']['confirm'][] = 'Votre compte a bien été créé ! Vous pouvez maintenant vous connecter.';
+          $_SESSION['messages']['confirm'][] =
+            'Votre compte a bien été créé ! Vous pouvez maintenant vous connecter.';
           header('Location: login');
           exit();
         } else {
-          $_SESSION['messages']['errors'][] = 'Une erreur est survenue lors de la création de votre compte.';
+          $_SESSION['messages']['errors'][] =
+            'Une erreur est survenue lors de la création de votre compte.';
         }
       } else {
-        $_SESSION['messages']['errors'][] = 'Un compte existe déjà avec cette adresse mail.';
+        $_SESSION['messages']['errors'][] =
+          'Un compte existe déjà avec cette adresse mail.';
       }
     }
   } catch (Throwable $e) {

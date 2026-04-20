@@ -8,7 +8,7 @@
         </a>
     </div>
     <p><small>© 2026 Freebridge<br>
-            <a href="mentionslegales">Mentions Légales</a> | <a href="confidentialite">Politique de confidentialité</a> | <a href="formulaire">Contactez-nous</a>
+            <a href="mentionslegales">Mentions Légales</a> | <a href="confidentialite">Politique de confidentialité</a> | <a href="contact">Contactez-nous</a>
         </small></p>
 </footer>
 </body>

@@ -50,7 +50,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_date'] = $user['user_date'];
 
         $_SESSION['messages']['confirm'][] =
-          'Connexion réussie. Ravi de vous revoir ' . $_SESSION['user_prenom'] . '!';
+          'Connexion réussie. Ravi de vous revoir ' .
+          $_SESSION['user_prenom'] .
+          '!';
         header('Location: home');
         exit();
       } else {

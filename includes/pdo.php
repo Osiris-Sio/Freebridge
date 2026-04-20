@@ -52,7 +52,8 @@ try {
   if (!isset($_SESSION['messages']['errors'])) {
     $_SESSION['messages']['errors'] = [];
   }
-  $msg = "Une erreur est survenue lors de la connexion à la base de données. L'accès peut être restreint.";
+  $msg =
+    "Une erreur est survenue lors de la connexion à la base de données. L'accès peut être restreint.";
   if (!in_array($msg, $_SESSION['messages']['errors'])) {
     $_SESSION['messages']['errors'][] = $msg;
   }
