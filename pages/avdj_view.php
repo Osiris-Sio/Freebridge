@@ -79,10 +79,7 @@
         <h1>Test BSOL</h1>
     </header>
 
-    <a href="/freebridge-github/bsol/ddummy.htm?file=freebridge.fr/bsol/Debuter/DA/2_-_Battre_atout_pour_empecher_le_declarant_de_couper/Donne_1.lin" target="_blank">Test </a>
-    <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Debuter/DA/2_-_Battre_atout_pour_empecher_le_declarant_de_couper/Donne_1.lin" target="_blank">Test 2</a>
-
-
+    <a href="bsol/ddummy.htm" target="_blank">Test </a>
 </article>
 
 <?php include 'includes/footer.php'; ?>
