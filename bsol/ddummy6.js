@@ -450,7 +450,7 @@ function initializeCardScroll(board) {
     simpleSuitSymbol(board.Contract) +
     ' by ' +
     board.Declarer +
-    '<BR><BR>Défilement des cartes en cours...</SPAN>'
+    '<BR><BR>Mode défilement activé (en pause)</SPAN>'
 
   // Réinitialiser les cartes affichées sur le plateau
   ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
@@ -469,16 +469,16 @@ function initializeCardScroll(board) {
   controlPanel.id = 'scrollControlPanel'
   controlPanel.style.position = 'fixed'
   controlPanel.style.bottom = '20px'
-  controlPanel.style.left = '50%'
-  controlPanel.style.transform = 'translateX(-50%)'
   controlPanel.style.backgroundColor = '#f0f0f0'
   controlPanel.style.padding = '10px'
   controlPanel.style.borderRadius = '5px'
   controlPanel.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)'
   controlPanel.style.zIndex = '1000'
   controlPanel.style.display = 'flex'
-  controlPanel.style.gap = '10px'
+  controlPanel.style.gap = '1em'
   controlPanel.style.alignItems = 'center'
+  controlPanel.style.width = '100%'
+  controlPanel.style.justifyContent = 'center'
 
   controlPanel.innerHTML = `
 		<button id="prevCardBtn" style="padding:5px 10px;">Précédent</button>
@@ -514,9 +514,9 @@ function initializeCardScroll(board) {
     }
   })
 
-  // Démarrer le défilement automatique
-  nextCard()
-  g_scrollInterval = setInterval(nextCard, g_scrollSpeed)
+  // Ne pas démarrer le défilement automatique par défaut
+  // nextCard();
+  // g_scrollInterval = setInterval(nextCard, g_scrollSpeed);
 }
 
 // Fonction pour avancer d'une levée complète (4 cartes)
@@ -1984,13 +1984,7 @@ function createHandString(hand, index) {
   for (i = 0; i < 4; i++) {
     var tmpstr = hand[i]
 
-    text =
-      text +
-      "<BUTTON class=blankButton style='height:" +
-      buttHeight +
-      ";'>" +
-      cardSymbols[i] +
-      '</BUTTON>'
+    text = text + '<BUTTON class=blankButton >' + cardSymbols[i] + '</BUTTON>'
 
     for (j = 0; j < tmpstr.length; j++) {
       var card = tmpstr.charAt(j)
@@ -2034,17 +2028,11 @@ function createHandString(hand, index) {
           var id = suitLetters[i] + cardLetters[cardindex] + i + '' + cardindex
           text =
             text +
-            '<button id="button' +
+            '<button class=blankButton id="button' +
             id +
-            '" onclick="buttclick(this);" style="margin:0px;cursor:pointer;background-color:' +
+            '" onclick="buttclick(this);" style="background-color:' +
             color +
-            ';height:' +
-            buttHeight +
-            ';width:30px;padding:1px;font-size:' +
-            cardFontSize +
-            ';font-weight:bold;vertical-align:text-top"' +
-            cardstr +
-            '><SPAN>' +
+            ';"><SPAN>' +
             cardstr +
             '</SPAN></button>'
         } else {
@@ -2071,17 +2059,11 @@ function createHandString(hand, index) {
           if (showSubscript)
             text =
               text +
-              '<button id="button' +
+              '<button class=blankButton id="button' +
               id +
-              '" onclick="buttclick(this);" style="margin:0px;padding:0px;cursor:pointer;background-color:' +
+              '" onclick="buttclick(this);" style="background-color:' +
               color +
-              ';height:' +
-              buttHeight +
-              ';min-width:30px;padding:1px;font-size:' +
-              cardFontSize +
-              ';font-weight:bold;vertical-align:text-top;"' +
-              cardstr +
-              "><SPAN style='display:block:text-align:center;line-height:1em;'>" +
+              '"><SPAN>' +
               sup +
               cardstr +
               '</SPAN>' +
@@ -2111,23 +2093,15 @@ function createHandString(hand, index) {
       else if ((g_handEntryMode == 0) | (g_inputDir != index))
         text =
           text +
-          '<BUTTON class=blankButton style="height:' +
-          buttHeight +
-          ';font-size:' +
-          cardFontSize +
-          ";font-weight:bold;\"><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
+          '<BUTTON class=blankButton><SPAN>' +
           cardstr +
           '</SPAN></BUTTON> '
       else
         text =
           text +
-          '<button id="button' +
+          '<button class=blankButton id="button' +
           id +
-          '" onclick="deselectCard(this);" style="margin:0px;cursor:pointer;background-color:#FFFFFF;height:' +
-          buttHeight +
-          ';min-width:30px;font-size:' +
-          cardFontSize +
-          ";font-weight:bold;padding:1px;vertical-align:text-top\"><SPAN style='display:block:text-align:center;line-height:1em;'>" +
+          '" onclick="deselectCard(this);" style="background-color:#FFFFFF;"><SPAN>' +
           cardstr +
           '<SUB style="font-size:12px;font-style:italic;vertical-align:-5%;">&#10004;</SUB></SPAN></button>'
     }

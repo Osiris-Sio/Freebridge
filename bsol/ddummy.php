@@ -10,11 +10,11 @@
 	<META http-equiv="Pragma" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
 	<link rel="stylesheet" href="ddummy.css">
 
 	<?php include '../includes/header.php'; ?>
 
+	<link rel="stylesheet" href="../css/pico.css">
 
 	<style>
 		/* Styles critiques pour les commentaires */
@@ -522,8 +522,10 @@
 			return;
 		}
 
-		if (result != "")
+		if (result != "") {
+			document.getElementById("form1").style.display = "none";
 			buildPage(result, '{\'options\':{\'ns\':[\'true\',\'false\',\'false\'],\'ew\':[\'true\',\'false\',\'false\'],\'mk\':[\'true\',\'false\'],\'auto\':\'true\'}}');
+		}
 
 		setTimeout(() => {
 			startObservers();

@@ -2,9 +2,9 @@
 
 :root {
   /* Palette de couleurs */
-  --primary-color: #3366ff;
-  --primary-dark: #254bb5;
-  --primary-light: #e6ecff;
+  --primary-color: #33790f;
+  --primary-dark: #4eb31b;
+  --primary-light: #61982f;
   --secondary-color: #4caf50;
   --secondary-dark: #388e3c;
   --secondary-light: #e8f5e9;
@@ -43,10 +43,9 @@
 
 /* Reset et base */
 html {
-  all: unset;
   margin: 0;
   padding: 0;
-  overflow-y: scroll;
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
@@ -56,14 +55,18 @@ html {
   box-sizing: inherit;
 }
 
-body {
+body,
+#bdy {
   margin: 0;
   padding: 0;
-  background-color: var(--background-light);
+  background-color: var(--background-white);
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.5;
   color: var(--text-color);
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Typographie */
@@ -87,19 +90,15 @@ h1 {
 
 h2 {
   font-size: 22px;
-  color: var(--text-color);
 }
-
 h3 {
   font-size: 18px;
-  color: var(--text-color);
 }
 
 p {
   margin: 0 0 var(--spacing-md) 0;
 }
 
-/* Classes communes */
 .common {
   font-family: var(--font-primary);
   font-size: 16px;
@@ -110,7 +109,6 @@ p {
   font-family: var(--font-primary);
   font-size: 20px;
   font-weight: 600;
-  color: var(--text-color);
   text-align: center;
   margin-bottom: var(--spacing-md);
 }
@@ -154,7 +152,78 @@ p {
   margin-bottom: var(--spacing-md);
 }
 
-/* Éléments de formulaire */
+/* Links & Interactive */
+a {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:link,
+a:visited,
+a:active {
+  color: white;
+}
+a:hover {
+  color: var(--accent-color);
+}
+
+.myLink {
+  cursor: pointer;
+  font-weight: normal;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.myLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+#nav-menu a {
+  color: var(--primary-color);
+}
+#nav-menu a[role='button'] {
+  color: white;
+}
+
+/* Layout & Containers */
+.container,
+#scrollDiv,
+#allBoards,
+#traveller,
+.results {
+  width: 98% !important;
+  max-width: 98% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table,
+div,
+td {
+  max-width: 100% !important;
+}
+
+div.toppadding {
+  height: 18px;
+  overflow: auto;
+}
+
+.bridge-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  padding: var(--spacing-xl);
+  background-color: var(--background-white);
+}
+
+/* Form Elements */
 input[type='radio'] {
   margin: var(--spacing-sm);
 }
@@ -205,7 +274,7 @@ div.toppadding {
 
 a {
   font-weight: 600;
-  color: var(--primary-color);
+  color: white;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -213,7 +282,7 @@ a {
 a:link,
 a:visited,
 a:active {
-  color: var(--primary-color);
+  color: white;
   text-decoration: none;
 }
 
@@ -581,15 +650,6 @@ table.calendar td {
   border: 1px solid var(--border-color);
 }
 
-table.calendar th {
-  font-weight: 600;
-  color: var(--primary-color);
-  text-align: center;
-  background-color: var(--primary-light);
-  padding: var(--spacing-sm);
-  border: 1px solid var(--border-color);
-}
-
 /* Boutons */
 .menuButton,
 .sessionMenuButton,
@@ -612,7 +672,7 @@ table.calendar th {
 
 .menuButton {
   background-color: var(--primary-light);
-  color: var(--primary-color);
+  color: white;
 }
 
 .menuButton:hover {
@@ -861,10 +921,6 @@ input[type='file'] {
 }
 
 /* Styles pour le mode jeu */
-.play-mode #westHand,
-.play-mode #eastHand {
-  visibility: hidden;
-}
 
 /* Pour préserver la mise en page */
 #westHand,
@@ -907,4 +963,69 @@ input[type='file'] {
   text-overflow: ellipsis;
   min-width: 0;
   max-width: 100%;
+}
+
+/* ZONE DE TRAVAIL UNIQUEMENT */
+
+#nav-menu a {
+  color: var(--primary-color);
+}
+
+#nav-menu a[role='button'] {
+  color: white;
+}
+
+.blankButton {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 4px !important;
+  width: 40px !important;
+  height: 40px !important;
+  line-height: 1 !important;
+  background-color: var(--background-white) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: var(--border-radius-sm) !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  font-family: inherit !important;
+  font-weight: bold !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+}
+
+.blankButton:hover {
+  background-color: var(--secondary-light) !important;
+  border-color: var(--primary-light) !important;
+  box-shadow: var(--box-shadow) !important;
+  transform: translateY(-1px) !important;
+}
+
+.blankButton span {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--text-color) !important;
+}
+
+.blankButton img {
+  width: 20px !important;
+  height: auto !important;
+  display: block !important;
+  margin: auto !important;
+}
+
+#vul {
+  margin: auto;
+  padding: auto;
+}
+
+#svul {
+  text-align: center;
 }
