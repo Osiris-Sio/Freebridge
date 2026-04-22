@@ -1,6 +1,5 @@
 <?php
-include '../../../includes/header.php';
-?>
+include '../../../includes/header.php'; ?>
 <link rel="stylesheet" href="css/level-pages.css">
 
 <button type="button" onclick="window.location.href='bsol/Debuter/debutant.php'">

@@ -1,6 +1,5 @@
 <?php
-include '../../../includes/header.php';
-?>
+include '../../../includes/header.php'; ?>
 <link rel="stylesheet" href="css/level-pages.css">
 
 <button type="button" onclick="window.location.href='bsol/Progresser/progresser.php'">
@@ -17,51 +16,52 @@ include '../../../includes/header.php';
         <div class="lesson-list">
             <?php
             $mecanisme = [
-                "GQk9jSxw",
-                "f7E96d5R",
-                "eSRqV89p",
-                "guSZVGa5",
-                "VgXqk2WH",
-                "ZGsEUmCL",
-                "MTWRXysL",
-                "fkYJ2rVD",
-                "td38uhG4",
-                "2BNQDP7J",
-                "rSLcKFbn",
-                "VpS8s2FP",
-                "D6fgSHux",
-                "B5ApCqTP",
-                "rJb4MK37",
-                "DyRBhptC",
-                "kLnfw9ts",
-                "jrM4gNAn",
-                "5SGTrfB9",
-                "rQFPy9Mm",
-                "P824T65w",
-                "MsBT8rF9",
-                "XeRpqiFW",
-                "QnutAL9r",
-                "WC7zuLJR",
-                "4JpaNZXH",
-                "e3btEFXK",
-                "bZfrAGnK",
-                "ShKjYfW7",
-                "L3TSiGpa",
-                "DxXBTgHb",
-                "nPAdrV83",
-                "fNgXmCHn",
-                "K9y6mUnj"
+              'GQk9jSxw',
+              'f7E96d5R',
+              'eSRqV89p',
+              'guSZVGa5',
+              'VgXqk2WH',
+              'ZGsEUmCL',
+              'MTWRXysL',
+              'fkYJ2rVD',
+              'td38uhG4',
+              '2BNQDP7J',
+              'rSLcKFbn',
+              'VpS8s2FP',
+              'D6fgSHux',
+              'B5ApCqTP',
+              'rJb4MK37',
+              'DyRBhptC',
+              'kLnfw9ts',
+              'jrM4gNAn',
+              '5SGTrfB9',
+              'rQFPy9Mm',
+              'P824T65w',
+              'MsBT8rF9',
+              'XeRpqiFW',
+              'QnutAL9r',
+              'WC7zuLJR',
+              '4JpaNZXH',
+              'e3btEFXK',
+              'bZfrAGnK',
+              'ShKjYfW7',
+              'L3TSiGpa',
+              'DxXBTgHb',
+              'nPAdrV83',
+              'fNgXmCHn',
+              'K9y6mUnj',
             ];
-            foreach ($mecanisme as $index => $dds):
-            ?>
+            foreach ($mecanisme as $index => $dds): ?>
                 <div class="lesson-item">
                     <span>Donne <?php echo $index + 1; ?></span>
                     <div class="lesson-actions">
                         <a href="https://bridge-training.com/player/index.php?dds=<?php echo $dds; ?>" target="_blank" role="button" class="outline">Jouer</a>
-                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/1_-_Le_mecanisme/Donne_<?php echo $index + 1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/1_-_Le_mecanisme/Donne_<?php echo $index +
+                          1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+            ?>
         </div>
     </details>
 
@@ -70,34 +70,35 @@ include '../../../includes/header.php';
         <div class="lesson-list">
             <?php
             $longue = [
-                "mrwMSLGT",
-                "3kDXjWAma",
-                "dWCxyrXU",
-                "2Vdaywfr",
-                "pSd7j6zq",
-                "qjsCVtFi",
-                "Ct4rNpUG",
-                "nQ5mLWxj",
-                "ESgirqPj",
-                "ics3h2Rt",
-                "QsdXqHe2",
-                "PaveAw2p",
-                "LD3BP79z",
-                "LD3BP79z",
-                "zdUWSgc9",
-                "F5AZg4Tx",
-                "F5AZg4Tx" // Source stops numbering at 16 but title says 17
+              'mrwMSLGT',
+              '3kDXjWAma',
+              'dWCxyrXU',
+              '2Vdaywfr',
+              'pSd7j6zq',
+              'qjsCVtFi',
+              'Ct4rNpUG',
+              'nQ5mLWxj',
+              'ESgirqPj',
+              'ics3h2Rt',
+              'QsdXqHe2',
+              'PaveAw2p',
+              'LD3BP79z',
+              'LD3BP79z',
+              'zdUWSgc9',
+              'F5AZg4Tx',
+              'F5AZg4Tx', // Source stops numbering at 16 but title says 17
             ];
-            foreach ($longue as $index => $dds):
-            ?>
+            foreach ($longue as $index => $dds): ?>
                 <div class="lesson-item">
                     <span>Donne <?php echo $index + 1; ?></span>
                     <div class="lesson-actions">
                         <a href="https://bridge-training.com/player/index.php?dds=<?php echo $dds; ?>" target="_blank" role="button" class="outline">Jouer</a>
-                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_<?php echo $index + 1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_<?php echo $index +
+                          1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+            ?>
         </div>
     </details>
 
@@ -105,17 +106,26 @@ include '../../../includes/header.php';
         <summary>3 - Encaisser les levées maîtresses d'abord (7 donnes)</summary>
         <div class="lesson-list">
             <?php
-            $maitresses = ["DnC4bmHB", "cXVhybBm", "AwtQZhcb", "ZhaeK5gY", "EaZ3nkGv", "MibL4FAz", "9xSGuD2r"];
-            foreach ($maitresses as $index => $dds):
-            ?>
+            $maitresses = [
+              'DnC4bmHB',
+              'cXVhybBm',
+              'AwtQZhcb',
+              'ZhaeK5gY',
+              'EaZ3nkGv',
+              'MibL4FAz',
+              '9xSGuD2r',
+            ];
+            foreach ($maitresses as $index => $dds): ?>
                 <div class="lesson-item">
                     <span>Donne <?php echo $index + 1; ?></span>
                     <div class="lesson-actions">
                         <a href="https://bridge-training.com/player/index.php?dds=<?php echo $dds; ?>" target="_blank" role="button" class="outline">Jouer</a>
-                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/3_-_Encaisser_les_levees_maitresses_d'abord/Donne_<?php echo $index + 1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
+                        <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMA/23_-_La_double_coupe/3_-_Encaisser_les_levees_maitresses_d'abord/Donne_<?php echo $index +
+                          1; ?>.lin" target="_blank" role="button" class="secondary outline">Solution</a>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            <?php endforeach;
+            ?>
         </div>
     </details>
 

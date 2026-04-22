@@ -1,6 +1,5 @@
 <?php
-include '../../../includes/header.php';
-?>
+include '../../../includes/header.php'; ?>
 <link rel="stylesheet" href="css/level-pages.css">
 
 <button type="button" onclick="window.location.href='bsol/Progresser/progresser.php'">
@@ -32,7 +31,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>1.2 - Ouvrir la coupe au mort en 2 fois (35 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=35; $i++): ?>
+            <?php for ($i = 1; $i <= 35; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -47,7 +46,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>1.3 - Ouvrir la coupe au mort en 3 fois (17 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=17; $i++): ?>
+            <?php for ($i = 1; $i <= 17; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -70,7 +69,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>2 - Défausser pour couper (5 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=5; $i++): ?>
+            <?php for ($i = 1; $i <= 5; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -93,7 +92,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>4 - Ouvrir la coupe pour l'adversaire (3 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=3; $i++): ?>
+            <?php for ($i = 1; $i <= 3; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -115,7 +114,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>6 - Les problèmes de communication - Le coup à blanc (3 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=3; $i++): ?>
+            <?php for ($i = 1; $i <= 3; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -146,7 +145,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>9 - Les dangers liés à la coupe - Couper maître (21 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=21; $i++): ?>
+            <?php for ($i = 1; $i <= 21; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -168,7 +167,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>11 - Coup à blanc pour ouvrir la coupe (30 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=30; $i++): ?>
+            <?php for ($i = 1; $i <= 30; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">
@@ -183,7 +182,7 @@ include '../../../includes/header.php';
     <details class="level-folder">
         <summary>12 - Impasse et coupe (15 donnes)</summary>
         <div class="lesson-list">
-            <?php for($i=1; $i<=15; $i++): ?>
+            <?php for ($i = 1; $i <= 15; $i++): ?>
             <div class="lesson-item">
                 <span>Donne <?php echo $i; ?></span>
                 <div class="lesson-actions">

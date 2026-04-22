@@ -1,466 +1,647 @@
 <!doctype html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Leçon 7</title>
-<link rel="stylesheet" type="text/css" href="../style.css">
-<script type="text/javascript" src="../imgReplace.js"></script>
-</head>
-<body>
-<table class="noBorder">
-	<tr>
-		<td><a href="javascript:externalGlobalObject.browseUrl('http://www.bridge-college.com/');"><img src="../icon/bridge_college.jpg" class="noBorder"></a></td>
-		<td><i>Ce cours est fourni par Bridge Collège :<br><a href="javascript:externalGlobalObject.browseUrl('http://www.bridge-college.com/');" style="color:#DB2234;">http://www.bridge-college.com/</a></i></td>
-	</tr>
-</table>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Leçon 7</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+    <script type="text/javascript" src="../imgReplace.js"></script>
+  </head>
+  <body>
+    <table class="noBorder">
+      <tr>
+        <td>
+          <a
+            href="javascript:externalGlobalObject.browseUrl('http://www.bridge-college.com/');"
+          >
+            <img src="../icon/bridge_college.jpg" class="noBorder" />
+          </a>
+        </td>
+        <td>
+          <i>
+            Ce cours est fourni par Bridge Collège :
+            <br />
+            <a
+              href="javascript:externalGlobalObject.browseUrl('http://www.bridge-college.com/');"
+              style="color: #db2234"
+            >
+              http://www.bridge-college.com/
+            </a>
+          </i>
+        </td>
+      </tr>
+    </table>
 
-<hr noshade size="1" color="#C0C0C0">
-<br>
-<h1>Probabilités de répartition</h1>
-Nous allons donner ici les principales probabilités de répartition de couleur suivant le nombre de cartes manquantes. Nous verrons simultanément comment se servir de ces chiffres pour adopter le bon maniement de couleur (quand un seul honneur manque) ou la bonne ligne de jeu.<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Principes généraux :</b><br>
-Quand il manque un nombre impair de cartes, le partage adverse le plus équilibré est le plus probable.
-S'il manque deux, quatre ou six cartes, ce n'est pas le partage le plus équilibré qui est le plus probable.</td>
-	</tr>
-</table>
-<br>
-<h2>1) Il manque 2 cartes</h2>
-Vous en avez donc 11 entre vos deux jeux.<br>
-&nbsp; &nbsp; - Partage 1-1 : 52%<br>
-&nbsp; &nbsp; - Partage 2-0 : 48%<br>
-<br>
-<i><b>Application principale :</i></b> Il manque le Roi<br>
-<br>
-Vous devez faire 6 levées avec :<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %A% %J% %T% 8 6</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %Q% 9 7 5 3 2</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Tirer l'As permet de gagner plus souvent que de faire l'impasse mais l'écart n'est pas considérable. Si Est a montré une longue annexe, vous pouvez décider qu'Ouest, plus long a priori dans la couleur, est favori pour détenir le Roi second.<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Règle :</b> Sans indication particulière, on tire en tête à 11 cartes quand il manque le Roi.</td>
-	</tr>
-</table>
-<br>
-<h2>2) Il manque 3 cartes</h2>
-Vous en avez 10 entre vos deux jeux.<br>
-&nbsp; &nbsp; <b>- Partage 2-1 : 78%</b><br>
-&nbsp; &nbsp; <b>- Partage 3-0 : 22%</b><br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>A savoir :</b><br>
-		Dans tous les cas où il manque un nombre impair de cartes, un honneur quelconque a plus de chances de se trouver dans la main longue que dans la main courte.</td>
-	</tr>
-</table>
-<br>
-Ici, s'il vous manque le Roi, il a deux fois plus de chances d'être dans la main qui possède deux cartes que d'être sec. Du coup, il est totalement exclu de tirer l'As en tête en espérant que le Roi tombe.<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Règle :</b> A 10 cartes, s'il manque le Roi, il faut faire l'impasse. C'est de très loin le meilleur maniement.</td>
-	</tr>
-</table>
-<br>
-<i>Exemple : </i><br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%C% %Q% 8 7 5</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%C% %A% %J% %T% 9 6 2</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Jouez la Dame et laisser filer<br>
-<br>
+    <hr noshade size="1" color="#C0C0C0" />
+    <br />
+    <h1>Probabilités de répartition</h1>
+    Nous allons donner ici les principales probabilités de répartition de
+    couleur suivant le nombre de cartes manquantes. Nous verrons simultanément
+    comment se servir de ces chiffres pour adopter le bon maniement de couleur
+    (quand un seul honneur manque) ou la bonne ligne de jeu.
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Principes généraux :</b>
+          <br />
+          Quand il manque un nombre impair de cartes, le partage adverse le plus
+          équilibré est le plus probable. S'il manque deux, quatre ou six
+          cartes, ce n'est pas le partage le plus équilibré qui est le plus
+          probable.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h2>1) Il manque 2 cartes</h2>
+    Vous en avez donc 11 entre vos deux jeux.
+    <br />
+    &nbsp; &nbsp; - Partage 1-1 : 52%
+    <br />
+    &nbsp; &nbsp; - Partage 2-0 : 48%
+    <br />
+    <br />
+    <b>Application principale :</b>
+    Il manque le Roi
+    <br />
+    <br />
+    Vous devez faire 6 levées avec :
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %A% %J% %T% 8 6</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %Q% 9 7 5 3 2</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Tirer l'As permet de gagner plus souvent que de faire l'impasse mais l'écart
+    n'est pas considérable. Si Est a montré une longue annexe, vous pouvez
+    décider qu'Ouest, plus long a priori dans la couleur, est favori pour
+    détenir le Roi second.
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Règle :</b>
+          Sans indication particulière, on tire en tête à 11 cartes quand il
+          manque le Roi.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h2>2) Il manque 3 cartes</h2>
+    Vous en avez 10 entre vos deux jeux.
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 2-1 : 78%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 3-0 : 22%</b>
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>A savoir :</b>
+          <br />
+          Dans tous les cas où il manque un nombre impair de cartes, un honneur
+          quelconque a plus de chances de se trouver dans la main longue que
+          dans la main courte.
+        </td>
+      </tr>
+    </table>
+    <br />
+    Ici, s'il vous manque le Roi, il a deux fois plus de chances d'être dans la
+    main qui possède deux cartes que d'être sec. Du coup, il est totalement
+    exclu de tirer l'As en tête en espérant que le Roi tombe.
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Règle :</b>
+          A 10 cartes, s'il manque le Roi, il faut faire l'impasse. C'est de
+          très loin le meilleur maniement.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <i>Exemple :</i>
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%C% %Q% 8 7 5</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%C% %A% %J% %T% 9 6 2</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Jouez la Dame et laisser filer
+    <br />
+    <br />
 
-<h2>3) Il manque 4 cartes</h2>
-Vous en avez 9 entre vos deux jeux.<br>
-&nbsp; &nbsp; <b>- Partage 3-1 : 50%</b><br>
-&nbsp; &nbsp; <b>- Partage 2-2 : 40%</b><br>
-&nbsp; &nbsp; <b>- Partage 4-0 : 10%</b><br>
-<br>
-On ne se pose plus de questions pour savoir s'il faut faire l'impasse au Roi. Comptons ensemble les chances qu'il a d'être sec : il faut qu'il y ait un partage 3-1 donc 50%. En outre, il n'a qu'une chance sur quatre d'être sec et trois chances sur quatre d'être dans les trois cartes. <br>
-Donc quand il vous manque quatre cartes, le Roi ne sera sec que dans 50% multiplié par 1/4 (une chance sur quatre) = 12,5% des cas.<br>
-<br>
-Ce petit calcul, peut-être un peu fastidieux, a pour but de montrer comment se calculent les probabilités de tous les événements... cela peut éventuellement servir.<br>
-<br>
-Mais, à 9 cartes, c'est le problème de la Dame manquante qui va être le plus intéressant. Vous avez pu être surpris, en lisant ces chiffres, car vous vous demandez pourquoi, alors que le partage 3-1 est le plus probable, il se dit que l'on ne fait pas l'impasse à la Dame dans ce cas.<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%D% %A% %T% 8 7</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%D% %K% %J% 9 6 4</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-La raison en est simple : tirer As et Roi gagne quand la couleur est répartie 2-2 (40%) ou quand la Dame est sèche (12,5% comme le Roi). Le total fait donc 52,5% ce qui est mieux que l'impasse (50%)<br>
-<br>
-Mais, vous le voyez, les probabilités de réussite de l'un ou l'autre maniement sont très voisines. C'est ce qui explique qu'il faudra souvent faire l'impasse dès que vous aurez une idée de longueur dans l'une des mains adverses.<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Règle :</b> Avec 9 cartes dans la ligne, s'il ne manque que la Dame, il est légèrement 
-	préférable de tirer en tête. Mais faire l'impasse est loin d'être aberrant.</td>
-	</tr>
-</table>
-<br>
-<h2>4) Il manque 5 cartes</h2>
-Vous en avez 8 dans la ligne.<br>
-&nbsp; &nbsp; <b>- Partage 3-2 : 68%</b><br>
-&nbsp; &nbsp; <b>- Partage 4-1 : 28%</b><br>
-&nbsp; &nbsp; <b>- Partage 5-0 : 4%</b><br>
-<br>
-Comme prévu, le partage le plus équilibré est de loin le plus probable mais il faut quand même réaliser que la distribution 4-1 se produit plus d'une fois sur quatre. Il est donc logique de tenter de s'en prémunir lors d'un plan de jeu.<br>
-<br>
-A 8 cartes, il faut faire l'impasse à la Dame, tout le monde le dit. Mais calculons ensemble les chances de voir tomber une Dame seconde.<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%S% %A% %K% %T% 4</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%S% %J% 9 8 7</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Pour que la Dame soit seconde, il faut que la couleur soit répartie 3-2, soit 68% des cas. En outre, la Dame se trouvera trois fois sur cinq dans les trois cartes et deux fois sur cinq dans les deux cartes. La probabilité de la Dame seconde est donc :  2/5  de 68% = 27%. Ce n'est pas négligeable mais très inférieur à la probabilité de réussite de l'impasse (50%).<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Règle :</b> S'il manque 5 cartes et un seul honneur, la Dame, il faut faire l'impasse.</td>
-	</tr>
-</table>
-<br>
-<h2>5) Il manque 6 cartes</h2>
-Vous en avez 7 entre les deux mains.<br>
-&nbsp; &nbsp; <b>- Partage 4-2 : 48%</b><br>
-&nbsp; &nbsp; <b>- Partage 3-3 : 36%</b><br>
-&nbsp; &nbsp; <b>- Partage 5-1 : 14,5%</b><br>
-&nbsp; &nbsp; <b>- Partage 6-0 : 1,5%</b><br>
-<br>
-C'est connu, le partage 3-3 n'est pas le plus probable. Quand vous aurez le choix entre une impasse et un partage 3-3 pour gagner votre contrat, c'est l'impasse qu'il faudra très clairement privilégier.<br>
-<br>
-Intéressons-nous à deux maniements de couleur où il manque le Valet.<br>
-<br>
-Maniement 1 :<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %K% %T%</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %A% %Q% 7 5 2</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-- Faire l'impasse gagne dans 50% des cas,<br>
-- Tirer Roi, As et Dame gagne dans 36% des cas.<br>
-<br>
-<hr noshade size="1" color="#C0C0C0">
-<br>
-Maniement 2 :<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %K% %T%</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%H% %A% %Q% 9 5 2</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Toujours 50% de réussite si l'on fait l'impasse. En revanche, tirer en tête gagne si la couleur est répartie 3-3 ou si - grâce à la présence du 9 - le Valet est second.<br>
-<br>
-Quand la couleur est répartie 4-2 (48%), le Valet sera une fois sur trois second puisqu'il a deux fois plus de chances d'être dans les quatre cartes. Donc 1/3 de 48% = 16% ce qui additionné au 36% du partage 3-3 nous amène à 52% soit plus que 50%. Il faut donc (de justesse) tirer As, Roi et Dame dans ce cas.<br>
-<br>
-<table class="note">
-	<tr>
-		<td><b>Règle :</b> Quand il manque le Valet et 6 cartes en tout, il est meilleur de tirer en tête si vous possédez le 9 et meilleur de faire l'impasse si vous ne l'avez pas.</td>
-	</tr>
-</table>
-<br>
-<h2>6) Il manque 7 cartes</h2>
-Vous avez donc 6 cartes.<br>
-&nbsp; &nbsp; <b>- Partage 4-3 : 62%</b><br>
-&nbsp; &nbsp; <b>- Partage 5-2 : 31%</b><br>
-&nbsp; &nbsp; <b>- Partage 6-1 : 6,5%</b><br>
-&nbsp; &nbsp; <b>- Partage 7-0 : 0,5%</b><br>
-<br>
-• Une première constatation s'impose, s'il manque un honneur c'est toujours l'impasse qui sera choisie.<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%D% %Q% 4</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand nowrap">%D% %A% %K% %T% 9</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Faites l'impasse au Valet, vous réussirez plus souvent à faire quatre levées qu'en tirant As, Roi, Dame.<br>
-<br>
-<hr noshade size="1" color="#C0C0C0">
-<br>
-• D'autre part, la probabilité de 62% du partage 4-3 le rend préférable à la chance de la réussite 
-d'une impasse.<br>
-<br>
-<table class="noBorder">
-	<tr>
-		<td></td>
-		<td align="center" class="hand">
-			<table class="noBorder nowrap">
-				<tr>
-					<td>%S%</td><td>%A% %Q% 4 3 2</td>
-				</tr>
-				<tr>
-					<td>%H%</td><td>%K% %J% 8</td>
-				</tr>
-				<tr>
-					<td>%D%</td><td>%A% %K% %Q%</td>
-				</tr>
-				<tr>
-					<td>%C%</td><td>4 3</td>
-				</tr>
-			</table>
-		</td>
-		<td></td>
-	</tr>
-	<tr>
-		<td class="hand">&nbsp;</td>
-		<td align="center" valign="center">
-			<table class="pole">
-				<tr>
-					<td colspan="3" align="center">%_N%</td>
-				</tr>
-				<tr>
-					<td>%_O%</td>
-					<td>&nbsp;</td>
-					<td>%_E%</td>
-				</tr>
-				<tr>
-					<td colspan="3" align="center">%_S%</td>
-				</tr>
-			</table>
-		</td>
-		<td class="hand">&nbsp;</td>
-	</tr>
-	<tr>
-		<td></td>
-		<td align="center" class="hand">
-			<table class="noBorder nowrap">
-				<tr>
-					<td>%S%</td><td>6</td>
-				</tr>
-				<tr>
-					<td>%H%</td><td>%A% %Q% %T% 9 6 4</td>
-				</tr>
-				<tr>
-					<td>%D%</td><td>7 6 5</td>
-				</tr>
-				<tr>
-					<td>%C%</td><td>%A% 2</td>
-				</tr>
-			</table>
-		</td>
-		<td></td>
-	</tr>
-</table>
-<br>
-Vous jouez 7 Coeurs<br>
-<br>
-Il vous manque une levée. Pour la trouver, deux possibilités : l'impasse à Pique ou l'affranchissement par la coupe (les rentrées sont en nombre suffisant). C'est cette dernière ligne de jeu qu'il faut choisir, vous gagnerez avec la couleur 4-3 ou le Roi second, ce qui est largement mieux qu'une impasse.<br>
-<br>
-<div align="center"><b>IL NE MANQUE QU'UN SEUL HONNEUR</b></div>
-<br>
-<b>L'impasse au Roi</b><br>
-Il faut la faire si l'on possède 10 cartes ou moins dans la ligne; tirer en tête avec 11 cartes.<br>
-<br>
-<b>L'impasse à la Dame</b><br>
-Il faut la faire si l'on possède 8 cartes ou moins dans la ligne. Avec 9 cartes, il est très légèrement meilleur de tirer en tête.<br>
-<br>
-<b>L'impasse au Valet</b><br>
-- Si l'on possède 7 cartes dans la ligne, il faut la faire si l'on ne détient pas le 9 et tirer en tête si l'on possède ARD109 dans la ligne.<br>
-- Avec 6 cartes ou moins, l'impasse au Valet doit être faite si le Valet est le seul honneur manquant.<br>
-<br>
-<br>
-<br>
-<br>
-</body>
+    <h2>3) Il manque 4 cartes</h2>
+    Vous en avez 9 entre vos deux jeux.
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 3-1 : 50%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 2-2 : 40%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 4-0 : 10%</b>
+    <br />
+    <br />
+    On ne se pose plus de questions pour savoir s'il faut faire l'impasse au
+    Roi. Comptons ensemble les chances qu'il a d'être sec : il faut qu'il y ait
+    un partage 3-1 donc 50%. En outre, il n'a qu'une chance sur quatre d'être
+    sec et trois chances sur quatre d'être dans les trois cartes.
+    <br />
+    Donc quand il vous manque quatre cartes, le Roi ne sera sec que dans 50%
+    multiplié par 1/4 (une chance sur quatre) = 12,5% des cas.
+    <br />
+    <br />
+    Ce petit calcul, peut-être un peu fastidieux, a pour but de montrer comment
+    se calculent les probabilités de tous les événements... cela peut
+    éventuellement servir.
+    <br />
+    <br />
+    Mais, à 9 cartes, c'est le problème de la Dame manquante qui va être le plus
+    intéressant. Vous avez pu être surpris, en lisant ces chiffres, car vous
+    vous demandez pourquoi, alors que le partage 3-1 est le plus probable, il se
+    dit que l'on ne fait pas l'impasse à la Dame dans ce cas.
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%D% %A% %T% 8 7</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%D% %K% %J% 9 6 4</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    La raison en est simple : tirer As et Roi gagne quand la couleur est
+    répartie 2-2 (40%) ou quand la Dame est sèche (12,5% comme le Roi). Le total
+    fait donc 52,5% ce qui est mieux que l'impasse (50%)
+    <br />
+    <br />
+    Mais, vous le voyez, les probabilités de réussite de l'un ou l'autre
+    maniement sont très voisines. C'est ce qui explique qu'il faudra souvent
+    faire l'impasse dès que vous aurez une idée de longueur dans l'une des mains
+    adverses.
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Règle :</b>
+          Avec 9 cartes dans la ligne, s'il ne manque que la Dame, il est
+          légèrement préférable de tirer en tête. Mais faire l'impasse est loin
+          d'être aberrant.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h2>4) Il manque 5 cartes</h2>
+    Vous en avez 8 dans la ligne.
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 3-2 : 68%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 4-1 : 28%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 5-0 : 4%</b>
+    <br />
+    <br />
+    Comme prévu, le partage le plus équilibré est de loin le plus probable mais
+    il faut quand même réaliser que la distribution 4-1 se produit plus d'une
+    fois sur quatre. Il est donc logique de tenter de s'en prémunir lors d'un
+    plan de jeu.
+    <br />
+    <br />
+    A 8 cartes, il faut faire l'impasse à la Dame, tout le monde le dit. Mais
+    calculons ensemble les chances de voir tomber une Dame seconde.
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%S% %A% %K% %T% 4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%S% %J% 9 8 7</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Pour que la Dame soit seconde, il faut que la couleur soit répartie 3-2,
+    soit 68% des cas. En outre, la Dame se trouvera trois fois sur cinq dans les
+    trois cartes et deux fois sur cinq dans les deux cartes. La probabilité de
+    la Dame seconde est donc : 2/5 de 68% = 27%. Ce n'est pas négligeable mais
+    très inférieur à la probabilité de réussite de l'impasse (50%).
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Règle :</b>
+          S'il manque 5 cartes et un seul honneur, la Dame, il faut faire
+          l'impasse.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h2>5) Il manque 6 cartes</h2>
+    Vous en avez 7 entre les deux mains.
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 4-2 : 48%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 3-3 : 36%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 5-1 : 14,5%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 6-0 : 1,5%</b>
+    <br />
+    <br />
+    C'est connu, le partage 3-3 n'est pas le plus probable. Quand vous aurez le
+    choix entre une impasse et un partage 3-3 pour gagner votre contrat, c'est
+    l'impasse qu'il faudra très clairement privilégier.
+    <br />
+    <br />
+    Intéressons-nous à deux maniements de couleur où il manque le Valet.
+    <br />
+    <br />
+    Maniement 1 :
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %K% %T%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %A% %Q% 7 5 2</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    - Faire l'impasse gagne dans 50% des cas,
+    <br />
+    - Tirer Roi, As et Dame gagne dans 36% des cas.
+    <br />
+    <br />
+    <hr noshade size="1" color="#C0C0C0" />
+    <br />
+    Maniement 2 :
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %K% %T%</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%H% %A% %Q% 9 5 2</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Toujours 50% de réussite si l'on fait l'impasse. En revanche, tirer en tête
+    gagne si la couleur est répartie 3-3 ou si - grâce à la présence du 9 - le
+    Valet est second.
+    <br />
+    <br />
+    Quand la couleur est répartie 4-2 (48%), le Valet sera une fois sur trois
+    second puisqu'il a deux fois plus de chances d'être dans les quatre cartes.
+    Donc 1/3 de 48% = 16% ce qui additionné au 36% du partage 3-3 nous amène à
+    52% soit plus que 50%. Il faut donc (de justesse) tirer As, Roi et Dame dans
+    ce cas.
+    <br />
+    <br />
+    <table class="note">
+      <tr>
+        <td>
+          <b>Règle :</b>
+          Quand il manque le Valet et 6 cartes en tout, il est meilleur de tirer
+          en tête si vous possédez le 9 et meilleur de faire l'impasse si vous
+          ne l'avez pas.
+        </td>
+      </tr>
+    </table>
+    <br />
+    <h2>6) Il manque 7 cartes</h2>
+    Vous avez donc 6 cartes.
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 4-3 : 62%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 5-2 : 31%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 6-1 : 6,5%</b>
+    <br />
+    &nbsp; &nbsp;
+    <b>- Partage 7-0 : 0,5%</b>
+    <br />
+    <br />
+    • Une première constatation s'impose, s'il manque un honneur c'est toujours
+    l'impasse qui sera choisie.
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%D% %Q% 4</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand nowrap">%D% %A% %K% %T% 9</td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Faites l'impasse au Valet, vous réussirez plus souvent à faire quatre levées
+    qu'en tirant As, Roi, Dame.
+    <br />
+    <br />
+    <hr noshade size="1" color="#C0C0C0" />
+    <br />
+    • D'autre part, la probabilité de 62% du partage 4-3 le rend préférable à la
+    chance de la réussite d'une impasse.
+    <br />
+    <br />
+    <table class="noBorder">
+      <tr>
+        <td></td>
+        <td align="center" class="hand">
+          <table class="noBorder nowrap">
+            <tr>
+              <td>%S%</td>
+              <td>%A% %Q% 4 3 2</td>
+            </tr>
+            <tr>
+              <td>%H%</td>
+              <td>%K% %J% 8</td>
+            </tr>
+            <tr>
+              <td>%D%</td>
+              <td>%A% %K% %Q%</td>
+            </tr>
+            <tr>
+              <td>%C%</td>
+              <td>4 3</td>
+            </tr>
+          </table>
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hand">&nbsp;</td>
+        <td align="center" valign="center">
+          <table class="pole">
+            <tr>
+              <td colspan="3" align="center">%_N%</td>
+            </tr>
+            <tr>
+              <td>%_O%</td>
+              <td>&nbsp;</td>
+              <td>%_E%</td>
+            </tr>
+            <tr>
+              <td colspan="3" align="center">%_S%</td>
+            </tr>
+          </table>
+        </td>
+        <td class="hand">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td align="center" class="hand">
+          <table class="noBorder nowrap">
+            <tr>
+              <td>%S%</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>%H%</td>
+              <td>%A% %Q% %T% 9 6 4</td>
+            </tr>
+            <tr>
+              <td>%D%</td>
+              <td>7 6 5</td>
+            </tr>
+            <tr>
+              <td>%C%</td>
+              <td>%A% 2</td>
+            </tr>
+          </table>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+    <br />
+    Vous jouez 7 Coeurs
+    <br />
+    <br />
+    Il vous manque une levée. Pour la trouver, deux possibilités : l'impasse à
+    Pique ou l'affranchissement par la coupe (les rentrées sont en nombre
+    suffisant). C'est cette dernière ligne de jeu qu'il faut choisir, vous
+    gagnerez avec la couleur 4-3 ou le Roi second, ce qui est largement mieux
+    qu'une impasse.
+    <br />
+    <br />
+    <div align="center"><b>IL NE MANQUE QU'UN SEUL HONNEUR</b></div>
+    <br />
+    <b>L'impasse au Roi</b>
+    <br />
+    Il faut la faire si l'on possède 10 cartes ou moins dans la ligne; tirer en
+    tête avec 11 cartes.
+    <br />
+    <br />
+    <b>L'impasse à la Dame</b>
+    <br />
+    Il faut la faire si l'on possède 8 cartes ou moins dans la ligne. Avec 9
+    cartes, il est très légèrement meilleur de tirer en tête.
+    <br />
+    <br />
+    <b>L'impasse au Valet</b>
+    <br />
+    - Si l'on possède 7 cartes dans la ligne, il faut la faire si l'on ne
+    détient pas le 9 et tirer en tête si l'on possède ARD109 dans la ligne.
+    <br />
+    - Avec 6 cartes ou moins, l'impasse au Valet doit être faite si le Valet est
+    le seul honneur manquant.
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+  </body>
 </html>
