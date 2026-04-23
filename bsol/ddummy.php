@@ -799,11 +799,10 @@
 		</div>
 	</div>
 	<div id="progressDiv"
-		style="position: fixed; z-index:1; left: 100px; top: 200px; width=420px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
-		<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;width=420px;"
-			align=center>
+		style="position: fixed; z-index:1; left: 100px; top: 200px;; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
+		<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;">
 			<tr style="height:20px;">
-				<td style="align:center;">
+				<td>
 					<div id=progressBarBox style="border:1px solid black;width:400px;height:20px;float:left;">
 						<div id=progressBar style="background-color:#00FF00;float:left;height:20px;width:0px;"></div>
 					</div>
@@ -818,7 +817,7 @@
 	<div id=spinner style="position:absolute;display:none;">
 		<img src="bsol/spinner.gif">
 	</div>
-	<div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;height;80px;display:none;">
+	<div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;display:none;">
 		<img src="bsol/largeSpin.gif">
 	</div>
 	<div id="commandHelp"
@@ -862,8 +861,8 @@
 	</div>
 	<div id="optionsBox"
 		style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
-		<table class=options style="width:500px;border-collapse:border-spacing:10px;">
-			<tr style="cell-spacing:100px;">
+		<table class=options style="width:500px;">
+			<tr>
 				<td style="border:0px;padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
 					<p><br>
 						<input id="nsrad1" type="radio" name="NSOptions" value="1" checked style="cursor:pointer;">
@@ -1035,11 +1034,11 @@
 		<br>
 		<div id=percentValue style="margin-left:10px;clear:both;float:left;"></div>
 		<div id="ourPercentage"
-			style="float:left:margin-left:20px;border:1px solid black;min-height:15px;height:15px;max-height:5px;width:150px;min-width:150px;max-width:150px;">
+			style="float:left;margin-left:20px;border:1px solid black;min-height:15px;height:15px;max-height:5px;width:150px;min-width:150px;max-width:150px;">
 			<div id="pbar" style="height:100%;min-height:100%;border:none;"></div>
 		</div>
 		<br>
-		<div id="comparisonText" style="float:left:clear:both;">
+		<div id="comparisonText" style="float:left;clear:both;">
 		</div>
 		<br>
 		<div style="float:left;display:none;">
