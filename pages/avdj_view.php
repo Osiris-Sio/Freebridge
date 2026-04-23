@@ -79,7 +79,9 @@
         <h1>Test BSOL</h1>
     </header>
 
-    <a href="bsol/ddummy.htm" target="_blank">Test </a>
+    <a href="bsol/ddummy.php">Direction BSOL</a>
+    <br>
+    <a href="http://localhost/freebridge-github/bsol/ddummy.php?file=bsol/Progresser/JMSA/10_-_le_laisser-passer/0_-_avec_un_seul_arret/Donne_2.lin">Test lecture fichier par URL</a>
 </article>
 
 <?php include 'includes/footer.php'; ?>
