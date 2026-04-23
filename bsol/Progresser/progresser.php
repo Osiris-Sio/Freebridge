@@ -74,7 +74,7 @@ include '../../includes/header.php'; ?>
             <a href="bsol/Progresser/JMA/base.php" class="lesson-item">
                 <i class="fas fa-play-circle"></i> 27 - Choix de la main de base
             </a>
-            <a href="bsol/Progresser/JMA/comnunications.php" class="lesson-item">
+            <a href="bsol/Progresser/JMA/communications.php" class="lesson-item">
                 <i class="fas fa-play-circle"></i> 28 - Les communications à l'atout
             </a>
         </div>

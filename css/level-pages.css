@@ -96,6 +96,16 @@ details.level-folder[open] summary::after {
   align-items: center;
 }
 
+.outline {
+  border: 1px solid red;
+  color: red;
+}
+
+.outline:visited {
+  border: 1px solid green;
+  color: green;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .lesson-item {

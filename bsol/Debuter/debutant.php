@@ -20,7 +20,7 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Jeu à Sans-Atout</summary>
         <div class="lesson-list">
-            <a href="https://docs.google.com/presentation/d/1hqoOSCKKrf-6sv0sOgFS-1t5soidBGe0fIg240ivKlk/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+            <a href="assets/pdf/communications-et-blocages/Les cartes maîtresses du déclarant.pdf" class="lesson-item" target="_blank" rel="noopener noreferrer">
                 <i class="fas fa-chalkboard-teacher"></i> Cours : Les cartes maîtresses du Déclarant
             </a>
             <a href="bsol/Debuter/JMSA/realiser.php" class="lesson-item">
@@ -73,10 +73,10 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Défense à Sans-Atout</summary>
         <div class="lesson-list">
-            <a href="https://docs.google.com/presentation/d/13HchITDEMj3fB8Su-xTVViYsS1mEK_3G7bENKNv2ASo/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+            <a href="assets/pdf/0 - Débuter à la carte.pdf" class="lesson-item" target="_blank">
                 <i class="fas fa-chalkboard-teacher"></i> Cours : Débuter à la carte
             </a>
-            <a href="https://docs.google.com/presentation/d/11FEGEkSTUCQhzGrtBpCFHHTKFzlNhQVm5KUyvREcw6Q/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+            <a href="assets/pdf/defense-sa-debuter/L'entame.pdf" class="lesson-item" target="_blank">
                 <i class="fas fa-chalkboard-teacher"></i> Cours : L'entame à Sans-Atout
             </a>
             <a href="bsol/Debuter/DSA/prendre.php" class="lesson-item">
@@ -95,7 +95,7 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Défense à l'Atout</summary>
         <div class="lesson-list">
-            <a href="https://docs.google.com/presentation/d/1sI5fc-yBQyTfOm-hsSXYKWldBLVF4enHhiwo54k7zDE/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+            <a href="assets/pdf/defense-a-l-atout-debuter/L'entame à l'atout.pdf" class="lesson-item" target="_blank">
                 <i class="fas fa-chalkboard-teacher"></i> Cours : L'entame à l'atout
             </a>
             <a href="bsol/Debuter/DA/realiser.php" class="lesson-item">
