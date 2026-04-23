@@ -2,9 +2,9 @@
 
 <article>
     <h1>Notre Philosophie</h1>
-    
+
     <p>Nous avons opté pour un enseignement du jeu de la carte plus vivant qui permet de faire des progrès rapidement.</p>
-    
+
     <p>Il existe 2 façons d'étudier les donnes :</p>
     <ul>
         <li>En utilisant le logiciel de lecture des donnes</li>
@@ -12,9 +12,9 @@
     </ul>
 
     <p>L'apprentissage des enchères n'est cependant pas négligé, puisque des commentaires sur les enchères accompagnent chaque donne. N'hésitez pas à les lire attentivement.</p>
-    
+
     <p>Nous mettons en ligne également des mémos et des quiz sur les enchères en nous limitant aux enchères du SEF, qui permettent d'enchérir correctement dans de nombreuses situations.</p>
-    
+
     <p>Cet enseignement gagnera en efficacité avec des visio-conférences Zoom qui seront proposées indépendamment :</p>
     <ul>
         <li><strong>Progresser</strong> : Animé par un moniteur ou une initiatrice scolaire (coût 2€ / séance)</li>

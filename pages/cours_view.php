@@ -2,7 +2,7 @@
 
 <article style="text-align: center;">
     <h1>Débuter avec Lancelot</h1>
-    
+
     <div style="margin: 2rem 0;">
         <img src="assets/img/slider1.jpg" alt="Débuter" style="width: 300px; border-radius: 8px;">
     </div>

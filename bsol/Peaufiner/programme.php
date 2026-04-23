@@ -249,8 +249,7 @@
  fclose($ressource);
  ?>
 
-	<?php /* Ouverture fichier */
- include 'affichage.php'; ?>
+	 /* Ouverture fichier */<?php include 'affichage.php'; ?>
 
 	<!--Page End-->
 	</div>
