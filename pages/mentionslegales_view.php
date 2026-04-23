@@ -14,18 +14,23 @@
     <h3>1. Informations légales :</h3>
     <p>Statut du propriétaire : <strong>particulier</strong><br />
         Le Propriétaire est : <strong>Bernard Glorie</strong><br />
-        Adresse postale du propriétaire : <strong>96 impasse des moulins, 62610 Autingues</strong><br />
+        Adresse postale du propriétaire : <strong>13 avenue de la plage 62231 sangatte</strong><br />
         <br />
         Le Créateur du site est : <strong>Bernard Glorie</strong><br />
         Le Responsable de la publication est : <strong>Bernard Glorie</strong><br />
-        Contacter le responsable de la publication : <strong>bernard.glorie.62@orange.fr</strong><br />
+        Contacter le responsable de la publication : <strong> bernard.glorie@gmail.com</strong><br />
         Le responsable de la publication est une <strong>personne physique</strong><br />
         <br />
-        Le Webmaster est : <strong>Bernard Glorie</strong><br />
-        Contacter le Webmaster : <strong><a href="mailto:mart62610@hotmail.fr">mart62610@hotmail.fr</a></strong><br />
-        L'hebergeur du site est : <strong>Zetark 246 Route du Chapeau Rouge, 59229 Téteghem</strong><br />
-        <br>
-        <strong><u>CREDIT :</u> </strong>Les mentions légales ont été générées par <strong><a href="https://www.generer-mentions-legales.com/generateur-mentions-legales.html" target="_blank">générateur de mentions legales</a></strong>
+        Les Webmaster sont : <strong>Bernard Glorie et Louis AMEDRO</strong><br />
+        Contacter les Webmasters :
+    <ul>
+        <li><strong><a href="mailto: bernard.glorie@gmail.com"> bernard.glorie@gmail.com</a></strong></li>
+        <li><strong><a href="mailto:louis.amedro@outlook.fr">louis.amedro@outlook.fr</a></strong></li>
+    </ul>
+    <br />
+    L'hebergeur du site est : <strong>Zetark 246 Route du Chapeau Rouge, 59229 Téteghem</strong><br />
+    <br>
+    <strong><u>CREDIT :</u> </strong>Les mentions légales ont été générées par <strong><a href="https://www.generer-mentions-legales.com/generateur-mentions-legales.html" target="_blank">générateur de mentions legales</a></strong>
     </p>
 </article>
 
