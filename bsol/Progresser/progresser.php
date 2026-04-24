@@ -19,7 +19,7 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Jeu à Sans-Atout</summary>
         <div class="lesson-list">
-            <a href="https://docs.google.com/presentation/d/1hqoOSCKKrf-6sv0sOgFS-1t5soidBGe0fIg240ivKlk/edit?slide=id.p1#slide=id.p1" class="lesson-item" target="_blank">
+            <a href="assets/pdf/communications-et-blocages/Les cartes maîtresses du déclarant.pdf" class="lesson-item" target="_blank">
                 <i class="fas fa-chalkboard-teacher"></i> Cours : Les cartes maîtresses du Déclarant
             </a>
             <a href="bsol/Progresser/JMSA/laisser-passer.php" class="lesson-item">

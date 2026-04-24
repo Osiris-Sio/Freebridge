@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="https://docs.google.com/presentation/d/1BfSjO0YF9yI6YI5w-x0mSj9YQ8sJ1z-L6z-L6z-L6z/edit#slide=id.p" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/jeu-a-l-atout-debuter/Coupes immédiates de la main courte.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>
@@ -20,68 +20,168 @@ include '../../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>1 - Une coupe de la main courte (19 donnes)</summary>
         <div class="lesson-list">
-            <div class="lesson-item"><span>Donne 1</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bqEwMVrd" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 2</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=f8Lp2mbQ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 3</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=8zSWaPf7" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 4</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WVHC4dBt" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 5</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dXDEimYj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 6</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dXDEimYj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_6.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 7</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=h3imMRfJ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_7.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 8</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=wD2dh3np" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_8.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 9</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HjhXNREp" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_9.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 10</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kVt53fZ2" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_10.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 11</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=sUBaWY2i" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_11.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 12</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LZQEjXsY" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_12.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 13</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rKqnQauZ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_13.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 14</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KhSXntdu" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_14.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 15</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=T8ycfxGP" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_15.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 16</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SMGEmnP9" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_16.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 17</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CbXhtTnK" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_17.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 18</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZVnPayRF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_18.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 19</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dTfpbhL8" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_19.lin" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bqEwMVrd" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=f8Lp2mbQ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=8zSWaPf7" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=WVHC4dBt" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dXDEimYj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dXDEimYj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_6.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=h3imMRfJ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_7.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=wD2dh3np" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_8.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HjhXNREp" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_9.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kVt53fZ2" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_10.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=sUBaWY2i" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_11.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=LZQEjXsY" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_12.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rKqnQauZ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_13.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=KhSXntdu" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_14.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=T8ycfxGP" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_15.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SMGEmnP9" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_16.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CbXhtTnK" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_17.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ZVnPayRF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_18.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dTfpbhL8" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/1_-_Une_coupe_de_la_main_courte/Donne_19.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
         </div>
     </details>
 
     <details class="level-folder">
         <summary>2 - 2 coupes de la main courte (26 donnes)</summary>
         <div class="lesson-list">
-            <div class="lesson-item"><span>Donne 1</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6ZkhjeC8" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 2</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7gdw2m6k" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 3</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=QGTwipKv" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 4</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=BYVKfcJ7" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 5</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ENLjVmYe" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 6</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5KCSwuXm" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_6.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 7</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dwFpLm42" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_7.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 8</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HzGFJ49r" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_8.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 9</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gUGVNQh5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_9.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 10</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qdDk35gj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_10.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 11</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4BNUvMz3" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_11.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 12</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=aMqpLTcX" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_12.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 13</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MFCiEHzn" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_13.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 14</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CcLsh6Yt" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_14.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 15</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ugsEraqU" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_15.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 16</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7AyNHFQU" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_16.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 17</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ASFRdpLk" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_17.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 18</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=meh7Anu5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_18.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 19</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bPzLnrka" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_19.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 20</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5QaqWvXT" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_20.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 21</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=UCeT5SXf" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_21.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 22</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=hs4evzEn" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_22.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 23</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ELN2kzZM" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_23.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 24</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=THDsmZ4v" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_24.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 25</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=38iCYZqF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_25.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 26</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eZa9gvn5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_26.lin" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=6ZkhjeC8" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7gdw2m6k" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=QGTwipKv" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=BYVKfcJ7" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ENLjVmYe" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5KCSwuXm" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_6.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=dwFpLm42" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_7.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=HzGFJ49r" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_8.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gUGVNQh5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_9.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=qdDk35gj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_10.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=4BNUvMz3" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_11.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=aMqpLTcX" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_12.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MFCiEHzn" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_13.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CcLsh6Yt" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_14.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ugsEraqU" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_15.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=7AyNHFQU" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_16.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ASFRdpLk" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_17.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=meh7Anu5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_18.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bPzLnrka" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_19.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5QaqWvXT" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_20.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=UCeT5SXf" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_21.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=hs4evzEn" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_22.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=ELN2kzZM" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_23.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=THDsmZ4v" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_24.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=38iCYZqF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_25.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 26</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eZa9gvn5" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/2_-_2_coupes_de_la_main_courte/Donne_26.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
         </div>
     </details>
 
     <details class="level-folder">
         <summary>3 - 3 coupes de la main courte (5 donnes)</summary>
         <div class="lesson-list">
-            <div class="lesson-item"><span>Donne 1</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=jBTaSdVM" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 2</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DsvE49HK" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 3</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rL69tfyY" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 4</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gURzbVsw" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div></div>
-            <div class="lesson-item"><span>Donne 5</span><div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YjBmKxhw" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div></div>
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=jBTaSdVM" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DsvE49HK" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=rL69tfyY" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gURzbVsw" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=YjBmKxhw" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/13_-_Coupe(s)_immediate(s)_de_la_main_courte/3_-_3_coupes_de_la_main_courte/Donne_5.lin" role="button" class="secondary outline">Solution</a></div>
+            </div>
         </div>
     </details>
 </article>

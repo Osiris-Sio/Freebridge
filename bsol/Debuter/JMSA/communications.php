@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="https://docs.google.com/presentation/d/1BfSjO0YF9yI6YI5w-x0mSj9YQ8sJ1z-L6z-L6z-L6z/edit#slide=id.p" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/communications-et-blocages/Communications et blocages.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>
