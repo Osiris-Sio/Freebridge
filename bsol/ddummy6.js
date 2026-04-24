@@ -467,30 +467,19 @@ function initializeCardScroll(board) {
   // Créer un panneau de contrôle pour le défilement
   var controlPanel = document.createElement('div')
   controlPanel.id = 'scrollControlPanel'
-  controlPanel.style.position = 'fixed'
-  controlPanel.style.bottom = '20px'
-  controlPanel.style.backgroundColor = '#f0f0f0'
-  controlPanel.style.padding = '10px'
-  controlPanel.style.borderRadius = '5px'
-  controlPanel.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)'
-  controlPanel.style.zIndex = '1000'
-  controlPanel.style.display = 'flex'
-  controlPanel.style.gap = '1em'
-  controlPanel.style.alignItems = 'center'
-  controlPanel.style.width = '100%'
-  controlPanel.style.justifyContent = 'center'
 
   controlPanel.innerHTML = `
-		<button id="prevCardBtn" style="padding:5px 10px;">Précédent</button>
-		<button id="playPauseBtn" style="padding:5px 10px;">Lecture</button>
-		<button id="nextCardBtn" style="padding:5px 10px;">Suivant</button>
-		<button id="nextTrickBtn" style="padding:5px 10px;background-color:#4CAF50;color:white;border:none;border-radius:4px;cursor:pointer;">Avancer par levée</button>
-		<button id="resetCardsBtn" style="padding:5px 10px;">Recommencer</button>		<div style="display:flex;align-items:center;margin-left:10px;">
+		<button id="prevCardBtn">Précédent</button>
+		<button id="playPauseBtn">Lecture</button>
+		<button id="nextCardBtn">Suivant</button>
+		<button id="nextTrickBtn">Avancer par levée</button>
+		<button id="resetCardsBtn">Recommencer</button>
+		<div style="display:flex;align-items:center;margin-left:10px;">
 			<label for="speedSlider" style="margin-right:5px;">Vitesse:</label>
 			<input type="range" id="speedSlider" min="200" max="3000" step="100" value="${g_scrollSpeed}">
 		</div>
-		<button id="toggleHandsBtn" style="padding:5px 10px;margin-left:10px;" onclick="toggleEastWestVisibility()">Afficher E/O</button>
-		<button id="closeScrollBtn" style="padding:5px 10px;margin-left:10px;">Fermer</button>
+		<button id="toggleHandsBtn" onclick="toggleEastWestVisibility()">Afficher E/O</button>
+		<button id="closeScrollBtn">Fermer</button>
 	`
 
   document.body.appendChild(controlPanel)
@@ -2049,7 +2038,7 @@ function createHandString(hand, index) {
       else if (g_inactiveCards[i][cardindex] != 0)
         text =
           text +
-          '<BUTTON style="margin:0px;border:0px;background-color:#EEEEEE;color:#CCCCCC;font-size:' +
+          '<BUTTON style="margin:0px;border:1px solid #ddd;color:black;font-size:' +
           cardFontSize +
           ';font-weight:bold;height:' +
           buttHeight +
@@ -2067,7 +2056,7 @@ function createHandString(hand, index) {
           text +
           '<button class=blankButton id="button' +
           id +
-          '" onclick="deselectCard(this);" style="background-color:#FFFFFF;"><SPAN>' +
+          '" onclick="deselectCard(this);"><SPAN>' +
           cardstr +
           '<SUB style="font-size:12px;font-style:italic;vertical-align:-5%;">&#10004;</SUB></SPAN></button>'
     }
@@ -3749,25 +3738,25 @@ function setupTraveller(index, active) {
     var north = document.getElementById('northHand')
     var handstr = createHandString(g_hands.boards[tindex], 0)
     north.innerHTML = handstr.text
-    north.style.backgroundColor = '#EEEEEE'
+    north.style.backgroundColor = 'white'
     npts = handstr.points
 
     var east = document.getElementById('eastHand')
     handstr = createHandString(g_hands.boards[tindex], 1)
     east.innerHTML = handstr.text
-    east.style.backgroundColor = '#EEEEEE'
+    east.style.backgroundColor = 'white'
     epts = handstr.points
 
     var south = document.getElementById('southHand')
     handstr = createHandString(g_hands.boards[tindex], 2)
     south.innerHTML = handstr.text
-    south.style.backgroundColor = '#EEEEEE'
+    south.style.backgroundColor = 'white'
     spts = handstr.points
 
     var west = document.getElementById('westHand')
     handstr = createHandString(g_hands.boards[tindex], 3)
     west.innerHTML = handstr.text
-    west.style.backgroundColor = '#EEEEEE'
+    west.style.backgroundColor = 'white'
     wpts = handstr.points
 
     if (g_handEntryMode) npts = epts = spts = wpts = ''
@@ -3785,7 +3774,7 @@ function setupTraveller(index, active) {
     dealer['E'] = 'East'
 
     document.getElementById('boardNumber').innerHTML = `
-        <div id="playedCardContainer" style="position: relative; width: 100px; height: 100px; background-color: white;">
+        <div id="playedCardContainer" style="position: relative; width: 100px; height: 100px;">
             <div id="northCard" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); font-size: 24px;"></div>
             <div id="southCard" style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-size: 24px;"></div>
             <div id="westCard" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); font-size: 24px;"></div>
@@ -4391,23 +4380,23 @@ function processHandEntry() {
   var north = document.getElementById('northHand')
   var handstr = createHandString(g_inputBoard, 0)
   north.innerHTML = handstr.text
-  north.style.backgroundColor = '#EEEEEE'
+  north.style.backgroundColor = 'white'
   npts = handstr.points
   var east = document.getElementById('eastHand')
   handstr = createHandString(g_inputBoard, 1)
   east.innerHTML = handstr.text
-  east.style.backgroundColor = '#EEEEEE'
+  east.style.backgroundColor = 'white'
   epts = handstr.points
   var south = document.getElementById('southHand')
   handstr = createHandString(g_inputBoard, 2)
   south.innerHTML = handstr.text
-  south.style.backgroundColor = '#EEEEEE'
+  south.style.backgroundColor = 'white'
   spts = handstr.points
 
   var west = document.getElementById('westHand')
   handstr = createHandString(g_inputBoard, 3)
   west.innerHTML = handstr.text
-  west.style.backgroundColor = '#EEEEEE'
+  west.style.backgroundColor = 'white'
   wpts = handstr.points
 
   var points = document.getElementById('points')
@@ -5479,8 +5468,7 @@ function showPlayerAccMatrix() {
         !found
       ) // If didn't play this board (or this instance of this board)
       {
-        html +=
-          '<td style="border:1px solid grey;background-color:white;"></td>'
+        html += '<td style="border:1px solid grey;"></td>'
       }
     }
 
@@ -8764,7 +8752,7 @@ function setBars(cells, value, cellindex, range, colorL, colorR, width) {
   var pbar =
     '<div style="margin:0px;border:none;position:relative;height:12px;width:100%;min-width:' +
     width +
-    'px;max-width:100%;background-color:white;">'
+    'px;max-width:100%;">'
 
   cells[cellindex + 1].style.padding = '0px'
   cells[cellindex + 1].style.backgroundColor = '#FFFFFF'
@@ -9130,7 +9118,7 @@ function drawHighLowSame(res) {
   var dlwidth = (100 * res.lower) / (res.higher + res.lower + res.same)
 
   var divstart =
-    "<div style='clear:both;border:none;min-width:300px;width:300px;'><div style='clear:both;float:left;border:1px solid black;min-width:100px;width:100px;background-color:white;'><div style='clear:both;height:16px;background-color:grey;width:"
+    "<div style='clear:both;border:none;min-width:300px;width:300px;'><div style='clear:both;float:left;border:1px solid black;min-width:100px;width:100px'><div style='clear:both;height:16px;background-color:grey;width:"
   var divend = "px;'></div></div>"
   var result =
     divstart +
@@ -10454,7 +10442,7 @@ function setupRankingTable(table, dir, rankInfo, winners) {
       var width = (100 * pairs[i].percent.toFixed(0)) / 100
       width = width + 'px'
       var pbar =
-        '<div style="float:left;align:left;width:100px;min-width;100px;max-width:100px;height:16px;border:none;background-color:white;">'
+        '<div style="float:left;align:left;width:100px;min-width;100px;max-width:100px;height:16px;border:none">'
       pbar =
         pbar +
         '<div style="float:left;position:absolute:top:0px;left:0px;height:100%;width:' +
@@ -10488,7 +10476,7 @@ function setupRankingTable(table, dir, rankInfo, winners) {
 
       width = width + 'px'
       var pbar =
-        '<div style="float:left;align:left;width:100px;min-width;100px;max-width:100px;height:16px;border:none;background-color:white;">'
+        '<div style="float:left;align:left;width:100px;min-width;100px;max-width:100px;height:16px;border:none;">'
       pbar =
         pbar +
         '<div style="float:left;position:absolute:top:0px;left:0px;height:100%;width:' +
@@ -10509,7 +10497,7 @@ function setupRankingTable(table, dir, rankInfo, winners) {
 
     var nboards = pairs[i].boardsPlayed
     var pbar =
-      '<div style="float:left;align:left;width:141px;min-width;141px;max-width:141px;height:16px;border:none;background-color:white;">'
+      '<div style="float:left;align:left;width:141px;min-width;141px;max-width:141px;height:16px;border:none">'
 
     var dd = pairs[i].dd
 
@@ -13667,7 +13655,7 @@ function buildpage2() {
     typeof g_hands.boards[g_lastBindex].Declarer !== 'undefined'
   ) {
     var htmltext =
-      "<div style='text-align:center;'><h3>Comment souhaitez-vous visualiser cette partie?</h3>"
+      "<div style='text-align:center;'><h3>Comment souhaitez-vous visualiser cette partie ?</h3>"
     htmltext +=
       "<button style='margin:10px;padding:10px;font-size:16px;' onclick='playGame()'>Jouer la partie</button>"
     htmltext +=

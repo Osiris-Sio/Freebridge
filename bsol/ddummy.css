@@ -1,10 +1,10 @@
 /* CSS Document - Modernized */
 
 :root {
-  /* Palette de couleurs */
+  /* Palette de couleurs - Thème Clair (Défaut) */
   --primary-color: #33790f;
-  --primary-dark: #4eb31b;
-  --primary-light: #61982f;
+  --primary-dark: #24560b;
+  --primary-light: #4eb31b;
   --secondary-color: #4caf50;
   --secondary-dark: #388e3c;
   --secondary-light: #e8f5e9;
@@ -38,7 +38,27 @@
   --border-radius-md: 8px;
   --border-radius-lg: 12px;
   --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-hover: 0 5px 5px #4e4e4e;
+}
+
+/* Palette de couleurs - Thème Sombre */
+[data-theme='dark'] {
+  --primary-color: #4eb31b;
+  --primary-dark: #61982f;
+  --primary-light: #33790f;
+  --secondary-color: #2e7d32;
+  --secondary-dark: #1b5e20;
+  --secondary-light: #1b2a1c;
+  --accent-color: #ff7043;
+  --accent-dark: #f4511e;
+  --text-color: #e0e0e0;
+  --text-light: #b0b0b0;
+  --text-white: #ffffff;
+  --background-light: #1a1a1a;
+  --background-white: #121212;
+  --border-color: #333333;
+  --box-shadow: 0 2px 5px rgba(117, 117, 117, 0.5);
+  --box-shadow-hover: 0 4px 8px rgba(88, 88, 88, 0.7);
 }
 
 /* Reset et base */
@@ -155,7 +175,7 @@ p {
 /* Links & Interactive */
 a {
   font-weight: 600;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -163,7 +183,7 @@ a {
 a:link,
 a:visited,
 a:active {
-  color: white;
+  color: var(--text-white);
 }
 a:hover {
   color: var(--accent-color);
@@ -186,7 +206,7 @@ a:hover {
   color: var(--primary-color);
 }
 #nav-menu a[role='button'] {
-  color: white;
+  color: var(--text-white);
 }
 
 /* Layout & Containers */
@@ -274,7 +294,7 @@ div.toppadding {
 
 a {
   font-weight: 600;
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -282,7 +302,7 @@ a {
 a:link,
 a:visited,
 a:active {
-  color: white;
+  color: var(--text-white);
   text-decoration: none;
 }
 
@@ -571,7 +591,6 @@ table.vul tr td {
   white-space: nowrap;
   font-size: 10px;
   font-weight: 600;
-  background-color: var(--primary-color);
   color: var(--text-white);
   border-radius: var(--border-radius-sm);
 }
@@ -672,7 +691,7 @@ table.calendar td {
 
 .menuButton {
   background-color: var(--primary-light);
-  color: white;
+  color: var(--text-white);
 }
 
 .menuButton:hover {
@@ -938,7 +957,7 @@ input[type='file'] {
 .comment-left {
   flex: 2;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   /* Amélioration du retour à la ligne */
   white-space: pre-wrap; /* Préserve les espaces et retours à la ligne */
@@ -953,7 +972,7 @@ input[type='file'] {
 .comment-right {
   flex: 1;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   /* Mêmes propriétés pour la cohérence */
   white-space: pre-wrap;
@@ -972,7 +991,7 @@ input[type='file'] {
 }
 
 #nav-menu a[role='button'] {
-  color: white;
+  color: var(--text-white);
 }
 
 .blankButton {
@@ -1021,6 +1040,16 @@ input[type='file'] {
   margin: auto !important;
 }
 
+#abuttons > div:first-child {
+  background-color: var(--background-light) !important;
+}
+
+#progressDiv {
+  background-color: var(--background-white) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-color) !important;
+}
+
 #vul {
   margin: auto;
   padding: auto;
@@ -1028,4 +1057,109 @@ input[type='file'] {
 
 #svul {
   text-align: center;
+}
+
+/* Forcer le fond blanc pour les zones de main et les boutons de cartes */
+#northHand,
+#southHand,
+#eastHand,
+#westHand,
+#popup_box {
+  background-color: var(--background-light) !important;
+  color: black !important;
+}
+
+#northHand .blankButton,
+#southHand .blankButton,
+#eastHand .blankButton,
+#westHand .blankButton {
+  background-color: white !important;
+  color: black !important;
+  border: 1px solid #ddd !important;
+}
+
+#northHand .blankButton span,
+#southHand .blankButton span,
+#eastHand .blankButton span,
+#westHand .blankButton span {
+  color: black !important;
+}
+
+#popup_box {
+  position: fixed;
+  padding: 20px;
+  border-color: var(--border-color);
+  box-shadow: var(--box-shadow-hover);
+  z-index: 100;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-lg);
+}
+
+/* Panneau de contrôle du défilement */
+#scrollControlPanel {
+  position: fixed;
+  bottom: 20px;
+  background-color: var(--background-white) !important;
+  color: var(--text-color);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow-hover);
+  z-index: 1000;
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+}
+
+#scrollControlPanel button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: var(--primary-light);
+  color: white;
+  border: none;
+}
+
+#scrollControlPanel button:hover {
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+#scrollControlPanel button#nextTrickBtn {
+  background-color: var(--success-color);
+}
+
+#scrollControlPanel button#nextTrickBtn:hover {
+  background-color: #388e3c;
+}
+
+#scrollControlPanel input[type='range'] {
+  margin: 0 var(--spacing-sm);
+}
+
+/* Boîtes de dialogue et menus contextuels */
+#optionsBox,
+#toolsSubMenu {
+  position: fixed;
+  padding: var(--spacing-lg);
+  background-color: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--box-shadow-hover);
+  z-index: 200;
+  color: var(--text-color);
+}
+
+#optionsBox {
+  width: 550px;
+  max-width: 95vw;
+}
+
+#LEFT,
+#center,
+#RIGHT {
+  padding: 0px;
 }

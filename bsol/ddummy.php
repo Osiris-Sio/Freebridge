@@ -553,7 +553,7 @@
 	</div>
 	<div id=abuttons style="display:none;">
 		<div style="position: fixed; top: 0;left: 0;
-		z-index:20;background-color: white;float:left;background-color:#DDDDDD;width:100%;">
+		z-index:20;float:left;width:100%;">
 			<BUTTON class=menuButton id=aboard>Play It Again</BUTTON>
 			<BUTTON class=sessionMenuButton id=aranking style="margin-left:10px;min-width:95px;">All Pairs</BUTTON>
 			<BUTTON class=sessionMenuButton id=ascorecard style="min-width:95px;">Personal</BUTTON>
@@ -720,7 +720,7 @@
 						}
 						afficherCommentaire("Par : 3SA par Sud. La défense optimale limite à 9 levées."); -->
 					</script>
-					<TABLE WIDTH=100% class=results style="border:0px; border-collapse:collapse; padding:0px;">
+					<TABLE WIDTH=100% class=results style="border:0px; padding:0px;">
 						<div class="comments-container">
 							<div class="comment-left"></div>
 							<div id="commentaire" class="comment-right"></div>
@@ -797,7 +797,7 @@
 		</div>
 	</div>
 	<div id="progressDiv"
-		style="position: fixed; z-index:1; left: 100px; top: 200px;; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
+		style="position: fixed; z-index:1; left: 100px; top: 200px; display:none; border-style:solid; border-width:thin; z-index: 100;">
 		<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;">
 			<tr style="height:20px;">
 				<td>
@@ -810,7 +810,7 @@
 		</table>
 	</div>
 	<div id="popup_box"
-		style="position: fixed; z-index:1; left: 300px; top: 200px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
+		style="display:none;">
 	</div>
 	<div id=spinner style="position:absolute;display:none;">
 		<img src="bsol/spinner.gif">
@@ -857,11 +857,11 @@
 			</tr>
 		</table>
 	</div>
-	<div id="optionsBox"
-		style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
-		<table class=options style="width:500px;">
+	<div id="optionsBox" style="display:none">
+		<h2>Options</h2>
+		<table class="options">
 			<tr>
-				<td style="border:0px;padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
+				<td style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
 					<p><br>
 						<input id="nsrad1" type="radio" name="NSOptions" value="1" checked style="cursor:pointer;">
 						<label id="nslab1" for="nsrad1" style="cursor:pointer;">Subscripts and Colours</label>
@@ -874,7 +874,7 @@
 						<br>
 					</p>
 				</td>
-				<td style="border:0px;padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;E/W Playable Card Display:
+				<td style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;E/W Playable Card Display:
 					<p><br>
 						<input id="ewrad1" type="radio" name="EWOptions" value="1" checked style="cursor:pointer;">
 						<label id="ewlab1" for="ewrad1" style="cursor:pointer;">Subscripts and Colours</label>
@@ -910,28 +910,18 @@
 				</td>
 			</tr>
 		</table>
-		<table width="500" border="0">
-			<tr>
-				<td align="center"><br><BUTTON id="optionsClose"
-						style="width:80px;cursor:pointer;">Close</BUTTON>&nbsp;&nbsp;<BUTTON id="optionsSave"
-						style="width:120px;">Save As Default</BUTTON></td>
-			</tr>
-		</table>
+		<div style="text-align:center; margin-top:20px;">
+			<BUTTON id="optionsClose">Fermer</BUTTON>
+			<BUTTON id="optionsSave">Sauvegarder par défaut</BUTTON>
+		</div>
 	</div>
-	<div id="toolsSubMenu"
-		style="position: absolute; left: 300px; top: 100px; width:240px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
-		<h2>Select a Function:</h2>
-		<BUTTON id=analyseAllBoards style="width:230px;text-align:left;"><SPAN style="font-weight:bold;">Analyse All
-				Boards</SPAN></BUTTON><BR>
-		<BUTTON id=showPlayerAcc style="margin-top:5px;width:230px;text-align:left;"><SPAN
-				style="font-weight:bold;">Show Player Accuracy Matrix</SPAN></BUTTON>
-		<BUTTON id=showSettings style="margin-top:5px;width:230px;text-align:left;"><SPAN
-				style="font-weight:bold;">Settings...</SPAN></BUTTON>
-		<BUTTON id=showReleaseHistory style="margin-top:5px;width:230px;text-align:left;"><SPAN
-				style="font-weight:bold;">Release Notes...</SPAN></BUTTON>
-		<BR><BR>
-		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';"><SPAN
-				style="font-weight:bold;">Close</SPAN></BUTTON>
+	<div id="toolsSubMenu" style="display:none">
+		<h2>Outils</h2>
+		<BUTTON id="analyseAllBoards">Analyser toutes les donnes</BUTTON>
+		<BUTTON id="showPlayerAcc">Matrice de précision des joueurs</BUTTON>
+		<BUTTON id="showSettings">Paramètres...</BUTTON>
+		<BUTTON id="showReleaseHistory">Historique des versions</BUTTON>
+		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';" style="margin-top:20px; background-color: var(--secondary-color);">Fermer</BUTTON>
 	</div>
 	<div id=rcheckdiv style="float:left;clear:both;display:none;">
 		<input type="checkbox" id="rankcheck" value="checkbox"><label for=rankcheck style="font-size:12px;">Sort tables
