@@ -519,40 +519,6 @@ function initializeCardScroll(board) {
   // g_scrollInterval = setInterval(nextCard, g_scrollSpeed);
 }
 
-// Fonction pour avancer d'une levée complète (4 cartes)
-function nextTrick() {
-  var board = g_hands.boards[g_lastBindex]
-
-  if (typeof board.Played === 'undefined' || board.Played.length === 0) {
-    return
-  }
-
-  // Calculer combien de cartes il reste dans la levée actuelle
-  var cardsInCurrentTrick = g_currentCardIndex % 4
-  var cardsToNextTrick = (4 - cardsInCurrentTrick) % 4
-
-  // Si on est au début d'une nouvelle levée, avancer de 4 cartes
-  if (cardsToNextTrick === 0) {
-    cardsToNextTrick = 4
-  }
-
-  // Avancer d'une ou plusieurs cartes
-  for (var i = 0; i < cardsToNextTrick; i++) {
-    if (g_currentCardIndex < board.Played.length - 1) {
-      g_currentCardIndex++
-      displayCardOnBoard(board, g_currentCardIndex)
-    } else {
-      // Si on atteint la fin, arrêter le défilement
-      if (g_scrollInterval) {
-        clearInterval(g_scrollInterval)
-        g_scrollInterval = null
-        document.getElementById('playPauseBtn').textContent = 'Lecture'
-      }
-      break
-    }
-  }
-}
-
 function togglePlayPause() {
   var playPauseBtn = document.getElementById('playPauseBtn')
 
@@ -13829,20 +13795,6 @@ function show(button) {
 
 function hide(button) {
   $('#' + button).hide()
-}
-
-function makeHttpObject() {
-  try {
-    return new XMLHttpRequest()
-  } catch (error) {}
-  try {
-    return new ActiveXObject('Msxml2.XMLHTTP')
-  } catch (error) {}
-  try {
-    return new ActiveXObject('Microsoft.XMLHTTP')
-  } catch (error) {}
-
-  throw new Error('Could not create HTTP request object.')
 }
 
 function doRequestHTML(fileref) {

@@ -1,9 +1,9 @@
-var slideIndex = 0
+let slideIndex = 0
 showSlides()
 
 function showSlides() {
-  var i
-  var slides = document.getElementsByClassName('mySlides')
+  let i
+  const slides = document.getElementsByClassName('mySlides')
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = 'none'
   }
@@ -15,11 +15,11 @@ function showSlides() {
   setTimeout(showSlides, 2000) // Change image every 2 seconds
 }
 // Next/previous controls
-function plusSlides(n) {
+window.plusSlides = function (n) {
   showSlides((slideIndex += n))
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+window.currentSlide = function (n) {
   showSlides((slideIndex = n))
 }

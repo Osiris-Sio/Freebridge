@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const agentCanvas = document.getElementById('agentChart')
   if (agentCanvas && agentCanvas.dataset.agents) {
     const agents = JSON.parse(agentCanvas.dataset.agents)
-    new Chart(agentCanvas, {
+    new window.Chart(agentCanvas, {
       type: 'bar',
       data: {
         labels: agents.map((a) => a.agent_name),
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const mapCanvas = document.getElementById('mapChart')
   if (mapCanvas && mapCanvas.dataset.maps) {
     const maps = JSON.parse(mapCanvas.dataset.maps)
-    new Chart(mapCanvas, {
+    new window.Chart(mapCanvas, {
       type: 'radar',
       data: {
         labels: maps.map((m) => m.map_name),
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .sort((a, b) => parseFloat(b.acs) - parseFloat(a.acs))
       .slice(0, 15)
 
-    new Chart(playerCanvas, {
+    new window.Chart(playerCanvas, {
       type: 'bar',
       data: {
         labels: topPlayers.map((p) => p.player),

@@ -1,35 +1,39 @@
-var Module = typeof Module != 'undefined' ? Module : {}
-var moduleOverrides = Object.assign({}, Module)
-var arguments_ = []
-var thisProgram = './this.program'
-var quit_ = (status, toThrow) => {
+const Module = typeof Module !== 'undefined' ? Module : {}
+const moduleOverrides = Object.assign({}, Module)
+let _arguments_ = []
+window._arguments_ = _arguments_
+let _thisProgram = './this.program'
+window._thisProgram = _thisProgram
+let quit_ = (status, toThrow) => {
   throw toThrow
 }
-var ENVIRONMENT_IS_WEB = typeof window == 'object'
-var ENVIRONMENT_IS_WORKER = typeof importScripts == 'function'
-var ENVIRONMENT_IS_NODE =
-  typeof process == 'object' &&
-  typeof process.versions == 'object' &&
-  typeof process.versions.node == 'string'
-var scriptDirectory = ''
+const ENVIRONMENT_IS_WEB = typeof window === 'object'
+const ENVIRONMENT_IS_WORKER = typeof importScripts === 'function'
+const ENVIRONMENT_IS_NODE =
+  typeof process === 'object' &&
+  typeof process.versions === 'object' &&
+  typeof process.versions.node === 'string'
+let scriptDirectory = ''
 function locateFile(path) {
   if (Module['locateFile']) {
     return Module['locateFile'](path, scriptDirectory)
   }
   return scriptDirectory + path
 }
-var read_, readAsync, readBinary, setWindowTitle
+let read_, readAsync, readBinary
 function logExceptionOnExit(e) {
-  if (e instanceof ExitStatus) return
+  if (e instanceof ExitStatus) {
+    return
+  }
   let toLog = e
-  if (e && typeof e == 'object' && e.stack) {
+  if (e && typeof e === 'object' && e.stack) {
     toLog = [e, e.stack]
   }
   err('exiting due to exception: ' + toLog)
 }
 if (ENVIRONMENT_IS_NODE) {
-  var fs = require('fs')
-  var nodePath = require('path')
+  const fs = require('fs')
+  const nodePath = require('path')
   if (ENVIRONMENT_IS_WORKER) {
     scriptDirectory = nodePath.dirname(scriptDirectory) + '/'
   } else {
@@ -42,7 +46,7 @@ if (ENVIRONMENT_IS_NODE) {
     return fs.readFileSync(filename, binary ? undefined : 'utf8')
   }
   readBinary = (filename) => {
-    var ret = read_(filename, true)
+    let ret = read_(filename, true)
     if (!ret.buffer) {
       ret = new Uint8Array(ret)
     }
@@ -53,15 +57,20 @@ if (ENVIRONMENT_IS_NODE) {
       ? new URL(filename)
       : nodePath.normalize(filename)
     fs.readFile(filename, function (err, data) {
-      if (err) onerror(err)
-      else onload(data.buffer)
+      if (err) {
+        onerror(err)
+      } else {
+        onload(data.buffer)
+      }
     })
   }
   if (process.argv.length > 1) {
-    thisProgram = process.argv[1].replace(/\\/g, '/')
+    _thisProgram = process.argv[1].replace(/\\/g, '/')
   }
-  arguments_ = process.argv.slice(2)
-  if (typeof module != 'undefined') {
+  _arguments_ = process.argv.slice(2)
+  Module['thisProgram'] = _thisProgram
+  Module['arguments'] = _arguments_
+  if (typeof module !== 'undefined') {
     module['exports'] = Module
   }
   process.on('uncaughtException', function (ex) {
@@ -69,7 +78,7 @@ if (ENVIRONMENT_IS_NODE) {
       throw ex
     }
   })
-  var nodeMajor = process.versions.node.split('.')[0]
+  const nodeMajor = process.versions.node.split('.')[0]
   if (nodeMajor < 15) {
     process.on('unhandledRejection', function (reason) {
       throw reason
@@ -89,7 +98,7 @@ if (ENVIRONMENT_IS_NODE) {
 } else if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
   if (ENVIRONMENT_IS_WORKER) {
     scriptDirectory = self.location.href
-  } else if (typeof document != 'undefined' && document.currentScript) {
+  } else if (typeof document !== 'undefined' && document.currentScript) {
     scriptDirectory = document.currentScript.src
   }
   if (scriptDirectory.indexOf('blob:') !== 0) {
@@ -102,14 +111,14 @@ if (ENVIRONMENT_IS_NODE) {
   }
   {
     read_ = (url) => {
-      var xhr = new XMLHttpRequest()
+      const xhr = new XMLHttpRequest()
       xhr.open('GET', url, false)
       xhr.send(null)
       return xhr.responseText
     }
     if (ENVIRONMENT_IS_WORKER) {
       readBinary = (url) => {
-        var xhr = new XMLHttpRequest()
+        const xhr = new XMLHttpRequest()
         xhr.open('GET', url, false)
         xhr.responseType = 'arraybuffer'
         xhr.send(null)
@@ -117,11 +126,11 @@ if (ENVIRONMENT_IS_NODE) {
       }
     }
     readAsync = (url, onload, onerror) => {
-      var xhr = new XMLHttpRequest()
+      const xhr = new XMLHttpRequest()
       xhr.open('GET', url, true)
       xhr.responseType = 'arraybuffer'
       xhr.onload = () => {
-        if (xhr.status == 200 || (xhr.status == 0 && xhr.response)) {
+        if (xhr.status === 200 || (xhr.status === 0 && xhr.response)) {
           onload(xhr.response)
           return
         }
@@ -131,53 +140,66 @@ if (ENVIRONMENT_IS_NODE) {
       xhr.send(null)
     }
   }
-  setWindowTitle = (title) => (document.title = title)
+  // setWindowTitle = (title) => (document.title = title)
 } else {
+  // Empty
 }
-var out = Module['print'] || console.log.bind(console)
-var err = Module['printErr'] || console.warn.bind(console)
+const out = Module['print'] || (() => {})
+const err = Module['printErr'] || (() => {})
 Object.assign(Module, moduleOverrides)
-moduleOverrides = null
-if (Module['arguments']) arguments_ = Module['arguments']
-if (Module['thisProgram']) thisProgram = Module['thisProgram']
-if (Module['quit']) quit_ = Module['quit']
-var wasmBinary
-if (Module['wasmBinary']) wasmBinary = Module['wasmBinary']
-var noExitRuntime = Module['noExitRuntime'] || true
-if (typeof WebAssembly != 'object') {
+// moduleOverrides = null
+if (Module['arguments']) {
+  // arguments_ = Module['arguments']
+}
+if (Module['thisProgram']) {
+  // thisProgram = Module['thisProgram']
+}
+if (Module['quit']) {
+  quit_ = Module['quit']
+}
+let wasmBinary
+if (Module['wasmBinary']) {
+  wasmBinary = Module['wasmBinary']
+}
+const noExitRuntime = Module['noExitRuntime'] || true
+if (typeof WebAssembly !== 'object') {
   abort('no native wasm support detected')
 }
-var wasmMemory
-var ABORT = false
-var EXITSTATUS
+let wasmMemory
+let ABORT = false
+let EXITSTATUS = 0
+window.EXITSTATUS = EXITSTATUS
+// EXITSTATUS unused
 function assert(condition, text) {
   if (!condition) {
     abort(text)
   }
 }
-var UTF8Decoder =
-  typeof TextDecoder != 'undefined' ? new TextDecoder('utf8') : undefined
+const UTF8Decoder =
+  typeof TextDecoder !== 'undefined' ? new TextDecoder('utf8') : undefined
 function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
-  var endIdx = idx + maxBytesToRead
-  var endPtr = idx
-  while (heapOrArray[endPtr] && !(endPtr >= endIdx)) ++endPtr
+  const endIdx = idx + maxBytesToRead
+  let endPtr = idx
+  while (heapOrArray[endPtr] && !(endPtr >= endIdx)) {
+    ++endPtr
+  }
   if (endPtr - idx > 16 && heapOrArray.buffer && UTF8Decoder) {
     return UTF8Decoder.decode(heapOrArray.subarray(idx, endPtr))
   }
-  var str = ''
+  let str = ''
   while (idx < endPtr) {
-    var u0 = heapOrArray[idx++]
+    let u0 = heapOrArray[idx++]
     if (!(u0 & 128)) {
       str += String.fromCharCode(u0)
       continue
     }
-    var u1 = heapOrArray[idx++] & 63
-    if ((u0 & 224) == 192) {
+    const u1 = heapOrArray[idx++] & 63
+    if ((u0 & 224) === 192) {
       str += String.fromCharCode(((u0 & 31) << 6) | u1)
       continue
     }
-    var u2 = heapOrArray[idx++] & 63
-    if ((u0 & 240) == 224) {
+    const u2 = heapOrArray[idx++] & 63
+    if ((u0 & 240) === 224) {
       u0 = ((u0 & 15) << 12) | (u1 << 6) | u2
     } else {
       u0 = ((u0 & 7) << 18) | (u1 << 12) | (u2 << 6) | (heapOrArray[idx++] & 63)
@@ -185,7 +207,7 @@ function UTF8ArrayToString(heapOrArray, idx, maxBytesToRead) {
     if (u0 < 65536) {
       str += String.fromCharCode(u0)
     } else {
-      var ch = u0 - 65536
+      const ch = u0 - 65536
       str += String.fromCharCode(55296 | (ch >> 10), 56320 | (ch & 1023))
     }
   }
@@ -195,29 +217,39 @@ function UTF8ToString(ptr, maxBytesToRead) {
   return ptr ? UTF8ArrayToString(HEAPU8, ptr, maxBytesToRead) : ''
 }
 function stringToUTF8Array(str, heap, outIdx, maxBytesToWrite) {
-  if (!(maxBytesToWrite > 0)) return 0
-  var startIdx = outIdx
-  var endIdx = outIdx + maxBytesToWrite - 1
-  for (var i = 0; i < str.length; ++i) {
-    var u = str.charCodeAt(i)
+  if (!(maxBytesToWrite > 0)) {
+    return 0
+  }
+  const startIdx = outIdx
+  const endIdx = outIdx + maxBytesToWrite - 1
+  for (let i = 0; i < str.length; ++i) {
+    let u = str.charCodeAt(i)
     if (u >= 55296 && u <= 57343) {
-      var u1 = str.charCodeAt(++i)
+      const u1 = str.charCodeAt(++i)
       u = (65536 + ((u & 1023) << 10)) | (u1 & 1023)
     }
     if (u <= 127) {
-      if (outIdx >= endIdx) break
+      if (outIdx >= endIdx) {
+        break
+      }
       heap[outIdx++] = u
     } else if (u <= 2047) {
-      if (outIdx + 1 >= endIdx) break
+      if (outIdx + 1 >= endIdx) {
+        break
+      }
       heap[outIdx++] = 192 | (u >> 6)
       heap[outIdx++] = 128 | (u & 63)
     } else if (u <= 65535) {
-      if (outIdx + 2 >= endIdx) break
+      if (outIdx + 2 >= endIdx) {
+        break
+      }
       heap[outIdx++] = 224 | (u >> 12)
       heap[outIdx++] = 128 | ((u >> 6) & 63)
       heap[outIdx++] = 128 | (u & 63)
     } else {
-      if (outIdx + 3 >= endIdx) break
+      if (outIdx + 3 >= endIdx) {
+        break
+      }
       heap[outIdx++] = 240 | (u >> 18)
       heap[outIdx++] = 128 | ((u >> 12) & 63)
       heap[outIdx++] = 128 | ((u >> 6) & 63)
@@ -231,9 +263,9 @@ function stringToUTF8(str, outPtr, maxBytesToWrite) {
   return stringToUTF8Array(str, HEAPU8, outPtr, maxBytesToWrite)
 }
 function lengthBytesUTF8(str) {
-  var len = 0
-  for (var i = 0; i < str.length; ++i) {
-    var c = str.charCodeAt(i)
+  let len = 0
+  for (let i = 0; i < str.length; ++i) {
+    const c = str.charCodeAt(i)
     if (c <= 127) {
       len++
     } else if (c <= 2047) {
@@ -247,30 +279,33 @@ function lengthBytesUTF8(str) {
   }
   return len
 }
-var HEAP8, HEAPU8, HEAP16, HEAPU16, HEAP32, HEAPU32, HEAPF32, HEAPF64
+let HEAP8, HEAPU8, HEAP16, HEAP32, HEAPU32
 function updateMemoryViews() {
-  var b = wasmMemory.buffer
+  const b = wasmMemory.buffer
   Module['HEAP8'] = HEAP8 = new Int8Array(b)
   Module['HEAP16'] = HEAP16 = new Int16Array(b)
   Module['HEAP32'] = HEAP32 = new Int32Array(b)
   Module['HEAPU8'] = HEAPU8 = new Uint8Array(b)
-  Module['HEAPU16'] = HEAPU16 = new Uint16Array(b)
+  Module['HEAPU16'] = new Uint16Array(b)
   Module['HEAPU32'] = HEAPU32 = new Uint32Array(b)
-  Module['HEAPF32'] = HEAPF32 = new Float32Array(b)
-  Module['HEAPF64'] = HEAPF64 = new Float64Array(b)
+  Module['HEAPF32'] = new Float32Array(b)
+  Module['HEAPF64'] = new Float64Array(b)
 }
-var wasmTable
-var __ATPRERUN__ = []
-var __ATINIT__ = []
-var __ATPOSTRUN__ = []
-var runtimeInitialized = false
+let wasmTable
+window.wasmTable = wasmTable
+const __ATPRERUN__ = []
+const __ATINIT__ = []
+const __ATPOSTRUN__ = []
+let runtimeInitialized = false
+window.runtimeInitialized = runtimeInitialized
 function keepRuntimeAlive() {
   return noExitRuntime
 }
 function preRun() {
   if (Module['preRun']) {
-    if (typeof Module['preRun'] == 'function')
+    if (typeof Module['preRun'] === 'function') {
       Module['preRun'] = [Module['preRun']]
+    }
     while (Module['preRun'].length) {
       addOnPreRun(Module['preRun'].shift())
     }
@@ -279,15 +314,18 @@ function preRun() {
 }
 function initRuntime() {
   runtimeInitialized = true
-  if (!Module['noFSInit'] && !FS.init.initialized) FS.init()
+  if (!Module['noFSInit'] && !FS.init.initialized) {
+    FS.init()
+  }
   FS.ignorePermissions = false
   TTY.init()
   callRuntimeCallbacks(__ATINIT__)
 }
 function postRun() {
   if (Module['postRun']) {
-    if (typeof Module['postRun'] == 'function')
+    if (typeof Module['postRun'] === 'function') {
       Module['postRun'] = [Module['postRun']]
+    }
     while (Module['postRun'].length) {
       addOnPostRun(Module['postRun'].shift())
     }
@@ -303,30 +341,30 @@ function addOnInit(cb) {
 function addOnPostRun(cb) {
   __ATPOSTRUN__.unshift(cb)
 }
-var runDependencies = 0
-var runDependencyWatcher = null
-var dependenciesFulfilled = null
-function getUniqueRunDependency(id) {
-  return id
+let runDependencies = 0
+let runDependencyWatcher = null
+let dependenciesFulfilled = null
+function getUniqueRunDependency(_id) {
+  return _id
 }
-function addRunDependency(id) {
+function addRunDependency(_id) {
   runDependencies++
   if (Module['monitorRunDependencies']) {
     Module['monitorRunDependencies'](runDependencies)
   }
 }
-function removeRunDependency(id) {
+function removeRunDependency(_id) {
   runDependencies--
   if (Module['monitorRunDependencies']) {
     Module['monitorRunDependencies'](runDependencies)
   }
-  if (runDependencies == 0) {
+  if (runDependencies === 0) {
     if (runDependencyWatcher !== null) {
       clearInterval(runDependencyWatcher)
       runDependencyWatcher = null
     }
     if (dependenciesFulfilled) {
-      var callback = dependenciesFulfilled
+      const callback = dependenciesFulfilled
       dependenciesFulfilled = null
       callback()
     }
@@ -341,24 +379,24 @@ function abort(what) {
   ABORT = true
   EXITSTATUS = 1
   what += '. Build with -sASSERTIONS for more info.'
-  var e = new WebAssembly.RuntimeError(what)
+  const e = new WebAssembly.RuntimeError(what)
   throw e
 }
-var dataURIPrefix = 'data:application/octet-stream;base64,'
+const dataURIPrefix = 'data:application/octet-stream;base64,'
 function isDataURI(filename) {
   return filename.startsWith(dataURIPrefix)
 }
 function isFileURI(filename) {
   return filename.startsWith('file://')
 }
-var wasmBinaryFile
+let wasmBinaryFile
 wasmBinaryFile = 'dds.wasm'
 if (!isDataURI(wasmBinaryFile)) {
   wasmBinaryFile = locateFile(wasmBinaryFile)
 }
 function getBinary(file) {
   try {
-    if (file == wasmBinaryFile && wasmBinary) {
+    if (file === wasmBinaryFile && wasmBinary) {
       return new Uint8Array(wasmBinary)
     }
     if (readBinary) {
@@ -371,7 +409,7 @@ function getBinary(file) {
 }
 function getBinaryPromise(binaryFile) {
   if (!wasmBinary && (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER)) {
-    if (typeof fetch == 'function' && !isFileURI(binaryFile)) {
+    if (typeof fetch === 'function' && !isFileURI(binaryFile)) {
       return fetch(binaryFile, { credentials: 'same-origin' })
         .then(function (response) {
           if (!response['ok']) {
@@ -416,15 +454,15 @@ function instantiateArrayBuffer(binaryFile, imports, receiver) {
 function instantiateAsync(binary, binaryFile, imports, callback) {
   if (
     !binary &&
-    typeof WebAssembly.instantiateStreaming == 'function' &&
+    typeof WebAssembly.instantiateStreaming === 'function' &&
     !isDataURI(binaryFile) &&
     !isFileURI(binaryFile) &&
     !ENVIRONMENT_IS_NODE &&
-    typeof fetch == 'function'
+    typeof fetch === 'function'
   ) {
     return fetch(binaryFile, { credentials: 'same-origin' }).then(
       function (response) {
-        var result = WebAssembly.instantiateStreaming(response, imports)
+        const result = WebAssembly.instantiateStreaming(response, imports)
         return result.then(callback, function (reason) {
           err('wasm streaming compile failed: ' + reason)
           err('falling back to ArrayBuffer instantiation')
@@ -437,9 +475,9 @@ function instantiateAsync(binary, binaryFile, imports, callback) {
   }
 }
 function createWasm() {
-  var info = { a: wasmImports }
-  function receiveInstance(instance, module) {
-    var exports = instance.exports
+  const info = { a: wasmImports }
+  function receiveInstance(instance, _module) {
+    const exports = instance.exports
     Module['asm'] = exports
     wasmMemory = Module['asm']['m']
     updateMemoryViews()
@@ -463,8 +501,8 @@ function createWasm() {
   instantiateAsync(wasmBinary, wasmBinaryFile, info, receiveInstantiationResult)
   return {}
 }
-var tempDouble
-var tempI64
+let tempDouble
+let tempI64
 function ExitStatus(status) {
   this.name = 'ExitStatus'
   this.message = 'Program terminated with exit(' + status + ')'
@@ -491,17 +529,17 @@ function setErrNo(value) {
   HEAP32[___errno_location() >> 2] = value
   return value
 }
-var PATH = {
+const PATH = {
   isAbs: (path) => path.charAt(0) === '/',
   splitPath: (filename) => {
-    var splitPathRe =
-      /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^\/]+?|)(\.[^.\/]*|))(?:[\/]*)$/
+    const splitPathRe =
+      /^(\/?|)([\s\S]*?)((?:\.{1,2}|[^/]+?|)(\.[^./]*|))(?:\/*)$/
     return splitPathRe.exec(filename).slice(1)
   },
   normalizeArray: (parts, allowAboveRoot) => {
-    var up = 0
-    for (var i = parts.length - 1; i >= 0; i--) {
-      var last = parts[i]
+    let up = 0
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const last = parts[i]
       if (last === '.') {
         parts.splice(i, 1)
       } else if (last === '..') {
@@ -520,7 +558,7 @@ var PATH = {
     return parts
   },
   normalize: (path) => {
-    var isAbsolute = PATH.isAbs(path),
+    const isAbsolute = PATH.isAbs(path),
       trailingSlash = path.substr(-1) === '/'
     path = PATH.normalizeArray(
       path.split('/').filter((p) => !!p),
@@ -535,9 +573,9 @@ var PATH = {
     return (isAbsolute ? '/' : '') + path
   },
   dirname: (path) => {
-    var result = PATH.splitPath(path),
-      root = result[0],
-      dir = result[1]
+    const result = PATH.splitPath(path)
+    const root = result[0]
+    let dir = result[1]
     if (!root && !dir) {
       return '.'
     }
@@ -547,15 +585,19 @@ var PATH = {
     return root + dir
   },
   basename: (path) => {
-    if (path === '/') return '/'
+    if (path === '/') {
+      return '/'
+    }
     path = PATH.normalize(path)
     path = path.replace(/\/$/, '')
-    var lastSlash = path.lastIndexOf('/')
-    if (lastSlash === -1) return path
+    const lastSlash = path.lastIndexOf('/')
+    if (lastSlash === -1) {
+      return path
+    }
     return path.substr(lastSlash + 1)
   },
   join: function () {
-    var paths = Array.prototype.slice.call(arguments)
+    const paths = Array.prototype.slice.call(arguments)
     return PATH.normalize(paths.join('/'))
   },
   join2: (l, r) => {
@@ -564,29 +606,31 @@ var PATH = {
 }
 function getRandomDevice() {
   if (
-    typeof crypto == 'object' &&
-    typeof crypto['getRandomValues'] == 'function'
+    typeof crypto === 'object' &&
+    typeof crypto['getRandomValues'] === 'function'
   ) {
-    var randomBuffer = new Uint8Array(1)
+    const randomBuffer = new Uint8Array(1)
     return () => {
       crypto.getRandomValues(randomBuffer)
       return randomBuffer[0]
     }
   } else if (ENVIRONMENT_IS_NODE) {
     try {
-      var crypto_module = require('crypto')
+      const crypto_module = require('crypto')
       return () => crypto_module['randomBytes'](1)[0]
-    } catch (e) {}
+    } catch {
+      // Ignorer l'erreur
+    }
   }
   return () => abort('randomDevice')
 }
-var PATH_FS = {
+const PATH_FS = {
   resolve: function () {
-    var resolvedPath = '',
+    let resolvedPath = '',
       resolvedAbsolute = false
-    for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-      var path = i >= 0 ? arguments[i] : FS.cwd()
-      if (typeof path != 'string') {
+    for (let i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+      const path = i >= 0 ? arguments[i] : FS.cwd()
+      if (typeof path !== 'string') {
         throw new TypeError('Arguments to path.resolve must be strings')
       } else if (!path) {
         return ''
@@ -604,29 +648,35 @@ var PATH_FS = {
     from = PATH_FS.resolve(from).substr(1)
     to = PATH_FS.resolve(to).substr(1)
     function trim(arr) {
-      var start = 0
+      let start = 0
       for (; start < arr.length; start++) {
-        if (arr[start] !== '') break
+        if (arr[start] !== '') {
+          break
+        }
       }
-      var end = arr.length - 1
+      let end = arr.length - 1
       for (; end >= 0; end--) {
-        if (arr[end] !== '') break
+        if (arr[end] !== '') {
+          break
+        }
       }
-      if (start > end) return []
+      if (start > end) {
+        return []
+      }
       return arr.slice(start, end - start + 1)
     }
-    var fromParts = trim(from.split('/'))
-    var toParts = trim(to.split('/'))
-    var length = Math.min(fromParts.length, toParts.length)
-    var samePartsLength = length
-    for (var i = 0; i < length; i++) {
+    const fromParts = trim(from.split('/'))
+    const toParts = trim(to.split('/'))
+    const length = Math.min(fromParts.length, toParts.length)
+    let samePartsLength = length
+    for (let i = 0; i < length; i++) {
       if (fromParts[i] !== toParts[i]) {
         samePartsLength = i
         break
       }
     }
-    var outputParts = []
-    for (var i = samePartsLength; i < fromParts.length; i++) {
+    let outputParts = []
+    for (let i = samePartsLength; i < fromParts.length; i++) {
       outputParts.push('..')
     }
     outputParts = outputParts.concat(toParts.slice(samePartsLength))
@@ -634,13 +684,15 @@ var PATH_FS = {
   },
 }
 function intArrayFromString(stringy, dontAddNull, length) {
-  var len = length > 0 ? length : lengthBytesUTF8(stringy) + 1
-  var u8array = new Array(len)
-  var numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length)
-  if (dontAddNull) u8array.length = numBytesWritten
+  const len = length > 0 ? length : lengthBytesUTF8(stringy) + 1
+  const u8array = new Array(len)
+  const numBytesWritten = stringToUTF8Array(stringy, u8array, 0, u8array.length)
+  if (dontAddNull) {
+    u8array.length = numBytesWritten
+  }
   return u8array
 }
-var TTY = {
+const TTY = {
   ttys: [],
   init: function () {},
   shutdown: function () {},
@@ -650,7 +702,7 @@ var TTY = {
   },
   stream_ops: {
     open: function (stream) {
-      var tty = TTY.ttys[stream.node.rdev]
+      const tty = TTY.ttys[stream.node.rdev]
       if (!tty) {
         throw new FS.ErrnoError(43)
       }
@@ -663,22 +715,24 @@ var TTY = {
     fsync: function (stream) {
       stream.tty.ops.fsync(stream.tty)
     },
-    read: function (stream, buffer, offset, length, pos) {
+    read: function (stream, buffer, offset, length, _pos) {
       if (!stream.tty || !stream.tty.ops.get_char) {
         throw new FS.ErrnoError(60)
       }
-      var bytesRead = 0
-      for (var i = 0; i < length; i++) {
-        var result
+      let bytesRead = 0
+      for (let i = 0; i < length; i++) {
+        let result
         try {
           result = stream.tty.ops.get_char(stream.tty)
-        } catch (e) {
+        } catch {
           throw new FS.ErrnoError(29)
         }
         if (result === undefined && bytesRead === 0) {
           throw new FS.ErrnoError(6)
         }
-        if (result === null || result === undefined) break
+        if (result === null || result === undefined) {
+          break
+        }
         bytesRead++
         buffer[offset + i] = result
       }
@@ -687,52 +741,61 @@ var TTY = {
       }
       return bytesRead
     },
-    write: function (stream, buffer, offset, length, pos) {
+    write: function (stream, buffer, offset, length, _pos) {
       if (!stream.tty || !stream.tty.ops.put_char) {
         throw new FS.ErrnoError(60)
       }
       try {
-        for (var i = 0; i < length; i++) {
+        for (let i = 0; i < length; i++) {
           stream.tty.ops.put_char(stream.tty, buffer[offset + i])
         }
-      } catch (e) {
+      } catch {
         throw new FS.ErrnoError(29)
       }
       if (length) {
         stream.node.timestamp = Date.now()
       }
-      return i
+      return length
     },
   },
   default_tty_ops: {
     get_char: function (tty) {
       if (!tty.input.length) {
-        var result = null
+        let result = null
         if (ENVIRONMENT_IS_NODE) {
-          var BUFSIZE = 256
-          var buf = Buffer.alloc(BUFSIZE)
-          var bytesRead = 0
+          const fs_node = require('fs')
+          const BUFSIZE = 256
+          const buf = Buffer.alloc(BUFSIZE)
           try {
-            bytesRead = fs.readSync(process.stdin.fd, buf, 0, BUFSIZE, -1)
+            const bytesRead = fs_node.readSync(
+              process.stdin.fd,
+              buf,
+              0,
+              BUFSIZE,
+              -1,
+            )
+            if (bytesRead > 0) {
+              result = buf.slice(0, bytesRead).toString('utf-8')
+            } else {
+              result = null
+            }
           } catch (e) {
-            if (e.toString().includes('EOF')) bytesRead = 0
-            else throw e
-          }
-          if (bytesRead > 0) {
-            result = buf.slice(0, bytesRead).toString('utf-8')
-          } else {
-            result = null
+            if (e.toString().includes('EOF')) {
+              // bytesRead = 0
+            } else {
+              throw e
+            }
           }
         } else if (
-          typeof window != 'undefined' &&
-          typeof window.prompt == 'function'
+          typeof window !== 'undefined' &&
+          typeof window.prompt === 'function'
         ) {
           result = window.prompt('Input: ')
           if (result !== null) {
             result += '\n'
           }
-        } else if (typeof readline == 'function') {
-          result = readline()
+        } else if (typeof self.readline === 'function') {
+          result = self.readline()
           if (result !== null) {
             result += '\n'
           }
@@ -749,7 +812,9 @@ var TTY = {
         out(UTF8ArrayToString(tty.output, 0))
         tty.output = []
       } else {
-        if (val != 0) tty.output.push(val)
+        if (val !== 0) {
+          tty.output.push(val)
+        }
       }
     },
     fsync: function (tty) {
@@ -765,7 +830,9 @@ var TTY = {
         err(UTF8ArrayToString(tty.output, 0))
         tty.output = []
       } else {
-        if (val != 0) tty.output.push(val)
+        if (val !== 0) {
+          tty.output.push(val)
+        }
       }
     },
     fsync: function (tty) {
@@ -776,12 +843,12 @@ var TTY = {
     },
   },
 }
-function mmapAlloc(size) {
+function mmapAlloc(_size) {
   abort()
 }
-var MEMFS = {
+const MEMFS = {
   ops_table: null,
-  mount: function (mount) {
+  mount: function (_mount) {
     return MEMFS.createNode(null, '/', 16384 | 511, 0)
   },
   createNode: function (parent, name, mode, dev) {
@@ -835,7 +902,7 @@ var MEMFS = {
         },
       }
     }
-    var node = FS.createNode(parent, name, mode, dev)
+    const node = FS.createNode(parent, name, mode, dev)
     if (FS.isDir(node.mode)) {
       node.node_ops = MEMFS.ops_table.dir.node
       node.stream_ops = MEMFS.ops_table.dir.stream
@@ -860,31 +927,42 @@ var MEMFS = {
     return node
   },
   getFileDataAsTypedArray: function (node) {
-    if (!node.contents) return new Uint8Array(0)
-    if (node.contents.subarray) return node.contents.subarray(0, node.usedBytes)
+    if (!node.contents) {
+      return new Uint8Array(0)
+    }
+    if (node.contents.subarray) {
+      return node.contents.subarray(0, node.usedBytes)
+    }
     return new Uint8Array(node.contents)
   },
   expandFileStorage: function (node, newCapacity) {
-    var prevCapacity = node.contents ? node.contents.length : 0
-    if (prevCapacity >= newCapacity) return
-    var CAPACITY_DOUBLING_MAX = 1024 * 1024
+    const prevCapacity = node.contents ? node.contents.length : 0
+    if (prevCapacity >= newCapacity) {
+      return
+    }
+    const CAPACITY_DOUBLING_MAX = 1024 * 1024
     newCapacity = Math.max(
       newCapacity,
       (prevCapacity * (prevCapacity < CAPACITY_DOUBLING_MAX ? 2 : 1.125)) >>> 0,
     )
-    if (prevCapacity != 0) newCapacity = Math.max(newCapacity, 256)
-    var oldContents = node.contents
+    if (prevCapacity !== 0) {
+      newCapacity = Math.max(newCapacity, 256)
+    }
+    const oldContents = node.contents
     node.contents = new Uint8Array(newCapacity)
-    if (node.usedBytes > 0)
+    if (node.usedBytes > 0) {
       node.contents.set(oldContents.subarray(0, node.usedBytes), 0)
+    }
   },
   resizeFileStorage: function (node, newSize) {
-    if (node.usedBytes == newSize) return
-    if (newSize == 0) {
+    if (node.usedBytes === newSize) {
+      return
+    }
+    if (newSize === 0) {
       node.contents = null
       node.usedBytes = 0
     } else {
-      var oldContents = node.contents
+      const oldContents = node.contents
       node.contents = new Uint8Array(newSize)
       if (oldContents) {
         node.contents.set(
@@ -896,7 +974,7 @@ var MEMFS = {
   },
   node_ops: {
     getattr: function (node) {
-      var attr = {}
+      const attr = {}
       attr.dev = FS.isChrdev(node.mode) ? node.id : 1
       attr.ino = node.id
       attr.mode = node.mode
@@ -931,21 +1009,25 @@ var MEMFS = {
         MEMFS.resizeFileStorage(node, attr.size)
       }
     },
-    lookup: function (parent, name) {
+    lookup: function (_parent, _name) {
       throw FS.genericErrors[44]
     },
-    mknod: function (parent, name, mode, dev) {
-      return MEMFS.createNode(parent, name, mode, dev)
+    mknod: function (_parent, _name, mode, dev) {
+      return MEMFS.createNode(_parent, _name, mode, dev)
     },
     rename: function (old_node, new_dir, new_name) {
       if (FS.isDir(old_node.mode)) {
-        var new_node
+        let new_node
         try {
           new_node = FS.lookupNode(new_dir, new_name)
-        } catch (e) {}
+        } catch {
+          // Ignorer l'erreur
+        }
         if (new_node) {
-          for (var i in new_node.contents) {
-            throw new FS.ErrnoError(55)
+          for (const key in new_node.contents) {
+            if (Object.prototype.hasOwnProperty.call(new_node.contents, key)) {
+              throw new FS.ErrnoError(55)
+            }
           }
         }
       }
@@ -956,22 +1038,24 @@ var MEMFS = {
       new_dir.timestamp = old_node.parent.timestamp
       old_node.parent = new_dir
     },
-    unlink: function (parent, name) {
-      delete parent.contents[name]
-      parent.timestamp = Date.now()
+    unlink: function (_parent, _name) {
+      delete _parent.contents[_name]
+      _parent.timestamp = Date.now()
     },
-    rmdir: function (parent, name) {
-      var node = FS.lookupNode(parent, name)
-      for (var i in node.contents) {
-        throw new FS.ErrnoError(55)
+    rmdir: function (_parent, _name) {
+      const node = FS.lookupNode(_parent, _name)
+      for (const key in node.contents) {
+        if (Object.prototype.hasOwnProperty.call(node.contents, key)) {
+          throw new FS.ErrnoError(55)
+        }
       }
-      delete parent.contents[name]
-      parent.timestamp = Date.now()
+      delete _parent.contents[_name]
+      _parent.timestamp = Date.now()
     },
     readdir: function (node) {
-      var entries = ['.', '..']
-      for (var key in node.contents) {
-        if (!node.contents.hasOwnProperty(key)) {
+      const entries = ['.', '..']
+      for (const key in node.contents) {
+        if (!Object.prototype.hasOwnProperty.call(node.contents, key)) {
           continue
         }
         entries.push(key)
@@ -979,7 +1063,7 @@ var MEMFS = {
       return entries
     },
     symlink: function (parent, newname, oldpath) {
-      var node = MEMFS.createNode(parent, newname, 511 | 40960, 0)
+      const node = MEMFS.createNode(parent, newname, 511 | 40960, 0)
       node.link = oldpath
       return node
     },
@@ -992,14 +1076,17 @@ var MEMFS = {
   },
   stream_ops: {
     read: function (stream, buffer, offset, length, position) {
-      var contents = stream.node.contents
-      if (position >= stream.node.usedBytes) return 0
-      var size = Math.min(stream.node.usedBytes - position, length)
+      const contents = stream.node.contents
+      if (position >= stream.node.usedBytes) {
+        return 0
+      }
+      const size = Math.min(stream.node.usedBytes - position, length)
       if (size > 8 && contents.subarray) {
         buffer.set(contents.subarray(position, position + size), offset)
       } else {
-        for (var i = 0; i < size; i++)
+        for (let i = 0; i < size; i++) {
           buffer[offset + i] = contents[position + i]
+        }
       }
       return size
     },
@@ -1007,8 +1094,10 @@ var MEMFS = {
       if (buffer.buffer === HEAP8.buffer) {
         canOwn = false
       }
-      if (!length) return 0
-      var node = stream.node
+      if (!length) {
+        return 0
+      }
+      const node = stream.node
       node.timestamp = Date.now()
       if (buffer.subarray && (!node.contents || node.contents.subarray)) {
         if (canOwn) {
@@ -1028,7 +1117,7 @@ var MEMFS = {
       if (node.contents.subarray && buffer.subarray) {
         node.contents.set(buffer.subarray(offset, offset + length), position)
       } else {
-        for (var i = 0; i < length; i++) {
+        for (let i = 0; i < length; i++) {
           node.contents[position + i] = buffer[offset + i]
         }
       }
@@ -1036,7 +1125,7 @@ var MEMFS = {
       return length
     },
     llseek: function (stream, offset, whence) {
-      var position = offset
+      let position = offset
       if (whence === 1) {
         position += stream.position
       } else if (whence === 2) {
@@ -1057,9 +1146,9 @@ var MEMFS = {
       if (!FS.isFile(stream.node.mode)) {
         throw new FS.ErrnoError(43)
       }
-      var ptr
-      var allocated
-      var contents = stream.node.contents
+      let ptr
+      let allocated
+      let contents = stream.node.contents
       if (!(flags & 2) && contents.buffer === HEAP8.buffer) {
         allocated = false
         ptr = contents.byteOffset
@@ -1084,14 +1173,14 @@ var MEMFS = {
       }
       return { ptr: ptr, allocated: allocated }
     },
-    msync: function (stream, buffer, offset, length, mmapFlags) {
+    msync: function (stream, buffer, offset, length, _mmapFlags) {
       MEMFS.stream_ops.write(stream, buffer, 0, length, offset, false)
       return 0
     },
   },
 }
 function asyncLoad(url, onload, onerror, noRunDep) {
-  var dep = !noRunDep ? getUniqueRunDependency('al ' + url) : ''
+  const dep = !noRunDep ? getUniqueRunDependency('al ' + url) : ''
   readAsync(
     url,
     (arrayBuffer) => {
@@ -1100,19 +1189,23 @@ function asyncLoad(url, onload, onerror, noRunDep) {
         'Loading data file "' + url + '" failed (no arrayBuffer).',
       )
       onload(new Uint8Array(arrayBuffer))
-      if (dep) removeRunDependency(dep)
+      if (dep) {
+        removeRunDependency(dep)
+      }
     },
-    (event) => {
+    (_event) => {
       if (onerror) {
         onerror()
       } else {
-        throw 'Loading data file "' + url + '" failed.'
+        throw new Error('Loading data file "' + url + '" failed.')
       }
     },
   )
-  if (dep) addRunDependency(dep)
+  if (dep) {
+    addRunDependency(dep)
+  }
 }
-var FS = {
+const FS = {
   root: null,
   mounts: [],
   devices: {},
@@ -1128,17 +1221,19 @@ var FS = {
   syncFSRequests: 0,
   lookupPath: (path, opts = {}) => {
     path = PATH_FS.resolve(path)
-    if (!path) return { path: '', node: null }
-    var defaults = { follow_mount: true, recurse_count: 0 }
+    if (!path) {
+      return { path: '', node: null }
+    }
+    const defaults = { follow_mount: true, recurse_count: 0 }
     opts = Object.assign(defaults, opts)
     if (opts.recurse_count > 8) {
       throw new FS.ErrnoError(32)
     }
-    var parts = path.split('/').filter((p) => !!p)
-    var current = FS.root
-    var current_path = '/'
-    for (var i = 0; i < parts.length; i++) {
-      var islast = i === parts.length - 1
+    const parts = path.split('/').filter((p) => !!p)
+    let current = FS.root
+    let current_path = '/'
+    for (let i = 0; i < parts.length; i++) {
+      const islast = i === parts.length - 1
       if (islast && opts.parent) {
         break
       }
@@ -1150,11 +1245,11 @@ var FS = {
         }
       }
       if (!islast || opts.follow) {
-        var count = 0
+        let count = 0
         while (FS.isLink(current.mode)) {
-          var link = FS.readlink(current_path)
+          const link = FS.readlink(current_path)
           current_path = PATH_FS.resolve(PATH.dirname(current_path), link)
-          var lookup = FS.lookupPath(current_path, {
+          const lookup = FS.lookupPath(current_path, {
             recurse_count: opts.recurse_count + 1,
           })
           current = lookup.node
@@ -1167,11 +1262,13 @@ var FS = {
     return { path: current_path, node: current }
   },
   getPath: (node) => {
-    var path
+    let path
     while (true) {
       if (FS.isRoot(node)) {
-        var mount = node.mount.mountpoint
-        if (!path) return mount
+        const mount = node.mount.mountpoint
+        if (!path) {
+          return mount
+        }
         return mount[mount.length - 1] !== '/'
           ? mount + '/' + path
           : mount + path
@@ -1181,23 +1278,23 @@ var FS = {
     }
   },
   hashName: (parentid, name) => {
-    var hash = 0
-    for (var i = 0; i < name.length; i++) {
+    let hash = 0
+    for (let i = 0; i < name.length; i++) {
       hash = ((hash << 5) - hash + name.charCodeAt(i)) | 0
     }
     return ((parentid + hash) >>> 0) % FS.nameTable.length
   },
   hashAddNode: (node) => {
-    var hash = FS.hashName(node.parent.id, node.name)
+    const hash = FS.hashName(node.parent.id, node.name)
     node.name_next = FS.nameTable[hash]
     FS.nameTable[hash] = node
   },
   hashRemoveNode: (node) => {
-    var hash = FS.hashName(node.parent.id, node.name)
+    const hash = FS.hashName(node.parent.id, node.name)
     if (FS.nameTable[hash] === node) {
       FS.nameTable[hash] = node.name_next
     } else {
-      var current = FS.nameTable[hash]
+      let current = FS.nameTable[hash]
       while (current) {
         if (current.name_next === node) {
           current.name_next = node.name_next
@@ -1208,13 +1305,13 @@ var FS = {
     }
   },
   lookupNode: (parent, name) => {
-    var errCode = FS.mayLookup(parent)
+    const errCode = FS.mayLookup(parent)
     if (errCode) {
       throw new FS.ErrnoError(errCode, parent)
     }
-    var hash = FS.hashName(parent.id, name)
-    for (var node = FS.nameTable[hash]; node; node = node.name_next) {
-      var nodeName = node.name
+    const hash = FS.hashName(parent.id, name)
+    for (let node = FS.nameTable[hash]; node; node = node.name_next) {
+      const nodeName = node.name
       if (node.parent.id === parent.id && nodeName === name) {
         return node
       }
@@ -1222,7 +1319,7 @@ var FS = {
     return FS.lookup(parent, name)
   },
   createNode: (parent, name, mode, rdev) => {
-    var node = new FS.FSNode(parent, name, mode, rdev)
+    const node = new FS.FSNode(parent, name, mode, rdev)
     FS.hashAddNode(node)
     return node
   },
@@ -1258,14 +1355,14 @@ var FS = {
   },
   flagModes: { r: 0, 'r+': 2, w: 577, 'w+': 578, a: 1089, 'a+': 1090 },
   modeStringToFlags: (str) => {
-    var flags = FS.flagModes[str]
-    if (typeof flags == 'undefined') {
+    const flags = FS.flagModes[str]
+    if (typeof flags === 'undefined') {
       throw new Error('Unknown file open mode: ' + str)
     }
     return flags
   },
   flagsToPermissionString: (flag) => {
-    var perms = ['r', 'w', 'rw'][flag & 3]
+    let perms = ['r', 'w', 'rw'][flag & 3]
     if (flag & 512) {
       perms += 'w'
     }
@@ -1285,26 +1382,32 @@ var FS = {
     return 0
   },
   mayLookup: (dir) => {
-    var errCode = FS.nodePermissions(dir, 'x')
-    if (errCode) return errCode
-    if (!dir.node_ops.lookup) return 2
+    const errCode = FS.nodePermissions(dir, 'x')
+    if (errCode) {
+      return errCode
+    }
+    if (!dir.node_ops.lookup) {
+      return 2
+    }
     return 0
   },
   mayCreate: (dir, name) => {
     try {
-      var node = FS.lookupNode(dir, name)
+      FS.lookupNode(dir, name)
       return 20
-    } catch (e) {}
+    } catch {
+      // Ignorer l'erreur
+    }
     return FS.nodePermissions(dir, 'wx')
   },
   mayDelete: (dir, name, isdir) => {
-    var node
+    let node
     try {
       node = FS.lookupNode(dir, name)
     } catch (e) {
       return e.errno
     }
-    var errCode = FS.nodePermissions(dir, 'wx')
+    const errCode = FS.nodePermissions(dir, 'wx')
     if (errCode) {
       return errCode
     }
@@ -1337,7 +1440,7 @@ var FS = {
   },
   MAX_OPEN_FDS: 4096,
   nextfd: (fd_start = 0, fd_end = FS.MAX_OPEN_FDS) => {
-    for (var fd = fd_start; fd <= fd_end; fd++) {
+    for (let fd = fd_start; fd <= fd_end; fd++) {
       if (!FS.streams[fd]) {
         return fd
       }
@@ -1394,7 +1497,7 @@ var FS = {
       })
     }
     stream = Object.assign(new FS.FSStream(), stream)
-    var fd = FS.nextfd(fd_start, fd_end)
+    const fd = FS.nextfd(fd_start, fd_end)
     stream.fd = fd
     FS.streams[fd] = stream
     return stream
@@ -1404,7 +1507,7 @@ var FS = {
   },
   chrdev_stream_ops: {
     open: (stream) => {
-      var device = FS.getDevice(stream.node.rdev)
+      const device = FS.getDevice(stream.node.rdev)
       stream.stream_ops = device.stream_ops
       if (stream.stream_ops.open) {
         stream.stream_ops.open(stream)
@@ -1422,17 +1525,17 @@ var FS = {
   },
   getDevice: (dev) => FS.devices[dev],
   getMounts: (mount) => {
-    var mounts = []
-    var check = [mount]
+    const mounts = []
+    const check = [mount]
     while (check.length) {
-      var m = check.pop()
+      const m = check.pop()
       mounts.push(m)
       check.push.apply(check, m.mounts)
     }
     return mounts
   },
   syncfs: (populate, callback) => {
-    if (typeof populate == 'function') {
+    if (typeof populate === 'function') {
       callback = populate
       populate = false
     }
@@ -1444,8 +1547,8 @@ var FS = {
           ' FS.syncfs operations in flight at once, probably just doing extra work',
       )
     }
-    var mounts = FS.getMounts(FS.root.mount)
-    var completed = 0
+    const mounts = FS.getMounts(FS.root.mount)
+    let completed = 0
     function doCallback(errCode) {
       FS.syncFSRequests--
       return callback(errCode)
@@ -1470,13 +1573,13 @@ var FS = {
     })
   },
   mount: (type, opts, mountpoint) => {
-    var root = mountpoint === '/'
-    var pseudo = !mountpoint
-    var node
+    const root = mountpoint === '/'
+    const pseudo = !mountpoint
+    let node
     if (root && FS.root) {
       throw new FS.ErrnoError(10)
     } else if (!root && !pseudo) {
-      var lookup = FS.lookupPath(mountpoint, { follow_mount: false })
+      const lookup = FS.lookupPath(mountpoint, { follow_mount: false })
       mountpoint = lookup.path
       node = lookup.node
       if (FS.isMountpoint(node)) {
@@ -1486,8 +1589,8 @@ var FS = {
         throw new FS.ErrnoError(54)
       }
     }
-    var mount = { type: type, opts: opts, mountpoint: mountpoint, mounts: [] }
-    var mountRoot = type.mount(mount)
+    const mount = { type: type, opts: opts, mountpoint: mountpoint, mounts: [] }
+    const mountRoot = type.mount(mount)
     mountRoot.mount = mount
     mount.root = mountRoot
     if (root) {
@@ -1501,17 +1604,17 @@ var FS = {
     return mountRoot
   },
   unmount: (mountpoint) => {
-    var lookup = FS.lookupPath(mountpoint, { follow_mount: false })
+    const lookup = FS.lookupPath(mountpoint, { follow_mount: false })
     if (!FS.isMountpoint(lookup.node)) {
       throw new FS.ErrnoError(28)
     }
-    var node = lookup.node
-    var mount = node.mounted
-    var mounts = FS.getMounts(mount)
+    const node = lookup.node
+    const mount = node.mounted
+    const mounts = FS.getMounts(mount)
     Object.keys(FS.nameTable).forEach((hash) => {
-      var current = FS.nameTable[hash]
+      let current = FS.nameTable[hash]
       while (current) {
-        var next = current.name_next
+        const next = current.name_next
         if (mounts.includes(current.mount)) {
           FS.destroyNode(current)
         }
@@ -1519,20 +1622,20 @@ var FS = {
       }
     })
     node.mounted = null
-    var idx = node.mount.mounts.indexOf(mount)
+    const idx = node.mount.mounts.indexOf(mount)
     node.mount.mounts.splice(idx, 1)
   },
   lookup: (parent, name) => {
     return parent.node_ops.lookup(parent, name)
   },
   mknod: (path, mode, dev) => {
-    var lookup = FS.lookupPath(path, { parent: true })
-    var parent = lookup.node
-    var name = PATH.basename(path)
+    const lookup = FS.lookupPath(path, { parent: true })
+    const parent = lookup.node
+    const name = PATH.basename(path)
     if (!name || name === '.' || name === '..') {
       throw new FS.ErrnoError(28)
     }
-    var errCode = FS.mayCreate(parent, name)
+    const errCode = FS.mayCreate(parent, name)
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -1554,20 +1657,24 @@ var FS = {
     return FS.mknod(path, mode, 0)
   },
   mkdirTree: (path, mode) => {
-    var dirs = path.split('/')
-    var d = ''
-    for (var i = 0; i < dirs.length; ++i) {
-      if (!dirs[i]) continue
+    const dirs = path.split('/')
+    let d = ''
+    for (let i = 0; i < dirs.length; ++i) {
+      if (!dirs[i]) {
+        continue
+      }
       d += '/' + dirs[i]
       try {
         FS.mkdir(d, mode)
       } catch (e) {
-        if (e.errno != 20) throw e
+        if (e.errno !== 20) {
+          throw e
+        }
       }
     }
   },
   mkdev: (path, mode, dev) => {
-    if (typeof dev == 'undefined') {
+    if (typeof dev === 'undefined') {
       dev = mode
       mode = 438
     }
@@ -1578,13 +1685,13 @@ var FS = {
     if (!PATH_FS.resolve(oldpath)) {
       throw new FS.ErrnoError(44)
     }
-    var lookup = FS.lookupPath(newpath, { parent: true })
-    var parent = lookup.node
+    const lookup = FS.lookupPath(newpath, { parent: true })
+    const parent = lookup.node
     if (!parent) {
       throw new FS.ErrnoError(44)
     }
-    var newname = PATH.basename(newpath)
-    var errCode = FS.mayCreate(parent, newname)
+    const newname = PATH.basename(newpath)
+    const errCode = FS.mayCreate(parent, newname)
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -1594,21 +1701,22 @@ var FS = {
     return parent.node_ops.symlink(parent, newname, oldpath)
   },
   rename: (old_path, new_path) => {
-    var old_dirname = PATH.dirname(old_path)
-    var new_dirname = PATH.dirname(new_path)
-    var old_name = PATH.basename(old_path)
-    var new_name = PATH.basename(new_path)
-    var lookup, old_dir, new_dir
-    lookup = FS.lookupPath(old_path, { parent: true })
-    old_dir = lookup.node
-    lookup = FS.lookupPath(new_path, { parent: true })
-    new_dir = lookup.node
-    if (!old_dir || !new_dir) throw new FS.ErrnoError(44)
+    const old_dirname = PATH.dirname(old_path)
+    const new_dirname = PATH.dirname(new_path)
+    const old_name = PATH.basename(old_path)
+    const new_name = PATH.basename(new_path)
+    const lookup_old = FS.lookupPath(old_path, { parent: true })
+    const old_dir = lookup_old.node
+    const lookup_new = FS.lookupPath(new_path, { parent: true })
+    const new_dir = lookup_new.node
+    if (!old_dir || !new_dir) {
+      throw new FS.ErrnoError(44)
+    }
     if (old_dir.mount !== new_dir.mount) {
       throw new FS.ErrnoError(75)
     }
-    var old_node = FS.lookupNode(old_dir, old_name)
-    var relative = PATH_FS.relative(old_path, new_dirname)
+    const old_node = FS.lookupNode(old_dir, old_name)
+    let relative = PATH_FS.relative(old_path, new_dirname)
     if (relative.charAt(0) !== '.') {
       throw new FS.ErrnoError(28)
     }
@@ -1616,15 +1724,17 @@ var FS = {
     if (relative.charAt(0) !== '.') {
       throw new FS.ErrnoError(55)
     }
-    var new_node
+    let new_node
     try {
       new_node = FS.lookupNode(new_dir, new_name)
-    } catch (e) {}
+    } catch {
+      // Ignorer l'erreur
+    }
     if (old_node === new_node) {
       return
     }
-    var isdir = FS.isDir(old_node.mode)
-    var errCode = FS.mayDelete(old_dir, old_name, isdir)
+    const isdir = FS.isDir(old_node.mode)
+    let errCode = FS.mayDelete(old_dir, old_name, isdir)
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -1649,18 +1759,16 @@ var FS = {
     FS.hashRemoveNode(old_node)
     try {
       old_dir.node_ops.rename(old_node, new_dir, new_name)
-    } catch (e) {
-      throw e
     } finally {
       FS.hashAddNode(old_node)
     }
   },
   rmdir: (path) => {
-    var lookup = FS.lookupPath(path, { parent: true })
-    var parent = lookup.node
-    var name = PATH.basename(path)
-    var node = FS.lookupNode(parent, name)
-    var errCode = FS.mayDelete(parent, name, true)
+    const lookup = FS.lookupPath(path, { parent: true })
+    const parent = lookup.node
+    const name = PATH.basename(path)
+    const node = FS.lookupNode(parent, name)
+    const errCode = FS.mayDelete(parent, name, true)
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -1674,22 +1782,22 @@ var FS = {
     FS.destroyNode(node)
   },
   readdir: (path) => {
-    var lookup = FS.lookupPath(path, { follow: true })
-    var node = lookup.node
+    const lookup = FS.lookupPath(path, { follow: true })
+    const node = lookup.node
     if (!node.node_ops.readdir) {
       throw new FS.ErrnoError(54)
     }
     return node.node_ops.readdir(node)
   },
   unlink: (path) => {
-    var lookup = FS.lookupPath(path, { parent: true })
-    var parent = lookup.node
+    const lookup = FS.lookupPath(path, { parent: true })
+    const parent = lookup.node
     if (!parent) {
       throw new FS.ErrnoError(44)
     }
-    var name = PATH.basename(path)
-    var node = FS.lookupNode(parent, name)
-    var errCode = FS.mayDelete(parent, name, false)
+    const name = PATH.basename(path)
+    const node = FS.lookupNode(parent, name)
+    const errCode = FS.mayDelete(parent, name, false)
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -1703,8 +1811,8 @@ var FS = {
     FS.destroyNode(node)
   },
   readlink: (path) => {
-    var lookup = FS.lookupPath(path)
-    var link = lookup.node
+    const lookup = FS.lookupPath(path)
+    const link = lookup.node
     if (!link) {
       throw new FS.ErrnoError(44)
     }
@@ -1717,8 +1825,8 @@ var FS = {
     )
   },
   stat: (path, dontFollow) => {
-    var lookup = FS.lookupPath(path, { follow: !dontFollow })
-    var node = lookup.node
+    const lookup = FS.lookupPath(path, { follow: !dontFollow })
+    const node = lookup.node
     if (!node) {
       throw new FS.ErrnoError(44)
     }
@@ -1731,9 +1839,9 @@ var FS = {
     return FS.stat(path, true)
   },
   chmod: (path, mode, dontFollow) => {
-    var node
-    if (typeof path == 'string') {
-      var lookup = FS.lookupPath(path, { follow: !dontFollow })
+    let node
+    if (typeof path === 'string') {
+      const lookup = FS.lookupPath(path, { follow: !dontFollow })
       node = lookup.node
     } else {
       node = path
@@ -1750,16 +1858,16 @@ var FS = {
     FS.chmod(path, mode, true)
   },
   fchmod: (fd, mode) => {
-    var stream = FS.getStream(fd)
+    const stream = FS.getStream(fd)
     if (!stream) {
       throw new FS.ErrnoError(8)
     }
     FS.chmod(stream.node, mode)
   },
   chown: (path, uid, gid, dontFollow) => {
-    var node
-    if (typeof path == 'string') {
-      var lookup = FS.lookupPath(path, { follow: !dontFollow })
+    let node
+    if (typeof path === 'string') {
+      const lookup = FS.lookupPath(path, { follow: !dontFollow })
       node = lookup.node
     } else {
       node = path
@@ -1773,7 +1881,7 @@ var FS = {
     FS.chown(path, uid, gid, true)
   },
   fchown: (fd, uid, gid) => {
-    var stream = FS.getStream(fd)
+    const stream = FS.getStream(fd)
     if (!stream) {
       throw new FS.ErrnoError(8)
     }
@@ -1783,9 +1891,9 @@ var FS = {
     if (len < 0) {
       throw new FS.ErrnoError(28)
     }
-    var node
-    if (typeof path == 'string') {
-      var lookup = FS.lookupPath(path, { follow: true })
+    let node
+    if (typeof path === 'string') {
+      const lookup = FS.lookupPath(path, { follow: true })
       node = lookup.node
     } else {
       node = path
@@ -1799,14 +1907,14 @@ var FS = {
     if (!FS.isFile(node.mode)) {
       throw new FS.ErrnoError(28)
     }
-    var errCode = FS.nodePermissions(node, 'w')
+    const errCode = FS.nodePermissions(node, 'w')
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
     node.node_ops.setattr(node, { size: len, timestamp: Date.now() })
   },
   ftruncate: (fd, len) => {
-    var stream = FS.getStream(fd)
+    const stream = FS.getStream(fd)
     if (!stream) {
       throw new FS.ErrnoError(8)
     }
@@ -1816,32 +1924,34 @@ var FS = {
     FS.truncate(stream.node, len)
   },
   utime: (path, atime, mtime) => {
-    var lookup = FS.lookupPath(path, { follow: true })
-    var node = lookup.node
+    const lookup = FS.lookupPath(path, { follow: true })
+    const node = lookup.node
     node.node_ops.setattr(node, { timestamp: Math.max(atime, mtime) })
   },
   open: (path, flags, mode) => {
     if (path === '') {
       throw new FS.ErrnoError(44)
     }
-    flags = typeof flags == 'string' ? FS.modeStringToFlags(flags) : flags
-    mode = typeof mode == 'undefined' ? 438 : mode
+    flags = typeof flags === 'string' ? FS.modeStringToFlags(flags) : flags
+    mode = typeof mode === 'undefined' ? 438 : mode
     if (flags & 64) {
       mode = (mode & 4095) | 32768
     } else {
       mode = 0
     }
-    var node
-    if (typeof path == 'object') {
+    let node
+    if (typeof path === 'object') {
       node = path
     } else {
       path = PATH.normalize(path)
       try {
-        var lookup = FS.lookupPath(path, { follow: !(flags & 131072) })
+        const lookup = FS.lookupPath(path, { follow: !(flags & 131072) })
         node = lookup.node
-      } catch (e) {}
+      } catch {
+        // Ignorer l'erreur
+      }
     }
-    var created = false
+    let created = false
     if (flags & 64) {
       if (node) {
         if (flags & 128) {
@@ -1862,7 +1972,7 @@ var FS = {
       throw new FS.ErrnoError(54)
     }
     if (!created) {
-      var errCode = FS.mayOpen(node, flags)
+      const errCode = FS.mayOpen(node, flags)
       if (errCode) {
         throw new FS.ErrnoError(errCode)
       }
@@ -1871,7 +1981,7 @@ var FS = {
       FS.truncate(node, 0)
     }
     flags &= ~(128 | 512 | 131072)
-    var stream = FS.createStream({
+    const stream = FS.createStream({
       node: node,
       path: FS.getPath(node),
       flags: flags,
@@ -1885,7 +1995,9 @@ var FS = {
       stream.stream_ops.open(stream)
     }
     if (Module['logReadFiles'] && !(flags & 1)) {
-      if (!FS.readFiles) FS.readFiles = {}
+      if (!FS.readFiles) {
+        FS.readFiles = {}
+      }
       if (!(path in FS.readFiles)) {
         FS.readFiles[path] = 1
       }
@@ -1896,13 +2008,13 @@ var FS = {
     if (FS.isClosed(stream)) {
       throw new FS.ErrnoError(8)
     }
-    if (stream.getdents) stream.getdents = null
+    if (stream.getdents) {
+      stream.getdents = null
+    }
     try {
       if (stream.stream_ops.close) {
         stream.stream_ops.close(stream)
       }
-    } catch (e) {
-      throw e
     } finally {
       FS.closeStream(stream.fd)
     }
@@ -1918,7 +2030,7 @@ var FS = {
     if (!stream.seekable || !stream.stream_ops.llseek) {
       throw new FS.ErrnoError(70)
     }
-    if (whence != 0 && whence != 1 && whence != 2) {
+    if (whence !== 0 && whence !== 1 && whence !== 2) {
       throw new FS.ErrnoError(28)
     }
     stream.position = stream.stream_ops.llseek(stream, offset, whence)
@@ -1941,20 +2053,22 @@ var FS = {
     if (!stream.stream_ops.read) {
       throw new FS.ErrnoError(28)
     }
-    var seeking = typeof position != 'undefined'
+    const seeking = typeof position !== 'undefined'
     if (!seeking) {
       position = stream.position
     } else if (!stream.seekable) {
       throw new FS.ErrnoError(70)
     }
-    var bytesRead = stream.stream_ops.read(
+    const bytesRead = stream.stream_ops.read(
       stream,
       buffer,
       offset,
       length,
       position,
     )
-    if (!seeking) stream.position += bytesRead
+    if (!seeking) {
+      stream.position += bytesRead
+    }
     return bytesRead
   },
   write: (stream, buffer, offset, length, position, canOwn) => {
@@ -1976,13 +2090,13 @@ var FS = {
     if (stream.seekable && stream.flags & 1024) {
       FS.llseek(stream, 0, 2)
     }
-    var seeking = typeof position != 'undefined'
+    const seeking = typeof position !== 'undefined'
     if (!seeking) {
       position = stream.position
     } else if (!stream.seekable) {
       throw new FS.ErrnoError(70)
     }
-    var bytesWritten = stream.stream_ops.write(
+    const bytesWritten = stream.stream_ops.write(
       stream,
       buffer,
       offset,
@@ -1990,7 +2104,9 @@ var FS = {
       position,
       canOwn,
     )
-    if (!seeking) stream.position += bytesWritten
+    if (!seeking) {
+      stream.position += bytesWritten
+    }
     return bytesWritten
   },
   allocate: (stream, offset, length) => {
@@ -2027,13 +2143,13 @@ var FS = {
     }
     return stream.stream_ops.mmap(stream, length, position, prot, flags)
   },
-  msync: (stream, buffer, offset, length, mmapFlags) => {
-    if (!stream.stream_ops.msync) {
+  msync: (_stream, buffer, offset, length, mmapFlags) => {
+    if (!_stream.stream_ops.msync) {
       return 0
     }
-    return stream.stream_ops.msync(stream, buffer, offset, length, mmapFlags)
+    return _stream.stream_ops.msync(_stream, buffer, offset, length, mmapFlags)
   },
-  munmap: (stream) => 0,
+  munmap: (_stream) => 0,
   ioctl: (stream, cmd, arg) => {
     if (!stream.stream_ops.ioctl) {
       throw new FS.ErrnoError(59)
@@ -2046,11 +2162,11 @@ var FS = {
     if (opts.encoding !== 'utf8' && opts.encoding !== 'binary') {
       throw new Error('Invalid encoding type "' + opts.encoding + '"')
     }
-    var ret
-    var stream = FS.open(path, opts.flags)
-    var stat = FS.stat(path)
-    var length = stat.size
-    var buf = new Uint8Array(length)
+    let ret
+    const stream = FS.open(path, opts.flags)
+    const stat = FS.stat(path)
+    const length = stat.size
+    const buf = new Uint8Array(length)
     FS.read(stream, buf, 0, length, 0)
     if (opts.encoding === 'utf8') {
       ret = UTF8ArrayToString(buf, 0)
@@ -2062,10 +2178,10 @@ var FS = {
   },
   writeFile: (path, data, opts = {}) => {
     opts.flags = opts.flags || 577
-    var stream = FS.open(path, opts.flags, opts.mode)
-    if (typeof data == 'string') {
-      var buf = new Uint8Array(lengthBytesUTF8(data) + 1)
-      var actualNumBytes = stringToUTF8Array(data, buf, 0, buf.length)
+    const stream = FS.open(path, opts.flags, opts.mode)
+    if (typeof data === 'string') {
+      const buf = new Uint8Array(lengthBytesUTF8(data) + 1)
+      const actualNumBytes = stringToUTF8Array(data, buf, 0, buf.length)
       FS.write(stream, buf, 0, actualNumBytes, undefined, opts.canOwn)
     } else if (ArrayBuffer.isView(data)) {
       FS.write(stream, data, 0, data.byteLength, undefined, opts.canOwn)
@@ -2076,14 +2192,14 @@ var FS = {
   },
   cwd: () => FS.currentPath,
   chdir: (path) => {
-    var lookup = FS.lookupPath(path, { follow: true })
+    const lookup = FS.lookupPath(path, { follow: true })
     if (lookup.node === null) {
       throw new FS.ErrnoError(44)
     }
     if (!FS.isDir(lookup.node.mode)) {
       throw new FS.ErrnoError(54)
     }
-    var errCode = FS.nodePermissions(lookup.node, 'x')
+    const errCode = FS.nodePermissions(lookup.node, 'x')
     if (errCode) {
       throw new FS.ErrnoError(errCode)
     }
@@ -2098,14 +2214,14 @@ var FS = {
     FS.mkdir('/dev')
     FS.registerDevice(FS.makedev(1, 3), {
       read: () => 0,
-      write: (stream, buffer, offset, length, pos) => length,
+      write: (_stream, _buffer, _offset, length, _pos) => length,
     })
     FS.mkdev('/dev/null', FS.makedev(1, 3))
     TTY.register(FS.makedev(5, 0), TTY.default_tty_ops)
     TTY.register(FS.makedev(6, 0), TTY.default_tty1_ops)
     FS.mkdev('/dev/tty', FS.makedev(5, 0))
     FS.mkdev('/dev/tty1', FS.makedev(6, 0))
-    var random_device = getRandomDevice()
+    const random_device = getRandomDevice()
     FS.createDevice('/dev', 'random', random_device)
     FS.createDevice('/dev', 'urandom', random_device)
     FS.mkdir('/dev/shm')
@@ -2113,18 +2229,20 @@ var FS = {
   },
   createSpecialDirectories: () => {
     FS.mkdir('/proc')
-    var proc_self = FS.mkdir('/proc/self')
+    const proc_self = FS.mkdir('/proc/self')
     FS.mkdir('/proc/self/fd')
     FS.mount(
       {
         mount: () => {
-          var node = FS.createNode(proc_self, 'fd', 16384 | 511, 73)
+          const node = FS.createNode(proc_self, 'fd', 16384 | 511, 73)
           node.node_ops = {
             lookup: (parent, name) => {
-              var fd = +name
-              var stream = FS.getStream(fd)
-              if (!stream) throw new FS.ErrnoError(8)
-              var ret = {
+              const fd = +name
+              const stream = FS.getStream(fd)
+              if (!stream) {
+                throw new FS.ErrnoError(8)
+              }
+              const ret = {
                 parent: null,
                 mount: { mountpoint: 'fake' },
                 node_ops: { readlink: () => stream.path },
@@ -2156,12 +2274,17 @@ var FS = {
     } else {
       FS.symlink('/dev/tty1', '/dev/stderr')
     }
-    var stdin = FS.open('/dev/stdin', 0)
-    var stdout = FS.open('/dev/stdout', 1)
-    var stderr = FS.open('/dev/stderr', 1)
+    // const stdin = FS.open('/dev/stdin', 0)
+    // const stdout = FS.open('/dev/stdout', 1)
+    // const stderr = FS.open('/dev/stderr', 1)
+    FS.open('/dev/stdin', 0)
+    FS.open('/dev/stdout', 1)
+    FS.open('/dev/stderr', 1)
   },
   ensureErrnoError: () => {
-    if (FS.ErrnoError) return
+    if (FS.ErrnoError) {
+      return
+    }
     FS.ErrnoError = function ErrnoError(errno, node) {
       this.name = 'ErrnoError'
       this.node = node
@@ -2197,8 +2320,8 @@ var FS = {
   },
   quit: () => {
     FS.init.initialized = false
-    for (var i = 0; i < FS.streams.length; i++) {
-      var stream = FS.streams[i]
+    for (let i = 0; i < FS.streams.length; i++) {
+      const stream = FS.streams[i]
       if (!stream) {
         continue
       }
@@ -2206,13 +2329,17 @@ var FS = {
     }
   },
   getMode: (canRead, canWrite) => {
-    var mode = 0
-    if (canRead) mode |= 292 | 73
-    if (canWrite) mode |= 146
+    let mode = 0
+    if (canRead) {
+      mode |= 292 | 73
+    }
+    if (canWrite) {
+      mode |= 146
+    }
     return mode
   },
   findObject: (path, dontResolveLastLink) => {
-    var ret = FS.analyzePath(path, dontResolveLastLink)
+    const ret = FS.analyzePath(path, dontResolveLastLink)
     if (!ret.exists) {
       return null
     }
@@ -2220,10 +2347,12 @@ var FS = {
   },
   analyzePath: (path, dontResolveLastLink) => {
     try {
-      var lookup = FS.lookupPath(path, { follow: !dontResolveLastLink })
+      const lookup = FS.lookupPath(path, { follow: !dontResolveLastLink })
       path = lookup.path
-    } catch (e) {}
-    var ret = {
+    } catch {
+      // Ignorer l'erreur
+    }
+    const ret = {
       isRoot: false,
       exists: false,
       error: 0,
@@ -2235,7 +2364,7 @@ var FS = {
       parentObject: null,
     }
     try {
-      var lookup = FS.lookupPath(path, { parent: true })
+      let lookup = FS.lookupPath(path, { parent: true })
       ret.parentExists = true
       ret.parentPath = lookup.path
       ret.parentObject = lookup.node
@@ -2251,45 +2380,50 @@ var FS = {
     }
     return ret
   },
-  createPath: (parent, path, canRead, canWrite) => {
-    parent = typeof parent == 'string' ? parent : FS.getPath(parent)
-    var parts = path.split('/').reverse()
+  createPath: (parent, path, _canRead, _canWrite) => {
+    parent = typeof parent === 'string' ? parent : FS.getPath(parent)
+    const parts = path.split('/').reverse()
     while (parts.length) {
-      var part = parts.pop()
-      if (!part) continue
-      var current = PATH.join2(parent, part)
+      const part = parts.pop()
+      if (!part) {
+        continue
+      }
+      const current = PATH.join2(parent, part)
       try {
         FS.mkdir(current)
-      } catch (e) {}
+      } catch {
+        // Ignorer l'erreur
+      }
       parent = current
     }
-    return current
+    return parent
   },
   createFile: (parent, name, properties, canRead, canWrite) => {
-    var path = PATH.join2(
-      typeof parent == 'string' ? parent : FS.getPath(parent),
+    const path = PATH.join2(
+      typeof parent === 'string' ? parent : FS.getPath(parent),
       name,
     )
-    var mode = FS.getMode(canRead, canWrite)
+    const mode = FS.getMode(canRead, canWrite)
     return FS.create(path, mode)
   },
   createDataFile: (parent, name, data, canRead, canWrite, canOwn) => {
-    var path = name
+    let path = name
     if (parent) {
-      parent = typeof parent == 'string' ? parent : FS.getPath(parent)
+      parent = typeof parent === 'string' ? parent : FS.getPath(parent)
       path = name ? PATH.join2(parent, name) : parent
     }
-    var mode = FS.getMode(canRead, canWrite)
-    var node = FS.create(path, mode)
+    const mode = FS.getMode(canRead, canWrite)
+    const node = FS.create(path, mode)
     if (data) {
-      if (typeof data == 'string') {
-        var arr = new Array(data.length)
-        for (var i = 0, len = data.length; i < len; ++i)
+      if (typeof data === 'string') {
+        const arr = new Array(data.length)
+        for (let i = 0, len = data.length; i < len; ++i) {
           arr[i] = data.charCodeAt(i)
+        }
         data = arr
       }
       FS.chmod(node, mode | 146)
-      var stream = FS.open(node, 577)
+      const stream = FS.open(node, 577)
       FS.write(stream, data, 0, data.length, 0, canOwn)
       FS.close(stream)
       FS.chmod(node, mode)
@@ -2297,62 +2431,68 @@ var FS = {
     return node
   },
   createDevice: (parent, name, input, output) => {
-    var path = PATH.join2(
-      typeof parent == 'string' ? parent : FS.getPath(parent),
+    const path = PATH.join2(
+      typeof parent === 'string' ? parent : FS.getPath(parent),
       name,
     )
-    var mode = FS.getMode(!!input, !!output)
-    if (!FS.createDevice.major) FS.createDevice.major = 64
-    var dev = FS.makedev(FS.createDevice.major++, 0)
+    const mode = FS.getMode(!!input, !!output)
+    if (!FS.createDevice.major) {
+      FS.createDevice.major = 64
+    }
+    const dev = FS.makedev(FS.createDevice.major++, 0)
     FS.registerDevice(dev, {
-      open: (stream) => {
-        stream.seekable = false
+      open: (_stream) => {
+        _stream.seekable = false
       },
-      close: (stream) => {
+      close: (_stream) => {
         if (output && output.buffer && output.buffer.length) {
           output(10)
         }
       },
-      read: (stream, buffer, offset, length, pos) => {
-        var bytesRead = 0
-        for (var i = 0; i < length; i++) {
-          var result
+      read: (_stream, buffer, offset, length, _pos) => {
+        let bytesRead = 0
+        for (let i = 0; i < length; i++) {
+          let result
           try {
             result = input()
-          } catch (e) {
+          } catch {
             throw new FS.ErrnoError(29)
           }
           if (result === undefined && bytesRead === 0) {
             throw new FS.ErrnoError(6)
           }
-          if (result === null || result === undefined) break
+          if (result === null || result === undefined) {
+            break
+          }
           bytesRead++
           buffer[offset + i] = result
         }
         if (bytesRead) {
-          stream.node.timestamp = Date.now()
+          _stream.node.timestamp = Date.now()
         }
         return bytesRead
       },
-      write: (stream, buffer, offset, length, pos) => {
-        for (var i = 0; i < length; i++) {
+      write: (_stream, buffer, offset, length, _pos) => {
+        for (let i = 0; i < length; i++) {
           try {
             output(buffer[offset + i])
-          } catch (e) {
+          } catch {
             throw new FS.ErrnoError(29)
           }
         }
         if (length) {
-          stream.node.timestamp = Date.now()
+          _stream.node.timestamp = Date.now()
         }
-        return i
+        return length
       },
     })
     return FS.mkdev(path, mode, dev)
   },
   forceLoadFile: (obj) => {
-    if (obj.isDevice || obj.isFolder || obj.link || obj.contents) return true
-    if (typeof XMLHttpRequest != 'undefined') {
+    if (obj.isDevice || obj.isFolder || obj.link || obj.contents) {
+      return true
+    }
+    if (typeof XMLHttpRequest !== 'undefined') {
       throw new Error(
         'Lazy loading should have been performed (contents set) in createLazyFile, but it was not. Lazy loading only works in web workers. Use --embed-file or --preload-file in emcc on the main thread.',
       )
@@ -2360,7 +2500,7 @@ var FS = {
       try {
         obj.contents = intArrayFromString(read_(obj.url), true)
         obj.usedBytes = obj.contents.length
-      } catch (e) {
+      } catch {
         throw new FS.ErrnoError(29)
       }
     } else {
@@ -2376,8 +2516,8 @@ var FS = {
       if (idx > this.length - 1 || idx < 0) {
         return undefined
       }
-      var chunkOffset = idx % this.chunkSize
-      var chunkNum = (idx / this.chunkSize) | 0
+      const chunkOffset = idx % this.chunkSize
+      const chunkNum = (idx / this.chunkSize) | 0
       return this.getter(chunkNum)[chunkOffset]
     }
     LazyUint8Array.prototype.setDataGetter =
@@ -2386,56 +2526,66 @@ var FS = {
       }
     LazyUint8Array.prototype.cacheLength =
       function LazyUint8Array_cacheLength() {
-        var xhr = new XMLHttpRequest()
+        const xhr = new XMLHttpRequest()
         xhr.open('HEAD', url, false)
         xhr.send(null)
-        if (!((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304))
+        if (!((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304)) {
           throw new Error("Couldn't load " + url + '. Status: ' + xhr.status)
-        var datalength = Number(xhr.getResponseHeader('Content-length'))
-        var header
-        var hasByteServing =
+        }
+        let datalength = Number(xhr.getResponseHeader('Content-length'))
+        let header
+        const hasByteServing =
           (header = xhr.getResponseHeader('Accept-Ranges')) &&
           header === 'bytes'
-        var usesGzip =
+        const usesGzip =
           (header = xhr.getResponseHeader('Content-Encoding')) &&
           header === 'gzip'
-        var chunkSize = 1024 * 1024
-        if (!hasByteServing) chunkSize = datalength
-        var doXHR = (from, to) => {
-          if (from > to)
+        let chunkSize = 1024 * 1024
+        if (!hasByteServing) {
+          chunkSize = datalength
+        }
+        const doXHR = (from, to) => {
+          if (from > to) {
             throw new Error(
               'invalid range (' + from + ', ' + to + ') or no bytes requested!',
             )
-          if (to > datalength - 1)
+          }
+          if (to > datalength - 1) {
             throw new Error(
               'only ' + datalength + ' bytes available! programmer error!',
             )
-          var xhr = new XMLHttpRequest()
+          }
+          const xhr = new XMLHttpRequest()
           xhr.open('GET', url, false)
-          if (datalength !== chunkSize)
+          if (datalength !== chunkSize) {
             xhr.setRequestHeader('Range', 'bytes=' + from + '-' + to)
+          }
           xhr.responseType = 'arraybuffer'
           if (xhr.overrideMimeType) {
             xhr.overrideMimeType('text/plain; charset=x-user-defined')
           }
           xhr.send(null)
-          if (!((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304))
+          if (
+            !((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304)
+          ) {
             throw new Error("Couldn't load " + url + '. Status: ' + xhr.status)
+          }
           if (xhr.response !== undefined) {
             return new Uint8Array(xhr.response || [])
           }
           return intArrayFromString(xhr.responseText || '', true)
         }
-        var lazyArray = this
+        const lazyArray = this
         lazyArray.setDataGetter((chunkNum) => {
-          var start = chunkNum * chunkSize
-          var end = (chunkNum + 1) * chunkSize - 1
+          const start = chunkNum * chunkSize
+          let end = (chunkNum + 1) * chunkSize - 1
           end = Math.min(end, datalength - 1)
-          if (typeof lazyArray.chunks[chunkNum] == 'undefined') {
+          if (typeof lazyArray.chunks[chunkNum] === 'undefined') {
             lazyArray.chunks[chunkNum] = doXHR(start, end)
           }
-          if (typeof lazyArray.chunks[chunkNum] == 'undefined')
+          if (typeof lazyArray.chunks[chunkNum] === 'undefined') {
             throw new Error('doXHR failed!')
+          }
           return lazyArray.chunks[chunkNum]
         })
         if (usesGzip || !datalength) {
@@ -2450,10 +2600,14 @@ var FS = {
         this._chunkSize = chunkSize
         this.lengthKnown = true
       }
-    if (typeof XMLHttpRequest != 'undefined') {
-      if (!ENVIRONMENT_IS_WORKER)
-        throw 'Cannot do synchronous binary XHRs outside webworkers in modern browsers. Use --embed-file or --preload-file in emcc'
-      var lazyArray = new LazyUint8Array()
+    let properties
+    if (typeof XMLHttpRequest !== 'undefined') {
+      if (!ENVIRONMENT_IS_WORKER) {
+        throw new Error(
+          'Cannot do synchronous binary XHRs outside webworkers in modern browsers. Use --embed-file or --preload-file in emcc',
+        )
+      }
+      const lazyArray = new LazyUint8Array()
       Object.defineProperties(lazyArray, {
         length: {
           get: function () {
@@ -2472,11 +2626,11 @@ var FS = {
           },
         },
       })
-      var properties = { isDevice: false, contents: lazyArray }
+      properties = { isDevice: false, contents: lazyArray }
     } else {
-      var properties = { isDevice: false, url: url }
+      properties = { isDevice: false, url: url }
     }
-    var node = FS.createFile(parent, name, properties, canRead, canWrite)
+    const node = FS.createFile(parent, name, properties, canRead, canWrite)
     if (properties.contents) {
       node.contents = properties.contents
     } else if (properties.url) {
@@ -2490,25 +2644,27 @@ var FS = {
         },
       },
     })
-    var stream_ops = {}
-    var keys = Object.keys(node.stream_ops)
+    const stream_ops = {}
+    const keys = Object.keys(node.stream_ops)
     keys.forEach((key) => {
-      var fn = node.stream_ops[key]
+      const fn = node.stream_ops[key]
       stream_ops[key] = function forceLoadLazyFile() {
         FS.forceLoadFile(node)
         return fn.apply(null, arguments)
       }
     })
     function writeChunks(stream, buffer, offset, length, position) {
-      var contents = stream.node.contents
-      if (position >= contents.length) return 0
-      var size = Math.min(contents.length - position, length)
+      const contents = stream.node.contents
+      if (position >= contents.length) {
+        return 0
+      }
+      const size = Math.min(contents.length - position, length)
       if (contents.slice) {
-        for (var i = 0; i < size; i++) {
+        for (let i = 0; i < size; i++) {
           buffer[offset + i] = contents[position + i]
         }
       } else {
-        for (var i = 0; i < size; i++) {
+        for (let i = 0; i < size; i++) {
           buffer[offset + i] = contents.get(position + i)
         }
       }
@@ -2518,9 +2674,9 @@ var FS = {
       FS.forceLoadFile(node)
       return writeChunks(stream, buffer, offset, length, position)
     }
-    stream_ops.mmap = (stream, length, position, prot, flags) => {
+    stream_ops.mmap = (stream, length, position, _prot, _flags) => {
       FS.forceLoadFile(node)
-      var ptr = mmapAlloc(length)
+      const ptr = mmapAlloc(length)
       if (!ptr) {
         throw new FS.ErrnoError(48)
       }
@@ -2542,20 +2698,27 @@ var FS = {
     canOwn,
     preFinish,
   ) => {
-    var fullname = name ? PATH_FS.resolve(PATH.join2(parent, name)) : parent
-    var dep = getUniqueRunDependency('cp ' + fullname)
+    const fullname = name ? PATH_FS.resolve(PATH.join2(parent, name)) : parent
+    const dep = getUniqueRunDependency('cp ' + fullname)
     function processData(byteArray) {
       function finish(byteArray) {
-        if (preFinish) preFinish()
+        if (preFinish) {
+          preFinish()
+        }
         if (!dontCreateFile) {
           FS.createDataFile(parent, name, byteArray, canRead, canWrite, canOwn)
         }
-        if (onload) onload()
+        if (onload) {
+          onload()
+        }
         removeRunDependency(dep)
       }
       if (
-        Browser.handledByPreloadPlugin(byteArray, fullname, finish, () => {
-          if (onerror) onerror()
+        self.Browser &&
+        self.Browser.handledByPreloadPlugin(byteArray, fullname, finish, () => {
+          if (onerror) {
+            onerror()
+          }
           removeRunDependency(dep)
         })
       ) {
@@ -2564,7 +2727,7 @@ var FS = {
       finish(byteArray)
     }
     addRunDependency(dep)
-    if (typeof url == 'string') {
+    if (typeof url === 'string') {
       asyncLoad(url, (byteArray) => processData(byteArray), onerror)
     } else {
       processData(url)
@@ -2584,37 +2747,45 @@ var FS = {
   DB_VERSION: 20,
   DB_STORE_NAME: 'FILE_DATA',
   saveFilesToDB: (paths, onload = () => {}, onerror = () => {}) => {
-    var indexedDB = FS.indexedDB()
+    const indexedDB = FS.indexedDB()
+    let openRequest
     try {
-      var openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION)
+      openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION)
     } catch (e) {
       return onerror(e)
     }
     openRequest.onupgradeneeded = () => {
       out('creating db')
-      var db = openRequest.result
+      const db = openRequest.result
       db.createObjectStore(FS.DB_STORE_NAME)
     }
     openRequest.onsuccess = () => {
-      var db = openRequest.result
-      var transaction = db.transaction([FS.DB_STORE_NAME], 'readwrite')
-      var files = transaction.objectStore(FS.DB_STORE_NAME)
-      var ok = 0,
-        fail = 0,
-        total = paths.length
+      const db = openRequest.result
+      const transaction = db.transaction([FS.DB_STORE_NAME], 'readwrite')
+      const files = transaction.objectStore(FS.DB_STORE_NAME)
+      let ok = 0,
+        fail = 0
+      const total = paths.length
       function finish() {
-        if (fail == 0) onload()
-        else onerror()
+        if (fail === 0) {
+          onload()
+        } else {
+          onerror()
+        }
       }
       paths.forEach((path) => {
-        var putRequest = files.put(FS.analyzePath(path).object.contents, path)
+        const putRequest = files.put(FS.analyzePath(path).object.contents, path)
         putRequest.onsuccess = () => {
           ok++
-          if (ok + fail == total) finish()
+          if (ok + fail === total) {
+            finish()
+          }
         }
         putRequest.onerror = () => {
           fail++
-          if (ok + fail == total) finish()
+          if (ok + fail === total) {
+            finish()
+          }
         }
       })
       transaction.onerror = onerror
@@ -2622,31 +2793,36 @@ var FS = {
     openRequest.onerror = onerror
   },
   loadFilesFromDB: (paths, onload = () => {}, onerror = () => {}) => {
-    var indexedDB = FS.indexedDB()
+    const indexedDB = FS.indexedDB()
+    let openRequest
     try {
-      var openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION)
+      openRequest = indexedDB.open(FS.DB_NAME(), FS.DB_VERSION)
     } catch (e) {
       return onerror(e)
     }
     openRequest.onupgradeneeded = onerror
     openRequest.onsuccess = () => {
-      var db = openRequest.result
+      const db = openRequest.result
+      let transaction
       try {
-        var transaction = db.transaction([FS.DB_STORE_NAME], 'readonly')
+        transaction = db.transaction([FS.DB_STORE_NAME], 'readonly')
       } catch (e) {
         onerror(e)
         return
       }
-      var files = transaction.objectStore(FS.DB_STORE_NAME)
-      var ok = 0,
-        fail = 0,
-        total = paths.length
+      const files = transaction.objectStore(FS.DB_STORE_NAME)
+      let ok = 0,
+        fail = 0
+      const total = paths.length
       function finish() {
-        if (fail == 0) onload()
-        else onerror()
+        if (fail === 0) {
+          onload()
+        } else {
+          onerror()
+        }
       }
       paths.forEach((path) => {
-        var getRequest = files.get(path)
+        const getRequest = files.get(path)
         getRequest.onsuccess = () => {
           if (FS.analyzePath(path).exists) {
             FS.unlink(path)
@@ -2660,11 +2836,15 @@ var FS = {
             true,
           )
           ok++
-          if (ok + fail == total) finish()
+          if (ok + fail === total) {
+            finish()
+          }
         }
         getRequest.onerror = () => {
           fail++
-          if (ok + fail == total) finish()
+          if (ok + fail === total) {
+            finish()
+          }
         }
       })
       transaction.onerror = onerror
@@ -2672,20 +2852,20 @@ var FS = {
     openRequest.onerror = onerror
   },
 }
-var SYSCALLS = {
+const SYSCALLS = {
   DEFAULT_POLLMASK: 5,
   calculateAt: function (dirfd, path, allowEmpty) {
     if (PATH.isAbs(path)) {
       return path
     }
-    var dir
+    let dir
     if (dirfd === -100) {
       dir = FS.cwd()
     } else {
-      var dirstream = SYSCALLS.getStreamFromFD(dirfd)
+      const dirstream = SYSCALLS.getStreamFromFD(dirfd)
       dir = dirstream.path
     }
-    if (path.length == 0) {
+    if (path.length === 0) {
       if (!allowEmpty) {
         throw new FS.ErrnoError(44)
       }
@@ -2694,8 +2874,9 @@ var SYSCALLS = {
     return PATH.join2(dir, path)
   },
   doStat: function (func, path, buf) {
+    let stat
     try {
-      var stat = func(path)
+      stat = func(path)
     } catch (e) {
       if (
         e &&
@@ -2728,9 +2909,9 @@ var SYSCALLS = {
       (HEAP32[(buf + 44) >> 2] = tempI64[1]))
     HEAP32[(buf + 48) >> 2] = 4096
     HEAP32[(buf + 52) >> 2] = stat.blocks
-    var atime = stat.atime.getTime()
-    var mtime = stat.mtime.getTime()
-    var ctime = stat.ctime.getTime()
+    const atime = stat.atime.getTime()
+    const mtime = stat.mtime.getTime()
+    const ctime = stat.ctime.getTime()
     ;((tempI64 = [
       Math.floor(atime / 1e3) >>> 0,
       ((tempDouble = Math.floor(atime / 1e3)),
@@ -2795,37 +2976,38 @@ var SYSCALLS = {
     if (flags & 2) {
       return 0
     }
-    var buffer = HEAPU8.slice(addr, addr + len)
+    const buffer = HEAPU8.slice(addr, addr + len)
     FS.msync(stream, buffer, offset, len, flags)
   },
   varargs: undefined,
   get: function () {
     SYSCALLS.varargs += 4
-    var ret = HEAP32[(SYSCALLS.varargs - 4) >> 2]
+    const ret = HEAP32[(SYSCALLS.varargs - 4) >> 2]
     return ret
   },
   getStr: function (ptr) {
-    var ret = UTF8ToString(ptr)
+    const ret = UTF8ToString(ptr)
     return ret
   },
   getStreamFromFD: function (fd) {
-    var stream = FS.getStream(fd)
-    if (!stream) throw new FS.ErrnoError(8)
+    const stream = FS.getStream(fd)
+    if (!stream) {
+      throw new FS.ErrnoError(8)
+    }
     return stream
   },
 }
 function ___syscall_fcntl64(fd, cmd, varargs) {
   SYSCALLS.varargs = varargs
   try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
+    const stream = SYSCALLS.getStreamFromFD(fd)
     switch (cmd) {
       case 0: {
-        var arg = SYSCALLS.get()
+        const arg = SYSCALLS.get()
         if (arg < 0) {
           return -28
         }
-        var newStream
-        newStream = FS.createStream(stream, arg)
+        const newStream = FS.createStream(stream, arg)
         return newStream.fd
       }
       case 1:
@@ -2834,13 +3016,13 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
       case 3:
         return stream.flags
       case 4: {
-        var arg = SYSCALLS.get()
+        const arg = SYSCALLS.get()
         stream.flags |= arg
         return 0
       }
       case 5: {
-        var arg = SYSCALLS.get()
-        var offset = 0
+        const arg = SYSCALLS.get()
+        const offset = 0
         HEAP16[(arg + offset) >> 1] = 2
         return 0
       }
@@ -2858,18 +3040,22 @@ function ___syscall_fcntl64(fd, cmd, varargs) {
       }
     }
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return -e.errno
   }
 }
 function ___syscall_ioctl(fd, op, varargs) {
   SYSCALLS.varargs = varargs
   try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
+    const stream = SYSCALLS.getStreamFromFD(fd)
     switch (op) {
       case 21509:
       case 21505: {
-        if (!stream.tty) return -59
+        if (!stream.tty) {
+          return -59
+        }
         return 0
       }
       case 21510:
@@ -2878,36 +3064,48 @@ function ___syscall_ioctl(fd, op, varargs) {
       case 21506:
       case 21507:
       case 21508: {
-        if (!stream.tty) return -59
+        if (!stream.tty) {
+          return -59
+        }
         return 0
       }
       case 21519: {
-        if (!stream.tty) return -59
-        var argp = SYSCALLS.get()
+        if (!stream.tty) {
+          return -59
+        }
+        const argp = SYSCALLS.get()
         HEAP32[argp >> 2] = 0
         return 0
       }
       case 21520: {
-        if (!stream.tty) return -59
+        if (!stream.tty) {
+          return -59
+        }
         return -28
       }
       case 21531: {
-        var argp = SYSCALLS.get()
+        const argp = SYSCALLS.get()
         return FS.ioctl(stream, op, argp)
       }
       case 21523: {
-        if (!stream.tty) return -59
+        if (!stream.tty) {
+          return -59
+        }
         return 0
       }
       case 21524: {
-        if (!stream.tty) return -59
+        if (!stream.tty) {
+          return -59
+        }
         return 0
       }
       default:
         return -28
     }
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return -e.errno
   }
 }
@@ -2916,10 +3114,12 @@ function ___syscall_openat(dirfd, path, flags, varargs) {
   try {
     path = SYSCALLS.getStr(path)
     path = SYSCALLS.calculateAt(dirfd, path)
-    var mode = varargs ? SYSCALLS.get() : 0
+    const mode = varargs ? SYSCALLS.get() : 0
     return FS.open(path, flags, mode).fd
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return -e.errno
   }
 }
@@ -2933,29 +3133,31 @@ function getHeapMax() {
   return 2147483648
 }
 function emscripten_realloc_buffer(size) {
-  var b = wasmMemory.buffer
+  const b = wasmMemory.buffer
   try {
     wasmMemory.grow((size - b.byteLength + 65535) >>> 16)
     updateMemoryViews()
     return 1
-  } catch (e) {}
+  } catch {
+    return 0
+  }
 }
 function _emscripten_resize_heap(requestedSize) {
-  var oldSize = HEAPU8.length
+  const oldSize = HEAPU8.length
   requestedSize = requestedSize >>> 0
-  var maxHeapSize = getHeapMax()
+  const maxHeapSize = getHeapMax()
   if (requestedSize > maxHeapSize) {
     return false
   }
-  let alignUp = (x, multiple) => x + ((multiple - (x % multiple)) % multiple)
-  for (var cutDown = 1; cutDown <= 4; cutDown *= 2) {
-    var overGrownHeapSize = oldSize * (1 + 0.2 / cutDown)
+  const alignUp = (x, multiple) => x + ((multiple - (x % multiple)) % multiple)
+  for (let cutDown = 1; cutDown <= 4; cutDown *= 2) {
+    let overGrownHeapSize = oldSize * (1 + 0.2 / cutDown)
     overGrownHeapSize = Math.min(overGrownHeapSize, requestedSize + 100663296)
-    var newSize = Math.min(
+    const newSize = Math.min(
       maxHeapSize,
       alignUp(Math.max(requestedSize, overGrownHeapSize), 65536),
     )
-    var replacement = emscripten_realloc_buffer(newSize)
+    const replacement = emscripten_realloc_buffer(newSize)
     if (replacement) {
       return true
     }
@@ -2965,36 +3167,44 @@ function _emscripten_resize_heap(requestedSize) {
 function _proc_exit(code) {
   EXITSTATUS = code
   if (!keepRuntimeAlive()) {
-    if (Module['onExit']) Module['onExit'](code)
+    if (Module['onExit']) {
+      Module['onExit'](code)
+    }
     ABORT = true
   }
   quit_(code, new ExitStatus(code))
 }
-function exitJS(status, implicit) {
+function exitJS(status, _implicit) {
   EXITSTATUS = status
   _proc_exit(status)
 }
-var _exit = exitJS
+const _exit = exitJS
 function _fd_close(fd) {
   try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
+    const stream = SYSCALLS.getStreamFromFD(fd)
     FS.close(stream)
     return 0
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return e.errno
   }
 }
 function doReadv(stream, iov, iovcnt, offset) {
-  var ret = 0
-  for (var i = 0; i < iovcnt; i++) {
-    var ptr = HEAPU32[iov >> 2]
-    var len = HEAPU32[(iov + 4) >> 2]
+  let ret = 0
+  for (let i = 0; i < iovcnt; i++) {
+    const ptr = HEAPU32[iov >> 2]
+    const len = HEAPU32[(iov + 4) >> 2]
     iov += 8
-    var curr = FS.read(stream, HEAP8, ptr, len, offset)
-    if (curr < 0) return -1
+    const curr = FS.read(stream, HEAP8, ptr, len, offset)
+    if (curr < 0) {
+      return -1
+    }
     ret += curr
-    if (curr < len) break
+    if (curr < len) {
+      break
+    }
     if (typeof offset !== 'undefined') {
       offset += curr
     }
@@ -3003,12 +3213,14 @@ function doReadv(stream, iov, iovcnt, offset) {
 }
 function _fd_read(fd, iov, iovcnt, pnum) {
   try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
-    var num = doReadv(stream, iov, iovcnt)
+    const stream = SYSCALLS.getStreamFromFD(fd)
+    const num = doReadv(stream, iov, iovcnt)
     HEAPU32[pnum >> 2] = num
     return 0
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return e.errno
   }
 }
@@ -3019,9 +3231,11 @@ function convertI32PairToI53Checked(lo, hi) {
 }
 function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
   try {
-    var offset = convertI32PairToI53Checked(offset_low, offset_high)
-    if (isNaN(offset)) return 61
-    var stream = SYSCALLS.getStreamFromFD(fd)
+    const offset = convertI32PairToI53Checked(offset_low, offset_high)
+    if (isNaN(offset)) {
+      return 61
+    }
+    const stream = SYSCALLS.getStreamFromFD(fd)
     FS.llseek(stream, offset, whence)
     ;((tempI64 = [
       stream.position >>> 0,
@@ -3036,21 +3250,27 @@ function _fd_seek(fd, offset_low, offset_high, whence, newOffset) {
     ]),
       (HEAP32[newOffset >> 2] = tempI64[0]),
       (HEAP32[(newOffset + 4) >> 2] = tempI64[1]))
-    if (stream.getdents && offset === 0 && whence === 0) stream.getdents = null
+    if (stream.getdents && offset === 0 && whence === 0) {
+      stream.getdents = null
+    }
     return 0
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return e.errno
   }
 }
 function doWritev(stream, iov, iovcnt, offset) {
-  var ret = 0
-  for (var i = 0; i < iovcnt; i++) {
-    var ptr = HEAPU32[iov >> 2]
-    var len = HEAPU32[(iov + 4) >> 2]
+  let ret = 0
+  for (let i = 0; i < iovcnt; i++) {
+    const ptr = HEAPU32[iov >> 2]
+    const len = HEAPU32[(iov + 4) >> 2]
     iov += 8
-    var curr = FS.write(stream, HEAP8, ptr, len, offset)
-    if (curr < 0) return -1
+    const curr = FS.write(stream, HEAP8, ptr, len, offset)
+    if (curr < 0) {
+      return -1
+    }
     ret += curr
     if (typeof offset !== 'undefined') {
       offset += curr
@@ -3060,35 +3280,37 @@ function doWritev(stream, iov, iovcnt, offset) {
 }
 function _fd_write(fd, iov, iovcnt, pnum) {
   try {
-    var stream = SYSCALLS.getStreamFromFD(fd)
-    var num = doWritev(stream, iov, iovcnt)
+    const stream = SYSCALLS.getStreamFromFD(fd)
+    const num = doWritev(stream, iov, iovcnt)
     HEAPU32[pnum >> 2] = num
     return 0
   } catch (e) {
-    if (typeof FS == 'undefined' || !(e.name === 'ErrnoError')) throw e
+    if (typeof FS === 'undefined' || !(e.name === 'ErrnoError')) {
+      throw e
+    }
     return e.errno
   }
 }
 function getCFunc(ident) {
-  var func = Module['_' + ident]
+  const func = Module['_' + ident]
   return func
 }
 function writeArrayToMemory(array, buffer) {
   HEAP8.set(array, buffer)
 }
-function ccall(ident, returnType, argTypes, args, opts) {
-  var toC = {
+function ccall(ident, returnType, argTypes, args, _opts) {
+  const toC = {
     string: (str) => {
-      var ret = 0
+      let ret = 0
       if (str !== null && str !== undefined && str !== 0) {
-        var len = (str.length << 2) + 1
+        const len = (str.length << 2) + 1
         ret = stackAlloc(len)
         stringToUTF8(str, ret, len)
       }
       return ret
     },
     array: (arr) => {
-      var ret = stackAlloc(arr.length)
+      const ret = stackAlloc(arr.length)
       writeArrayToMemory(arr, ret)
       return ret
     },
@@ -3097,36 +3319,42 @@ function ccall(ident, returnType, argTypes, args, opts) {
     if (returnType === 'string') {
       return UTF8ToString(ret)
     }
-    if (returnType === 'boolean') return Boolean(ret)
+    if (returnType === 'boolean') {
+      return Boolean(ret)
+    }
     return ret
   }
-  var func = getCFunc(ident)
-  var cArgs = []
-  var stack = 0
+  const func = getCFunc(ident)
+  const cArgs = []
+  let stack = 0
   if (args) {
-    for (var i = 0; i < args.length; i++) {
-      var converter = toC[argTypes[i]]
+    for (let i = 0; i < args.length; i++) {
+      const converter = toC[argTypes[i]]
       if (converter) {
-        if (stack === 0) stack = stackSave()
+        if (stack === 0) {
+          stack = stackSave()
+        }
         cArgs[i] = converter(args[i])
       } else {
         cArgs[i] = args[i]
       }
     }
   }
-  var ret = func.apply(null, cArgs)
+  let ret = func.apply(null, cArgs)
   function onDone(ret) {
-    if (stack !== 0) stackRestore(stack)
+    if (stack !== 0) {
+      stackRestore(stack)
+    }
     return convertReturnValue(ret)
   }
   ret = onDone(ret)
   return ret
 }
 function cwrap(ident, returnType, argTypes, opts) {
-  var numericArgs =
+  const numericArgs =
     !argTypes ||
     argTypes.every((type) => type === 'number' || type === 'boolean')
-  var numericRet = returnType !== 'string'
+  const numericRet = returnType !== 'string'
   if (numericRet && numericArgs && !opts) {
     return getCFunc(ident)
   }
@@ -3134,7 +3362,7 @@ function cwrap(ident, returnType, argTypes, opts) {
     return ccall(ident, returnType, argTypes, arguments, opts)
   }
 }
-var FSNode = function (parent, name, mode, rdev) {
+const FSNode = function (parent, name, mode, rdev) {
   if (!parent) {
     parent = this
   }
@@ -3148,8 +3376,8 @@ var FSNode = function (parent, name, mode, rdev) {
   this.stream_ops = {}
   this.rdev = rdev
 }
-var readMode = 292 | 73
-var writeMode = 146
+const readMode = 292 | 73
+const writeMode = 146
 Object.defineProperties(FSNode.prototype, {
   read: {
     get: function () {
@@ -3180,7 +3408,7 @@ Object.defineProperties(FSNode.prototype, {
 })
 FS.FSNode = FSNode
 FS.staticInit()
-var wasmImports = {
+const wasmImports = {
   a: ___assert_fail,
   d: ___syscall_fcntl64,
   h: ___syscall_ioctl,
@@ -3194,35 +3422,49 @@ var wasmImports = {
   k: _fd_seek,
   c: _fd_write,
 }
-var asm = createWasm()
-var ___wasm_call_ctors = function () {
+const asm = createWasm()
+let ___wasm_call_ctors = function () {
   return (___wasm_call_ctors = Module['asm']['n']).apply(null, arguments)
 }
-var _handleDDSRequest = (Module['_handleDDSRequest'] = function () {
+let _handleDDSRequest = (Module['_handleDDSRequest'] = function () {
   return (_handleDDSRequest = Module['_handleDDSRequest'] =
     Module['asm']['o']).apply(null, arguments)
 })
-var ___errno_location = function () {
+let ___errno_location = function () {
   return (___errno_location = Module['asm']['q']).apply(null, arguments)
 }
-var _malloc = function () {
+let _malloc = function () {
   return (_malloc = Module['asm']['malloc']).apply(null, arguments)
 }
-var stackSave = function () {
+let stackSave = function () {
   return (stackSave = Module['asm']['r']).apply(null, arguments)
 }
-var stackRestore = function () {
+let stackRestore = function () {
   return (stackRestore = Module['asm']['s']).apply(null, arguments)
 }
-var stackAlloc = function () {
+let stackAlloc = function () {
   return (stackAlloc = Module['asm']['t']).apply(null, arguments)
 }
+
+// Export values to global scope to satisfy no-unused-vars
+window.asm = asm
+window.___wasm_call_ctors = ___wasm_call_ctors
+window._handleDDSRequest = _handleDDSRequest
+window.___errno_location = ___errno_location
+window._malloc = _malloc
+window.stackSave = stackSave
+window.stackRestore = stackRestore
+window.stackAlloc = stackAlloc
 Module['ccall'] = ccall
 Module['cwrap'] = cwrap
-var calledRun
+let calledRun
 dependenciesFulfilled = function runCaller() {
-  if (!calledRun) run()
-  if (!calledRun) dependenciesFulfilled = runCaller
+  if (!calledRun) {
+    run()
+  }
+  if (!calledRun) {
+    dependenciesFulfilled = runCaller
+  }
 }
 function run() {
   if (runDependencies > 0) {
@@ -3233,12 +3475,18 @@ function run() {
     return
   }
   function doRun() {
-    if (calledRun) return
+    if (calledRun) {
+      return
+    }
     calledRun = true
     Module['calledRun'] = true
-    if (ABORT) return
+    if (ABORT) {
+      return
+    }
     initRuntime()
-    if (Module['onRuntimeInitialized']) Module['onRuntimeInitialized']()
+    if (Module['onRuntimeInitialized']) {
+      Module['onRuntimeInitialized']()
+    }
     postRun()
   }
   if (Module['setStatus']) {
@@ -3254,8 +3502,9 @@ function run() {
   }
 }
 if (Module['preInit']) {
-  if (typeof Module['preInit'] == 'function')
+  if (typeof Module['preInit'] === 'function') {
     Module['preInit'] = [Module['preInit']]
+  }
   while (Module['preInit'].length > 0) {
     Module['preInit'].pop()()
   }

@@ -196,7 +196,7 @@ if (typeof JSON !== 'object') {
         }
   }
 
-  var cx, escapable, gap, indent, meta, rep
+  let cx, escapable, gap, indent, meta, rep
 
   function quote(string) {
     // If the string contains no control characters, no quote characters, and no
@@ -208,7 +208,7 @@ if (typeof JSON !== 'object') {
     return escapable.test(string)
       ? '"' +
           string.replace(escapable, function (a) {
-            var c = meta[a]
+            const c = meta[a]
             return typeof c === 'string'
               ? c
               : '\\u' + ('0000' + a.charCodeAt(0).toString(16)).slice(-4)
@@ -220,7 +220,7 @@ if (typeof JSON !== 'object') {
   function str(key, holder) {
     // Produce a string from holder[key].
 
-    var i, // The loop counter.
+    let i, // The loop counter.
       k, // The member key.
       v, // The member value.
       length,
@@ -366,7 +366,7 @@ if (typeof JSON !== 'object') {
       // A default replacer method can be provided. Use of the space parameter can
       // produce text that is more easily readable.
 
-      var i
+      let i
       gap = ''
       indent = ''
 
@@ -411,13 +411,13 @@ if (typeof JSON !== 'object') {
       // The parse method takes a text and an optional reviver function, and returns
       // a JavaScript value if the text is a valid JSON text.
 
-      var j
+      let j
 
       function walk(holder, key) {
         // The walk method is used to recursively walk the resulting structure so
         // that modifications can be made.
 
-        var k,
+        let k,
           v,
           value = holder[key]
         if (value && typeof value === 'object') {

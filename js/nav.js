@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', function () {
   const navMenu = document.getElementById('nav-menu')
   const navOverlay = document.getElementById('nav-overlay')
 
-  if (!hamburger || !navMenu || !navOverlay) return
+  if (!hamburger || !navMenu || !navOverlay) {
+    return
+  }
 
   // Fonction pour basculer le menu
   const toggleMenu = () => {

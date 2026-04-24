@@ -26,7 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
  * Fonction pour animer et supprimer un toast
  */
 function closeToast(article) {
-  if (!article || !article.parentNode) return
+  if (!article || !article.parentNode) {
+    return
+  }
 
   article.style.opacity = '0'
   article.style.transform = 'translateX(100px)'
