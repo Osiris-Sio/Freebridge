@@ -46,25 +46,19 @@
     <hr>
 
     <article>
-        <h3>Formulaires et interactivité :</h3>
+        <h3>Formulaires de contact :</h3>
         <p>
-            Vos renseignements personnels sont collectés par le biais de formulaire, à savoir :
+            Vos renseignements personnels sont collectés par le biais de formulaire de contact, à savoir :
         </p>
         <ul>
-            <li>Formulaire d'inscription au site Web</li>
+            <li>Nom</li>
+            <li>Prénom</li>
+            <li>Adresse électronique</li>
         </ul>
+
         <p>
-            Nous utilisons les renseignements ainsi collectés pour les finalités suivantes :
+            Nous utilisons <a href="https://formsubmit.co/" target="_blank">FormSubmit</a> pour traiter les demandes. Pour plus d'informations, consultez <a href="https://formsubmit.co/privacy.pdf" target="_blank">https://formsubmit.co/privacy</a>.
         </p>
-        <ul>
-            <li>Correspondance</li>
-        </ul>
-        <p>
-            Vos renseignements sont également collectés par le biais de l'interactivité pouvant s'établir entre vous et notre site Web et ce, de la façon suivante :
-        </p>
-        <ul>
-            <li>Suivi des demandes</li>
-        </ul>
     </article>
 
     <hr>
