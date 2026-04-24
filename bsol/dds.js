@@ -1,9 +1,7 @@
-const Module = typeof Module !== 'undefined' ? Module : {}
+var Module = typeof Module !== 'undefined' ? Module : {}
 const moduleOverrides = Object.assign({}, Module)
-let _arguments_ = []
-window._arguments_ = _arguments_
-let _thisProgram = './this.program'
-window._thisProgram = _thisProgram
+const arguments_ = []
+const thisProgram = './this.program'
 let quit_ = (status, toThrow) => {
   throw toThrow
 }
@@ -167,8 +165,7 @@ if (typeof WebAssembly !== 'object') {
 }
 let wasmMemory
 let ABORT = false
-let EXITSTATUS = 0
-window.EXITSTATUS = EXITSTATUS
+// let EXITSTATUS
 // EXITSTATUS unused
 function assert(condition, text) {
   if (!condition) {
@@ -292,12 +289,10 @@ function updateMemoryViews() {
   Module['HEAPF64'] = new Float64Array(b)
 }
 let wasmTable
-window.wasmTable = wasmTable
 const __ATPRERUN__ = []
 const __ATINIT__ = []
 const __ATPOSTRUN__ = []
 let runtimeInitialized = false
-window.runtimeInitialized = runtimeInitialized
 function keepRuntimeAlive() {
   return noExitRuntime
 }
@@ -3446,15 +3441,6 @@ let stackAlloc = function () {
   return (stackAlloc = Module['asm']['t']).apply(null, arguments)
 }
 
-// Export values to global scope to satisfy no-unused-vars
-window.asm = asm
-window.___wasm_call_ctors = ___wasm_call_ctors
-window._handleDDSRequest = _handleDDSRequest
-window.___errno_location = ___errno_location
-window._malloc = _malloc
-window.stackSave = stackSave
-window.stackRestore = stackRestore
-window.stackAlloc = stackAlloc
 Module['ccall'] = ccall
 Module['cwrap'] = cwrap
 let calledRun

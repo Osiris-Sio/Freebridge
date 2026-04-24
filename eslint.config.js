@@ -7,7 +7,12 @@ import prettierPlugin from 'eslint-plugin-prettier'
 export default [
   // Configuration de base pour tous les fichiers JS
   {
-    ignores: ['bsol/jquery-1.10.2.js', 'bsol/json2.js'],
+    ignores: [
+      'bsol/jquery-1.10.2.js',
+      'bsol/json2.js',
+      'bsol/dds.js',
+      'bsol/ddummy6.js',
+    ],
     files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',

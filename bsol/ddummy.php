@@ -14,7 +14,7 @@
 
 	<?php include '../includes/header.php'; ?>
 
-	<link rel="stylesheet" href="../css/pico.css">
+	<link rel="stylesheet" href="css/pico.css">
 
 	<style>
 		/* Styles critiques pour les commentaires */
@@ -527,9 +527,7 @@
 			buildPage(result, '{\'options\':{\'ns\':[\'true\',\'false\',\'false\'],\'ew\':[\'true\',\'false\',\'false\'],\'mk\':[\'true\',\'false\'],\'auto\':\'true\'}}');
 		}
 
-		setTimeout(() => {
-			startObservers();
-		}, 100);
+		setTimeout(() => {}, 100);
 
 
 		window.focus();
