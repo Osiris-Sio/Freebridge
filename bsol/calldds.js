@@ -1,13 +1,14 @@
 /* global Module, importScripts */
 // JavaScript Document
-// const playedCards = new Array() // Removed because unused
-let history = []
+// Worker DDS Version 26 - Stabilité maximale pour ramassage différé
 
-let log = {}
+let history = [] 
+let log = {} 
 log.remainCards = ''
 log.currentTrickCards = []
 log.trumps = ''
 log.leader = ''
+log.currentTrickLeader = ''
 log.player = ''
 log.tricksNS = 0
 log.tricksEW = 0
@@ -19,389 +20,119 @@ log.lastCard = 0
 const playDir = 'nesw'
 const cardStr = '23456789TJQKA'
 const suitStr = 'SHDC'
-const players = []
+const players = ['north', 'east', 'south', 'west']
 
 self.Module = {
-  onAbort: function () {
-    self.postMessage('failed')
-  },
+  onAbort: function () { self.postMessage('failed') },
   onRuntimeInitialized: function () {
-    players.push('north')
-    players.push('east')
-    players.push('south')
-    players.push('west')
-
-    const res = Module.cwrap('handleDDSRequest', 'string', [
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-      'string',
-    ])
+    const res = Module.cwrap('handleDDSRequest', 'string', ['string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string', 'string'])
     self.postMessage('initialised')
 
     self.addEventListener('message', function (event) {
       const requestAction = event.data.context.request
-      let msg
-      let r1
-      let dealstr
-      let tmp
+      let msg, r1, dealstr, tmp
+      let trickLeader = log.leader
 
       if (requestAction === 'm') {
         dealstr = event.data.dealstr
-        const vulstr = event.data.vulstr
-        let leadstr = event.data.leadstr
-        if (leadstr.length === 0) {
-          leadstr = null
-        }
-        const sockref = '' + event.data.sockref
-
-        r1 = res(
-          dealstr,
-          null,
-          requestAction,
-          null,
-          vulstr,
-          null,
-          leadstr,
-          null,
-          sockref,
-          null,
-        )
-        msg = {}
-        r1 = JSON.parse(r1)
-        r1.sess.pbn = dealstr
-        r1.sess.leadstr = event.data.leadstr
-        msg.result = JSON.stringify(r1)
-        msg.context = event.data.context
+        r1 = res(dealstr, null, requestAction, null, event.data.vulstr, null, event.data.leadstr || null, null, '' + event.data.sockref, null)
+        msg = { result: JSON.stringify(Object.assign(JSON.parse(r1), { sess: { pbn: dealstr, leadstr: event.data.leadstr } })), context: event.data.context }
       } else if (requestAction === 'b') {
         const vul = convertVulStr(event.data.vulstr)
         const scores = []
-
-        // const starttime = Date.now() // Unused
-
         for (let i = 0; i < 4; i++) {
-          r1 = res(
-            event.data.dealstr,
-            event.data.trumps,
-            'g',
-            playDir[i],
-            null,
-            null,
-            null,
-            null,
-            null,
-            null,
-          )
-          tmp = JSON.parse(r1)
-          scores.push(getBestScore(tmp))
+          r1 = res(event.data.dealstr, event.data.trumps, 'g', playDir[i], null, null, null, null, null, null)
+          scores.push(getBestScore(JSON.parse(r1)))
         }
-
-        // const elapsed = (Date.now() - starttime) / 1000 // Unused
-
-        msg = {}
-        msg.result = r1
-        tmp = JSON.parse(msg.result)
-        tmp.sess.trumps = event.data.trumps
-        tmp.sess.scores = scores
+        tmp = JSON.parse(r1)
+        Object.assign(tmp.sess, { trumps: event.data.trumps, scores: scores, sockref: event.data.sockref, status: 0 })
         tmp.vul = vul
-
-        delete tmp.sess.cards
-        delete tmp.sess.currentTrick
-        tmp.sess.sockref = event.data.sockref
         tmp.requesttoken = event.data.requesttoken
-
-        msg.result = JSON.stringify(tmp)
-        msg.context = event.data.context
+        msg = { result: JSON.stringify(tmp), context: event.data.context }
       } else if (requestAction === 'a') {
-        const cards = event.data.cards
-        log.trumps = event.data.trumps
-        log.leader = event.data.leader
-        dealstr = event.data.pbn
-        // const declarer = event.data.declarer // Unused
-        // const names = event.data.names // Unused
-
-        r1 = res(
-          dealstr,
-          log.trumps,
-          requestAction,
-          log.leader,
-          null,
-          cards,
-          null,
-          null,
-          null,
-          null,
-        )
-        msg = {}
-        msg.result = r1
-        msg.context = event.data.context
-      } else if (requestAction === 'q') {
-        return // Nothing to do
+        log.trumps = event.data.trumps; log.leader = event.data.leader; dealstr = event.data.pbn
+        r1 = res(dealstr, log.trumps, requestAction, log.leader, null, event.data.cards, null, null, null, null)
+        msg = { result: r1, context: event.data.context }
       } else if (requestAction === 'u') {
-        if (history.length > 0) {
-          log = history.pop()
-          msg = log.msg
-        } else {
-          r1 = {}
-          r1.sess = {}
-          r1.sess.status = 207
-          r1.sess.sockref = event.data.sockref
-          msg = {}
-          msg.result = JSON.stringify(r1)
-          const context = {}
-          context.request = 'u'
-          msg.context = context
-        }
-
-        self.postMessage(msg)
+        if (history.length > 0) { log = history.pop(); msg = log.msg }
+        else { msg = { result: JSON.stringify({ sess: { status: 207, sockref: event.data.sockref } }), context: { request: 'u' } } }
+        self.postMessage(msg); return
       } else {
         let currentRequest = requestAction
-
         if (currentRequest === 'g') {
-          history = []
-          log = {}
-          log.trumps = event.data.trumps.toUpperCase()
-          log.leader = event.data.leader
-          dealstr = event.data.pbn
-          log.remainCards = dealstr
-          log.currentTrickCards = []
-          log.tricksNS = 0
-          log.tricksEW = 0
-          log.trick = 0
-          log.trickCard = 0
-        } else {
-          history.push(log)
-          log = JSON.parse(JSON.stringify(history[history.length - 1]))
-
-          currentRequest = currentRequest.toUpperCase()
-          log.lastSuit = suitStr.indexOf(currentRequest[0])
-          log.lastCard = cardStr.indexOf(currentRequest[1])
+          history = []; log = { trumps: event.data.trumps.toUpperCase(), leader: event.data.leader, remainCards: event.data.pbn, currentTrickCards: [], tricksNS: 0, tricksEW: 0, trick: 0, trickCard: 0, currentTrickLeader: event.data.leader }
           dealstr = log.remainCards
-          log.currentTrickCards.push(currentRequest)
-          log.trickCard++
-
-          let combinedStr = ''
-
-          for (let i = 0; i < log.currentTrickCards.length; i++) {
-            combinedStr += log.currentTrickCards[i]
-          }
-
-          currentRequest = combinedStr
-
+        } else if (currentRequest === 'C') {
+          // COMMANDE 'C' : Ramassage et Calcul du vainqueur (Uniquement si complet)
           if (log.currentTrickCards.length === 4) {
-            // Trick played. Work out who won it
             evaluateTrick()
-            // Call DDummy just to remove this card from the pbn
-            r1 = res(
-              dealstr,
-              log.trumps,
-              currentRequest,
-              log.leader,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-            )
-            r1 = JSON.parse(r1)
-            dealstr = r1.sess.pbn
-            log.remainCards = r1.sess.pbn
             log.currentTrickCards = []
             log.trickCard = 0
-            currentRequest = 'g'
+          }
+          currentRequest = 'g'
+          dealstr = log.remainCards
+        } else {
+          history.push(JSON.parse(JSON.stringify(log)))
+          currentRequest = currentRequest.toUpperCase()
+          if (log.currentTrickCards.length === 0) log.currentTrickLeader = log.leader
+          log.currentTrickCards.push(currentRequest); log.trickCard++
+          dealstr = log.remainCards
+          currentRequest = log.currentTrickCards.join('')
+
+          if (log.currentTrickCards.length === 4) {
+            r1 = res(dealstr, log.trumps, currentRequest, log.currentTrickLeader, null, null, null, null, null, null)
+            dealstr = JSON.parse(r1).sess.pbn; log.remainCards = dealstr
           }
         }
 
-        r1 = res(
-          dealstr,
-          log.trumps,
-          currentRequest,
-          log.leader,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-        )
-        msg = {}
-        msg.result = r1
-        tmp = JSON.parse(msg.result)
-
+        r1 = res(dealstr, log.trumps, currentRequest, log.leader, null, null, null, null, null, null)
+        tmp = JSON.parse(r1)
         tmp.sess.trumps = log.trumps
-        tmp.sess.leader = log.leader
+        tmp.sess.leader = log.currentTrickLeader || trickLeader
+        tmp.sess.currentTrick = tmp.sess.currentTrick || log.currentTrickCards.map(s => [suitStr.indexOf(s[0]), cardStr.indexOf(s[1])])
+        tmp.sess.cards = tmp.sess.cards || []
 
         if (tmp.sess.status !== -2) {
-          let nxtplayer =
-            playDir.indexOf(log.leader) + tmp.sess.currentTrick.length
-          if (nxtplayer > 3) {
-            nxtplayer = nxtplayer - 4
-          }
+          const currentTrick = tmp.sess.currentTrick || []
+          let nxtplayer = (playDir.indexOf(log.leader) + currentTrick.length) % 4
           tmp.sess.player = players[nxtplayer]
           tmp.sess.remaining = convertPBN(tmp.sess.pbn)
           log.remainCards = tmp.sess.pbn
           tmp.sess.status = 0
         } else {
-          tmp.sess.status = 208
-          tmp.sess.errno = 0
-          tmp.sess.remaining = convertPBN(log.remainCards)
-          const cardsArray = []
-          tmp.sess.cards = cardsArray
-          tmp.sess.currentTrick = log.currentTrickCards
-          tmp.sess.sockref = event.data.sockref
+          tmp.sess.status = 208; tmp.sess.remaining = convertPBN(log.remainCards)
+          tmp.sess.currentTrick = log.currentTrickCards.map(s => [suitStr.indexOf(s[0]), cardStr.indexOf(s[1])])
         }
-
-        tmp.sess.tricksNS = log.tricksNS
-        tmp.sess.tricksEW = log.tricksEW
-        tmp.sess.trick = log.trick
-        tmp.sess.trickCard = log.trickCard
-        tmp.sess.lastSuit = log.lastSuit
-        tmp.sess.lastCard = log.lastCard
-
-        tmp.sess.sockref = event.data.sockref
+        Object.assign(tmp.sess, { tricksNS: log.tricksNS, tricksEW: log.tricksEW, trick: log.trick, trickCard: log.trickCard, sockref: event.data.sockref })
         tmp.requesttoken = event.data.requesttoken
-
-        msg.result = JSON.stringify(tmp)
-        msg.context = event.data.context
+        msg = { result: JSON.stringify(tmp), context: event.data.context }
         log.msg = msg
       }
-
       self.postMessage(msg)
     })
   },
 }
 
 importScripts('dds.js')
-
-function convertVulStr(vulstr) {
-  const vul = ['None', 'All', 'NS', 'EW']
-
-  const upperVulStr = vulstr.toUpperCase()
-
-  for (let i = 0; i < vul.length; i++) {
-    if (vul[i].toUpperCase() === upperVulStr) {
-      return i
-    }
-  }
-
-  return -1
-}
-
-function getBestScore(msg) {
-  let score = 0
-
-  for (let i = 0; i < msg.sess.cards.length; i++) {
-    const sobj = msg.sess.cards[i]
-
-    if (sobj.score > score) {
-      score = sobj.score
-    }
-  }
-
-  return 13 - score // Number of tricks makeable by declarer for this suit with this leader
-}
-
-function convertPBN(pbn) {
-  const cardNames = '23456789TJQKA'
-  const res = []
-
-  const pbnStr = pbn.substring(2) // Eliminate W:
-  const hands = pbnStr.split(' ') // Gives an array of the four hands, West first
-
-  for (let i = 0; i < 4; i++) {
-    // For each hand
-    let j = i + 1 // Start with North hand first
-    if (j > 3) {
-      j = 0
-    }
-
-    const suits = []
-    const hand = hands[j]
-    const handSuits = hand.split('.') // Split into suits
-
-    for (let k = 0; k < 4; k++) {
-      const values = []
-      const suitChars = handSuits[k]
-
-      for (let m = 0; m < suitChars.length; m++) {
-        values.push(cardNames.indexOf(suitChars.charAt(m)))
-      }
-
-      suits.push(values)
-    }
-
-    res.push(suits)
-  }
-
-  return res
-}
-
+function convertVulStr(v) { const vul = ['None', 'All', 'NS', 'EW']; for (let i = 0; i < vul.length; i++) if (vul[i].toUpperCase() === v.toUpperCase()) return i; return -1 }
+function getBestScore(m) { let s = 0; if (m.sess.cards) for (let i = 0; i < m.sess.cards.length; i++) if (m.sess.cards[i].score > s) s = m.sess.cards[i].score; return 13 - s }
+function convertPBN(p) { const cardNames = '23456789TJQKA', res = []; const hands = p.substring(2).split(' '); for (let i = 0; i < 4; i++) { let j = (i + 1) % 4; const suits = [], handSuits = hands[j].split('.'); for (let k = 0; k < 4; k++) { const values = [], s = handSuits[k]; for (let m = 0; m < s.length; m++) values.push(cardNames.indexOf(s.charAt(m))); suits.push(values) }; res.push(suits) }; return res }
 function evaluateTrick() {
-  // Which direction won trick, and is on lead for the next trick ?
-  const suitsOrder = 'SHDC'
-  const facesOrder = '23456789TJQKA'
-  const trumpSuit = suitsOrder.indexOf(log.trumps.toUpperCase())
-  let dir = 0
-
-  let trickSuit = -1
-  let lastTrump = -1
-  let maxFace = -1
-
+  if (log.currentTrickCards.length !== 4) return
+  const suitsOrder = 'SHDC', facesOrder = '23456789TJQKA'; const trumpSuit = suitsOrder.indexOf(log.trumps.toUpperCase());
+  let dir = 0, trickSuit = -1, lastTrump = -1, maxFace = -1
   for (let i = 0; i < 4; i++) {
-    const suit = suitsOrder.indexOf(log.currentTrickCards[i].charAt(0))
-    const face = facesOrder.indexOf(log.currentTrickCards[i].charAt(1))
-
-    if (i === 0) {
-      trickSuit = suit
-      maxFace = face
-
-      if (suit === trumpSuit) {
-        lastTrump = face
-      }
-    } else {
-      if (lastTrump === -1) {
-        // Trump not played yet
-        if (suit === trumpSuit) {
-          lastTrump = face
-          dir = i
-        } else {
-          if (face > maxFace && suit === trickSuit) {
-            maxFace = face
-            dir = i
-          }
-        }
-      } else {
-        // A trump has been played, so can only win trick by overruff
-        if (suit === trumpSuit && face > lastTrump) {
-          lastTrump = face
-          dir = i
-        }
-      }
+    const card = log.currentTrickCards[i]
+    if (!card) continue
+    const suit = suitsOrder.indexOf(card.charAt(0)), face = facesOrder.indexOf(card.charAt(1))
+    if (i === 0) { trickSuit = suit; maxFace = face; if (suit === trumpSuit) lastTrump = face }
+    else {
+      if (lastTrump === -1) { if (suit === trumpSuit) { lastTrump = face; dir = i } else if (face > maxFace && suit === trickSuit) { maxFace = face; dir = i } }
+      else if (suit === trumpSuit && face > lastTrump) { lastTrump = face; dir = i }
     }
   }
-
-  let curlead = playDir.indexOf(log.leader)
-
-  curlead = curlead + dir
-  if (curlead > 3) {
-    curlead = curlead - 4
-  }
-
-  log.leader = playDir.charAt(curlead)
-  log.player = playDir.charAt(curlead)
-
-  if (log.leader === 'n' || log.leader === 's') {
-    log.tricksNS++
-  } else {
-    log.tricksEW++
-  }
-
+  let curlead = (playDir.indexOf(log.leader) + dir) % 4
+  log.leader = playDir.charAt(curlead); log.player = log.leader
+  if (log.leader === 'n' || log.leader === 's') log.tricksNS++; else log.tricksEW++
   log.trick++
 }

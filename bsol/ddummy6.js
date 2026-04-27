@@ -5,81 +5,80 @@
    - file, You can obtain one at http://mozilla.org/MPL/2.0/.
 ***********************************************************************************/
 
-var g_logging = false
-var g_credits = ''
-var g_resultsFilename
-var g_handRecordsFilename
-var g_hands
-var g_scoring = 0 // Set to "IMP" for IMPs scoring.
-var g_lastBindex = 0
-var g_currentDir
-var g_currentPair
-var g_inactiveCards
-var g_playableCards
-var g_currentPlayer
-var g_currentTrickCards
-var g_currentPlayIndex //0..51 represents index to position within the 52 card sequence being played.
-var g_lastMatchedPlayIndex //0..51
-var g_showPlay = 0 //S If showPlay!=0 show played cards for this hand
-var g_hiscore
-var g_allBoards = 0 // Set non-zero while running an analysis on all boards in a set.
-var g_session = 0
-var g_bgTrans = 0 // Unique transaction id allocated to background transaction (e.g single shot accuracy request)
-var g_edited = 0 // Set to 1 when a change has been made (or 2, if only the Dealer has been changed)
-var g_partialHand = 0 // Non-zero if playing a hand which started with fewer than 52 cards
-var g_partialHandTotalTricks // Total number of tricks which can be made by declarer and defenders on a partial hand
-var g_session_contract
-var g_showOriginalContract = false // Set true when "Play: <contract>" button is pressed for a hand recorded in a lin file.
-var g_session_declarer
-var g_defaultTravellerWidth
-var g_lastAllTravellersPair = -1
-var g_lastAllTravellersDir = 'NS'
-var g_mode = 0 // Set to 1 while in play mode
-var g_timeout = ''
-var g_sectionHeight // Calculated height for a quadrant of the board display
-// Following variable relate to hand entry.
-var g_boardNumberFontSize
-var g_fontRatio = 1.0
-var g_textBratio = 0.9 // Text font size as fraction of button height
-var g_handEntryMode = 0
-var g_inputDir = 0 // 0,1,2,3 = N,E,S,W
-var g_inputBoard
-var g_cardQuadrant
-var g_stopPropagation = 0
-var g_helpId = '' // id of current help text on display
-var g_playButtonText = 'Play' // Text to show on Play button (otherwise may show, for example, Play: 3H by S)
-var g_defaultContract = 0 // Set to 1 when there is a default contract for current board (contract and declarer but no
-//  bidding information or cards played)
-var g_defaultContractIndex = -1 // If default contract is set, this is the index to the button in the makeable contracts table
-// that relates to that declarer/suit combination.
-var g_timeoutID = '' // ID of javascript timeout function related to request throttling.
-var g_travellers = null // Non-null if traveller records are available
-var g_currentTraveller = null // Traveller record corresponding to current board
-var g_currow = -1 // Index to current row being displayed (for travellers containing bidding/play data for each row
-var g_title = '&nbsp'
-var g_sessInfo = null // Holds Session Info for the current event
-var g_rankInfo = null // Holds ranking information for current event.
-var g_validPercentageFields = false // Set to true if percentage fields in json ranking table are non-blank and no negative values
-var g_scoring = 'MatchPoints' // Scoring type - MatchPoints, IMP, VP
-var g_eventType = 'Pairs' // Event Type - one of Pairs, Teams
-var g_maxImps = 0 // Maximum number of IMPs recorded on a single board, if using IMP scoring.
-var g_test = 0 // Set to 1 if called from test environment.
-var g_xml = '' // Set to filename of xml file if present (or to 1 if xml supplied as a string)
-var g_xmlstr = '' // Holds xml when supplied as a string parameter
-var g_handstr = '' // Holds file content when supplied as a string parameter rather than a file url
-var g_handstrType = '' // Can be "pbn", "dlm", or "lin" if file content supplied as string
-var g_debug = false
-var g_ofs = 1 // Offset to columns beyond (optional) lead card column in Scorecard table
-var g_protocol = 'http:' // called with http or https
-var g_loaded = false // Is true if hands/travellers have been loaded already
-var g_fullInfo = false // Set to true if makeable contract tables contain full information
-var g_backgroundFetchCompleted = false // Set to true if background fetch of makeable contracts/opt contracts/opening leads has completed.
-var g_openingLeadsPresent = false // Set to true when ddtricks for opening leads have been calculated and applied.
-var g_travellersHaveLeads = false // Set to true if at least one lead card is found in a traveller.
-var g_file = '' // contains url of 'pbn' or 'dlm' if filename reference was supplied in request
-var g_sessionMode = 'scorecard' // assume last looked at scorecard in results analysis
-var g_playItAgain = true // False if in Results Analysis screens
+// Configuration globale et variables d'état
+var g_logging = false // Active les logs de debug
+var g_credits = '' // Crédits du logiciel
+var g_resultsFilename // Nom du fichier de résultats
+var g_handRecordsFilename // Nom du fichier d'enregistrements de mains
+var g_hands // Contient les données des mains
+var g_scoringType = 0 // Positionné à "IMP" pour le score en IMPs
+var g_lastBindex = 0 // Dernier index de donne sélectionné
+var g_currentDir // Direction actuelle (N, S, E, W)
+var g_currentPair // Paire actuelle
+var g_inactiveCards // Liste des cartes inactives
+var g_playableCards // Liste des cartes jouables
+var g_currentPlayer // Joueur dont c'est le tour
+var g_currentTrickCards // Cartes du pli en cours
+var g_currentPlayIndex // Index de jeu actuel (0..51)
+var g_lastMatchedPlayIndex // Dernier index de jeu correspondant
+var g_showPlay = 0 // Si non nul, affiche les cartes jouées pour cette main
+var g_highScore // Meilleur score enregistré
+var g_allBoards = 0 // Positionné si une analyse sur toutes les donnes est en cours
+var g_session = 0 // Numéro de session
+var g_bgTrans = 0 // ID unique pour transaction en arrière-plan
+var g_edited = 0 // Indique si une modification a été faite (1: générale, 2: donneur uniquement)
+var g_partialHand = 0 // Non nul si la main a commencé avec moins de 52 cartes
+var g_partialHandTotalTricks // Nombre total de levées possibles sur une main partielle
+var g_session_contract // Contrat de la session en cours
+var g_showOriginalContract = false // Vrai si on affiche le contrat original d'un fichier .lin
+var g_session_declarer // Déclarant de la session en cours
+var g_defaultTravellerWidth // Largeur par défaut du "traveller"
+var g_lastAllTravellersPair = -1 // Dernière paire affichée dans le traveller complet
+var g_lastAllTravellersDir = 'NS' // Dernière direction affichée dans le traveller complet
+var g_mode = 0 // 1 en mode jeu, 0 sinon
+var g_timeout = '' // Délai d'attente
+var g_sectionHeight // Hauteur calculée pour un quadrant du plateau
+var g_boardNumberFontSize // Taille de police pour le numéro de donne
+var g_fontRatio = 1.0 // Ratio de police global
+var g_textBratio = 0.9 // Taille de police du texte par rapport à la hauteur du bouton
+var g_handEntryMode = 0 // Mode de saisie manuelle des mains
+var g_inputDir = 0 // Direction de saisie (0=N, 1=E, 2=S, 3=W)
+var g_inputBoard // Donne en cours de saisie
+var g_cardQuadrant // Quadrant de la carte sélectionnée
+var g_stopPropagation = 0 // Empêche la propagation des événements
+var g_helpId = '' // ID du texte d'aide actuellement affiché
+var g_playButtonText = 'Play' // Texte du bouton de jeu
+var g_defaultContract = 0 // 1 si un contrat par défaut est défini pour la donne
+var g_defaultContractIndex = -1 // Index du bouton dans la table des contrats possibles
+var g_timeoutID = '' // ID pour les fonctions setTimeout (throttling)
+var g_travellers = null // Données des travellers (feuilles de résultats)
+var g_currentTraveller = null // Traveller correspondant à la donne actuelle
+var g_currow = -1 // Ligne actuelle dans l'affichage des travellers
+var g_title = '&nbsp' // Titre de la page
+var g_sessInfo = null // Informations sur la session actuelle
+var g_rankInfo = null // Informations sur le classement
+var g_validPercentageFields = false // Validation des champs de pourcentage
+var g_scoringTypeType = 'MatchPoints' // Type de score (MatchPoints, IMP, VP)
+var g_eventType = 'Pairs' // Type d'événement (Pairs, Teams)
+var g_maxImps = 0 // Maximum d'IMPs sur une donne
+var g_isTest = 0 // 1 si environnement de test
+var g_xml = '' // Nom du fichier XML ou 1 si XML en chaîne de caractères
+var g_xmlstr = '' // Contenu XML sous forme de chaîne
+var g_handstr = '' // Contenu du fichier de mains sous forme de chaîne
+var g_handstrType = '' // Type de fichier (pbn, dlm, lin)
+var g_debug = false // Mode debug
+var g_ofs = 1 // Décalage pour les colonnes du tableau Scorecard
+var g_protocol = 'http:' // Protocole utilisé (http: ou https:)
+var g_loaded = false // Vrai si les données sont déjà chargées
+var g_fullInfo = false // Vrai si les tables de contrats sont complètes
+var g_backgroundFetchCompleted = false // Vrai si le chargement en arrière-plan est fini
+var g_openingLeadsPresent = false // Vrai si les entames ont été calculées
+var g_travellersHaveLeads = false // Vrai si au moins un traveller contient une entame
+var g_file = '' // URL du fichier de mains (pbn/dlm)
+var g_sessionMode = 'scorecard' // Mode de session par défaut
+var g_playItAgain = true // Faux si on est dans les écrans d'analyse de résultats
 var g_scoreToImps = [
+  // Table de conversion score -> IMPs
   [0, 10, 0],
   [20, 40, 1],
   [50, 80, 2],
@@ -107,17 +106,17 @@ var g_scoreToImps = [
   [4000, 32767, 24],
 ]
 var g_checkContracts = new Array()
-var g_scorecardContext = new Array() // Array of context objects for current scorecard, indexed by board number
-var g_uniquePairNumbers = '' // Set to true or false for Teams events from within function checkForUniquePairNumbers
+var g_scorecardContext = new Array() // Contexte pour le scorecard, indexé par numéro de donne
+var g_uniquePairNumbers = '' // Utilisé pour les événements par équipes
 var g_showAllControls = true
-var g_isMobi = false // True if a mobile device
+var g_isMobi = false // Vrai si appareil mobile
 var g_namSize = 0
 var g_bidFontSize = 0
-var g_dealerFontSize = 0 // Size of dealer char on traveller
-var g_urqButtonHeight = 0 // Height of buttons in upper right quadrant of traveller
-var g_urqButtFontSize = 0 // Font size of buttons in upper right quadrant
-var g_scoreFontSize = 0 // Font size for score in lin file
-var g_vulBarLength = 0 // Height or width of vulnerability bar
+var g_dealerFontSize = 0 // Taille du caractère du donneur sur le traveller
+var g_upperRightButtonHeight = 0 // Hauteur des boutons du quadrant supérieur droit
+var g_upperRightButtonFontSize = 0 // Taille de police de ces boutons
+var g_scoreFontSize = 0 // Taille de police pour le score dans les fichiers .lin
+var g_vulBarLength = 0 // Longueur de la barre de vulnérabilité
 
 var g_worker // Worker for Play It Again
 var g_mworkers = new Array() // Workers for makeable contract calculation
@@ -308,648 +307,76 @@ function showPopup(content) {
 }
 
 function playGame() {
-  // Fermer la boîte de dialogue
-  $('#popup_box').hide()
-  document.getElementById('popup_box').style.display = 'none'
-
-  // Jouer la partie
-  g_showPlay = 1
-  var board = g_hands.boards[g_lastBindex]
-  if (
-    typeof board.Contract !== 'undefined' &&
-    typeof board.Declarer !== 'undefined'
-  ) {
-    playContract(board.Declarer, board.Contract.charAt(1), board.Contract)
-  }
+  // Pas besoin d'action spéciale, l'interface standard est déjà là
 }
 
+/**
+ * Déclenche le défilement de la partie en utilisant la logique de résolution de base.
+ */
 function scrollGame() {
-  // Fermer la boîte de dialogue
-  $('#popup_box').hide()
-  document.getElementById('popup_box').style.display = 'none'
+  playLinContract() // Utilise la résolution de base
+}
 
-  // Faire défiler la partie sur le plateau de jeu
-  g_showPlay = 1
-  var board = g_hands.boards[g_lastBindex]
-
-  // Vérifier si le contrat et le déclarant sont définis
-  if (
-    typeof board.Contract !== 'undefined' &&
-    typeof board.Declarer !== 'undefined'
-  ) {
-    // Initialiser le défilement des cartes sur le plateau
-    initializeCardScroll(board)
-  } else {
-    // Afficher un message d'erreur si le contrat ou le déclarant n'est pas défini
-    var popup = document.getElementById('popup_box')
-    popup.innerHTML =
-      "<div style='text-align:center;padding:20px;'>" +
-      '<h3>Information incomplète</h3>' +
-      '<p>Les informations sur le contrat ou le déclarant ne sont pas disponibles pour cette partie.</p>' +
-      '</div>'
-    $('#popup_box').finish()
-    $('#popup_box').delay(100).fadeIn(200).delay(2000).fadeOut(100)
+/**
+ * Recommence la partie depuis le début.
+ */
+function restartGame() {
+  if (confirm('Voulez-vous recommencer la partie du début ?')) {
+    g_currentPlayIndex = 0
+    playLinContract()
   }
 }
 
-function displayPlayedCards(board) {
-  // Afficher le contrat et le déclarant
-  var contractText = document.createElement('div')
-  contractText.innerHTML =
-    '<h3>Contrat: ' + board.Contract + ' par ' + board.Declarer + '</h3>'
-  contractText.style.textAlign = 'center'
-  contractText.style.marginTop = '20px'
-
-  // Créer une zone pour afficher les cartes jouées
-  var playArea = document.createElement('div')
-  playArea.id = 'playArea'
-  playArea.style.marginTop = '20px'
-  playArea.style.padding = '10px'
-  playArea.style.border = '1px solid #ccc'
-  playArea.style.textAlign = 'center'
-
-  // Ajouter les éléments à la page
-  var titleText = document.getElementById('titleText')
-  titleText.parentNode.insertBefore(contractText, titleText.nextSibling)
-  titleText.parentNode.insertBefore(playArea, contractText.nextSibling)
-
-  // Afficher les cartes jouées
-  if (typeof board.Played !== 'undefined' && board.Played.length > 0) {
-    // Afficher les cartes jouées
-    var html = '<h3>Cartes jouées</h3>'
-    html += "<div style='display:flex;flex-wrap:wrap;justify-content:center;'>"
-
-    for (var i = 0; i < board.Played.length; i++) {
-      var card = board.Played[i]
-      var suit = card.charAt(0)
-      var rank = card.charAt(1)
-      var suitSymbol = ''
-
-      // Convertir la lettre de la couleur en symbole
-      if (suit === 'S') suitSymbol = '♠'
-      else if (suit === 'H') suitSymbol = '♥'
-      else if (suit === 'D') suitSymbol = '♦'
-      else if (suit === 'C') suitSymbol = '♣'
-
-      var color = suit === 'H' || suit === 'D' ? 'red' : 'black'
-
-      html +=
-        "<div style='margin:5px;padding:5px;border:1px solid #ddd;color:" +
-        color +
-        ";'>" +
-        rank +
-        suitSymbol +
-        '</div>'
-    }
-
-    html += '</div>'
-    html +=
-      "<button onclick='nextCard()' style='margin-top:10px;padding:5px;'>Carte suivante</button>"
-
-    playArea.innerHTML = html
-
-    // Initialiser l'index de la carte actuelle
-    g_currentCardIndex = 0
-  } else {
-    // Aucune carte jouée n'est disponible
-    playArea.innerHTML =
-      "<div style='text-align:center;padding:20px;'>" +
-      '<h3>Aucune information de jeu disponible</h3>' +
-      '<p>Les détails des cartes jouées ne sont pas disponibles pour cette partie.</p>' +
-      '</div>'
-  }
-
-  displayAuctionComments(board.AlertComments)
-}
-
-// Variables pour suivre l'index de la carte actuelle et le défilement
-var g_currentCardIndex = 0
-var g_scrollInterval = null
-var g_scrollSpeed = 1000 // Délai en millisecondes entre chaque carte
-var g_playedCards = [] // Tableau pour stocker les cartes jouées pendant le défilement
-var g_comments = {} // Object to store comments indexed by line number
-
-function initializeCardScroll(board) {
-  // Vérifier si les cartes jouées sont disponibles
-  if (typeof board.Played === 'undefined' || board.Played.length === 0) {
-    // Aucune carte jouée n'est disponible
-    var popup = document.getElementById('popup_box')
-    popup.innerHTML =
-      "<div style='text-align:center;padding:20px;'>" +
-      '<h3>Aucune information de jeu disponible</h3>' +
-      '<p>Les détails des cartes jouées ne sont pas disponibles pour cette partie.</p>' +
-      '</div>'
-    $('#popup_box').finish()
-    $('#popup_box').delay(100).fadeIn(200).delay(2000).fadeOut(100)
-    return
-  }
-
-  // Afficher le contrat et le déclarant
-  document.getElementById('currentPosition').innerHTML =
-    '<SPAN>Contract: ' +
-    simpleSuitSymbol(board.Contract) +
-    ' by ' +
-    board.Declarer +
-    '<BR><BR>Mode défilement activé (en pause)</SPAN>'
-
-  // Réinitialiser les cartes affichées sur le plateau
-  ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
-    const el = document.getElementById(id)
-    if (el) el.innerText = ''
-  })
-
-  // Réinitialiser l'index de la carte actuelle
-  g_currentCardIndex = -1
-
-  // Réinitialiser la liste des cartes jouées
-  g_playedCards = []
-
-  // Créer un panneau de contrôle pour le défilement
-  var controlPanel = document.createElement('div')
-  controlPanel.id = 'scrollControlPanel'
-
-  controlPanel.innerHTML = `
-		<button id="prevCardBtn">Précédent</button>
-		<button id="playPauseBtn">Lecture</button>
-		<button id="nextCardBtn">Suivant</button>
-		<button id="nextTrickBtn">Avancer par levée</button>
-		<button id="resetCardsBtn">Recommencer</button>
-		<div style="display:flex;align-items:center;margin-left:10px;">
-			<label for="speedSlider" style="margin-right:5px;">Vitesse:</label>
-			<input type="range" id="speedSlider" min="200" max="3000" step="100" value="${g_scrollSpeed}">
-		</div>
-		<button id="toggleHandsBtn" onclick="toggleEastWestVisibility()">Afficher E/O</button>
-		<button id="closeScrollBtn">Fermer</button>
-	`
-
-  document.body.appendChild(controlPanel)
-
-  // Ajouter les événements aux boutons
-  document.getElementById('prevCardBtn').addEventListener('click', prevCard)
-  document
-    .getElementById('playPauseBtn')
-    .addEventListener('click', togglePlayPause)
-  document.getElementById('nextCardBtn').addEventListener('click', nextCard)
-  document.getElementById('nextTrickBtn').addEventListener('click', nextTrick)
-  document.getElementById('resetCardsBtn').addEventListener('click', resetCards)
-  document
-    .getElementById('closeScrollBtn')
-    .addEventListener('click', closeCardScroll)
-  document.getElementById('speedSlider').addEventListener('input', function () {
-    g_scrollSpeed = parseInt(this.value)
-    if (g_scrollInterval) {
-      clearInterval(g_scrollInterval)
-      g_scrollInterval = setInterval(nextCard, g_scrollSpeed)
-    }
-  })
-
-  // Ne pas démarrer le défilement automatique par défaut
-  // nextCard();
-  // g_scrollInterval = setInterval(nextCard, g_scrollSpeed);
-}
-
-function togglePlayPause() {
-  var playPauseBtn = document.getElementById('playPauseBtn')
-
-  if (g_scrollInterval) {
-    clearInterval(g_scrollInterval)
-    g_scrollInterval = null
-    playPauseBtn.textContent = 'Lecture'
-  } else {
-    g_scrollInterval = setInterval(nextCard, g_scrollSpeed)
-    playPauseBtn.textContent = 'Pause'
-  }
-}
-
-function closeCardScroll() {
-  // Arrêter le défilement
-  if (g_scrollInterval) {
-    clearInterval(g_scrollInterval)
-    g_scrollInterval = null
-  }
-
-  // Supprimer le panneau de contrôle
-  var controlPanel = document.getElementById('scrollControlPanel')
-  if (controlPanel) {
-    document.body.removeChild(controlPanel)
-  }
-
-  // Réinitialiser la liste des cartes jouées
-  g_playedCards = []
-
-  // Réinitialiser les cartes affichées sur le plateau
-  ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
-    const el = document.getElementById(id)
-    if (el) el.innerText = ''
-  })
-
-  // Réinitialiser l'affichage du contrat
-  document.getElementById('currentPosition').innerHTML = ''
-
-  // Réafficher les mains
-  displayHands()
-}
-
-function nextCard() {
-  var board = g_hands.boards[g_lastBindex]
-
-  if (typeof board.Played === 'undefined' || board.Played.length === 0) {
-    return
-  }
-
-  if (g_currentCardIndex < board.Played.length - 1) {
-    g_currentCardIndex++
-    displayCardOnBoard(board, g_currentCardIndex)
-  } else if (g_scrollInterval) {
-    // Si on a atteint la fin et que le défilement automatique est actif, on arrête
-    clearInterval(g_scrollInterval)
-    g_scrollInterval = null
-    document.getElementById('playPauseBtn').textContent = 'Lecture'
-  }
-
-  if (g_currentCardIndex % 4 === 0) {
-    window.afficherProchainCommentaireTextuel()
-  }
-}
-
-function prevCard() {
-  var board = g_hands.boards[g_lastBindex]
-
-  if (typeof board.Played === 'undefined' || board.Played.length === 0) {
-    return
-  }
-
-  if (g_currentCardIndex > 0) {
-    // Retirer la dernière carte jouée de la liste
-    if (g_playedCards.length > 0) {
-      g_playedCards.pop()
-    }
-
-    // Décrémenter l'index
-    g_currentCardIndex--
-
-    // Réinitialiser les cartes affichées sur le plateau
-    ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) el.innerText = ''
-    })
-
-    // Mettre à jour l'affichage des mains
-    displayHandsWithPlayedCards()
-
-    // Réafficher les cartes sur le plateau jusqu'à l'index actuel
-    for (var i = 0; i <= g_currentCardIndex; i++) {
-      var card = board.Played[i]
-      var suit = card.charAt(0)
-      var rank = card.charAt(1)
-      var suitSymbol = ''
-
-      // Convertir la lettre de la couleur en symbole
-      if (suit === 'S') suitSymbol = '♠'
-      else if (suit === 'H') suitSymbol = '♥'
-      else if (suit === 'D') suitSymbol = '♦'
-      else if (suit === 'C') suitSymbol = '♣'
-
-      var color = suit === 'H' || suit === 'D' ? 'red' : 'black'
-      var cardStr = rank + suitSymbol
-
-      // Déterminer le joueur qui a joué cette carte
-      var declarer = board.Declarer
-      var leader = getLeaderFromContract(declarer)
-      var playerIndex = (getPlayerIndexFromDirection(leader) + i) % 4
-      var direction = getDirectionFromPlayerIndex(playerIndex)
-
-      // Afficher la carte dans la zone correspondante
-      var directionId = direction.toLowerCase() + 'Card'
-      var directionEl = document.getElementById(directionId)
-
-      if (directionEl && i === g_currentCardIndex) {
-        directionEl.innerHTML =
-          "<span style='color:" + color + ";'>" + cardStr + '</span>'
-      }
-    }
-
-    // Créer un objet hcards similaire à celui utilisé dans la fonction playContract
-    let hcards = {
-      tricksNS: 0,
-      tricksEW: 0,
-    }
-
-    // Calculer les levées gagnées par chaque camp
-    if (board.Played && board.Played.length > 0) {
-      const sequence = '23456789TJQKA'
-      const trumpSuit = board.Contract.charAt(1).toUpperCase()
-      let totalTricksPlayed = Math.floor((g_currentCardIndex + 1) / 4)
-
-      // Parcourir chaque pli complet
-      for (let i = 0; i < totalTricksPlayed; i++) {
-        const trickStartIndex = i * 4
-        if (trickStartIndex + 3 <= g_currentCardIndex) {
-          // Pli complet
-          let trickSuit = board.Played[trickStartIndex].charAt(0).toUpperCase()
-          let trickValue = sequence.indexOf(
-            board.Played[trickStartIndex].charAt(1).toUpperCase(),
-          )
-          let winnerDir = findPlayedCardDir(
-            g_lastBindex,
-            board.Played[trickStartIndex],
-          )
-
-          // Vérifier les 3 autres cartes du pli
-          for (let j = 1; j < 4; j++) {
-            const card = board.Played[trickStartIndex + j]
-            const cardSuit = card.charAt(0).toUpperCase()
-            const cardDir = findPlayedCardDir(g_lastBindex, card)
-
-            if (cardSuit === trickSuit) {
-              // Même couleur, vérifier si plus haute
-              if (sequence.indexOf(card.charAt(1).toUpperCase()) > trickValue) {
-                trickValue = sequence.indexOf(card.charAt(1).toUpperCase())
-                winnerDir = cardDir
-              }
-            } else if (trumpSuit !== 'N' && cardSuit === trumpSuit) {
-              // Atout
-              trickSuit = trumpSuit
-              trickValue = sequence.indexOf(card.charAt(1).toUpperCase())
-              winnerDir = cardDir
-            }
-          }
-
-          // Attribuer la levée au camp gagnant
-          if (winnerDir === 0 || winnerDir === 2) {
-            // Nord ou Sud
-            hcards.tricksNS++
-          } else if (winnerDir === 1 || winnerDir === 3) {
-            // Est ou Ouest
-            hcards.tricksEW++
-          }
-        }
-      }
-    }
-
-    // Utiliser le même format d'affichage que dans la fonction playContract
-    let finished = ''
-    let original = ''
-
-    // Simuler le comportement de la fonction playContract
-    g_session_contract = board.Contract
-    g_session_declarer = board.Declarer
-
-    // Utiliser exactement le même format d'affichage que dans la fonction playContract
-    if (hcards.tricksNS + hcards.tricksEW == 13) {
-      finished =
-        '<BR><SPAN style="color:red;font-weight:bold;font-size:16px;">Finished</SPAN>'
-    }
-
-    if (g_showPlay != 0 && g_showOriginalContract == false) {
-      original =
-        '<BR><SPAN style="font-size:12px;font-weight:normal;">(originally played in ' +
-        board.Contract +
-        ')</SPAN>'
-    }
-
-    document.getElementById('currentPosition').innerHTML =
-      '<SPAN>Contract: ' +
-      substituteSuitSymbol(g_session_contract) +
-      ' by ' +
-      g_session_declarer +
-      original +
-      '<BR><BR>NS Tricks: ' +
-      hcards.tricksNS +
-      '<BR>EW Tricks: ' +
-      hcards.tricksEW +
-      '</SPAN>' +
-      finished
-  }
-}
-
-function nextTrick() {
-  var board = g_hands.boards[g_lastBindex]
-
-  if (typeof board.Played === 'undefined' || board.Played.length === 0) {
-    return
-  }
-
-  // Calculer le nombre de cartes à avancer pour compléter la levée en cours ou passer à la suivante
-  var cardsToNextTrick = 4 - ((g_currentCardIndex % 4) + 1)
-
-  // Avancer d'au moins une carte si on est au début d'une levée
-  if (cardsToNextTrick === 0) {
-    cardsToNextTrick = 4
-  }
-
-  // S'assurer qu'on ne dépasse pas le nombre de cartes restantes
-  var remainingCards = board.Played.length - 1 - g_currentCardIndex
-  cardsToNextTrick = Math.min(cardsToNextTrick, remainingCards)
-
-  if (cardsToNextTrick > 0) {
-    // Avancer d'une ou plusieurs cartes pour compléter la levée
-    for (var i = 0; i < cardsToNextTrick; i++) {
-      nextCard()
-
-      // Si le défilement automatique est actif et qu'on atteint la fin, on arrête
-      if (g_currentCardIndex >= board.Played.length - 1 && g_scrollInterval) {
-        clearInterval(g_scrollInterval)
-        g_scrollInterval = null
-        document.getElementById('playPauseBtn').textContent = 'Lecture'
-        break
-      }
-    }
-  } else if (g_scrollInterval) {
-    // Si on a atteint la fin et que le défilement automatique est actif, on arrête
-    clearInterval(g_scrollInterval)
-    g_scrollInterval = null
-    document.getElementById('playPauseBtn').textContent = 'Lecture'
-  }
-}
-
-function resetCards() {
-  g_currentCardIndex = -1
-
-  // Réinitialiser la liste des cartes jouées
-  g_playedCards = []
-
-  // Réinitialiser les cartes affichées sur le plateau
-  ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
-    const el = document.getElementById(id)
-    if (el) el.innerText = ''
-  })
-
-  // Réafficher les mains complètes
-  displayHands()
-
-  nextCard()
-}
-
-function displayCardOnBoard(board, cardIndex) {
-  if (cardIndex < 0 || cardIndex >= board.Played.length) {
-    return
-  }
-
-  var card = board.Played[cardIndex]
-  var suit = card.charAt(0)
-  var rank = card.charAt(1)
-  var suitSymbol = ''
-
-  // Convertir la lettre de la couleur en symbole
-  if (suit === 'S') suitSymbol = '♠'
-  else if (suit === 'H') suitSymbol = '♥'
-  else if (suit === 'D') suitSymbol = '♦'
-  else if (suit === 'C') suitSymbol = '♣'
-
-  var color = suit === 'H' || suit === 'D' ? 'red' : 'black'
-  var cardStr = rank + suitSymbol
-
-  // Déterminer le joueur qui a joué cette carte
-  var declarer = board.Declarer
-  var leader = getLeaderFromContract(declarer)
-  var playerIndex = (getPlayerIndexFromDirection(leader) + cardIndex) % 4
-  var direction = getDirectionFromPlayerIndex(playerIndex)
-
-  // Afficher la carte dans la zone correspondante
-  var directionId = direction.toLowerCase() + 'Card'
-  var directionEl = document.getElementById(directionId)
-
-  if (directionEl) {
-    directionEl.innerHTML =
-      "<span style='color:" + color + ";'>" + cardStr + '</span>'
-  }
-
-  // Ajouter la carte à la liste des cartes jouées
-  g_playedCards.push(card)
-
-  // Mettre à jour l'affichage des mains
-  displayHandsWithPlayedCards()
-
-  // Créer un objet hcards similaire à celui utilisé dans la fonction playContract
-  let hcards = {
-    tricksNS: 0,
-    tricksEW: 0,
-  }
-
-  // Calculer les levées gagnées par chaque camp
-  if (board.Played && board.Played.length > 0) {
-    const sequence = '23456789TJQKA'
-    const trumpSuit = board.Contract.charAt(1).toUpperCase()
-    let totalTricksPlayed = Math.floor((cardIndex + 1) / 4)
-
-    // Parcourir chaque pli complet
-    for (let i = 0; i < totalTricksPlayed; i++) {
-      const trickStartIndex = i * 4
-      if (trickStartIndex + 3 <= cardIndex) {
-        // Pli complet
-        let trickSuit = board.Played[trickStartIndex].charAt(0).toUpperCase()
-        let trickValue = sequence.indexOf(
-          board.Played[trickStartIndex].charAt(1).toUpperCase(),
-        )
-        let winnerDir = findPlayedCardDir(
-          g_lastBindex,
-          board.Played[trickStartIndex],
-        )
-
-        // Vérifier les 3 autres cartes du pli
-        for (let j = 1; j < 4; j++) {
-          const card = board.Played[trickStartIndex + j]
-          const cardSuit = card.charAt(0).toUpperCase()
-          const cardDir = findPlayedCardDir(g_lastBindex, card)
-
-          if (cardSuit === trickSuit) {
-            // Même couleur, vérifier si plus haute
-            if (sequence.indexOf(card.charAt(1).toUpperCase()) > trickValue) {
-              trickValue = sequence.indexOf(card.charAt(1).toUpperCase())
-              winnerDir = cardDir
-            }
-          } else if (trumpSuit !== 'N' && cardSuit === trumpSuit) {
-            // Atout
-            trickSuit = trumpSuit
-            trickValue = sequence.indexOf(card.charAt(1).toUpperCase())
-            winnerDir = cardDir
-          }
-        }
-
-        // Attribuer la levée au camp gagnant
-        if (winnerDir === 0 || winnerDir === 2) {
-          // Nord ou Sud
-          hcards.tricksNS++
-        } else if (winnerDir === 1 || winnerDir === 3) {
-          // Est ou Ouest
-          hcards.tricksEW++
-        }
+/**
+ * Avance le jeu jusqu'à la fin de la levée actuelle ou joue la levée suivante.
+ */
+function playNextTrick() {
+  if (!g_showPlay) return
+  const board = g_hands.boards[g_lastBindex]
+  if (!board || !board.Played) return
+
+  // Nombre de cartes déjà jouées dans le pli actuel (0, 1, 2 ou 3)
+  let cardsPlayedInTrick = g_currentPlayIndex % 4
+  let cardsToPlay = 4 - cardsPlayedInTrick
+
+  /**
+   * Joue les cartes une par une en attendant que le moteur soit prêt.
+   */
+  function step() {
+    if (cardsToPlay > 0 && g_currentPlayIndex < board.Played.length) {
+      if (!requestPending()) {
+        playNextCard(document.getElementById('forwardPlay'))
+        cardsToPlay--
+        // Petit délai pour laisser le temps au moteur de traiter la requête
+        setTimeout(step, 300)
+      } else {
+        // Le moteur est occupé, on réessaie plus tôt
+        setTimeout(step, 50)
       }
     }
   }
+  step()
+}
 
-  // Utiliser le même format d'affichage que dans la fonction playContract
-  let finished = ''
-  let original = ''
-
-  // Simuler le comportement de la fonction playContract
-  g_session_contract = board.Contract
-  g_session_declarer = board.Declarer
-
-  // Utiliser exactement le même format d'affichage que dans la fonction playContract
-  if (hcards.tricksNS + hcards.tricksEW == 13) {
-    finished =
-      '<BR><SPAN style="color:red;font-weight:bold;font-size:16px;">Finished</SPAN>'
-  }
-
-  if (g_showPlay != 0 && g_showOriginalContract == false) {
-    original =
-      '<BR><SPAN style="font-size:12px;font-weight:normal;">(originally played in ' +
-      board.Contract +
-      ')</SPAN>'
-  }
-
-  // Get bidding information
-  var biddingHtml = ''
-  if (
-    g_hands &&
-    g_hands.boards &&
-    g_hands.boards[g_lastBindex] &&
-    g_hands.boards[g_lastBindex].Bids
-  ) {
-    biddingHtml = showBidding()
-  }
-
-  // Format du contrat joué avec le style de setupTraveller
-  var contractDisplay =
-    '<DIV style="margin:10px 0;padding:0;">' +
-    '<BUTTON id="linPlay" class="menuButton" style="margin-left:2px;min-width:130px;max-height:' +
-    g_urqButtonHeight +
-    ';display:flex;justify-content:center;align-items:center;padding:0;">' +
-    '<SPAN id="linPlayButtFontSize" style="font-weight:bold;font-size:' +
-    g_urqButtFontSize +
-    ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">' +
-    'Play: ' +
-    substituteSuitSymbol(g_session_contract) +
-    ' by ' +
-    g_session_declarer +
-    '</SPAN></BUTTON></DIV>'
-
-  document.getElementById('currentPosition').innerHTML =
-    '<SPAN> Contract: ' +
-    substituteSuitSymbol(g_session_contract) +
-    ' by ' +
-    g_session_declarer +
-    original +
-    '<BR><BR>NS Tricks: ' +
-    hcards.tricksNS +
-    '<BR>EW Tricks: ' +
-    hcards.tricksEW +
-    '</SPAN>' +
-    contractDisplay +
-    '<DIV style="margin-top:10px;">' +
-    biddingHtml +
-    '</DIV>' +
-    finished
-
-  // Ajouter le gestionnaire d'événements pour le bouton de lecture
-  var playButton = document.getElementById('linPlay')
-  if (playButton) {
-    playButton.onclick = function () {
-      log('button=playContract')
-      playLinContract()
+/**
+ * Configure les boutons supplémentaires pour le mode défilement/résolution.
+ */
+function setupScrollControls() {
+  const nextTrickBtn = document.getElementById('nextTrick')
+  if (nextTrickBtn) {
+    nextTrickBtn.onclick = function () {
+      playNextTrick()
     }
+  }
+
+  const toggleBtn = document.getElementById('toggleHandsBtn')
+  if (toggleBtn) {
+    toggleBtn.onclick = window.toggleEastWestVisibility
+  }
+
+  const restartBtn = document.getElementById('restartBtn')
+  if (restartBtn) {
+    restartBtn.onclick = restartGame
   }
 }
 
@@ -1050,222 +477,133 @@ function removePlayedCardsFromDeal(deal, playedCards) {
   return modifiedDeal
 }
 
-function setupPlayMatchContractHelp() {
-  var help =
-    '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
-  help =
-    help +
-    'A yellow highlighted bid in the bidding box indicates an associated alert. Hover the cursor over the highlighted bid, '
-  help = help + 'or click on it, in order to see the explanation.<BR><BR>'
-  help =
-    help +
-    'Tap the play button located below the bidding table to see how the bid contract was played.<BR><BR>'
-  help =
-    help +
-    'All playable cards at the current position are highlighted together with the total number of makeable tricks (assuming optimum play from this point onwards). The card that was actually played at each position is denoted with an * prefix.<BR><BR>'
-  help =
-    help +
-    "At each point in the play you may choose to play the prefixed card, in order to follow how the contract was played. The button at the bottom of the display marked '>' provides a quick way of stepping through the played sequence."
-  help =
-    help +
-    ' However, if the card played was non-optimal, you might choose to play a different card in order to investigate an alternate line of play.<BR><BR>'
-  help =
-    help +
-    "Once you have deviated from the recorded line of play, no subsequent card will be prefixed with an *. You can use the button at the bottom of the display marked '<' to step back until you rejoin the original played sequence.<BR><BR>"
-  help =
-    help +
-    "The 'Acc' button (Accuracy of Play) provides information on the extent to which the actual line of play differs from an optimal double dummy line of play. "
-  help =
-    help +
-    'For each player it shows the number of cards played that were sub-optimal.<BR><BR>'
+/**
+ * Configure le contenu de la boîte d'aide et ajoute un bouton de fermeture.
+ * @param {string} id - ID de l'élément contenant l'aide.
+ * @param {string} content - Contenu HTML de l'aide.
+ * @param {string} closeButtonId - ID du bouton de fermeture à créer.
+ * @param {boolean} addClearDiv - Si vrai, ajoute un div de nettoyage avant le bouton.
+ */
+function setupHelpGeneric(id, content, closeButtonId, addClearDiv = false) {
+  var helpHtml =
+    '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">' +
+    content +
+    '</span></DIV>'
 
-  if (showTravellerRowButtons()) {
-    help =
-      help +
-      "The '<' and '>' buttons in the top right panel of the board display enable you to step backwards and forwards through "
-    help =
-      help +
-      'the traveller rows to see how the same board was bid and played at other tables<BR><BR>'
+  if (addClearDiv) {
+    helpHtml +=
+      '<DIV style="clear:both;"><BUTTON id=' +
+      closeButtonId +
+      ' style="cursor:pointer;">FERMER</BUTTON></div>'
+  } else {
+    helpHtml +=
+      '<BUTTON id=' + closeButtonId + ' style="cursor:pointer;">FERMER</BUTTON>'
   }
 
-  help = help + '</span></DIV>'
-  help =
-    help +
-    '<BUTTON id=hide_playMatchContractHelp style="cursor:pointer;">CLOSE</BUTTON>'
+  var element = document.getElementById(id)
+  if (element) {
+    element.innerHTML = helpHtml
+  }
+}
 
-  document.getElementById('playMatchContractHelp').innerHTML = help
+function setupPlayMatchContractHelp() {
+  var content =
+    "Une enchère surlignée en jaune dans la boîte d'enchères indique une alerte associée. Survolez l'enchère ou cliquez dessus pour voir l'explication.<BR><BR>" +
+    'Appuyez sur le bouton de lecture situé sous le tableau des enchères pour voir comment le contrat a été joué.<BR><BR>' +
+    "Toutes les cartes jouables à la position actuelle sont surlignées, ainsi que le nombre total de levées réalisables (en supposant un jeu optimal à partir de ce point). La carte qui a été réellement jouée est précédée d'un astérisque (*).<BR><BR>" +
+    'À chaque point du jeu, vous pouvez choisir de jouer la carte marquée d\'un astérisque pour suivre la séquence originale. Le bouton ">" en bas permet d\'avancer rapidement.<BR><BR>' +
+    "Cependant, si la carte jouée n'était pas optimale, vous pouvez choisir une autre carte pour explorer une variante.<BR><BR>" +
+    'Une fois que vous déviez de la ligne enregistrée, plus aucune carte ne sera marquée d\'un astérisque. Utilisez le bouton "<" pour revenir en arrière jusqu\'à rejoindre la séquence originale.<BR><BR>' +
+    'Le bouton "Acc" (Précision du Jeu) donne des informations sur l\'écart entre le jeu réel et le jeu optimal (Double Dummy). Pour chaque joueur, il affiche le nombre de cartes jouées de manière sous-optimale.<BR><BR>'
+
+  if (showTravellerRowButtons()) {
+    content +=
+      'Les boutons "<" et ">" dans le panneau supérieur droit permettent de parcourir les résultats des autres tables pour la même donne.<BR><BR>'
+  }
+
+  setupHelpGeneric(
+    'playMatchContractHelp',
+    content,
+    'hide_playMatchContractHelp',
+  )
 }
 
 function setupEditHelp() {
-  var help =
-    '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
-  help = help + 'Cards not yet assigned to any quadrant are shown in green. '
-  help =
-    help + 'Click on a green card to assign it to the current quadrant.<BR><BR>'
-  help =
-    help +
-    'Cards assigned to the hand in the current quadrant are shown with a check mark. '
-  help = help + 'Click on a checked card to de-assign it. '
-  help =
-    help + "The 'Clear' button de-assigns all cards from all quadrants.<BR><BR>"
+  var content =
+    "Les cartes non encore assignées sont affichées en vert. Cliquez sur une carte verte pour l'assigner au quadrant actuel.<BR><BR>" +
+    'Les cartes assignées au quadrant actuel sont cochées. Cliquez sur une carte cochée pour la désassigner. ' +
+    'Le bouton "Vider" (Clear) désassigne toutes les cartes de tous les quadrants.<BR><BR>'
 
-  if ((g_test == 1) | (g_xml != ''))
-    help =
-      help +
-      "Use the 'Change Vulnerability' button to change the board vulnerability. "
-  else
-    help =
-      help +
-      "Use the 'Change Vulnerability' and 'Change Dealer' buttons to change the board vulnerability and dealer. "
+  if (g_isTest == 1 || g_xml != '') {
+    content +=
+      'Utilisez le bouton "Changer Vulnérabilité" pour modifier la vulnérabilité de la donne. '
+  } else {
+    content +=
+      'Utilisez les boutons "Changer Vulnérabilité" et "Changer Donneur" pour modifier les paramètres de la donne. '
+  }
 
-  help =
-    help +
-    "Makeable contracts and optimum contracts/scores can be calculated by clicking the 'Analyse' button after exiting edit mode, "
-  help =
-    help +
-    'providing that all 52 cards have been assigned (changing the vulnerability can affect the optimum contract/score).<BR><BR>'
-  help =
-    help +
-    "The 'New...' button adds a new empty board to the current set of boards."
-  help =
-    help +
-    'Any changes made to the board currently being edited are retained.<BR><BR>'
-  help =
-    help +
-    "The 'Delete' button deletes the board currently being edited. If there is only a single board then it cannot be deleted.<BR><BR>"
-  help =
-    help +
-    "The 'Prev', 'Next', and 'GoTo' buttons facilitate navigation between boards without leaving edit mode. "
-  help =
-    help +
-    'Any changes made to the board currently being edited are retained.<BR><BR>'
-  help =
-    help +
-    "Exit from edit mode by clicking the 'Done' button, or play the hand by clicking a '-' entry in the makeable contracts table.<BR><BR>"
-  help =
-    help +
-    'Hands can be played starting with less than 52 cards providing each quadrant contains the same number of cards.<BR><BR>'
-  help = help + '</span></DIV>'
-  help =
-    help + '<BUTTON id=hide_editHelp style="cursor:pointer;">CLOSE</BUTTON>'
+  content +=
+    'Les contrats réalisables et optimaux peuvent être calculés en cliquant sur le bouton "Analyse" après avoir quitté le mode édition, ' +
+    'à condition que les 52 cartes aient été assignées.<BR><BR>' +
+    'Le bouton "Nouveau..." ajoute une nouvelle donne vide à la série actuelle.<BR><BR>' +
+    'Le bouton "Supprimer" supprime la donne en cours d\'édition.<BR><BR>' +
+    'Les boutons "Préc", "Suiv" et "Aller à" facilitent la navigation entre les donnes sans quitter le mode édition.<BR><BR>' +
+    'Quittez le mode édition via le bouton "Fait" (Done), ou jouez la main en cliquant sur une entrée "-" dans la table des contrats réalisables.<BR><BR>' +
+    'Les mains peuvent être jouées avec moins de 52 cartes si chaque quadrant contient le même nombre de cartes.'
 
-  document.getElementById('editHelp').innerHTML = help
+  setupHelpGeneric('editHelp', content, 'hide_editHelp')
 }
 
 function setupPlayHelp() {
-  var help =
-    '<div style="float:left;word-wrap:break-word;\><span style="font-size:16px;">'
-  help = help + 'Click on a green or yellow card to play the card.<BR><BR>'
-  help =
-    help +
-    'A card value preceded by a blue asterisk indicates the lead card that was actually played by the defender on lead in the selected contract.<BR><BR>'
-  help =
-    help +
-    'The subscript on the green and yellow cards shows the number of tricks that will be made, by declarer or the defenders, if this card is played and '
-  help =
-    help +
-    'all subsequent cards played by declarer and the defenders are green cards. <BR><BR>'
-  help =
-    help +
-    'Cards highlighted in blue are cards already played as part of the current trick.<BR><BR>'
-  help =
-    help +
-    'Cards which are greyed out have been played as part of a previous trick.<BR><BR>'
-  help =
-    help +
-    "The button marked with a '<' can be used to unplay one or more cards.<BR><BR>"
-  help = help + "Click on 'Stop' to leave play mode.<BR><BR>"
-  help = help + '</span></DIV>'
-  help =
-    help + '<BUTTON id=hide_playHelp style="cursor:pointer;">CLOSE</BUTTON>'
+  var content =
+    'Cliquez sur une carte verte ou jaune pour la jouer.<BR><BR>' +
+    "Une valeur de carte précédée d'un astérisque bleu indique l'entame réelle effectuée par le défenseur dans le contrat sélectionné.<BR><BR>" +
+    "L'indice sur les cartes vertes et jaunes montre le nombre de levées qui seront faites si cette carte est jouée et que toutes les cartes suivantes sont jouées de manière optimale.<BR><BR>" +
+    'Les cartes surlignées en bleu sont celles déjà jouées dans le pli en cours.<BR><BR>' +
+    'Les cartes grisées ont été jouées dans un pli précédent.<BR><BR>' +
+    'Le bouton "<" permet d\'annuler un ou plusieurs coups.<BR><BR>' +
+    'Cliquez sur "Stop" pour quitter le mode jeu.'
 
-  document.getElementById('playHelp').innerHTML = help
+  setupHelpGeneric('playHelp', content, 'hide_playHelp')
 }
 
 function setupCommandHelp() {
-  var help =
-    '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
-  help =
-    help +
-    "Press the 'Analyse' button to calculate makeable contracts and optimum contracts/scores for the displayed board.<BR><BR>"
-  help =
-    help +
-    "Press the 'Edit' button to edit the current board, change dealer or vulnerability, or to add/delete boards.<BR><BR>"
-  help =
-    help +
-    "Start playing a contract interactively by clicking on an entry in the makeable contracts table (including entries shown as '-' or '*')<BR><BR>"
-  help =
-    help +
-    'A button highlighted bright yellow in the makeable contracts table designates the suit/declarer combination actually played '
-  help = help + 'in a club game or tournament.<BR><BR>'
+  var content =
+    'Appuyez sur "Analyse" pour calculer les contrats réalisables et optimaux pour la donne affichée.<BR><BR>' +
+    'Appuyez sur "Edit" pour modifier la donne, changer le donneur ou la vulnérabilité, ou ajouter/supprimer des donnes.<BR><BR>' +
+    'Commencez à jouer un contrat interactivement en cliquant sur une entrée dans la table des contrats réalisables.<BR><BR>' +
+    'Un bouton surligné en jaune vif dans la table indique la combinaison contrat/déclarant réellement jouée lors du tournoi.<BR><BR>'
 
-  if ((g_test == 1) | (g_xml != '')) {
-    help =
-      help +
-      "Press the 'Edit' button to edit the current board, or to change the dealer or vulnerability.<BR><BR>"
-    help =
-      help +
-      "The 'Goto...' button allows any board to be selected from the set of boards for the current event.<BR><BR>"
-    help =
-      help +
-      "The '<' and '>' buttons step backwards or forwards through the set of boards.<BR><BR>"
-    help =
-      help +
-      'The \'Results Analysis\' mode enables you to analyse your performance and card play against double dummy and against other pairs. Click <a href="bsolhelp.htm" target=_blank class=myLink>here</a> for more information<BR><BR>'
+  if (g_isTest == 1 || g_xml != '') {
+    content +=
+      'Le bouton "Aller à..." permet de sélectionner n\'importe quelle donne de la série.<BR><BR>' +
+      'Les boutons "<" et ">" permettent de naviguer dans la série de donnes.<BR><BR>' +
+      'Le mode "Analyse de Résultats" permet d\'analyser votre performance. Cliquez <a href="bsolhelp.htm" target=_blank class=myLink>ici</a> pour plus d\'infos.<BR><BR>'
   } else {
-    help =
-      help +
-      "Press the 'Edit' button to edit the current board, change dealer or vulnerability, or to add/delete boards.<BR><BR>"
-    help =
-      help +
-      "The 'Goto...' button, if present, allows any board to be selected from the set of boards.<BR><BR>"
-    help =
-      help +
-      "The '<' and '>' buttons, if present, step backwards or forwards through the set of boards.<BR><BR>"
-    help =
-      help + "The 'Save' button saves the set of boards as a PBN file.<BR><BR>"
+    content +=
+      'Le bouton "Aller à...", si présent, permet de sélectionner une donne.<BR><BR>' +
+      'Les boutons "<" et ">" permettent de naviguer.<BR><BR>' +
+      'Le bouton "Sauvegarder" enregistre la série au format PBN.<BR><BR>'
 
-    if (typeof g_hands.lin != 'undefined')
-      help =
-        help +
-        "The 'Save As LIN' button saves the current board as a LIN format file, including player names, auction and play data.<BR><BR>"
+    if (typeof g_hands.lin != 'undefined') {
+      content +=
+        'Le bouton "Sauvegarder en LIN" enregistre la donne au format LIN, incluant les noms, enchères et jeu.<BR><BR>'
+    }
   }
 
-  help +=
-    "'More../Analyse All Boards' calculates makeable contracts/optimum contracts for all boards in the current board set<BR><BR>"
-  help +=
-    "'More../Show Player Accuracy Matrix' calculates and displays the number of deviations from optimal double dummy play for all players for all boards in the current board set. "
-  help +=
-    'This function is only available if the boards contain a record of the cards played (usually only available for events played online).<BR><BR>'
+  content +=
+    '"Plus../Analyser toutes les donnes" calcule les contrats pour toute la série.<BR><BR>' +
+    '"Plus../Matrice de précision" affiche les écarts au jeu optimal pour tous les joueurs sur toutes les donnes.'
 
-  help = help + '</span></DIV>'
-  help =
-    help +
-    '<DIV style="clear:both;"><BUTTON id=hide_commandHelp style="cursor:pointer;">CLOSE</BUTTON></div>'
-
-  document.getElementById('commandHelp').innerHTML = help
+  setupHelpGeneric('commandHelp', content, 'hide_commandHelp', true)
 }
 
 function setupSettingsHelp() {
-  var help =
-    '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
+  var content =
+    'Le paramètre <b>"Auto-Analyse de la série"</b> détermine si Bridge Solver commence à calculer les contrats pour toutes les donnes au lancement. ' +
+    "Cela se fait en arrière-plan et n'empêche pas de jouer."
 
-  help =
-    help +
-    "The <b>'Auto-Analyse Entire Board Set'</b> setting determines whether Bridge Solver will start calculating makeable contracts and "
-  help =
-    help +
-    'optimum contracts/scores for all boards when Bridge Solver is invoked. This takes place in the background and '
-  help =
-    help +
-    'does not prevent hands being played while the calculation is in progress.<BR><BR>'
-
-  help = help + '</span></DIV>'
-  help =
-    help +
-    '<DIV style="clear:both;"><BUTTON id=hide_settingsHelp style="cursor:pointer;">CLOSE</BUTTON></div>'
-
-  document.getElementById('settingsHelp').innerHTML = help
+  setupHelpGeneric('settingsHelp', content, 'hide_settingsHelp', true)
 }
 
 function redrawMCTable(large) {
@@ -1997,7 +1335,7 @@ function createHandString(hand, index) {
           if (showColorCode) {
             color = '#FFFFFF'
 
-            if (score == g_hiscore) color = '#FFFFFF'
+            if (score == g_highScore) color = '#FFFFFF'
           }
 
           if (g_showPlay != 0) {
@@ -2028,21 +1366,13 @@ function createHandString(hand, index) {
       } else if (g_currentTrickCards[i][cardindex] != 0)
         text =
           text +
-          '<BUTTON style="margin:0px;background-color:#6699FF;color:white;height:' +
-          buttHeight +
-          ';min-width:30px;font-size:' +
-          cardFontSize +
-          ";font-weight:bold;padding:1px;vertical-align:text-top\" disabled><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
+          '<BUTTON class="blankButton" style="background-color:#6699FF !important;" disabled><SPAN  style="display:block;text-align:center;line-height:1em;">' +
           cardstr +
-          '</SPAN></BUTTON> '
+          '</SPAN></BUTTON>'
       else if (g_inactiveCards[i][cardindex] != 0)
         text =
           text +
-          '<BUTTON style="margin:0px;border:1px solid #ddd;color:black;font-size:' +
-          cardFontSize +
-          ';font-weight:bold;height:' +
-          buttHeight +
-          ";padding:1px;vertical-align:text-top\"><SPAN  style='display:block:text-align:center;line-height:1em;'>" +
+          '<BUTTON class="blankButton" disabled><SPAN  style="display:block;text-align:center;line-height:1em;">' +
           cardstr +
           '</SPAN></BUTTON> '
       else if ((g_handEntryMode == 0) | (g_inputDir != index))
@@ -2352,7 +1682,7 @@ function processPosition(hcards, para) {
 
     var cards = hcards.cards
 
-    g_hiscore = 0
+    g_highScore = 0
 
     for (i = 0; i < cards.length; i++) {
       var data = cards[i]
@@ -2368,7 +1698,7 @@ function processPosition(hcards, para) {
       // Add current tricks to tricks remaining to give total that can be made on this hand given current position
       score = score + currentTricks
 
-      if (score > g_hiscore) g_hiscore = score
+      if (score > g_highScore) g_highScore = score
 
       for (j = 0; j < 4; j++) {
         var values = suits[j]
@@ -2384,7 +1714,7 @@ function processPosition(hcards, para) {
         (g_session_contract.charAt(0) == '-') |
         (g_session_contract.charAt(0) == '*')
       ) {
-        var maxTricksDeclarer = g_partialHandTotalTricks - g_hiscore
+        var maxTricksDeclarer = g_partialHandTotalTricks - g_highScore
         var minusTricks
 
         if (g_partialHand == 0) {
@@ -2431,7 +1761,7 @@ function processPosition(hcards, para) {
     var contractDisplay =
       '<DIV style="margin:10px 0;padding:0;">' +
       '<BUTTON id="linPlay" class="menuButton" style="margin-left:2px;min-width:130px;max-height:' +
-      g_urqButtonHeight +
+      g_upperRightButtonHeight +
       ';display:flex;justify-content:center;align-items:center;padding:0;">' +
       '<SPAN id="linPlayButtFontSize">' +
       'Play: ' +
@@ -2483,10 +1813,6 @@ function processPosition(hcards, para) {
 }
 
 function updatePlayedCard(hcards) {
-  console.log('>>>> updatePlayedCard called')
-  console.log('hcards:', JSON.stringify(hcards))
-  console.log('g_currentPlayer:', g_currentPlayer)
-
   const suits = ['♠', '♥', '♦', '♣']
   const values = [
     '2',
@@ -2506,7 +1832,7 @@ function updatePlayedCard(hcards) {
   const players = ['North', 'East', 'South', 'West']
   const playerMap = { north: 0, east: 1, south: 2, west: 3 }
 
-  // Réinitialiser uniquement au début d'un nouveau tour
+  // Réinitialiser uniquement au début d'un nouveau tour (quand la première carte est jouée)
   if (hcards.currentTrick && hcards.currentTrick.length === 1) {
     ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
       const el = document.getElementById(id)
@@ -2515,103 +1841,107 @@ function updatePlayedCard(hcards) {
     console.log('Nouveau tour détecté : nettoyage des emplacements.')
   }
 
-  if (Array.isArray(hcards.currentTrick) && hcards.currentTrick.length > 0) {
-    // Réinitialiser tous les emplacements de cartes avant d'afficher les cartes du pli actuel
-    ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
-      const el = document.getElementById(id)
-      if (el) el.innerHTML = ''
-    })
+  if (Array.isArray(hcards.currentTrick)) {
+    if (hcards.currentTrick.length > 0) {
+      // Réinitialiser tous les emplacements de cartes avant d'afficher les cartes du pli actuel
+      ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
+        const el = document.getElementById(id)
+        if (el) el.innerHTML = ''
+      })
 
-    // Afficher toutes les cartes du pli actuel, pas seulement la dernière
-    for (
-      let cardIndex = 0;
-      cardIndex < hcards.currentTrick.length;
-      cardIndex++
-    ) {
-      const card = hcards.currentTrick[cardIndex]
+      // Afficher toutes les cartes du pli actuel, pas seulement la dernière
+      for (
+        let cardIndex = 0;
+        cardIndex < hcards.currentTrick.length;
+        cardIndex++
+      ) {
+        const card = hcards.currentTrick[cardIndex]
 
-      if (!Array.isArray(card) || card.length < 2) {
-        console.error('Format de carte invalide:', card)
-        continue
-      }
-
-      const suitIndex = card[0]
-      const valueIndex = card[1]
-
-      if (suitIndex < 0 || suitIndex > 3 || valueIndex < 0 || valueIndex > 12) {
-        console.error('Indices de carte invalides:', suitIndex, valueIndex)
-        continue
-      }
-
-      const cardStr = suits[suitIndex] + values[valueIndex]
-
-      let playerIndex
-
-      if (hcards.leader !== undefined) {
-        const leaderIndex =
-          typeof hcards.leader === 'string'
-            ? playerMap[hcards.leader.toLowerCase()]
-            : hcards.leader
-
-        if (
-          typeof leaderIndex === 'number' &&
-          leaderIndex >= 0 &&
-          leaderIndex <= 3
-        ) {
-          // Calculer le joueur en fonction du leader et de la position de la carte dans le pli
-          playerIndex = (leaderIndex + cardIndex) % 4
+        if (!Array.isArray(card) || card.length < 2) {
+          continue
         }
-      }
 
-      if (playerIndex === undefined && hcards.player !== undefined) {
-        const currentPlayerIndex =
-          typeof hcards.player === 'string'
-            ? playerMap[hcards.player.toLowerCase()]
-            : hcards.player
+        const suitIndex = card[0]
+        const valueIndex = card[1]
 
         if (
-          typeof currentPlayerIndex === 'number' &&
-          currentPlayerIndex >= 0 &&
-          currentPlayerIndex <= 3
+          suitIndex < 0 ||
+          suitIndex > 3 ||
+          valueIndex < 0 ||
+          valueIndex > 12
         ) {
-          // Calculer le joueur en fonction du joueur actuel et de la position de la carte dans le pli
+          continue
+        }
+
+        const cardStr = suits[suitIndex] + values[valueIndex]
+
+        let playerIndex
+
+        if (hcards.leader !== undefined) {
+          const leaderIndex =
+            typeof hcards.leader === 'string'
+              ? playerMap[hcards.leader.toLowerCase()]
+              : hcards.leader
+
+          if (
+            typeof leaderIndex === 'number' &&
+            leaderIndex >= 0 &&
+            leaderIndex <= 3
+          ) {
+            // Calculer le joueur en fonction du leader et de la position de la carte dans le pli
+            playerIndex = (leaderIndex + cardIndex) % 4
+          }
+        }
+
+        if (playerIndex === undefined && hcards.player !== undefined) {
+          const currentPlayerIndex =
+            typeof hcards.player === 'string'
+              ? playerMap[hcards.player.toLowerCase()]
+              : hcards.player
+
+          if (
+            typeof currentPlayerIndex === 'number' &&
+            currentPlayerIndex >= 0 &&
+            currentPlayerIndex <= 3
+          ) {
+            // Calculer le joueur en fonction du joueur actuel et de la position de la carte dans le pli
+            playerIndex =
+              (currentPlayerIndex -
+                (hcards.currentTrick.length - cardIndex) +
+                4) %
+              4
+          }
+        }
+
+        if (
+          playerIndex === undefined &&
+          typeof g_currentPlayer !== 'undefined'
+        ) {
+          // Calculer le joueur en fonction de g_currentPlayer et de la position de la carte dans le pli
           playerIndex =
-            (currentPlayerIndex -
-              (hcards.currentTrick.length - cardIndex) +
-              4) %
-            4
+            (g_currentPlayer - (hcards.currentTrick.length - cardIndex) + 4) % 4
+        }
+
+        if (playerIndex === undefined) {
+          continue
+        }
+
+        playerIndex = ((playerIndex % 4) + 4) % 4
+        const playerStr = players[playerIndex]
+        const directionId = playerStr.toLowerCase() + 'Card'
+        const directionEl = document.getElementById(directionId)
+
+        if (directionEl) {
+          // Déterminer la couleur de la carte (rouge pour cœur et carreau, noir pour pique et trèfle)
+          const color = suitIndex === 1 || suitIndex === 2 ? 'red' : 'black'
+          directionEl.innerHTML = `<span style='color:${color};'>${cardStr}</span>`
         }
       }
-
-      if (playerIndex === undefined && typeof g_currentPlayer !== 'undefined') {
-        // Calculer le joueur en fonction de g_currentPlayer et de la position de la carte dans le pli
-        playerIndex =
-          (g_currentPlayer - (hcards.currentTrick.length - cardIndex) + 4) % 4
-      }
-
-      if (playerIndex === undefined) {
-        console.error('Impossible de déterminer qui a joué la carte', cardIndex)
-        continue
-      }
-
-      playerIndex = ((playerIndex % 4) + 4) % 4
-      const playerStr = players[playerIndex]
-      const directionId = playerStr.toLowerCase() + 'Card'
-      const directionEl = document.getElementById(directionId)
-
-      if (directionEl) {
-        // Déterminer la couleur de la carte (rouge pour cœur et carreau, noir pour pique et trèfle)
-        const color = suitIndex === 1 || suitIndex === 2 ? 'red' : 'black'
-        directionEl.innerHTML = `<span style='color:${color};'>${cardStr}</span>`
-        console.log(
-          `Carte affichée : ${cardStr} jouée par ${playerStr} (index ${cardIndex})`,
-        )
-      } else {
-        console.warn('Élément non trouvé pour :', directionId)
-      }
+    } else {
+      // Pli vide (collecté) : on nettoie enfin la table
+      clearCenter()
+      console.log('Pli collecté et centre nettoyé. Prêt pour le tour suivant.')
     }
-  } else {
-    console.warn('Aucune carte à afficher.')
   }
 }
 
@@ -3507,7 +2837,7 @@ function setupTraveller(index, active) {
 
     //		if ((typeof g_hands.lin)=="undefined")
     {
-      if (((g_test == 1) & (g_file == '')) | (g_xml != '')) {
+      if (((g_isTest == 1) & (g_file == '')) | (g_xml != '')) {
         show('bsession')
         show('bsessionHelp')
       }
@@ -3600,33 +2930,33 @@ function setupTraveller(index, active) {
 
             var bckbutton =
               '<BUTTON id=prevrow class=menuButton style="min-width:20px;max-width:20px;width:20px;max-height:' +
-              g_urqButtonHeight +
+              g_upperRightButtonHeight +
               ';display:flex;justify-content:center;align-items:center;padding:0;margin-right:2px;' +
               rowButtonsVisibility +
               '" onclick="prevTravRow();"><SPAN id=prevRowButtFontSize style="font-weight:bold;font-size:' +
-              g_urqButtFontSize +
+              g_upperRightButtonFontSize +
               ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;"><</SPAN></BUTTON>'
             var fwdbutton =
               '<BUTTON id=nextrow class=menuButton style="min-width:20px;max-width:20px;width:20px;max-height:' +
-              g_urqButtonHeight +
+              g_upperRightButtonHeight +
               ';display:flex;justify-content:center;align-items:center;padding:0;margin-left:2px;' +
               rowButtonsVisibility +
               '" onclick="nextTravRow();"><SPAN id=nextRowButtFontSize style="font-weight:bold;font-size:' +
-              g_urqButtFontSize +
+              g_upperRightButtonFontSize +
               ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">><SPAN></BUTTON>'
             var accbutton =
               '<BUTTON id=accbutton class=menuButton style="margin-left:2px;min-width:35px;max-width:35px;width:35px;max-height:' +
-              g_urqButtonHeight +
+              g_upperRightButtonHeight +
               ';display:flex;justify-content:center;align-items:center;padding:0;" onclick="log(\'button=acc\');playLinContract(true,1);"><SPAN id=accButtFontSize style="font-weight:bold;font-size:' +
-              g_urqButtFontSize +
+              g_upperRightButtonFontSize +
               ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">Acc</SPAN></BUTTON>'
             pbutton =
               '<div style="margin-left:2px;margin-top:2px;clear:both;float:left;display:flex;align-items:center;">' +
               bckbutton +
               '<BUTTON id=linPlay class="menuButton" style="margin-left:2px;min-width:130px;max-height:' +
-              g_urqButtonHeight +
+              g_upperRightButtonHeight +
               ';display:flex;justify-content:center;align-items:center;padding:0;"><SPAN id=linPlayButtFontSize style="font-weight:bold;font-size:' +
-              g_urqButtFontSize +
+              g_upperRightButtonFontSize +
               ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">Play: ' +
               curBoard.Contract +
               tricksOffset +
@@ -3637,9 +2967,9 @@ function setupTraveller(index, active) {
               pbutton +
               accbutton +
               '<BUTTON id=matchContractHelp class="menuButton" style="margin-left:2px;min-width:15px;max-width:15px;width:15px;max-height:' +
-              g_urqButtonHeight +
+              g_upperRightButtonHeight +
               ';display:flex;justify-content:center;align-items:center;padding:0;"><SPAN id=matchContractHelpButtFontSize style="font-weight:bold;font-size:' +
-              g_urqButtFontSize +
+              g_upperRightButtonFontSize +
               ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">?</SPAN></BUTTON>' +
               fwdbutton +
               '</div><div style="clear:both;margin-left:2px;"><SPAN id=scoreSpan style="font-size:' +
@@ -3942,7 +3272,7 @@ function edit() {
 
     if (
       (g_hands.boards[g_lastBindex].board.toString().indexOf('.edited') == -1) &
-      ((g_test == 1) | (g_xml != ''))
+      ((g_isTest == 1) | (g_xml != ''))
     ) {
       var board = JSON.parse(JSON.stringify(g_hands.boards[g_lastBindex]))
       var bname =
@@ -3975,7 +3305,7 @@ function edit() {
     $('#mainTitle').show()
     hideMenuItems()
 
-    if ((g_test != 1) & (g_xml == '')) {
+    if ((g_isTest != 1) & (g_xml == '')) {
       show('deleteBoard')
       show('newBoard')
 
@@ -4443,7 +3773,7 @@ function processHandEntry() {
 
   redrawMCTable(true)
 
-  if ((g_test == 1) | (g_xml != ''))
+  if ((g_isTest == 1) | (g_xml != ''))
     // Show only Set Vulnerability if travellers are available - can't save the board so no point showing Dealer
     document.getElementById('boardNumber').innerHTML =
       '<BUTTON id=setVul class=doubleHeightMenuButton style="min-width:' +
@@ -4534,7 +3864,7 @@ function hideMenuItems() {
 
 function showMainMenuItems() {
   //	if ((typeof g_hands.lin)=="undefined")
-  if ((g_hands.boards.length > 1) | (g_test == 1) | (g_xml != '')) {
+  if ((g_hands.boards.length > 1) | (g_isTest == 1) | (g_xml != '')) {
     show('prev')
     show('gotoBoard')
     show('next')
@@ -4545,7 +3875,7 @@ function showMainMenuItems() {
     }
   }
 
-  if ((g_test != 1) & (g_xml == '')) {
+  if ((g_isTest != 1) & (g_xml == '')) {
     if (typeof g_hands.lin !== 'undefined')
       if (document.getElementById('saveLIN') != null) show('saveLIN')
 
@@ -4886,9 +4216,12 @@ function playContract(declarer, suitChar, contract, auto = false, dest = 0) {
     hideMenuItems()
     show('backPlay')
     showForwardPlay()
+    show('nextTrick')
+    show('toggleHandsBtn')
     show('options')
     show('play')
     show('help')
+    setupScrollControls()
   }
 
   var session = new Date().getTime()
@@ -6083,43 +5416,52 @@ function dddloadfunc(data, statusText, jqXHR, context) {
   }
 }
 
+function isCenterFull() {
+  const ids = ['northCard', 'southCard', 'eastCard', 'westCard']
+  let count = 0
+  ids.forEach((id) => {
+    const el = document.getElementById(id)
+    if (el && el.innerText.trim() !== '') count++
+  })
+  return count > 0 // Si au moins une carte est affichée
+}
+
+function clearCenter() {
+  ;['northCard', 'southCard', 'eastCard', 'westCard'].forEach((id) => {
+    const el = document.getElementById(id)
+    if (el) el.innerHTML = ''
+  })
+}
+
 function playNextCard(pthis) {
   if (g_showPlay) {
+    // Si le pli est complet, le ramasser (calcul du vainqueur dans le moteur) avant de continuer
+    if (isCenterFull() && g_currentPlayIndex % 4 === 0) {
+      if (requestPending()) return
+      else setRequestTimeout(true)
+      spinner(pthis)
+      callddd('C')
+      return
+    }
+
     if (typeof g_hands.boards[g_lastBindex].Played != 'undefined') {
       var played = g_hands.boards[g_lastBindex].Played
 
       if (g_currentPlayIndex < played.length) {
-        if (
-          g_lastMatchedPlayIndex ==
-          g_currentPlayIndex - 1
-        ) // still following the actual cards played in the match
-        {
-          var playedInMatch = played[g_currentPlayIndex]
+        // On joue la carte suivante, même si l'index est décalé (plus de blocage strict)
+        var playedInMatch = played[g_currentPlayIndex]
 
-          if (requestPending())
-            return // Don't allow while there is a request in progress.
-          else setRequestTimeout(true)
+        if (requestPending()) return
+        else setRequestTimeout(true)
 
-          spinner(pthis)
-          callddd(playedInMatch.toUpperCase())
-        } else {
-          displayError(
-            document.getElementById('boardNumber'),
-            '<SPAN style="font-size:18px;background-color:#FFFFEE;padding:10px;border:1px;border-color:black;">Not currently following played sequence</SPAN>',
-          )
-        }
-      } else if (g_currentPlayIndex == played.length) {
-        if (g_lastMatchedPlayIndex == g_currentPlayIndex - 1) {
-          displayError(
-            document.getElementById('boardNumber'),
-            '<SPAN style="font-size:18px;background-color:#FFFFEE;padding:10px;border:1px;border-color:black;">No more played cards recorded for this board</SPAN>',
-          )
-        } else {
-          displayError(
-            document.getElementById('boardNumber'),
-            '<SPAN style="font-size:18px;background-color:#FFFFEE;padding:10px;border:1px;border-color:black;">Not currently following played sequence</SPAN>',
-          )
-        }
+        // Effacer les messages d'erreur au passage
+        displayError(document.getElementById('boardNumber'), '')
+        
+        spinner(pthis)
+        callddd(playedInMatch.toUpperCase())
+        
+        // On recalibre l'index de correspondance pour éviter les erreurs au coup suivant
+        g_lastMatchedPlayIndex = g_currentPlayIndex - 1
       } else {
         displayError(
           document.getElementById('boardNumber'),
@@ -6134,6 +5476,9 @@ function hideForwardPlay() {
   // Try/Catch in case using older version of ddummy.htm without this button
   try {
     hide('forwardPlay')
+    hide('nextTrick')
+    hide('toggleHandsBtn')
+    hide('restartBtn')
   } catch (err) {}
 }
 
@@ -6141,7 +5486,13 @@ function showForwardPlay() {
   // Try/Catch in case using older version of ddummy.htm without this button
   try {
     // Only show this button if playing a contract from a BBO lin file
-    if (g_showPlay != 0) show('forwardPlay')
+    if (g_showPlay != 0) {
+      show('forwardPlay')
+      show('nextTrick')
+      show('toggleHandsBtn')
+      show('restartBtn')
+      setupScrollControls()
+    }
   } catch (err) {}
 }
 
@@ -6162,6 +5513,8 @@ function enterPlayMode() {
   show('editHand')
   hide('backPlay')
   hideForwardPlay()
+  hide('nextTrick')
+  hide('toggleHandsBtn')
   show('play')
   $('#scorecard').hide()
   show('help')
@@ -6975,7 +6328,7 @@ function computeTravellerStatistics(pdirection) {
 
           var percent
 
-          if (g_scoring != 'IMP')
+          if (g_scoringType != 'IMP')
             percent =
               (100 * Number(tline.ns_match_points)) /
               (Number(tline.ns_match_points) + Number(tline.ew_match_points))
@@ -7001,7 +6354,7 @@ function computeTravellerStatistics(pdirection) {
 
         var percent
 
-        if (g_scoring != 'IMP')
+        if (g_scoringType != 'IMP')
           percent =
             (100 * Number(tline.ns_match_points)) /
             (Number(tline.ns_match_points) + Number(tline.ew_match_points))
@@ -7041,7 +6394,7 @@ function computeTravellerStatistics(pdirection) {
     ctable.deleteRow(-1)
   }
 
-  if (g_scoring != 'IMP') {
+  if (g_scoringType != 'IMP') {
     if (pdirection == 1)
       ctable.rows[0].cells[3].innerHTML = 'Min/Max NS Percentage'
     else ctable.rows[0].cells[3].innerHTML = 'Min/Max EW Percentage'
@@ -7060,7 +6413,7 @@ function computeTravellerStatistics(pdirection) {
     percentLo = curobj.minPercent
     percentHi = curobj.maxPercent
 
-    if (g_scoring != 'IMP') {
+    if (g_scoringType != 'IMP') {
       percentLo = parseFloat(curobj.minPercent).toFixed(0)
       percentHi = parseFloat(curobj.maxPercent).toFixed(0)
     }
@@ -7068,7 +6421,7 @@ function computeTravellerStatistics(pdirection) {
     if (pdirection == 2) {
       var tmp = percentLo
 
-      if (g_scoring != 'IMP') {
+      if (g_scoringType != 'IMP') {
         percentLo = 100 - percentHi
         percentHi = 100 - tmp
       } else if (g_eventType != 'Teams') {
@@ -7097,7 +6450,7 @@ function computeTravellerStatistics(pdirection) {
       false,
     )
 
-    if (g_scoring != 'IMP') {
+    if (g_scoringType != 'IMP') {
       if (percentHi == percentLo) cells[4].innerHTML = percentLo + '%'
       else cells[4].innerHTML = percentLo + '-' + percentHi + '%'
     } else {
@@ -7108,7 +6461,7 @@ function computeTravellerStatistics(pdirection) {
     // Draw the box showing minimum and maximum percentage, or IMPs
     var box1, box2, box3
 
-    if (g_scoring != 'IMP') {
+    if (g_scoringType != 'IMP') {
       box1 = drawBoxedBar(
         percentLo,
         percentLo,
@@ -7484,7 +6837,7 @@ function calculateMaxImps() {
         var nspts = Number(tline.ns_match_points)
         var ewpts = Number(tline.ew_match_points)
 
-        if ((nspts < 0) | (ewpts < 0)) g_scoring = 'IMP'
+        if ((nspts < 0) | (ewpts < 0)) g_scoringType = 'IMP'
 
         if (g_eventType != 'Teams') {
           if (nspts > maxImps) maxImps = nspts
@@ -7825,7 +7178,7 @@ function displayTraveller(pdirection) {
 
   window.scroll(0, 0)
 
-  if (g_scoring == 'IMP') {
+  if (g_scoringType == 'IMP') {
     if (g_eventType != 'Teams') rows[0].cells[5].innerHTML = 'Points'
     else rows[0].cells[5].innerHTML = 'Cross Imps'
   }
@@ -8150,7 +7503,7 @@ function displayTraveller(pdirection) {
       if (tline.ns_pair_number != '') {
         var percentNS, percentEW
 
-        if (g_scoring != 'IMP') {
+        if (g_scoringType != 'IMP') {
           percentNS = calcPercentage(tline, 1)
           percentEW = 100 - percentNS
         } else {
@@ -8169,7 +7522,7 @@ function displayTraveller(pdirection) {
           }
         }
 
-        if (g_scoring != 'IMP') row.cells[11].innerHTML = percentNS + '%'
+        if (g_scoringType != 'IMP') row.cells[11].innerHTML = percentNS + '%'
         else if (g_eventType != 'Teams')
           row.cells[11].innerHTML = tline.ns_match_points
         else {
@@ -8215,7 +7568,7 @@ function displayTraveller(pdirection) {
         row.cells[12].style.minWidth = '104px'
         row.cells[12].innerHTML = pbar + pbar2
 
-        if (g_scoring != 'IMP') row.cells[13].innerHTML = percentEW + '%'
+        if (g_scoringType != 'IMP') row.cells[13].innerHTML = percentEW + '%'
         else if (g_eventType != 'Teams')
           row.cells[13].innerHTML = tline.ew_match_points
         else {
@@ -8375,7 +7728,7 @@ function getSessionInfo() {
         pairs[i].percentage.charAt(0) == '-'
       ) // Heuristic to cope with Scorebridge
       {
-        g_scoring = 'IMP'
+        g_scoringType = 'IMP'
         percentPresent = false
         break
       } else percentPresent = true // Carry on with the loop in case a negative "percentage" is encoutered.
@@ -8384,13 +7737,13 @@ function getSessionInfo() {
 
   g_validPercentageFields = percentPresent
 
-  if (g_validPercentageFields) g_scoring = 'MatchPoints'
+  if (g_validPercentageFields) g_scoringType = 'MatchPoints'
   else {
     if (g_eventType != 'Teams')
       // If Teams, defer until cross-imps have been calculated
       calculateMaxImps()
 
-    if (g_scoring != 'IMP') g_scoring = 'VP'
+    if (g_scoringType != 'IMP') g_scoringType = 'VP'
   }
 
   sessInfo.singleWinner = singleWinner
@@ -8586,7 +7939,7 @@ function getRankingInfo() {
 
   // Calculate percentages, and high/low points for all positions
   for (i = 0; i < rankNS.length; i++) {
-    if (g_scoring != 'IMP')
+    if (g_scoringType != 'IMP')
       rankNS[i].percent =
         (100 * rankNS[i].plusMpts) / (rankNS[i].plusMpts + rankNS[i].minusMpts)
     else {
@@ -8604,7 +7957,7 @@ function getRankingInfo() {
   }
 
   for (i = 0; i < rankEW.length; i++) {
-    if (g_scoring != 'IMP')
+    if (g_scoringType != 'IMP')
       rankEW[i].percent =
         (100 * rankEW[i].plusMpts) / (rankEW[i].plusMpts + rankEW[i].minusMpts)
     else {
@@ -8629,7 +7982,7 @@ function getRankingInfo() {
   if (ewLow < nsLow) lowMpts = ewLow
   else lowMpts = nsLow
 
-  if (g_scoring == 'IMP') {
+  if (g_scoringType == 'IMP') {
     for (i = 0; i < rankNS.length; i++) {
       rankNS[i].percent =
         (100 * (rankNS[i].plusMpts - lowMpts)) / (highMpts - lowMpts)
@@ -8842,7 +8195,7 @@ function addSummarySection(
   var srow = addSummaryRow(stable, 'Boards:')
   srow.cells[1].innerHTML = playedInRole
 
-  if (g_scoring != 'IMP') {
+  if (g_scoringType != 'IMP') {
     srow = addSummaryRow(stable, 'Avg Percentage:')
 
     if (playedInRole != 0) {
@@ -9704,7 +9057,8 @@ function setupScorecard2(
                 var nspts = Number(tline.ns_match_points)
                 var ewpts = Number(tline.ew_match_points)
 
-                if (g_scoring != 'IMP') value = 100 * (nspts / (nspts + ewpts))
+                if (g_scoringType != 'IMP')
+                  value = 100 * (nspts / (nspts + ewpts))
                 else {
                   if (g_eventType != 'Teams')
                     value = 50 * (1 + nspts / g_maxImps)
@@ -9722,7 +9076,7 @@ function setupScorecard2(
 
                 sumOfPercent = sumOfPercent + value
 
-                if (g_scoring != 'IMP') {
+                if (g_scoringType != 'IMP') {
                   value = parseFloat(Math.round(value * 100) / 100).toFixed(0)
                   row.cells[9 + g_ofs].innerHTML = value + '%'
                 } else {
@@ -10077,7 +9431,7 @@ function setupScorecard(keepScrollSetting) {
 
   while (srows.length > 1) stable.deleteRow(-1)
 
-  if (g_scoring == 'IMP') rows[1].cells[6 + g_ofs].innerHTML = 'Points'
+  if (g_scoringType == 'IMP') rows[1].cells[6 + g_ofs].innerHTML = 'Points'
   if (g_eventType == 'Teams') rows[1].cells[6 + g_ofs].innerHTML = 'Cross Imps'
 
   var boards = g_travellers.event.board
@@ -10315,8 +9669,8 @@ function setupRankingTable(table, dir, rankInfo, winners) {
   var rows = table.rows
 
   if (
-    (g_scoring == 'IMP') |
-    (g_scoring == 'VP')
+    (g_scoringType == 'IMP') |
+    (g_scoringType == 'VP')
   ) // Change Percentage Column Header
   {
     rows[0].cells[3].innerHTML = 'Points'
@@ -10695,7 +10049,7 @@ function loadTraveller_2(data, statusText, jqXHR) {
           var nspts = Number(tline.ns_match_points)
           var ewpts = Number(tline.ew_match_points)
 
-          if (g_scoring != 'IMP') {
+          if (g_scoringType != 'IMP') {
             var percent = 100 * (nspts / (nspts + ewpts))
 
             if (pdirection == 2) percent = 100 - percent
@@ -10824,7 +10178,7 @@ function loadTraveller_2(data, statusText, jqXHR) {
     $('#ourPercentage').hide()
     $('#comparisonText').hide()
   } else {
-    if (g_scoring != 'IMP') $('#ourPercentage').show()
+    if (g_scoringType != 'IMP') $('#ourPercentage').show()
     else $('#ourPercentage').hide()
 
     $('#comparisonText').show()
@@ -12353,9 +11707,7 @@ function linToJson(str) {
       inHeader = false
       var trimmed = para.trim()
       if (trimmed.length > 0) {
-        console.log(
-          'Adding alert commenq qqqqqqqqqqqqqqqqqqqqqqqqqt: ' + trimmed,
-        )
+        console.log('Adding alert comment: ' + trimmed)
         alertComments.push(trimmed)
       }
     } else if (command == 'nt' || command == 'at') {
@@ -12717,7 +12069,7 @@ function getHands(context) {
 
   if (g_file == '') // No pbn url or pbn string supplied.
   {
-    if (g_test == 1)
+    if (g_isTest == 1)
       turl = 'data/' + g_hands.club + '_' + g_hands.event + '.pbn'
   } else if (
     g_file !== 1
@@ -12770,7 +12122,8 @@ function getTraveller(context) {
   var turl = ''
   var data = ''
 
-  if (g_test == 1) turl = 'data/' + g_hands.club + '_' + g_hands.event + '.json'
+  if (g_isTest == 1)
+    turl = 'data/' + g_hands.club + '_' + g_hands.event + '.json'
   else if ((g_xml != '') & (g_xml !== 1)) {
     turl = g_xml
   }
@@ -12938,28 +12291,28 @@ function setDisplaySizing() {
 
   if (dealerEl != null) dealerEl.style.fontSize = g_dealerFontSize + 'px'
 
-  g_urqButtonHeight = g_sectionHeight / 5 + 'px'
-  g_urqButtFontSize = (g_textBratio * 0.8 * g_sectionHeight) / 6 + 'px'
+  g_upperRightButtonHeight = g_sectionHeight / 5 + 'px'
+  g_upperRightButtonFontSize = (g_textBratio * 0.8 * g_sectionHeight) / 6 + 'px'
 
   var linplay = document.getElementById('linPlay')
 
   if (linplay != null) {
-    document.getElementById('prevrow').style.height = g_urqButtonHeight
-    document.getElementById('nextrow').style.height = g_urqButtonHeight
-    document.getElementById('accbutton').style.height = g_urqButtonHeight
-    document.getElementById('linPlay').style.height = g_urqButtonHeight
+    document.getElementById('prevrow').style.height = g_upperRightButtonHeight
+    document.getElementById('nextrow').style.height = g_upperRightButtonHeight
+    document.getElementById('accbutton').style.height = g_upperRightButtonHeight
+    document.getElementById('linPlay').style.height = g_upperRightButtonHeight
     document.getElementById('matchContractHelp').style.height =
-      g_urqButtonHeight
+      g_upperRightButtonHeight
     document.getElementById('prevRowButtFontSize').style.fontSize =
-      g_urqButtFontSize
+      g_upperRightButtonFontSize
     document.getElementById('nextRowButtFontSize').style.fontSize =
-      g_urqButtFontSize
+      g_upperRightButtonFontSize
     document.getElementById('accButtFontSize').style.fontSize =
-      g_urqButtFontSize
+      g_upperRightButtonFontSize
     document.getElementById('linPlayButtFontSize').style.fontSize =
-      g_urqButtFontSize
+      g_upperRightButtonFontSize
     document.getElementById('matchContractHelpButtFontSize').style.fontSize =
-      g_urqButtFontSize
+      g_upperRightButtonFontSize
   }
 
   g_scoreFontSize = g_sectionHeight / 8 + 'px'
@@ -13316,7 +12669,7 @@ function createBackgroundWorkers() {
   console.log('ncores: ' + nworkers)
 
   for (var i = 0; i < nworkers; i++) {
-    var worker = new Worker('bsol/calldds.js')
+    var worker = new Worker('bsol/calldds.js?ver=27')
     worker.addEventListener('message', listenerBackground)
     g_mworkers.push(worker)
   }
@@ -13342,7 +12695,7 @@ function createMainWorker() {
   if (g_worker == null) {
     if ((g_hands != null) & (g_session !== 0)) exitCardPlay() // g_hands may not have been initialised yet when createMainWorker is called at startup
     console.log('creating main worker thread')
-    g_worker = new Worker('bsol/calldds.js')
+    g_worker = new Worker('bsol/calldds.js?ver=27')
     g_worker.addEventListener('message', listenerMain)
   }
 }
@@ -13415,7 +12768,7 @@ function buildPage1(data, options) {
   var table = document.getElementById('rankingNS')
   table.rows[0].cells[4].id = 'rankingDD'
 
-  if (idx != -1) g_test = 1
+  if (idx != -1) g_isTest = 1
 
   if (typeof data.file != 'undefined') g_file = data.file
 
@@ -13651,21 +13004,7 @@ function buildpage2() {
 
   document.getElementById('titleText').innerHTML = g_title
 
-  // Demander à l'utilisateur s'il veut jouer la partie ou la faire défiler
-  if (
-    typeof g_hands.boards[g_lastBindex].Contract !== 'undefined' &&
-    typeof g_hands.boards[g_lastBindex].Declarer !== 'undefined'
-  ) {
-    var htmltext =
-      "<div style='text-align:center;'><h3>Comment souhaitez-vous visualiser cette partie ?</h3>"
-    htmltext +=
-      "<button style='margin:10px;padding:10px;font-size:16px;' onclick='playGame()'>Jouer la partie</button>"
-    htmltext +=
-      "<button style='margin:10px;padding:10px;font-size:16px;' onclick='scrollGame()'>Faire défiler la partie</button>"
-    htmltext += '</div>'
-
-    showPopup(htmltext)
-  }
+  // Popup supprimé à la demande de l'utilisateur
 
   setupCommandHelp()
   setupPlayHelp()
@@ -13841,7 +13180,7 @@ function doit(para) {
   g_hands.boards[0] = new Object()
   g_hands.boards[0].board = '1'
   g_lastBindex = 0
-  g_test = 0
+  g_isTest = 0
   g_file = 'xyz.pbn'
   g_travellers = null
   console.log(' 3 RAW DATA RECEIVED by loadHands:', data)
@@ -14033,7 +13372,7 @@ function autoPlayDefenders() {
 }
 
 // Variable globale pour suivre l'état du jeu automatique
-var g_autoPlayEnabled = true
+var g_autoPlayEnabled = false
 
 // Variable globale pour contrôler la visibilité des mains Est/Ouest
 let g_eastWestVisible = false
@@ -14160,7 +13499,11 @@ function parseLinComments(board, linContent) {
   }
 }
 
-// Fonction pour activer/désactiver le jeu automatique
+// La variable g_autoPlayEnabled est déjà déclarée plus haut
+
+/**
+ * Alterne l'état du jeu automatique (activé/désactivé).
+ */
 function toggleAutoPlay() {
   g_autoPlayEnabled = !g_autoPlayEnabled
   const button = document.getElementById('toggleAutoPlay')
@@ -14169,102 +13512,88 @@ function toggleAutoPlay() {
       ? 'Désactiver Auto-Jeu'
       : 'Activer Auto-Jeu'
   }
-  console.log('Auto-jeu ' + (g_autoPlayEnabled ? 'activé' : 'désactivé'))
 }
 
-// Fonction pour créer le bouton d'auto-jeu
+/**
+ * Crée le bouton permettant d'activer ou désactiver l'auto-jeu.
+ */
 function createAutoPlayButton() {
   const button = document.createElement('BUTTON')
   button.id = 'toggleAutoPlay'
   button.className = 'menuButton'
-  button.innerHTML = 'Désactiver Auto-Jeu'
+  button.innerHTML = g_autoPlayEnabled
+    ? 'Désactiver Auto-Jeu'
+    : 'Activer Auto-Jeu'
   button.onclick = toggleAutoPlay
 
-  // Ajouter le bouton à côté du bouton Play
   const playButton = document.getElementById('play')
   if (playButton && playButton.parentNode) {
     playButton.parentNode.insertBefore(button, playButton.nextSibling)
   }
 }
 
-// Modifier la fonction autoPlayDefenders pour vérifier si l'auto-jeu est activé
+/**
+ * Gère la logique de jeu automatique pour les défenseurs (Est et Ouest).
+ */
 function autoPlayDefenders() {
-  // Créer le bouton s'il n'existe pas déjà
+  // Création du bouton s'il n'existe pas
   if (!document.getElementById('toggleAutoPlay')) {
     createAutoPlayButton()
   }
 
-  // Vérifier si une partie est en cours
+  // Vérification qu'une partie est bien en cours
   if (g_session === 0) {
-    console.log('Aucune partie en cours')
     return
   }
 
-  // Est et Ouest sont toujours les défenseurs automatiques
+  // Les défenseurs automatiques sont Est (E) et Ouest (W)
   const defenders = ['E', 'W']
-  console.log('Mode auto-jeu activé pour Est et Ouest')
 
-  // Fonction pour vérifier si c'est au tour d'Est ou Ouest et jouer automatiquement
+  /**
+   * Vérifie si c'est au tour d'un défenseur et joue une carte le cas échéant.
+   */
   function checkAndPlayCard() {
-    // Vérifier si la session est toujours active
     if (g_session === 0) {
-      console.log('Session terminée')
       clearInterval(checkInterval)
       return
     }
 
-    // Ne jouer que si l'auto-jeu est activé
     if (!g_autoPlayEnabled) {
       return
     }
 
-    // Afficher la position du joueur actuel dans le pli, quel que soit le joueur
-    const currentPlayerPos = 'NESW'[g_currentPlayer]
-    const trickPosition = getCurrentTrickPosition()
-    console.log(
-      'Tour de',
-      currentPlayerPos,
-      "- C'est le",
-      trickPosition + 'ème à jouer dans ce pli',
-    )
+    const currentPlayerDir = 'NESW'[g_currentPlayer]
 
-    // Vérifier si c'est au tour d'Est ou Ouest pour l'auto-jeu
-    if (defenders.includes(currentPlayerPos)) {
-      // Trouver la meilleure carte à jouer
+    // Si c'est au tour d'un défenseur automatique
+    if (defenders.includes(currentPlayerDir)) {
       let bestCard = findBestCard()
 
-      // Jouer la meilleure carte trouvée
       if (bestCard) {
+        // Délai de 500ms pour simuler un temps de réflexion
         setTimeout(function () {
-          console.log('Joue automatiquement:', bestCard.suit + bestCard.rank)
           if (bestCard.button) {
             buttclick(bestCard.button)
           }
-        }, 500) // Délai pour simuler une réflexion
+        }, 500)
       }
     }
   }
 
-  // Fonction pour trouver la meilleure carte à jouer selon la position dans le pli
+  /**
+   * Détermine la meilleure carte à jouer selon la position dans le pli et les règles de base du bridge.
+   * @returns {Object|null} Informations sur la carte choisie ou null.
+   */
   function findBestCard() {
-    // Obtenir la position du joueur dans le pli (1er, 2ème, 3ème ou 4ème)
     const trickPosition = getCurrentTrickPosition()
-    console.log('Position dans le pli:', trickPosition)
-
-    // Récupérer la couleur d'atout (g_trumps contient la couleur d'atout: S, H, D, C ou N pour sans-atout)
     const trumpSuit = g_trumps
-    console.log("Couleur d'atout:", trumpSuit)
 
-    // Convertir la couleur d'atout en indice (0=S, 1=H, 2=D, 3=C, -1=NT)
+    // Conversion de la couleur d'atout en indice (0=Pique, 1=Cœur, 2=Carreau, 3=Trèfle, -1=Sans-Atout)
     let trumpSuitIndex = -1
-    if (trumpSuit === 'S') trumpSuitIndex = 0
-    else if (trumpSuit === 'H') trumpSuitIndex = 1
-    else if (trumpSuit === 'D') trumpSuitIndex = 2
-    else if (trumpSuit === 'C') trumpSuitIndex = 3
+    const suitsShort = 'SHDC'
+    trumpSuitIndex = suitsShort.indexOf(trumpSuit)
 
-    // Collecter toutes les cartes jouables avec des informations supplémentaires
+    // Extraction des cartes jouables
     let playableCards = []
-
     for (let suit = 0; suit < 4; suit++) {
       for (let card = 0; card < 13; card++) {
         if (
@@ -14275,11 +13604,11 @@ function autoPlayDefenders() {
           playableCards.push({
             suit: suit,
             card: card,
-            rank: card, // Valeur numérique de la carte (0-12)
+            rank: card,
             score: g_playableCards[suit][card],
             isAtout: suit === trumpSuitIndex,
-            isHonneur: card >= 8, // 8=T, 9=J, 10=Q, 11=K, 12=A
-            value: card, // Pour faciliter le tri
+            isHonneur: card >= 8, // T, J, Q, K, A
+            value: card,
           })
         }
       }
@@ -14287,10 +13616,9 @@ function autoPlayDefenders() {
 
     if (playableCards.length === 0) return null
 
-    // Déterminer la couleur demandée (si ce n'est pas le premier à jouer)
+    // Détermination de la couleur demandée
     let leadSuit = -1
     if (trickPosition > 1 && g_currentTrickCards) {
-      // Parcourir les cartes du pli actuel pour trouver la première carte jouée
       for (let player = 0; player < 4; player++) {
         for (let suit = 0; suit < 4; suit++) {
           for (let card = 0; card < 13; card++) {
@@ -14304,226 +13632,99 @@ function autoPlayDefenders() {
         if (leadSuit !== -1) break
       }
     }
-    console.log('Couleur demandée:', leadSuit)
 
-    // Vérifier si on a des cartes dans la couleur demandée
     const hasLeadSuit =
-      leadSuit !== -1 && playableCards.some((card) => card.suit === leadSuit)
+      leadSuit !== -1 && playableCards.some((c) => c.suit === leadSuit)
 
-    // Trier les cartes par couleur et par rang
-    playableCards.sort((a, b) => {
-      if (a.suit !== b.suit) return a.suit - b.suit
-      return a.card - b.card
-    })
-
-    // Grouper les cartes par couleur
+    // Organisation des cartes par couleur
     const cardsBySuit = [[], [], [], []]
-    playableCards.forEach((card) => {
-      cardsBySuit[card.suit].push(card)
-    })
+    playableCards.forEach((c) => cardsBySuit[c.suit].push(c))
 
-    let selectedCard
+    let selectedCard = null
 
-    // Appliquer des règles plus sophistiquées selon la position dans le pli
+    // Application des règles selon la position dans le pli
     if (trickPosition === 1) {
-      // PREMIER À JOUER
-      console.log('Règle appliquée: Premier à jouer')
-
-      // Stratégie: Jouer une carte qui établit une communication avec le partenaire
-
-      // 1. Si on a une séquence d'honneurs, jouer le plus haut
-      for (let suit = 0; suit < 4; suit++) {
-        if (cardsBySuit[suit].length >= 2) {
-          const sortedCards = [...cardsBySuit[suit]].sort(
-            (a, b) => b.card - a.card,
-          )
-
-          // Vérifier si on a une séquence d'honneurs (A-K, K-Q, Q-J)
+      // PREMIER À JOUER : Entame
+      // 1. Chercher une séquence d'honneurs (ex: R-D)
+      for (let s = 0; s < 4; s++) {
+        if (cardsBySuit[s].length >= 2) {
+          const sorted = [...cardsBySuit[s]].sort((a, b) => b.card - a.card)
           if (
-            sortedCards[0].isHonneur &&
-            sortedCards[1].isHonneur &&
-            sortedCards[0].card === sortedCards[1].card + 1
+            sorted[0].isHonneur &&
+            sorted[1].isHonneur &&
+            sorted[0].card === sorted[1].card + 1
           ) {
-            selectedCard = sortedCards[0]
-            console.log("Joue le haut d'une séquence d'honneurs")
+            selectedCard = sorted[0]
             break
           }
         }
       }
 
-      // 2. Si pas de séquence, jouer la 4ème carte à partir du haut dans notre couleur la plus longue
+      // 2. Jouer la 4ème meilleure dans la couleur la plus longue
       if (!selectedCard) {
         let longestSuit = 0
         let maxLength = 0
-
-        for (let suit = 0; suit < 4; suit++) {
-          if (cardsBySuit[suit].length > maxLength) {
-            maxLength = cardsBySuit[suit].length
-            longestSuit = suit
+        for (let s = 0; s < 4; s++) {
+          if (cardsBySuit[s].length > maxLength) {
+            maxLength = cardsBySuit[s].length
+            longestSuit = s
           }
         }
-
         if (maxLength >= 4) {
-          // Jouer la 4ème carte à partir du haut
-          const sortedCards = [...cardsBySuit[longestSuit]].sort(
+          const sorted = [...cardsBySuit[longestSuit]].sort(
             (a, b) => b.card - a.card,
           )
-          selectedCard = sortedCards[Math.min(3, sortedCards.length - 1)]
-          console.log(
-            'Joue la 4ème carte à partir du haut dans la couleur la plus longue',
-          )
+          selectedCard = sorted[Math.min(3, sorted.length - 1)]
         } else if (maxLength > 0) {
-          // Si moins de 4 cartes, jouer la plus petite
           selectedCard = cardsBySuit[longestSuit][0]
-          console.log(
-            'Joue la plus petite carte dans la couleur la plus longue',
-          )
         }
-      }
-
-      // 3. Si toujours pas de carte sélectionnée, jouer la plus petite carte
-      if (!selectedCard && playableCards.length > 0) {
-        selectedCard = playableCards[0]
-        console.log('Joue la plus petite carte disponible')
       }
     } else if (trickPosition === 2) {
-      // DEUXIÈME À JOUER
-      console.log('Règle appliquée: Deuxième à jouer')
-
-      // Stratégie: "Second petit" avec exceptions
-
-      // 1. Si on a la couleur demandée
+      // DEUXIÈME À JOUER : "Second petit"
       if (hasLeadSuit) {
         const suitCards = cardsBySuit[leadSuit]
-
-        // Si on a un honneur isolé (un seul honneur dans la couleur), le jouer
-        if (suitCards.length === 1 && suitCards[0].isHonneur) {
-          selectedCard = suitCards[0]
-          console.log('Joue un honneur isolé')
-        }
-        // Sinon, jouer la plus petite carte
-        else {
-          selectedCard = suitCards[0] // La plus petite
-          console.log("Applique la règle 'second petit'")
-        }
-      }
-      // 2. Si on n'a pas la couleur demandée et qu'on a de l'atout
-      else if (
+        // Si honneur seul, on peut être tenté de le jouer, mais ici on reste simple : petit
+        selectedCard = suitCards[0]
+      } else if (
         trumpSuitIndex !== -1 &&
         cardsBySuit[trumpSuitIndex].length > 0
       ) {
-        // Couper avec le plus petit atout
-        selectedCard = cardsBySuit[trumpSuitIndex][0]
-        console.log('Coupe avec le plus petit atout')
-      }
-      // 3. Si on ne peut ni fournir ni couper, défausser une carte sans valeur
-      else {
-        // Chercher la plus petite carte dans la couleur la moins utile
-        selectedCard = playableCards[0] // Par défaut, la plus petite carte
-        console.log('Défausse une carte sans valeur')
+        selectedCard = cardsBySuit[trumpSuitIndex][0] // Coupe petit
+      } else {
+        selectedCard = playableCards[0] // Défausse
       }
     } else if (trickPosition === 3) {
-      // TROISIÈME À JOUER
-      console.log('Règle appliquée: Troisième à jouer')
-
-      // Stratégie: Monter mais intelligemment
-
-      // 1. Si on a la couleur demandée
+      // TROISIÈME À JOUER : "Troisième monte"
       if (hasLeadSuit) {
         const suitCards = cardsBySuit[leadSuit]
-
-        // Déterminer la carte la plus haute déjà jouée dans cette couleur
-        let highestCardPlayed = -1
-        for (let player = 0; player < 4; player++) {
-          for (let card = 12; card >= 0; card--) {
-            // Commencer par l'As (12)
-            if (
-              g_currentTrickCards[player][card] === 1 &&
-              card > highestCardPlayed
-            ) {
-              highestCardPlayed = card
-              break
-            }
-          }
-        }
-
-        // Toujours essayer de gagner le pli avec la plus haute carte possible
-        let foundCard = false
-        for (let i = suitCards.length - 1; i >= 0; i--) {
-          selectedCard = suitCards[i]
-          foundCard = true
-          console.log(
-            'Joue la plus haute carte disponible dans la couleur demandée',
-          )
-          break
-        }
-      }
-      // 2. Si on n'a pas la couleur demandée et qu'on a de l'atout
-      else if (
+        selectedCard = suitCards[suitCards.length - 1] // Joue la plus forte
+      } else if (
         trumpSuitIndex !== -1 &&
         cardsBySuit[trumpSuitIndex].length > 0
       ) {
-        // Vérifier si le pli a déjà été coupé
-        let alreadyCut = false
-        for (let player = 0; player < 4; player++) {
-          for (let card = 0; card < 13; card++) {
-            if (
-              g_currentTrickCards[player][card] === 1 &&
-              player !== leadSuit
-            ) {
-              alreadyCut = true
-              break
-            }
-          }
-          if (alreadyCut) break
-        }
-
-        if (alreadyCut) {
-          // Si déjà coupé, couper plus haut seulement si nécessaire
-          selectedCard = cardsBySuit[trumpSuitIndex][0] // Le plus petit atout
-          console.log('Déjà coupé, joue petit atout')
-        } else {
-          // Sinon, couper avec un atout moyen
-          const trumps = cardsBySuit[trumpSuitIndex]
-          if (trumps.length > 1) {
-            selectedCard = trumps[Math.floor(trumps.length / 2)] // Atout moyen
-            console.log('Coupe avec un atout moyen')
-          } else {
-            selectedCard = trumps[0] // Le seul atout disponible
-            console.log('Coupe avec le seul atout disponible')
-          }
-        }
-      }
-      // 3. Si on ne peut ni fournir ni couper, défausser une carte sans valeur
-      else {
-        selectedCard = playableCards[0] // La plus petite carte
-        console.log('Défausse la plus petite carte')
+        // Coupe si possible
+        selectedCard = cardsBySuit[trumpSuitIndex][0]
+      } else {
+        selectedCard = playableCards[0] // Défausse
       }
     } else if (trickPosition === 4) {
-      // QUATRIÈME À JOUER
-      console.log('Règle appliquée: Quatrième à jouer')
-
-      // Stratégie: Prendre le pli avec la carte minimale nécessaire
-
-      // Déterminer qui est en train de gagner le pli et avec quelle carte
+      // QUATRIÈME À JOUER : Gagner le pli à moindre coût
       let winningPlayer = -1
       let winningCard = -1
       let winningSuit = -1
 
-      // Simuler le pli actuel pour déterminer qui gagne
-      for (let player = 0; player < 4; player++) {
-        for (let suit = 0; suit < 4; suit++) {
-          for (let card = 0; card < 13; card++) {
-            if (g_currentTrickCards[player][card] === 1) {
-              // Si c'est la première carte jouée ou si c'est un atout et que la carte gagnante n'est pas un atout
+      for (let p = 0; p < 4; p++) {
+        for (let s = 0; s < 4; s++) {
+          for (let c = 0; c < 13; c++) {
+            if (g_currentTrickCards[p][c] === 1) {
               if (
                 winningPlayer === -1 ||
-                (suit === trumpSuitIndex && winningSuit !== trumpSuitIndex) ||
-                (suit === winningSuit && card > winningCard)
+                (s === trumpSuitIndex && winningSuit !== trumpSuitIndex) ||
+                (s === winningSuit && c > winningCard)
               ) {
-                winningPlayer = player
-                winningCard = card
-                winningSuit = suit
+                winningPlayer = p
+                winningCard = c
+                winningSuit = s
               }
               break
             }
@@ -14531,112 +13732,85 @@ function autoPlayDefenders() {
         }
       }
 
-      // 1. Si on a la couleur demandée
       if (hasLeadSuit) {
         const suitCards = cardsBySuit[leadSuit]
-
-        // Si notre partenaire est en train de gagner
         if ((winningPlayer + 2) % 4 === g_currentPlayer) {
-          // Jouer la plus petite carte
-          selectedCard = suitCards[0]
-          console.log('Partenaire gagne déjà, joue petit')
+          selectedCard = suitCards[0] // Partenaire gagne, on joue petit
         } else {
-          // Essayer de gagner le pli avec la carte minimale nécessaire
-          let foundCard = false
+          // Essayer de battre la carte gagnante actuelle
           for (let i = 0; i < suitCards.length; i++) {
             if (
               (leadSuit === winningSuit && suitCards[i].card > winningCard) ||
               (leadSuit === trumpSuitIndex && winningSuit !== trumpSuitIndex)
             ) {
               selectedCard = suitCards[i]
-              foundCard = true
-              console.log('Joue juste au-dessus pour gagner le pli')
               break
             }
           }
-
-          // Si on ne peut pas gagner, jouer la plus petite
-          if (!foundCard) {
-            selectedCard = suitCards[0]
-            console.log('Ne peut pas gagner, joue la plus petite')
-          }
+          if (!selectedCard) selectedCard = suitCards[0]
         }
-      }
-      // 2. Si on n'a pas la couleur demandée et qu'on a de l'atout
-      else if (
+      } else if (
         trumpSuitIndex !== -1 &&
         cardsBySuit[trumpSuitIndex].length > 0
       ) {
         const trumps = cardsBySuit[trumpSuitIndex]
-
-        // Si notre partenaire est en train de gagner
         if ((winningPlayer + 2) % 4 === g_currentPlayer) {
-          // Jouer le plus petit atout
           selectedCard = trumps[0]
-          console.log('Partenaire gagne déjà, coupe petit')
         } else {
-          // Si le pli est déjà coupé
+          // Surcoupe possible ?
           if (winningSuit === trumpSuitIndex) {
-            // Essayer de surcouper
-            let foundCard = false
             for (let i = 0; i < trumps.length; i++) {
               if (trumps[i].card > winningCard) {
                 selectedCard = trumps[i]
-                foundCard = true
-                console.log('Surcoupe avec un atout plus fort')
                 break
               }
             }
-
-            // Si on ne peut pas surcouper, jouer le plus petit atout
-            if (!foundCard) {
-              selectedCard = trumps[0]
-              console.log('Ne peut pas surcouper, joue petit atout')
-            }
+            if (!selectedCard) selectedCard = trumps[0]
           } else {
-            // Couper avec le plus petit atout
             selectedCard = trumps[0]
-            console.log('Coupe avec le plus petit atout')
           }
         }
-      }
-      // 3. Si on ne peut ni fournir ni couper, défausser une carte sans valeur
-      else {
-        selectedCard = playableCards[0] // La plus petite carte
-        console.log('Défausse la plus petite carte')
+      } else {
+        selectedCard = playableCards[0]
       }
     }
 
-    // Si aucune règle n'a sélectionné de carte, prendre la carte avec le meilleur score
+    // Sécurité : si aucune carte choisie, prendre celle avec le meilleur score analytique
     if (!selectedCard && playableCards.length > 0) {
-      let bestCard = playableCards[0]
-      for (let i = 1; i < playableCards.length; i++) {
-        if (playableCards[i].score > bestCard.score) {
-          bestCard = playableCards[i]
-        }
-      }
-      selectedCard = bestCard
-      console.log(
-        'Aucune règle spécifique, joue la carte avec le meilleur score',
+      selectedCard = playableCards.reduce((prev, curr) =>
+        curr.score > prev.score ? curr : prev,
       )
     }
 
     if (!selectedCard) return null
 
-    // Convertir les indices en symboles de carte
-    const suits = 'SHDC'
-    const ranks = '23456789TJQKA'
-    const suit = suits[selectedCard.suit]
-    const rank = ranks[selectedCard.card]
+    const suitLetters = ['S', 'H', 'D', 'C']
+    const cardLetters = [
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      'T',
+      'J',
+      'Q',
+      'K',
+      'A',
+    ]
+    const suitChar = suitLetters[selectedCard.suit]
+    const cardChar = cardLetters[selectedCard.card]
 
-    // Trouver le bouton correspondant à cette carte
+    // Le format de l'ID du bouton est : button + suitLetter + cardLetter + suitIndex + cardIndex
     const buttonId =
-      'button' + suit + rank + selectedCard.suit + selectedCard.card
+      'button' + suitChar + cardChar + selectedCard.suit + selectedCard.card
     const button = document.getElementById(buttonId)
 
     return {
-      suit: suit,
-      rank: rank,
+      suit: suitChar,
+      rank: cardChar,
       button: button,
     }
   }

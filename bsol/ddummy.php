@@ -750,6 +750,9 @@
 										<BUTTON id=backPlay class=menuButton>&lt;</BUTTON>
 										<BUTTON id=play class=menuButton>Play</BUTTON>
 										<BUTTON id=forwardPlay class=menuButton style="display:none;">></BUTTON>
+										<BUTTON id=nextTrick class=menuButton style="display:none;">>></BUTTON>
+										<BUTTON id=toggleHandsBtn class=menuButton style="display:none;" onclick="toggleEastWestVisibility()">E/O</BUTTON>
+										<BUTTON id=restartBtn class=menuButton style="display:none;" onclick="restartGame()">Recommencer</BUTTON>
 										<BUTTON id=options class=menuButton>Options</BUTTON>
 										<BUTTON class=menuButton id=help style="margin-right:5px;">Help</BUTTON>
 							<TD ALIGN=RIGHT>
