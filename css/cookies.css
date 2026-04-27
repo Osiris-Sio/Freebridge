@@ -1,0 +1,45 @@
+#cookie-banner {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 999;
+  display: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#cookie-banner.active {
+  display: block;
+}
+
+#cookie-settings-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+#cookie-settings-modal.active {
+  display: flex;
+}
+
+#cookie-settings-modal article {
+  max-width: 500px;
+  width: 90%;
+}
+
+.cookie-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--muted-border-color);
+}

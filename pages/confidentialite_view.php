@@ -38,8 +38,25 @@
         <p>
             Les renseignements personnels que nous collectons sont recueillis au travers de formulaires et grâce à
             l'interactivité établie entre vous et notre site Web.
-            Nous utilisons également, comme indiqué dans la section suivante, des fichiers témoins et/ou journaux
-            pour réunir des informations vous concernant.
+            Nous utilisons également, comme indiqué dans la section suivante, des services d'analyse et des fichiers témoins
+            pour réunir des informations de navigation.
+        </p>
+    </article>
+
+    <hr>
+
+    <article>
+        <h3>Statistiques et audience :</h3>
+        <p>
+            Pour comprendre comment notre site est utilisé, nous utilisons <strong>GoatCounter</strong>. C'est un service d'analyse web qui met l'accent sur la vie privée. Contrairement à d'autres services, GoatCounter :
+        </p>
+        <ul>
+            <li>Ne suit pas les utilisateurs à travers différents sites Web.</li>
+            <li>Ne collecte pas d'informations personnelles identifiables (comme les adresses IP complètes).</li>
+            <li>N'utilise pas de cookies de suivi persistants à des fins publicitaires.</li>
+        </ul>
+        <p>
+            Les données collectées sont anonymisées et utilisées uniquement pour mesurer le trafic (nombre de visites, pages les plus consultées, etc.). Pour plus d'informations, vous pouvez consulter la <a href="https://www.goatcounter.com/privacy" target="_blank">politique de confidentialité de GoatCounter</a>.
         </p>
     </article>
 

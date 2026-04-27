@@ -78,7 +78,14 @@
         L'utilisateur est informé que lors de ses visites, un ou des cookies sont susceptibles de s'installer automatiquement sur son ordinateur par l'intermédiaire de son logiciel de navigation. Un cookie est un bloc de données qui ne permet pas d'identifier l'utilisateur, mais qui enregistre des informations relatives à la navigation de celui-ci sur le site.
     </p>
     <p>
-        Le paramétrage du logiciel de navigation permet d'informer de la présence de cookie et éventuellement de refuser. Si l'utilisateur refuse l'installation des cookies, il pourra toujours poursuivre sa navigation, mais certaines fonctionnalités du site pourraient être limitées. Pour toute information concernant les cookies, l'utilisateur peut consulter le site de la CNIL : <a href="http://www.cnil.fr">www.cnil.fr</a>.
+        Ce site utilise <strong>GoatCounter</strong> pour analyser son audience. GoatCounter est un service de statistiques web respectueux de la vie privée qui ne collecte pas de données personnelles identifiables et n'utilise pas de cookies de suivi intrusifs. L'activation de ces statistiques est soumise à votre consentement via notre bannière de cookies.
+    </p>
+    <p>
+        Le paramétrage du logiciel de navigation permet d'informer de la présence de cookie et éventuellement de refuser. Si l'utilisateur refuse l'installation des cookies, il pourra toujours poursuivre sa navigation, mais certaines fonctionnalités du site pourraient être limitées (comme la mémorisation du thème). Pour toute information concernant les cookies, l'utilisateur peut consulter le site de la CNIL : <a href="http://www.cnil.fr">www.cnil.fr</a>.
+    </p>
+    <p>
+        Vous pouvez modifier vos préférences en matière de cookies à tout moment en cliquant sur le bouton ci-dessous :<br><br>
+        <button class="secondary" onclick="CookieConsent.resetConsent()">Gérer mes préférences de cookies</button>
     </p>
 </article>
 

@@ -446,7 +446,7 @@ function initializeCardScroll(board) {
 
   // Afficher le contrat et le déclarant
   document.getElementById('currentPosition').innerHTML =
-    '<SPAN style="font-weight:bold;font-size:16px;">Contract: ' +
+    '<SPAN>Contract: ' +
     simpleSuitSymbol(board.Contract) +
     ' by ' +
     board.Declarer +
@@ -709,7 +709,7 @@ function prevCard() {
     }
 
     document.getElementById('currentPosition').innerHTML =
-      '<SPAN style="font-weight:bold;font-size:16px;">Contract: ' +
+      '<SPAN>Contract: ' +
       substituteSuitSymbol(g_session_contract) +
       ' by ' +
       g_session_declarer +
@@ -927,7 +927,7 @@ function displayCardOnBoard(board, cardIndex) {
     '</SPAN></BUTTON></DIV>'
 
   document.getElementById('currentPosition').innerHTML =
-    '<SPAN style="font-weight:bold;font-size:16px;">Contract: ' +
+    '<SPAN> Contract: ' +
     substituteSuitSymbol(g_session_contract) +
     ' by ' +
     g_session_declarer +
@@ -2101,10 +2101,10 @@ function substituteSuitSymbol(contract) {
   // Also inserts suit symbols in place of letters in the contract and specifies a monospaced font for displaying the contract.
   var symbolHeight = Math.floor(g_sectionHeight / 8) + 'px'
   var cardSymbols = [
-    '<img height=' + symbolHeight + ' src="bsol/pics/spade.gif">',
-    '<img height=' + symbolHeight + ' src="bsol/pics/heart.gif">',
-    '<img height=' + symbolHeight + ' src="bsol/pics/diamond.gif">',
-    '<img height=' + symbolHeight + ' src="bsol/pics/club.gif">',
+    '<img class="contractSymbol" src="bsol/pics/spade.gif">',
+    '<img class="contractSymbol" src="bsol/pics/heart.gif">',
+    '<img class="contractSymbol" src="bsol/pics/diamond.gif">',
+    '<img class="contractSymbol" src="bsol/pics/club.gif">',
   ]
   var suit = contract.charAt(1)
 
@@ -2433,9 +2433,7 @@ function processPosition(hcards, para) {
       '<BUTTON id="linPlay" class="menuButton" style="margin-left:2px;min-width:130px;max-height:' +
       g_urqButtonHeight +
       ';display:flex;justify-content:center;align-items:center;padding:0;">' +
-      '<SPAN id="linPlayButtFontSize" style="font-weight:bold;font-size:' +
-      g_urqButtFontSize +
-      ';display:flex;justify-content:center;align-items:center;width:100%;height:100%;text-align:center;line-height:1;">' +
+      '<SPAN id="linPlayButtFontSize">' +
       'Play: ' +
       substituteSuitSymbol(g_session_contract) +
       ' by ' +
@@ -2443,7 +2441,7 @@ function processPosition(hcards, para) {
       '</SPAN></BUTTON></DIV>'
 
     document.getElementById('currentPosition').innerHTML =
-      '<SPAN style="font-weight:bold;font-size:16px;">Contract: ' +
+      '<SPAN>Contract: ' +
       substituteSuitSymbol(g_session_contract) +
       ' by ' +
       g_session_declarer +
@@ -12569,11 +12567,10 @@ function loadHands(data, statusText, jqXHR, context) {
 }
 
 function decodeSpecialCharacters(str) {
+  if (!str) return str
   try {
-    // Créer un décodeur UTF-8
-    const decoder = new TextDecoder('utf-8')
-
     // Table de correspondance pour les caractères spéciaux courants
+    // (UTF-8 mal interprété comme ISO-8859-1)
     const specialChars = {
       'Ã¨': 'è',
       'Ã©': 'é',
@@ -12588,15 +12585,16 @@ function decodeSpecialCharacters(str) {
       'Ã»': 'û',
       'Ã¼': 'ü',
       'Ã§': 'ç',
+      'Â°': '°',
     }
 
-    // Remplacer les caractères spéciaux encodés
-    let decoded = str
-    Object.entries(specialChars).forEach(([encoded, decoded]) => {
-      decoded = decoded.replace(new RegExp(encoded, 'g'), decoded)
+    // Remplacer les séquences de caractères mal encodés
+    let result = str
+    Object.entries(specialChars).forEach(([encoded, replacement]) => {
+      result = result.replace(new RegExp(encoded, 'g'), replacement)
     })
 
-    return decoded
+    return result
   } catch (e) {
     console.warn('Erreur de décodage:', e)
     return str
@@ -12604,6 +12602,10 @@ function decodeSpecialCharacters(str) {
 }
 
 function loadHands_1(data, statusText, jqXHR, context) {
+  // Décoder les caractères spéciaux dès la réception pour éviter les erreurs de parsing
+  if (typeof data === 'string') {
+    data = decodeSpecialCharacters(data)
+  }
   if (typeof String.prototype.endsWith != 'function') {
     String.prototype.endsWith = function (str) {
       return this.substring(this.length - str.length, this.length) === str

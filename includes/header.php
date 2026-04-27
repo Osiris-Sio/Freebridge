@@ -17,6 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="css/nav.css">
     <link rel="stylesheet" href="css/toast.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cookies.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
@@ -27,6 +28,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="js/charts.js"></script>
     <script src="js/level-pages.js" defer></script>
     <script src="js/scroll-to-top.js" defer></script>
+    <script src="js/cookies.js" defer></script>
     <script>
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);

@@ -1033,9 +1033,13 @@ input[type='file'] {
   color: var(--text-color) !important;
 }
 
-.blankButton img {
+.blankButton img,
+.contractSymbol {
   width: 20px !important;
   height: auto !important;
+}
+
+.blankButton img {
   display: block !important;
   margin: auto !important;
 }

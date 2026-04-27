@@ -11,6 +11,7 @@
             <a href="mentionslegales">Mentions Légales</a> | <a href="confidentialite">Politique de confidentialité</a> | <a href="contact">Contactez-nous</a>
         </small></p>
 </footer>
+<?php include 'includes/cookies_banner.php'; ?>
 </body>
 
 </html>
