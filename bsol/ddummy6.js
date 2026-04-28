@@ -271,13 +271,13 @@ function displayErrorAbsPosition(message, x, y) {
 }
 
 function displayError(element, message) {
-  var popup = document.getElementById('popup_box')
-  popup.style.top = getPosition(element).y - 20 + 'px'
-  popup.style.left = getPosition(element).x + 'px'
-  popup.innerHTML = message
-  $('#popup_box').finish()
-  popup.style.display = 'none'
-  $('#popup_box').delay(100).fadeIn(200).delay(2000).fadeOut(100)
+  // var popup = document.getElementById('popup_box')
+  // popup.style.top = getPosition(element).y - 20 + 'px'
+  // popup.style.left = getPosition(element).x + 'px'
+  // popup.innerHTML = message
+  // $('#popup_box').finish()
+  // popup.style.display = 'none'
+  // $('#popup_box').delay(100).fadeIn(200).delay(2000).fadeOut(100)
 }
 
 function setRequestTimeout(override = false) {
@@ -2113,7 +2113,6 @@ function exitHandEntryMode() {
     setupTraveller(g_lastBindex, true)
     enterPlayMode()
     $('#scoreandtraveller').show()
-    $('#mainTitle').show()
     document.getElementById('editHand').innerHTML = 'Edit'
 
     var ptsctl = document.getElementById('ptsctl')
@@ -2244,7 +2243,6 @@ function resetState() {
   hideRanking()
   $('#scores').hide()
   $('#scoreandtraveller').hide()
-  //	$("#mainTitle").hide();
   $('').hide()
   hideAllPopups()
   $('#popup_box').finish()
@@ -3203,10 +3201,6 @@ function setupTraveller(index, active) {
     /*		if ((typeof g_hands.Title)!="undefined")
 			g_title = g_hands.Title;*/
 
-    document.getElementById('titleText').innerHTML = g_title
-
-    $('#mainTitle').show()
-
     if (typeof g_hands.display == 'undefined') {
       if (
         (g_hands.boards[g_lastBindex].DoubleDummyTricks ==
@@ -3302,7 +3296,6 @@ function edit() {
     setupTraveller(g_lastBindex, true)
     enterPlayMode()
     $('#scoreandtraveller').show()
-    $('#mainTitle').show()
     hideMenuItems()
 
     if ((g_isTest != 1) & (g_xml == '')) {
@@ -4300,12 +4293,6 @@ function showEmptyProgressBar(text) {
   document.getElementById('saveBoards').setAttribute('disabled', '')
   document.getElementById('editHand').setAttribute('disabled', '')
 
-  g_title =
-    "<DIV id=outerProgress style='float:left;width:800px;height:15px;'><DIV id=progress style='float:left;width:0px;height:15px;background-color:#88ff88;text-align:left;color:blue;'>" +
-    text +
-    '</DIV></DIV>'
-  document.getElementById('titleText').innerHTML = g_title
-  document.getElementById('outerProgress').width = '800px'
   document.getElementById('progress').width = '0px'
 }
 
@@ -4328,8 +4315,6 @@ function finishBackgroundOperation() {
 
   if (typeof g_hands.Title != 'undefined') g_title = g_hands.Title
   else g_title = '&nbsp;'
-
-  document.getElementById('titleText').innerHTML = g_title
 }
 
 function resetAnalyseAllBoards() {
@@ -5760,7 +5745,6 @@ function gotoTraveller(name) {
   setupTraveller(getTindexByName(g_hands.boards, name), true)
   enterPlayMode()
   $('#scoreandtraveller').show()
-  $('#mainTitle').show()
   $('#allBoards').hide()
   $('#popup_box').hide()
 }
@@ -5796,7 +5780,6 @@ function gotoTravellerByIndex(index) {
   setupTraveller(index, true)
   enterPlayMode()
   $('#scoreandtraveller').show()
-  $('#mainTitle').show()
   $('#allBoards').hide()
   $('#popup_box').hide()
 
@@ -5813,7 +5796,7 @@ function doPopupNoTimeout(pelement, htmltext, posx, posy) {
   popup.innerHTML = htmltext
   $('#popup_box').finish()
   popup.style.display = 'none'
-  $('#popup_box').show()
+  // $('#popup_box').show()
 }
 
 function showBoardKeypad() {
@@ -9485,8 +9468,6 @@ function setupScorecard(keepScrollSetting) {
 }
 
 function showRanking() {
-  var str = g_title
-
   var sessInfo = getSessionInfo()
 
   // If all pair numbers are recorded as NS pairs, then pair numbers are unique, so we can tell which direction they played
@@ -9495,13 +9476,11 @@ function showRanking() {
       str +
       '<BR><SPAN style="font-size;12px;color:#ff4444;">Calculated cross imp ranking for individual pairs (assumes NS and EW pairs do not switch direction during the event)</SPAN>'
 
-  document.getElementById('titleText').innerHTML = str
   $('#ranking').show()
   $('#rcheckdiv').show()
 }
 
 function hideRanking() {
-  document.getElementById('titleText').innerHTML = g_title
   $('#ranking').hide()
   $('#rcheckdiv').hide()
 }
@@ -10592,7 +10571,6 @@ function showCurrentBoard() {
     $('#checkListDiv').hide()
     $('#abuttons').hide()
     $('#scoreandtraveller').show()
-    $('#mainTitle').show()
     g_currow = getRowFromTraveller(g_hands.pair_number, g_hands.direction)
     setupTraveller(g_lastBindex, true)
     enterPlayMode()
@@ -13002,8 +12980,6 @@ function buildpage2() {
 
   if (typeof g_hands.Title != 'undefined') g_title = g_hands.Title
 
-  document.getElementById('titleText').innerHTML = g_title
-
   // Popup supprimé à la demande de l'utilisateur
 
   setupCommandHelp()
@@ -13020,8 +12996,6 @@ function buildpage2() {
   var emptyHand = false
 
   if (typeof g_hands.display == 'undefined') {
-    $('#mainTitle').show()
-
     if (g_hands.boards.length == 1) {
       g_lastBindex = 0
       var board = g_hands.boards[g_lastBindex]
@@ -13130,6 +13104,9 @@ function doRequestHTML(fileref) {
   var response
   var request = makeHttpObject()
   request.open('GET', fileref, false)
+  if (request.overrideMimeType) {
+    request.overrideMimeType('text/plain; charset=iso-8859-1')
+  }
   request.send(null)
   response = request.responseText
   return response
@@ -13144,6 +13121,7 @@ function doRequestHTMLasync(fileref, ploadfunc, errorFunc, pcontext) {
     error: errorFunc,
     dataType: 'html',
     context: pcontext,
+    mimeType: 'text/plain; charset=iso-8859-1',
   })
 }
 
@@ -13440,7 +13418,6 @@ function afficherCommentairesEtContrat() {
   displayAuctionComments(board.AlertComments)
 
   // Affiche le contrat
-  const titleText = document.getElementById('titleText')
   const contratDiv = document.createElement('div')
   contratDiv.innerHTML =
     '<h3>Contrat : ' + board.Contract + ' par ' + board.Declarer + '</h3>'

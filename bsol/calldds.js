@@ -144,9 +144,8 @@ self.Module = {
           }
           dealstr = log.remainCards
         } else if (currentRequest === 'C') {
-          // COMMANDE 'C' : Ramassage et Calcul du vainqueur (Uniquement si complet)
+          // COMMANDE 'C' : Ramassage du pli uniquement
           if (log.currentTrickCards.length === 4) {
-            evaluateTrick()
             log.currentTrickCards = []
             log.trickCard = 0
           }
@@ -178,6 +177,8 @@ self.Module = {
             )
             dealstr = JSON.parse(r1).sess.pbn
             log.remainCards = dealstr
+            evaluateTrick()
+            currentRequest = 'g'
           }
         }
 

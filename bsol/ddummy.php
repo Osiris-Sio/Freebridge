@@ -54,8 +54,8 @@
 		}
 	</style>
 	<script src="bsol/jquery-1.10.2.js"></script>
-	<script src="bsol/ddummy6.js?ver=15"></script>
-	<script src="bsol/json2.js"></script>
+	<script src="bsol/ddummy6.js"></script>
+	<script src=" bsol/json2.js"></script>
 	<script src="bsol/convertXML.js"></script>
 </head>
 
@@ -569,12 +569,7 @@
 		</div>
 		<div style="height:25px;width:98%;"></div>
 	</div>
-	<table width=100% class=results style="margin:0px;">
-		<tr>
-			<td width=100% align=center>
-		<tr id=mainTitle width=100%>
-			<td id=titleText width=100% align=center></td>
-		</tr>
+	<table class=results>
 		<tr id=scoreandtraveller style="display:none;">
 			<td valign=top>
 				<div id=travellerDIV style="float:left">
@@ -732,17 +727,14 @@
 									onclick="window.open('bsolhelp.htm?ver=2');">?</BUTTON>
 							</TD>
 							<TD ALIGN=center>
-								<BUTTON id="prev" class=menuButton style="min-width:25px;width:25px;">
+								<BUTTON id="prev" class=menuButton>
 									<< /BUTTON>
 										<BUTTON id="gotoBoard" class=menuButton style="min-width:60px;width:60px;">Go
 											To</BUTTON>
-										<BUTTON id="next" class=menuButton
-											style="min-width:25px;width:25px;margin-right:5px;">></BUTTON>
+										<BUTTON id="next" class=menuButton>></BUTTON>
 										<BUTTON id="showBoards" class=menuButton>Boards</BUTTON>
-										<BUTTON id=newBoard class=menuButton
-											style="padding-right:6px;padding-left:6px;">New...</BUTTON>
-										<BUTTON id=deleteBoard class=menuButton
-											style="padding-right:6px;padding-left:6px;margin-right:20px;">Delete</BUTTON>
+										<BUTTON id=newBoard class=menuButton>New...</BUTTON>
+										<BUTTON id=deleteBoard class=menuButton>Delete</BUTTON>
 										<BUTTON id=saveLIN class=menuButton>Save As LIN</BUTTON>
 										<BUTTON id=saveBoards class=menuButton>Save...</BUTTON>
 										<BUTTON id=editHand class=menuButton>Edit</BUTTON>
