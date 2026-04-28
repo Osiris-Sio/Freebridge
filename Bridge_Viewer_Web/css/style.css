@@ -1,0 +1,337 @@
+html {
+  font-size: 14px;
+}
+
+:root {
+  --table-bg: #216a3a;
+  --card-bg: #ffffff;
+  --card-color-red: #d32f2f;
+  --card-color-black: #000000;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main.container-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+/* Header compact */
+.app-header {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--pico-muted-border-color);
+}
+.app-header hgroup {
+  margin-bottom: 0;
+  text-align: left;
+}
+.app-header h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+.app-header h2 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.header-actions label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+.header-actions input {
+  margin-bottom: 0;
+  padding: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Layout de la grille */
+.grid-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 220px 1fr 280px;
+  gap: 1rem;
+  min-height: 0;
+}
+
+@media (max-width: 992px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+}
+
+/* Panneaux */
+.left-panel,
+.right-panel,
+.table-panel {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Rend les panneaux internes défilants si le contenu déborde */
+.left-panel,
+.right-panel {
+  overflow-y: auto;
+}
+
+.left-panel article,
+.right-panel article {
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.left-panel p {
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+/* Panneau droit */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.right-panel article:first-child {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.comments-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem;
+  background-color: var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  font-size: 0.95rem;
+}
+
+.right-panel article:last-child {
+  flex-shrink: 0;
+}
+
+.bidding-box {
+  max-height: 250px;
+  overflow-y: auto;
+}
+.bidding-table th,
+.bidding-table td {
+  text-align: center;
+  padding: 0.15rem;
+  font-size: 0.95rem;
+}
+
+/* Table */
+.table-panel {
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pico-background-color);
+  padding: 0.5rem;
+  border-radius: var(--pico-border-radius);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.bridge-table-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bridge-table {
+  display: grid;
+  /* Dimensions fixes pour que la table ne se redimensionne pas lorsque les cartes sont jouées */
+  grid-template-columns: 200px 110px 200px;
+  grid-template-rows: 130px 110px 130px;
+  gap: 1rem;
+  background: transparent;
+  justify-content: center;
+  align-content: center;
+}
+
+.hand {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+/* Position des mains */
+.hand.north {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  align-self: end;
+}
+.hand.south {
+  grid-column: 2;
+  grid-row: 3;
+  justify-self: center;
+  align-self: start;
+}
+.hand.west {
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: end;
+  align-self: center;
+}
+.hand.east {
+  grid-column: 3;
+  grid-row: 2;
+  justify-self: start;
+  align-self: center;
+}
+
+/* Center Trick */
+.center-trick {
+  grid-column: 2;
+  grid-row: 2;
+  position: relative;
+  width: 100px;
+  height: 100px;
+  justify-self: center;
+  align-self: center;
+  border: 6px solid #00ff00;
+  border-radius: 2px;
+}
+
+.trick-card {
+  position: absolute;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.trick-card.N {
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.trick-card.S {
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.trick-card.W {
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.trick-card.E {
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Carte style BSOL */
+.suit-row {
+  display: flex;
+  gap: 2px;
+  height: 28px;
+}
+
+.bsol-card {
+  width: 24px;
+  height: 28px;
+  background-color: var(--card-bg);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  user-select: none;
+}
+
+.bsol-suit-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.bsol-card.red {
+  color: var(--card-color-red);
+}
+.bsol-card.black {
+  color: var(--card-color-black);
+}
+
+.bsol-trick-card {
+  width: 32px;
+  height: 48px;
+  background-color: var(--card-bg);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  user-select: none;
+  padding: 2px;
+}
+.bsol-trick-card img {
+  width: 14px;
+  height: 14px;
+  margin-top: 2px;
+}
+.bsol-trick-card.red {
+  color: var(--card-color-red);
+}
+.bsol-trick-card.black {
+  color: var(--card-color-black);
+}
+
+/* Cache les anciens indicateurs de joueur car les positions de la grille sont évidentes */
+.player-label {
+  display: none;
+}
+
+/* Controlles de la page */
+.controls-container {
+  flex-shrink: 0;
+  background-color: var(--pico-background-color);
+  padding: 0.25rem 0;
+  text-align: center;
+  border-top: 1px solid var(--pico-muted-border-color);
+  margin-top: 0.25rem;
+}
+.controls-group {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.controls-group button {
+  margin-bottom: 0;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+.step-counter {
+  font-size: 1rem;
+  font-weight: bold;
+}

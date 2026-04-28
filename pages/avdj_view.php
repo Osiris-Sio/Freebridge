@@ -84,4 +84,14 @@
     <a href="http://localhost/freebridge-github/bsol/ddummy.php?file=bsol/Progresser/JMSA/10_-_le_laisser-passer/0_-_avec_un_seul_arret/Donne_2.lin">Test lecture fichier par URL</a>
 </article>
 
+<article>
+    <header>
+        <h1>Test Bridge Viewer Web (BVW)</h1>
+    </header>
+
+    <a href="bvw">Direction BVW</a>
+    <br>
+    <a href="bvw?file=bsol/Progresser/JMSA/10_-_le_laisser-passer/0_-_avec_un_seul_arret/Donne_2.lin">Test lecture fichier par URL</a>
+</article>
+
 <?php include 'includes/footer.php'; ?>
