@@ -5456,10 +5456,10 @@ function playNextCard(pthis) {
 
         // Effacer les messages d'erreur au passage
         displayError(document.getElementById('boardNumber'), '')
-        
+
         spinner(pthis)
         callddd(playedInMatch.toUpperCase())
-        
+
         // On recalibre l'index de correspondance pour éviter les erreurs au coup suivant
         g_lastMatchedPlayIndex = g_currentPlayIndex - 1
       } else {

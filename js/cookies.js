@@ -56,7 +56,6 @@ const CookieConsent = {
   applyConsent(consent) {
     // Logique pour activer/désactiver les scripts en fonction du consentement
     if (consent.analytics) {
-      console.log('GoatCounter enabled') // TEST
       this.loadGoatCounter('???')
     }
 
@@ -69,7 +68,9 @@ const CookieConsent = {
   },
 
   loadGoatCounter(code) {
-    if (document.getElementById('goatcounter-script')) return
+    if (document.getElementById('goatcounter-script')) {
+      return
+    }
 
     const script = document.createElement('script')
     script.id = 'goatcounter-script'

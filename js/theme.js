@@ -24,13 +24,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const newTheme = theme === 'dark' ? 'light' : 'dark'
 
     document.documentElement.setAttribute('data-theme', newTheme)
-    
+
     // On ne sauvegarde que si l'utilisateur a accepté les cookies de personnalisation
-    const consent = JSON.parse(localStorage.getItem('freebridge_cookie_consent') || '{}');
+    const consent = JSON.parse(
+      localStorage.getItem('freebridge_cookie_consent') || '{}',
+    )
     if (consent.personalization) {
-        localStorage.setItem('theme', newTheme)
+      localStorage.setItem('theme', newTheme)
     }
-    
+
     updateIcon(newTheme)
   })
 })
