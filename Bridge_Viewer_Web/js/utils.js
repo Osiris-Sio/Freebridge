@@ -31,11 +31,21 @@ const suitOrder = { S: 0, H: 1, D: 2, C: 3 }
  * @returns {number} La valeur numérique
  */
 function cardValue(rank) {
-  if (rank === 'A') return 14
-  if (rank === 'K') return 13
-  if (rank === 'Q') return 12
-  if (rank === 'J') return 11
-  if (rank === '10' || rank === 'T') return 10
+  if (rank === 'A') {
+    return 14
+  }
+  if (rank === 'K') {
+    return 13
+  }
+  if (rank === 'Q') {
+    return 12
+  }
+  if (rank === 'J') {
+    return 11
+  }
+  if (rank === '10' || rank === 'T') {
+    return 10
+  }
   return parseInt(rank)
 }
 
