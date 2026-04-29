@@ -8,8 +8,8 @@ $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $script_name = dirname($_SERVER['SCRIPT_NAME']);
 $base_path =
   $script_name === DIRECTORY_SEPARATOR || $script_name === '.'
-    ? '/'
-    : $script_name . '/';
+  ? '/'
+  : $script_name . '/';
 define('BASE_URL', $base_path);
 
 $path = str_replace($base_path, '', $request_uri);
@@ -67,9 +67,7 @@ if (strpos($path, 'bsol/') === 0) {
   }
 
   if (!$can_access) {
-    $_SESSION['messages'][
-      'errors'
-    ][] = "Désolé, votre rang ($user_rang) ne vous permet pas encore d'accéder au niveau $required_level.";
+    $_SESSION['messages']['errors'][] = "Désolé, votre rang ($user_rang) ne vous permet pas encore d'accéder au niveau $required_level.";
     header('Location: ' . BASE_URL . 'avdj');
     exit();
   }
@@ -91,7 +89,7 @@ if (strpos($path, 'bsol/') === 0) {
 $path = str_replace('.php', '', $path);
 
 // --- Liste des pages PRIVÉES ---
-$private_pages = ['account', 'avdj', 'cours', 'correction', 'rubrique'];
+$private_pages = ['account', 'avdj'];
 
 if (in_array($path, $private_pages) && !isset($_SESSION['user_id'])) {
   $_SESSION['messages']['errors'][] =
@@ -117,9 +115,6 @@ $static_pages = [
   'glossaire' => 'pages/glossaire_view.php',
   'philosophie' => 'pages/philosophie_view.php',
   'avdj' => 'pages/avdj_view.php',
-  'rubrique' => 'pages/rubrique_view.php',
-  'cours' => 'pages/cours_view.php',
-  'correction' => 'pages/correction_view.php',
   'bvw' => 'Bridge_Viewer_Web/bvw.php',
 ];
 

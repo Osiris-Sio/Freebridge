@@ -808,10 +808,10 @@
 		style="display:none;">
 	</div>
 	<div id=spinner style="position:absolute;display:none;">
-		<img src="bsol/spinner.gif">
+		<img src="bsol/pics/spinner.gif">
 	</div>
 	<div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;display:none;">
-		<img src="bsol/largeSpin.gif">
+		<img src="bsol/pics/largeSpin.gif">
 	</div>
 	<div id="commandHelp"
 		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
