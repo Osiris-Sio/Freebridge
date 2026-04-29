@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="Bridge_Viewer_Web/css/style.css" />
 
-<button type="button" onclick="window.history.back()">
+<button type="button" class="secondary" onclick="window.history.back()">
   ← Retour
 </button>
 <main class="container-fluid">

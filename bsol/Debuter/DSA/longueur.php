@@ -21,82 +21,82 @@ include '../../../includes/header.php'; ?>
         <summary>3 - Affranchissement de levées de longueur en défense (26 donnes)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JRYyXNbe" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JRYyXNbe" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=fGZs74ct" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=fGZs74ct" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 3</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=VBTNhDxq" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=VBTNhDxq" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 4</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=iKCPdNbD" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=iKCPdNbD" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 5</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eBCSwyGX" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_5.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eBCSwyGX" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_5.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 6</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=chLRr9bF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_6.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=chLRr9bF" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_6.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 7</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=D4ztiZNj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_7.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=D4ztiZNj" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_7.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 8</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5LtzuF8U" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_8.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=5LtzuF8U" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_8.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 9</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JPjRk6CF" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_9.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=JPjRk6CF" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_9.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 10</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bdypStmV" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_10.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=bdypStmV" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_10.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 11</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=jwvr98ZR" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_11.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=jwvr98ZR" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_11.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 12</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NGMrAcfm" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_12.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=NGMrAcfm" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_12.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 13</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Wn3Qm2pb" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_13.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Wn3Qm2pb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_13.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 14</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Ny8eCa3m" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_14.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=Ny8eCa3m" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_14.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 15</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=AUG5J4hi" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_15.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=AUG5J4hi" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_15.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 16</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gLfTp8mu" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_16.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=gLfTp8mu" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_16.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 17</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PsahJj57" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_17.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=PsahJj57" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_17.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 18</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SYvXBtPq" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_18.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=SYvXBtPq" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_18.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 19</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CruUkHfj" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_19.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=CruUkHfj" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_19.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 20</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kc5KEAXn" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_20.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=kc5KEAXn" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_20.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 21</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=EcUSq4up" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_21.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=EcUSq4up" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_21.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 22</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=wk3tpS48" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_22.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=wk3tpS48" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_22.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 23</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=GWcvBbtg" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_23.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=GWcvBbtg" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_23.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 24</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uQ2k5HWJ" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_24.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uQ2k5HWJ" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_24.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 25</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uVcR9a82" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_25.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=uVcR9a82" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_25.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 26</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xcfK59gC" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_26.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=xcfK59gC" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/DSA/3_-_Affranchissement_de_levees_de_longueur_en_defense/Donne_26.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
         </div>
     </details>

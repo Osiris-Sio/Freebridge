@@ -19,7 +19,7 @@ include '../../../includes/header.php'; ?>
                     <span>Donne <?php echo $i; ?></span>
                     <div class="lesson-actions">
                         <a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a>
-                        <a href="bsol/ddummy.php?file=bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_<?php echo $i; ?>.lin" role="button" class="secondary outline">Solution</a>
+                        <a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_<?php echo $i; ?>.lin" role="button" class="secondary outline">Solution</a>
                     </div>
                 </div>
             <?php endfor; ?>
