@@ -9,6 +9,11 @@ window.currentStateIndex = 0
 
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('file-input')
+  const langToggle = document.getElementById('lang-fr-cards')
+
+  if (langToggle) {
+    langToggle.checked = window.useFrenchCards
+  }
 
   // --- CHARGEMENT DES FICHIERS ---
 
@@ -161,4 +166,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     updateUI()
   })
+
+  // --- OPTION LANGUE DES CARTES ---
+  if (langToggle) {
+    langToggle.addEventListener('change', (e) => {
+      window.useFrenchCards = e.target.checked
+      localStorage.setItem('useFrenchCards', window.useFrenchCards)
+      updateUI()
+    })
+  }
 })

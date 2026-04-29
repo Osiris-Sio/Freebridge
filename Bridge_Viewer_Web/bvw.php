@@ -47,6 +47,12 @@
           </p>
         </div>
       </article>
+      <div class="lang-toggle">
+        <label>
+          <input type="checkbox" id="lang-fr-cards" />
+          Cartes FR (R, D, V)
+        </label>
+      </div>
     </aside>
 
     <!-- Jeu central -->

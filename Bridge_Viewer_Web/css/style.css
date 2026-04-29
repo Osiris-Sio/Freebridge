@@ -56,6 +56,18 @@ main.container-fluid {
   font-size: 0.9rem;
 }
 
+/* Toggle langage */
+.lang-toggle label {
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  background: var(--pico-muted-border-color);
+  border-radius: var(--pico-border-radius);
+  transition: background 0.2s;
+}
+.lang-toggle label:hover {
+  background: var(--pico-muted-background-color);
+}
+
 /* Layout de la grille */
 .grid-layout {
   flex: 1;
