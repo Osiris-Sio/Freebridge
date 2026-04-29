@@ -16,6 +16,22 @@ include '../../includes/header.php'; ?>
         <img src="assets/img/slider1.jpg" alt="Débuter avec Lancelot">
     </div>
 
+    <!-- LES RÈGLES DU JEU -->
+    <details class="level-folder">
+        <summary>Cours : Les règles du jeu</summary>
+        <div class="lesson-list">
+            <a href="assets/pdf/la-regle-du-jeu/la régle du jeu.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Les règles du jeu
+            </a>
+            <a href="assets/pdf/la-regle-du-jeu/Les enchères et le contrat.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Les enchères et le contrat
+            </a>
+            <a href="assets/pdf/la-regle-du-jeu/L'évaluation des mains.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> L'évaluation des mains
+            </a>
+        </div>
+    </details>
+
     <!-- JEU A SANS-ATOUT -->
     <details class="level-folder">
         <summary>Jeu à Sans-Atout</summary>
