@@ -34,7 +34,7 @@
     <textarea required name="demande" id="demande" placeholder="Saisissez votre demande..." rows="5"></textarea>
 
     <div class="grid-two-columns">
-      <button type="button" onclick="window.location.href='home'">
+      <button type="button" class="secondary" onclick="window.location.href='home'">
         ← Retour à l'accueil
       </button>
       <button type="submit">

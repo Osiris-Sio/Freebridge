@@ -2,7 +2,7 @@
 include '../../../includes/header.php'; ?>
 <link rel="stylesheet" href="css/level-pages.css">
 
-<button type="button" onclick="window.location.href='bsol/Progresser/progresser.php'">
+<button type="button" class="secondary" onclick="window.location.href='bsol/Progresser/progresser.php'">
     ← Retour au niveau progresser
 </button>
 

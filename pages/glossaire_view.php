@@ -5,7 +5,7 @@
     <p>Nous sommes désolés, mais cette page est en cours de développement.</p>
     <p>Nous vous invitons à revenir sur cette page ultérieurement.</p>
 
-    <button type="button" onclick="document.location.href='index.php'">
+    <button type="button" class="secondary" onclick="document.location.href='index.php'">
         Retour à l'accueil
     </button>
 </article>

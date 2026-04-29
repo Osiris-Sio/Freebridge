@@ -33,7 +33,7 @@
     <hr>
 
     <div style="text-align: center;">
-        <button type="button" class="contrast outline" onclick="document.location.href='avdj.php'">
+        <button type="button" class="secondary" onclick="document.location.href='avdj.php'">
             Retour à l'écran "À vous de jouer"
         </button>
     </div>

@@ -44,7 +44,7 @@
         <br>
 
         <div class="grid-two-columns">
-            <button type="button" onclick="history.back()">
+            <button type="button" class="secondary" onclick="history.back()">
                 ← Retour
             </button>
             <button type="submit">

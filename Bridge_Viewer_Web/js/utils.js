@@ -9,17 +9,17 @@ const PLAYERS = ['N', 'E', 'S', 'W']
 // Configuration graphique des enseignes (Pique, Cœur, Carreau, Trèfle)
 const SUITS = {
   S: {
-    icon: 'Bridge_Viewer_Web/img/pics/spade.gif',
+    icon: './bsol/pics/spade.gif',
     color: 'black',
     text: '♠',
   },
-  H: { icon: 'Bridge_Viewer_Web/img/pics/heart.gif', color: 'red', text: '♥' },
+  H: { icon: './bsol/pics/heart.gif', color: 'red', text: '♥' },
   D: {
-    icon: 'Bridge_Viewer_Web/img/pics/diamond.gif',
+    icon: './bsol/pics/diamond.gif',
     color: 'red',
     text: '♦',
   },
-  C: { icon: 'Bridge_Viewer_Web/img/pics/club.gif', color: 'black', text: '♣' },
+  C: { icon: './bsol/pics/club.gif', color: 'black', text: '♣' },
 }
 
 // Ordre hiérarchique des couleurs

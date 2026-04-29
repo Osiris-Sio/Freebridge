@@ -29,7 +29,7 @@ $niveau = $_GET['lvl'] ?? 1;
         <?php endif; ?>
     </div>
 
-    <button type="button" class="secondary outline" onclick="history.back()">
+    <button type="button" class="secondary" class="secondary outline" onclick="history.back()">
         Retour
     </button>
 </article>

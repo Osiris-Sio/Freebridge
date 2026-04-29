@@ -3400,3 +3400,7 @@ textarea,
     transition-duration: 0s !important;
   }
 }
+
+html {
+  font-size: 1.2em;
+}

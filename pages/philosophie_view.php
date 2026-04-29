@@ -23,7 +23,7 @@
     </ul>
 
     <div style="text-align: center; margin-top: 2rem;">
-        <button type="button" onclick="document.location.href='index.php'">
+        <button type="button" class="secondary" onclick="document.location.href='index.php'">
             Retour à l'accueil
         </button>
     </div>

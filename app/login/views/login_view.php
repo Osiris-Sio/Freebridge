@@ -24,7 +24,7 @@
         <br>
 
         <div class="grid-two-columns">
-            <button type="button" onclick="window.location.href='home'">
+            <button type="button" class="secondary" onclick="window.location.href='home'">
                 ← Retour à l'accueil
             </button>
             <button type="submit">
