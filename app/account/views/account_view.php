@@ -103,26 +103,6 @@
     </header>
 
     <div class="grid">
-        <!-- Niveau Progresser -->
-        <article>
-            <header>
-                <hgroup>
-                    <h3>Progresser</h3>
-                    <p>Idéal pour consolider vos bases</p>
-                </hgroup>
-                <p><mark>2,00€ / mois</mark></p>
-            </header>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="<?= getenv(
-                  'PAYPAL_BUTTON_ID_PROGRESSER',
-                ) ?>">
-                <input type="hidden" name="currency_code" value="EUR">
-                <input type="hidden" name="on0" value="Progresser">
-                <input type="hidden" name="os0" value="Accès">
-                <button type="submit" class="primary">S'abonner</button>
-            </form>
-        </article>
 
         <!-- Niveau Peaufiner -->
         <article>

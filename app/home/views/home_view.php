@@ -6,7 +6,7 @@
 <article>
 
     <header>
-        <h1>Qui sommes-nous ?</h1>
+        <h1>Bienvenue sur Freebridge !</h1>
     </header>
 
     <div>
@@ -17,15 +17,16 @@
             Nous avons depuis numérisé un grand nombre de donnes, qui offrent un intérêt pédagogique que nous sommes heureux de vous faire partager.
         </p>
         <p>
-            Vous pourrez jouer 4 donnes de niveau débutant par semaine, mais l'accès aux solutions (sous forme de vidéos) nécessite de créer un compte et de se connecter.
+            Vous pourrez jouer à toutes ces donnes et aux différents cours au niveau Débuter. Pour cela, il suffit de <a href="register">créer un compte</a> et de <a href="login">se connecter</a>.
         </p>
         <p>
-            Cet accès gratuit au niveau débutant vous permettra en outre de progresser avec des diaporamas sur le jeu de la carte.
+            Cet accès gratuit au niveau Débuter et au niveau Progresser* vous permettra en outre de progresser avec des diaporamas sur le jeu de la carte.
         </p>
         <p>
-            L'accès aux niveaux supérieurs sera mis en place dans le courant de l'année et nécessite un abonnement mensuel ou annuel d'un montant réduit pour un accès à des diaporamas plus techniques et à un nombre de donnes plus important.
+            L'accès aux niveaux supérieurs sera mis en place dans le courant de l'année et nécessite un abonnement mensuel ou annuel d'un montant réduit pour un accès à des diaporamas plus techniques et à un nombre de donnes plus important pour les niveaux Peaufiner et Confirmer.
         </p>
-        <p>Pour nous contacter par mail : <a href="contact">Formulaire de contact</a>
+        <p>Pour nous contacter, vous pouvez utiliser <a href="contact">ce formulaire de contact</a>
+        <p><i>* Le niveau Progresser vous est attribué après avoir terminé les cours du niveau débutant et avoir contacté le responsable du site pour en valider le niveau.</i></p>
     </div>
 
 
