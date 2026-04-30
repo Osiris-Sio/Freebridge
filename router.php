@@ -16,7 +16,11 @@ define(
   trim(file_get_contents(__DIR__ . '/bsol/url-solution.txt')),
 );
 
-$path = str_replace($base_path, '', $request_uri);
+if (strpos($request_uri, $base_path) === 0) {
+    $path = substr($request_uri, strlen($base_path));
+} else {
+    $path = $request_uri;
+}
 $path = trim($path, '/');
 
 // Si le chemin est vide, on va sur l'accueil
