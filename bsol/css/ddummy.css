@@ -79,7 +79,6 @@ body,
 #bdy {
   margin: 0;
   padding: 0;
-  background-color: var(--background-white);
   font-family: var(--font-primary);
   font-size: 16px;
   line-height: 1.5;
@@ -240,7 +239,6 @@ div.toppadding {
   min-height: 100vh;
   text-align: center;
   padding: var(--spacing-xl);
-  background-color: var(--background-white);
 }
 
 /* Form Elements */
@@ -803,7 +801,6 @@ body,
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden !important;
-  background-color: var(--background-white) !important;
 }
 
 table,

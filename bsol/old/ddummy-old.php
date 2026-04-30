@@ -3,7 +3,7 @@
 
 <head>
 	<base href="<?= BASE_URL ?>">
-	<link rel="stylesheet" href="bsol/ddummy-old.css?ver=5" type="text/css">
+	<link rel="stylesheet" href="bsol/old/ddummy-old.css?ver=5" type="text/css">
 	<title>Bridge Solver Online</title>
 	<style type="text/css">
 		.clickable {
@@ -16,7 +16,7 @@
 		}
 	</style>
 	<script src="bsol/jquery-1.10.2.js"></script>
-	<script src="bsol/ddummy6-old.js"></script>
+	<script src="bsol/old/ddummy6-old.js"></script>
 	<script src="bsol/json2.js"></script>
 	<script src="bsol/convertXML.js"></script>
 </head>

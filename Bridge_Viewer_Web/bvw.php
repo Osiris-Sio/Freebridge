@@ -14,7 +14,6 @@
       <h2>Visionneuse de PBN / LIN</h2>
     </hgroup>
     <div class="header-actions">
-      <label for="file-input">Fichier :</label>
       <input type="file" id="file-input" accept=".pbn,.lin" />
     </div>
   </header>

@@ -57,7 +57,7 @@
 	<script src="bsol/convertXML.js"></script>
 </head>
 
-<button type="button" onclick="window.history.back()">
+<button type="button" class="secondary" onclick="window.history.back()">
 	← Retour
 </button>
 
