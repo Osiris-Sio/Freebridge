@@ -1,7 +1,7 @@
-var playedCards = new Array()
-var history = new Array()
+const playedCards = new Array()
+let history = new Array()
 
-var log = new Object()
+let log = new Object()
 log.remainCards
 log.currentTrickCards = new Array()
 log.trumps = ''
@@ -14,10 +14,10 @@ log.trickCard = 0
 log.lastSuit = 0
 log.lastCard = 0
 
-var playDir = 'nesw'
-var cardStr = '23456789TJQKA'
-var suitStr = 'SHDC'
-var players = new Array()
+const playDir = 'nesw'
+const cardStr = '23456789TJQKA'
+const suitStr = 'SHDC'
+const players = new Array()
 
 var Module = {
   onAbort: function () {
@@ -29,7 +29,7 @@ var Module = {
     players.push('south')
     players.push('west')
 
-    var res = Module.cwrap('handleDDSRequest', 'string', [
+    const res = Module.cwrap('handleDDSRequest', 'string', [
       'string',
       'string',
       'string',
@@ -44,15 +44,17 @@ var Module = {
     self.postMessage('initialised')
 
     self.addEventListener('message', function (event) {
-      var request = event.data.context.request
+      let request = event.data.context.request
       var msg
 
       if (request == 'm') {
         var dealstr = event.data.dealstr
-        var vulstr = event.data.vulstr
-        var leadstr = event.data.leadstr
-        if (leadstr.length == 0) leadstr = null
-        var sockref = '' + event.data.sockref
+        const vulstr = event.data.vulstr
+        let leadstr = event.data.leadstr
+        if (leadstr.length == 0) {
+          leadstr = null
+        }
+        const sockref = '' + event.data.sockref
 
         var r1 = res(
           dealstr,
@@ -73,10 +75,10 @@ var Module = {
         msg.result = JSON.stringify(r1)
         msg.context = event.data.context
       } else if (request == 'b') {
-        var vul = convertVulStr(event.data.vulstr)
-        var scores = new Array()
+        const vul = convertVulStr(event.data.vulstr)
+        const scores = new Array()
 
-        var starttime = Date.now()
+        const starttime = Date.now()
 
         for (var i = 0; i < 4; i++) {
           r1 = res(
@@ -95,7 +97,7 @@ var Module = {
           scores.push(getBestScore(tmp))
         }
 
-        var elapsed = (Date.now() - starttime) / 1000
+        const elapsed = (Date.now() - starttime) / 1000
 
         msg = new Object()
         msg.result = r1
@@ -116,8 +118,8 @@ var Module = {
         log.trumps = event.data.trumps
         log.leader = event.data.leader
         var dealstr = event.data.pbn
-        var declarer = event.data.declarer
-        var names = event.data.names
+        const declarer = event.data.declarer
+        const names = event.data.names
 
         var r1 = res(
           dealstr,
@@ -147,7 +149,7 @@ var Module = {
           r1.sess.sockref = event.data.sockref
           var msg = new Object()
           msg.result = JSON.stringify(r1)
-          var context = new Object()
+          const context = new Object()
           context.request = 'u'
           msg.context = context
         }
@@ -180,10 +182,11 @@ var Module = {
           log.currentTrickCards.push(request)
           log.trickCard++
 
-          var str = ''
+          let str = ''
 
-          for (var i = 0; i < log.currentTrickCards.length; i++)
+          for (var i = 0; i < log.currentTrickCards.length; i++) {
             str += log.currentTrickCards[i]
+          }
 
           request = str
 
@@ -234,9 +237,11 @@ var Module = {
         tmp.sess.leader = log.leader
 
         if (tmp.sess.status != -2) {
-          var nxtplayer =
+          let nxtplayer =
             playDir.indexOf(log.leader) + tmp.sess.currentTrick.length
-          if (nxtplayer > 3) nxtplayer = nxtplayer - 4
+          if (nxtplayer > 3) {
+            nxtplayer = nxtplayer - 4
+          }
           tmp.sess.player = players[nxtplayer]
           tmp.sess.remaining = convertPBN(tmp.sess.pbn)
           log.remainCards = tmp.sess.pbn
@@ -274,51 +279,57 @@ var Module = {
 importScripts('dds-old.js')
 
 function convertVulStr(vulstr) {
-  var vul = ['None', 'All', 'NS', 'EW']
+  const vul = ['None', 'All', 'NS', 'EW']
 
   vulstr = vulstr.toUpperCase()
 
-  for (var i = 0; i < vul.length; i++) {
-    if (vul[i].toUpperCase() == vulstr) return i
+  for (let i = 0; i < vul.length; i++) {
+    if (vul[i].toUpperCase() == vulstr) {
+      return i
+    }
   }
 
   return -1
 }
 
 function getBestScore(msg) {
-  var score = 0
+  let score = 0
 
-  for (var i = 0; i < msg.sess.cards.length; i++) {
-    var sobj = msg.sess.cards[i]
+  for (let i = 0; i < msg.sess.cards.length; i++) {
+    const sobj = msg.sess.cards[i]
 
-    if (sobj.score > score) score = sobj.score
+    if (sobj.score > score) {
+      score = sobj.score
+    }
   }
 
   return 13 - score // Number of tricks makeable by declarer for this suit with this leader
 }
 
 function convertPBN(pbn) {
-  var cardStr = '23456789TJQKA'
-  var res = new Array()
+  const cardStr = '23456789TJQKA'
+  const res = new Array()
 
   pbn = pbn.substring(2) // Eliminate W:
   pbn = pbn.split(' ') // Gives an array of the four hands, West first
 
   for (
-    var i = 0;
+    let i = 0;
     i < 4;
     i++ // For each hand
   ) {
-    var j = i + 1 // Start with North hand first
-    if (j > 3) j = 0
+    let j = i + 1 // Start with North hand first
+    if (j > 3) {
+      j = 0
+    }
 
-    var suits = new Array()
-    var hand = pbn[j]
+    const suits = new Array()
+    let hand = pbn[j]
     hand = hand.split('.') // Split into suits
 
-    for (var k = 0; k < 4; k++) {
-      var values = new Array()
-      var str = hand[k]
+    for (let k = 0; k < 4; k++) {
+      const values = new Array()
+      const str = hand[k]
 
       for (m = 0; m < str.length; m++) {
         values.push(cardStr.indexOf(str.charAt(m)))
@@ -335,25 +346,27 @@ function convertPBN(pbn) {
 
 function evaluateTrick() {
   // Which direction won trick, and is on lead for the next trick ?
-  var suitStr = 'SHDC'
-  var cardStr = '23456789TJQKA'
-  var trumpSuit = suitStr.indexOf(log.trumps.toUpperCase())
-  var dir = 0
+  const suitStr = 'SHDC'
+  const cardStr = '23456789TJQKA'
+  const trumpSuit = suitStr.indexOf(log.trumps.toUpperCase())
+  let dir = 0
 
-  var tricksuit
-  var lastTrump = -1
-  var maxFace = -1
+  let tricksuit
+  let lastTrump = -1
+  let maxFace = -1
 
-  for (var i = 0; i < 4; i++) {
-    var suit = suitStr.indexOf(log.currentTrickCards[i].charAt(0))
-    var face = cardStr.indexOf(log.currentTrickCards[i].charAt(1))
+  for (let i = 0; i < 4; i++) {
+    const suit = suitStr.indexOf(log.currentTrickCards[i].charAt(0))
+    const face = cardStr.indexOf(log.currentTrickCards[i].charAt(1))
 
     if (i == 0) {
       trickSuit = suit
       trickFace = face
       maxFace = face
 
-      if (suit == trumpSuit) lastTrump = face
+      if (suit == trumpSuit) {
+        lastTrump = face
+      }
     } else {
       if (lastTrump == -1) // Trump not played yet
       {
@@ -376,16 +389,21 @@ function evaluateTrick() {
     }
   }
 
-  var curlead = playDir.indexOf(log.leader)
+  let curlead = playDir.indexOf(log.leader)
 
   curlead = curlead + dir
-  if (curlead > 3) curlead = curlead - 4
+  if (curlead > 3) {
+    curlead = curlead - 4
+  }
 
   log.leader = playDir.charAt(curlead)
   log.player = playDir.charAt(curlead)
 
-  if ((log.leader == 'n') | (log.leader == 's')) log.tricksNS++
-  else log.tricksEW++
+  if ((log.leader == 'n') | (log.leader == 's')) {
+    log.tricksNS++
+  } else {
+    log.tricksEW++
+  }
 
   log.trick++
 }
