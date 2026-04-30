@@ -20,7 +20,7 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Cours : Les règles du jeu</summary>
         <div class="lesson-list">
-            <a href="assets/pdf/la-regle-du-jeu/la régle du jeu.pdf" class="lesson-item" target="_blank">
+            <a href="assets/pdf/la-regle-du-jeu/La-regle-du-jeu.pdf" class="lesson-item" target="_blank">
                 <i class="fas fa-chalkboard-teacher"></i> Les règles du jeu
             </a>
             <a href="assets/pdf/la-regle-du-jeu/Les enchères et le contrat.pdf" class="lesson-item" target="_blank">
