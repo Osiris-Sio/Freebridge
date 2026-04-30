@@ -11,6 +11,10 @@ $base_path =
     ? '/'
     : $script_name . '/';
 define('BASE_URL', $base_path);
+define(
+  'URL_SOLUTION',
+  trim(file_get_contents(__DIR__ . '/bsol/url-solution.txt')),
+);
 
 $path = str_replace($base_path, '', $request_uri);
 $path = trim($path, '/');
@@ -91,7 +95,7 @@ if (strpos($path, 'bsol/') === 0) {
 $path = str_replace('.php', '', $path);
 
 // --- Liste des pages PRIVÉES ---
-$private_pages = ['account', 'avdj', 'cours', 'correction', 'rubrique'];
+$private_pages = ['account', 'avdj'];
 
 if (in_array($path, $private_pages) && !isset($_SESSION['user_id'])) {
   $_SESSION['messages']['errors'][] =
@@ -117,9 +121,6 @@ $static_pages = [
   'glossaire' => 'pages/glossaire_view.php',
   'philosophie' => 'pages/philosophie_view.php',
   'avdj' => 'pages/avdj_view.php',
-  'rubrique' => 'pages/rubrique_view.php',
-  'cours' => 'pages/cours_view.php',
-  'correction' => 'pages/correction_view.php',
   'bvw' => 'Bridge_Viewer_Web/bvw.php',
 ];
 

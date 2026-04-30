@@ -24,16 +24,16 @@ include '../../../includes/header.php'; ?>
         <summary>11 - Jouer à l'atout (4 donnes)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=juAeKXwt" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=juAeKXwt" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=TWNaRfDL" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=TWNaRfDL" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_2.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 3</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MnfV5WNr" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=MnfV5WNr" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_3.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
             <div class="lesson-item"><span>Donne 4</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eBtinxcX" target="_blank" role="button" class="outline">Jouer</a><a href="bsol/ddummy.php?file=bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=eBtinxcX" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Debuter/JMA/11_-_Jouer_a_l'atout/Donne_4.lin" role="button" class="secondary outline">Solution</a></div>
             </div>
         </div>
     </details>

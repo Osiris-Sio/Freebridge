@@ -2,7 +2,7 @@
 
 <link rel="stylesheet" href="Bridge_Viewer_Web/css/style.css" />
 
-<button type="button" onclick="window.history.back()">
+<button type="button" class="secondary" onclick="window.history.back()">
   ← Retour
 </button>
 <main class="container-fluid">
@@ -14,7 +14,6 @@
       <h2>Visionneuse de PBN / LIN</h2>
     </hgroup>
     <div class="header-actions">
-      <label for="file-input">Fichier :</label>
       <input type="file" id="file-input" accept=".pbn,.lin" />
     </div>
   </header>
@@ -47,6 +46,12 @@
           </p>
         </div>
       </article>
+      <div class="lang-toggle">
+        <label>
+          <input type="checkbox" id="lang-fr-cards" />
+          Cartes FR (R, D, V)
+        </label>
+      </div>
     </aside>
 
     <!-- Jeu central -->

@@ -71,3 +71,26 @@ function sortHand(hand) {
 function getLHO(p) {
   return PLAYERS[(PLAYERS.indexOf(p) + 1) % 4]
 }
+
+/**
+ * Traduit le rang d'une carte selon la langue choisie.
+ * @param {string} rank - Le rang en anglais (A, K, Q, J, T, 9...)
+ * @returns {string} Le rang traduit
+ */
+function getDisplayRank(rank) {
+  if (!window.useFrenchCards) {
+    return rank === 'T' ? '10' : rank
+  }
+
+  const frMap = {
+    A: 'A',
+    K: 'R',
+    Q: 'D',
+    J: 'V',
+    T: '10',
+  }
+
+  return frMap[rank] || rank
+}
+
+window.useFrenchCards = localStorage.getItem('useFrenchCards') === 'true'

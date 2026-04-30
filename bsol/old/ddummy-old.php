@@ -1,66 +1,25 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="Access-Control-Allow-Origin" content=*>
-	<meta http-equiv="Access-Control-Allow_Methods" content="GET,POST">
-	<META http-equiv="Expires" content="0">
-	<META http-equiv="Cache-Control" content="no-cache">
-	<META http-equiv="Pragma" content="no-cache">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel="stylesheet" href="css/ddummy.css">
-
-	<?php include '../includes/header.php'; ?>
-
-	<style>
-		/* Styles critiques pour les commentaires */
-		.comments-container {
-			display: flex;
-			gap: 20px;
-			margin: 10px 0;
-			width: 100%;
+	<base href="<?= BASE_URL ?>">
+	<link rel="stylesheet" href="bsol/old/ddummy-old.css?ver=5" type="text/css">
+	<title>Bridge Solver Online</title>
+	<style type="text/css">
+		.clickable {
+			cursor: pointer;
+			color: blue;
 		}
 
-		.comment-left {
-			flex: 2;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			white-space: pre-wrap;
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-			hyphens: auto;
-			text-overflow: ellipsis;
-			min-width: 0;
-			max-width: 100%;
-		}
-
-		.comment-right {
-			flex: 1;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			white-space: pre-wrap;
-			overflow-wrap: break-word;
-			word-wrap: break-word;
-			hyphens: auto;
-			text-overflow: ellipsis;
-			min-width: 0;
-			max-width: 100%;
+		.clickable:hover {
+			text-decoration: underline;
 		}
 	</style>
 	<script src="bsol/jquery-1.10.2.js"></script>
-	<script src="bsol/ddummy6.js"></script>
-	<script src=" bsol/json2.js"></script>
+	<script src="bsol/old/ddummy6-old.js"></script>
+	<script src="bsol/json2.js"></script>
 	<script src="bsol/convertXML.js"></script>
 </head>
-
-<button type="button" class="secondary" onclick="window.history.back()">
-	← Retour
-</button>
-
 <script language="JavaScript">
 	function getParaName(parameters, i) {
 		var temp = parameters[i].split("=");
@@ -492,7 +451,7 @@
 			}
 		}; //end onload()
 
-		reader.readAsText(file, "ISO-8859-1");
+		reader.readAsText(file);
 	}
 
 	function handleLoadFileSelect(evt) {
@@ -520,63 +479,60 @@
 			return;
 		}
 
-		if (result != "") {
-			document.getElementById("form1").style.display = "none";
+		if (result != "")
 			buildPage(result, '{\'options\':{\'ns\':[\'true\',\'false\',\'false\'],\'ew\':[\'true\',\'false\',\'false\'],\'mk\':[\'true\',\'false\'],\'auto\':\'true\'}}');
-		}
-
-		setTimeout(() => {}, 100);
-
 
 		window.focus();
 	}
 </script>
 
-
-<body id=bdy onLoad="processRequest();">
+<body id=bdy style="background-color:white;width:800px;" onLoad="processRequest();">
+	<button type="button" onclick="window.history.back()">
+		← Retour
+	</button>
 	<span id="ruler">
 	</span>
-	<div class="bridge-container" id="form1">
-		<div class="bridge-title">Bridge Solver Online</div>
+	<div class="container" id=form1 style="margin-left:10px;margin-top:10px;border:1px solid black;padding:15px;width:400px;background-color:#FFFFCC;display:none;">
+		<SPAN style="font-size:20px;font-weight:bold;color:#3366FF;">Bridge Solver Online</SPAN><BR><BR>
 		<form method="post" action="" enctype="multipart/form-data" id="myform">
-			<input type="button" id="loadFile1" value="Ouvrir un fichier" class="bridge-btn"
-				onclick="document.getElementById('loadFile').click();" />
-			<div class="bridge-note">Ouvrez un fichier PBN, DLM ou LIN</div>
-			<input type="file" id="loadFile" name="loadfiles[]" />
-
-			<div class="bridge-note">ou</div>
-
-			<input type="button" value="Saisir une main" class="bridge-btn" onclick="createEmptyBoard();" />
+			<div>
+				<input type="button" id="loadFile1" value="Open File" onclick="document.getElementById('loadFile').click();" /> Open a PBN, DLM, or LIN file
+				<input type="file" id="loadFile" name="loadfiles[]" style="display:none;" /><BR><BR>
+				Or<BR><BR>
+				<input type=button value="Input Hand" onclick="createEmptyBoard();">
+			</div>
 		</form>
 	</div>
 	<div id=abuttons style="display:none;">
 		<div style="position: fixed; top: 0;left: 0;
-		z-index:20;float:left;width:100%;">
+		z-index:20;background-color: white;float:left;background-color:#DDDDDD;width:100%;">
 			<BUTTON class=menuButton id=aboard>Play It Again</BUTTON>
 			<BUTTON class=sessionMenuButton id=aranking style="margin-left:10px;min-width:95px;">All Pairs</BUTTON>
 			<BUTTON class=sessionMenuButton id=ascorecard style="min-width:95px;">Personal</BUTTON>
 			<BUTTON class=sessionMenuButton id=aacc style="min-width:95px;">Accuracy</BUTTON>
 			<BUTTON class=sessionMenuButton id=atraveller style="margin-left:10px;min-width:95px;">Board</BUTTON>
 			<BUTTON class=sessionMenuButton id=aprev style="min-width:20px;margin-left:10px;">
-				<< /BUTTON>
+				< </BUTTON>
 					<BUTTON class=sessionMenuButton id=agotoboard style="min-width:95px;">Go To..</BUTTON>
 					<BUTTON class=sessionMenuButton id=anext style="min-width:20px;">></BUTTON>
 					<BUTTON class=sessionMenuButton id=acheck style="margin-left:10px;min-width:95px;">Check</BUTTON>
-					<BUTTON class=sessionMenuButton id=ahelp style="margin-left:10px;min-width:95px;"
-						onclick="sessionHelp();">Help</BUTTON>
+					<BUTTON class=sessionMenuButton id=ahelp style="margin-left:10px;min-width:95px;" onclick="sessionHelp();">Help</BUTTON>
 		</div>
 		<div style="height:25px;width:98%;"></div>
 	</div>
-	<table class=results>
+	<table width=100% class=results style="margin:0px;">
+		<tr>
+			<td width=100% align=center>
+		<tr id=mainTitle width=100%>
+			<td id=titleText width=100% align=center></td>
+		</tr>
 		<tr id=scoreandtraveller style="display:none;">
 			<td valign=top>
 				<div id=travellerDIV style="float:left">
-					<TABLE id="traveller" HEIGHT=100% class=traveller CELLPADDING=1 CELLSPACING=0
-						STYLE="width:600px;font-family:Courier New;font-weight:normal;font-size:10pt;">
+					<TABLE id="traveller" HEIGHT=100% class=traveller CELLPADDING=1 CELLSPACING=0 STYLE="width:600px;font-family:Courier New;font-weight:normal;font-size:10pt;">
 						<TR>
 							<TH COLSPAN=12>
-								<TABLE class=results id=board WIDTH=100% height=100% CELLPADDING=2
-									STYLE="font-family:Times New Roman;">
+								<TABLE class=results id=board WIDTH=100% height=100% CELLPADDING=2 STYLE="font-family:Times New Roman;">
 									<TR>
 										<TD Width=33%>&nbsp;</TD>
 										<TD id=northHand Width=33%>&#9824; K 4 2<BR>
@@ -592,27 +548,15 @@
 										</TD>
 										<TD Width=33% height=100% valign="middle" align="center">
 											<table id=vul class=vul style="width:120px;height:120px;">
-
 												<tr height=20px>
 													<td width=20px></td>
 													<td id=nvul align="center" valign="top" height=20px></td>
 													<td width=20px></td>
 												</tr>
 												<tr height=100%>
-
-													<td style="width:20px;height:56px;" id=wvul align="center"
-														valign="middle"></td>
-
-													<td id="boardNumber" align="center" valign="middle"
-														style="font-size:24px;">
-
-													</td>
-
-
-
-
+													<td style="width:20px;height:56px;" id=wvul align="center" valign="middle"></td>
+													<td id=boardNumber align=center valign="middle" style="font-size:24px"></td>
 													<td width=20px id=evul align="center" valign="middle"></td>
-
 												</tr>
 												<tr height=20px>
 													<td height=20px></td>
@@ -628,12 +572,11 @@
 									</TR>
 									<TR>
 										<TD Width=33% style="align:top;">
-											<div id=ptsctl style="float:left;height:20%;display:none;">
-												<label id=krLabel style="cursor:pointer;vertical-align:middle;"><input
-														id="krcalc" type="checkbox" name="krcalc"
-														style="cursor:pointer;vertical-align:bottom;">KR</label>
+											<div id=ptsctl style="float:left;height:20%;">
+												<label id=krLabel style="cursor:pointer;vertical-align:middle;"><input id="krcalc" type="checkbox" name="krcalc" style="cursor:pointer;vertical-align:bottom;">KR</label>
+												<input id=krhelp style="max-height:10px;max-width:10px;cursor:pointer;vertical-align:middle;" readonly value=? />
 											</div>
-											<div style="clear:both;height:80%;display:none;">
+											<div style="clear:both;height:80%;">
 												<TABLE id=points class=pointsTable width=100%>
 													<TR>
 														<TD width=33%></TD>
@@ -659,8 +602,7 @@
 										</TD>
 										<TD Width=33% style="align:center;valign:middle;">
 											<div id=mctable style="width:100%;">
-												<table id=makeableContracts class="mc" cellpadding=0 cellspacing=2px
-													style="width:50%;padding:2px;display:none;">
+												<table id=makeableContracts class="mc" cellpadding=0 cellspacing=2px style="width:50%;padding:2px;">
 													<tr>
 														<td>
 														<td>&#9827;
@@ -707,44 +649,30 @@
 							</TH>
 						</TR>
 					</TABLE>
-					<!-- <script>
-						function afficherCommentaire(commentaire) {
-							// document.getElementById("commentaire").innerHTML = commentaire;
-						}
-						afficherCommentaire("Par : 3SA par Sud. La défense optimale limite à 9 levées."); -->
-					</script>
-					<TABLE WIDTH=100% class=results style="border:0px; padding:0px;">
-						<div class="comments-container">
-							<div class="comment-left"></div>
-							<div id="commentaire" class="comment-right"></div>
-						</div>
+					<TABLE WIDTH=100% class=results style="border:0px; border-collapse:collapse; padding:0px;">
 						<TR style="padding:0px;">
 							<TD align=LEFT>
 								<BUTTON id=bsession class=sessionMenuButton>Results Analysis</BUTTON>
-								<BUTTON class=btn-circle id=bsessionHelp style="margin-right:5px;"
-									onclick="window.open('bsolhelp.htm?ver=2');">?</BUTTON>
+								<BUTTON class=btn-circle id=bsessionHelp style="margin-right:5px;" onclick="window.open('bsolhelp.htm?ver=2');">?</BUTTON>
 							</TD>
 							<TD ALIGN=center>
-								<BUTTON id="prev" class=menuButton>
-									<< /BUTTON>
-										<BUTTON id="gotoBoard" class=menuButton style="min-width:60px;width:60px;">Go
-											To</BUTTON>
-										<BUTTON id="next" class=menuButton>></BUTTON>
+								<BUTTON id="prev" class=menuButton style="min-width:25px;width:25px;">
+									< </BUTTON>
+										<BUTTON id="gotoBoard" class=menuButton style="min-width:60px;width:60px;">Go To</BUTTON>
+										<BUTTON id="next" class=menuButton style="min-width:25px;width:25px;margin-right:5px;">></BUTTON>
 										<BUTTON id="showBoards" class=menuButton>Boards</BUTTON>
-										<BUTTON id=newBoard class=menuButton>New...</BUTTON>
-										<BUTTON id=deleteBoard class=menuButton>Delete</BUTTON>
+										<BUTTON id=newBoard class=menuButton style="padding-right:6px;padding-left:6px;">New...</BUTTON>
+										<BUTTON id=deleteBoard class=menuButton style="padding-right:6px;padding-left:6px;margin-right:20px;">Delete</BUTTON>
 										<BUTTON id=saveLIN class=menuButton>Save As LIN</BUTTON>
 										<BUTTON id=saveBoards class=menuButton>Save...</BUTTON>
 										<BUTTON id=editHand class=menuButton>Edit</BUTTON>
 										<BUTTON id=clearHand class=menuButton>Clear</BUTTON>
-										<BUTTON id=backPlay class=menuButton>&lt;</BUTTON>
-										<BUTTON id=play class=menuButton>Play</BUTTON>
-										<BUTTON id=forwardPlay class=menuButton style="display:none;">></BUTTON>
-										<BUTTON id=nextTrick class=menuButton style="display:none;">>></BUTTON>
-										<BUTTON id=toggleHandsBtn class=menuButton style="display:none;" onclick="toggleEastWestVisibility()">E/O</BUTTON>
-										<BUTTON id=restartBtn class=menuButton style="display:none;" onclick="restartGame()">Recommencer</BUTTON>
-										<BUTTON id=options class=menuButton>Options</BUTTON>
-										<BUTTON class=menuButton id=help style="margin-right:5px;">Help</BUTTON>
+										<BUTTON id=backPlay class=menuButton>
+											< </BUTTON>
+												<BUTTON id=play class=menuButton>Play</BUTTON>
+												<BUTTON id=forwardPlay class=menuButton style="display:none;">></BUTTON>
+												<BUTTON id=options class=menuButton>Options</BUTTON>
+												<BUTTON class=menuButton id=help style="margin-right:5px;">Help</BUTTON>
 							<TD ALIGN=RIGHT>
 								<BUTTON id="branking" class=menuButton style="min-width:90px;">Ranking</BUTTON>
 								<BUTTON class=menuButton id=bscorecard style="width:95px;">Scorecard</BUTTON>
@@ -758,42 +686,36 @@
 			</td>
 		</tr>
 	</table>
-	<div id="allBoards" style="float:left;padding:0px;border:0px;width:100%;display:none;">
+	<div id=allBoards style="float:left;padding:0px:border:0px;width:800px;display:none;">
 		<div id=scrollDiv style="float:left;padding:0px; border:0px; width: 800px; height: 400px; overflow-y: auto;">
 			<table id=travellers style="border:0px;border-collapse:collapse;" align=center>
 				<tr>
 					<td style="align:center;">
-						<span style="font-size:16px;">Scroll through boards and tap on a board number to make it the
-							active board</span>
+						<span style="font-size:16px;">Scroll through boards and tap on a board number to make it the active board</span>
 					</td>
 				</tr>
 			</table>
 		</div>
 		<div style="clear:both;">
-			<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;width:100%;"
-				align=center>
+			<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;width:800px;" align=center>
 				<tr style="height:20px;">
 					<td style="align:center;">
-						<span style="font-size:12px;">Scroll through boards and tap on a board number to make it the
-							active board</span>
+						<span style="font-size:12px;">Scroll through boards and tap on a board number to make it the active board</span>
 					</td>
 					<td align=right valign="middle">
-						<div id=progressBox
-							style="border:1px solid black;display:none;width:200px;height:20px;float:left;">
+						<div id=progressBox style="border:1px solid black;display:none;width:200px;height:20px;float:left;">
 							<div id=progress style="background-color:#00FF00;float:left;height:20px;width:0px;"></div>
 						</div>
-						<div style="float:right;"><BUTTON id=analyseAll class=menuButton style="width:100px;">Analyse
-								All</BUTTON></div>
+						<div style="float:right;"><BUTTON id=analyseAll class=menuButton style="width:100px;">Analyse All</BUTTON></div>
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-	<div id="progressDiv"
-		style="position: fixed; z-index:1; left: 100px; top: 200px; display:none; border-style:solid; border-width:thin; z-index: 100;">
-		<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;">
+	<div id="progressDiv" style="position: fixed; z-index:1; left: 100px; top: 200px; width=420px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
+		<table cellpadding=2px cellspacing=0 style="border-top:2px solid black;border-collapse:collapse;width:420px;" align=center>
 			<tr style="height:20px;">
-				<td>
+				<td style="align:center;">
 					<div id=progressBarBox style="border:1px solid black;width:400px;height:20px;float:left;">
 						<div id=progressBar style="background-color:#00FF00;float:left;height:20px;width:0px;"></div>
 					</div>
@@ -802,38 +724,29 @@
 			</tr>
 		</table>
 	</div>
-	<div id="popup_box"
-		style="display:none;">
+	<div id="popup_box" style="position: fixed; z-index:1; left: 300px; top: 200px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFFF">
 	</div>
 	<div id=spinner style="position:absolute;display:none;">
 		<img src="bsol/pics/spinner.gif">
 	</div>
-	<div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;display:none;">
+	<div id=largeSpinner style="position:fixed;z-index:32767;top:200px;left:375px;width:80px;height;80px;display:none;">
 		<img src="bsol/pics/largeSpin.gif">
 	</div>
-	<div id="commandHelp"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="commandHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	</div>
-	<div id="playHelp"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="playHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	</div>
-	<div id="editHelp"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="editHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	</div>
-	<div id="playMatchContractHelp"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="playMatchContractHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	</div>
-	<div id="resultReasons"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="resultReasons" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 	</div>
-	<div id="settingsHelp"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
+	<div id="settingsHelp" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
 	</div>
-	<div id="krHelpText"
-		style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
+	<div id="krHelpText" style="position: absolute; left: 100px; top: 200px; width:600px; word-wrap:break-word; padding:10px; display:none; border-style:solid; border-width:thin; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
 	</div>
-	<div id="settings"
-		style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+	<div id="settings" style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
 		<table>
 			<tr>
 				<th><SPAN style="font-weight:bold;font-size:16px;">Settings:</SPAN></th>
@@ -845,16 +758,14 @@
 				</td>
 			</tr>
 			<tr>
-				<td><BUTTON id=settingsHide>Close</BUTTON><BUTTON id=showSettingsHelp
-						style="margin-left:20px;">Help</BUTTON></td>
+				<td><BUTTON id=settingsHide>Close</BUTTON><BUTTON id=showSettingsHelp style="margin-left:20px;">Help</BUTTON></td>
 			</tr>
 		</table>
 	</div>
-	<div id="optionsBox" style="display:none">
-		<h2>Options</h2>
-		<table class="options">
-			<tr>
-				<td style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
+	<div id="optionsBox" style="position: absolute; left: 150px; top: 200px; width:500px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 100; background-color:#FFFFEE">
+		<table class=options style="width:500px;border-collapse;border-spacing:10px;">
+			<tr style="cell-spacing:100px;">
+				<td style="border:0px;padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;N/S Playable Card Display:
 					<p><br>
 						<input id="nsrad1" type="radio" name="NSOptions" value="1" checked style="cursor:pointer;">
 						<label id="nslab1" for="nsrad1" style="cursor:pointer;">Subscripts and Colours</label>
@@ -867,7 +778,7 @@
 						<br>
 					</p>
 				</td>
-				<td style="padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;E/W Playable Card Display:
+				<td style="border:0px;padding:10px;">&nbsp;&nbsp;&nbsp;&nbsp;E/W Playable Card Display:
 					<p><br>
 						<input id="ewrad1" type="radio" name="EWOptions" value="1" checked style="cursor:pointer;">
 						<label id="ewlab1" for="ewrad1" style="cursor:pointer;">Subscripts and Colours</label>
@@ -903,22 +814,23 @@
 				</td>
 			</tr>
 		</table>
-		<div style="text-align:center; margin-top:20px;">
-			<BUTTON id="optionsClose">Fermer</BUTTON>
-			<BUTTON id="optionsSave">Sauvegarder par défaut</BUTTON>
-		</div>
+		<table width="500" border="0">
+			<tr>
+				<td align="center"><br><BUTTON id="optionsClose" style="width:80px;cursor:pointer;">Close</BUTTON>&nbsp;&nbsp;<BUTTON id="optionsSave" style="width:120px;">Save As Default</BUTTON></td>
+			</tr>
+		</table>
 	</div>
-	<div id="toolsSubMenu" style="display:none">
-		<h2>Outils</h2>
-		<BUTTON id="analyseAllBoards">Analyser toutes les donnes</BUTTON>
-		<BUTTON id="showPlayerAcc">Matrice de précision des joueurs</BUTTON>
-		<BUTTON id="showSettings">Paramètres...</BUTTON>
-		<BUTTON id="showReleaseHistory">Historique des versions</BUTTON>
-		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';" style="margin-top:20px; background-color: var(--secondary-color);">Fermer</BUTTON>
+	<div id="toolsSubMenu" style="position: absolute; left: 300px; top: 100px; width:240px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
+		<h2>Select a Function:</h2>
+		<BUTTON id=analyseAllBoards style="width:230px;text-align:left;"><SPAN style="font-weight:bold;">Analyse All Boards</SPAN></BUTTON><BR>
+		<BUTTON id=showPlayerAcc style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Show Player Accuracy Matrix</SPAN></BUTTON>
+		<BUTTON id=showSettings style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Settings...</SPAN></BUTTON>
+		<BUTTON id=showReleaseHistory style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Release Notes...</SPAN></BUTTON>
+		<BR><BR>
+		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';"><SPAN style="font-weight:bold;">Close</SPAN></BUTTON>
 	</div>
 	<div id=rcheckdiv style="float:left;clear:both;display:none;">
-		<input type="checkbox" id="rankcheck" value="checkbox"><label for=rankcheck style="font-size:12px;">Sort tables
-			by pair number</label>
+		<input type="checkbox" id="rankcheck" value="checkbox"><label for=rankcheck style="font-size:12px;">Sort tables by pair number</label>
 	</div>
 	<div id=ranking style="float:left;clear:both;display:none;">
 		<TABLE id="rankingNS" width=450 class=ranking CELLPADDING=2 STYLE="font-weight:normal;">
@@ -961,12 +873,9 @@
 			<div id="player_direction" style="float:left;display:none;">
 				<span id=first_player_name style="font-size:12px;">Set direction for </span>
 				<p>
-				<div id=optNEdiv style="float:left;margin-right:5px;"><label><input id="pdiroptNE" type="radio"
-							name="pdirgroup" value="radio" checked onclick="setupScorecard();">N&amp;E</label></div>
-				<div id=optNWdiv style="float:left;margin-right:5px;"><label><input id="pdiroptNW" type="radio"
-							name="pdirgroup" value="radio" onclick="setupScorecard();">N&amp;W</label></div>
-				<div id=optSEdiv style="float:left;margin-right:5px;"><label><input id="pdiroptSE" type="radio"
-							name="pdirgroup" value="radio" onclick="setupScorecard();">S&amp;E</label></div>
+				<div id=optNEdiv style="float:left;margin-right:5px;"><label><input id="pdiroptNE" type="radio" name="pdirgroup" value="radio" checked onclick="setupScorecard();">N&amp;E</label></div>
+				<div id=optNWdiv style="float:left;margin-right:5px;"><label><input id="pdiroptNW" type="radio" name="pdirgroup" value="radio" onclick="setupScorecard();">N&amp;W</label></div>
+				<div id=optSEdiv style="float:left;margin-right:5px;"><label><input id="pdiroptSE" type="radio" name="pdirgroup" value="radio" onclick="setupScorecard();">S&amp;E</label></div>
 				</p>
 			</div>
 			<div style="float:left;clear:both;">
@@ -1014,17 +923,15 @@
 		<div id=compSubHeading style="float:left;clear:both;"></div>
 		<br>
 		<div id=percentValue style="margin-left:10px;clear:both;float:left;"></div>
-		<div id="ourPercentage"
-			style="float:left;margin-left:20px;border:1px solid black;min-height:15px;height:15px;max-height:5px;width:150px;min-width:150px;max-width:150px;">
+		<div id="ourPercentage" style="float:left:margin-left:20px;border:1px solid black;min-height:15px;height:15px;max-height:5px;width:150px;min-width:150px;max-width:150px;">
 			<div id="pbar" style="height:100%;min-height:100%;border:none;"></div>
 		</div>
 		<br>
-		<div id="comparisonText" style="float:left;clear:both;">
+		<div id="comparisonText" style="float:left:clear:both;">
 		</div>
 		<br>
 		<div style="float:left;display:none;">
-			<input type="checkbox" id="cfcheck" value="checkbox" checked><label for=cfcheck style="font-size:12px;">Show
-				contract frequency table</label>
+			<input type="checkbox" id="cfcheck" value="checkbox" checked><label for=cfcheck style="font-size:12px;">Show contract frequency table</label>
 		</div>
 		<TABLE id=travandhand rows=1 cols=2 width=100%>
 			<TR>
@@ -1072,8 +979,7 @@
 					<TABLE style="border:none;border-collapse:collapse;">
 						<TR>
 							<TD>
-								<TABLE id=minihand rows=3 cols=3
-									style="border:1px solid black;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;">
+								<TABLE id=minihand rows=3 cols=3 style="border:1px solid black;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;">
 									<TR>
 										<TD WIDTH=33% id=miniDlr></TD>
 										<TD id=miniNorth width=33%></TD>
@@ -1112,8 +1018,7 @@
 						</TR>
 						<TR>
 							<TD align=center>
-								<table id=miniMakeableContracts class="mc_small" cellpadding=0 cellspacing=2px
-									style="width:50%;padding:2px;">
+								<table id=miniMakeableContracts class="mc_small" cellpadding=0 cellspacing=2px style="width:50%;padding:2px;">
 									<tr>
 										<td>
 										<td>&#9827;
@@ -1159,7 +1064,6 @@
 			</TR>
 		</TABLE>
 	</div>
-
 </body>
 
 </html>

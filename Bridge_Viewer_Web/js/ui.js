@@ -21,7 +21,7 @@ function createBsolCard(content, colorClass, isSuitIcon = false) {
     img.className = 'bsol-suit-icon'
     div.appendChild(img)
   } else {
-    div.textContent = content
+    div.textContent = getDisplayRank(content)
   }
   return div
 }
@@ -37,7 +37,7 @@ function createTrickCardElement(card) {
   div.className = `bsol-trick-card ${suitData.color}`
 
   const rankSpan = document.createElement('span')
-  rankSpan.textContent = card.rank
+  rankSpan.textContent = getDisplayRank(card.rank)
 
   const img = document.createElement('img')
   img.src = suitData.icon
