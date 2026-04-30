@@ -56,7 +56,7 @@ const CookieConsent = {
   applyConsent(consent) {
     // Logique pour activer/désactiver les scripts en fonction du consentement
     if (consent.analytics) {
-      this.loadGoatCounter('???')
+      this.loadGoatCounter('BGlorie')
     }
 
     if (!consent.personalization) {
