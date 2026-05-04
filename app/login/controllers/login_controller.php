@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           'Connexion réussie. Ravi de vous revoir ' .
           $_SESSION['user_prenom'] .
           '!';
-        header('Location: home');
+        header('Location: avdj');
         exit();
       } else {
         $_SESSION['messages']['errors'][] =

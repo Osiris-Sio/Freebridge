@@ -6,7 +6,7 @@
   </header>
 
   <form
-    action="https://formsubmit.co/louis.amedro@outlook.fr"
+    action="https://formsubmit.co/bernard.glorie@gmail.com"
     method="POST"
     class="form-contact">
     <!-- Supprimer le captcha et rediriger vers une page de remerciement -->

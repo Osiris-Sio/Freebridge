@@ -54,10 +54,11 @@ function simulateGame(parsed) {
 
     if (t.type === 'comment') {
       // Gestion de la persistance des commentaires (colle les commentaires consécutifs)
+      const formattedValue = formatComment(t.value)
       if (lastCommentedStateIndex === states.length - 1) {
-        activeCommentText += '<br><br>' + t.value
+        activeCommentText += '<br><br>' + formattedValue
       } else {
-        activeCommentText = t.value
+        activeCommentText = formattedValue
         lastCommentedStateIndex = states.length - 1
       }
       states[states.length - 1].displayComment = activeCommentText

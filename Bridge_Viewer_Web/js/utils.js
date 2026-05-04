@@ -94,3 +94,21 @@ function getDisplayRank(rank) {
 }
 
 window.useFrenchCards = localStorage.getItem('useFrenchCards') === 'true'
+
+/**
+ * Transforme les symboles @S, @H, @D, @C en emojis de couleurs pour les commentaires.
+ * @param {string} text - Le texte brut du commentaire
+ * @returns {string} Le texte avec les symboles remplacés
+ */
+function formatComment(text) {
+  if (!text) return ''
+  return text
+    .replace(/@S/g, '♠️')
+    .replace(/@H/g, '♥️')
+    .replace(/@D/g, '♦️')
+    .replace(/@C/g, '♣️')
+    .replace(/@s/g, '♠️')
+    .replace(/@h/g, '♥️')
+    .replace(/@d/g, '♦️')
+    .replace(/@c/g, '♣️')
+}
