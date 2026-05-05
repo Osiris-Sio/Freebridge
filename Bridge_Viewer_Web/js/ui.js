@@ -58,7 +58,7 @@ function updateUI() {
   const state = window.gameStates[window.currentStateIndex]
 
   // --- Panneau de gauche : Informations de la donne ---
-  document.getElementById('info-contract').textContent = state.contract || '-'
+  document.getElementById('info-contract').innerHTML = formatSymbols(state.contract) || '-'
   document.getElementById('info-declarer').textContent = state.declarer || '-'
 
   const vulEl = document.getElementById('info-vul')
@@ -106,7 +106,7 @@ function updateUI() {
         colIdx = 0
       }
       const td = document.createElement('td')
-      td.textContent = bid.bid
+      td.innerHTML = formatSymbols(bid.bid)
       row.appendChild(td)
       colIdx++
     }

@@ -96,19 +96,35 @@ function getDisplayRank(rank) {
 window.useFrenchCards = localStorage.getItem('useFrenchCards') === 'true'
 
 /**
- * Transforme les symboles @S, @H, @D, @C en emojis de couleurs pour les commentaires.
- * @param {string} text - Le texte brut du commentaire
+ * Transforme les symboles (@S, @H...) et les enchères (1S, 2H...) en emojis de couleurs.
+ * @param {string} text - Le texte brut (commentaire ou enchère)
  * @returns {string} Le texte avec les symboles remplacés
  */
-function formatComment(text) {
+function formatSymbols(text) {
   if (!text) return ''
+
+  // 1. Si c'est une enchère courte (ex: 1S, 4H, 3NT, Pass, Dbl)
+  let formatted = text.toUpperCase().trim()
+  
+  // Cas spéciaux : Pass, Dbl, Rdbl
+  if (formatted === 'P' || formatted === 'PASS') return 'Pass'
+  if (formatted === 'D' || formatted === 'DBL' || formatted === 'X') return 'X'
+  if (formatted === 'R' || formatted === 'REDBL' || formatted === 'XX') return 'XX'
+
+  // Enchères avec couleur (ex: 1S)
+  if (/^[1-7](S|H|D|C|N|NT)$/.test(formatted)) {
+    return formatted
+      .replace(/S/, '♠️')
+      .replace(/H/, '♥️')
+      .replace(/D/, '♦️')
+      .replace(/C/, '♣️')
+      .replace(/NT|N/, 'SA')
+  }
+
+  // 2. Gestion des symboles avec @ (pour les commentaires)
   return text
-    .replace(/@S/g, '♠️')
-    .replace(/@H/g, '♥️')
-    .replace(/@D/g, '♦️')
-    .replace(/@C/g, '♣️')
-    .replace(/@s/g, '♠️')
-    .replace(/@h/g, '♥️')
-    .replace(/@d/g, '♦️')
-    .replace(/@c/g, '♣️')
+    .replace(/@S/gi, '♠️')
+    .replace(/@H/gi, '♥️')
+    .replace(/@D/gi, '♦️')
+    .replace(/@C/gi, '♣️')
 }
