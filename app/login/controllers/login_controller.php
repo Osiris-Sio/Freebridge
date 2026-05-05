@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_prenom'] = $user['user_prenom'];
         $_SESSION['user_mail'] = $user['user_mail'];
         $_SESSION['user_date'] = $user['user_date'];
+        $_SESSION['is_admin'] = $user['is_admin'] == 1 ? 'true' : 'false';
 
         $_SESSION['messages']['confirm'][] =
           'Connexion réussie. Ravi de vous revoir ' .

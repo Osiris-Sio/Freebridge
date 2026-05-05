@@ -66,6 +66,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <?php if (isset($_SESSION['user_nom'])) { ?>
                     <li><a href="avdj">À vous de jouer</a></li>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 'true'): ?>
+                        <li><a href="gestion">Gestion</a></li>
+                    <?php endif; ?>
                     <li><a href="account" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars(
                       $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
                     ) ?></a></li>

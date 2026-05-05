@@ -147,6 +147,17 @@
     </article>
     </div>
     -->
+
+    <article>
+        <header>
+            <strong>Supprimer mon compte</strong>
+        </header>
+        <p>Si vous souhaitez supprimer votre compte, veuillez cliquer sur le bouton ci-dessous.</p>
+        <button type="button" class="secondary" onclick="window.location.href='delete_account'">
+            Supprimer mon compte
+        </button>
+    </article>
+
 </section>
 
 <?php include 'includes/footer.php'; ?>

@@ -119,6 +119,8 @@ $routes = [
   'lostpassword' => 'app/lostpassword/controllers/lostpassword_controller.php',
   'contact' => 'app/contact/controllers/contact_controller.php',
   'logout' => 'app/logout/controllers/logout_controller.php',
+  'gestion' => 'app/gestion/controllers/gestion_controller.php',
+  'delete_account' => 'app/account/controllers/delete_account_controller.php',
 ];
 
 $static_pages = [
