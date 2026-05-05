@@ -8,18 +8,22 @@ $request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $script_name = dirname($_SERVER['SCRIPT_NAME']);
 $base_path =
   $script_name === DIRECTORY_SEPARATOR || $script_name === '.'
-    ? '/'
-    : $script_name . '/';
+  ? '/'
+  : $script_name . '/';
 define('BASE_URL', $base_path);
 define(
   'URL_SOLUTION',
   trim(file_get_contents(__DIR__ . '/bsol/url-solution.txt')),
 );
+define(
+  'URL_ANALYSE',
+  trim(file_get_contents(__DIR__ . '/bsol/url-analyse.txt')),
+);
 
 if (strpos($request_uri, $base_path) === 0) {
-    $path = substr($request_uri, strlen($base_path));
+  $path = substr($request_uri, strlen($base_path));
 } else {
-    $path = $request_uri;
+  $path = $request_uri;
 }
 $path = trim($path, '/');
 
@@ -75,9 +79,7 @@ if (strpos($path, 'bsol/') === 0) {
   }
 
   if (!$can_access) {
-    $_SESSION['messages'][
-      'errors'
-    ][] = "Désolé, votre rang ($user_rang) ne vous permet pas encore d'accéder au niveau $required_level.";
+    $_SESSION['messages']['errors'][] = "Désolé, votre rang ($user_rang) ne vous permet pas encore d'accéder au niveau $required_level.";
     header('Location: ' . BASE_URL . 'avdj');
     exit();
   }
