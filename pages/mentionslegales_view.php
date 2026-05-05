@@ -65,6 +65,9 @@
     <p>
         Toute reproduction totale ou partielle de ce site (www.freebridge.fr), représentation, modification, publication, adaptation totale ou partielle de l'un quelconque de ces éléments, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Bernard Glorie, propriétaire du site, à défaut elle sera considérée comme constitutive d'une contrefaçon et passible de poursuite conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
     </p>
+    <p>
+        Notre charte graphique est inspirée de <a href="https://picocss.com/" target="_blank">Pico.css</a>. Vous retrouvez l'entièreté de notre charte graphique en cliquant ici : <a href="assets/chartes/Charte-Graphique-freebridge.pdf" target="_blank">Charte graphique Freebridge</a>.
+    </p>
 </article>
 
 <hr>
