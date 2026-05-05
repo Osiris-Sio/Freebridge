@@ -7,12 +7,13 @@
 
     <form action="lostpassword" method="post">
 
+        <p style="color: red;"><strong>NE FONCTIONNE PAS ENCORE !</strong></p>
         <p>Saisissez votre adresse mail pour recevoir un nouveau mot de passe temporaire.</p>
 
         <label for="login">Votre adresse mail :</label>
         <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?= htmlspecialchars(
-          $login_value ?? '',
-        ) ?>">
+                                                                                                        $login_value ?? '',
+                                                                                                    ) ?>">
 
         <br>
 
@@ -20,7 +21,7 @@
             <button type="button" class="secondary" onclick="window.location.href='login'">
                 ← Retour à la connexion
             </button>
-            <button type="submit">
+            <button type="submit" disabled>
                 Générer un nouveau mot de passe
             </button>
         </div>
