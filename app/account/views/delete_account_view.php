@@ -12,7 +12,14 @@
         <form method="post" action="delete_account">
             <label for="password">Veuillez saisir votre mot de passe pour confirmer :</label>
             <input type="password" id="password" name="password" required placeholder="Votre mot de passe actuel">
-            
+
+            <label>
+                <input type="checkbox" class="password-toggle">
+                Afficher le mot de passe
+            </label>
+
+            <br>
+
             <div class="grid">
                 <button type="button" class="secondary" onclick="window.location.href='account'">
                     ← Retour au compte
