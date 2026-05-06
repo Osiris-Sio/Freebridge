@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ";
 
         // En-têtes pour envoyer du HTML et éviter les problèmes d'accents
-        $no_reply = 'no-reply@freebridge.fr';
+        $no_reply = "[EMAIL_ADDRESS]";
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
         $headers .= "From: Freebridge <$no_reply>" . "\r\n";
@@ -97,9 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           exit();
         } else {
           // Mode secours (Local/Développement) : si mail() échoue, on affiche le mdp pour ne pas bloquer les tests
-          $_SESSION['messages'][
-            'errors'
-          ][] = "L'envoi de l'email a échoué (normal en local). <br>Voici votre nouveau mot de passe pour vos tests : <strong>$new_pass</strong>";
+          $_SESSION['messages']['errors'][] = "L'envoi de l'email a échoué (normal en local). <br>Voici votre nouveau mot de passe pour vos tests : <strong>$new_pass</strong>";
         }
       } else {
         $_SESSION['messages']['errors'][] =
@@ -110,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'Veuillez saisir votre adresse email.';
     }
   } catch (Throwable $e) {
-    $_SESSION['messages']['errors'][] = 'Erreur système : ' . $e->getMessage();
+    $_SESSION['messages']['errors'][] = 'Erreur système, veuillez réessayer plus tard.';
   }
 
   // Redirection

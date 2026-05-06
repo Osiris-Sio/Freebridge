@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   } catch (Throwable $e) {
     $_SESSION['messages']['errors'][] =
-      'Erreur lors de la mise à jour : ' . $e->getMessage();
+      'Erreur lors de la mise à jour.';
   }
 
   // Redirection
@@ -136,7 +136,7 @@ if (isset($_SESSION['prix'])) {
       $_SESSION['messages']['confirm'][] =
         'Abonnement mis à jour ! Nouveau rang : ' . strtoupper($new_rang);
     } catch (Throwable $e) {
-      $_SESSION['messages']['errors'][] = 'Erreur rang : ' . $e->getMessage();
+      $_SESSION['messages']['errors'][] = 'Erreur lors de la mise à jour du rang.';
     }
   }
   unset($_SESSION['prix']);

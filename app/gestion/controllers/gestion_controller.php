@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         $stmt->execute([':rang' => $new_rang, ':id' => $user_id]);
         $_SESSION['messages']['confirm'][] = "Le rang de l'utilisateur a été mis à jour avec succès.";
       } catch (Exception $e) {
-        $_SESSION['messages']['errors'][] = "Erreur lors de la mise à jour : " . $e->getMessage();
+        $_SESSION['messages']['errors'][] = "Erreur lors de la mise à jour du rang.";
       }
     }
   }
@@ -62,7 +62,7 @@ try {
   $stmt->execute($params);
   $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (Exception $e) {
-  $_SESSION['messages']['errors'][] = "Erreur lors de la récupération des utilisateurs : " . $e->getMessage();
+  $_SESSION['messages']['errors'][] = "Erreur lors de la récupération des utilisateurs.";
 }
 
 // Liste des rangs disponibles pour le filtre et le changement
