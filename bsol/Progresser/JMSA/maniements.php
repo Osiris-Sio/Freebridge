@@ -11,6 +11,12 @@ include '../../../includes/header.php'; ?>
         <h1>13 - Les maniements de couleurs (235 donnes)</h1>
     </header>
 
+    <div class="course-header">
+        <a href="assets/pdf/progresser-jmsa/13 - Les impasses.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
+    </div>
+
     <details class="level-folder">
         <summary>0 - Manque l'As (18 donnes)</summary>
         <div class="lesson-list">
@@ -787,4 +793,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

@@ -11,6 +11,18 @@ include '../../../includes/header.php'; ?>
         <h1>10 - Le laisser-passer</h1>
     </header>
 
+    <div class="course-header">
+        <a href="assets/pdf/progresser-jmsa/10 - Le Laisser-passer.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le laisser-passer
+        </a>
+        <a href="assets/pdf/progresser-jmsa/10 - Lecoup de Bath.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le coup de Bath
+        </a>
+        <a href="assets/pdf/progresser-jmsa/10 - La règle des 11.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur la règle des 11
+        </a>
+    </div>
+
     <details class="level-folder">
         <summary>0 - Avec un seul arrêt (3 donnes)</summary>
         <div class="lesson-list">

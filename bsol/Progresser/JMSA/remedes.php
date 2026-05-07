@@ -11,6 +11,12 @@ include '../../../includes/header.php'; ?>
         <h1>14 - Remèdes contre l'adversaire dangereux (217 donnes)</h1>
     </header>
 
+    <div class="course-header">
+        <a href="assets/pdf/progresser-jmsa/14 - L'adversaire dangereux.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
+    </div>
+
     <details class="level-folder">
         <summary>1 - Adversaire dangereux et impasse (41 Donnes)</summary>
         <div class="lesson-list">
@@ -841,4 +847,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

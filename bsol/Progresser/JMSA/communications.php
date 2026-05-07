@@ -11,6 +11,15 @@ include '../../../includes/header.php'; ?>
         <h1>12 - Les problèmes de communications</h1>
     </header>
 
+    <div class="course-header">
+        <a href="assets/pdf/progresser-jmsa/12 - Crer des communications.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur la création de communications
+        </a>
+        <a href="assets/pdf/progresser-jmsa/12 - Préserver ses communications.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur la préservation de ses communications
+        </a>
+    </div>
+
     <details class="level-folder">
         <summary>1 - Déblocage (49 donnes)</summary>
         <div class="lesson-list">
@@ -699,4 +708,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

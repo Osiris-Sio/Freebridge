@@ -11,6 +11,12 @@ include '../../../includes/header.php'; ?>
         <h1>15 - Plan de jeu et choix (252 donnes)</h1>
     </header>
 
+    <div class="course-header">
+        <a href="assets/pdf/progresser-jmsa/15 - Le plan de jeu du déclarant à SA.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
+    </div>
+
     <details class="level-folder">
         <summary>1 - Preference a l'affranchissement (29 Donnes)</summary>
         <div class="lesson-list">
@@ -814,4 +820,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-
