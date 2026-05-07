@@ -134,9 +134,11 @@ $static_pages = [
 
 if (array_key_exists($path, $routes)) {
   require_once 'includes/pdo.php';
+  require_once 'includes/auth_helper.php';
   require_once $routes[$path];
 } elseif (array_key_exists($path, $static_pages)) {
   require_once 'includes/pdo.php';
+  require_once 'includes/auth_helper.php';
   require_once $static_pages[$path];
 } else {
   http_response_code(404);

@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->execute([':id' => $_SESSION['user_id']]);
       $user = $stmt->fetch();
 
-      if (sha1($old_password) !== $user['user_password']) {
+      if (!verify_password_and_migrate($old_password, $user['user_password'], $_SESSION['user_id'], $conn)) {
         $_SESSION['messages']['errors'][] =
           'Le mot de passe actuel est incorrect.';
       } else {
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'UPDATE user SET user_password = :pass WHERE user_id = :id';
               $stmt = $conn->prepare($sql);
               $stmt->execute([
-                ':pass' => sha1($new_password),
+                ':pass' => password_hash($new_password, PASSWORD_DEFAULT),
                 ':id' => $_SESSION['user_id'],
               ]);
               $_SESSION['messages']['confirm'][] =
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   }
 
   // Redirection
-  header('Location: compte');
+  header('Location: account');
   exit();
 }
 

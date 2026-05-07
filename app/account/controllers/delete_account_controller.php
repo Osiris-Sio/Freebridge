@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
         $stmt->execute([':id' => $user_id]);
         $user = $stmt->fetch();
 
-        if (!$user || $user['user_password'] !== sha1($password)) {
+        if (!$user || !verify_password_and_migrate($password, $user['user_password'], $user_id, $conn)) {
             $_SESSION['messages']['errors'][] = "Le mot de passe saisi est incorrect. Suppression annulée.";
             header('Location: delete_account');
             exit();

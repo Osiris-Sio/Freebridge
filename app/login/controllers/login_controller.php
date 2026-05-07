@@ -12,32 +12,26 @@ unset($_SESSION['inputs']['login']);
 
 // Traitement du formulaire de connexion (anciennement login_cible.php)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  $login = strtolower($_POST['login'] ?? '');
-  $mdp = sha1($_POST['password'] ?? '');
+  $login = strtolower(trim($_POST['login'] ?? ''));
+  $password = $_POST['password'] ?? '';
 
   // Stockage temporaire en session pour persistance après redirection
   $_SESSION['inputs']['login'] = $login;
 
   try {
-    // Si la connexion a échoué (déjà géré dans pdo.php), on ne fait rien
     if (!$conn) {
       header('Location: login');
       exit();
     }
 
-    // Vérification des champs
-    if (!empty($login) && !empty($mdp)) {
-      $sql =
-        'SELECT * FROM user WHERE user_mail = :mail AND user_password = :password';
+    if (!empty($login) && !empty($password)) {
+      // On récupère l'utilisateur par son email uniquement
+      $sql = 'SELECT * FROM user WHERE user_mail = :mail';
       $stmt = $conn->prepare($sql);
-      $stmt->execute([
-        ':mail' => $login,
-        ':password' => $mdp,
-      ]);
-
+      $stmt->execute([':mail' => $login]);
       $user = $stmt->fetch();
 
-      if ($user) {
+      if ($user && verify_password_and_migrate($password, $user['user_password'], $user['user_id'], $conn)) {
         // Succès : on vide les inputs stockés
         unset($_SESSION['inputs']['login']);
         session_regenerate_id(true);
@@ -48,17 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_prenom'] = $user['user_prenom'];
         $_SESSION['user_mail'] = $user['user_mail'];
         $_SESSION['user_date'] = $user['user_date'];
-        $_SESSION['is_admin'] = $user['is_admin'] == 1 ? 'true' : 'false';
+        $_SESSION['is_admin'] = ($user['is_admin'] == 1) ? 'true' : 'false';
 
-        $_SESSION['messages']['confirm'][] =
-          'Connexion réussie. Ravi de vous revoir ' .
-          $_SESSION['user_prenom'] .
-          '!';
+        $_SESSION['messages']['confirm'][] = 'Connexion réussie. Ravi de vous revoir ' . $_SESSION['user_prenom'] . '!';
         header('Location: avdj');
         exit();
       } else {
-        $_SESSION['messages']['errors'][] =
-          "L'adresse mail ou le mot de passe est incorrect.";
+        $_SESSION['messages']['errors'][] = "L'adresse mail ou le mot de passe est incorrect.";
       }
     } else {
       $_SESSION['messages']['errors'][] = 'Veuillez remplir tous les champs.';

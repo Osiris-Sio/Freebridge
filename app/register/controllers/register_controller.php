@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $exists = $stmt->fetchColumn();
 
       if ($exists == 0) {
-        $hashed_password = sha1($password);
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO `user` (`user_nom`, `user_prenom`, `user_rang`, `user_mail`, `user_password`, `user_date`) 
                 VALUES (:nom, :prenom, 'debutant', :mail, :hashed_password, :date)";
         $stmt = $conn->prepare($sql);
