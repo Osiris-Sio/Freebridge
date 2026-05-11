@@ -24,7 +24,7 @@
                 </select>
             </div>
             <div class="filter-submit">
-                <button type="submit" class="contrast">Filtrer</button>
+                <button type="submit">Filtrer</button>
             </div>
         </form>
     </article>
