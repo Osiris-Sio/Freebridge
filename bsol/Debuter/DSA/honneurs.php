@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/defense-sa-debuter/L'affranchissement d'honneurs en défense.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/dsa-debuter/L'affranchissement d'honneurs et la création de levées en flanc.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>

@@ -12,10 +12,10 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/jeu-a-l-atout-debuter/Jouer à l'atout en majeure.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/jma-debuter/Jouer à l'atout en majeure.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le jeu à l'atout en majeure (Présentation)
         </a>
-        <a href="assets/pdf/jeu-a-l-atout-debuter/Jouer à l'atout en mineure.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/jma-debuter/Jouer à l'atout en mineure.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le jeu à l'atout en mineure (Présentation)
         </a>
     </div>
