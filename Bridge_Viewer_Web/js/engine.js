@@ -1,27 +1,24 @@
 /**
  * Fichier : engine.js
- * Rôle : Moteur de simulation du jeu. Génère l'historique complet des états du jeu (un état par action).
+ * Rôle : Moteur de simulation. Calcule les scores et gère le déroulement du jeu.
  */
 
-/**
- * Simule la partie entière à partir des données extraites du fichier.
- * @param {Object} parsed - Les données extraites (initialHands, tokens, etc.)
- * @returns {Array} Tableau contenant tous les états successifs de la partie (pour permettre le retour en arrière)
- */
+// Utilitaire simple pour copier un objet proprement
+const clone = (obj) => JSON.parse(JSON.stringify(obj))
 function simulateGame(parsed) {
   const states = []
 
-  // État initial de la partie
+  // Configuration initiale de la donne
   const state = {
-    hands: JSON.parse(JSON.stringify(parsed.initialHands)),
+    hands: clone(parsed.initialHands),
     bidding: [],
     currentTrick: [],
     tricksWon: { NS: 0, EW: 0 },
-    turn: parsed.dealer, // À qui le tour de parler/jouer
-    phase: 'bidding', // 'bidding' (enchères) ou 'play' (jeu de la carte)
+    turn: parsed.dealer,
+    phase: 'bidding',
     contract: parsed.contract,
     declarer: parsed.declarer,
-    trump: null, // Atout (S, H, D, C ou null pour SA)
+    trump: null,
     displayComment: '',
     dealer: parsed.dealer,
     vul: parsed.vul,
@@ -38,55 +35,27 @@ function simulateGame(parsed) {
     }
   }
 
-  // Sauvegarder l'état initial
-  states.push(JSON.parse(JSON.stringify(state)))
-
-  let activeCommentText = ''
-  let lastCommentedStateIndex = -1
-
-  // Parcours de toutes les actions (commentaires, enchères, cartes jouées)
+  // --- TRAITEMENT DES ENCHÈRES ---
+  // On parcourt les tokens pour traiter toutes les enchères d'un coup
   for (let i = 0; i < parsed.tokens.length; i++) {
-    let t = parsed.tokens[i]
-    // Créer un nouvel état basé sur le précédent
-    const newState = JSON.parse(JSON.stringify(states[states.length - 1]))
-    newState.lastAction = null
-    newState.trickWinner = null
+    const t = parsed.tokens[i]
+    if (t.type === 'bid') {
+      if (state.phase === 'bidding') {
+        state.bidding.push({ player: state.turn, bid: t.value })
+        state.turn = getLHO(state.turn)
 
-    if (t.type === 'comment') {
-      // Gestion de la persistance des commentaires (colle les commentaires consécutifs)
-      const formattedValue = formatSymbols(t.value)
-      if (lastCommentedStateIndex === states.length - 1) {
-        activeCommentText += '<br><br>' + formattedValue
-      } else {
-        activeCommentText = formattedValue
-        lastCommentedStateIndex = states.length - 1
-      }
-      states[states.length - 1].displayComment = activeCommentText
-      continue // Ne pas créer d'état supplémentaire juste pour un commentaire
-    } else if (t.type === 'bid') {
-      if (newState.phase === 'bidding') {
-        newState.bidding.push({ player: newState.turn, bid: t.value })
-        newState.lastAction = {
-          type: 'bid',
-          player: newState.turn,
-          bid: t.value,
-        }
-
-        // Passer au joueur suivant
-        newState.turn = getLHO(newState.turn)
-
-        // --- Vérification de la fin des enchères ---
-        const nonPasses = newState.bidding.filter(
+        // Vérification fin des enchères
+        const nonPasses = state.bidding.filter(
           (b) => b.bid.toUpperCase() !== 'P' && b.bid.toUpperCase() !== 'PASS',
         )
-        const last3 = newState.bidding.slice(-3)
+        const last3 = state.bidding.slice(-3)
         const last3Pass =
           last3.length === 3 &&
           last3.every(
             (b) =>
               b.bid.toUpperCase() === 'P' || b.bid.toUpperCase() === 'PASS',
           )
-        const last4 = newState.bidding.slice(-4)
+        const last4 = state.bidding.slice(-4)
         const last4Pass =
           last4.length === 4 &&
           last4.every(
@@ -101,20 +70,20 @@ function simulateGame(parsed) {
           auctionOver = true // 4 passes d'entrée
         }
 
+        // Si les enchères sont terminées, on passe en mode jeu de la carte
         if (auctionOver) {
-          newState.phase = 'play' // Passage au jeu de la carte
+          state.phase = 'play'
           if (nonPasses.length > 0) {
             const lastBid = nonPasses[nonPasses.length - 1]
-            newState.contract = lastBid.bid
-            const match = newState.contract.match(/(\d)(N|S|H|D|C)/i)
+            state.contract = lastBid.bid
+            const match = state.contract.match(/(\d)(N|S|H|D|C)/i)
             if (match) {
-              newState.trump =
+              // Détermine l'atout
+              state.trump =
                 match[2].toUpperCase() === 'N' ? null : match[2].toUpperCase()
             }
-
-            // Déduction du déclarant (le premier de l'équipe à avoir nommé la couleur du contrat final)
-            const denom = match ? match[2].toUpperCase() : null
-            const team = ['N', 'S'].includes(lastBid.player)
+            const denom = match ? match[2].toUpperCase() : null // Détermine l'atout en toute lettre
+            const team = ['N', 'S'].includes(lastBid.player) // Détermine le déclarant
               ? ['N', 'S']
               : ['E', 'W']
             const teamBids = nonPasses.filter(
@@ -123,22 +92,58 @@ function simulateGame(parsed) {
                 b.bid.toUpperCase().includes(denom || 'N'),
             )
 
+            // Si le déclarant n'est pas trouvé, on le met comme dernière personne qui a parlé
             if (teamBids.length > 0) {
-              newState.declarer = teamBids[0].player
+              state.declarer = teamBids[0].player
             } else {
-              newState.declarer = lastBid.player
+              state.declarer = lastBid.player
             }
           } else {
-            newState.contract = 'Pass'
+            state.contract = 'Pass'
           }
 
-          // Le joueur qui entame est celui à la gauche du déclarant
-          if (newState.declarer) {
-            newState.turn = getLHO(newState.declarer)
+          // On détermine le premier joueur qui doit jouer
+          if (state.declarer) {
+            state.turn = getLHO(state.declarer)
           }
         }
       }
-      states.push(newState)
+    } else if (t.type === 'comment' && state.phase === 'bidding') {
+      // On capture les commentaires pendant les enchères pour l'état initial
+      const formattedValue = formatSymbols(t.value)
+      if (state.displayComment) {
+        state.displayComment += '<br><br>' + formattedValue
+      } else {
+        state.displayComment = formattedValue
+      }
+    }
+  }
+
+  // Sauvegarder l'état initial (Enchères complétées)
+  states.push(JSON.parse(JSON.stringify(state)))
+
+  // --- TRAITEMENT DU JEU DE LA CARTE ---
+  for (let i = 0; i < parsed.tokens.length; i++) {
+    let t = parsed.tokens[i]
+    if (t.type !== 'play' && t.type !== 'comment') continue
+    if (
+      t.type === 'comment' &&
+      i < parsed.tokens.findIndex((tok) => tok.type === 'play')
+    ) {
+      // Déjà géré ou ignoré si avant le premier pli
+      continue
+    }
+
+    // Créer un nouvel état basé sur le précédent
+    const newState = JSON.parse(JSON.stringify(states[states.length - 1]))
+    newState.lastAction = null
+    newState.trickWinner = null
+
+    if (t.type === 'comment') {
+      const formattedValue = formatSymbols(t.value)
+      // On met à jour le dernier état au lieu d'en créer un nouveau pour un commentaire seul
+      states[states.length - 1].displayComment = formattedValue
+      continue
     } else if (t.type === 'play') {
       // Retirer la carte de la main du joueur
       const hand = newState.hands[newState.turn]

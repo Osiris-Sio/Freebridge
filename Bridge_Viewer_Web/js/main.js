@@ -74,11 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (fileUrl) {
     const fileName = fileUrl.split('/').pop().split('?')[0]
 
-    // Si c'est une URL distante (http...), on utilise le proxy, sinon on charge en relatif
-    const isRemote = fileUrl.startsWith('http')
-    const finalUrl = isRemote
-      ? 'https://corsproxy.io/?' + encodeURIComponent(fileUrl)
-      : fileUrl
+    const finalUrl = fileUrl
 
     fetch(finalUrl)
       .then((response) => {
@@ -136,35 +132,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // Avancer jusqu'au prochain pli complet (4 cartes posées)
-  btnNextTrick.addEventListener('click', () => {
-    if (window.currentStateIndex < window.gameStates.length - 1) {
-      window.currentStateIndex++
+  // Navigation par pli (cherche la prochaine/précédente table avec 4 cartes)
+  const jumpTrick = (dir) => {
+    let i = window.currentStateIndex + dir
+    while (i > 0 && i < window.gameStates.length - 1) {
+      if (window.gameStates[i].currentTrick.length === 4) break
+      i += dir
     }
-    while (window.currentStateIndex < window.gameStates.length - 1) {
-      const st = window.gameStates[window.currentStateIndex]
-      // On s'arrête lorsqu'il y a exactement 4 cartes sur la table
-      if (st.currentTrick.length === 4) {
-        break
-      }
-      window.currentStateIndex++
-    }
+    window.currentStateIndex = i
     updateUI()
-  })
+  }
 
-  // Reculer jusqu'au précédent pli complet
-  btnPrevTrick.addEventListener('click', () => {
-    if (window.currentStateIndex > 0) {
-      window.currentStateIndex--
-    }
-    while (window.currentStateIndex > 0) {
-      const st = window.gameStates[window.currentStateIndex]
-      if (st.currentTrick.length === 4 || window.currentStateIndex === 0) {
-        break
-      }
-      window.currentStateIndex--
-    }
-    updateUI()
+  btnNextTrick.addEventListener('click', () => jumpTrick(1))
+  btnPrevTrick.addEventListener('click', () => jumpTrick(-1))
+
+  // --- NAVIGATION CLAVIER ---
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') btnNext.click()
+    if (e.key === 'ArrowLeft') btnPrev.click()
   })
 
   // --- OPTION LANGUE DES CARTES ---

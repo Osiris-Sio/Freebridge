@@ -25,28 +25,9 @@ const SUITS = {
 // Ordre hiérarchique des couleurs
 const suitOrder = { S: 0, H: 1, D: 2, C: 3 }
 
-/**
- * Calcule la valeur numérique d'une carte pour déterminer le gagnant du pli.
- * @param {string} rank - Le rang de la carte (A, K, Q, J, 10... 2)
- * @returns {number} La valeur numérique
- */
 function cardValue(rank) {
-  if (rank === 'A') {
-    return 14
-  }
-  if (rank === 'K') {
-    return 13
-  }
-  if (rank === 'Q') {
-    return 12
-  }
-  if (rank === 'J') {
-    return 11
-  }
-  if (rank === '10' || rank === 'T') {
-    return 10
-  }
-  return parseInt(rank)
+  const values = { A: 14, K: 13, Q: 12, J: 11, T: 10, '10': 10 }
+  return values[rank] || parseInt(rank) || 0
 }
 
 /**
@@ -72,25 +53,9 @@ function getLHO(p) {
   return PLAYERS[(PLAYERS.indexOf(p) + 1) % 4]
 }
 
-/**
- * Traduit le rang d'une carte selon la langue choisie.
- * @param {string} rank - Le rang en anglais (A, K, Q, J, T, 9...)
- * @returns {string} Le rang traduit
- */
 function getDisplayRank(rank) {
-  if (!window.useFrenchCards) {
-    return rank === 'T' ? '10' : rank
-  }
-
-  const frMap = {
-    A: 'A',
-    K: 'R',
-    Q: 'D',
-    J: 'V',
-    T: '10',
-  }
-
-  return frMap[rank] || rank
+  const frMap = { A: 'A', K: 'R', Q: 'D', J: 'V', T: '10', '10': '10' }
+  return window.useFrenchCards ? (frMap[rank] || rank) : (rank === 'T' ? '10' : rank)
 }
 
 window.useFrenchCards = localStorage.getItem('useFrenchCards') === 'true'

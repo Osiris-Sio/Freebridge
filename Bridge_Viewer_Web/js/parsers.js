@@ -9,7 +9,7 @@
  * @returns {Object} Un objet contenant la configuration initiale et la liste des actions (tokens)
  */
 function parsePBN(text) {
-  const tokens = []
+  const tokens = [] // C'est une liste d'actions (ex : jouer une carte)
   const lines = text.replaceAll('\r\n', '\n').split('\n')
   const initialHands = {}
   let dealer = 'N'
@@ -157,44 +157,38 @@ function parseLIN(text) {
   const tokens = []
   const initialHands = {}
   let dealer = 'S'
-  const declarer = null
   let vul = 'None'
 
   const parts = text.split('|')
   for (let i = 0; i < parts.length; i += 2) {
     const tag = parts[i].trim()
     const val = parts[i + 1] ? parts[i + 1].trim() : ''
-    if (!tag) {
-      continue
-    }
+    if (!tag) continue
 
-    // Mains et Donneur
+    // --- Tag 'md' : Mains et Donneur ---
     if (tag === 'md') {
       const d = parseInt(val.charAt(0))
       const dMap = { 1: 'S', 2: 'W', 3: 'N', 4: 'E' }
       dealer = dMap[d] || 'S'
+
       const handsStr = val.substring(1).split(',')
       const pOrder = ['S', 'W', 'N', 'E']
-      for (let h = 0; h < handsStr.length; h++) {
-        const hs = handsStr[h]
-        const p = pOrder[h]
+
+      handsStr.forEach((hs, hIdx) => {
+        const p = pOrder[hIdx]
         let currentSuit = null
         const hand = []
         for (let c = 0; c < hs.length; c++) {
           const char = hs.charAt(c).toUpperCase()
-          if (['S', 'H', 'D', 'C'].includes(char)) {
-            currentSuit = char
-          } else if (currentSuit && char !== ' ') {
-            let rank = char
-            if (rank === 'T') {
-              rank = '10'
-            }
-            hand.push({ suit: currentSuit, rank: rank })
+          if ('SHDC'.includes(char)) currentSuit = char
+          else if (currentSuit && char !== ' ') {
+            hand.push({ suit: currentSuit, rank: char === 'T' ? '10' : char })
           }
         }
         initialHands[p] = hand
-      }
-      // Si la main de l'Est est manquante (fréquent dans les fichiers LIN), on la déduit des autres
+      })
+
+      // Déduction de la 4ème main si manquante
       if (handsStr.length === 3) {
         const allRanks = [
           'A',
@@ -212,54 +206,46 @@ function parseLIN(text) {
           '2',
         ]
         const eHand = []
-        for (const s of ['S', 'H', 'D', 'C']) {
-          for (const r of allRanks) {
-            let isFound = false
-            for (const p of ['S', 'W', 'N']) {
-              if (
-                initialHands[p] &&
-                initialHands[p].some((hc) => hc.suit === s && hc.rank === r)
-              ) {
-                isFound = true
-                break
-              }
-            }
-            if (!isFound) {
+        'SHDC'.split('').forEach((s) => {
+          allRanks.forEach((r) => {
+            if (
+              !['S', 'W', 'N'].some((p) =>
+                initialHands[p].some((hc) => hc.suit === s && hc.rank === r),
+              )
+            ) {
               eHand.push({ suit: s, rank: r })
             }
-          }
-        }
+          })
+        })
         initialHands['E'] = eHand
       }
     }
-    // Enchères (Make Bid)
-    else if (tag === 'mb') {
-      tokens.push({ type: 'bid', value: val })
-    }
-    // Jeu de la carte (Play Card)
+    // --- Tag 'mb' : Enchères ---
+    else if (tag === 'mb') tokens.push({ type: 'bid', value: val })
+    // --- Tag 'pc' : Jeu de la carte ---
     else if (tag === 'pc') {
       if (val.length >= 2) {
-        const suit = val.charAt(0).toUpperCase()
-        let rank = val.substring(1).toUpperCase()
-        if (rank === 'T') {
-          rank = '10'
-        }
-        tokens.push({ type: 'play', value: { suit: suit, rank: rank } })
+        tokens.push({
+          type: 'play',
+          value: {
+            suit: val[0].toUpperCase(),
+            rank:
+              val.substring(1).toUpperCase() === 'T'
+                ? '10'
+                : val.substring(1).toUpperCase(),
+          },
+        })
       }
     }
-    // Commentaires standards
-    else if (tag === 'nt') {
-      tokens.push({ type: 'comment', value: val })
-    }
-    // Annonce du nombre de levées (Claim)
-    else if (tag === 'mc') {
+    // --- Tag 'nt' ou 'mc' : Commentaires et Claim ---
+    else if (tag === 'nt') tokens.push({ type: 'comment', value: val })
+    else if (tag === 'mc')
       tokens.push({ type: 'comment', value: 'Claim : ' + val + ' levées' })
-    }
-    // Vulnérabilité
+    // --- Tag 'sv' : Vulnérabilité ---
     else if (tag === 'sv') {
       const vMap = { o: 'None', n: 'NS', e: 'EW', b: 'All' }
       vul = vMap[val] || 'None'
     }
   }
-  return { initialHands, dealer, declarer, contract: null, vul, tokens }
+  return { initialHands, dealer, declarer: null, contract: null, vul, tokens }
 }
