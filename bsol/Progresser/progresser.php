@@ -80,13 +80,27 @@ include '../../includes/header.php'; ?>
         </div>
     </details>
 
-    <!-- DEFENSE -->
+    <!-- DEFENSE A L'ATOUT (DA) -->
     <details class="level-folder">
-        <summary>Défense</summary>
+        <summary>Défense à l'Atout</summary>
         <div class="lesson-list">
             <p><small>Bientôt disponible...</small></p>
         </div>
     </details>
+
+    <!-- DEFENSE SANS ATOUT (DSA) -->
+    <details class="level-folder">
+        <summary>Défense à Sans Atout</summary>
+        <div class="lesson-list">
+            <a href="bsol/Progresser/DSA/entame.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 1 - Entame
+            </a>
+            <a href="bsol/Progresser/DSA/choix.php" class="lesson-item">
+                <i class="fas fa-play-circle"></i> 2 - Choix
+            </a>
+        </div>
+    </details>
+
 </article>
 
 <?php include '../../includes/footer.php'; ?>
