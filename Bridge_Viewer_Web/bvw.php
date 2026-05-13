@@ -5,8 +5,12 @@
 <button type="button" class="secondary" onclick="window.history.back()">
   ← Retour
 </button>
-<main class="container-fluid">
 
+<button type="button" onclick="if(confirm('La partie va être recommencée.\nÊtes-vous sûr de vouloir changer de mode ?')) window.location.reload()">
+  ⟳ Changer de mode
+</button>
+
+<main class="container-fluid">
 
   <header class="app-header">
     <hgroup>
