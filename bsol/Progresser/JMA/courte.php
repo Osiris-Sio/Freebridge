@@ -18,7 +18,7 @@ include '../../../includes/header.php'; ?>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=CzYRNqb7" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=XDPb5HLG" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_2_fois/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_2_fois/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=XDPb5HLG" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 3</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=yhSFKtaG" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_3.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/1.1_-_Ouvrir_la_coupe_en_une_fois/Donne_3.lin" role="button" class="secondary outline">Analyser</a></div>
@@ -565,4 +565,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-
