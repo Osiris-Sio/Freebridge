@@ -68,6 +68,9 @@
     <p>
         Notre charte graphique est inspirée de <a href="https://picocss.com/" target="_blank">Pico.css</a>. Vous retrouvez l'entièreté de notre charte graphique en cliquant ici : <a href="assets/chartes/Charte-Graphique-freebridge.pdf" target="_blank">Charte graphique Freebridge</a>.
     </p>
+    <p>
+        Le code source du site est accessible sur <a href="https://github.com/Osiris-Sio/Freebridge" target="_blank">GitHub</a>, sous licence <a href="https://opensource.org/licenses/MIT" target="_blank">MIT</a>.
+    </p>
 </article>
 
 <hr>
