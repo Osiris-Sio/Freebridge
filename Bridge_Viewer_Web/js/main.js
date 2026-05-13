@@ -1,162 +1,183 @@
 /**
- * Fichier : main.js
- * Rôle : Point d'entrée de l'application. Gère les événements d'interface (boutons, upload de fichier) et l'état global.
+ * Point d'entrée de l'application.
+ * Gère les événements d'interface et l'état global.
  */
+
+/* global updateUI, parsePBN, parseLIN, simulateGame, initDDS, checkBotTurn */
 
 // Variables globales de l'application
 window.gameStates = []
 window.currentStateIndex = 0
+window.gameMode = 'solve' // 'solve' ou 'play'
+window.ddsWorker = null
+window.pendingPlay = false
 
 document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('file-input')
   const langToggle = document.getElementById('lang-fr-cards')
+  const ewToggle = document.getElementById('toggle-ew-visibility')
 
+  // --- INITIALISATION DES OPTIONS ---
   if (langToggle) {
     langToggle.checked = window.useFrenchCards
   }
 
-  // --- CHARGEMENT DES FICHIERS ---
+  if (ewToggle) {
+    ewToggle.addEventListener('change', () => updateUI())
+  }
 
-  // Fonction partagée pour traiter le contenu d'un fichier (PBN ou LIN)
+  // --- GESTION DU CHARGEMENT DES FICHIERS ---
+
+  /**
+   * Traite le contenu d'un fichier (PBN ou LIN) et lance l'application.
+   */
   function processFile(content, fileName) {
-    let parsed
     try {
-      if (fileName.toLowerCase().endsWith('.pbn')) {
-        parsed = parsePBN(content)
-      } else if (fileName.toLowerCase().endsWith('.lin')) {
-        parsed = parseLIN(content)
+      const parsed = fileName.toLowerCase().endsWith('.pbn')
+        ? parsePBN(content)
+        : parseLIN(content)
+      window.currentParsedData = parsed
+
+      // Demande du mode à l'utilisateur si non spécifié dans l'URL
+      const urlParams = new URLSearchParams(window.location.search)
+      const mode = urlParams.get('mode')
+
+      // Si pas de mode défini, on demande à l'utilisateur
+      if (!mode) {
+        const dialog = document.getElementById('mode-dialog')
+        dialog.showModal()
+        document.getElementById('choose-solve').onclick = () => {
+          dialog.close()
+          startApplication('solve', parsed)
+        }
+        document.getElementById('choose-play').onclick = () => {
+          dialog.close()
+          startApplication('play', parsed)
+        }
       } else {
-        alert('Format non supporté. Veuillez charger un fichier .pbn ou .lin.')
-        return
+        startApplication(mode, parsed)
       }
-
-      // Lancement de la simulation du moteur de jeu
-      window.gameStates = simulateGame(parsed)
-      window.currentStateIndex = 0
-
-      // Rafraîchir l'interface avec la première étape
-      updateUI()
-    } catch (err) {
-      console.error(err)
-      alert('Erreur lors de la lecture du fichier : ' + err.message)
+    } catch {
+      // do nothing
     }
   }
 
-  // --- CHARGEMENT VIA UPLOAD (file input) ---
+  /**
+   * Initialise l'état de jeu et lance le rendu.
+   */
+  function startApplication(mode, parsed) {
+    window.gameMode = mode
+    document.getElementById('mode-badge').textContent =
+      mode === 'play' ? '[MODE JEU]' : '[MODE VISIONNEUR]'
 
-  fileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0]
-    if (!file) {
-      return
-    }
-
-    const reader = new FileReader()
-    reader.onload = (evt) => {
-      const content = evt.target.result
-      if (content.includes('\uFFFD')) {
-        const readerIso = new FileReader()
-        readerIso.onload = (eIso) => {
-          processFile(eIso.target.result, file.name)
-        }
-        readerIso.readAsText(file, 'ISO-8859-1')
-      } else {
-        processFile(content, file.name)
+    if (mode === 'play') {
+      // En mode jeu, on ne simule que les enchères au départ
+      const biddingOnly = {
+        ...parsed,
+        tokens: parsed.tokens.filter((t) => t.type !== 'play'),
       }
+      window.gameStates = simulateGame(biddingOnly)
+      initDDS() // Bot DDS (bot_engine.js)
+    } else {
+      window.gameStates = simulateGame(parsed)
     }
-    reader.readAsText(file, 'UTF-8')
-  })
 
-  // --- CHARGEMENT VIA URL (?file=...) ---
+    window.currentStateIndex = 0
+    updateUI()
+    if (mode === 'play') {
+      checkBotTurn()
+    }
+  }
 
-  const urlParams = new URLSearchParams(window.location.search)
-  const fileUrl = urlParams.get('file')
-
-  if (fileUrl) {
-    const fileName = fileUrl.split('/').pop().split('?')[0]
-
-    const finalUrl = fileUrl
-
-    fetch(finalUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Erreur réseau')
+  // Écouteur pour l'upload de fichier local
+  if (fileInput) {
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0]
+      if (!file) {
+        return
+      }
+      const reader = new FileReader()
+      reader.onload = (evt) => {
+        const content = evt.target.result
+        // Détection d'encodage (LIN utilise souvent ISO-8859-1)
+        if (content.includes('\uFFFD')) {
+          const readerIso = new FileReader()
+          readerIso.onload = (eIso) =>
+            processFile(eIso.target.result, file.name)
+          readerIso.readAsText(file, 'ISO-8859-1')
+        } else {
+          processFile(content, file.name)
         }
-        return response.arrayBuffer()
-      })
+      }
+      reader.readAsText(file, 'UTF-8')
+    })
+  }
+
+  // Chargement automatique via URL (?file=...)
+  const fileUrl = new URLSearchParams(window.location.search).get('file')
+  if (fileUrl) {
+    fetch(fileUrl)
+      .then((res) => res.arrayBuffer())
       .then((buffer) => {
         let content = new TextDecoder('utf-8').decode(buffer)
         if (content.includes('\uFFFD')) {
           content = new TextDecoder('iso-8859-1').decode(buffer)
         }
-        processFile(content, fileName)
-      })
-      .catch((err) => {
-        console.error('Erreur chargement URL:', err)
+        processFile(content, fileUrl.split('/').pop().split('?')[0])
       })
   }
 
-  // --- BOUTONS DE CONTRÔLE DE LA PARTIE ---
+  // --- CONTRÔLES DE NAVIGATION ---
 
-  const btnStart = document.getElementById('btn-start')
-  const btnPrevTrick = document.getElementById('btn-prev-trick')
-  const btnPrev = document.getElementById('btn-prev')
-  const btnNext = document.getElementById('btn-next')
-  const btnNextTrick = document.getElementById('btn-next-trick')
-  const btnEnd = document.getElementById('btn-end')
+  const actions = {
+    'btn-start': () => (window.currentStateIndex = 0),
+    'btn-end': () => (window.currentStateIndex = window.gameStates.length - 1),
+    'btn-next': () => {
+      if (window.currentStateIndex < window.gameStates.length - 1) {
+        window.currentStateIndex++
+      }
+    },
+    'btn-prev': () => {
+      if (window.currentStateIndex > 0) {
+        window.currentStateIndex--
+      }
+    },
+    'btn-next-trick': () => jumpTrick(1),
+    'btn-prev-trick': () => jumpTrick(-1),
+  }
 
-  // Retour au tout début de la partie
-  btnStart.addEventListener('click', () => {
-    window.currentStateIndex = 0
-    updateUI()
-  })
-
-  // Aller à la toute fin de la partie
-  btnEnd.addEventListener('click', () => {
-    window.currentStateIndex = window.gameStates.length - 1
-    updateUI()
-  })
-
-  // Avancer d'une seule étape (une annonce ou une carte jouée)
-  btnNext.addEventListener('click', () => {
-    if (window.currentStateIndex < window.gameStates.length - 1) {
-      window.currentStateIndex++
+  Object.entries(actions).forEach(([id, func]) => {
+    document.getElementById(id).addEventListener('click', () => {
+      func()
       updateUI()
-    }
+    })
   })
 
-  // Reculer d'une seule étape
-  btnPrev.addEventListener('click', () => {
-    if (window.currentStateIndex > 0) {
-      window.currentStateIndex--
-      updateUI()
-    }
-  })
-
-  // Navigation par pli (cherche la prochaine/précédente table avec 4 cartes)
-  const jumpTrick = (dir) => {
+  function jumpTrick(dir) {
     let i = window.currentStateIndex + dir
     while (i > 0 && i < window.gameStates.length - 1) {
-      if (window.gameStates[i].currentTrick.length === 4) break
+      if (window.gameStates[i].currentTrick.length === 4) {
+        break
+      }
       i += dir
     }
     window.currentStateIndex = i
-    updateUI()
   }
 
-  btnNextTrick.addEventListener('click', () => jumpTrick(1))
-  btnPrevTrick.addEventListener('click', () => jumpTrick(-1))
-
-  // --- NAVIGATION CLAVIER ---
+  // Navigation clavier
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowRight') btnNext.click()
-    if (e.key === 'ArrowLeft') btnPrev.click()
+    if (e.key === 'ArrowRight') {
+      document.getElementById('btn-next').click()
+    }
+    if (e.key === 'ArrowLeft') {
+      document.getElementById('btn-prev').click()
+    }
   })
 
-  // --- OPTION LANGUE DES CARTES ---
+  // Toggle langue des cartes
   if (langToggle) {
     langToggle.addEventListener('change', (e) => {
       window.useFrenchCards = e.target.checked
-      localStorage.setItem('useFrenchCards', window.useFrenchCards)
       updateUI()
     })
   }

@@ -16,7 +16,7 @@ main.container-fluid {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0rem;
 }
 
 /* Header compact */
@@ -33,9 +33,11 @@ main.container-fluid {
   margin-bottom: 0;
   text-align: left;
 }
+
 .app-header h1 {
   font-size: 1.5rem;
   margin-bottom: 0;
+  text-align: left;
 }
 .app-header h2 {
   font-size: 1rem;
@@ -58,14 +60,17 @@ main.container-fluid {
 }
 
 /* Toggle langage */
-.lang-toggle label {
+.lang-toggle label,
+.ew-toggle label {
   cursor: pointer;
   padding: 0.25rem 0.5rem;
   background: var(--pico-muted-border-color);
   border-radius: var(--pico-border-radius);
   transition: background 0.2s;
 }
-.lang-toggle label:hover {
+
+.lang-toggle label:hover,
+.ew-toggle label:hover {
   background: var(--pico-muted-background-color);
 }
 
@@ -343,4 +348,80 @@ main.container-fluid {
 .step-counter {
   font-size: 1rem;
   font-weight: bold;
+}
+
+/* Styles pour le mode jeu */
+.bsol-card.playable {
+  cursor: pointer;
+  border: 1px solid var(--pico-primary);
+  box-shadow: 0 0 5px var(--pico-primary);
+}
+
+.bsol-card.playable:hover {
+  transform: translateY(-3px);
+  background-color: var(--pico-primary-background);
+}
+
+.bsol-card.unplayable {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.player-label {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+.player-label.active-turn {
+  background-color: var(--pico-primary);
+  color: white;
+  box-shadow: 0 0 10px var(--pico-primary);
+}
+
+.label-N {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: center;
+  margin-top: -25px;
+}
+.label-S {
+  grid-column: 2;
+  grid-row: 3;
+  align-self: end;
+  justify-self: center;
+  margin-bottom: -25px;
+}
+.label-W {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: center;
+  justify-self: start;
+  margin-left: -25px;
+}
+.label-E {
+  grid-column: 3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: end;
+  margin-right: -25px;
+}
+
+/* Placeholder pour les mains cachées */
+.hidden-hand-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--pico-color);
+  border: 2px dashed var(--pico-color);
+  border-radius: 8px;
+  min-height: 100px;
 }

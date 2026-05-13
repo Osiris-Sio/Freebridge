@@ -11,7 +11,7 @@
   <header class="app-header">
     <hgroup>
       <h1>Bridge Viewer Web (BVW)</h1>
-      <h2>Visionneuse de PBN / LIN</h2>
+      <h2>Jouez et visionnez vos donnes (PBN / LIN)</h2>
     </hgroup>
     <div class="header-actions">
       <input type="file" id="file-input" accept=".pbn,.lin" />
@@ -46,6 +46,12 @@
           </p>
         </div>
       </article>
+      <div class="ew-toggle" style="margin-bottom: 0.5rem;">
+        <label>
+          <input type="checkbox" id="toggle-ew-visibility" />
+          Afficher Est/Ouest
+        </label>
+      </div>
       <div class="lang-toggle">
         <label>
           <input type="checkbox" id="lang-fr-cards" />
@@ -118,11 +124,28 @@
       <button id="btn-end" class="secondary" disabled>Fin &gt;&gt;</button>
     </div>
     <div class="step-counter">
+      <span id="mode-badge" style="margin-right: 10px; font-weight: bold; color: var(--primary);"></span>
       Étape : <span id="step-counter-text">0 / 0</span>
     </div>
   </footer>
+
+  <!-- Dialogue de sélection de mode -->
+  <dialog id="mode-dialog">
+    <article>
+      <header>
+        <h3>Choisir le mode</h3>
+      </header>
+      <p>Souhaitez-vous jouer la donne ou visionner la résolution ?</p>
+      <small><i><strong>Note :</strong> Le visionnage de la résolution est un replay enregistré par le bridgeur qui a créé le fichier et ne correspond pas forcément à la meilleure résolution possible.</i></small>
+      <footer>
+        <button id="choose-play">Jouer (Nord/Sud)</button>
+        <button class="secondary" id="choose-solve">Visionner la résolution</button>
+      </footer>
+    </article>
+  </dialog>
 </main>
 
+<script src="Bridge_Viewer_Web/js/bot_engine.js"></script>
 <script src="Bridge_Viewer_Web/js/utils.js"></script>
 <script src="Bridge_Viewer_Web/js/parsers.js"></script>
 <script src="Bridge_Viewer_Web/js/engine.js"></script>

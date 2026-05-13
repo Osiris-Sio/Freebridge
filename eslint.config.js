@@ -7,7 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier'
 export default [
   // Configuration de base pour tous les fichiers JS
   {
-    ignores: ['bsol/**'],
+    ignores: ['bsol/**', 'Bridge_Viewer_Web/js/dds.js'],
     files: ['**/*.js'],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -32,6 +32,16 @@ export default [
       curly: ['error', 'all'], // Force les accolades pour les blocs if/else
       'no-var': 'error', // Interdit 'var' (utilise 'let' ou 'const')
       'prefer-const': 'error', // Force 'const' si la variable n'est pas réassignée
+    },
+  },
+  // Configuration spécifique pour les scripts globaux du Bridge Viewer Web
+  {
+    files: ['Bridge_Viewer_Web/js/*.js'],
+    languageOptions: {
+      sourceType: 'script',
+      globals: {
+        ...globals.browser,
+      },
     },
   },
 
