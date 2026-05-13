@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/jmsa-debuter/Réaliser ses levées.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/debuter/jmsa/JMSA 2 - Réaliser ses levées.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>

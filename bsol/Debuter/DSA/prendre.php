@@ -12,9 +12,9 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <button class="secondary outline" disabled title="Bientôt disponible">
-            <i class="fas fa-chalkboard-teacher"></i> Cours à venir
-        </button>
+        <a href="assets/pdf/debuter/dsa/DSA 21 - Réaliser ses levées en défense.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+        </a>
     </div>
 
     <details class="level-folder">

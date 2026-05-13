@@ -11,12 +11,6 @@ include '../../../includes/header.php'; ?>
         <h1>Coupes en défense</h1>
     </header>
 
-    <div class="course-header">
-        <a href="assets/pdf/da-debuter/Les atouts de la défense.pdf" target="_blank" role="button" class="secondary">
-            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
-        </a>
-    </div>
-
     <details class="level-folder">
         <summary>33 - Coupes en défense (35 donnes)</summary>
         <div class="lesson-list">

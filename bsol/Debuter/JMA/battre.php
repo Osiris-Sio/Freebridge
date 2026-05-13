@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/jma-debuter/Battre atout et coupes de la main courte.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/debuter/jma/JMA 14 - Battre atout et coupes de la main courte.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>

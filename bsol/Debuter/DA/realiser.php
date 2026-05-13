@@ -10,13 +10,6 @@ include '../../../includes/header.php'; ?>
     <header>
         <h1>Réaliser ses levées en urgence</h1>
     </header>
-
-    <div class="course-header">
-        <button class="secondary outline" disabled title="Bientôt disponible">
-            <i class="fas fa-chalkboard-teacher"></i> Cours à venir
-        </button>
-    </div>
-
     <details class="level-folder">
         <summary>31 - Réaliser ses levées en urgence (15 donnes)</summary>
         <div class="lesson-list">
