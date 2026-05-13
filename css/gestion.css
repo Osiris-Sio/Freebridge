@@ -1,0 +1,59 @@
+.gestion-filters .filter-submit {
+  display: flex;
+  align-items: flex-end;
+}
+
+.gestion-table-container {
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.gestion-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0;
+}
+
+.gestion-table thead th {
+  position: sticky;
+  top: 0;
+  background-color: var(--pico-muted-border-color);
+  z-index: 10;
+}
+
+.gestion-table td {
+  vertical-align: middle;
+}
+
+.gestion-update-form {
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.gestion-update-form select {
+  margin-bottom: 0;
+  width: auto;
+  flex-grow: 1;
+}
+
+.gestion-update-form button {
+  margin-bottom: 0;
+  padding: 0.25rem 0.75rem;
+  width: auto;
+}
+
+.gestion-empty-msg {
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+}
+
+.admin-badge {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

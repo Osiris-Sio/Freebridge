@@ -1,58 +1,144 @@
-<!DOCTYPE html>
-<html> 
+<?php
+include '../../../includes/header.php'; ?>
+<link rel="stylesheet" href="css/level-pages.css">
 
-<head>
-<title>Jeu avec le Mort à Sans-Atout</title>
-<meta charset="UTF-8">
-<title style="font-size:300%:"></title>
-</head>
+<button type="button" class="secondary" onclick="window.location.href='bsol/Progresser/progresser.php'">
+    ← Retour au niveau progresser
+</button>
 
-<body> 
-Jeu avec le Mort à Sans-Atout</>
+<article>
+    <header>
+        <h1>16 - Choix de la couleur à affranchir (39 donnes)</h1>
+    </header>
 
-<p> <a href="../progresser.php">Retour</a>
-<pre>
-<h1> 16 - Choix de la couleur à affranchir (32 donnes) </h1> 
-Donne 1 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_1.lin">Solution</a>
-Donne 2 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_2.lin">Solution</a>
-Donne 3 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_3.lin">Solution</a>
-Donne 4 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_4.lin">Solution</a>
-Donne 5 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_5.lin">Solution</a>
-Donne 6 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_6.lin">Solution</a>
-Donne 7 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_7.lin">Solution</a>
-Donne 8 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_8.lin">Solution</a>
-Donne 9 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_9.lin">Solution</a>
-Donne 10 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_10.lin">Solution</a>
-Donne 11 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_11.lin">Solution</a>
-Donne 12 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_12.lin">Solution</a>
-Donne 13 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_13.lin">Solution</a>
-Donne 14 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_14.lin">Solution</a>
-Donne 15 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_15.lin">Solution</a>
-Donne 16 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_16.lin">Solution</a>
-Donne 17 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_17.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_18.lin">Solution</a>
-Donne 18 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_19.lin">Solution</a>
-Donne 20 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_20.lin">Solution</a>
-Donne 21 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_21.lin">Solution</a>
-Donne 22 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_22.lin">Solution</a>
-Donne 23 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_23.lin">Solution</a>
-Donne 24 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_24.lin">Solution</a>
-Donne 25 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_25.lin">Solution</a>
-Donne 26 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_26.lin">Solution</a>
-Donne 27 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_27.lin">Solution</a>
-Donne 28 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_28.lin">Solution</a>
-Donne 29 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_29.lin">Solution</a>
-Donne 30 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_30.lin">Solution</a>
-Donne 31 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_31.lin">Solution</a>
-Donne 32 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_32.lin">Solution</a>
-Donne 33 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_33.lin">Solution</a>
-Donne 34 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_34.lin">Solution</a>
-Donne 35 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_35.lin">Solution</a>
-Donne 36 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_36.lin">Solution</a>
-Donne 37 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_37.lin">Solution</a>
-Donne 38 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_38.lin">Solution</a>
-Donne 39 <a href="https://bridge-training.com/player?dds=DEyF3PGb">Jouer / <a href="https://freebridge.fr/ddummy.htm?file=https://freebridge.fr/bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_39.lin">Solution</a>
+    <div class="course-header">
+        <button class="secondary outline" disabled title="Bientôt disponible">
+            <i class="fas fa-chalkboard-teacher"></i> Cours à venir
+        </button>
+    </div>
 
-</pre>
-</body>
-</html>
+    <details class="level-folder">
+        <summary>Donnes 1 à 39</summary>
+        <div class="lesson-list">
+            <div class="lesson-item"><span>Donne 1</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 2</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 3</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_3.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_3.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 4</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_4.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_4.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 5</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_5.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_5.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 6</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_6.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_6.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 7</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_7.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_7.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 8</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_8.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_8.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 9</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_9.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_9.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 10</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_10.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_10.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 11</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_11.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_11.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 12</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_12.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_12.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 13</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_13.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_13.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 14</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_14.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_14.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 15</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_15.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_15.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 16</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_16.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_16.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 17</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_17.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_17.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 18</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_18.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_18.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 19</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_19.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_19.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 20</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_20.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_20.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 21</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_21.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_21.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 22</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_22.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_22.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 23</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_23.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_23.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 24</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_24.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_24.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 25</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_25.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_25.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 26</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_26.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_26.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 27</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_27.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_27.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 28</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_28.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_28.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 29</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_29.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_29.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 30</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_30.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_30.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 31</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_31.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_31.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 32</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_32.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_32.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 33</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_33.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_33.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 34</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_34.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_34.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 35</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_35.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_35.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 36</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_36.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_36.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 37</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_37.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_37.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 38</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_38.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_38.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+            <div class="lesson-item"><span>Donne 39</span>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player?dds=DEyF3PGb" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_39.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMSA/16_-_Choix_de_la_couleur_a_affranchir/Donne_39.lin" role="button" class="secondary outline">Analyser</a></div>
+            </div>
+        </div>
+    </details>
+</article>
+
+<?php include '../../../includes/footer.php'; ?>

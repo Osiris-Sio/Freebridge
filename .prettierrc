@@ -1,8 +1,24 @@
 {
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "printWidth": 80,
+  "semi": false,
   "singleQuote": true,
-  "trailingComma": "none",
-  "phpVersion": "7.4",
-  "printWidth": 100,
   "tabWidth": 2,
-  "plugins": ["@prettier/plugin-php"]
+  "trailingComma": "all",
+  "htmlWhitespaceSensitivity": "ignore",
+  "phpVersion": "7.4",
+  "plugins": ["@prettier/plugin-php"],
+  "overrides": [
+    {
+      "files": "*.php",
+      "options": {
+        "parser": "php",
+        "tabWidth": 2,
+        "useTabs": false
+      }
+    }
+  ]
 }

@@ -1,3 +1,16 @@
-Header add Access-Control-Allow-Origin "https://freebridge.fr"
-Header add Access-Control-Allow-Headers "origin, x-requested-width, content-type"
-Header add Access-Control-Allow-Methods "GET"
+# Désactiver le listage des dossiers
+Options -Indexes
+
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Autoriser les requêtes CORS (si nécessaire pour vos outils)
+Header set Access-Control-Allow-Origin "*"
+
+# 1. Si ce n'est pas un fichier (virtual route)
+# 2. OU si c'est un fichier PHP (pour la sécurité)
+# 3. SAUF si c'est déjà index.php (pour éviter la boucle infinie)
+RewriteCond %{REQUEST_URI} !index\.php
+RewriteCond %{REQUEST_FILENAME} !-f [OR]
+RewriteCond %{REQUEST_URI} \.php$
+RewriteRule ^ index.php [L,QSA]

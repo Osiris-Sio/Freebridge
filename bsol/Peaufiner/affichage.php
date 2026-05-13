@@ -7,22 +7,22 @@
 			
 			<!--Preamble for Zone de texte - Origine txt_4-->
 			<div class="OBJ-4" __AddCode="here" style="position:absolute;left:20px;top:123px;width:258px;height:20px;text-align:center;overflow:hidden;/*Add Style*/">
-				<span class="C-2"><?php echo($Origine) ?></span>
+				<span class="C-2"><?php echo $Origine; ?></span>
 			</div>
 			
 			<!--Preamble for Zone de texte - Thème txt_2-->
 			<div class="OBJ-4" __AddCode="here" style="position:absolute;left:19px;top:162px;width:258px;height:20px;text-align:center;overflow:hidden;/*Add Style*/">
-				<span class="C-2"><?php echo($Theme) ?></span></p>
+				<span class="C-2"><?php echo $Theme; ?></span></p>
 			</div>
 			
 			<!--Preamble for Zone de texte - Commentaires plan de jeu : txt_5-->
 			<div class="OBJ-4" __AddCode="here" style="position:absolute;left:10px;top:440px;width:260px;height:200px;overflow:hidden;/*Add Style*/">
-				<span class="C-2"><?php echo($Question) ?></span>
+				<span class="C-2"><?php echo $Question; ?></span>
 			</div>
 			
 			<!--Preamble for Zone de texte - Commentaires enchères : txt_6-->
 			<div class="OBJ-5" __AddCode="here" style="position:absolute;left:630px;top:440px;width:320px;height:140px;overflow:hidden;/*Add Style*/">
-				<span class="C-2"><?php echo($CommEnch) ?></span>
+				<span class="C-2"><?php echo $CommEnch; ?></span>
 			</div>
 						
 			<!-- Tableau table_1 -->
@@ -42,31 +42,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[0]; ?></span></p>
 						</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NP[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NP[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:30px;">
@@ -74,31 +74,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NC[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NC[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -106,31 +106,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"></span><?php echo($NK[4]) ?></p>
+						<p class="Corps-de-tableau"><span class="C-1"></span><?php echo $NK[4]; ?></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NK[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NK[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:20px;">
@@ -138,31 +138,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($NT[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $NT[8]; ?></span></p>
 					</td>
 				</tr>
 			</table>
@@ -244,100 +244,100 @@
 				</tr>
 				<tr style="height:12px;">
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench1) ?><br></span>
+						<span class="C-2"><?php echo $Ench1; ?><br></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench2) ?></span>
+						<span class="C-2"><?php echo $Ench2; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench3) ?></span>
+						<span class="C-2"><?php echo $Ench3; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench4) ?></span>
-					</td>
-				</tr>
-				<tr style="height:12px;">
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench5) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench6) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench7) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench8) ?></span>
+						<span class="C-2"><?php echo $Ench4; ?></span>
 					</td>
 				</tr>
 				<tr style="height:12px;">
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench9) ?></span>
+						<span class="C-2"><?php echo $Ench5; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench10) ?></span>
+						<span class="C-2"><?php echo $Ench6; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench11) ?></span>
+						<span class="C-2"><?php echo $Ench7; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench12) ?></span>
-					</td>
-				</tr>
-				<tr style="height:12px;">
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench13) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench14) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench15) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench16) ?></span>
+						<span class="C-2"><?php echo $Ench8; ?></span>
 					</td>
 				</tr>
 				<tr style="height:12px;">
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench17) ?></span>
+						<span class="C-2"><?php echo $Ench9; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench18) ?></span>
+						<span class="C-2"><?php echo $Ench10; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench11; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench12; ?></span>
+					</td>
+				</tr>
+				<tr style="height:12px;">
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench13; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench14; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench15; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench16; ?></span>
+					</td>
+				</tr>
+				<tr style="height:12px;">
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench17; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench18; ?></span>
 					</td>
 					<td class="TC-7"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench19) ?></span>
+						<span class="C-2"><?php echo $Ench19; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench20) ?></span>
-					</td>
-				</tr>
-				<tr style="height:12px;">
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench21) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench22) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench23) ?></span>
-					</td>
-					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench24) ?></span>
+						<span class="C-2"><?php echo $Ench20; ?></span>
 					</td>
 				</tr>
 				<tr style="height:12px;">
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench25) ?></span>
+						<span class="C-2"><?php echo $Ench21; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench26) ?></span>
+						<span class="C-2"><?php echo $Ench22; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench27) ?></span>
+						<span class="C-2"><?php echo $Ench23; ?></span>
 					</td>
 					<td class="TC-6"  style="/* CellStyle */">
-						<span class="C-2"><?php echo($Ench28) ?></span>
+						<span class="C-2"><?php echo $Ench24; ?></span>
+					</td>
+				</tr>
+				<tr style="height:12px;">
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench25; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench26; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench27; ?></span>
+					</td>
+					<td class="TC-6"  style="/* CellStyle */">
+						<span class="C-2"><?php echo $Ench28; ?></span>
 					</td>
 				</tr>
 			</table>
@@ -436,31 +436,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WP[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WP[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -468,63 +468,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WC[8]) ?></span></p>
-					</td>
-				</tr>
-				<tr style="height:40px;">
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[0]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[1]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[2]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[3]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[4]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[5]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[6]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[7]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WK[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WC[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -532,31 +500,63 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($WT[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WK[8]; ?></span></p>
+					</td>
+				</tr>
+				<tr style="height:40px;">
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[0]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[1]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[2]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[3]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[4]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[5]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[6]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[7]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $WT[8]; ?></span></p>
 					</td>
 				</tr>
 			</table>
@@ -600,31 +600,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EP[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EP[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -632,63 +632,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EC[8]) ?></span></p>
-					</td>
-				</tr>
-				<tr style="height:40px;">
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[0]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[1]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[2]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[3]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[4]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[5]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[6]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[7]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($EK[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EC[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -696,31 +664,63 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ET[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $EK[8]; ?></span></p>
+					</td>
+				</tr>
+				<tr style="height:40px;">
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[0]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[1]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[2]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[3]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[4]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[5]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[6]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[7]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ET[8]; ?></span></p>
 					</td>
 				</tr>
 			</table>
@@ -766,31 +766,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SP[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SP[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -798,63 +798,31 @@
 						<p class="Corps-de-tableau"><span class="C-1"></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SC[8]) ?></span></p>
-					</td>
-				</tr>
-				<tr style="height:40px;">
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[0]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[1]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[2]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[3]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[4]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[5]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[6]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[7]) ?></span></p>
-					</td>
-					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($SK[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SC[8]; ?></span></p>
 					</td>
 				</tr>
 				<tr style="height:40px;">
@@ -862,31 +830,63 @@
 						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[0]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[0]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[1]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[1]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[2]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[2]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[3]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[3]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[4]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[4]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[5]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[5]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[6]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[6]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[7]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[7]; ?></span></p>
 					</td>
 					<td class="TC-1"  style="/* CellStyle */">
-						<p class="Corps-de-tableau"><span class="C-1"><?php echo($ST[8]) ?></span></p>
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $SK[8]; ?></span></p>
+					</td>
+				</tr>
+				<tr style="height:40px;">
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><br></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[0]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[1]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[2]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[3]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[4]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[5]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[6]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[7]; ?></span></p>
+					</td>
+					<td class="TC-1"  style="/* CellStyle */">
+						<p class="Corps-de-tableau"><span class="C-1"><?php echo $ST[8]; ?></span></p>
 					</td>
 				</tr>
 			</table>
@@ -951,12 +951,12 @@
 			
 			<!--Zone de texte 13-->
 			<div class="OBJ-9" __AddCode="here" style="position:absolute;left:369px;top:300px;width:28px;height:52px;overflow:hidden; text-align:center;border:1px groove #000000;/*Add Style*/">
-				<p class="Corps"><span class="C-3"><?php echo($Entame[1]) ?></span></p>
+				<p class="Corps"><span class="C-3"><?php echo $Entame[1]; ?></span></p>
 			</div>
 			
 			<!--Zone de texte 14-->
 			<div class="OBJ-9" __AddCode="here" style="position:absolute;left:341px;top:300px;width:28px;height:52px;overflow:hidden; text-align:center;border:1px groove #000000;/*Add Style*/">
-				<p class="Corps"><span class="C-3"><?php echo($Entame[0]) ?></span></p>
+				<p class="Corps"><span class="C-3"><?php echo $Entame[0]; ?></span></p>
 			</div>
 			
 			<!--Zone de texte 15-->
