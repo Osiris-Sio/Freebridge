@@ -6,7 +6,7 @@
   ← Retour
 </button>
 
-<button type="button" onclick="if(confirm('La partie va être recommencée.\nÊtes-vous sûr de vouloir changer de mode ?')) window.location.reload()">
+<button type="button" id="btn-change-mode">
   ⟳ Changer de mode
 </button>
 

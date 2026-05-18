@@ -7,6 +7,7 @@
 
 // Variables globales de l'application
 window.gameStates = []
+window.gameComments = []
 window.currentStateIndex = 0
 window.gameMode = 'solve' // 'solve' ou 'play'
 window.ddsWorker = null
@@ -44,21 +45,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Si pas de mode défini, on demande à l'utilisateur
       if (!mode) {
-        const dialog = document.getElementById('mode-dialog')
-        dialog.showModal()
-        document.getElementById('choose-solve').onclick = () => {
-          dialog.close()
-          startApplication('solve', parsed)
-        }
-        document.getElementById('choose-play').onclick = () => {
-          dialog.close()
-          startApplication('play', parsed)
-        }
+        askUserMode(parsed)
       } else {
         startApplication(mode, parsed)
       }
     } catch {
       // do nothing
+    }
+  }
+
+  /**
+   * Affiche le dialogue de choix de mode.
+   */
+  function askUserMode(parsed) {
+    const dialog = document.getElementById('mode-dialog')
+    if (dialog) {
+      dialog.showModal()
+      document.getElementById('choose-solve').onclick = () => {
+        dialog.close()
+        startApplication('solve', parsed)
+      }
+      document.getElementById('choose-play').onclick = () => {
+        dialog.close()
+        startApplication('play', parsed)
+      }
+    } else {
+      startApplication('solve', parsed)
     }
   }
 
@@ -71,21 +83,46 @@ document.addEventListener('DOMContentLoaded', () => {
       mode === 'play' ? '[MODE JEU]' : '[MODE VISIONNEUR]'
 
     if (mode === 'play') {
-      // En mode jeu, on ne simule que les enchères au départ
+      // En mode jeu, on simule les enchères et on extrait le premier bloc de commentaires (jusqu'à son 'pg') pour donner le contexte sans spoiler la solution.
+      let initialTokens = []
+      const firstCommentIdx = parsed.tokens.findIndex(
+        (t) => t.type === 'comment',
+      )
+      if (firstCommentIdx !== -1) {
+        // s'il y a un commentaire, on l'extrait
+        let endIdx = firstCommentIdx
+        while (
+          endIdx < parsed.tokens.length &&
+          parsed.tokens[endIdx].type !== 'page'
+        ) {
+          endIdx++
+        }
+        initialTokens = parsed.tokens
+          .slice(0, endIdx)
+          .filter((t) => t.type !== 'play')
+      }
+
       const biddingOnly = {
         ...parsed,
-        tokens: parsed.tokens.filter((t) => t.type !== 'play'),
+        tokens: initialTokens,
       }
-      window.gameStates = simulateGame(biddingOnly)
+      const sim = simulateGame(biddingOnly)
+      window.gameStates = sim.states
+      window.gameComments = sim.comments
       initDDS() // Bot DDS (bot_engine.js)
     } else {
-      window.gameStates = simulateGame(parsed)
+      const sim = simulateGame(parsed)
+      window.gameStates = sim.states
+      window.gameComments = sim.comments
     }
 
-    window.currentStateIndex = 0
-    updateUI()
     if (mode === 'play') {
+      window.currentStateIndex = window.gameStates.length - 1
+      updateUI()
       checkBotTurn()
+    } else {
+      window.currentStateIndex = 0
+      updateUI()
     }
   }
 
@@ -173,6 +210,24 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('btn-prev').click()
     }
   })
+
+  // Bouton pour changer de mode
+  const btnChangeMode = document.getElementById('btn-change-mode')
+  if (btnChangeMode) {
+    btnChangeMode.addEventListener('click', () => {
+      if (!window.currentParsedData) {
+        // pas de fichier chargé
+        return
+      }
+      if (
+        confirm(
+          'La partie va être recommencée.\nÊtes-vous sûr de vouloir changer de mode ?',
+        )
+      ) {
+        askUserMode(window.currentParsedData)
+      }
+    })
+  }
 
   // Toggle langue des cartes
   if (langToggle) {

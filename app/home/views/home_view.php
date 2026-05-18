@@ -17,18 +17,19 @@
             Nous avons depuis numérisé un grand nombre de donnes, qui offrent un intérêt pédagogique que nous sommes heureux de vous faire partager.
         </p>
         <p>
-            Vous pourrez jouer à toutes ces donnes et aux différents cours au niveau Débuter. Pour cela, il suffit de <a href="register">créer un compte</a> et de <a href="login">se connecter</a>.
+            Vous pourrez obtenir un accès gratuit aux donnes et aux cours au niveau Débuter. Pour cela, il suffit de <a href="register">créer un compte</a> et de <a href="login">se connecter</a>.
         </p>
         <p>
-            Cet accès gratuit au niveau Débuter et au niveau Progresser* vous permettra en outre de progresser avec des diaporamas sur le jeu de la carte.
+            Cet accès gratuit au niveau Débuter et au niveau Progresser* vous permettra en outre de progresser avec des diaporamas sur le bridge.
         </p>
         <p>
             L'accès aux niveaux supérieurs sera mis en place dans le courant de l'année et nécessite un abonnement mensuel ou annuel d'un montant réduit pour un accès à des diaporamas plus techniques et à un nombre de donnes plus important pour les niveaux Peaufiner et Confirmer.
         </p>
-        <p>Pour nous contacter, vous pouvez utiliser <a href="contact">ce formulaire de contact</a>
-        <p><i>* Le niveau Progresser vous est attribué après avoir terminé les cours du niveau débutant et avoir contacté le responsable du site pour en valider le niveau.</i></p>
+        <p>Pour nous contacter, vous pouvez utiliser <a href="contact">ce formulaire de contact</a></p>
+        <small><i>* Le niveau Progresser vous est attribué gratuitement après avoir terminé les cours du niveau débutant et avoir contacté le responsable du site pour en valider votre niveau, sous contrôle de la licence FFB.</i></small>
     </div>
 
+    <br>
 
     <div class="slideshow-container">
         <div class="mySlides fade">

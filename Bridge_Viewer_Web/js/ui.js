@@ -71,8 +71,10 @@ function updateUI() {
 
   // --- Panneau de droite : Commentaires ---
   const commentsBox = document.getElementById('comments-box')
-  commentsBox.innerHTML = state.displayComment
-    ? `<p>${state.displayComment}</p>`
+  const currentComment =
+    window.gameComments && window.gameComments[window.currentStateIndex]
+  commentsBox.innerHTML = currentComment
+    ? `<p>${currentComment}</p>`
     : '<p><i>Aucun commentaire</i></p>'
 
   // --- Panneau de droite : Enchères ---

@@ -13,6 +13,7 @@ const clone = (obj) => JSON.parse(JSON.stringify(obj))
  */
 function simulateGame(parsed) {
   const states = []
+  const comments = []
 
   const state = {
     hands: clone(parsed.initialHands),
@@ -24,7 +25,6 @@ function simulateGame(parsed) {
     contract: parsed.contract,
     declarer: parsed.declarer,
     trump: null,
-    displayComment: '',
     dealer: parsed.dealer,
     vul: parsed.vul,
     lastAction: null,
@@ -101,20 +101,46 @@ function simulateGame(parsed) {
   // Premier état (début du jeu de la carte)
   states.push(clone(state))
 
-  // --- TRAITEMENT DU JEU DE LA CARTE ---
+  // --- TRAITEMENT DU JEU ---
+  let pendingPageBreak = false // si on doit ajouter une page
+
   parsed.tokens.forEach((t) => {
-    if (t.type !== 'play' && t.type !== 'comment') {
+    if (t.type !== 'play' && t.type !== 'comment' && t.type !== 'page') {
       return
     }
 
-    if (t.type === 'comment') {
-      states[states.length - 1].displayComment = formatSymbols(t.value)
-    } else {
+    if (t.type === 'page') {
+      pendingPageBreak = true
+    } else if (t.type === 'play') {
+      if (pendingPageBreak) {
+        pendingPageBreak = false
+      }
       states.push(...simulateStep(states[states.length - 1], t))
+    } else if (t.type === 'comment') {
+      if (pendingPageBreak) {
+        states.push(clone(states[states.length - 1]))
+        pendingPageBreak = false
+      }
+      const idx = states.length - 1
+      if (comments[idx]) {
+        comments[idx] += '<br><br>' + formatSymbols(t.value)
+      } else {
+        comments[idx] = formatSymbols(t.value)
+      }
     }
   })
 
-  return states
+  // Persistance du dernier commentaire pour remplir les cases vides
+  let lastComment = ''
+  for (let i = 0; i < states.length; i++) {
+    if (comments[i] !== undefined) {
+      lastComment = comments[i]
+    } else {
+      comments[i] = lastComment
+    }
+  }
+
+  return { states, comments }
 }
 
 /**
