@@ -1,7 +1,6 @@
 :root {
-  --table-bg: #216a3a;
   --card-bg: #ffffff;
-  --card-color-red: #d32f2f;
+  --card-color-red: #ed2d20;
   --card-color-black: #000000;
 }
 
@@ -227,7 +226,7 @@ main.container-fluid {
   height: 100px;
   justify-self: center;
   align-self: center;
-  border: 6px solid #00ff00;
+  border: 6px solid var(--pico-primary);
   border-radius: 2px;
 }
 
@@ -424,4 +423,100 @@ main.container-fluid {
   border: 2px dashed var(--pico-color);
   border-radius: 8px;
   min-height: 100px;
+}
+
+@media (max-width: 992px) {
+  #mode-dialog footer {
+    display: flex;
+    gap: auto;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #file-input {
+    margin-top: 30px;
+  }
+
+  .table-panel {
+    height: 600px;
+    padding-left: 300px;
+    overflow-x: scroll;
+    /* afficher tout le temps le scrollbar horizontal */
+    scrollbar-width: thin;
+    scrollbar-color: var(--pico-primary) var(--pico-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--pico-muted-border-color);
+  }
+
+  .table-panel::-webkit-scrollbar {
+    height: 10px;
+    -webkit-appearance: none;
+  }
+
+  .table-panel::-webkit-scrollbar-track {
+    background: var(--pico-background-color);
+  }
+
+  .table-panel::-webkit-scrollbar-thumb {
+    background-color: var(--pico-primary);
+  }
+
+  .bridge-table {
+    width: 30%;
+    height: 30%;
+  }
+
+  .label-W {
+    margin-left: 0px;
+    margin-top: -180px;
+  }
+
+  .label-E {
+    margin-right: 0px;
+    margin-top: -180px;
+  }
+
+  .controls-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+    padding-bottom: 20px;
+  }
+
+  .controls-container.hide-on-bottom {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .controls-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 20px;
+  }
+
+  .controls-group button {
+    width: 100%;
+  }
+
+  .step-counter {
+    text-align: left;
+  }
+
+  .left-pane,
+  .right-panel {
+    padding: 2px;
+  }
 }

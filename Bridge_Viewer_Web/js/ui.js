@@ -228,3 +228,21 @@ function updateControlsState() {
   document.getElementById('btn-next-trick').disabled = isEnd
   document.getElementById('btn-end').disabled = isEnd
 }
+
+// Cache les boutons de navigation en bas de page (en responsive design)
+document.addEventListener('DOMContentLoaded', () => {
+  const controlsContainer = document.querySelector('.controls-container')
+
+  if (controlsContainer) {
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.innerHeight + window.scrollY
+      const pageHeight = document.documentElement.scrollHeight
+
+      if (scrollPosition >= pageHeight - 200 || scrollPosition <= 1300) {
+        controlsContainer.classList.add('hide-on-bottom')
+      } else {
+        controlsContainer.classList.remove('hide-on-bottom')
+      }
+    })
+  }
+})

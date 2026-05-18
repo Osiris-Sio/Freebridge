@@ -101,7 +101,7 @@ if (strpos($path, 'bsol/') === 0) {
 $path = str_replace('.php', '', $path);
 
 // --- Liste des pages PRIVÉES ---
-$private_pages = ['account', 'avdj'];
+$private_pages = ['account', 'avdj', 'bvw'];
 
 if (in_array($path, $private_pages) && !isset($_SESSION['user_id'])) {
   $_SESSION['messages']['errors'][] =

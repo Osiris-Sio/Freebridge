@@ -50,7 +50,7 @@
           </p>
         </div>
       </article>
-      <div class="ew-toggle" style="margin-bottom: 0.5rem;">
+      <div class="ew-toggle">
         <label>
           <input type="checkbox" id="toggle-ew-visibility" />
           Afficher Est/Ouest
@@ -112,7 +112,7 @@
     </aside>
   </section>
 
-  <footer class="controls-container">
+  <footer class="controls-container hide-on-bottom ">
     <div role="group" class="controls-group">
       <button id="btn-start" class="secondary" disabled>
         &lt;&lt; Début
@@ -128,7 +128,7 @@
       <button id="btn-end" class="secondary" disabled>Fin &gt;&gt;</button>
     </div>
     <div class="step-counter">
-      <span id="mode-badge" style="margin-right: 10px; font-weight: bold; color: var(--primary);"></span>
+      <span id="mode-badge"></span>
       Étape : <span id="step-counter-text">0 / 0</span>
     </div>
   </footer>

@@ -148,6 +148,8 @@
     </div>
     -->
 
+    <hr>
+
     <article>
         <header>
             <strong>Supprimer mon compte</strong>
