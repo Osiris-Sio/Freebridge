@@ -418,7 +418,14 @@ main.container-fluid {
   min-height: 100px;
 }
 
+.mobile-warning {
+  display: none;
+}
+
 @media (max-width: 1280px) {
+  .mobile-warning {
+    display: block;
+  }
   .grid-layout {
     grid-template-columns: 1fr;
     overflow-y: auto;

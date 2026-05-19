@@ -15,7 +15,7 @@
   <header class="app-header">
     <hgroup>
       <h1>Bridge Viewer Web (BVW)</h1>
-      <h2>Jouez et visionnez vos donnes (PBN / LIN)</h2>
+      <h2>Jouez et visionnez vos donnes <br>(PBN / LIN)</h2>
     </hgroup>
     <div class="header-actions">
       <input type="file" id="file-input" accept=".pbn,.lin" />
@@ -66,6 +66,11 @@
 
     <!-- Jeu central -->
     <section class="table-panel">
+      <div class="mobile-warning">
+        <p>
+          <small>Il est conseillé d'utiliser BVW sur un ordinateur.</small>
+        </p>
+      </div>
       <div class="bridge-table-container">
         <div class="bridge-table">
           <div class="hand north" id="hand-N"></div>
