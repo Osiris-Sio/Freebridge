@@ -68,7 +68,7 @@
     <section class="table-panel">
       <div class="mobile-warning">
         <p>
-          <small>Il est conseillé d'utiliser BVW sur un ordinateur.</small>
+          <small><strong>Remarque :</strong> Il est conseillé d'utiliser BVW sur un ordinateur.</small>
         </p>
       </div>
       <div class="bridge-table-container">

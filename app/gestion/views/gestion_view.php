@@ -3,10 +3,10 @@
 
 <main class="container">
     <header>
-        <h1>Gestion des Utilisateurs</h1>
-        <p>Administration du site Freebridge</p>
+        <h1>Gestion des utilisateurs</h1>
+        <p style="text-align: center;">Administration du site Freebridge</p>
     </header>
-
+    <hr>
     <article class="gestion-filters">
         <form method="get" action="gestion" class="grid">
             <div>
@@ -28,6 +28,10 @@
             </div>
         </form>
     </article>
+
+    <p class="mobile-warning">
+        <strong>Remarque :</strong> Il est préférable de gérer les utilisateurs depuis un ordinateur.
+    </p>
 
     <figure class="gestion-table-container">
         <table role="grid" class="gestion-table">

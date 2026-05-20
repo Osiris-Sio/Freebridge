@@ -28,6 +28,7 @@ main.container-fluid {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--pico-muted-border-color);
 }
+
 .app-header hgroup {
   margin-bottom: 0;
   text-align: left;
@@ -38,19 +39,23 @@ main.container-fluid {
   margin-bottom: 0;
   text-align: left;
 }
+
 .app-header h2 {
   font-size: 1rem;
   margin-bottom: 0;
 }
+
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .header-actions label {
   margin-bottom: 0;
   white-space: nowrap;
 }
+
 .header-actions input {
   margin-bottom: 0;
   padding: 0.25rem;
@@ -140,6 +145,7 @@ main.container-fluid {
   max-height: 250px;
   overflow-y: auto;
 }
+
 .bidding-table th,
 .bidding-table td {
   text-align: center;
@@ -191,18 +197,21 @@ main.container-fluid {
   justify-self: center;
   align-self: end;
 }
+
 .hand.south {
   grid-column: 2;
   grid-row: 3;
   justify-self: center;
   align-self: start;
 }
+
 .hand.west {
   grid-column: 1;
   grid-row: 2;
   justify-self: end;
   align-self: center;
 }
+
 .hand.east {
   grid-column: 3;
   grid-row: 2;
@@ -234,16 +243,19 @@ main.container-fluid {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .trick-card.S {
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .trick-card.W {
   left: -15px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .trick-card.E {
   right: -15px;
   top: 50%;
@@ -280,6 +292,7 @@ main.container-fluid {
 .bsol-card.red {
   color: var(--card-color-red);
 }
+
 .bsol-card.black {
   color: var(--card-color-black);
 }
@@ -300,14 +313,17 @@ main.container-fluid {
   user-select: none;
   padding: 2px;
 }
+
 .bsol-trick-card img {
   width: 14px;
   height: 14px;
   margin-top: 2px;
 }
+
 .bsol-trick-card.red {
   color: var(--card-color-red);
 }
+
 .bsol-trick-card.black {
   color: var(--card-color-black);
 }
@@ -326,17 +342,20 @@ main.container-fluid {
   border-top: 1px solid var(--pico-muted-border-color);
   margin-top: 0.25rem;
 }
+
 .controls-group {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 0.25rem;
 }
+
 .controls-group button {
   margin-bottom: 0;
   padding: 0.25rem 0.75rem;
   font-size: 0.9rem;
 }
+
 .step-counter {
   font-size: 1rem;
   font-weight: bold;
@@ -382,6 +401,7 @@ main.container-fluid {
   justify-self: center;
   margin-top: -25px;
 }
+
 .label-S {
   grid-column: 2;
   grid-row: 3;
@@ -389,6 +409,7 @@ main.container-fluid {
   justify-self: center;
   margin-bottom: -25px;
 }
+
 .label-W {
   grid-column: 1;
   grid-row: 2;
@@ -396,6 +417,7 @@ main.container-fluid {
   justify-self: start;
   margin-left: -25px;
 }
+
 .label-E {
   grid-column: 3;
   grid-row: 2;
@@ -422,14 +444,16 @@ main.container-fluid {
   display: none;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .mobile-warning {
     display: block;
   }
+
   .grid-layout {
     grid-template-columns: 1fr;
     overflow-y: auto;
   }
+
   #mode-dialog footer {
     display: flex;
     gap: auto;
