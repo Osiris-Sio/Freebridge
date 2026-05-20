@@ -45,6 +45,12 @@ main.container-fluid {
   margin-bottom: 0;
 }
 
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -56,11 +62,10 @@ main.container-fluid {
   white-space: nowrap;
 }
 
-.header-actions input {
+.file-upload-btn {
   margin-bottom: 0;
-  padding: 0.25rem;
   font-size: 0.9rem;
-  width: 400px;
+  cursor: pointer;
 }
 
 /* Toggle langage */
@@ -445,6 +450,17 @@ main.container-fluid {
 }
 
 @media (max-width: 1024px) {
+
+  .header-logo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .app-header h1,
+  .app-header h2 {
+    text-align: center;
+  }
+
   .mobile-warning {
     display: block;
   }
@@ -462,23 +478,17 @@ main.container-fluid {
   .app-header {
     flex-direction: column;
     align-items: center;
-    justify-content: center;
   }
 
-  .header-actions {
-    margin-top: 30px;
-    width: 90%;
-    height: auto;
-    align-self: center;
-    justify-self: center;
-    padding-left: 20px;
+  .file-upload-btn {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
   }
 
   .bridge-table-container {
     height: 600px;
     overflow-x: auto;
-    /* scrollbar-width: thin;
-    scrollbar-color: var(--pico-primary) var(--pico-background-color); */
     border: 4px solid var(--pico-muted-border-color);
     justify-content: flex-start;
     padding: 20px;

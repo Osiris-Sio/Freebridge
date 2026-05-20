@@ -13,12 +13,16 @@
 <main class="container-fluid">
 
   <header class="app-header">
-    <hgroup>
-      <h1>Bridge Viewer Web (BVW)</h1>
-      <h2>Jouez et visionnez vos donnes <br>(PBN / LIN)</h2>
-    </hgroup>
+    <div class="header-logo">
+      <?php include __DIR__ . '/logo-bvw.svg'; ?>
+      <hgroup>
+        <h1>Bridge Viewer Web (BVW)</h1>
+        <h2>Jouez et visionnez vos donnes <br>(PBN / LIN)</h2>
+      </hgroup>
+    </div>
     <div class="header-actions">
-      <input type="file" id="file-input" accept=".pbn,.lin" />
+      <label for="file-input" role="button" class="secondary file-upload-btn">Choisir un fichier</label>
+      <input type="file" id="file-input" accept=".pbn,.lin" style="display: none;" />
     </div>
   </header>
 
