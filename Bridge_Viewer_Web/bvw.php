@@ -2,23 +2,38 @@
 
 <link rel="stylesheet" href="Bridge_Viewer_Web/css/style.css" />
 
-<button type="button" class="secondary" onclick="window.history.back()">
-  ← Retour
-</button>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=help" />
 
-<button type="button" onclick="if(confirm('La partie va être recommencée.\nÊtes-vous sûr de vouloir changer de mode ?')) window.location.reload()">
-  ⟳ Changer de mode
-</button>
+<div class="top-actions">
+  <button type="button" class="secondary" onclick="window.history.back()">
+    ← Retour
+  </button>
+
+  <button type="button" id="btn-change-mode">
+    ⟳ Changer de mode
+  </button>
+
+  <a class="icon-btn outline" href="Bridge_Viewer_Web/Notice_Utilisation-BVW.pdf" target="_blank">
+    <span class="material-symbols-outlined" title="Notice d'utilisation Bridge Viewer Web">help</span>
+  </a>
+
+</div>
 
 <main class="container-fluid">
 
   <header class="app-header">
-    <hgroup>
-      <h1>Bridge Viewer Web (BVW)</h1>
-      <h2>Jouez et visionnez vos donnes (PBN / LIN)</h2>
-    </hgroup>
+    <div class="header-logo">
+      <?php include __DIR__ . '/logo-bvw.svg'; ?>
+      <hgroup>
+        <h1>Bridge Viewer Web (BVW)
+        </h1>
+        <p><small>Un petit programme réalisé par <a target="_blank" href="https://osiris-sio.fr">Louis AMEDRO (alias Osiris Sio)</a></small></p>
+        <h2>Jouez et visionnez vos donnes <br>(Format PBN / LIN)</h2>
+      </hgroup>
+    </div>
     <div class="header-actions">
-      <input type="file" id="file-input" accept=".pbn,.lin" />
+      <label for="file-input" role="button" class="secondary file-upload-btn">Choisir un fichier</label>
+      <input type="file" id="file-input" accept=".pbn,.lin" style="display: none;" />
     </div>
   </header>
 
@@ -50,7 +65,7 @@
           </p>
         </div>
       </article>
-      <div class="ew-toggle" style="margin-bottom: 0.5rem;">
+      <div class="ew-toggle">
         <label>
           <input type="checkbox" id="toggle-ew-visibility" />
           Afficher Est/Ouest
@@ -66,6 +81,11 @@
 
     <!-- Jeu central -->
     <section class="table-panel">
+      <div class="mobile-warning">
+        <p>
+          <small><strong>Remarque :</strong> Il est conseillé d'utiliser BVW sur un ordinateur.</small>
+        </p>
+      </div>
       <div class="bridge-table-container">
         <div class="bridge-table">
           <div class="hand north" id="hand-N"></div>
@@ -112,7 +132,7 @@
     </aside>
   </section>
 
-  <footer class="controls-container">
+  <footer class="controls-container hide-on-bottom ">
     <div role="group" class="controls-group">
       <button id="btn-start" class="secondary" disabled>
         &lt;&lt; Début
@@ -128,7 +148,7 @@
       <button id="btn-end" class="secondary" disabled>Fin &gt;&gt;</button>
     </div>
     <div class="step-counter">
-      <span id="mode-badge" style="margin-right: 10px; font-weight: bold; color: var(--primary);"></span>
+      <span id="mode-badge"></span>
       Étape : <span id="step-counter-text">0 / 0</span>
     </div>
   </footer>

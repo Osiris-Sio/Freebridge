@@ -1,7 +1,6 @@
 :root {
-  --table-bg: #216a3a;
   --card-bg: #ffffff;
-  --card-color-red: #d32f2f;
+  --card-color-red: #ed2d20;
   --card-color-black: #000000;
 }
 
@@ -9,6 +8,31 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.top-actions button {
+  margin-bottom: 0;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--pico-border-radius);
+}
+
+.icon-btn:hover {
+  background-color: var(--pico-secondary-background);
+  color: var(--pico-secondary-color)
 }
 
 main.container-fluid {
@@ -29,6 +53,7 @@ main.container-fluid {
   padding-bottom: 0.5rem;
   border-bottom: 1px solid var(--pico-muted-border-color);
 }
+
 .app-header hgroup {
   margin-bottom: 0;
   text-align: left;
@@ -39,24 +64,33 @@ main.container-fluid {
   margin-bottom: 0;
   text-align: left;
 }
+
 .app-header h2 {
   font-size: 1rem;
   margin-bottom: 0;
 }
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .header-actions label {
   margin-bottom: 0;
   white-space: nowrap;
 }
-.header-actions input {
+
+.file-upload-btn {
   margin-bottom: 0;
-  padding: 0.25rem;
   font-size: 0.9rem;
-  width: 400px;
+  cursor: pointer;
 }
 
 /* Toggle langage */
@@ -80,14 +114,7 @@ main.container-fluid {
   display: grid;
   grid-template-columns: 220px 1fr 280px;
   gap: 1rem;
-  min-height: 0;
-}
-
-@media (max-width: 992px) {
-  .grid-layout {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
-  }
+  min-height: 600px;
 }
 
 /* Panneaux */
@@ -148,6 +175,7 @@ main.container-fluid {
   max-height: 250px;
   overflow-y: auto;
 }
+
 .bidding-table th,
 .bidding-table td {
   text-align: center;
@@ -199,18 +227,21 @@ main.container-fluid {
   justify-self: center;
   align-self: end;
 }
+
 .hand.south {
   grid-column: 2;
   grid-row: 3;
   justify-self: center;
   align-self: start;
 }
+
 .hand.west {
   grid-column: 1;
   grid-row: 2;
   justify-self: end;
   align-self: center;
 }
+
 .hand.east {
   grid-column: 3;
   grid-row: 2;
@@ -227,7 +258,7 @@ main.container-fluid {
   height: 100px;
   justify-self: center;
   align-self: center;
-  border: 6px solid #00ff00;
+  border: 6px solid var(--pico-primary);
   border-radius: 2px;
 }
 
@@ -242,16 +273,19 @@ main.container-fluid {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .trick-card.S {
   bottom: -15px;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .trick-card.W {
   left: -15px;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .trick-card.E {
   right: -15px;
   top: 50%;
@@ -288,6 +322,7 @@ main.container-fluid {
 .bsol-card.red {
   color: var(--card-color-red);
 }
+
 .bsol-card.black {
   color: var(--card-color-black);
 }
@@ -308,14 +343,17 @@ main.container-fluid {
   user-select: none;
   padding: 2px;
 }
+
 .bsol-trick-card img {
   width: 14px;
   height: 14px;
   margin-top: 2px;
 }
+
 .bsol-trick-card.red {
   color: var(--card-color-red);
 }
+
 .bsol-trick-card.black {
   color: var(--card-color-black);
 }
@@ -334,17 +372,20 @@ main.container-fluid {
   border-top: 1px solid var(--pico-muted-border-color);
   margin-top: 0.25rem;
 }
+
 .controls-group {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 0.25rem;
 }
+
 .controls-group button {
   margin-bottom: 0;
   padding: 0.25rem 0.75rem;
   font-size: 0.9rem;
 }
+
 .step-counter {
   font-size: 1rem;
   font-weight: bold;
@@ -390,6 +431,7 @@ main.container-fluid {
   justify-self: center;
   margin-top: -25px;
 }
+
 .label-S {
   grid-column: 2;
   grid-row: 3;
@@ -397,6 +439,7 @@ main.container-fluid {
   justify-self: center;
   margin-bottom: -25px;
 }
+
 .label-W {
   grid-column: 1;
   grid-row: 2;
@@ -404,6 +447,7 @@ main.container-fluid {
   justify-self: start;
   margin-left: -25px;
 }
+
 .label-E {
   grid-column: 3;
   grid-row: 2;
@@ -424,4 +468,119 @@ main.container-fluid {
   border: 2px dashed var(--pico-color);
   border-radius: 8px;
   min-height: 100px;
+}
+
+.mobile-warning {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .header-logo {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .app-header h1,
+  .app-header h2,
+  .app-header p {
+    text-align: center;
+  }
+
+  .mobile-warning {
+    display: block;
+  }
+
+  .grid-layout {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  #mode-dialog footer {
+    display: flex;
+    gap: auto;
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .file-upload-btn {
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .bridge-table-container {
+    height: 600px;
+    overflow-x: auto;
+    border: 4px solid var(--pico-muted-border-color);
+    justify-content: flex-start;
+    padding: 20px;
+  }
+
+  .bridge-table-container::-webkit-scrollbar {
+    height: 10px;
+    -webkit-appearance: none;
+  }
+
+  .bridge-table-container::-webkit-scrollbar-thumb {
+    background-color: var(--pico-primary);
+    border-radius: 16px;
+  }
+
+  .bridge-table {
+    margin: auto;
+    min-width: max-content;
+    padding: 20px 60px;
+  }
+
+  .label-W {
+    margin-left: 0px;
+    margin-top: -180px;
+  }
+
+  .label-E {
+    margin-right: 0px;
+    margin-top: -180px;
+  }
+
+  .controls-container {
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    transition: opacity 0.3s ease;
+    padding-bottom: 20px;
+  }
+
+  .controls-container.hide-on-bottom {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .controls-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 20px;
+  }
+
+  .controls-group button {
+    width: 100%;
+  }
+
+  .step-counter {
+    text-align: left;
+  }
+
+  .left-pane,
+  .right-panel {
+    padding: 2px;
+  }
 }

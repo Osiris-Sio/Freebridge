@@ -3,9 +3,9 @@
 <section>
     <header>
         <h1>Mon Compte</h1>
-        <p>Heureux de vous revoir, <strong><?= htmlspecialchars(
-                                                $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
-                                            ) ?></strong> !</p>
+        <p style="text-align: center;">Heureux de vous revoir, <strong><?= htmlspecialchars(
+                                                                            $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
+                                                                        ) ?></strong> !</p>
     </header>
     <hr>
     <article>
@@ -147,6 +147,8 @@
     </article>
     </div>
     -->
+
+    <hr>
 
     <article>
         <header>

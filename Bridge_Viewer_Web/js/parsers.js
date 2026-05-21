@@ -183,8 +183,10 @@ function parseLIN(text) {
               : val.substring(1).toUpperCase(),
         },
       })
-    } else if (tag === 'nt') {
+    } else if (tag === 'nt' || tag === 'at') {
       tokens.push({ type: 'comment', value: val })
+    } else if (tag === 'pg') {
+      tokens.push({ type: 'page' })
     } else if (tag === 'mc') {
       tokens.push({ type: 'comment', value: `Claim : ${val} levées` })
     } else if (tag === 'sv') {

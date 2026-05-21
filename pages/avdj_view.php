@@ -74,4 +74,16 @@
     </div>
 </article>
 
+<hr>
+
+<article style="text-align: center;">
+
+    <?php include __DIR__ . '/../Bridge_Viewer_Web/logo-bvw.svg'; ?>
+    <p>Jouez et visionnez vos donnes (PBN / LIN)</p>
+    <button type="button" id="btn-change-mode" onclick="window.location.href='bvw'">
+        Aller sur <strong>Bridge Viewer Web</strong>
+    </button>
+
+</article>
+
 <?php include 'includes/footer.php'; ?>
