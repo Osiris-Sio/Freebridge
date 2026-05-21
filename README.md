@@ -40,8 +40,10 @@ Freebridge/
 ├── includes/               # Composants réutilisables (Header, Footer, DB Connection)
 ├── js/                     # Logique Frontend (Thèmes, Cookies, UI interactions)
 ├── pages/                  # Contenu statique et pages d'information
+├── tools/                  # Scripts d'installation et de configuration (Base de données)
 ├── .env                    # Configuration des secrets et de la base de données
 ├── .htaccess               # Configuration du serveur Apache (Rewriting)
+├── eslint.config.js        # Configuration des règles ESLint
 ├── index.php               # Point d'entrée unique de l'application
 ├── router.php              # Système de routage personnalisé
 ├── package.json            # Gestion des dépendances de développement (Linting, Prettier)
@@ -79,9 +81,10 @@ Freebridge/
    - Copiez `.env.example` vers `.env`.
    - Remplissez les informations de connexion à votre base de données.
 3. **Importer la base de données** :
-   - Utilisez le schéma SQL fourni (si disponible) dans votre gestionnaire de base de données.
+   - Importez le fichier `tools/bdd.sql` dans votre gestionnaire de base de données (ou utilisez les scripts PHP fournis dans le dossier `tools/`).
 4. **Déploiement** :
    - Assurez-vous que l'extension `mod_rewrite` est activée sur votre serveur Apache.
+   - *(Optionnel pour le développement)* : Exécutez `npm install` pour profiter des outils de formatage (Prettier/ESLint).
 
 ---
 
