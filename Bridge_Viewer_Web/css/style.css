@@ -89,7 +89,7 @@ main.container-fluid {
   display: grid;
   grid-template-columns: 220px 1fr 280px;
   gap: 1rem;
-  min-height: 0;
+  min-height: 600px;
 }
 
 /* Panneaux */
