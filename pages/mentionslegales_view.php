@@ -19,7 +19,7 @@
         Le Fondateur et Responsable de la publication du site : <strong>Bernard Glorie</strong><br />
         Contacter le responsable de la publication : <strong> bernard.glorie@gmail.com</strong><br />
         <br />
-        Les Webmasters sont : <strong>Bernard Glorie et <a href="https://osiris-sio.fr" target="_blank">Louis AMEDRO</a></strong><br />
+        Les Webmasters sont : <strong>Bernard Glorie et <a href="https://osiris-sio.fr" target="_blank">Louis AMEDRO (alias Osiris Sio)</a></strong><br />
         Contacter les Webmasters :
     <ul>
         <li><strong><a href="mailto: bernard.glorie@gmail.com"> bernard.glorie@gmail.com</a></strong></li>

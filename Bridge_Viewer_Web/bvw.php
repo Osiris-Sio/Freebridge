@@ -2,13 +2,22 @@
 
 <link rel="stylesheet" href="Bridge_Viewer_Web/css/style.css" />
 
-<button type="button" class="secondary" onclick="window.history.back()">
-  ← Retour
-</button>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=help" />
 
-<button type="button" id="btn-change-mode">
-  ⟳ Changer de mode
-</button>
+<div class="top-actions">
+  <button type="button" class="secondary" onclick="window.history.back()">
+    ← Retour
+  </button>
+
+  <button type="button" id="btn-change-mode">
+    ⟳ Changer de mode
+  </button>
+
+  <a class="icon-btn outline" href="Bridge_Viewer_Web/Notice_Utilisation-BVW.pdf" target="_blank">
+    <span class="material-symbols-outlined" title="Notice d'utilisation Bridge Viewer Web">help</span>
+  </a>
+
+</div>
 
 <main class="container-fluid">
 
@@ -16,8 +25,10 @@
     <div class="header-logo">
       <?php include __DIR__ . '/logo-bvw.svg'; ?>
       <hgroup>
-        <h1>Bridge Viewer Web (BVW)</h1>
-        <h2>Jouez et visionnez vos donnes <br>(PBN / LIN)</h2>
+        <h1>Bridge Viewer Web (BVW)
+        </h1>
+        <p><small>Un petit programme réalisé par <a target="_blank" href="https://osiris-sio.fr">Louis AMEDRO (alias Osiris Sio)</a></small></p>
+        <h2>Jouez et visionnez vos donnes <br>(Format PBN / LIN)</h2>
       </hgroup>
     </div>
     <div class="header-actions">

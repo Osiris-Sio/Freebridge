@@ -10,6 +10,31 @@ body {
   flex-direction: column;
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.top-actions button {
+  margin-bottom: 0;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: var(--pico-border-radius);
+}
+
+.icon-btn:hover {
+  background-color: var(--pico-secondary-background);
+  color: var(--pico-secondary-color)
+}
+
 main.container-fluid {
   flex: 1;
   display: flex;
@@ -457,7 +482,8 @@ main.container-fluid {
   }
 
   .app-header h1,
-  .app-header h2 {
+  .app-header h2,
+  .app-header p {
     text-align: center;
   }
 
