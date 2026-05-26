@@ -46,6 +46,18 @@ form label {
   transition: transform 0.5s ease;
 }
 
+.grid article header {
+  justify-items: center;
+  text-align: center;
+  align-items: center;
+}
+
+.grid article button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 video {
   width: 50%;
   margin-left: auto;
