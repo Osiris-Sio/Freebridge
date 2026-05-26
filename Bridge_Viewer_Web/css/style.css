@@ -43,6 +43,12 @@ main.container-fluid {
   padding: 0.5rem 0rem;
 }
 
+#mode-dialog footer {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
 /* Header compact */
 .app-header {
   flex-shrink: 0;
@@ -494,11 +500,6 @@ main.container-fluid {
   .grid-layout {
     grid-template-columns: 1fr;
     overflow-y: auto;
-  }
-
-  #mode-dialog footer {
-    display: flex;
-    gap: auto;
   }
 
   .app-header {

@@ -36,7 +36,35 @@ function initDDS() {
 
         if (cards.length > 0) {
           // Choix de la meilleure carte
-          const best = cards.sort((a, b) => (b.score || 0) - (a.score || 0))[0]
+          const state = window.gameStates[window.gameStates.length - 1]
+          const winner = getWinningCardSoFar(state.currentTrick, state.trump)
+          const botPlayer = state.turn
+          const partner = botPlayer === 'E' ? 'W' : 'E'
+
+          const best = cards.sort((a, b) => {
+            const scoreDiff = (b.score || 0) - (a.score || 0)
+            if (scoreDiff !== 0) {
+              return scoreDiff
+            }
+
+            // Si les scores DDS sont identiques, on applique des règles simples de départage :
+            if (!winner) {
+              return b.rank - a.rank // Entame : on joue la plus forte
+            }
+            if (winner.player === partner) {
+              return a.rank - b.rank // Partenaire maître : on fournit la plus faible
+            }
+
+            // Face à l'adversaire :
+            const aBeats = candidateCardBeats(a, winner.card, state.trump)
+            const bBeats = candidateCardBeats(b, winner.card, state.trump)
+            if (aBeats !== bBeats) {
+              return aBeats ? -1 : 1 // Si l'une bat et pas l'autre, on joue celle qui bat
+            }
+            // Si les deux battent l'adversaire, on joue la plus forte pour sécuriser le pli,
+            // sinon on joue la plus petite pour ne pas la gaspiller.
+            return aBeats ? b.rank - a.rank : a.rank - b.rank
+          })[0]
           const suitStr = 'SHDC',
             rankStr = '23456789TJQKA'
           const card = { suit: suitStr[best.suit], rank: rankStr[best.rank] }
@@ -215,4 +243,60 @@ function handsToPBN(hands) {
     }
   }
   return pbn
+}
+
+/**
+ * Détermine quelle carte gagne actuellement le pli en cours.
+ * @param {Array} currentTrick - Pli en cours
+ * @param {string} trump - Atout du pli
+ * @returns {object} - Carte gagnante
+ */
+function getWinningCardSoFar(currentTrick, trump) {
+  if (!currentTrick || currentTrick.length === 0) {
+    return null
+  }
+  const isTrump = trump && trump !== 'N' && trump !== 'NT'
+  const leadSuit = currentTrick[0].card.suit
+  let winner = currentTrick[0]
+  let bestVal = cardValue(winner.card.rank)
+  let trumped = isTrump && leadSuit === trump
+
+  // On parcourt toutes les cartes du pli en cours
+  for (let k = 1; k < currentTrick.length; k++) {
+    const c = currentTrick[k].card
+    const val = cardValue(c.rank)
+    const isCurTrump = isTrump && c.suit === trump
+
+    // On vérifie si la carte actuelle est à l'atout et si elle bat la carte gagnante
+    if (isCurTrump && (!trumped || val > bestVal)) {
+      trumped = true
+      bestVal = val
+      winner = currentTrick[k]
+      // On vérifie si la carte actuelle est de la couleur d'entame et si elle bat la carte gagnante
+    } else if (!trumped && c.suit === leadSuit && val > bestVal) {
+      bestVal = val
+      winner = currentTrick[k]
+    }
+  }
+  return winner
+}
+
+/**
+ * Indique si une carte candidate bat la carte actuellement maîtresse.
+ * @param {object} candidate - Carte candidate {suit, rank}
+ * @param {object} winnerCard - Carte actuellement maîtresse {suit, rank}
+ * @param {string} trump - Atout du pli
+ * @returns {boolean} - True si la carte candidate bat la carte actuellement maîtresse, sinon false
+ */
+function candidateCardBeats(candidate, winnerCard, trump) {
+  const cSuit = 'SHDC'[candidate.suit]
+  const isTrump = trump && trump !== 'N' && trump !== 'NT'
+
+  // On vérifie si la carte candidate est à l'atout et si elle bat la carte gagnante
+  if (isTrump && cSuit === trump && winnerCard.suit !== trump) {
+    return true
+  }
+
+  // On vérifie si la carte candidate est de la même couleur que la carte gagnante et si elle bat la carte gagnante
+  return cSuit === winnerCard.suit && candidate.rank + 2 > cardValue(winnerCard.rank)
 }
