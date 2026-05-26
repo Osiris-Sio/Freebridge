@@ -209,43 +209,43 @@ function setupPlayMatchContractHelp() {
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
   help =
     help +
-    'A yellow highlighted bid in the bidding box indicates an associated alert. Hover the cursor over the highlighted bid, '
-  help = help + 'or click on it, in order to see the explanation.<BR><BR>'
+    'Une enchère surlignée en jaune dans la boîte d\'enchères indique une alerte associée. Survolez l\'enchère surlignée avec le curseur, '
+  help = help + 'ou cliquez dessus, pour voir l\'explication.<BR><BR>'
   help =
     help +
-    'Tap the play button located below the bidding table to see how the bid contract was played.<BR><BR>'
+    'Appuyez sur le bouton de jeu situé sous la table d\'enchères pour voir comment le contrat demandé a été joué.<BR><BR>'
   help =
     help +
-    'All playable cards at the current position are highlighted together with the total number of makeable tricks (assuming optimum play from this point onwards). The card that was actually played at each position is denoted with an * prefix.<BR><BR>'
+    'Toutes les cartes jouables à la position actuelle sont mises en évidence avec le nombre total de levées réalisables (en supposant un jeu optimal à partir de ce point). La carte qui a été réellement jouée à chaque position est indiquée par un préfixe *.<BR><BR>'
   help =
     help +
-    "At each point in the play you may choose to play the prefixed card, in order to follow how the contract was played. The button at the bottom of the display marked '>' provides a quick way of stepping through the played sequence."
+    "A chaque étape du jeu, vous pouvez choisir de jouer la carte préfixée, afin de suivre comment le contrat a été joué. Le bouton en bas de l'affichage marqué '>' permet d'avancer rapidement dans la séquence jouée."
   help =
     help +
-    ' However, if the card played was non-optimal, you might choose to play a different card in order to investigate an alternate line of play.<BR><BR>'
+    ' Cependant, si la carte jouée n\'était pas optimale, vous pourriez choisir de jouer une carte différente pour étudier une autre ligne de jeu.<BR><BR>'
   help =
     help +
-    "Once you have deviated from the recorded line of play, no subsequent card will be prefixed with an *. You can use the button at the bottom of the display marked '<' to step back until you rejoin the original played sequence.<BR><BR>"
+    "Une fois que vous avez dévié de la ligne de jeu enregistrée, aucune carte suivante ne sera préfixée d'un *. Vous pouvez utiliser le bouton en bas de l'affichage marqué '<' pour reculer jusqu'à rejoindre la séquence de jeu originale.<BR><BR>"
   help =
     help +
-    "The 'Acc' button (Accuracy of Play) provides information on the extent to which the actual line of play differs from an optimal double dummy line of play. "
+    "Le bouton 'Acc' (Précision du jeu) fournit des informations sur la mesure dans laquelle la ligne de jeu réelle diffère d'une ligne de jeu optimale à double mort. "
   help =
     help +
-    'For each player it shows the number of cards played that were sub-optimal.<BR><BR>'
+    'Pour chaque joueur, il montre le nombre de cartes jouées qui n\'étaient pas optimales.<BR><BR>'
 
   if (showTravellerRowButtons()) {
     help =
       help +
-      "The '<' and '>' buttons in the top right panel of the board display enable you to step backwards and forwards through "
+      "Les boutons '<' et '>' dans le panneau supérieur droit de l'affichage de la donne vous permettent de reculer et d'avancer dans "
     help =
       help +
-      'the traveller rows to see how the same board was bid and played at other tables<BR><BR>'
+      'les lignes de la feuille de marque pour voir comment la même donne a été enchérie et jouée à d\'autres tables<BR><BR>'
   }
 
   help = help + '</span></DIV>'
   help =
     help +
-    '<BUTTON id=hide_playMatchContractHelp style="cursor:pointer;">CLOSE</BUTTON>'
+    '<BUTTON id=hide_playMatchContractHelp style="cursor:pointer;">FERMER</BUTTON>'
 
   document.getElementById('playMatchContractHelp').innerHTML = help
 }
@@ -253,55 +253,55 @@ function setupPlayMatchContractHelp() {
 function setupEditHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">'
-  help = help + 'Cards not yet assigned to any quadrant are shown in green. '
+  help = help + 'Les cartes non encore assignées à un quadrant sont affichées en vert. '
   help =
-    help + 'Click on a green card to assign it to the current quadrant.<BR><BR>'
+    help + 'Cliquez sur une carte verte pour l\'assigner au quadrant actuel.<BR><BR>'
   help =
     help +
-    'Cards assigned to the hand in the current quadrant are shown with a check mark. '
-  help = help + 'Click on a checked card to de-assign it. '
+    'Les cartes assignées à la main dans le quadrant actuel sont affichées avec une coche. '
+  help = help + 'Cliquez sur une carte cochée pour la désassigner. '
   help =
-    help + "The 'Clear' button de-assigns all cards from all quadrants.<BR><BR>"
+    help + "Le bouton 'Effacer' désassigne toutes les cartes de tous les quadrants.<BR><BR>"
 
   if ((g_test == 1) | (g_xml != ''))
     help =
       help +
-      "Use the 'Change Vulnerability' button to change the board vulnerability. "
+      "Utilisez le bouton 'Changer la vulnérabilité' pour changer la vulnérabilité de la donne. "
   else
     help =
       help +
-      "Use the 'Change Vulnerability' and 'Change Dealer' buttons to change the board vulnerability and dealer. "
+      "Utilisez les boutons 'Changer la vulnérabilité' et 'Changer le donneur' pour changer la vulnérabilité et le donneur de la donne. "
 
   help =
     help +
-    "Makeable contracts and optimum contracts/scores can be calculated by clicking the 'Analyse' button after exiting edit mode, "
+    "Les contrats réalisables et les contrats/scores optimaux peuvent être calculés en cliquant sur le bouton 'Analyser' après avoir quitté le mode édition, "
   help =
     help +
-    'providing that all 52 cards have been assigned (changing the vulnerability can affect the optimum contract/score).<BR><BR>'
+    'à condition que les 52 cartes aient été assignées (changer la vulnérabilité peut affecter le contrat/score optimal).<BR><BR>'
   help =
     help +
-    "The 'New...' button adds a new empty board to the current set of boards."
+    "Le bouton 'Nouveau...' ajoute une nouvelle donne vide à l'ensemble actuel de donnes."
   help =
     help +
-    'Any changes made to the board currently being edited are retained.<BR><BR>'
+    'Toutes les modifications apportées à la donne en cours d\'édition sont conservées.<BR><BR>'
   help =
     help +
-    "The 'Delete' button deletes the board currently being edited. If there is only a single board then it cannot be deleted.<BR><BR>"
+    "Le bouton 'Supprimer' supprime la donne en cours d'édition. S'il n'y a qu'une seule donne, elle ne peut pas être supprimée.<BR><BR>"
   help =
     help +
-    "The 'Prev', 'Next', and 'GoTo' buttons facilitate navigation between boards without leaving edit mode. "
+    "Les boutons 'Préc', 'Suiv', et 'Aller à' facilitent la navigation entre les donnes sans quitter le mode édition. "
   help =
     help +
-    'Any changes made to the board currently being edited are retained.<BR><BR>'
+    'Toutes les modifications apportées à la donne en cours d\'édition sont conservées.<BR><BR>'
   help =
     help +
-    "Exit from edit mode by clicking the 'Done' button, or play the hand by clicking a '-' entry in the makeable contracts table.<BR><BR>"
+    "Quittez le mode édition en cliquant sur le bouton 'Terminé', ou jouez la main en cliquant sur une entrée '-' dans la table des contrats réalisables.<BR><BR>"
   help =
     help +
-    'Hands can be played starting with less than 52 cards providing each quadrant contains the same number of cards.<BR><BR>'
+    'Les mains peuvent être jouées avec moins de 52 cartes à condition que chaque quadrant contienne le même nombre de cartes.<BR><BR>'
   help = help + '</span></DIV>'
   help =
-    help + '<BUTTON id=hide_editHelp style="cursor:pointer;">CLOSE</BUTTON>'
+    help + '<BUTTON id=hide_editHelp style="cursor:pointer;">FERMER</BUTTON>'
 
   document.getElementById('editHelp').innerHTML = help
 }
@@ -309,29 +309,29 @@ function setupEditHelp() {
 function setupPlayHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;"><span style="font-size:16px;">'
-  help = help + 'Click on a green or yellow card to play the card.<BR><BR>'
+  help = help + 'Cliquez sur une carte verte ou jaune pour jouer la carte.<BR><BR>'
   help =
     help +
-    'A card value preceded by a blue asterisk indicates the lead card that was actually played by the defender on lead in the selected contract.<BR><BR>'
+    'Une valeur de carte précédée d\'un astérisque bleu indique la carte d\'entame qui a été réellement jouée par le défenseur à l\'entame dans le contrat sélectionné.<BR><BR>'
   help =
     help +
-    'The subscript on the green and yellow cards shows the number of tricks that will be made, by declarer or the defenders, if this card is played and '
+    'L\'indice sur les cartes vertes jaunes montre le nombre de levées qui seront faites, par le déclarant ou les défenseurs, si cette carte est jouée et '
   help =
     help +
-    'all subsequent cards played by declarer and the defenders are green cards. <BR><BR>'
+    'que toutes les cartes suivantes jouées par le déclarant et les défenseurs sont des cartes vertes. <BR><BR>'
   help =
     help +
-    'Cards highlighted in blue are cards already played as part of the current trick.<BR><BR>'
+    'Les cartes surlignées en bleu sont des cartes déjà jouées dans le cadre de la levée en cours.<BR><BR>'
   help =
     help +
-    'Cards which are greyed out have been played as part of a previous trick.<BR><BR>'
+    'Les cartes qui sont grisées ont été jouées dans le cadre d\'une levée précédente.<BR><BR>'
   help =
     help +
-    "The button marked with a '<' can be used to unplay one or more cards.<BR><BR>"
-  help = help + "Click on 'Stop' to leave play mode.<BR><BR>"
+    "Le bouton marqué d'un '<' peut être utilisé pour annuler le jeu d'une ou plusieurs cartes.<BR><BR>"
+  help = help + "Cliquez sur 'Arrêter' pour quitter le mode de jeu.<BR><BR>"
   help = help + '</span></DIV>'
   help =
-    help + '<BUTTON id=hide_playHelp style="cursor:pointer;">CLOSE</BUTTON>'
+    help + '<BUTTON id=hide_playHelp style="cursor:pointer;">FERMER</BUTTON>'
 
   document.getElementById('playHelp').innerHTML = help
 }
@@ -341,61 +341,61 @@ function setupCommandHelp() {
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">'
   help =
     help +
-    "Press the 'Analyse' button to calculate makeable contracts and optimum contracts/scores for the displayed board.<BR><BR>"
+    "Appuyez sur le bouton 'Analyser' pour calculer les contrats réalisables et les contrats/scores optimaux pour la donne affichée.<BR><BR>"
   help =
     help +
-    "Press the 'Edit' button to edit the current board, change dealer or vulnerability, or to add/delete boards.<BR><BR>"
+    "Appuyez sur le bouton 'Éditer' pour modifier la donne actuelle, changer de donneur ou de vulnérabilité, ou pour ajouter/supprimer des donnes.<BR><BR>"
   help =
     help +
-    "Start playing a contract interactively by clicking on an entry in the makeable contracts table (including entries shown as '-' or '*')<BR><BR>"
+    "Commencez à jouer un contrat de manière interactive en cliquant sur une entrée dans la table des contrats réalisables (y compris les entrées affichées comme '-' ou '*')<BR><BR>"
   help =
     help +
-    'A button highlighted bright yellow in the makeable contracts table designates the suit/declarer combination actually played '
-  help = help + 'in a club game or tournament.<BR><BR>'
+    'Un bouton surligné en jaune vif dans la table des contrats réalisables désigne la combinaison couleur/déclarant réellement jouée '
+  help = help + 'dans une partie de club ou un tournoi.<BR><BR>'
 
   if ((g_test == 1) | (g_xml != '')) {
     help =
       help +
-      "Press the 'Edit' button to edit the current board, or to change the dealer or vulnerability.<BR><BR>"
+      "Appuyez sur le bouton 'Éditer' pour modifier la donne actuelle, ou pour changer le donneur ou la vulnérabilité.<BR><BR>"
     help =
       help +
-      "The 'Goto...' button allows any board to be selected from the set of boards for the current event.<BR><BR>"
+      "Le bouton 'Aller à...' permet de sélectionner n'importe quelle donne dans l'ensemble des donnes de l'événement actuel.<BR><BR>"
     help =
       help +
-      "The '<' and '>' buttons step backwards or forwards through the set of boards.<BR><BR>"
+      "Les boutons '<' et '>' permettent de reculer ou d'avancer dans l'ensemble des donnes.<BR><BR>"
     help =
       help +
-      'The \'Results Analysis\' mode enables you to analyse your performance and card play against double dummy and against other pairs. Click <a href="bsolhelp.htm" target=_blank class=myLink>here</a> for more information<BR><BR>'
+      'Le mode \'Analyse des résultats\' vous permet d\'analyser vos performances et votre jeu de la carte contre le double mort et contre les autres paires. Cliquez <a href="bsolhelp.htm" target=_blank class=myLink>ici</a> pour plus d\'informations<BR><BR>'
   } else {
     help =
       help +
-      "Press the 'Edit' button to edit the current board, change dealer or vulnerability, or to add/delete boards.<BR><BR>"
+      "Appuyez sur le bouton 'Éditer' pour modifier la donne actuelle, changer de donneur ou de vulnérabilité, ou pour ajouter/supprimer des donnes.<BR><BR>"
     help =
       help +
-      "The 'Goto...' button, if present, allows any board to be selected from the set of boards.<BR><BR>"
+      "Le bouton 'Aller à...', s'il est présent, permet de sélectionner n'importe quelle donne dans l'ensemble des donnes.<BR><BR>"
     help =
       help +
-      "The '<' and '>' buttons, if present, step backwards or forwards through the set of boards.<BR><BR>"
+      "Les boutons '<' et '>', s'ils sont présents, permettent de reculer ou d'avancer dans l'ensemble des donnes.<BR><BR>"
     help =
-      help + "The 'Save' button saves the set of boards as a PBN file.<BR><BR>"
+      help + "Le bouton 'Sauvegarder' enregistre l'ensemble des donnes sous forme de fichier PBN.<BR><BR>"
 
     if (typeof g_hands.lin != 'undefined')
       help =
         help +
-        "The 'Save As LIN' button saves the current board as a LIN format file, including player names, auction and play data.<BR><BR>"
+        "Le bouton 'Sauvegarder sous LIN' enregistre la donne actuelle sous forme de fichier au format LIN, y compris les noms des joueurs, les enchères et les données de jeu.<BR><BR>"
   }
 
   help +=
-    "'More../Analyse All Boards' calculates makeable contracts/optimum contracts for all boards in the current board set<BR><BR>"
+    "'Plus../Analyser toutes les donnes' calcule les contrats réalisables/contrats optimaux pour toutes les donnes de l'ensemble actuel<BR><BR>"
   help +=
-    "'More../Show Player Accuracy Matrix' calculates and displays the number of deviations from optimal double dummy play for all players for all boards in the current board set. "
+    "'Plus../Afficher la matrice de précision des joueurs' calcule et affiche le nombre d'écarts par rapport au jeu optimal à double mort pour tous les joueurs pour toutes les donnes de l'ensemble actuel. "
   help +=
-    'This function is only available if the boards contain a record of the cards played (usually only available for events played online).<BR><BR>'
+    'Cette fonction est disponible uniquement si les donnes contiennent un enregistrement des cartes jouées (généralement disponible uniquement pour les événements joués en ligne).<BR><BR>'
 
   help = help + '</span></DIV>'
   help =
     help +
-    '<DIV style="clear:both;"><BUTTON id=hide_commandHelp style="cursor:pointer;">CLOSE</BUTTON></div>'
+    '<DIV style="clear:both;"><BUTTON id=hide_commandHelp style="cursor:pointer;">FERMER</BUTTON></div>'
 
   document.getElementById('commandHelp').innerHTML = help
 }
@@ -406,18 +406,18 @@ function setupSettingsHelp() {
 
   help =
     help +
-    "The <b>'Auto-Analyse Entire Board Set'</b> setting determines whether Bridge Solver will start calculating makeable contracts and "
+    "Le paramètre <b>'Auto-analyser l'ensemble des donnes'</b> détermine si Bridge Solver commencera à calculer les contrats réalisables et "
   help =
     help +
-    'optimum contracts/scores for all boards when Bridge Solver is invoked. This takes place in the background and '
+    'les contrats/scores optimaux pour toutes les donnes lorsque Bridge Solver est invoqué. Cela se passe en arrière-plan et '
   help =
     help +
-    'does not prevent hands being played while the calculation is in progress.<BR><BR>'
+    'n\'empêche pas de jouer les mains pendant que le calcul est en cours.<BR><BR>'
 
   help = help + '</span></DIV>'
   help =
     help +
-    '<DIV style="clear:both;"><BUTTON id=hide_settingsHelp style="cursor:pointer;">CLOSE</BUTTON></div>'
+    '<DIV style="clear:both;"><BUTTON id=hide_settingsHelp style="cursor:pointer;">FERMER</BUTTON></div>'
 
   document.getElementById('settingsHelp').innerHTML = help
 }
@@ -426,24 +426,24 @@ function setupKRHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
   help =
-    'When the KR checkbox is ticked, the results of a Kaplan Rubens hand evaluation are displayed, followed by high card points in brackets.<BR><BR>'
+    'Lorsque la case KR est cochée, les résultats d\'une évaluation de main Kaplan Rubens sont affichés, suivis des points d\'honneurs entre parenthèses.<BR><BR>'
   help +=
-    "KR is one of a number of algorithms which attempt to emulate an expert's evaluation of the strength of a hand, taking into account features "
+    "KR est l'un des nombreux algorithmes qui tentent d'émuler l'évaluation de la force d'une main par un expert, en tenant compte de caractéristiques "
   help +=
-    'such as the hand distribution and location of the honour cards, rather than simply adding up high card points. '
+    'telles que la distribution de la main et l\'emplacement des cartes d\'honneur, plutôt que de simplement additionner les points d\'honneurs. '
   help +=
-    'It is of course an evaluation in isolation which does not take into account the fit, or lack thereof, with partner&#39;s hand<BR><BR>'
+    'Il s\'agit bien sûr d\'une évaluation isolée qui ne tient pas compte du fit, ou de l\'absence de fit, avec la main du partenaire<BR><BR>'
   help +=
-    'There are a number of slightly different variants of the KR algorithm but the version used by Bridge Solver Online matches '
+    'Il existe un certain nombre de variantes légèrement différentes de l\'algorithme KR, mais la version utilisée par Bridge Solver Online correspond '
   help +=
-    "the <a href='http://www.rpbridge.net/8j19.htm' target='_blank'> one described on Richard Pavlicek&#39;s website</a>, which details all the steps "
-  help += 'used in the calculation.<BR><BR>'
+    "à <a href='http://www.rpbridge.net/8j19.htm' target='_blank'> celle décrite sur le site Web de Richard Pavlicek</a>, qui détaille toutes les étapes "
+  help += 'utilisées dans le calcul.<BR><BR>'
   help +=
-    "RP's own version of the calculator can be found <a href='http://www.rpbridge.net/cgi-bin/xhe1.pl' target='_blank'>here</a>."
+    "La propre version de la calculatrice de RP se trouve <a href='http://www.rpbridge.net/cgi-bin/xhe1.pl' target='_blank'>ici</a>."
   help = help + '</span></DIV>'
   help =
     help +
-    '<BR><BR><BUTTON id=hide_krHelpText style="cursor:pointer;">CLOSE</BUTTON>'
+    '<BR><BR><BUTTON id=hide_krHelpText style="cursor:pointer;">FERMER</BUTTON>'
 
   document.getElementById('krHelpText').innerHTML = help
 }
