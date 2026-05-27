@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/dsa-progresser/Le choix de la couleur d'entame à SA (Presentation).pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/progresser/dsa/Le choix de la couleur d'entame à SA (Presentation).pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>

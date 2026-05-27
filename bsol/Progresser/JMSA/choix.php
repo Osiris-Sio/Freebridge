@@ -11,12 +11,6 @@ include '../../../includes/header.php'; ?>
         <h1>16 - Choix de la couleur à affranchir (39 donnes)</h1>
     </header>
 
-    <div class="course-header">
-        <button class="secondary outline" disabled title="Bientôt disponible">
-            <i class="fas fa-chalkboard-teacher"></i> Cours à venir
-        </button>
-    </div>
-
     <details class="level-folder">
         <summary>Donnes 1 à 39</summary>
         <div class="lesson-list">
