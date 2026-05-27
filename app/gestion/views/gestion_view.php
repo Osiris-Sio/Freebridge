@@ -65,6 +65,9 @@
                             </td>
                             <td>
                                 <form method="post" action="gestion" class="gestion-update-form">
+                                    <!-- Vérification CSRF -->
+                                    <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+
                                     <input type="hidden" name="action" value="update_rang">
                                     <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
                                     <input type="hidden" name="old_rang" value="<?= $user['user_rang'] ?>">

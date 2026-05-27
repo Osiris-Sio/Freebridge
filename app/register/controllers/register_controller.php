@@ -12,6 +12,14 @@ unset($_SESSION['inputs']['register']);
 
 // On vérifie si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Vérification CSRF
+  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+    header('Location: register');
+    exit();
+  }
+
   $nom = $_POST['nom'] ?? '';
   $prenom = $_POST['prenom'] ?? '';
   $mail = $_POST['login'] ?? '';
@@ -80,8 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           'Un compte existe déjà avec cette adresse mail.';
       }
     }
-  } catch (Throwable $e) {
-    $_SESSION['messages']['errors'][] = $e->getMessage();
+  } catch (Throwable $th) {
+    $_SESSION['messages']['errors'][] = "Une erreur systeme est survenue lors de la creation de votre compte. Veuillez reessayer plus tard.";
   }
 
   // Redirection vers la page d'inscription pour éviter le renvoi du formulaire

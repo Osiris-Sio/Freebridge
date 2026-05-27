@@ -1,7 +1,13 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-} ?>
+    session_start();
+}
+
+// Génération du token CSRF de manière sécurisée pour éviter les attaques CSRF
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <!doctype html>
 <html lang="fr" data-theme="light">
 
@@ -70,8 +76,8 @@ if (session_status() === PHP_SESSION_NONE) {
                         <li><a href="gestion">Gestion</a></li>
                     <?php endif; ?>
                     <li><a href="account" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars(
-                      $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
-                    ) ?></a></li>
+                                                                                                    $_SESSION['user_prenom'] . ' ' . $_SESSION['user_nom'],
+                                                                                                ) ?></a></li>
                     <li><a href="logout" role="button">Déconnexion</a></li>
                 <?php } else { ?>
                     <li><a href="login" role="button">Connexion</a></li>

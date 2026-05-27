@@ -13,6 +13,14 @@ if (!isset($_SESSION['user_id'])) {
 
 // Traitement de la suppression (POST)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirm_delete'])) {
+
+    // Vérification CSRF
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+        $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+        header('Location: delete_account');
+        exit();
+    }
+
     $user_id = $_SESSION['user_id'];
     $password = $_POST['password'] ?? '';
 

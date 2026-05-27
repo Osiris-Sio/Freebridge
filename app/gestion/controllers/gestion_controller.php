@@ -9,6 +9,14 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== 'true') {
 
 // Traitement du changement de niveau (Rang)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'update_rang') {
+
+  // Vérification CSRF
+  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+    header('Location: gestion');
+    exit();
+  }
+
   $user_id = $_POST['user_id'] ?? null;
   $new_rang = $_POST['new_rang'] ?? null;
   $old_rang = $_POST['old_rang'] ?? null;

@@ -28,6 +28,14 @@ unset($_SESSION['inputs']['lostpassword']);
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Vérification CSRF
+  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+    header('Location: lostpassword');
+    exit();
+  }
+
   $login = strtolower(trim($_POST['login'] ?? ''));
 
   // Stockage temporaire pour persistance
@@ -96,8 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           header('Location: login');
           exit();
         } else {
-          // Mode secours (Local/Développement) : si mail() échoue, on affiche le mdp pour ne pas bloquer les tests
-          $_SESSION['messages']['errors'][] = "L'envoi de l'email a échoué (normal en local). <br>Voici votre nouveau mot de passe pour vos tests : <strong>$new_pass</strong>";
+          $_SESSION['messages']['errors'][] = "L'envoi de l'email a échoué. Veuillez réessayer ou contacter un administrateur.";
         }
       } else {
         $_SESSION['messages']['errors'][] =

@@ -13,6 +13,9 @@
             <strong>Modifier mes informations personnelles</strong>
         </header>
         <form action="account" method="post">
+            <!-- Vérification CSRF -->
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+
             <div class="grid">
                 <div>
                     <label for="nom">Nom</label>

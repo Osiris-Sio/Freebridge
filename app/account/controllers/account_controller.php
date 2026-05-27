@@ -12,6 +12,14 @@ if (!isset($_SESSION['user_id'])) {
 
 // Traitement de la modification des informations
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Vérification CSRF
+  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+    header('Location: account');
+    exit();
+  }
+
   $nom = trim($_POST['nom'] ?? '');
   $prenom = trim($_POST['prenom'] ?? '');
   $email = trim($_POST['email'] ?? '');

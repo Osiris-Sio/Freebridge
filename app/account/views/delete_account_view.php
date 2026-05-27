@@ -10,6 +10,9 @@
 
     <footer>
         <form method="post" action="delete_account">
+            <!-- Vérification CSRF -->
+            <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+
             <label for="password">Veuillez saisir votre mot de passe pour confirmer :</label>
             <input type="password" id="password" name="password" required placeholder="Votre mot de passe actuel">
 

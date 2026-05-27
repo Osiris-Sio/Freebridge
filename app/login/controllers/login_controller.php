@@ -12,6 +12,14 @@ unset($_SESSION['inputs']['login']);
 
 // Traitement du formulaire de connexion (anciennement login_cible.php)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Vérification CSRF
+  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
+    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+    header('Location: login');
+    exit();
+  }
+
   $login = strtolower(trim($_POST['login'] ?? ''));
   $password = $_POST['password'] ?? '';
 
@@ -53,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
       $_SESSION['messages']['errors'][] = 'Veuillez remplir tous les champs.';
     }
-  } catch (PDOException $e) {
-    $_SESSION['messages']['errors'][] = $e->getMessage();
+  } catch (Throwable $th) {
+    $_SESSION['messages']['errors'][] = "Une erreur systeme est survenue lors de la connexion. Veuillez reessayer plus tard.";
   }
 
   // Redirection vers la page de login pour éviter le renvoi du formulaire (ERR_CACHE_MISS)

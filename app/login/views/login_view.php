@@ -8,6 +8,9 @@
     <p>Nouveau sur Freebridge ? <a href="register">Créez votre compte ici</a>.</p>
 
     <form action="login" method="post">
+        <!-- Vérification CSRF -->
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+
         <label for="login">Adresse mail :</label>
         <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?= htmlspecialchars(
                                                                                                         $login_value ?? '',

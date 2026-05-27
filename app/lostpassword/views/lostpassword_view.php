@@ -6,6 +6,7 @@
     </header>
 
     <form action="lostpassword" method="post">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
 
         <p style="color: red;"><strong>NE FONCTIONNE PAS ENCORE !</strong></p>
         <p>Saisissez votre adresse mail pour recevoir un nouveau mot de passe temporaire.</p>
