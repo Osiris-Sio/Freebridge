@@ -17,6 +17,8 @@ if (empty($_SESSION['csrf_token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_URL ?>"> <!-- La solution magique pour vos liens -->
     <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4EB31B">
 
     <link rel="stylesheet" href="css/pico.css">
     <link rel="stylesheet" href="css/logo.css">
