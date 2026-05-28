@@ -93,9 +93,8 @@ include '../../../includes/header.php'; ?>
     </details>
 
     <details class="level-folder">
-        <summary>4 - Pour ouvrir la coupe au Mort</summary>
+        <summary>4.1 - Coup à blanc avant 2 tours de débarras (4 donnes)</summary>
         <div class="lesson-list">
-            <p><strong>4.1 - Coup à blanc avant 2 tours de débarras (4 donnes)</strong></p>
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=rh2McZTz" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/1_-_Coup_a_blanc_dans_une_couleur_avant_2_tours_de_debarras/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/1_-_Coup_a_blanc_dans_une_couleur_avant_2_tours_de_debarras/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -108,8 +107,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 4</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=dgWxb6Yq" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/1_-_Coup_a_blanc_dans_une_couleur_avant_2_tours_de_debarras/Donne_4.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/1_-_Coup_a_blanc_dans_une_couleur_avant_2_tours_de_debarras/Donne_4.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>4.2 - Autres techniques (11 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>4.2 - Autres techniques (11 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=f9NDdtxg" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/2_-_Autres_techniques/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/4_-_Differer_le_retrait_des_atouts_pour_ouvrir_la_coupe_au_mort/2_-_Autres_techniques/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -186,14 +189,13 @@ include '../../../includes/header.php'; ?>
         <summary>8 - Pour compenser un mauvais placement (2 donnes)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=DQcydbkf" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=DQcydbkf" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/8_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=KrznpR7h" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=KrznpR7h" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/22_-_Differer_le_retrait_des_atouts/8_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/22_-_Differer_le-retrait_des_atouts_pour_couper_et_compenser_un_mauvais_placement/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
         </div>
     </details>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

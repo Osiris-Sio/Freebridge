@@ -267,13 +267,13 @@ include '../../../includes/header.php'; ?>
         <summary>4 - Ouvrir la coupe pour l'adversaire (3 donnes)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
-                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/4_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/4_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
-                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/4_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/4_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 3</span>
-                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_3.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_3.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/4_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_3.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_pour_l'adversaire_qui_n'a_plus_d'atout/Donne_3.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
         </div>
     </details>
@@ -282,7 +282,7 @@ include '../../../includes/header.php'; ?>
         <summary>5 - Ouvrir la coupe dans sa main pour impasses (1 donne)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
-                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_dans_sa_main_pour_faire_des_impasses_vers_le_mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_dans_sa_main_pour_faire_des_impasses_vers_le_mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
+                <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_au_mort/5_-_Ouvrir_la_coupe_dans_sa_main_pour_faire_des_impasses_vers_le_mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/20_-_Coupe_de_la_main_courte/1_-_Ouvrir_la_coupe_dans_sa_main_pour_faire_des_impasses_vers_le_mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
         </div>
     </details>

@@ -15,11 +15,17 @@ include '../../../includes/header.php'; ?>
         <a href="assets/pdf/progresser/jmsa/10 - Le Laisser-passer.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le laisser-passer
         </a>
-        <a href="assets/pdf/progresser/jmsa/10 - Lecoup de Bath.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/progresser/jmsa/10 - Le coup de Bath.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le coup de Bath
         </a>
-        <a href="assets/pdf/progresser-jmsa/10 - La règle des 11.pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/progresser/jmsa/10 - La règle des 11.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur la règle des 11
+        </a> 
+		<a href="assets/pdf/progresser/jmsa/10 - Le laisser-passer avec un arrêt et demi.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le laisser-passer avec un arrêt et demi
+        </a>
+	    <a href="assets/pdf/progresser/jmsa/10 - Le laisser-passer avec un seul arrêt.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours sur le laisser-passer avec un seul arrêt
         </a>
     </div>
 

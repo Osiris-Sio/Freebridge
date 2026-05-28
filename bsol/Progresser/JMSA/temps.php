@@ -13,7 +13,7 @@ include '../../../includes/header.php'; ?>
 
     <div class="course-header">
         <a href="assets/pdf/progresser/jmsa/11 - Le facteur temps.pdf" target="_blank" role="button" class="secondary">
-            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet
         </a>
     </div>
 

@@ -19,7 +19,12 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Jeu à Sans-Atout</summary>
         <div class="lesson-list">
-
+            <a href="assets/pdf/progresser/jmsa/Le plan de jeu du déclarant à SA.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : Le plan de jeu du déclarant à SA
+            </a>
+			<a href="assets/pdf/progresser/jmsa/Progresser à la carte.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : Progresser à la carte
+            </a>
             <a href="bsol/Progresser/JMSA/laisser-passer.php" class="lesson-item">
                 <i class="fas fa-play-circle"></i> 10 - Le Laisser-passer
             </a>
@@ -48,7 +53,10 @@ include '../../includes/header.php'; ?>
     <details class="level-folder">
         <summary>Jeu à l'Atout</summary>
         <div class="lesson-list">
-            <a href="bsol/Progresser/JMA/courte.php" class="lesson-item">
+            <a href="assets/pdf/progresser/jma/Le compte des levées de la défense à l'atout.pdf" class="lesson-item" target="_blank">
+                <i class="fas fa-chalkboard-teacher"></i> Cours : Le compte des levées de la défense à l'atout
+            </a>
+			<a href="bsol/Progresser/JMA/courte.php" class="lesson-item">
                 <i class="fas fa-play-circle"></i> 20 - Coupe de la main courte
             </a>
             <a href="bsol/Progresser/JMA/faire_tomber.php" class="lesson-item">

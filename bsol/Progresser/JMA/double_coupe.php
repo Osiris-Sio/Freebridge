@@ -10,6 +10,12 @@ include '../../../includes/header.php'; ?>
     <header>
         <h1>23 - La Double-Coupe</h1>
     </header>
+	
+	<div class="course-header">
+        <a href="assets/pdf/progresser/jma/23 - La double coupe.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet
+        </a>
+    </div>
 
     <details class="level-folder">
         <summary>1 - Le mécanisme (34 donnes)</summary>
