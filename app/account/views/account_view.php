@@ -70,8 +70,9 @@
                 <strong>Gestion des abonnements</strong>
             </header>
             <p>Les abonnements sont mensuels et dépendent du niveau choisi.</p>
-            <p><small>Il est possible de se désabonner à tout instant. Pour passer à une catégorie supérieure, désabonnez-vous puis choisissez le nouveau niveau.</small></p>
             <!--
+            <p><small>Il est possible de se désabonner à tout instant. Pour passer à une catégorie supérieure, désabonnez-vous puis choisissez le nouveau niveau.</small></p>
+            
             <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_subscr-find&alias=<?= getenv(
                                                                                         'PAYPAL_UNSUBSCRIBE_ALIAS',
                                                                                     ) ?>">
@@ -79,6 +80,7 @@
                 <br>Gérer mon désabonnement
             </a>
             -->
+            <small><strong>Remarque :</strong><i> Actuellement, il n'est pas possible de s'abonner et de gérer ses abonnements via cette page. Pour toute souscription, veuillez nous contacter via <a href="contact">notre formulaire de contact</a>.</i></small>
         </article>
 
         <!-- État Actuel -->
