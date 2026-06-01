@@ -10,8 +10,8 @@ include '../../../includes/header.php'; ?>
     <header>
         <h1>23 - La Double-Coupe</h1>
     </header>
-	
-	<div class="course-header">
+
+    <div class="course-header">
         <a href="assets/pdf/progresser/jma/23 - La double coupe.pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet
         </a>
@@ -126,7 +126,7 @@ include '../../../includes/header.php'; ?>
     </details>
 
     <details class="level-folder">
-        <summary>2 - Commencer par la couleur la plus longue (17 donnes)</summary>
+        <summary>2 - Commencer par la couleur la plus longue (16 donnes)</summary>
         <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=mrwMSLGT" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
@@ -175,9 +175,6 @@ include '../../../includes/header.php'; ?>
             </div>
             <div class="lesson-item"><span>Donne 16</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=F5AZg4Tx" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_16.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_16.lin" role="button" class="secondary outline">Analyser</a></div>
-            </div>
-            <div class="lesson-item"><span>Donne 17</span>
-                <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=F5AZg4Tx" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_17.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/23_-_La_double_coupe/2_-_Commencer_par_la_couleur_la_plus_longue/Donne_17.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
         </div>
     </details>
@@ -295,4 +292,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-
