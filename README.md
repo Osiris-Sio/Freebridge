@@ -5,6 +5,8 @@
 
 **Freebridge** est un site web moderne et complet dédié aux passionnés de bridge. Il combine des cours de bridge, des outils d'analyse et une interface utilisateur simple, mais efficace. Le site est développé en PHP et utilise MySQL comme base de données.
 
+Ce projet a été réalisé dans le cadre d'un stage, du 13 avril au 5 juin 2026.
+
 ---
 
 ## 📝 Contexte / Sujet
@@ -71,6 +73,75 @@ Freebridge/
 
 ---
 
+## 📚 Guide de Développement / Ajout de Contenu
+
+### Ajouter un cours PDF
+
+Pour ajouter un nouveau cours au format PDF sur le site :
+1. **Ajouter le fichier** : Placez votre fichier PDF dans le dossier approprié des ressources, par exemple `assets/pdf/debuter/nouveau_cours.pdf`.
+2. **Modifier la page PHP (ex: `bsol/Debuter/debutant.php`)** : Intégrez le document en créant un lien d'ouverture :
+   ```html
+   <a href="assets/pdf/debuter/nouveau_cours.pdf" class="lesson-item" target="_blank">
+       <i class="fas fa-chalkboard-teacher"></i> Nouveau cours de bridge
+   </a>
+   ```
+
+### Fonctionnement d'une page PHP simple (sans contrôleur)
+
+Une page "simple" est utilisée pour afficher du contenu statique ou purement informatif, sans logique métier complexe.
+- Elle se trouve généralement dans le dossier `pages/` (ex: `pages/mentionslegales_view.php`).
+- Le code intègre l'en-tête, le contenu HTML central et le pied de page.
+
+**Exemple concret (`pages/mentionslegales_view.php`) :**
+```php
+<?php include 'includes/header.php'; ?>
+
+<article>
+    <header>
+        <h1>Mentions légales</h1>
+    </header>
+    <p>Conformément aux dispositions des articles 6-III et 19 de la Loi...</p>
+</article>
+
+<!-- Autre contenu statique HTML ... -->
+
+<?php include 'includes/footer.php'; ?>
+```
+
+### Fonctionnement d'une page PHP complexe (MVC : Modèle, Vue, Contrôleur)
+
+Une page "complexe" nécessite des traitements avancés (vérifications, formulaires, base de données) et suit une architecture modulaire. Ces pages se situent dans le dossier `app/` (par exemple `app/login/`).
+
+1. **Le Routeur (`router.php`)** : Il analyse l'URL demandée et inclut le contrôleur de la fonctionnalité correspondante.
+2. **Le Contrôleur (`app/login/controllers/login_controller.php`)** :
+   - Vérifie les autorisations et traite les requêtes `$_POST`.
+   - Intéragit avec la base de données.
+   - Prépare les variables puis inclut la vue.
+   ```php
+   <?php
+   // app/login/controllers/login_controller.php
+   
+   // Si l'utilisateur est déjà connecté, on le redirige
+   if (isset($_SESSION['user_id'])) {
+     header('Location: home');
+     exit();
+   }
+   
+   // Traitement du formulaire de connexion
+   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+     $login = strtolower(trim($_POST['login'] ?? ''));
+     $password = $_POST['password'] ?? '';
+     
+     // Logique de vérification en base de données et connexion...
+   }
+   
+   // Chargement de la vue
+   require 'app/login/views/login_view.php';
+   ```
+3. **La Vue (`app/login/views/login_view.php`)** : C'est le fichier qui prend en charge le rendu final en affichant le formulaire de connexion. Il ne traite pas les requêtes, et inclut le `header.php` et le `footer.php`.
+
+---
+
 ## ⚙️ Installation
 
 1. **Cloner le dépôt** :
@@ -91,7 +162,7 @@ Freebridge/
 ## 👥 Auteurs
 
 - **Bernard GLORIE** - Initiateur du projet
-- **Louis AMEDRO** - Développeur principal ([Voir mes projets](https://github.com/Osiris-Sio))
+- **Louis AMEDRO** - Développeur principal (stagiaire) ([Voir mes projets](https://github.com/Osiris-Sio))
 
 ---
 
