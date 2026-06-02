@@ -84,7 +84,7 @@ Freebridge/
    - Importez le fichier `tools/bdd.sql` dans votre gestionnaire de base de données (ou utilisez les scripts PHP fournis dans le dossier `tools/`).
 4. **Déploiement** :
    - Assurez-vous que l'extension `mod_rewrite` est activée sur votre serveur Apache.
-   - *(Optionnel pour le développement)* : Exécutez `npm install` pour profiter des outils de formatage (Prettier/ESLint).
+   - _(Optionnel pour le développement)_ : Exécutez `npm install` pour profiter des outils de formatage (Prettier/ESLint).
 
 ---
 

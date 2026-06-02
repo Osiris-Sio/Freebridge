@@ -6,26 +6,28 @@
     </header>
     <form action="register" method="post">
         <!-- Vérification CSRF -->
-        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION[
+          'csrf_token'
+        ] ?? '' ?>">
 
         <div class="grid">
             <div>
                 <label for="nom">Nom :</label>
                 <input required type="text" name="nom" id="nom" placeholder="Exemple : Martin" value="<?= htmlspecialchars(
-                                                                                                            $form_data['nom'] ?? '',
-                                                                                                        ) ?>">
+                  $form_data['nom'] ?? '',
+                ) ?>">
             </div>
             <div>
                 <label for="prenom">Prénom :</label>
                 <input required type="text" name="prenom" id="prenom" placeholder="Exemple : Jacques" value="<?= htmlspecialchars(
-                                                                                                                    $form_data['prenom'] ?? '',
-                                                                                                                ) ?>">
+                  $form_data['prenom'] ?? '',
+                ) ?>">
             </div>
         </div>
         <label for="login">Adresse mail :</label>
         <input required type="email" name="login" id="login" placeholder="Exemple : jacques.martin@email.com" value="<?= htmlspecialchars(
-                                                                                                                            $form_data['login'] ?? '',
-                                                                                                                        ) ?>">
+          $form_data['login'] ?? '',
+        ) ?>">
 
 
         <label for="password">Mot de passe : <i>Doit contenir au moins 6 caractères</i></label>

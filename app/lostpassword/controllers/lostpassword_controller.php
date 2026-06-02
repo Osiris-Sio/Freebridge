@@ -28,10 +28,13 @@ unset($_SESSION['inputs']['lostpassword']);
 
 // Traitement du formulaire
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
   // Vérification CSRF
-  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
-    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+  if (
+    !isset($_POST['csrf_token']) ||
+    $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')
+  ) {
+    $_SESSION['messages']['errors'][] =
+      'Erreur de validation de session. Veuillez reessayer.';
     header('Location: lostpassword');
     exit();
   }
@@ -89,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         ";
 
         // En-têtes pour envoyer du HTML et éviter les problèmes d'accents
-        $no_reply = "[EMAIL_ADDRESS]";
+        $no_reply = '[EMAIL_ADDRESS]';
         $headers = 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type:text/html;charset=UTF-8' . "\r\n";
         $headers .= "From: Freebridge <$no_reply>" . "\r\n";
@@ -104,7 +107,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           header('Location: login');
           exit();
         } else {
-          $_SESSION['messages']['errors'][] = "L'envoi de l'email a échoué. Veuillez réessayer ou contacter un administrateur.";
+          $_SESSION['messages']['errors'][] =
+            "L'envoi de l'email a échoué. Veuillez réessayer ou contacter un administrateur.";
         }
       } else {
         $_SESSION['messages']['errors'][] =
@@ -115,7 +119,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'Veuillez saisir votre adresse email.';
     }
   } catch (Throwable $e) {
-    $_SESSION['messages']['errors'][] = 'Erreur système, veuillez réessayer plus tard.';
+    $_SESSION['messages']['errors'][] =
+      'Erreur système, veuillez réessayer plus tard.';
   }
 
   // Redirection

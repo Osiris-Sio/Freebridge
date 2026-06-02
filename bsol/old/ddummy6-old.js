@@ -209,11 +209,11 @@ function setupPlayMatchContractHelp() {
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
   help =
     help +
-    'Une enchère surlignée en jaune dans la boîte d\'enchères indique une alerte associée. Survolez l\'enchère surlignée avec le curseur, '
-  help = help + 'ou cliquez dessus, pour voir l\'explication.<BR><BR>'
+    "Une enchère surlignée en jaune dans la boîte d'enchères indique une alerte associée. Survolez l'enchère surlignée avec le curseur, "
+  help = help + "ou cliquez dessus, pour voir l'explication.<BR><BR>"
   help =
     help +
-    'Appuyez sur le bouton de jeu situé sous la table d\'enchères pour voir comment le contrat demandé a été joué.<BR><BR>'
+    "Appuyez sur le bouton de jeu situé sous la table d'enchères pour voir comment le contrat demandé a été joué.<BR><BR>"
   help =
     help +
     'Toutes les cartes jouables à la position actuelle sont mises en évidence avec le nombre total de levées réalisables (en supposant un jeu optimal à partir de ce point). La carte qui a été réellement jouée à chaque position est indiquée par un préfixe *.<BR><BR>'
@@ -222,7 +222,7 @@ function setupPlayMatchContractHelp() {
     "A chaque étape du jeu, vous pouvez choisir de jouer la carte préfixée, afin de suivre comment le contrat a été joué. Le bouton en bas de l'affichage marqué '>' permet d'avancer rapidement dans la séquence jouée."
   help =
     help +
-    ' Cependant, si la carte jouée n\'était pas optimale, vous pourriez choisir de jouer une carte différente pour étudier une autre ligne de jeu.<BR><BR>'
+    " Cependant, si la carte jouée n'était pas optimale, vous pourriez choisir de jouer une carte différente pour étudier une autre ligne de jeu.<BR><BR>"
   help =
     help +
     "Une fois que vous avez dévié de la ligne de jeu enregistrée, aucune carte suivante ne sera préfixée d'un *. Vous pouvez utiliser le bouton en bas de l'affichage marqué '<' pour reculer jusqu'à rejoindre la séquence de jeu originale.<BR><BR>"
@@ -231,7 +231,7 @@ function setupPlayMatchContractHelp() {
     "Le bouton 'Acc' (Précision du jeu) fournit des informations sur la mesure dans laquelle la ligne de jeu réelle diffère d'une ligne de jeu optimale à double mort. "
   help =
     help +
-    'Pour chaque joueur, il montre le nombre de cartes jouées qui n\'étaient pas optimales.<BR><BR>'
+    "Pour chaque joueur, il montre le nombre de cartes jouées qui n'étaient pas optimales.<BR><BR>"
 
   if (showTravellerRowButtons()) {
     help =
@@ -239,7 +239,7 @@ function setupPlayMatchContractHelp() {
       "Les boutons '<' et '>' dans le panneau supérieur droit de l'affichage de la donne vous permettent de reculer et d'avancer dans "
     help =
       help +
-      'les lignes de la feuille de marque pour voir comment la même donne a été enchérie et jouée à d\'autres tables<BR><BR>'
+      "les lignes de la feuille de marque pour voir comment la même donne a été enchérie et jouée à d'autres tables<BR><BR>"
   }
 
   help = help + '</span></DIV>'
@@ -253,15 +253,19 @@ function setupPlayMatchContractHelp() {
 function setupEditHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;"><span style="font-size:16px;">'
-  help = help + 'Les cartes non encore assignées à un quadrant sont affichées en vert. '
   help =
-    help + 'Cliquez sur une carte verte pour l\'assigner au quadrant actuel.<BR><BR>'
+    help +
+    'Les cartes non encore assignées à un quadrant sont affichées en vert. '
+  help =
+    help +
+    "Cliquez sur une carte verte pour l'assigner au quadrant actuel.<BR><BR>"
   help =
     help +
     'Les cartes assignées à la main dans le quadrant actuel sont affichées avec une coche. '
   help = help + 'Cliquez sur une carte cochée pour la désassigner. '
   help =
-    help + "Le bouton 'Effacer' désassigne toutes les cartes de tous les quadrants.<BR><BR>"
+    help +
+    "Le bouton 'Effacer' désassigne toutes les cartes de tous les quadrants.<BR><BR>"
 
   if ((g_test == 1) | (g_xml != ''))
     help =
@@ -283,7 +287,7 @@ function setupEditHelp() {
     "Le bouton 'Nouveau...' ajoute une nouvelle donne vide à l'ensemble actuel de donnes."
   help =
     help +
-    'Toutes les modifications apportées à la donne en cours d\'édition sont conservées.<BR><BR>'
+    "Toutes les modifications apportées à la donne en cours d'édition sont conservées.<BR><BR>"
   help =
     help +
     "Le bouton 'Supprimer' supprime la donne en cours d'édition. S'il n'y a qu'une seule donne, elle ne peut pas être supprimée.<BR><BR>"
@@ -292,7 +296,7 @@ function setupEditHelp() {
     "Les boutons 'Préc', 'Suiv', et 'Aller à' facilitent la navigation entre les donnes sans quitter le mode édition. "
   help =
     help +
-    'Toutes les modifications apportées à la donne en cours d\'édition sont conservées.<BR><BR>'
+    "Toutes les modifications apportées à la donne en cours d'édition sont conservées.<BR><BR>"
   help =
     help +
     "Quittez le mode édition en cliquant sur le bouton 'Terminé', ou jouez la main en cliquant sur une entrée '-' dans la table des contrats réalisables.<BR><BR>"
@@ -309,13 +313,14 @@ function setupEditHelp() {
 function setupPlayHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;"><span style="font-size:16px;">'
-  help = help + 'Cliquez sur une carte verte ou jaune pour jouer la carte.<BR><BR>'
+  help =
+    help + 'Cliquez sur une carte verte ou jaune pour jouer la carte.<BR><BR>'
   help =
     help +
-    'Une valeur de carte précédée d\'un astérisque bleu indique la carte d\'entame qui a été réellement jouée par le défenseur à l\'entame dans le contrat sélectionné.<BR><BR>'
+    "Une valeur de carte précédée d'un astérisque bleu indique la carte d'entame qui a été réellement jouée par le défenseur à l'entame dans le contrat sélectionné.<BR><BR>"
   help =
     help +
-    'L\'indice sur les cartes vertes jaunes montre le nombre de levées qui seront faites, par le déclarant ou les défenseurs, si cette carte est jouée et '
+    "L'indice sur les cartes vertes jaunes montre le nombre de levées qui seront faites, par le déclarant ou les défenseurs, si cette carte est jouée et "
   help =
     help +
     'que toutes les cartes suivantes jouées par le déclarant et les défenseurs sont des cartes vertes. <BR><BR>'
@@ -324,7 +329,7 @@ function setupPlayHelp() {
     'Les cartes surlignées en bleu sont des cartes déjà jouées dans le cadre de la levée en cours.<BR><BR>'
   help =
     help +
-    'Les cartes qui sont grisées ont été jouées dans le cadre d\'une levée précédente.<BR><BR>'
+    "Les cartes qui sont grisées ont été jouées dans le cadre d'une levée précédente.<BR><BR>"
   help =
     help +
     "Le bouton marqué d'un '<' peut être utilisé pour annuler le jeu d'une ou plusieurs cartes.<BR><BR>"
@@ -365,7 +370,7 @@ function setupCommandHelp() {
       "Les boutons '<' et '>' permettent de reculer ou d'avancer dans l'ensemble des donnes.<BR><BR>"
     help =
       help +
-      'Le mode \'Analyse des résultats\' vous permet d\'analyser vos performances et votre jeu de la carte contre le double mort et contre les autres paires. Cliquez <a href="bsolhelp.htm" target=_blank class=myLink>ici</a> pour plus d\'informations<BR><BR>'
+      "Le mode 'Analyse des résultats' vous permet d'analyser vos performances et votre jeu de la carte contre le double mort et contre les autres paires. Cliquez <a href=\"bsolhelp.htm\" target=_blank class=myLink>ici</a> pour plus d'informations<BR><BR>"
   } else {
     help =
       help +
@@ -377,7 +382,8 @@ function setupCommandHelp() {
       help +
       "Les boutons '<' et '>', s'ils sont présents, permettent de reculer ou d'avancer dans l'ensemble des donnes.<BR><BR>"
     help =
-      help + "Le bouton 'Sauvegarder' enregistre l'ensemble des donnes sous forme de fichier PBN.<BR><BR>"
+      help +
+      "Le bouton 'Sauvegarder' enregistre l'ensemble des donnes sous forme de fichier PBN.<BR><BR>"
 
     if (typeof g_hands.lin != 'undefined')
       help =
@@ -412,7 +418,7 @@ function setupSettingsHelp() {
     'les contrats/scores optimaux pour toutes les donnes lorsque Bridge Solver est invoqué. Cela se passe en arrière-plan et '
   help =
     help +
-    'n\'empêche pas de jouer les mains pendant que le calcul est en cours.<BR><BR>'
+    "n'empêche pas de jouer les mains pendant que le calcul est en cours.<BR><BR>"
 
   help = help + '</span></DIV>'
   help =
@@ -426,15 +432,15 @@ function setupKRHelp() {
   var help =
     '<div style="float:left;word-wrap:break-word;overflow:scroll;max-height:300px;\><span style="font-size:16px;">'
   help =
-    'Lorsque la case KR est cochée, les résultats d\'une évaluation de main Kaplan Rubens sont affichés, suivis des points d\'honneurs entre parenthèses.<BR><BR>'
+    "Lorsque la case KR est cochée, les résultats d'une évaluation de main Kaplan Rubens sont affichés, suivis des points d'honneurs entre parenthèses.<BR><BR>"
   help +=
     "KR est l'un des nombreux algorithmes qui tentent d'émuler l'évaluation de la force d'une main par un expert, en tenant compte de caractéristiques "
   help +=
-    'telles que la distribution de la main et l\'emplacement des cartes d\'honneur, plutôt que de simplement additionner les points d\'honneurs. '
+    "telles que la distribution de la main et l'emplacement des cartes d'honneur, plutôt que de simplement additionner les points d'honneurs. "
   help +=
-    'Il s\'agit bien sûr d\'une évaluation isolée qui ne tient pas compte du fit, ou de l\'absence de fit, avec la main du partenaire<BR><BR>'
+    "Il s'agit bien sûr d'une évaluation isolée qui ne tient pas compte du fit, ou de l'absence de fit, avec la main du partenaire<BR><BR>"
   help +=
-    'Il existe un certain nombre de variantes légèrement différentes de l\'algorithme KR, mais la version utilisée par Bridge Solver Online correspond '
+    "Il existe un certain nombre de variantes légèrement différentes de l'algorithme KR, mais la version utilisée par Bridge Solver Online correspond "
   help +=
     "à <a href='http://www.rpbridge.net/8j19.htm' target='_blank'> celle décrite sur le site Web de Richard Pavlicek</a>, qui détaille toutes les étapes "
   help += 'utilisées dans le calcul.<BR><BR>'

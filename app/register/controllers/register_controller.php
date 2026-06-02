@@ -12,10 +12,13 @@ unset($_SESSION['inputs']['register']);
 
 // On vérifie si le formulaire est soumis
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
   // Vérification CSRF
-  if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')) {
-    $_SESSION['messages']['errors'][] = "Erreur de validation de session. Veuillez reessayer.";
+  if (
+    !isset($_POST['csrf_token']) ||
+    $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')
+  ) {
+    $_SESSION['messages']['errors'][] =
+      'Erreur de validation de session. Veuillez reessayer.';
     header('Location: register');
     exit();
   }
@@ -89,7 +92,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     }
   } catch (Throwable $th) {
-    $_SESSION['messages']['errors'][] = "Une erreur systeme est survenue lors de la creation de votre compte. Veuillez reessayer plus tard.";
+    $_SESSION['messages']['errors'][] =
+      'Une erreur systeme est survenue lors de la creation de votre compte. Veuillez reessayer plus tard.';
   }
 
   // Redirection vers la page d'inscription pour éviter le renvoi du formulaire

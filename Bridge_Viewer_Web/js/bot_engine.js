@@ -298,5 +298,7 @@ function candidateCardBeats(candidate, winnerCard, trump) {
   }
 
   // On vérifie si la carte candidate est de la même couleur que la carte gagnante et si elle bat la carte gagnante
-  return cSuit === winnerCard.suit && candidate.rank + 2 > cardValue(winnerCard.rank)
+  return (
+    cSuit === winnerCard.suit && candidate.rank + 2 > cardValue(winnerCard.rank)
+  )
 }

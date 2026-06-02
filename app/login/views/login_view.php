@@ -9,12 +9,14 @@
 
     <form action="login" method="post">
         <!-- Vérification CSRF -->
-        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION[
+          'csrf_token'
+        ] ?? '' ?>">
 
         <label for="login">Adresse mail :</label>
         <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?= htmlspecialchars(
-                                                                                                        $login_value ?? '',
-                                                                                                    ) ?>">
+          $login_value ?? '',
+        ) ?>">
 
         <label for="password">Mot de passe :</label>
         <input required type="password" name="password" id="password" placeholder="Mot de passe">

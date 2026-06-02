@@ -32,7 +32,7 @@ body {
 
 .icon-btn:hover {
   background-color: var(--pico-secondary-background);
-  color: var(--pico-secondary-color)
+  color: var(--pico-secondary-color);
 }
 
 main.container-fluid {
@@ -481,7 +481,6 @@ main.container-fluid {
 }
 
 @media (max-width: 1024px) {
-
   .header-logo {
     flex-direction: column;
     gap: 0.5rem;
