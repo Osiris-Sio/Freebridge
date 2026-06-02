@@ -5,6 +5,10 @@
         <h1>Inscription</h1>
     </header>
     <form action="register" method="post">
+        <!-- Vérification CSRF -->
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION[
+          'csrf_token'
+        ] ?? '' ?>">
 
         <div class="grid">
             <div>
@@ -25,7 +29,9 @@
           $form_data['login'] ?? '',
         ) ?>">
 
+
         <label for="password">Mot de passe : <i>Doit contenir au moins 6 caractères</i></label>
+        <small style="color: red;">Attention, le mot de passe ne pourra pas être récupéré en cas d'oubli !</small>
         <input required type="password" name="password" id="password" placeholder="Mot de passe" pattern=".{6,}" title="Le mot de passe doit contenir au moins 6 caractères">
 
         <label for="password_confirm">Confirmez votre mot de passe :</label>

@@ -76,14 +76,28 @@
 
 <hr>
 
-<article style="text-align: center;">
+<div class="grid">
 
-    <?php include __DIR__ . '/../Bridge_Viewer_Web/logo-bvw.svg'; ?>
-    <p>Jouez et visionnez vos donnes (PBN / LIN)</p>
-    <button type="button" id="btn-change-mode" onclick="window.location.href='bvw'">
-        Aller sur <strong>Bridge Viewer Web</strong>
-    </button>
+    <article>
+        <header>
+            <?php include __DIR__ . '/../Bridge_Viewer_Web/logo-bvw.svg'; ?>
+            <h5>Jouez et visionnez vos donnes (PBN / LIN)</h5>
+        </header>
+        <button type="button" onclick="window.location.href='bvw'">
+            Aller sur <strong>Bridge Viewer Web</strong>
+        </button>
+    </article>
 
-</article>
+    <article>
+        <header>
+            <img style="width: 74px;" src="./assets/img/BridgeSolverIcon.png" alt="BSOL">
+            <h5>Bridge Solver</h5>
+        </header>
+        <button type="button" id="btn-change-mode" onclick="window.location.href='bsol/old/ddummy-old.php'">
+            Aller sur <strong>BSOL</strong>
+        </button>
+    </article>
+
+</div>
 
 <?php include 'includes/footer.php'; ?>

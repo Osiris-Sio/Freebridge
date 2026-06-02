@@ -160,7 +160,12 @@
         <h3>Choisir le mode</h3>
       </header>
       <p>Souhaitez-vous jouer la donne ou visionner la résolution ?</p>
-      <small><i><strong>Note :</strong> Le visionnage de la résolution est un replay enregistré par le bridgeur qui a créé le fichier et ne correspond pas forcément à la meilleure résolution possible.</i></small>
+      <small><i><strong>Notes :</strong>
+          <ul>
+            <li>Les bots Ouest et Est sont configurés pour jouer du mieux possible de leurs intérêts.</li>
+            <li>Le visionnage de la résolution est un replay enregistré par le bridgeur qui a créé le fichier et ne correspond pas forcément à la meilleure résolution possible.</li>
+          </ul>
+      </small>
       <footer>
         <button id="choose-play">Jouer (Nord/Sud)</button>
         <button class="secondary" id="choose-solve">Visionner la résolution</button>

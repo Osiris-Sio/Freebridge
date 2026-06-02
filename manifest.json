@@ -1,0 +1,15 @@
+{
+  "name": "Freebridge",
+  "short_name": "Freebridge",
+  "start_url": ".",
+  "display": "standalone",
+  "description": "Application web Freebridge",
+  "icons": [
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

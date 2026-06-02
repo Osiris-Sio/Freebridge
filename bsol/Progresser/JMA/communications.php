@@ -90,9 +90,8 @@ include '../../../includes/header.php'; ?>
     </details>
 
     <details class="level-folder">
-        <summary>2 - Communiquer par l'atout (35 donnes)</summary>
+        <summary>2.1 - Garder un atout maître au Mort (35 donnes)</summary>
         <div class="lesson-list">
-            <h3 style="margin: 1rem 0 0.5rem 1rem; color: var(--primary);">2.1 - Garder un atout maître au Mort</h3>
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.1_-_Garder_un_(ou_des)_atout_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.1_-_Garder_un_(ou_des)_atout_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -117,8 +116,11 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 8</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.1_-_Garder_un_(ou_des)_atout_maitre_au_Mort/Donne_8.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.1_-_Garder_un_(ou_des)_atout_maitre_au_Mort/Donne_8.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
-
-            <h3 style="margin: 1rem 0 0.5rem 1rem; color: var(--primary);">2.2 - Créer une remontée en concédant un atout</h3>
+        </div>
+    </details>
+    <details class="level-folder">
+        <summary>2.2 - Créer une remontée en concédant un atout (15 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.2_-_Creer_une_remontee_au_Mort_en_concedant_un_atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.2_-_Creer_une_remontee_au_Mort_en_concedant_un_atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -164,8 +166,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 15</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.2_-_Creer_une_remontee_au_Mort_en_concedant_un_atout/Donne_15.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.2_-_Creer_une_remontee_au_Mort_en_concedant_un_atout/Donne_15.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <h3 style="margin: 1rem 0 0.5rem 1rem; color: var(--primary);">2.3 - La coupe de communication</h3>
+    <details class="level-folder">
+        <summary>2.3 - La coupe de communication (6 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.3_-_La_coupe_de_communication/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.3_-_La_coupe_de_communication/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -184,16 +190,24 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 6</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.3_-_La_coupe_de_communication/Donne_6.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.3_-_La_coupe_de_communication/Donne_6.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <h3 style="margin: 1rem 0 0.5rem 1rem; color: var(--primary);">2.4 - Couper un honneur maître au Mort</h3>
+    <details class="level-folder">
+        <summary>2.4 - Couper un honneur maître au Mort (2 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.4_-_Couper_un_honneur_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.4_-_Couper_un_honneur_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.4_-_Couper_un_honneur_maitre_au_Mort/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.4_-_Couper_un_honneur_maitre_au_Mort/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <h3 style="margin: 1rem 0 0.5rem 1rem; color: var(--primary);">2.5 - Remonter au Mort par l'atout</h3>
+    <details class="level-folder">
+        <summary>2.5 - Remonter au Mort par l'atout (4 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.5_-_Remonter_au_Mort_par_l'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/28_-_Communications/2_-_Communiquer_par_l'atout/2.5_-_Remonter_au_Mort_par_l'atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -463,4 +477,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

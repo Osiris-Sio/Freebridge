@@ -11,14 +11,19 @@
         <form method="get" action="gestion" class="grid">
             <div>
                 <label for="search">Rechercher</label>
-                <input type="search" id="search" name="search" placeholder="Nom, prénom ou email..." value="<?= htmlspecialchars($search ?? '') ?>">
+                <input type="search" id="search" name="search" placeholder="Nom, prénom ou email..." value="<?= htmlspecialchars(
+                  $search ?? '',
+                ) ?>">
             </div>
             <div>
                 <label for="filter_rang">Filtrer par rang</label>
                 <select id="filter_rang" name="filter_rang">
                     <option value="">Tous les rangs</option>
-                    <?php if (isset($available_rangs) && isset($filter_rang)): foreach ($available_rangs as $r): ?>
-                            <option value="<?= $r ?>" <?= $filter_rang === $r ? 'selected' : '' ?>><?= ucfirst($r) ?></option>
+                    <?php if (isset($available_rangs) && isset($filter_rang)):
+                      foreach ($available_rangs as $r): ?>
+                            <option value="<?= $r ?>" <?= $filter_rang === $r
+  ? 'selected'
+  : '' ?>><?= ucfirst($r) ?></option>
                     <?php endforeach;
                     endif; ?>
                 </select>
@@ -53,25 +58,47 @@
                     <?php foreach ($users as $user): ?>
                         <tr>
                             <td>
-                                <strong><?= htmlspecialchars($user['user_prenom'] . ' ' . $user['user_nom']) ?></strong>
+                                <strong><?= htmlspecialchars(
+                                  $user['user_prenom'] .
+                                    ' ' .
+                                    $user['user_nom'],
+                                ) ?></strong>
                                 <?php if ($user['is_admin'] == 1): ?>
                                     <br><span class="admin-badge"><mark>Administrateur</mark></span>
                                 <?php endif; ?>
                             </td>
                             <td><?= htmlspecialchars($user['user_mail']) ?></td>
-                            <td><?= htmlspecialchars($user['user_date'] ?? "Date Inconnue") ?></td>
+                            <td><?= htmlspecialchars(
+                              $user['user_date'] ?? 'Date Inconnue',
+                            ) ?></td>
                             <td>
                                 <kbd><?= strtoupper($user['user_rang']) ?></kbd>
                             </td>
                             <td>
                                 <form method="post" action="gestion" class="gestion-update-form">
+                                    <!-- Vérification CSRF -->
+                                    <input type="hidden" name="csrf_token" value="<?= $_SESSION[
+                                      'csrf_token'
+                                    ] ?? '' ?>">
+
                                     <input type="hidden" name="action" value="update_rang">
-                                    <input type="hidden" name="user_id" value="<?= $user['user_id'] ?>">
-                                    <input type="hidden" name="old_rang" value="<?= $user['user_rang'] ?>">
+                                    <input type="hidden" name="user_id" value="<?= $user[
+                                      'user_id'
+                                    ] ?>">
+                                    <input type="hidden" name="old_rang" value="<?= $user[
+                                      'user_rang'
+                                    ] ?>">
                                     <select name="new_rang" aria-label="Choisir un nouveau rang" required>
                                         <?php if (isset($available_rangs)): ?>
-                                            <?php foreach ($available_rangs as $r): ?>
-                                                <option value="<?= $r ?>" <?= $user['user_rang'] === $r ? 'selected' : '' ?>><?= ucfirst($r) ?></option>
+                                            <?php foreach (
+                                              $available_rangs
+                                              as $r
+                                            ): ?>
+                                                <option value="<?= $r ?>" <?= $user[
+  'user_rang'
+] === $r
+  ? 'selected'
+  : '' ?>><?= ucfirst($r) ?></option>
                                             <?php endforeach; ?>
                                         <?php endif; ?>
                                     </select>

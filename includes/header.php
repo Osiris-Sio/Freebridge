@@ -1,7 +1,13 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
   session_start();
-} ?>
+}
+
+// Génération du token CSRF de manière sécurisée pour éviter les attaques CSRF
+if (empty($_SESSION['csrf_token'])) {
+  $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
+?>
 <!doctype html>
 <html lang="fr" data-theme="light">
 
@@ -11,6 +17,8 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="<?= BASE_URL ?>"> <!-- La solution magique pour vos liens -->
     <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4EB31B">
 
     <link rel="stylesheet" href="css/pico.css">
     <link rel="stylesheet" href="css/logo.css">
@@ -66,7 +74,10 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 <?php if (isset($_SESSION['user_nom'])) { ?>
                     <li><a href="avdj">À vous de jouer</a></li>
-                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === 'true'): ?>
+                    <?php if (
+                      isset($_SESSION['is_admin']) &&
+                      $_SESSION['is_admin'] === 'true'
+                    ): ?>
                         <li><a href="gestion">Gestion</a></li>
                     <?php endif; ?>
                     <li><a href="account" title="Mon Compte"><i class="fas fa-user-circle"></i> <?= htmlspecialchars(

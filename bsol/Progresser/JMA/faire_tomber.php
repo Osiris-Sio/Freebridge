@@ -12,9 +12,8 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <details class="level-folder">
-        <summary>1 - Faire tomber les atouts adverses sans danger</summary>
+        <summary>1.1 - Battre atout (14 donnes)</summary>
         <div class="lesson-list">
-            <p><strong>1.1 - Battre atout (14 donnes)</strong></p>
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=rXz96uhw" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/1_-_Battre_atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/1_-_Battre_atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -57,8 +56,10 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 14</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=GqriRapW" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/1_-_Battre_atout/Donne_14.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/1_-_Battre_atout/Donne_14.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
-
-            <p><strong>1.2 - Faire tomber le dernier atout maître (1 donne)</strong></p>
+    </details>
+    <details class="level-folder">
+        <summary>1.2 - Faire tomber le dernier atout maître (1 donne)</summary>
+        <div class="lesson-list">
             <div class="lesson-item">
                 <span>Donne 1</span>
                 <div class="lesson-actions">
@@ -66,8 +67,12 @@ include '../../../includes/header.php'; ?>
                     <a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/2_-_Faire_tomber_le_dernier_atout_maitre/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/2_-_Faire_tomber_le_dernier_atout_maitre/Donne_1.lin" role="button" class="secondary outline">Analyser</a>
                 </div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>1.3 - Impasse à l'atout d'abord (5 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>1.3 - Impasse à l'atout d'abord (5 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=Jdhxv7WV" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/3_-_Impasse_a_l'atout_d'abord/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/1_-_Faire_tomber_les_atouts_adverses_sans_danger/3_-_Impasse_a_l'atout_d'abord/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -87,9 +92,8 @@ include '../../../includes/header.php'; ?>
     </details>
 
     <details class="level-folder">
-        <summary>2 - Retrait partiel des atouts</summary>
+        <summary>2.1 - 2 tours d'atout et coupe(s) main courte (30 donnes)</summary>
         <div class="lesson-list">
-            <p><strong>2.1 - 2 tours d'atout et coupe(s) main courte (30 donnes)</strong></p>
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=bqKNEugt" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/1_-_2_tours_d'atout_seulement_et_coupe(s)_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/1_-_2_tours_d'atout_seulement_et_coupe(s)_de_la_main_courte/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -180,16 +184,24 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 30</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=72CxBTJq" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/1_-_2_tours_d'atout_seulement_et_coupe(s)_de_la_main_courte/Donne_30.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/1_-_2_tours_d'atout_seulement_et_coupe(s)_de_la_main_courte/Donne_30.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>2.2 - Utiliser les honneurs d'atout du Mort (2 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>2.2 - Utiliser les honneurs d'atout du Mort (2 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=xkfDGFe2" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/2_-_Utiliser_les_honneurs_d'atout_du_Mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/2_-_Utiliser_les_honneurs_d'atout_du_Mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=H27gBXaf" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/2_-_Utiliser_les_honneurs_d'atout_du_Mort/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/2_-_Utiliser_les_honneurs_d'atout_du_Mort/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>2.3 - Un tour d'atout seulement (7 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>2.3 - Un tour d'atout seulement (7 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=znads6Qu" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/3_-_Un_tour_d'atout_seulement/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/3_-_Un_tour_d'atout_seulement/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -211,8 +223,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 7</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=iGTh9rDN" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/3_-_Un_tour_d'atout_seulement/Donne_7.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/3_-_Un_tour_d'atout_seulement/Donne_7.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>2.4 - Les tours de débarras (17 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>2.4 - Les tours de débarras (17 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=7y9Jtc5e" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/4_-_Les_tours_de_debarras/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/4_-_Les_tours_de_debarras/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -263,17 +279,25 @@ include '../../../includes/header.php'; ?>
             </div>
             <div class="lesson-item"><span>Donne 18</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=MeHybh3A" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/4_-_Les_tours_de_debarras/Donne_18.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/4_-_Les_tours_de_debarras/Donne_18.lin" role="button" class="secondary outline">Analyser</a></div>
-            </div> ?>
+            </div>
+        </div>
+    </details>
 
-            <p><strong>2.5 - Le dernier atout coupe dans le vide (2 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>2.5 - Le dernier atout coupe dans le vide (2 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=ysZjQdC4" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/5_-_Manoeuvrer_pour_que_le_dernier_atout_coupe_dans_le_vide/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/5_-_Manoeuvrer_pour_que_le_dernier_atout_coupe_dans_le_vide/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=fEiPJCZL" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/5_-_Manoeuvrer_pour_que_le_dernier_atout_coupe_dans_le_vide/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/5_-_Manoeuvrer_pour_que_le_dernier_atout_coupe_dans_le_vide/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>2.6 - 2 tours d'atout et coupe d'un atout maître (11 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>2.6 - 2 tours d'atout et coupe d'un atout maître (11 donnes)</summary>
+        <div class="lesson-list ">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=vEdJfKeY" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/6_-_2_tours_d'atout_et_coupe_d'un_atout_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/2_-_Retrait_partiel_des_atouts/6_-_2_tours_d'atout_et_coupe_d'un_atout_maitre_au_Mort/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -311,30 +335,41 @@ include '../../../includes/header.php'; ?>
     </details>
 
     <details class="level-folder">
-        <summary>3 - Coup à blanc à l'atout</summary>
+        <summary>3.1 - Avec ARxxx en face de xxx (2 donnes)</summary>
         <div class="lesson-list">
-            <p><strong>3.1 - Avec ARxxx en face de xxx (2 donnes)</strong></p>
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=RcmwHr4A" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/1_-_Avec_ARxxx_en_face_de_xxx/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/1_-_Avec_ARxxx_en_face_de_xxx/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=HSAZNv8t" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/1_-_Avec_ARxxx_en_face_de_xxx/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/1_-_Avec_ARxxx_en_face_de_xxx/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.2 - Avec ARxxxx en face de xx (2 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>3.2 - Avec ARxxxx en face de xx (2 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=6WcnrhLu" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/2_-_Avec_ARxxxx_en_face_de_xx/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/2_-_Avec_ARxxxx_en_face_de_xx/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
             <div class="lesson-item"><span>Donne 2</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=UuqtEgLv" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/2_-_Avec_ARxxxx_en_face_de_xx/Donne_2.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/2_-_Avec_ARxxxx_en_face_de_xx/Donne_2.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.3 - Avec Axxx en face de Rxxx (1 donne)</strong></p>
+    <details class="level-folder">
+        <summary>3.3 - Avec Axxx en face de Rxxx (1 donne)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=qfeXx4D5" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/3_-_Avec_Axxx_en_face_de_Rxxx/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/3_-_Avec_Axxx_en_face_de_Rxxx/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.4 - Avec Axxx en face de xxxx (6 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>3.4 - Avec Axxx en face de xxxx (6 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=kGHTBVq2" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/4_-_Avec_Axxx_en_face_de_xxxx/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/4_-_Avec_Axxx_en_face_de_xxxx/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -353,8 +388,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 6</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=V8bYJrjG" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/4_-_Avec_Axxx_en_face_de_xxxx/Donne_6.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/4_-_Avec_Axxx_en_face_de_xxxx/Donne_6.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.5 - Avec Axxxxx en face de xxx (5 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>3.5 - Avec Axxxxx en face de xxx (5 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=mnzkGsbw" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/5_-_Avec_Axxxxx_en_face_de_xxx/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/5_-_Avec_Axxxxx_en_face_de_xxx/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -370,8 +409,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 5</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=pvywbDLd" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/5_-_Avec_Axxxxx_en_face_de_xxx/Donne_5.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/5_-_Avec_Axxxxx_en_face_de_xxx/Donne_5.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.6 - Malgré la tierce majeure (5 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>3.6 - Malgré la tierce majeure (5 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=CjcTp8mX" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/6_-_Malgre_la_tierce_majeure_a_l'atout/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/6_-_Malgre_la_tierce_majeure_a_l'atout/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -387,8 +430,12 @@ include '../../../includes/header.php'; ?>
             <div class="lesson-item"><span>Donne 5</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=Qvpsa5Uq" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/6_-_Malgre_la_tierce_majeure_a_l'atout/Donne_5.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/6_-_Malgre_la_tierce_majeure_a_l'atout/Donne_5.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
+        </div>
+    </details>
 
-            <p><strong>3.7 - Autres (5 donnes)</strong></p>
+    <details class="level-folder">
+        <summary>3.7 - Autres (5 donnes)</summary>
+        <div class="lesson-list">
             <div class="lesson-item"><span>Donne 1</span>
                 <div class="lesson-actions"><a href="https://bridge-training.com/player/index.php?dds=bm98N7Ct" target="_blank" role="button" class="outline">Jouer</a><a href="<?= URL_SOLUTION ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/7_-_Autres/Donne_1.lin" role="button" class="secondary outline">Solution</a><a href="<?= URL_ANALYSE ?>bsol/Progresser/JMA/21_-_Faire_tomber_les_atouts_adverses/3_-_Coup_a_blanc_a_l'atout/7_-_Autres/Donne_1.lin" role="button" class="secondary outline">Analyser</a></div>
             </div>
@@ -409,4 +456,3 @@ include '../../../includes/header.php'; ?>
 </article>
 
 <?php include '../../../includes/footer.php'; ?>
-

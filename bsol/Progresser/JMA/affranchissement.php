@@ -10,6 +10,15 @@ include '../../../includes/header.php'; ?>
     <header>
         <h1>24 - Affranchissement d'une couleur du Mort</h1>
     </header>
+	
+	<div class="course-header">
+        <a href="assets/pdf/progresser/jma/24 - L'affranchissement des honneurs par la coupe.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours "Affranchir les honneurs"
+        </a>
+		<a href="assets/pdf/progresser/jma/24 - L'affranchissement des longueurs par la coupe.pdf" target="_blank" role="button" class="secondary">
+            <i class="fas fa-chalkboard-teacher"></i> Voir le cours "Affranchir les longueurs"
+        </a>
+	</div>
 
     <details class="level-folder">
         <summary>1 - Affranchissement d'honneurs (59 donnes)</summary>

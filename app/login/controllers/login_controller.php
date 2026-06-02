@@ -12,6 +12,17 @@ unset($_SESSION['inputs']['login']);
 
 // Traitement du formulaire de connexion (anciennement login_cible.php)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Vérification CSRF
+  if (
+    !isset($_POST['csrf_token']) ||
+    $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')
+  ) {
+    $_SESSION['messages']['errors'][] =
+      'Erreur de validation de session. Veuillez reessayer.';
+    header('Location: login');
+    exit();
+  }
+
   $login = strtolower(trim($_POST['login'] ?? ''));
   $password = $_POST['password'] ?? '';
 
@@ -31,7 +42,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->execute([':mail' => $login]);
       $user = $stmt->fetch();
 
-      if ($user && verify_password_and_migrate($password, $user['user_password'], $user['user_id'], $conn)) {
+      if (
+        $user &&
+        verify_password_and_migrate(
+          $password,
+          $user['user_password'],
+          $user['user_id'],
+          $conn,
+        )
+      ) {
         // Succès : on vide les inputs stockés
         unset($_SESSION['inputs']['login']);
         session_regenerate_id(true);
@@ -42,19 +61,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_prenom'] = $user['user_prenom'];
         $_SESSION['user_mail'] = $user['user_mail'];
         $_SESSION['user_date'] = $user['user_date'];
-        $_SESSION['is_admin'] = ($user['is_admin'] == 1) ? 'true' : 'false';
+        $_SESSION['is_admin'] = $user['is_admin'] == 1 ? 'true' : 'false';
 
-        $_SESSION['messages']['confirm'][] = 'Connexion réussie. Ravi de vous revoir ' . $_SESSION['user_prenom'] . '!';
+        $_SESSION['messages']['confirm'][] =
+          'Connexion réussie. Ravi de vous revoir ' .
+          $_SESSION['user_prenom'] .
+          '!';
         header('Location: avdj');
         exit();
       } else {
-        $_SESSION['messages']['errors'][] = "L'adresse mail ou le mot de passe est incorrect.";
+        $_SESSION['messages']['errors'][] =
+          "L'adresse mail ou le mot de passe est incorrect.";
       }
     } else {
       $_SESSION['messages']['errors'][] = 'Veuillez remplir tous les champs.';
     }
-  } catch (PDOException $e) {
-    $_SESSION['messages']['errors'][] = $e->getMessage();
+  } catch (Throwable $th) {
+    $_SESSION['messages']['errors'][] =
+      'Une erreur systeme est survenue lors de la connexion. Veuillez reessayer plus tard.';
   }
 
   // Redirection vers la page de login pour éviter le renvoi du formulaire (ERR_CACHE_MISS)

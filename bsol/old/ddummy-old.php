@@ -496,27 +496,27 @@
 		<SPAN style="font-size:20px;font-weight:bold;color:#3366FF;">Bridge Solver Online</SPAN><BR><BR>
 		<form method="post" action="" enctype="multipart/form-data" id="myform">
 			<div>
-				<input type="button" id="loadFile1" value="Open File" onclick="document.getElementById('loadFile').click();" /> Open a PBN, DLM, or LIN file
+				<input type="button" id="loadFile1" value="Ouvrir un fichier" onclick="document.getElementById('loadFile').click();" /> Ouvrir un fichier PBN, DLM, ou LIN
 				<input type="file" id="loadFile" name="loadfiles[]" style="display:none;" /><BR><BR>
-				Or<BR><BR>
-				<input type=button value="Input Hand" onclick="createEmptyBoard();">
+				Ou<BR><BR>
+				<input type=button value="Entrer la main" onclick="createEmptyBoard();">
 			</div>
 		</form>
 	</div>
 	<div id=abuttons style="display:none;">
 		<div style="position: fixed; top: 0;left: 0;
 		z-index:20;background-color: white;float:left;background-color:#DDDDDD;width:100%;">
-			<BUTTON class=menuButton id=aboard>Play It Again</BUTTON>
-			<BUTTON class=sessionMenuButton id=aranking style="margin-left:10px;min-width:95px;">All Pairs</BUTTON>
-			<BUTTON class=sessionMenuButton id=ascorecard style="min-width:95px;">Personal</BUTTON>
-			<BUTTON class=sessionMenuButton id=aacc style="min-width:95px;">Accuracy</BUTTON>
-			<BUTTON class=sessionMenuButton id=atraveller style="margin-left:10px;min-width:95px;">Board</BUTTON>
+			<BUTTON class=menuButton id=aboard>Rejouer</BUTTON>
+			<BUTTON class=sessionMenuButton id=aranking style="margin-left:10px;min-width:95px;">Toutes les paires</BUTTON>
+			<BUTTON class=sessionMenuButton id=ascorecard style="min-width:95px;">Personnel</BUTTON>
+			<BUTTON class=sessionMenuButton id=aacc style="min-width:95px;">Précision</BUTTON>
+			<BUTTON class=sessionMenuButton id=atraveller style="margin-left:10px;min-width:95px;">Donne</BUTTON>
 			<BUTTON class=sessionMenuButton id=aprev style="min-width:20px;margin-left:10px;">
 				< </BUTTON>
-					<BUTTON class=sessionMenuButton id=agotoboard style="min-width:95px;">Go To..</BUTTON>
+					<BUTTON class=sessionMenuButton id=agotoboard style="min-width:95px;">Aller à..</BUTTON>
 					<BUTTON class=sessionMenuButton id=anext style="min-width:20px;">></BUTTON>
-					<BUTTON class=sessionMenuButton id=acheck style="margin-left:10px;min-width:95px;">Check</BUTTON>
-					<BUTTON class=sessionMenuButton id=ahelp style="margin-left:10px;min-width:95px;" onclick="sessionHelp();">Help</BUTTON>
+					<BUTTON class=sessionMenuButton id=acheck style="margin-left:10px;min-width:95px;">Vérifier</BUTTON>
+					<BUTTON class=sessionMenuButton id=ahelp style="margin-left:10px;min-width:95px;" onclick="sessionHelp();">Aide</BUTTON>
 		</div>
 		<div style="height:25px;width:98%;"></div>
 	</div>
@@ -652,33 +652,33 @@
 					<TABLE WIDTH=100% class=results style="border:0px; border-collapse:collapse; padding:0px;">
 						<TR style="padding:0px;">
 							<TD align=LEFT>
-								<BUTTON id=bsession class=sessionMenuButton>Results Analysis</BUTTON>
+								<BUTTON id=bsession class=sessionMenuButton>Analyse des résultats</BUTTON>
 								<BUTTON class=btn-circle id=bsessionHelp style="margin-right:5px;" onclick="window.open('bsolhelp.htm?ver=2');">?</BUTTON>
 							</TD>
 							<TD ALIGN=center>
 								<BUTTON id="prev" class=menuButton style="min-width:25px;width:25px;">
 									< </BUTTON>
-										<BUTTON id="gotoBoard" class=menuButton style="min-width:60px;width:60px;">Go To</BUTTON>
+										<BUTTON id="gotoBoard" class=menuButton style="min-width:60px;width:60px;">Aller à</BUTTON>
 										<BUTTON id="next" class=menuButton style="min-width:25px;width:25px;margin-right:5px;">></BUTTON>
-										<BUTTON id="showBoards" class=menuButton>Boards</BUTTON>
-										<BUTTON id=newBoard class=menuButton style="padding-right:6px;padding-left:6px;">New...</BUTTON>
-										<BUTTON id=deleteBoard class=menuButton style="padding-right:6px;padding-left:6px;margin-right:20px;">Delete</BUTTON>
-										<BUTTON id=saveLIN class=menuButton>Save As LIN</BUTTON>
-										<BUTTON id=saveBoards class=menuButton>Save...</BUTTON>
-										<BUTTON id=editHand class=menuButton>Edit</BUTTON>
-										<BUTTON id=clearHand class=menuButton>Clear</BUTTON>
+										<BUTTON id="showBoards" class=menuButton>Donnes</BUTTON>
+										<BUTTON id=newBoard class=menuButton style="padding-right:6px;padding-left:6px;">Nouveau...</BUTTON>
+										<BUTTON id=deleteBoard class=menuButton style="padding-right:6px;padding-left:6px;margin-right:20px;">Supprimer</BUTTON>
+										<BUTTON id=saveLIN class=menuButton>Sauvegarder sous LIN</BUTTON>
+										<BUTTON id=saveBoards class=menuButton>Sauvegarder...</BUTTON>
+										<BUTTON id=editHand class=menuButton>Éditer</BUTTON>
+										<BUTTON id=clearHand class=menuButton>Effacer</BUTTON>
 										<BUTTON id=backPlay class=menuButton>
 											< </BUTTON>
-												<BUTTON id=play class=menuButton>Play</BUTTON>
+												<BUTTON id=play class=menuButton>Jouer</BUTTON>
 												<BUTTON id=forwardPlay class=menuButton style="display:none;">></BUTTON>
 												<BUTTON id=options class=menuButton>Options</BUTTON>
-												<BUTTON class=menuButton id=help style="margin-right:5px;">Help</BUTTON>
+												<BUTTON class=menuButton id=help style="margin-right:5px;">Aide</BUTTON>
 							<TD ALIGN=RIGHT>
-								<BUTTON id="branking" class=menuButton style="min-width:90px;">Ranking</BUTTON>
-								<BUTTON class=menuButton id=bscorecard style="width:95px;">Scorecard</BUTTON>
-								<BUTTON class=menuButton id=btraveller style="width:95px;">Traveller</BUTTON>
-								<BUTTON id="computeMakeable" class=menuButton>Analyse</BUTTON>
-								<BUTTON id="tools" class=menuButton>More..</BUTTON>
+								<BUTTON id="branking" class=menuButton style="min-width:90px;">Classement</BUTTON>
+								<BUTTON class=menuButton id=bscorecard style="width:95px;">Feuille de marque</BUTTON>
+								<BUTTON class=menuButton id=btraveller style="width:95px;">Fiche ambulante</BUTTON>
+								<BUTTON id="computeMakeable" class=menuButton>Analyser</BUTTON>
+								<BUTTON id="tools" class=menuButton>Plus..</BUTTON>
 							</TD>
 						</TR>
 					</TABLE>
@@ -706,7 +706,7 @@
 						<div id=progressBox style="border:1px solid black;display:none;width:200px;height:20px;float:left;">
 							<div id=progress style="background-color:#00FF00;float:left;height:20px;width:0px;"></div>
 						</div>
-						<div style="float:right;"><BUTTON id=analyseAll class=menuButton style="width:100px;">Analyse All</BUTTON></div>
+						<div style="float:right;"><BUTTON id=analyseAll class=menuButton style="width:100px;">Tout analyser</BUTTON></div>
 					</td>
 				</tr>
 			</table>
@@ -758,7 +758,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td><BUTTON id=settingsHide>Close</BUTTON><BUTTON id=showSettingsHelp style="margin-left:20px;">Help</BUTTON></td>
+				<td><BUTTON id=settingsHide>Fermer</BUTTON><BUTTON id=showSettingsHelp style="margin-left:20px;">Aide</BUTTON></td>
 			</tr>
 		</table>
 	</div>
@@ -816,18 +816,18 @@
 		</table>
 		<table width="500" border="0">
 			<tr>
-				<td align="center"><br><BUTTON id="optionsClose" style="width:80px;cursor:pointer;">Close</BUTTON>&nbsp;&nbsp;<BUTTON id="optionsSave" style="width:120px;">Save As Default</BUTTON></td>
+				<td align="center"><br><BUTTON id="optionsClose" style="width:80px;cursor:pointer;">Fermer</BUTTON>&nbsp;&nbsp;<BUTTON id="optionsSave" style="width:120px;">Sauvegarder par défaut</BUTTON></td>
 			</tr>
 		</table>
 	</div>
 	<div id="toolsSubMenu" style="position: absolute; left: 300px; top: 100px; width:240px; padding:10px; display:none; border-style:solid; border-width:2px; border-color:#000000; box-shadow: 5px 5px 5px #888888; z-index: 200; background-color:#FFFFEE">
 		<h2>Select a Function:</h2>
-		<BUTTON id=analyseAllBoards style="width:230px;text-align:left;"><SPAN style="font-weight:bold;">Analyse All Boards</SPAN></BUTTON><BR>
-		<BUTTON id=showPlayerAcc style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Show Player Accuracy Matrix</SPAN></BUTTON>
-		<BUTTON id=showSettings style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Settings...</SPAN></BUTTON>
-		<BUTTON id=showReleaseHistory style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Release Notes...</SPAN></BUTTON>
+		<BUTTON id=analyseAllBoards style="width:230px;text-align:left;"><SPAN style="font-weight:bold;">Analyser toutes les donnes</SPAN></BUTTON><BR>
+		<BUTTON id=showPlayerAcc style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Matrice de précision des joueurs</SPAN></BUTTON>
+		<BUTTON id=showSettings style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Paramètres...</SPAN></BUTTON>
+		<BUTTON id=showReleaseHistory style="margin-top:5px;width:230px;text-align:left;"><SPAN style="font-weight:bold;">Notes de version...</SPAN></BUTTON>
 		<BR><BR>
-		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';"><SPAN style="font-weight:bold;">Close</SPAN></BUTTON>
+		<BUTTON onclick="document.getElementById('toolsSubMenu').style.display='none';"><SPAN style="font-weight:bold;">Fermer</SPAN></BUTTON>
 	</div>
 	<div id=rcheckdiv style="float:left;clear:both;display:none;">
 		<input type="checkbox" id="rankcheck" value="checkbox"><label for=rankcheck style="font-size:12px;">Sort tables by pair number</label>

@@ -12,6 +12,17 @@ if (!isset($_SESSION['user_id'])) {
 
 // Traitement de la modification des informations
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Vérification CSRF
+  if (
+    !isset($_POST['csrf_token']) ||
+    $_POST['csrf_token'] !== ($_SESSION['csrf_token'] ?? '')
+  ) {
+    $_SESSION['messages']['errors'][] =
+      'Erreur de validation de session. Veuillez reessayer.';
+    header('Location: account');
+    exit();
+  }
+
   $nom = trim($_POST['nom'] ?? '');
   $prenom = trim($_POST['prenom'] ?? '');
   $email = trim($_POST['email'] ?? '');
@@ -42,7 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $stmt->execute([':id' => $_SESSION['user_id']]);
       $user = $stmt->fetch();
 
-      if (!verify_password_and_migrate($old_password, $user['user_password'], $_SESSION['user_id'], $conn)) {
+      if (
+        !verify_password_and_migrate(
+          $old_password,
+          $user['user_password'],
+          $_SESSION['user_id'],
+          $conn,
+        )
+      ) {
         $_SESSION['messages']['errors'][] =
           'Le mot de passe actuel est incorrect.';
       } else {
@@ -99,8 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       }
     }
   } catch (Throwable $e) {
-    $_SESSION['messages']['errors'][] =
-      'Erreur lors de la mise à jour.';
+    $_SESSION['messages']['errors'][] = 'Erreur lors de la mise à jour.';
   }
 
   // Redirection
@@ -136,7 +153,8 @@ if (isset($_SESSION['prix'])) {
       $_SESSION['messages']['confirm'][] =
         'Abonnement mis à jour ! Nouveau rang : ' . strtoupper($new_rang);
     } catch (Throwable $e) {
-      $_SESSION['messages']['errors'][] = 'Erreur lors de la mise à jour du rang.';
+      $_SESSION['messages']['errors'][] =
+        'Erreur lors de la mise à jour du rang.';
     }
   }
   unset($_SESSION['prix']);

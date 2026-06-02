@@ -12,7 +12,7 @@ include '../../../includes/header.php'; ?>
     </header>
 
     <div class="course-header">
-        <a href="assets/pdf/dsa-progresser/Entames d'honneurs à Sans-Atout (Présentation).pdf" target="_blank" role="button" class="secondary">
+        <a href="assets/pdf/progresser/dsa/Entames d'honneurs à Sans-Atout (Présentation).pdf" target="_blank" role="button" class="secondary">
             <i class="fas fa-chalkboard-teacher"></i> Voir le cours complet (Présentation)
         </a>
     </div>
