@@ -147,6 +147,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
       reader.readAsText(file, 'UTF-8')
+      
+      // Réinitialise l'input pour permettre de rouvrir le même fichier consécutivement
+      e.target.value = ''
     })
   }
 
