@@ -6,17 +6,16 @@
     </header>
 
     <form action="lostpassword" method="post">
-        <input type="hidden" name="csrf_token" value="<?= $_SESSION[
-          'csrf_token'
-        ] ?? '' ?>">
+        <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
 
-        <p style="color: red;"><strong>NE FONCTIONNE PAS ENCORE !</strong></p>
+        <p style="color: red;"><strong>Ce service ne fonctionne pas encore. Veuillez <a
+                    href="contact">contacter le support</a>.</strong></p>
         <p>Saisissez votre adresse mail pour recevoir un nouveau mot de passe temporaire.</p>
 
         <label for="login">Votre adresse mail :</label>
         <input required type="email" name="login" id="login" placeholder="votre@email.com" value="<?= htmlspecialchars(
-          $login_value ?? '',
-        ) ?>">
+                                                                                                        $login_value ?? '',
+                                                                                                    ) ?>">
 
         <br>
 
