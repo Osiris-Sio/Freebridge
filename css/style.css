@@ -83,3 +83,23 @@ video {
     margin-right: 0;
   }
 }
+
+/* --- Styles pour les images de la culture du bridge --- */
+.centered-img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+  height: auto;
+}
+
+.history-img {
+  max-width: 100%;
+}
+
+.logo-ffb {
+  max-width: 200px;
+}
+
+.gates-img {
+  max-width: 50%;
+}
